@@ -18,11 +18,25 @@
     <PackageReference Include="MvvmCross" Version="6.3.1" />
     <PackageReference Include="MvvmCross.Forms" Version="6.3.1" />
     <PackageReference Include="MvvmCross.Plugin.Json" Version="6.3.1" />
+    <PackageReference Include="MvvmCross.Plugin.JsonLocalization" Version="6.3.1" />
     <PackageReference Include="MvvmCross.Plugin.Messenger" Version="6.3.1" />
     <PackageReference Include="Plugin.MediaManager.Forms" Version="0.7.3" />
     <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
     <PackageReference Include="Xamarin.Forms" Version="4.1.0.581479" />
     <PackageReference Include="Xamarin.Essentials" Version="1.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Chameleon.Services\Chameleon.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="FormsApp.xaml.cs">
+      <DependentUpon>FormsApp.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="HomePage.xaml.cs">
+      <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>

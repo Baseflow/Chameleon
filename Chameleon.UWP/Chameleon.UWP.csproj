@@ -164,6 +164,9 @@
     <PackageReference Include="MvvmCross.Plugin.Json">
       <Version>6.3.1</Version>
     </PackageReference>
+    <PackageReference Include="MvvmCross.Plugin.JsonLocalization">
+      <Version>6.3.1</Version>
+    </PackageReference>
     <PackageReference Include="MvvmCross.Plugin.Messenger">
       <Version>6.3.1</Version>
     </PackageReference>

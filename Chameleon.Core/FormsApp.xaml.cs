@@ -2,15 +2,13 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Chameleon
+namespace Chameleon.Core
 {
-    public partial class App : Application
+    public partial class FormsApp : Application
     {
-        public App()
+        public FormsApp()
         {
             InitializeComponent();
-
-            MainPage = new MainPage();
         }
 
         protected override void OnStart()

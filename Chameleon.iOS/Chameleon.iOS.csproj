@@ -173,5 +173,19 @@
       <Name>Chameleon.Core</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\splashBg.jpg" />
+    <BundleResource Include="Resources\splashBg%402x.jpg" />
+    <BundleResource Include="Resources\splashBg%403x.jpg" />
+    <BundleResource Include="Resources\chameleonLogo.png" />
+    <BundleResource Include="Resources\chameleonLogo%402x.png" />
+    <BundleResource Include="Resources\chameleonLogo%403x.png" />
+    <BundleResource Include="Resources\chameleonMediaplaye.png" />
+    <BundleResource Include="Resources\chameleonMediaplaye%402x.png" />
+    <BundleResource Include="Resources\chameleonMediaplaye%403x.png" />
+    <BundleResource Include="Resources\poweredByBaseflowLogo.png" />
+    <BundleResource Include="Resources\poweredByBaseflowLogo%402x.png" />
+    <BundleResource Include="Resources\poweredByBaseflowLogo%403x.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

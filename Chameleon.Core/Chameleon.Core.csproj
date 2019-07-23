@@ -31,20 +31,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="FormsApp.xaml.cs">
-      <DependentUpon>FormsApp.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="HomePage.xaml.cs">
-      <DependentUpon>HomePage.xaml</DependentUpon>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="App.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="MainPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
+    <Compile Update="**\*.xaml.cs" DependentUpon="%(Filename)" />
+    <None Remove="Resources\**\*.json" />
+    <EmbeddedResource Include="Resources\**\*.json" />
   </ItemGroup>
 </Project>

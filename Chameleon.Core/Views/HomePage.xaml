@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<mvx:MvxContentPage
-    xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms" 
+<core:MvxContentPage
+    xmlns:core="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms" 
+    xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
@@ -8,13 +9,14 @@
     xmlns:viewModels="clr-namespace:Chameleon.Core.ViewModels;assembly=Chameleon.Core" 
     mc:Ignorable="d"
     x:TypeArguments="viewModels:HomeViewModel"
-    x:Class="Chameleon.Core.HomePage">
+    x:Class="Chameleon.Core.Views.HomePage">
 
     <StackLayout>
         <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
+        <Label Text="Welcome to Chameleon" 
            HorizontalOptions="Center"
            VerticalOptions="CenterAndExpand" />
+        <Button mvx:La.ng="Text Player" mvx:Bi.nd="Command PlayerCommand" />
     </StackLayout>
 
-</mvx:MvxContentPage>
+</core:MvxContentPage>

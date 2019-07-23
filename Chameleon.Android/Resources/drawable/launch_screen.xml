@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" android:opacity="opaque">
+  
+  <item android:drawable="@drawable/splash_bg"/>
+  
+  <item android:top="100dp">
+    <bitmap
+      android:src="@drawable/chameleon_logo"
+      android:gravity="top|center_horizontal"/>
+  </item>
+
+    <item android:top="200dp">
+    <bitmap
+      android:src="@drawable/chameleon_mediaplaye"
+      android:gravity="top|center_horizontal"/>
+  </item>
+
+  <item android:bottom="100dp">
+    <bitmap
+      android:src="@drawable/powered_by_baseflow_logo"
+      android:gravity="bottom|center_horizontal"/>
+  </item>
+  
+</layer-list>

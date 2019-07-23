@@ -15,7 +15,7 @@ namespace Chameleon.Core
 
         protected override async Task NavigateToFirstViewModel(object hint = null)
         {
-            await NavigationService.Navigate<HomeViewModel>();
+            await NavigationService.Navigate<RootViewModel>();
         }
     }
 }

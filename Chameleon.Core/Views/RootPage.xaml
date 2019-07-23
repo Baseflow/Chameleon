@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<core:MvxTabbedPage
+    xmlns:core="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms" 
+    xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModels="clr-namespace:Chameleon.Core.ViewModels;assembly=Chameleon.Core"
+    xmlns:local="clr-namespace:Chameleon.Core;assembly=Chameleon.Core"
+    mc:Ignorable="d"
+    x:TypeArguments="viewModels:RootViewModel"
+    x:Class="Chameleon.Core.Views.RootPage"
+    BarBackgroundColor="{StaticResource backgroundColor}"
+    BarTextColor="White"
+    IconImageSource="chameleon_logo"
+    xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+    android:TabbedPage.ToolbarPlacement="Bottom" >
+    
+    <local:Views.HomePage />
+</core:MvxTabbedPage>

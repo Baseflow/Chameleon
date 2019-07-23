@@ -121,6 +121,35 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon20.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\playback_controls_play_button.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_play_button.imageset\play_button.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_play_button.imageset\playback_controls_play_button.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_play_button.imageset\playback_controls_play_button%403x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_play_button.imageset\playback_controls_play_button%402x-1.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_skip_forward.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_skip_forward.imageset\playback_controls_skip_forward.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_skip_forward.imageset\playback_controls_skip_forward%402x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_skip_forward.imageset\playback_controls_skip_forward%403x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_next.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_next.imageset\playback_controls_next.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_next.imageset\playback_controls_next%402x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_next.imageset\playback_controls_next%403x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_previous.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_previous.imageset\playback_controls_previous.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_previous.imageset\playback_controls_previous%402x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_previous.imageset\playback_controls_previous%403x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_pause_button.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_pause_button.imageset\playback_controls_pause_button.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_pause_button.imageset\playback_controls_pause_button%402x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_pause_button.imageset\playback_controls_pause_button%403x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_time_knob.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_time_knob.imageset\playback_controls_time_knob.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_time_knob.imageset\playback_controls_time_knob%402x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_time_knob.imageset\playback_controls_time_knob%403x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_skip_backwards.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_skip_backwards.imageset\playback_controls_skip_backwards.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_skip_backwards.imageset\playback_controls_skip_backwards%402x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_skip_backwards.imageset\playback_controls_skip_backwards%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -172,6 +201,15 @@
       <Project>{77a38872-12a8-4e03-ad48-827f2aab5318}</Project>
       <Name>Chameleon.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets.xcassets\playback_controls_play_button.imageset\" />
+    <Folder Include="Assets.xcassets\playback_controls_skip_forward.imageset\" />
+    <Folder Include="Assets.xcassets\playback_controls_next.imageset\" />
+    <Folder Include="Assets.xcassets\playback_controls_previous.imageset\" />
+    <Folder Include="Assets.xcassets\playback_controls_pause_button.imageset\" />
+    <Folder Include="Assets.xcassets\playback_controls_time_knob.imageset\" />
+    <Folder Include="Assets.xcassets\playback_controls_skip_backwards.imageset\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

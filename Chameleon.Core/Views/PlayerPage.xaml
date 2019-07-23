@@ -1,20 +1,91 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<mvx:MvxContentPage
-    xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms" 
+<core:MvxContentPage
+    xmlns:core="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms" 
+    xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:viewModels="clr-namespace:Chameleon.Core.ViewModels;assembly=Chameleon.Core" 
+    xmlns:viewModels="clr-namespace:Chameleon.Core.ViewModels;assembly=Chameleon.Core"
+    xmlns:mm="clr-namespace:MediaManager.Forms;assembly=MediaManager.Forms"
     mc:Ignorable="d"
     x:TypeArguments="viewModels:PlayerViewModel"
     x:Class="Chameleon.Core.Views.PlayerPage">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+    <RelativeLayout
+        RelativeLayout.WidthConstraint=
+         "{ConstraintExpression Type=RelativeToParent,
+                                Property=Width,
+                                Factor=1}"
+     RelativeLayout.HeightConstraint=
+         "{ConstraintExpression Type=RelativeToParent,
+                                Property=Height,
+                                Factor=1}">
 
-</mvx:MvxContentPage>
+        <mm:VideoView
+            ShowControls="True"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+            mvx:Bi.nd="Source Source" />
+
+        <StackLayout
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+            BackgroundColor="Transparent">
+
+            <Label Text="Stranger Things" 
+               HorizontalOptions="Center"
+               VerticalOptions="StartAndExpand"
+               BackgroundColor="Transparent"
+               TextColor="White"/>
+
+            <Label 
+                Text="Season 3, Episode 1"
+                HorizontalOptions="Center" 
+                VerticalOptions="StartAndExpand"
+                TextColor="White"/>
+        
+              <StackLayout
+                  Orientation="Horizontal"
+                  BackgroundColor="Transparent"
+                  VerticalOptions="CenterAndExpand"
+                  HorizontalOptions="CenterAndExpand"
+                  Padding="20"
+                  Spacing="15">
+                     
+                     <ImageButton
+                        Source="previous.png"
+                        mvx:Bi.nd="Command PreviousCommand"
+                        HorizontalOptions="Center"
+                        VerticalOptions="CenterAndExpand"
+                        BackgroundColor="Transparent"/>
+
+                     <ImageButton
+                        Source="skip_backwards.png"
+                        mvx:Bi.nd="Command SkipBackwardsCommand"
+                        HorizontalOptions="Center"
+                        VerticalOptions="CenterAndExpand"/>
+
+                     <ImageButton
+                        Source="play_button.png"
+                        mvx:Bi.nd="Command PlayCommand"
+                        HorizontalOptions="Center"
+                        VerticalOptions="CenterAndExpand"/>
+
+                     <ImageButton
+                        Source="skip_forward.png"
+                        mvx:Bi.nd="Command SkipForwardCommand"
+                        HorizontalOptions="Center"
+                        VerticalOptions="CenterAndExpand" />
+
+                     <ImageButton
+                        Source="next.png"
+                        mvx:Bi.nd="Command NextCommand"
+                        HorizontalOptions="Center"
+                        VerticalOptions="CenterAndExpand" />
+            
+            </StackLayout>
+
+        </StackLayout>
+    </RelativeLayout>
+</core:MvxContentPage>

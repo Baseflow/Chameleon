@@ -1,8 +1,8 @@
-﻿<Application
-    x:Class="Chameleon.UWP.App"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:Chameleon.UWP"
-    RequestedTheme="Light">
+﻿<local:ChameleonApp x:Class="Chameleon.UWP.App"
+                           xmlns:mvx="using:MvvmCross.Forms.Platforms.Uap.Views"
+                           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                           xmlns:local="using:Chameleon.UWP"
+                           RequestedTheme="Light">
 
-</Application>
+</local:ChameleonApp>

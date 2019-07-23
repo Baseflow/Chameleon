@@ -1,4 +1,9 @@
 ﻿using System;
+using Chameleon.Services;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
+using Microsoft.AppCenter.Distribute;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -13,6 +18,10 @@ namespace Chameleon.Core
 
         protected override void OnStart()
         {
+            
+            /*AppCenter.Start($"android={AppSettings.AndroidAppcenterSecret}; uwp={AppSettings.UwpAppcenterSecret}; ios={AppSettings.IosAppcenterSecret}",
+                  typeof(Analytics), typeof(Crashes), typeof(Distribute));*/
+
             // Handle when your app starts
         }
 

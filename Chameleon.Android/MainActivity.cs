@@ -8,16 +8,23 @@ using Android.Widget;
 using Android.OS;
 using MvvmCross.Forms.Platforms.Android.Views;
 using Chameleon.Core;
+using Chameleon.Droid;
 
 namespace Chameleon.Android
 {
-    [Activity(Label = "Chameleon", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(
+        Label = "Chameleon",
+        Icon = "@mipmap/icon",
+        Theme = "@style/MainTheme.Launcher",
+        MainLauncher = true,
+        ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : MvxFormsAppCompatActivity<Setup, Core.App, FormsApp>
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
             TabLayoutResource = Droid.Resource.Layout.Tabbar;
             ToolbarResource = Droid.Resource.Layout.Toolbar;
+            SetTheme(Resource.Style.MainTheme);
 
             base.OnCreate(savedInstanceState);
 

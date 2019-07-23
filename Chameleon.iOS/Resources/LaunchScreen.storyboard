@@ -1,39 +1,72 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="X5k-f2-b5h">
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="gAE-YM-kbH">
+        <scene sceneID="EHf-IW-A2E">
             <objects>
-                <viewController id="X5k-f2-b5h" sceneMemberID="viewController">
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Y8P-hJ-Z43"/>
-                        <viewControllerLayoutGuide type="bottom" id="9ZL-r4-8FZ"/>
+                        <viewControllerLayoutGuide type="top" id="202"/>
+                        <viewControllerLayoutGuide type="bottom" id="203"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="yd7-JS-zBw">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" image="Icon-60.png" translatesAutoresizingMaskIntoConstraints="NO" id="23">
-                                <rect key="frame" x="270" y="270" width="60" height="60"/>
-                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="198" translatesAutoresizingMaskIntoConstraints="NO" image="splash_bg">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="199" translatesAutoresizingMaskIntoConstraints="NO" image="chameleon_logo" misplaced="YES">
+                                <rect key="frame" x="0.0" y="200" width="414" height="70"/>
+                                <constraints>
+                                    <constraint id="432" firstAttribute="height" constant="70"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="448" translatesAutoresizingMaskIntoConstraints="NO" image="chameleon_mediaplaye" misplaced="YES">
+                                <rect key="frame" x="147" y="314" width="120" height="50"/>
+                                <constraints/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="688" translatesAutoresizingMaskIntoConstraints="NO" image="powered_by_baseflow_logo" misplaced="YES">
+                                <rect key="frame" x="87" y="659" width="240" height="42"/>
+                                <constraints>
+                                    <constraint id="691" firstAttribute="height" constant="42"/>
+                                </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.20392156862745098" green="0.59607843137254901" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="23" firstAttribute="centerY" secondItem="yd7-JS-zBw" secondAttribute="centerY" priority="1" id="39"/>
-                            <constraint firstItem="23" firstAttribute="centerX" secondItem="yd7-JS-zBw" secondAttribute="centerX" priority="1" id="41"/>
+                            <constraint id="427" firstItem="198" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width"/>
+                            <constraint id="428" firstItem="198" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height"/>
+                            <constraint id="429" firstItem="198" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY"/>
+                            <constraint id="430" firstItem="198" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX"/>
+                            <constraint id="433" firstItem="199" firstAttribute="centerX" secondItem="198" secondAttribute="centerX"/>
+                            <constraint id="434" firstItem="199" firstAttribute="top" secondItem="198" secondAttribute="top" constant="200">
+                                <variation key="heightClass=regular" constant="200"/>
+                            </constraint>
+                            <constraint id="449" firstItem="448" firstAttribute="top" secondItem="199" secondAttribute="bottom" constant="24"/>
+                            <constraint id="450" firstItem="448" firstAttribute="centerX" secondItem="198" secondAttribute="centerX"/>
+                            <constraint id="689" firstItem="198" firstAttribute="bottom" secondItem="688" secondAttribute="bottom" constant="60"/>
+                            <constraint id="690" firstItem="688" firstAttribute="centerX" secondItem="198" secondAttribute="centerX"/>
                         </constraints>
                     </view>
+                    <connections/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XAI-xm-WK6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="349" y="339"/>
+            <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Icon-60.png" width="180" height="180"/>
+        <image name="chameleon_logo" width="83" height="70"/>
+        <image name="chameleon_mediaplaye" width="121" height="44"/>
+        <image name="powered_by_baseflow_logo" width="164" height="42"/>
+        <image name="splash_bg" width="375" height="812"/>
     </resources>
 </document>

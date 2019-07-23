@@ -20,8 +20,6 @@ namespace Chameleon.UWP
         public MainPage()
         {
             this.InitializeComponent();
-
-            LoadApplication(new Chameleon.App());
         }
     }
 }

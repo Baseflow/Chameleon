@@ -5,7 +5,11 @@ namespace Chameleon.Services
     public static class AppSettings
     {
         public static readonly string AppName = "Chameleon";
-        public static readonly string AppIdentifier = "";
+        public static readonly string AppIdentifier = "com.baseflow.chameleon";
+
+        public static readonly string AndroidAppcenterSecret = "";
+        public static readonly string IosAppcenterSecret = "";
+        public static readonly string UwpAppcenterSecret = "";
 
         public static readonly string[] AppLanguages = { "en" /*, "nl"*/ };
         public static readonly string DefaultAppLanguage = "en";

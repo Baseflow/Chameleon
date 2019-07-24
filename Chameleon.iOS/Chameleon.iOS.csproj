@@ -211,6 +211,9 @@
     </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="4.1.0.581479" />
     <PackageReference Include="Xamarin.Essentials" Version="1.2.0" />
+    <PackageReference Include="Acr.UserDialogs">
+      <Version>7.0.4</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Chameleon.Core\Chameleon.Core.csproj">

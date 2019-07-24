@@ -17,7 +17,7 @@
         <StackLayout>
             <!-- Place new controls here -->
             <Button mvx:La.ng="Text PlayDevice" Style="{StaticResource primaryButton}"/>
-            <Button mvx:La.ng="Text OpenUrl" Style="{StaticResource primaryButton}"/>
+            <Button mvx:La.ng="Text OpenUrl" mvx:Bi.nd="Command OpenUrlCommand" Style="{StaticResource primaryButton}"/>
             <Button mvx:La.ng="Text Player" mvx:Bi.nd="Command PlayerCommand" />
         </StackLayout>
 </core:MvxContentPage>

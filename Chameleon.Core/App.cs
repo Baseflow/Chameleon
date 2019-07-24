@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net.Http;
 using System.Text;
+using Acr.UserDialogs;
 using FFImageLoading.Config;
 using MediaManager;
 using MvvmCross;
@@ -19,8 +20,7 @@ namespace Chameleon.Core
         {
             // Register Connectivity
             //Mvx.IoCProvider.RegisterSingleton<IConnectivity>(CrossConnectivity.Current);
-            //Mvx.IoCProvider.RegisterSingleton<IUserDialogs>(UserDialogs.Instance);
-
+            Mvx.IoCProvider.RegisterSingleton<IUserDialogs>(UserDialogs.Instance);
             Mvx.IoCProvider.RegisterSingleton<IMediaManager>(CrossMediaManager.Current);
 
             // Register Text provider

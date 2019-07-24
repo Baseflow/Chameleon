@@ -10,6 +10,7 @@ using MvvmCross.Commands;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration;
 
 namespace Chameleon.Core.ViewModels
 {
@@ -66,6 +67,11 @@ namespace Chameleon.Core.ViewModels
         void OnTapped(object s)
         {
             Debug.WriteLine("parameter: " + s);
+        }
+
+
+        public static void Include(ProgressBar progressBar)
+        {
         }
 
     }

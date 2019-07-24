@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--set progressbar backgound style-->
+    <item
+        android:id="@android:id/background"
+        android:drawable="@drawable/progress_bar_background" />
+
+    <!--set progressbar schedule style-->
+    <item android:id="@android:id/progress">
+        <scale
+            android:drawable="@drawable/progressbar_progress"
+            android:scaleWidth="100%" />
+    </item>
+
+</layer-list>

@@ -1,20 +1,110 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<mvx:MvxContentPage
-    xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms" 
+<core:MvxContentPage
+    xmlns:core="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms" 
+    xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:viewModels="clr-namespace:Chameleon.Core.ViewModels;assembly=Chameleon.Core" 
+    xmlns:viewModels="clr-namespace:Chameleon.Core.ViewModels;assembly=Chameleon.Core"
+    xmlns:mm="clr-namespace:MediaManager.Forms;assembly=MediaManager.Forms"
     mc:Ignorable="d"
     x:TypeArguments="viewModels:PlayerViewModel"
-    x:Class="Chameleon.Core.Views.PlayerPage">
+    x:Class="Chameleon.Core.Views.PlayerPage"
+    NavigationPage.HasNavigationBar="false">
+    
+    <Grid
+        ColumnSpacing="0"
+        RowSpacing="0">
+        <Grid.GestureRecognizers>
+            <TapGestureRecognizer Command="{Binding ControlsCommand}" />
+        </Grid.GestureRecognizers>
+    <mm:VideoView
+        ShowControls="False"
+        HorizontalOptions="FillAndExpand"
+        VerticalOptions="FillAndExpand"
+        mvx:Bi.nd="Source Source" />  
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+       <StackLayout
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+            IsVisible="{Binding ShowControls}">
 
-</mvx:MvxContentPage>
+            <StackLayout
+                HorizontalOptions="Center"
+                VerticalOptions="StartAndExpand">
+
+                <Label Text="{Binding Source.DisplayTitle}" 
+                   HorizontalOptions="Center"
+                   VerticalOptions="StartAndExpand"
+                   BackgroundColor="Transparent"
+                   TextColor="White">
+                    </Label>
+
+                <Label 
+                    Text="{Binding Source.DisplaySubtitle}"
+                    HorizontalOptions="Center" 
+                    VerticalOptions="StartAndExpand"
+                    TextColor="White">
+                    </Label>
+                
+            </StackLayout>
+
+            <StackLayout
+                Orientation="Horizontal"
+                BackgroundColor="Transparent"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="CenterAndExpand"
+                Padding="20"
+                Spacing="15">
+                     
+                <ImageButton
+                    Source="playback_controls_previous.png"
+                    mvx:Bi.nd="Command PreviousCommand"
+                    HorizontalOptions="Center"
+                    VerticalOptions="CenterAndExpand"
+                    BackgroundColor="Transparent">
+                    </ImageButton>
+
+                <ImageButton
+                    Source="playback_controls_skip_backwards.png"
+                    mvx:Bi.nd="Command SkipBackwardsCommand"
+                    HorizontalOptions="Center"
+                    VerticalOptions="CenterAndExpand"
+                    BackgroundColor="Transparent">
+                    </ImageButton>
+
+                <ImageButton
+                    Source="playback_controls_play_button.png"
+                    mvx:Bi.nd="Command PlayCommand"
+                    HorizontalOptions="Center"
+                    VerticalOptions="CenterAndExpand"
+                    BackgroundColor="Transparent">
+                    </ImageButton>
+
+                <ImageButton
+                    Source="playback_controls_skip_forward.png"
+                    mvx:Bi.nd="Command SkipForwardCommand"
+                    HorizontalOptions="Center"
+                    VerticalOptions="CenterAndExpand"
+                    BackgroundColor="Transparent">
+                    </ImageButton>
+
+                <ImageButton
+                    Source="playback_controls_next.png"
+                    mvx:Bi.nd="Command NextCommand"
+                    HorizontalOptions="Center"
+                    VerticalOptions="CenterAndExpand"
+                    BackgroundColor="Transparent">
+                    </ImageButton>
+            
+            </StackLayout>
+
+           <ProgressBar
+               HorizontalOptions="FillAndExpand"
+                VerticalOptions="Center"
+                mvx:Bi.nd="Progress Position; Duration Duration" />
+
+        </StackLayout>
+    </Grid>  
+</core:MvxContentPage>

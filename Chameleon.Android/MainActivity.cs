@@ -9,6 +9,7 @@ using Android.OS;
 using MvvmCross.Forms.Platforms.Android.Views;
 using Chameleon.Core;
 using Chameleon.Droid;
+using MediaManager;
 
 namespace Chameleon.Android
 {
@@ -24,10 +25,11 @@ namespace Chameleon.Android
         {
             TabLayoutResource = Droid.Resource.Layout.Tabbar;
             ToolbarResource = Droid.Resource.Layout.Toolbar;
-            SetTheme(Resource.Style.MainTheme);
+            SetTheme(Droid.Resource.Style.MainTheme);
 
             base.OnCreate(savedInstanceState);
 
+            CrossMediaManager.Current.Init(this);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] global::Android.Content.PM.Permission[] grantResults)

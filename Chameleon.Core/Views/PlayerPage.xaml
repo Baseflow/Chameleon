@@ -16,44 +16,36 @@
     <Grid
         ColumnSpacing="0"
         RowSpacing="0">
-          
+        <Grid.GestureRecognizers>
+            <TapGestureRecognizer Command="{Binding ControlsCommand}" />
+        </Grid.GestureRecognizers>
     <mm:VideoView
-        ShowControls="True"
+        ShowControls="False"
         HorizontalOptions="FillAndExpand"
         VerticalOptions="FillAndExpand"
         mvx:Bi.nd="Source Source" />  
 
        <StackLayout
             HorizontalOptions="FillAndExpand"
-            VerticalOptions="FillAndExpand">
-            
+            VerticalOptions="FillAndExpand"
+            IsVisible="{Binding ShowControls}">
 
             <StackLayout
                 HorizontalOptions="Center"
                 VerticalOptions="StartAndExpand">
 
-
-                <Label Text="Stranger Things" 
+                <Label Text="{Binding Source.DisplayTitle}" 
                    HorizontalOptions="Center"
                    VerticalOptions="StartAndExpand"
                    BackgroundColor="Transparent"
                    TextColor="White">
-                    <Label.GestureRecognizers>
-                    <TapGestureRecognizer
-                    Command="{Binding OnTapCommand}"/>
-                    </Label.GestureRecognizers>
                     </Label>
 
-
                 <Label 
-                    Text="Season 3, Episode 1"
+                    Text="{Binding Source.DisplaySubtitle}"
                     HorizontalOptions="Center" 
                     VerticalOptions="StartAndExpand"
                     TextColor="White">
-                    <Label.GestureRecognizers>
-                    <TapGestureRecognizer
-                    Command="{Binding OnTapCommand}"/>
-                    </Label.GestureRecognizers>
                     </Label>
                 
             </StackLayout>
@@ -72,10 +64,6 @@
                     HorizontalOptions="Center"
                     VerticalOptions="CenterAndExpand"
                     BackgroundColor="Transparent">
-                    <ImageButton.GestureRecognizers>
-                    <TapGestureRecognizer
-                    Command="{Binding OnTapCommand}"/>
-                    </ImageButton.GestureRecognizers>
                     </ImageButton>
 
                 <ImageButton
@@ -84,10 +72,6 @@
                     HorizontalOptions="Center"
                     VerticalOptions="CenterAndExpand"
                     BackgroundColor="Transparent">
-                    <ImageButton.GestureRecognizers>
-                    <TapGestureRecognizer
-                    Command="{Binding OnTapCommand}"/>
-                    </ImageButton.GestureRecognizers>
                     </ImageButton>
 
                 <ImageButton
@@ -96,10 +80,6 @@
                     HorizontalOptions="Center"
                     VerticalOptions="CenterAndExpand"
                     BackgroundColor="Transparent">
-                    <ImageButton.GestureRecognizers>
-                    <TapGestureRecognizer
-                    Command="{Binding OnTapCommand}"/>
-                    </ImageButton.GestureRecognizers>
                     </ImageButton>
 
                 <ImageButton
@@ -108,10 +88,6 @@
                     HorizontalOptions="Center"
                     VerticalOptions="CenterAndExpand"
                     BackgroundColor="Transparent">
-                    <ImageButton.GestureRecognizers>
-                    <TapGestureRecognizer
-                    Command="{Binding OnTapCommand}"/>
-                    </ImageButton.GestureRecognizers>
                     </ImageButton>
 
                 <ImageButton
@@ -120,19 +96,14 @@
                     HorizontalOptions="Center"
                     VerticalOptions="CenterAndExpand"
                     BackgroundColor="Transparent">
-                    <ImageButton.GestureRecognizers>
-                    <TapGestureRecognizer
-                    Command="{Binding OnTapCommand}"/>
-                    </ImageButton.GestureRecognizers>
                     </ImageButton>
             
             </StackLayout>
 
            <ProgressBar
-               HorizontalOptions="End"
-                VerticalOptions="CenterAndExpand"
-                mvx:Bi.nd="Visibility Visibility(ShowProgress)"/>
-
+               HorizontalOptions="FillAndExpand"
+                VerticalOptions="Center"
+                mvx:Bi.nd="Progress Position; Duration Duration" />
 
         </StackLayout>
     </Grid>  

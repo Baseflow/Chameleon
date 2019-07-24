@@ -4,6 +4,7 @@ using System.IO;
 using System.Net.Http;
 using System.Text;
 using FFImageLoading.Config;
+using MediaManager;
 using MvvmCross;
 using MvvmCross.IoC;
 using MvvmCross.Localization;
@@ -19,6 +20,8 @@ namespace Chameleon.Core
             // Register Connectivity
             //Mvx.IoCProvider.RegisterSingleton<IConnectivity>(CrossConnectivity.Current);
             //Mvx.IoCProvider.RegisterSingleton<IUserDialogs>(UserDialogs.Instance);
+
+            Mvx.IoCProvider.RegisterSingleton<IMediaManager>(CrossMediaManager.Current);
 
             // Register Text provider
             var textProviderBuilder = new TextProviderBuilder();

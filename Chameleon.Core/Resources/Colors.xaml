@@ -3,5 +3,6 @@
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="Chameleon.Core.Resources.Colors">
+    <Color x:Key="tabBarColor">#393A47</Color>
     <Color x:Key="backgroundColor">#30313c</Color>
 </ResourceDictionary>

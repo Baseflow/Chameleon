@@ -1,4 +1,6 @@
 ﻿{
   "Title": "Home",
-  "Player": "Go to player"
+  "Player": "Go to player",
+  "PlayDevice":  "Play video from device",
+  "OpenUrl": "Open video from URL"
 }

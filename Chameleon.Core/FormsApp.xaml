@@ -9,6 +9,7 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+                <local:Resources.Styles />
                 <local:Resources.Colors />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>

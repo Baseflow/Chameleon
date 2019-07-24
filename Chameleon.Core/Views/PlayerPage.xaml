@@ -10,7 +10,8 @@
     xmlns:mm="clr-namespace:MediaManager.Forms;assembly=MediaManager.Forms"
     mc:Ignorable="d"
     x:TypeArguments="viewModels:PlayerViewModel"
-    x:Class="Chameleon.Core.Views.PlayerPage">
+    x:Class="Chameleon.Core.Views.PlayerPage"
+    NavigationPage.HasNavigationBar="false">
     
     <Grid
         ColumnSpacing="0"

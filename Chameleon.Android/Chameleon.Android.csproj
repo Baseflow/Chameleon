@@ -191,75 +191,107 @@
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>
-    <AndroidResource Include="Resources\drawable-hdpi\next.png">
+    <AndroidResource Include="Resources\drawable-hdpi\playback_controls_next.png">
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>
-    <AndroidResource Include="Resources\drawable-hdpi\play_button.png">
+    <AndroidResource Include="Resources\drawable-hdpi\playback_controls_pause_button.png">
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>
-    <AndroidResource Include="Resources\drawable-hdpi\previous.png">
+    <AndroidResource Include="Resources\drawable-hdpi\playback_controls_play_button.png">
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>
-    <AndroidResource Include="Resources\drawable-hdpi\skip_backwards.png">
+    <AndroidResource Include="Resources\drawable-hdpi\playback_controls_previous.png">
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>
-    <AndroidResource Include="Resources\drawable-hdpi\skip_forward.png">
+    <AndroidResource Include="Resources\drawable-hdpi\playback_controls_repeat.png">
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>
-    <AndroidResource Include="Resources\drawable-hdpi\time_knob.png">
+    <AndroidResource Include="Resources\drawable-hdpi\playback_controls_skip_backwards.png">
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>
-    <AndroidResource Include="Resources\drawable-xhdpi\next.png">
+    <AndroidResource Include="Resources\drawable-hdpi\playback_controls_skip_forward.png">
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>
-    <AndroidResource Include="Resources\drawable-xhdpi\play_button.png">
+    <AndroidResource Include="Resources\drawable-hdpi\playback_controls_time_knob.png">
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>
-    <AndroidResource Include="Resources\drawable-xhdpi\previous.png">
+    <AndroidResource Include="Resources\drawable-hdpi\powered_by_baseflow_logo.png">
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>
-    <AndroidResource Include="Resources\drawable-xhdpi\skip_backwards.png">
+    <AndroidResource Include="Resources\drawable-hdpi\splash_bg.png">
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>
-    <AndroidResource Include="Resources\drawable-xhdpi\skip_forward.png">
+    <AndroidResource Include="Resources\drawable-xhdpi\playback_controls_next.png">
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>
-    <AndroidResource Include="Resources\drawable-xhdpi\time_knob.png">
+    <AndroidResource Include="Resources\drawable-xhdpi\playback_controls_pause_button.png">
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>
-    <AndroidResource Include="Resources\drawable-xxhdpi\next.png">
+    <AndroidResource Include="Resources\drawable-xhdpi\playback_controls_play_button.png">
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>
-    <AndroidResource Include="Resources\drawable-xxhdpi\play_button.png">
+    <AndroidResource Include="Resources\drawable-xhdpi\playback_controls_previous.png">
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>
-    <AndroidResource Include="Resources\drawable-xxhdpi\previous.png">
+    <AndroidResource Include="Resources\drawable-xhdpi\playback_controls_repeat.png">
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>
-    <AndroidResource Include="Resources\drawable-xxhdpi\skip_backwards.png">
+    <AndroidResource Include="Resources\drawable-xhdpi\playback_controls_skip_backwards.png">
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>
-    <AndroidResource Include="Resources\drawable-xxhdpi\skip_forward.png">
+    <AndroidResource Include="Resources\drawable-xhdpi\playback_controls_skip_forward.png">
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>
-    <AndroidResource Include="Resources\drawable-xxhdpi\time_knob.png">
+    <AndroidResource Include="Resources\drawable-xhdpi\playback_controls_time_knob.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-xxhdpi\playback_controls_next.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-xxhdpi\playback_controls_pause_button.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-xxhdpi\playback_controls_play_button.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-xxhdpi\playback_controls_previous.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-xxhdpi\playback_controls_repeat.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-xxhdpi\playback_controls_skip_backwards.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-xxhdpi\playback_controls_skip_forward.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-xxhdpi\playback_controls_time_knob.png">
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>

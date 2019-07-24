@@ -23,27 +23,39 @@
         VerticalOptions="FillAndExpand"
         mvx:Bi.nd="Source Source" />  
 
-        <StackLayout
+       <StackLayout
             HorizontalOptions="FillAndExpand"
-            VerticalOptions="FillAndExpand"
-            BackgroundColor="Transparent">
+            VerticalOptions="FillAndExpand">
+            
 
             <StackLayout
                 HorizontalOptions="Center"
                 VerticalOptions="StartAndExpand">
 
+
                 <Label Text="Stranger Things" 
                    HorizontalOptions="Center"
                    VerticalOptions="StartAndExpand"
                    BackgroundColor="Transparent"
-                   TextColor="White"/>
+                   TextColor="White">
+                    <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+                    Command="{Binding OnTapCommand}"/>
+                    </Label.GestureRecognizers>
+                    </Label>
+
 
                 <Label 
                     Text="Season 3, Episode 1"
                     HorizontalOptions="Center" 
                     VerticalOptions="StartAndExpand"
-                    TextColor="White"/>
-
+                    TextColor="White">
+                    <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+                    Command="{Binding OnTapCommand}"/>
+                    </Label.GestureRecognizers>
+                    </Label>
+                
             </StackLayout>
 
             <StackLayout
@@ -55,37 +67,72 @@
                 Spacing="15">
                      
                 <ImageButton
-                    Source="previous.png"
+                    Source="playback_controls_previous.png"
                     mvx:Bi.nd="Command PreviousCommand"
                     HorizontalOptions="Center"
                     VerticalOptions="CenterAndExpand"
-                    BackgroundColor="Transparent"/>
+                    BackgroundColor="Transparent">
+                    <ImageButton.GestureRecognizers>
+                    <TapGestureRecognizer
+                    Command="{Binding OnTapCommand}"/>
+                    </ImageButton.GestureRecognizers>
+                    </ImageButton>
 
                 <ImageButton
-                    Source="skip_backwards.png"
+                    Source="playback_controls_skip_backwards.png"
                     mvx:Bi.nd="Command SkipBackwardsCommand"
                     HorizontalOptions="Center"
-                    VerticalOptions="CenterAndExpand"/>
+                    VerticalOptions="CenterAndExpand"
+                    BackgroundColor="Transparent">
+                    <ImageButton.GestureRecognizers>
+                    <TapGestureRecognizer
+                    Command="{Binding OnTapCommand}"/>
+                    </ImageButton.GestureRecognizers>
+                    </ImageButton>
 
                 <ImageButton
-                    Source="play_button.png"
+                    Source="playback_controls_play_button.png"
                     mvx:Bi.nd="Command PlayCommand"
                     HorizontalOptions="Center"
-                    VerticalOptions="CenterAndExpand"/>
+                    VerticalOptions="CenterAndExpand"
+                    BackgroundColor="Transparent">
+                    <ImageButton.GestureRecognizers>
+                    <TapGestureRecognizer
+                    Command="{Binding OnTapCommand}"/>
+                    </ImageButton.GestureRecognizers>
+                    </ImageButton>
 
                 <ImageButton
-                    Source="skip_forward.png"
+                    Source="playback_controls_skip_forward.png"
                     mvx:Bi.nd="Command SkipForwardCommand"
                     HorizontalOptions="Center"
-                    VerticalOptions="CenterAndExpand" />
+                    VerticalOptions="CenterAndExpand"
+                    BackgroundColor="Transparent">
+                    <ImageButton.GestureRecognizers>
+                    <TapGestureRecognizer
+                    Command="{Binding OnTapCommand}"/>
+                    </ImageButton.GestureRecognizers>
+                    </ImageButton>
 
                 <ImageButton
-                    Source="next.png"
+                    Source="playback_controls_next.png"
                     mvx:Bi.nd="Command NextCommand"
                     HorizontalOptions="Center"
-                    VerticalOptions="CenterAndExpand" />
+                    VerticalOptions="CenterAndExpand"
+                    BackgroundColor="Transparent">
+                    <ImageButton.GestureRecognizers>
+                    <TapGestureRecognizer
+                    Command="{Binding OnTapCommand}"/>
+                    </ImageButton.GestureRecognizers>
+                    </ImageButton>
             
             </StackLayout>
+
+           <ProgressBar
+               HorizontalOptions="End"
+                VerticalOptions="CenterAndExpand"
+                mvx:Bi.nd="Visibility Visibility(ShowProgress)"/>
+
 
         </StackLayout>
     </Grid>  

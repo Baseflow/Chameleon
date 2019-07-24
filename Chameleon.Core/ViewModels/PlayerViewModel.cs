@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Diagnostics;
 using System.Text;
+using System.Threading.Tasks;
 using MediaManager;
 using MediaManager.Media;
 using MvvmCross.Commands;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
+using Xamarin.Forms;
 
 namespace Chameleon.Core.ViewModels
 {
@@ -16,9 +20,17 @@ namespace Chameleon.Core.ViewModels
         }
 
         private IMediaItem _source;
-        public IMediaItem Source {
+        public IMediaItem Source
+        {
             get => _source;
             set => SetProperty(ref _source, value);
+        }
+
+        private bool _showProgress;
+        public bool ShowProgress
+        {
+            get => _showProgress;
+            set => SetProperty(ref _showProgress, value);
         }
 
         private IMvxAsyncCommand _previousCommand;
@@ -28,7 +40,7 @@ namespace Chameleon.Core.ViewModels
         public IMvxAsyncCommand SkipBackwardsCommand => _skipBackwardsCommand ?? (_skipBackwardsCommand = new MvxAsyncCommand(() => CrossMediaManager.Current.StepBackward()));
 
         private IMvxAsyncCommand _playCommand;
-        public IMvxAsyncCommand PlayCommand => _playCommand ?? (_playCommand = new MvxAsyncCommand(() => CrossMediaManager.Current.PlayPause())); 
+        public IMvxAsyncCommand PlayCommand => _playCommand ?? (_playCommand = new MvxAsyncCommand(() => CrossMediaManager.Current.PlayPause()));
 
         private IMvxAsyncCommand _skipForwardCommand;
         public IMvxAsyncCommand SkipForwardCommand => _skipForwardCommand ?? (_skipForwardCommand = new MvxAsyncCommand(() => CrossMediaManager.Current.StepForward()));
@@ -41,5 +53,20 @@ namespace Chameleon.Core.ViewModels
         {
             Source = parameter;
         }
+        
+        private IMvxAsyncCommand _onTapCommand;
+
+        public MvxAsyncCommand OnTapCommand
+        {
+            get {
+                return (MvvmCross.Commands.MvxAsyncCommand)_onTapCommand;
+            }
+        }
+
+        void OnTapped(object s)
+        {
+            Debug.WriteLine("parameter: " + s);
+        }
+
     }
 }

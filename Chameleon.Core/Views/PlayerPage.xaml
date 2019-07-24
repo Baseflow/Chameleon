@@ -17,10 +17,10 @@
         ColumnSpacing="0"
         RowSpacing="0">
         <Grid.GestureRecognizers>
-            <TapGestureRecognizer Command="{Binding ControlsCommand}" />
+        <TapGestureRecognizer Command="{Binding ControlsCommand}" />
         </Grid.GestureRecognizers>
+          
     <mm:VideoView
-        ShowControls="False"
         HorizontalOptions="FillAndExpand"
         VerticalOptions="FillAndExpand"
         mvx:Bi.nd="Source Source" />  
@@ -29,25 +29,26 @@
             HorizontalOptions="FillAndExpand"
             VerticalOptions="FillAndExpand"
             IsVisible="{Binding ShowControls}">
-
+            
             <StackLayout
                 HorizontalOptions="Center"
                 VerticalOptions="StartAndExpand">
+
 
                 <Label Text="{Binding Source.DisplayTitle}" 
                    HorizontalOptions="Center"
                    VerticalOptions="StartAndExpand"
                    BackgroundColor="Transparent"
                    TextColor="White">
-                    </Label>
-
+                   </Label>
+                   
                 <Label 
                     Text="{Binding Source.DisplaySubtitle}"
                     HorizontalOptions="Center" 
                     VerticalOptions="StartAndExpand"
                     TextColor="White">
                     </Label>
-                
+                                 
             </StackLayout>
 
             <StackLayout
@@ -96,12 +97,12 @@
                     HorizontalOptions="Center"
                     VerticalOptions="CenterAndExpand"
                     BackgroundColor="Transparent">
-                    </ImageButton>
+                </ImageButton>
             
             </StackLayout>
 
            <ProgressBar
-               HorizontalOptions="FillAndExpand"
+                HorizontalOptions="FillAndExpand"
                 VerticalOptions="Center"
                 mvx:Bi.nd="Progress Position; Duration Duration" />
 

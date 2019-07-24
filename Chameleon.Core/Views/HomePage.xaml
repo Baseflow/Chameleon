@@ -9,14 +9,15 @@
     xmlns:viewModels="clr-namespace:Chameleon.Core.ViewModels;assembly=Chameleon.Core" 
     mc:Ignorable="d"
     x:TypeArguments="viewModels:HomeViewModel"
-    x:Class="Chameleon.Core.Views.HomePage">
-
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Chameleon" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-        <Button mvx:La.ng="Text Player" mvx:Bi.nd="Command PlayerCommand" />
-    </StackLayout>
-
+    x:Class="Chameleon.Core.Views.HomePage"
+    BackgroundColor="{StaticResource backgroundColor}"
+    Padding="24"
+    Title="Home" >
+    
+        <StackLayout>
+            <!-- Place new controls here -->
+            <Button mvx:La.ng="Text PlayDevice" Style="{StaticResource primaryButton}"/>
+            <Button mvx:La.ng="Text OpenUrl" Style="{StaticResource primaryButton}"/>
+            <Button mvx:La.ng="Text Player" mvx:Bi.nd="Command PlayerCommand" />
+        </StackLayout>
 </core:MvxContentPage>

@@ -8,13 +8,17 @@
         <styles:Resources.Colors />
     </ResourceDictionary.MergedDictionaries>
     
-    <Style TargetType="Button" x:Key="primaryButton">
-        <Setter Property="TextColor" Value="White" />
-        <Setter Property="BackgroundColor" Value="Transparent" />
+    <Style TargetType="Button" x:Key="PrimaryButton">
+        <Setter Property="TextColor" Value="White"/>
+        <Setter Property="BackgroundColor" Value="Transparent"/>
         <Setter Property="BorderColor" Value="#252525"/>
-        <Setter Property="BorderRadius" Value="25" />
+        <Setter Property="BorderRadius" Value="25"/>
         <Setter Property="BorderWidth" Value="1"/>
         <Setter Property="HeightRequest" Value="50"/>
+    </Style>
+    
+    <Style TargetType="ContentPage" x:Key="PrimaryContentPage">
+        <Setter Property="Padding" Value="24"/>
     </Style>
 
     <Style TargetType="{x:Type TabbedPage}" ApplyToDerivedTypes="True">

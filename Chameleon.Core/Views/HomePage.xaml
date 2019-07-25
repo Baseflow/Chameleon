@@ -10,14 +10,13 @@
     mc:Ignorable="d"
     x:TypeArguments="viewModels:HomeViewModel"
     x:Class="Chameleon.Core.Views.HomePage"
-    BackgroundColor="{StaticResource backgroundColor}"
     Padding="24"
     mvx:La.ng="Title Title" >
     
         <StackLayout>
             <!-- Place new controls here -->
-            <Button mvx:La.ng="Text PlayDevice" Style="{StaticResource primaryButton}"/>
+            <Button mvx:La.ng="Text PlayDevice" mvx:Bi.nd="Command OpenFileCommand" Style="{StaticResource primaryButton}"/>
             <Button mvx:La.ng="Text OpenUrl" mvx:Bi.nd="Command OpenUrlCommand" Style="{StaticResource primaryButton}"/>
-            <Button mvx:La.ng="Text Player" mvx:Bi.nd="Command PlayerCommand" />
+            <Button mvx:La.ng="Text Player" mvx:Bi.nd="Command PlayerCommand" Style="{StaticResource primaryButton}" />
         </StackLayout>
 </core:MvxContentPage>

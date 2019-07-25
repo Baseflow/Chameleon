@@ -32,8 +32,10 @@ namespace Chameleon.Core.ViewModels
         private async Task OpenUrl()
         {
             var result = await _userDialogs.PromptAsync("Enter url", inputType: InputType.Url);
+
             //TODO: Check if the url is valid
-            await NavigationService.Navigate<PlayerViewModel, IMediaItem>(new MediaItem(result.Value));
+            if (!string.IsNullOrWhiteSpace(result.Value))
+                await NavigationService.Navigate<PlayerViewModel, IMediaItem>(new MediaItem(result.Value));
         }
 
         private async Task OpenFile()

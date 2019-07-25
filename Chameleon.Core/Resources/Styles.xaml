@@ -2,10 +2,10 @@
 <ResourceDictionary 
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:Chameleon.Core;assembly=Chameleon.Core"
+    xmlns:styles="clr-namespace:Chameleon.Core;assembly=Chameleon.Core"
     x:Class="Chameleon.Core.Resources.Styles" >
     <ResourceDictionary.MergedDictionaries>
-        <local:Resources.Colors />
+        <styles:Resources.Colors />
     </ResourceDictionary.MergedDictionaries>
     
     <Style TargetType="Button" x:Key="primaryButton">
@@ -16,4 +16,21 @@
         <Setter Property="BorderWidth" Value="1"/>
         <Setter Property="HeightRequest" Value="50"/>
     </Style>
+
+    <Style TargetType="{x:Type TabbedPage}" ApplyToDerivedTypes="True">
+        <Setter Property="BarBackgroundColor" Value="{StaticResource CharcoalGrey}" />
+        <Setter Property="BarTextColor" Value="{StaticResource White}"/>
+    </Style>
+
+    <Style TargetType="{x:Type NavigationPage}" ApplyToDerivedTypes="True">
+        <Setter Property="BarBackgroundColor" Value="{StaticResource CharcoalGrey}" />
+        <Setter Property="BarTextColor" Value="{StaticResource White}"/>
+    </Style>
+
+    <Style TargetType="{x:Type ContentPage}"
+               ApplyToDerivedTypes="True">
+            <Setter Property="BackgroundColor"
+                    Value="{StaticResource BackgroundColor}" />
+        </Style>
+
 </ResourceDictionary>

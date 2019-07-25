@@ -10,7 +10,6 @@
     mc:Ignorable="d"
     x:TypeArguments="viewModels:BrowseViewModel"
     x:Class="Chameleon.Core.Views.BrowsePage"
-    BackgroundColor="{StaticResource backgroundColor}"
     Padding="24"
     mvx:La.ng="Title Title" >
     

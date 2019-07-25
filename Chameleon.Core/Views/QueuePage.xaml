@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<core:MvxTabbedPage
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<core:MvxContentPage
     xmlns:core="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms" 
     xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
     xmlns="http://xamarin.com/schemas/2014/forms"
@@ -7,14 +7,9 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModels="clr-namespace:Chameleon.Core.ViewModels;assembly=Chameleon.Core"
-    xmlns:local="clr-namespace:Chameleon.Core;assembly=Chameleon.Core"
+    xmlns:mm="clr-namespace:MediaManager.Forms;assembly=MediaManager.Forms"
     mc:Ignorable="d"
-    x:TypeArguments="viewModels:RootViewModel"
-    x:Class="Chameleon.Core.Views.RootPage"
-    IconImageSource="chameleon_logo.png"
-    xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
-    android:TabbedPage.ToolbarPlacement="Bottom" >
+    x:TypeArguments="viewModels:QueueViewModel"
+    x:Class="Chameleon.Core.Views.QueuePage">
     
-    <local:Views.HomePage />
-    <local:Views.BrowsePage />
-</core:MvxTabbedPage>
+</core:MvxContentPage>

@@ -17,7 +17,7 @@ namespace Chameleon.Core.ViewModels
     {
         public PlayerViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IMediaManager mediaManager) : base(logProvider, navigationService)
         {
-            MediaManager = mediaManager;
+            MediaManager = mediaManager ?? throw new ArgumentNullException(nameof(mediaManager));
             MediaManager.PositionChanged += MediaManager_PositionChanged;
         }
 
@@ -68,7 +68,9 @@ namespace Chameleon.Core.ViewModels
         private IMvxCommand _controlsCommand;
         public IMvxCommand ControlsCommand => _controlsCommand ?? (_controlsCommand = new MvxCommand(ShowHideControls));
 
-        
+        private IMvxAsyncCommand _queueCommand;
+        public IMvxAsyncCommand QueueCommand => _queueCommand ?? (_queueCommand = new MvxAsyncCommand(
+            () => NavigationService.Navigate<QueueViewModel>()));
 
         public override void Prepare(IMediaItem parameter)
         {

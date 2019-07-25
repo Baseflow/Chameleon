@@ -3,14 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:local="clr-namespace:Chameleon.Core;assembly=Chameleon.Core"
+             xmlns:styles="clr-namespace:Chameleon.Core;assembly=Chameleon.Core"
              mc:Ignorable="d"
              x:Class="Chameleon.Core.FormsApp">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <local:Resources.Styles />
-                <local:Resources.Colors />
+                <styles:Resources.Styles />
+                <styles:Resources.Colors />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

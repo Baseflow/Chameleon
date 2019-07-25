@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<core:MvxContentPage
+    xmlns:core="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms" 
+    xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModels="clr-namespace:Chameleon.Core.ViewModels;assembly=Chameleon.Core"
+    xmlns:mm="clr-namespace:MediaManager.Forms;assembly=MediaManager.Forms"
+    xmlns:templates="clr-namespace:Chameleon.Core.Templates;assembly=Chameleon.Core"
+    mc:Ignorable="d"
+    x:TypeArguments="viewModels:PlaylistViewModel"
+    x:Class="Chameleon.Core.Views.PlaylistPage">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <SearchBar mvx:La.ng="Placeholder SearchBar" Text="{mvx:MvxBind SearchText}">
+            </SearchBar>
+            <CollectionView x:Name="MyCollectionView" ItemsSource="{mvx:MvxBind MediaItems}" SelectionMode="Single" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" SelectionChangedCommand="{Binding PlayCommand}" SelectionChangedCommandParameter="{Binding Source={x:Reference MyCollectionView}, Path=SelectedItem}" VerticalOptions="FillAndExpand">
+                <CollectionView.EmptyView>
+                    <StackLayout>
+                        <ActivityIndicator Color="DimGray" IsRunning="True" HeightRequest="50" />
+                    </StackLayout>
+                </CollectionView.EmptyView>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <templates:MediaItemTemplate/>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</core:MvxContentPage>

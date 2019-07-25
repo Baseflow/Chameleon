@@ -25,6 +25,7 @@
     <PackageReference Include="Xamarin.Forms" Version="4.1.0.581479" />
     <PackageReference Include="Xamarin.Essentials" Version="1.2.0" />
     <PackageReference Include="Acr.UserDialogs" Version="7.0.4" />
+    <PackageReference Include="MonkeyCache.LiteDB" Version="1.3.0" />
   </ItemGroup>
 
   <ItemGroup>

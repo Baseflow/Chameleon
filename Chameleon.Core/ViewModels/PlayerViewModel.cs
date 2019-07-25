@@ -17,7 +17,7 @@ namespace Chameleon.Core.ViewModels
     {
         public PlayerViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IMediaManager mediaManager) : base(logProvider, navigationService)
         {
-            MediaManager = mediaManager;
+            MediaManager = mediaManager ?? throw new ArgumentNullException(nameof(mediaManager));
             MediaManager.PositionChanged += MediaManager_PositionChanged;
         }
 

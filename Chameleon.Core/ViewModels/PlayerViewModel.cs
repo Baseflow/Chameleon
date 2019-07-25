@@ -70,8 +70,11 @@ namespace Chameleon.Core.ViewModels
         private IMvxAsyncCommand _skipBackwardsCommand;
         public IMvxAsyncCommand SkipBackwardsCommand => _skipBackwardsCommand ?? (_skipBackwardsCommand = new MvxAsyncCommand(() => MediaManager.StepBackward()));
 
-        private IMvxAsyncCommand _playPauseCommand;
-        public IMvxAsyncCommand PlayPauseCommand => _playPauseCommand ?? (_playPauseCommand = new MvxAsyncCommand(() => MediaManager.PlayPause()));
+        private IMvxAsyncCommand _playpauseCommand;
+        public IMvxAsyncCommand PlayPauseCommand => _playpauseCommand ?? (_playpauseCommand = new MvxAsyncCommand(() => MediaManager.PlayPause()));
+
+        //private IMvxAsyncCommand _pauseCommand;
+        //public IMvxAsyncCommand PauseCommand => _pauseCommand ?? (_pauseCommand = new MvxAsyncCommand(() => MediaManager.Pause()));
 
         private IMvxAsyncCommand _skipForwardCommand;
         public IMvxAsyncCommand SkipForwardCommand => _skipForwardCommand ?? (_skipForwardCommand = new MvxAsyncCommand(() => MediaManager.StepForward()));
@@ -81,6 +84,9 @@ namespace Chameleon.Core.ViewModels
 
         private IMvxCommand _controlsCommand;
         public IMvxCommand ControlsCommand => _controlsCommand ?? (_controlsCommand = new MvxCommand(ShowHideControls));
+
+        private IMvxCommand _playingPausingCommand;
+        public IMvxCommand PlayingPausingCommand => _playingPausingCommand ?? (_playingPausingCommand = new MvxCommand(PlayingPausing));
 
         private IMvxAsyncCommand _backCommand;
         public IMvxAsyncCommand BackCommand => _backCommand ?? (_backCommand = new MvxAsyncCommand(
@@ -106,23 +112,27 @@ namespace Chameleon.Core.ViewModels
         }
 
 
-        bool isPlaying = false;
-
-      
-        private void PlayingPausing(View view)
+        private void PlayingPausing()
         {
-
             PlayPause = !PlayPause;
-            //if (isPlaying)
-            //{
-            //    pause();
-            //}
-            //else
-            //{
-            //    play();
-            //}
-            //isPlaying = !isPlaying;
         }
+
+
+        //bool isPlaying = true;
+              
+        //public void PlayingPausing()
+        //{
+
+        //    if (isPlaying)
+        //    {
+        //        MediaManager.Play();
+        //    }
+        //    else
+        //    {
+        //        MediaManager.Pause();
+        //    }
+        //    //isPlaying = !isPlaying;
+        
   
     }
 }

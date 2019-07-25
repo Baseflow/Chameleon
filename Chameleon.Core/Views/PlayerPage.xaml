@@ -28,7 +28,7 @@
        <StackLayout
             HorizontalOptions="FillAndExpand"
             VerticalOptions="FillAndExpand"
-            IsVisible="{Binding ShowControls}">
+            >
 
             <StackLayout
                 HorizontalOptions="End"
@@ -86,22 +86,28 @@
                     HorizontalOptions="Center"
                     VerticalOptions="CenterAndExpand"
                     BackgroundColor="Transparent"/>
-                
-                <ImageButton
-                    Source="playback_controls_play_button"
-                    mvx:Bi.nd="Command PlayPauseCommand"
-                    HorizontalOptions="Center"
-                    VerticalOptions="CenterAndExpand"
-                    BackgroundColor="Transparent"
-                    IsVisible="{Binding PlayPause}"/>
 
-                 <ImageButton
-                    Source="playback_controls_pause_button"
-                    mvx:Bi.nd="Command PlayPauseCommand"
-                    HorizontalOptions="Center"
+                <RelativeLayout
                     VerticalOptions="CenterAndExpand"
-                    BackgroundColor="Transparent"
-                    IsVisible="{Binding PlayPause}"/>
+                    HorizontalOptions="CenterAndExpand">
+
+                    <ImageButton
+                        Source="playback_controls_play_button"
+                        mvx:Bi.nd="Command PlayPauseCommand"
+                        HorizontalOptions="Center"
+                        VerticalOptions="CenterAndExpand"
+                        BackgroundColor="Transparent"
+                        IsVisible="{Binding PlayingPausing}"/>
+
+                    <ImageButton
+                        Source="playback_controls_pause_button"
+                        mvx:Bi.nd="Command PlayPauseCommand"
+                        HorizontalOptions="Center"
+                        VerticalOptions="CenterAndExpand"
+                        BackgroundColor="Transparent"
+                        IsVisible="{Binding PlayingPausing}"/>
+
+                </RelativeLayout>         
                 
                 <ImageButton
                     Source="playback_controls_skip_forward"
@@ -137,7 +143,6 @@
                    VerticalOptions="End"
                    BackgroundColor="Transparent"
                    TextColor="White"/>
-
 
             </StackLayout>    
         </StackLayout>

@@ -17,10 +17,10 @@
         ColumnSpacing="0"
         RowSpacing="0">
         <Grid.GestureRecognizers>
-            <TapGestureRecognizer Command="{Binding ControlsCommand}" />
+        <TapGestureRecognizer Command="{Binding ControlsCommand}" />
         </Grid.GestureRecognizers>
+          
     <mm:VideoView
-        ShowControls="False"
         HorizontalOptions="FillAndExpand"
         VerticalOptions="FillAndExpand"
         mvx:Bi.nd="Source Source" />  
@@ -31,23 +31,38 @@
             IsVisible="{Binding ShowControls}">
 
             <StackLayout
+                HorizontalOptions="End"
+                VerticalOptions="Start"
+                Padding="20">
+
+                 <ImageButton
+                    Source="icon_close"
+                    mvx:Bi.nd="Command BackCommand"
+                    HorizontalOptions="End"
+                    VerticalOptions="Start"
+                    BackgroundColor="Transparent"/>  
+            </StackLayout>
+            
+            <StackLayout
                 HorizontalOptions="Center"
-                VerticalOptions="StartAndExpand">
+                VerticalOptions="StartAndExpand"
+                Padding="20">
+
 
                 <Label Text="{Binding Source.DisplayTitle}" 
                    HorizontalOptions="Center"
                    VerticalOptions="StartAndExpand"
                    BackgroundColor="Transparent"
                    TextColor="White">
-                    </Label>
-
+                   </Label>
+                   
                 <Label 
                     Text="{Binding Source.DisplaySubtitle}"
                     HorizontalOptions="Center" 
                     VerticalOptions="StartAndExpand"
                     TextColor="White">
                     </Label>
-                
+                               
             </StackLayout>
 
             <StackLayout
@@ -59,52 +74,77 @@
                 Spacing="15">
                      
                 <ImageButton
-                    Source="playback_controls_previous.png"
+                    Source="playback_controls_previous"
                     mvx:Bi.nd="Command PreviousCommand"
                     HorizontalOptions="Center"
                     VerticalOptions="CenterAndExpand"
-                    BackgroundColor="Transparent">
-                    </ImageButton>
+                    BackgroundColor="Transparent"/>
+
 
                 <ImageButton
-                    Source="playback_controls_skip_backwards.png"
+                    Source="playback_controls_skip_backwards"
                     mvx:Bi.nd="Command SkipBackwardsCommand"
                     HorizontalOptions="Center"
                     VerticalOptions="CenterAndExpand"
-                    BackgroundColor="Transparent">
-                    </ImageButton>
+                    BackgroundColor="Transparent"/>
+
 
                 <ImageButton
-                    Source="playback_controls_play_button.png"
-                    mvx:Bi.nd="Command PlayCommand"
+                    Source="playback_controls_play_button"
+                    mvx:Bi.nd="Command PlayPauseCommand"
                     HorizontalOptions="Center"
                     VerticalOptions="CenterAndExpand"
-                    BackgroundColor="Transparent">
-                    </ImageButton>
+                    BackgroundColor="Transparent"
+                    IsVisible="{Binding PlayPause}"/>
+
+                 <ImageButton
+                    Source="playback_controls_pause_button"
+                    mvx:Bi.nd="Command PlayPauseCommand"
+                    HorizontalOptions="Center"
+                    VerticalOptions="CenterAndExpand"
+                    BackgroundColor="Transparent"
+                    IsVisible="{Binding PlayPause}"/>
+
 
                 <ImageButton
-                    Source="playback_controls_skip_forward.png"
+                    Source="playback_controls_skip_forward"
                     mvx:Bi.nd="Command SkipForwardCommand"
                     HorizontalOptions="Center"
                     VerticalOptions="CenterAndExpand"
-                    BackgroundColor="Transparent">
-                    </ImageButton>
+                    BackgroundColor="Transparent"/>
+
 
                 <ImageButton
-                    Source="playback_controls_next.png"
+                    Source="playback_controls_next"
                     mvx:Bi.nd="Command NextCommand"
                     HorizontalOptions="Center"
                     VerticalOptions="CenterAndExpand"
-                    BackgroundColor="Transparent">
-                    </ImageButton>
-            
+                    BackgroundColor="Transparent"/>
+
+
             </StackLayout>
 
-           <ProgressBar
-               HorizontalOptions="FillAndExpand"
-                VerticalOptions="Center"
-                mvx:Bi.nd="Progress Position; Duration Duration" />
+            <StackLayout
+                Orientation="Vertical"
+                BackgroundColor="Transparent"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="End"
+                Padding="30"
+                Spacing="20">
 
+               <ProgressBar
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center"
+                    mvx:Bi.nd="Progress Position; Duration Duration" />
+
+               <Label Text="{Binding Source.Duration}" 
+                   HorizontalOptions="End"
+                   VerticalOptions="End"
+                   BackgroundColor="Transparent"
+                   TextColor="White">
+                   </Label>
+
+            </StackLayout>    
         </StackLayout>
     </Grid>  
 </core:MvxContentPage>

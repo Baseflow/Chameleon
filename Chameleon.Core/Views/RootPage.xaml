@@ -17,4 +17,5 @@
     
     <local:Views.HomePage />
     <local:Views.BrowsePage />
+    <local:Views.MePage />
 </core:MvxTabbedPage>

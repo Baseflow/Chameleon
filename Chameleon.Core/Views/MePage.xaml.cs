@@ -14,10 +14,10 @@ namespace Chameleon.Core.Views
     // Learn more about making custom code visible in the Xamarin.Forms previewer
     // by visiting https://aka.ms/xamarinforms-previewer
     [DesignTimeVisible(false)]
-    [MvxTabbedPagePresentation(WrapInNavigationPage = true, Icon = "tab_bar_browse")]
-    public partial class BrowsePage : MvxContentPage<BrowseViewModel>
+    [MvxTabbedPagePresentation(WrapInNavigationPage = true, Icon = "tab_bar_settings")]
+    public partial class MePage : MvxContentPage<MeViewModel>
     {
-        public BrowsePage()
+        public MePage()
         {
             InitializeComponent();
         }

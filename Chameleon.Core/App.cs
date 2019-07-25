@@ -7,6 +7,8 @@ using Acr.UserDialogs;
 using Chameleon.Services.Services;
 using FFImageLoading.Config;
 using MediaManager;
+using MonkeyCache;
+using MonkeyCache.LiteDB;
 using MvvmCross;
 using MvvmCross.IoC;
 using MvvmCross.Localization;
@@ -19,8 +21,9 @@ namespace Chameleon.Core
     {
         public override void Initialize()
         {
-            // Register Connectivity
-            //Mvx.IoCProvider.RegisterSingleton<IConnectivity>(CrossConnectivity.Current);
+            Barrel.ApplicationId = "Chameleon";
+
+            Mvx.IoCProvider.RegisterSingleton<IBarrel>(Barrel.Current);
             Mvx.IoCProvider.RegisterSingleton<IUserDialogs>(UserDialogs.Instance);
             Mvx.IoCProvider.RegisterSingleton<IMediaManager>(CrossMediaManager.Current);
 

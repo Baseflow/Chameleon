@@ -24,6 +24,8 @@
     <Style TargetType="{x:Type TabbedPage}" ApplyToDerivedTypes="True">
         <Setter Property="BarBackgroundColor" Value="{StaticResource CharcoalGrey}" />
         <Setter Property="BarTextColor" Value="{StaticResource White}"/>
+        <Setter Property="SelectedTabColor" Value="{StaticResource White}"/>
+        <Setter Property="UnselectedTabColor" Value="{StaticResource Black}"/>
     </Style>
 
     <Style TargetType="{x:Type NavigationPage}" ApplyToDerivedTypes="True">

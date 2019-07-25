@@ -79,16 +79,14 @@
                     HorizontalOptions="Center"
                     VerticalOptions="CenterAndExpand"
                     BackgroundColor="Transparent"/>
-
-
+                
                 <ImageButton
                     Source="playback_controls_skip_backwards"
                     mvx:Bi.nd="Command SkipBackwardsCommand"
                     HorizontalOptions="Center"
                     VerticalOptions="CenterAndExpand"
                     BackgroundColor="Transparent"/>
-
-
+                
                 <ImageButton
                     Source="playback_controls_play_button"
                     mvx:Bi.nd="Command PlayPauseCommand"
@@ -104,24 +102,21 @@
                     VerticalOptions="CenterAndExpand"
                     BackgroundColor="Transparent"
                     IsVisible="{Binding PlayPause}"/>
-
-
+                
                 <ImageButton
                     Source="playback_controls_skip_forward"
                     mvx:Bi.nd="Command SkipForwardCommand"
                     HorizontalOptions="Center"
                     VerticalOptions="CenterAndExpand"
                     BackgroundColor="Transparent"/>
-
-
+                
                 <ImageButton
                     Source="playback_controls_next"
                     mvx:Bi.nd="Command NextCommand"
                     HorizontalOptions="Center"
                     VerticalOptions="CenterAndExpand"
                     BackgroundColor="Transparent"/>
-
-
+                
             </StackLayout>
 
             <StackLayout
@@ -141,8 +136,8 @@
                    HorizontalOptions="End"
                    VerticalOptions="End"
                    BackgroundColor="Transparent"
-                   TextColor="White">
-                   </Label>
+                   TextColor="White"/>
+
 
             </StackLayout>    
         </StackLayout>

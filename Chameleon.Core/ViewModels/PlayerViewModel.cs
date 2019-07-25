@@ -57,6 +57,13 @@ namespace Chameleon.Core.ViewModels
             set => SetProperty(ref _position, value);
         }
 
+        private bool _playPause;
+        public bool PlayPause
+        {
+            get => _playPause;
+            set => SetProperty(ref _playPause, value);
+        }
+
         private IMvxAsyncCommand _previousCommand;
         public IMvxAsyncCommand PreviousCommand => _previousCommand ?? (_previousCommand = new MvxAsyncCommand(() => MediaManager.PlayPrevious()));
 
@@ -74,6 +81,10 @@ namespace Chameleon.Core.ViewModels
 
         private IMvxCommand _controlsCommand;
         public IMvxCommand ControlsCommand => _controlsCommand ?? (_controlsCommand = new MvxCommand(ShowHideControls));
+
+        private IMvxAsyncCommand _backCommand;
+        public IMvxAsyncCommand BackCommand => _backCommand ?? (_backCommand = new MvxAsyncCommand(
+            () => NavigationService.Navigate<HomeViewModel>()));
 
         private IMvxAsyncCommand _queueCommand;
         public IMvxAsyncCommand QueueCommand => _queueCommand ?? (_queueCommand = new MvxAsyncCommand(
@@ -94,5 +105,24 @@ namespace Chameleon.Core.ViewModels
             ShowControls = !ShowControls;
         }
 
+
+        bool isPlaying = false;
+
+      
+        private void PlayingPausing(View view)
+        {
+
+            PlayPause = !PlayPause;
+            //if (isPlaying)
+            //{
+            //    pause();
+            //}
+            //else
+            //{
+            //    play();
+            //}
+            //isPlaying = !isPlaying;
+        }
+  
     }
 }

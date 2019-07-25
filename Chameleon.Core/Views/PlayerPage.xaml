@@ -28,7 +28,7 @@
        <StackLayout
             HorizontalOptions="FillAndExpand"
             VerticalOptions="FillAndExpand"
-            >
+            IsVisible="{Binding ShowControls}">
 
             <StackLayout
                 HorizontalOptions="End"

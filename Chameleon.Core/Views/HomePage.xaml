@@ -10,15 +10,11 @@
     mc:Ignorable="d"
     x:TypeArguments="viewModels:HomeViewModel"
     x:Class="Chameleon.Core.Views.HomePage"
-    Style="{StaticResource primaryContentPage}"
     Title="Home" >
     
     <StackLayout VerticalOptions="End">
-        <Button mvx:La.ng="Text PlayDevice" Style="{StaticResource primaryButton}"/>
-        <Button mvx:La.ng="Text OpenUrl" Style="{StaticResource primaryButton}"/>
-        <Button 
-            mvx:La.ng="Text Player" 
-            mvx:Bi.nd="Command PlayerCommand"
-            Style="{StaticResource primaryButton}" />
+        <Button mvx:La.ng="Text PlayDevice" mvx:Bi.nd="Command OpenFileCommand" Style="{StaticResource primaryButton}"/>
+        <Button mvx:La.ng="Text OpenUrl" mvx:Bi.nd="Command OpenUrlCommand" Style="{StaticResource primaryButton}"/>
+        <Button mvx:La.ng="Text Player" mvx:Bi.nd="Command PlayerCommand" Style="{StaticResource primaryButton}" />
     </StackLayout>
 </core:MvxContentPage>

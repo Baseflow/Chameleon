@@ -10,7 +10,6 @@
     xmlns:mm="clr-namespace:MediaManager.Forms;assembly=MediaManager.Forms"
     mc:Ignorable="d"
     x:TypeArguments="viewModels:PlaylistViewModel"
-    x:Class="Chameleon.Core.Views.PlaylistPage"
-    NavigationPage.HasNavigationBar="false">
+    x:Class="Chameleon.Core.Views.PlaylistPage">
     
 </core:MvxContentPage>

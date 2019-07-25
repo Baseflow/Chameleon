@@ -11,9 +11,6 @@
     mc:Ignorable="d"
     x:TypeArguments="viewModels:RootViewModel"
     x:Class="Chameleon.Core.Views.RootPage"
-    BarBackgroundColor="{StaticResource tabBarColor}"
-    BackgroundColor="{StaticResource backgroundColor}"
-    BarTextColor="White"
     IconImageSource="chameleon_logo.png"
     xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
     android:TabbedPage.ToolbarPlacement="Bottom" >

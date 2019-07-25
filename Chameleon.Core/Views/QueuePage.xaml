@@ -10,7 +10,6 @@
     xmlns:mm="clr-namespace:MediaManager.Forms;assembly=MediaManager.Forms"
     mc:Ignorable="d"
     x:TypeArguments="viewModels:QueueViewModel"
-    x:Class="Chameleon.Core.Views.QueuePage"
-    NavigationPage.HasNavigationBar="false">
+    x:Class="Chameleon.Core.Views.QueuePage">
     
 </core:MvxContentPage>

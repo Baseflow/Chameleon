@@ -13,7 +13,7 @@ using Xamarin.Forms;
 namespace Chameleon.Core.Views
 {
     [DesignTimeVisible(false)]
-    [MvxTabbedPagePresentation(TabbedPosition.Root)]
+    [MvxTabbedPagePresentation(TabbedPosition.Root, WrapInNavigationPage = true)]
     public partial class RootPage : MvxTabbedPage<RootViewModel>
     {
         public RootPage()

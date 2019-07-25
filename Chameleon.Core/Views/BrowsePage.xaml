@@ -8,16 +8,13 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModels="clr-namespace:Chameleon.Core.ViewModels;assembly=Chameleon.Core" 
     mc:Ignorable="d"
-    x:TypeArguments="viewModels:HomeViewModel"
-    x:Class="Chameleon.Core.Views.HomePage"
+    x:TypeArguments="viewModels:BrowseViewModel"
+    x:Class="Chameleon.Core.Views.BrowsePage"
     BackgroundColor="{StaticResource backgroundColor}"
     Padding="24"
     mvx:La.ng="Title Title" >
     
         <StackLayout>
-            <!-- Place new controls here -->
-            <Button mvx:La.ng="Text PlayDevice" Style="{StaticResource primaryButton}"/>
-            <Button mvx:La.ng="Text OpenUrl" mvx:Bi.nd="Command OpenUrlCommand" Style="{StaticResource primaryButton}"/>
             <Button mvx:La.ng="Text Player" mvx:Bi.nd="Command PlayerCommand" />
         </StackLayout>
 </core:MvxContentPage>

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using Acr.UserDialogs;
+using Chameleon.Services.Media;
+using Chameleon.Services.Services;
 using MediaManager;
 using MediaManager.Media;
 using MvvmCross.Commands;
@@ -16,22 +18,28 @@ namespace Chameleon.Core.ViewModels
     {
         private readonly IUserDialogs _userDialogs;
         private readonly IMediaManager _mediaManager;
+        private readonly IPlaylistService _playlistService;
 
-        public BrowseViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IUserDialogs userDialogs, IMediaManager mediaManager) : base(logProvider, navigationService)
+        public BrowseViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IUserDialogs userDialogs, IMediaManager mediaManager, IPlaylistService playlistService) : base(logProvider, navigationService)
         {
-            _userDialogs = userDialogs;
-            _mediaManager = mediaManager;
-            MediaItems.AddRange(_mediaManager.MediaQueue);
+            _userDialogs = userDialogs ?? throw new ArgumentNullException(nameof(userDialogs));
+            _mediaManager = mediaManager ?? throw new ArgumentNullException(nameof(mediaManager));
+            _playlistService = playlistService ?? throw new ArgumentNullException(nameof(playlistService));
         }
 
-        public MvxObservableCollection<IMediaItem> MediaItems { get; set; } = new MvxObservableCollection<IMediaItem>();
+        public MvxObservableCollection<IPlaylist> Playlists { get; set; } = new MvxObservableCollection<IPlaylist>();
 
-        private IMvxAsyncCommand<IMediaItem> _playCommand;
-        public IMvxAsyncCommand<IMediaItem> PlayCommand => _playCommand ?? (_playCommand = new MvxAsyncCommand<IMediaItem>(Play));
+        private IMvxAsyncCommand<IPlaylist> _openPlaylistCommand;
+        public IMvxAsyncCommand<IPlaylist> OpenPlaylistCommand => _openPlaylistCommand ?? (_openPlaylistCommand = new MvxAsyncCommand<IPlaylist>(OpenPlaylist));
 
-        private async Task Play(IMediaItem arg)
+        public override async Task Initialize()
         {
-            await NavigationService.Navigate<PlayerViewModel, IMediaItem>(arg);
+            Playlists.ReplaceWith(await _playlistService.GetPlaylists());
+        }
+
+        private async Task OpenPlaylist(IPlaylist arg)
+        {
+            await NavigationService.Navigate<PlaylistViewModel, IPlaylist>(arg);
         }
     }
 }

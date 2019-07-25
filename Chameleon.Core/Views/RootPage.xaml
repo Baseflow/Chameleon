@@ -16,4 +16,5 @@
     android:TabbedPage.ToolbarPlacement="Bottom" >
     
     <local:Views.HomePage />
+    <local:Views.BrowsePage />
 </core:MvxTabbedPage>

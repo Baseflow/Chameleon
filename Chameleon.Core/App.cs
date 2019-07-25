@@ -4,6 +4,7 @@ using System.IO;
 using System.Net.Http;
 using System.Text;
 using Acr.UserDialogs;
+using Chameleon.Services.Services;
 using FFImageLoading.Config;
 using MediaManager;
 using MvvmCross;
@@ -27,6 +28,13 @@ namespace Chameleon.Core
             var textProviderBuilder = new TextProviderBuilder();
             Mvx.IoCProvider.RegisterSingleton<IMvxTextProviderBuilder>(textProviderBuilder);
             Mvx.IoCProvider.RegisterSingleton<IMvxTextProvider>(textProviderBuilder.TextProvider);
+
+            Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IPlaylistService, PlaylistService>();
+
+            CreatableTypes()
+                .EndingWith("Service")
+                .AsInterfaces()
+                .RegisterAsLazySingleton();
 
             /*var language = Mvx.IoCProvider.Resolve<ILanguageService>()?.GetLanguage()?.TwoLetterISOLanguageName;
             var textProviderBuilder = ((TextProviderBuilder)Mvx.IoCProvider.GetSingleton<IMvxTextProviderBuilder>());

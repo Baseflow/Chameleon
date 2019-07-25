@@ -161,6 +161,30 @@
     <ImageAsset Include="Assets.xcassets\icon_close.imageset\icon_close.png" />
     <ImageAsset Include="Assets.xcassets\icon_close.imageset\icon_close%402x.png" />
     <ImageAsset Include="Assets.xcassets\icon_close.imageset\icon_close%403x.png" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_icon_home.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_icon_home.imageset\tab_bar_icon_home.png" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_icon_home.imageset\tab_bar_icon_home%402x.png" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_icon_home.imageset\tab_bar_icon_home%403x.png" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_browse.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_browse.imageset\tab_bar_browse.png" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_browse.imageset\tab_bar_browse%402x.png" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_browse.imageset\tab_bar_browse%403x.png" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_browse_active.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_browse_active.imageset\tab_bar_browse_active.png" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_browse_active.imageset\tab_bar_browse_active%402x.png" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_browse_active.imageset\tab_bar_browse_active%403x.png" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_settings.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_settings.imageset\tab_bar_settings.png" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_settings.imageset\tab_bar_settings%402x.png" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_settings.imageset\tab_bar_settings%403x.png" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_icon_home_active.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_icon_home_active.imageset\tab_bar_icon_home_active.png" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_icon_home_active.imageset\tab_bar_icon_home_active%402x.png" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_icon_home_active.imageset\tab_bar_icon_home_active%403x.png" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_settings_active.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_settings_active.imageset\tab_bar_settings_active.png" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_settings_active.imageset\tab_bar_settings_active%402x.png" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_settings_active.imageset\tab_bar_settings_active%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -233,6 +257,12 @@
     <Folder Include="Assets.xcassets\playback_controls_previous.imageset\" />
     <Folder Include="Assets.xcassets\playback_controls_pause_button.imageset\" />
     <Folder Include="Assets.xcassets\icon_close.imageset\" />
+    <Folder Include="Assets.xcassets\tab_bar_icon_home.imageset\" />
+    <Folder Include="Assets.xcassets\tab_bar_browse.imageset\" />
+    <Folder Include="Assets.xcassets\tab_bar_browse_active.imageset\" />
+    <Folder Include="Assets.xcassets\tab_bar_settings.imageset\" />
+    <Folder Include="Assets.xcassets\tab_bar_icon_home_active.imageset\" />
+    <Folder Include="Assets.xcassets\tab_bar_settings_active.imageset\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

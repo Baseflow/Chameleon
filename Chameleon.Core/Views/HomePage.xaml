@@ -11,7 +11,7 @@
     x:TypeArguments="viewModels:HomeViewModel"
     x:Class="Chameleon.Core.Views.HomePage"
     Style="{StaticResource PrimaryContentPage}"
-    Title="Home" >
+    mvx:La.ng="Title Title" >
     
     <StackLayout VerticalOptions="End">
         <Button mvx:La.ng="Text PlayDevice" mvx:Bi.nd="Command OpenFileCommand" Style="{StaticResource PrimaryButton}"/>

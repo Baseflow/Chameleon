@@ -68,7 +68,9 @@ namespace Chameleon.Core.ViewModels
         private IMvxCommand _controlsCommand;
         public IMvxCommand ControlsCommand => _controlsCommand ?? (_controlsCommand = new MvxCommand(ShowHideControls));
 
-        
+        private IMvxAsyncCommand _queueCommand;
+        public IMvxAsyncCommand QueueCommand => _queueCommand ?? (_queueCommand = new MvxAsyncCommand(
+            () => NavigationService.Navigate<QueueViewModel>()));
 
         public override void Prepare(IMediaItem parameter)
         {

@@ -28,8 +28,7 @@ namespace Chameleon.Core.Views
             base.OnAppearing();
             if (_firstTime)
             {
-                //ViewModel.ShowInitialViewModelsCommand.Execute();
-                ViewModel.ShowInitialViewModelsCommand.ExecuteAsync(null);
+                ViewModel.ShowInitialViewModelsCommand.ExecuteAsync();
                 _firstTime = false;
             }
         }

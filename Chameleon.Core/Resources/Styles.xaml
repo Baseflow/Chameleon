@@ -27,10 +27,8 @@
         <Setter Property="BarTextColor" Value="{StaticResource White}"/>
     </Style>
 
-    <Style TargetType="{x:Type ContentPage}"
-               ApplyToDerivedTypes="True">
-            <Setter Property="BackgroundColor"
-                    Value="{StaticResource BackgroundColor}" />
-        </Style>
+    <Style TargetType="{x:Type ContentPage}" ApplyToDerivedTypes="True">
+        <Setter Property="BackgroundColor" Value="{StaticResource BackgroundColor}" />
+    </Style>
 
 </ResourceDictionary>

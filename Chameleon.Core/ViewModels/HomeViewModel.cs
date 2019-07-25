@@ -16,7 +16,7 @@ namespace Chameleon.Core.ViewModels
 
         public HomeViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IUserDialogs userDialogs) : base(logProvider, navigationService)
         {
-            _userDialogs = userDialogs;
+            _userDialogs = userDialogs ?? throw new ArgumentNullException(nameof(userDialogs));
         }
 
         private IMvxAsyncCommand _playerCommand;

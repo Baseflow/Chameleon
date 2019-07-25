@@ -10,6 +10,7 @@ using MvvmCross.Forms.Platforms.Android.Views;
 using Chameleon.Core;
 using Chameleon.Droid;
 using MediaManager;
+using Xamarin.Forms;
 
 namespace Chameleon.Android
 {
@@ -23,6 +24,8 @@ namespace Chameleon.Android
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            Forms.SetFlags("CollectionView_Experimental");
+
             TabLayoutResource = Droid.Resource.Layout.Tabbar;
             ToolbarResource = Droid.Resource.Layout.Toolbar;
             SetTheme(Droid.Resource.Style.MainTheme);

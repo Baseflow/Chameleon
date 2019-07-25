@@ -50,11 +50,11 @@ namespace Chameleon.Core.ViewModels
             set => SetProperty(ref _position, value);
         }
 
-        private bool _playPause;
-        public bool PlayPause
+        private ImageSource _playPauseImage = ImageSource.FromFile("playback_controls_pause_button");
+        public ImageSource PlayPauseImage
         {
-            get => _playPause;
-            set => SetProperty(ref _playPause, value);
+            get => _playPauseImage;
+            set => SetProperty(ref _playPauseImage, value);
         }
 
         private IMvxAsyncCommand _previousCommand;
@@ -64,10 +64,7 @@ namespace Chameleon.Core.ViewModels
         public IMvxAsyncCommand SkipBackwardsCommand => _skipBackwardsCommand ?? (_skipBackwardsCommand = new MvxAsyncCommand(() => MediaManager.StepBackward()));
 
         private IMvxAsyncCommand _playpauseCommand;
-        public IMvxAsyncCommand PlayPauseCommand => _playpauseCommand ?? (_playpauseCommand = new MvxAsyncCommand(() => MediaManager.PlayPause()));
-
-        //private IMvxAsyncCommand _pauseCommand;
-        //public IMvxAsyncCommand PauseCommand => _pauseCommand ?? (_pauseCommand = new MvxAsyncCommand(() => MediaManager.Pause()));
+        public IMvxAsyncCommand PlayPauseCommand => _playpauseCommand ?? (_playpauseCommand = new MvxAsyncCommand(PlayPause));
 
         private IMvxAsyncCommand _skipForwardCommand;
         public IMvxAsyncCommand SkipForwardCommand => _skipForwardCommand ?? (_skipForwardCommand = new MvxAsyncCommand(() => MediaManager.StepForward()));
@@ -77,9 +74,6 @@ namespace Chameleon.Core.ViewModels
 
         private IMvxCommand _controlsCommand;
         public IMvxCommand ControlsCommand => _controlsCommand ?? (_controlsCommand = new MvxCommand(ShowHideControls));
-
-        private IMvxCommand _playingPausingCommand;
-        public IMvxCommand PlayingPausingCommand => _playingPausingCommand ?? (_playingPausingCommand = new MvxCommand(PlayingPausing));
 
         private IMvxAsyncCommand _queueCommand;
         public IMvxAsyncCommand QueueCommand => _queueCommand ?? (_queueCommand = new MvxAsyncCommand(
@@ -95,28 +89,14 @@ namespace Chameleon.Core.ViewModels
             ShowControls = !ShowControls;
         }
 
-
-        private void PlayingPausing()
+        private async Task PlayPause()
         {
-            PlayPause = !PlayPause;
+            await MediaManager.PlayPause();
+
+            if (MediaManager.IsPlaying())
+                PlayPauseImage = ImageSource.FromFile("playback_controls_play_button");
+            else
+                PlayPauseImage = ImageSource.FromFile("playback_controls_pause_button");
         }
-
-
-        //bool isPlaying = true;
-              
-        //public void PlayingPausing()
-        //{
-
-        //    if (isPlaying)
-        //    {
-        //        MediaManager.Play();
-        //    }
-        //    else
-        //    {
-        //        MediaManager.Pause();
-        //    }
-        //    //isPlaying = !isPlaying;
-        
-  
     }
 }

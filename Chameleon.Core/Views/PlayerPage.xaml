@@ -87,28 +87,12 @@
                     VerticalOptions="CenterAndExpand"
                     BackgroundColor="Transparent"/>
 
-                <RelativeLayout
+                <ImageButton
+                    Source="{Binding PlayPauseImage}"
+                    mvx:Bi.nd="Command PlayPauseCommand"
+                    HorizontalOptions="Center"
                     VerticalOptions="CenterAndExpand"
-                    HorizontalOptions="CenterAndExpand">
-
-                    <ImageButton
-                        Source="playback_controls_play_button"
-                        mvx:Bi.nd="Command PlayPauseCommand"
-                        HorizontalOptions="Center"
-                        VerticalOptions="CenterAndExpand"
-                        BackgroundColor="Transparent"
-                        IsVisible="{Binding PlayingPausing}"/>
-
-                    <ImageButton
-                        Source="playback_controls_pause_button"
-                        mvx:Bi.nd="Command PlayPauseCommand"
-                        HorizontalOptions="Center"
-                        VerticalOptions="CenterAndExpand"
-                        BackgroundColor="Transparent"
-                        IsVisible="{Binding PlayingPausing}"/>
-
-                </RelativeLayout>         
-                
+                    BackgroundColor="Transparent" />
                 <ImageButton
                     Source="playback_controls_skip_forward"
                     mvx:Bi.nd="Command SkipForwardCommand"

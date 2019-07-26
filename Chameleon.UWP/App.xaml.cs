@@ -19,6 +19,7 @@ using MvvmCross.Forms.Platforms.Uap.Core;
 using MvvmCross.Forms.Platforms.Uap.Views;
 using MvvmCross.Platforms.Uap.Core;
 using Chameleon.Core;
+using Xamarin.Forms;
 
 namespace Chameleon.UWP
 {
@@ -26,6 +27,7 @@ namespace Chameleon.UWP
     {
         public App()
         {
+            Forms.SetFlags("CollectionView_Experimental");
             InitializeComponent();
         }
     }

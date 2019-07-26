@@ -8,8 +8,61 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModels="clr-namespace:Chameleon.Core.ViewModels;assembly=Chameleon.Core"
     xmlns:mm="clr-namespace:MediaManager.Forms;assembly=MediaManager.Forms"
+    xmlns:templates="clr-namespace:Chameleon.Core.Templates;assembly=Chameleon.Core"
     mc:Ignorable="d"
     x:TypeArguments="viewModels:QueueViewModel"
+    Style="{StaticResource PrimaryContentPage}"
     x:Class="Chameleon.Core.Views.QueuePage">
-    
+
+    <NavigationPage.TitleView>
+        <Grid VerticalOptions="Center" Padding="30,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="28"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="28"/>
+            </Grid.ColumnDefinitions>
+            <Image
+                Source="chameleon_logo"
+                WidthRequest="41"
+                HeightRequest="34"
+                Grid.Column="1"/>
+            <ImageButton
+                Source="icon_close"
+                WidthRequest="16"
+                HeightRequest="16"
+                Grid.Column="2"
+                BackgroundColor="Transparent"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                mvx:Bi.nd="Command BackCommand" />
+        </Grid>
+    </NavigationPage.TitleView>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Label mvx:La.ng="Text Queue" FontFamily="FiraSans#600" FontSize="16" TextColor="#FF6C6E81" Margin="0,0,0,20"/>
+            <CollectionView
+                x:Name="MyCollectionView"
+                ItemsSource="{mvx:MvxBind MediaItems}"
+                SelectionMode="Single"
+                SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
+                SelectionChangedCommand="{Binding OpenPlaylistCommand}"
+                SelectionChangedCommandParameter="{Binding Source={x:Reference MyCollectionView}, Path=SelectedItem}"
+                VerticalOptions="FillAndExpand">
+                <CollectionView.EmptyView>
+                    <StackLayout>
+                        <ActivityIndicator Color="DimGray" IsRunning="True" HeightRequest="50" />
+                    </StackLayout>
+                </CollectionView.EmptyView>
+
+                <CollectionView.ItemTemplate>
+                    <templates:TrackItemTemplate/>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+ 
 </core:MvxContentPage>

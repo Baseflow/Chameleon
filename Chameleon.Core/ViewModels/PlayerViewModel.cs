@@ -13,7 +13,7 @@ using Xamarin.Forms;
 
 namespace Chameleon.Core.ViewModels
 {
-    public class PlayerViewModel : BaseViewModel<IMediaItem>
+    public class PlayerViewModel : BaseViewModel<string>
     {
         public PlayerViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IMediaManager mediaManager) : base(logProvider, navigationService)
         {
@@ -27,8 +27,8 @@ namespace Chameleon.Core.ViewModels
             Position = percentComplete;
         }
 
-        private IMediaItem _source;
-        public IMediaItem Source
+        private string _source;
+        public string Source
         {
             get => _source;
             set => SetProperty(ref _source, value);
@@ -79,7 +79,7 @@ namespace Chameleon.Core.ViewModels
         public IMvxAsyncCommand QueueCommand => _queueCommand ?? (_queueCommand = new MvxAsyncCommand(
             () => NavigationService.Navigate<QueueViewModel>()));
 
-        public override void Prepare(IMediaItem parameter)
+        public override void Prepare(string parameter)
         {
             Source = parameter;
         }

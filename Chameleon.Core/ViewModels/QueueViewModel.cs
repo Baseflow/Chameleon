@@ -31,7 +31,7 @@ namespace Chameleon.Core.ViewModels
 
         private async Task Play(IMediaItem arg)
         {
-            await NavigationService.Navigate<PlayerViewModel, IMediaItem>(arg);
+            await NavigationService.Navigate<PlayerViewModel, string>(arg.MediaUri);
         }
     }
 }

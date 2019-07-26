@@ -91,6 +91,9 @@
     <PackageReference Include="Plugin.MediaManager.Forms">
       <Version>0.7.4</Version>
     </PackageReference>
+    <PackageReference Include="Xam.Plugin.Media">
+      <Version>4.0.1.5</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.FFImageLoading.Forms">
       <Version>2.4.11.982</Version>
     </PackageReference>

@@ -93,6 +93,7 @@
                     HorizontalOptions="Center"
                     VerticalOptions="CenterAndExpand"
                     BackgroundColor="Transparent" />
+
                 <ImageButton
                     Source="playback_controls_skip_forward"
                     mvx:Bi.nd="Command SkipForwardCommand"
@@ -120,7 +121,7 @@
                <ProgressBar
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="Center"
-                    mvx:Bi.nd="Progress Position; Duration Duration" />
+                    mvx:Bi.nd="Progress Position; Duration Duration; ImageSource ThumbImage"/>
 
                <Label Text="{Binding Source.Duration}" 
                    HorizontalOptions="End"

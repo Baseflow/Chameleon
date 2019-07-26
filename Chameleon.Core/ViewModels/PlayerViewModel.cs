@@ -57,6 +57,13 @@ namespace Chameleon.Core.ViewModels
             set => SetProperty(ref _playPauseImage, value);
         }
 
+        private ImageSource _thumbImage = ImageSource.FromFile("playback_controls_time_knob");
+                public ImageSource ThumbImage
+        {
+            get => _thumbImage; 
+            set => SetProperty (ref _thumbImage, value); 
+        }
+
         private IMvxAsyncCommand _previousCommand;
         public IMvxAsyncCommand PreviousCommand => _previousCommand ?? (_previousCommand = new MvxAsyncCommand(() => MediaManager.PlayPrevious()));
 

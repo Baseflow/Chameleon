@@ -18,4 +18,20 @@
     <local:Views.HomePage />
     <local:Views.BrowsePage />
     <local:Views.MePage />
+
+    <NavigationPage.TitleView>
+        <Grid VerticalOptions="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Image
+                Source="chameleon_logo"
+                WidthRequest="41"
+                HeightRequest="34"
+                HorizontalOptions="Center"/>
+        </Grid>
+    </NavigationPage.TitleView>
 </core:MvxTabbedPage>

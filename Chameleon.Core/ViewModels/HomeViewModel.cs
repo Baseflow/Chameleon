@@ -7,6 +7,7 @@ using MediaManager.Media;
 using MvvmCross.Commands;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
+using Plugin.Media;
 
 namespace Chameleon.Core.ViewModels
 {
@@ -40,7 +41,13 @@ namespace Chameleon.Core.ViewModels
 
         private async Task OpenFile()
         {
-            //TODO: Open gallery
+            if (await CrossMedia.Current.Initialize())
+            {
+                var videoMediaFile = await CrossMedia.Current.PickVideoAsync();
+                
+                if (videoMediaFile!=null)
+                    await NavigationService.Navigate<PlayerViewModel, IMediaItem>(new MediaItem(videoMediaFile.Path));
+            }
         }
     }
 }

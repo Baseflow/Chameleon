@@ -117,10 +117,10 @@
                 Padding="30"
                 Spacing="20">
 
-               <ProgressBar
+               <Slider
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="Center"
-                    mvx:Bi.nd="Progress Position; Duration Duration" />
+                    mvx:Bi.nd="Value Position; Duration Duration"/>
 
                <Label Text="{Binding Source.Duration}" 
                    HorizontalOptions="End"

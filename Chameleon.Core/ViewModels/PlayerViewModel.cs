@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using MediaManager;
 using MediaManager.Media;
+using MediaManager.Playback;
 using MvvmCross.Commands;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
@@ -27,6 +29,8 @@ namespace Chameleon.Core.ViewModels
             Position = percentComplete;
         }
 
+
+
         private IMediaItem _source;
         public IMediaItem Source
         {
@@ -47,8 +51,22 @@ namespace Chameleon.Core.ViewModels
         public double Position
         {
             get => _position;
-            set => SetProperty(ref _position, value);
+            set
+            {
+                SetProperty(ref _position, value);
+                var seconds = (MediaManager.Duration.TotalSeconds * value) / 100;
+                var position = TimeSpan.FromSeconds(seconds);
+                MediaManager.MediaPlayer.SeekTo(position);
+            }
         }
+
+        //private async Task ChangePostition()
+        //{
+        //    var value = Position;
+        //    var seconds = (MediaManager.Duration.TotalSeconds * value) / 100;
+        //    var position = TimeSpan.FromSeconds(seconds);
+        //    await MediaManager.MediaPlayer.SeekTo(position);
+        //}
 
         private ImageSource _playPauseImage = ImageSource.FromFile("playback_controls_pause_button");
         public ImageSource PlayPauseImage
@@ -79,6 +97,7 @@ namespace Chameleon.Core.ViewModels
         public IMvxAsyncCommand QueueCommand => _queueCommand ?? (_queueCommand = new MvxAsyncCommand(
             () => NavigationService.Navigate<QueueViewModel>()));
 
+     
         public override void Prepare(IMediaItem parameter)
         {
             Source = parameter;

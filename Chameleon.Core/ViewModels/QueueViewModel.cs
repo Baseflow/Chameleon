@@ -26,18 +26,24 @@ namespace Chameleon.Core.ViewModels
             _userDialogs = userDialogs ?? throw new ArgumentNullException(nameof(userDialogs));
             _mediaManager = mediaManager ?? throw new ArgumentNullException(nameof(mediaManager));
             _playlistService = playlistService ?? throw new ArgumentNullException(nameof(playlistService));
-            MediaItems.AddRange(_mediaManager.MediaQueue);
         }
 
         private MvxObservableCollection<IMediaItem> _mediaItems;
         public MvxObservableCollection<IMediaItem> MediaItems { get; set; } = new MvxObservableCollection<IMediaItem>();
 
-        private IMvxAsyncCommand<IMediaItem> _playCommand;
-        public IMvxAsyncCommand<IMediaItem> PlayCommand => _playCommand ?? (_playCommand = new MvxAsyncCommand<IMediaItem>(Play));
-
-        private async Task Play(IMediaItem arg)
+        private IMediaItem _selectedMediaItem;
+        public IMediaItem SelectedMediaItem
         {
-            await NavigationService.Navigate<PlayerViewModel, IMediaItem>(arg);
+            get => _selectedMediaItem;
+            set => SetProperty(ref _selectedMediaItem, value);
+        }
+
+        private IMvxAsyncCommand _openPlayerCommand;
+        public IMvxAsyncCommand OpenPlayerCommand => _openPlayerCommand ?? (_openPlayerCommand = new MvxAsyncCommand(Play));
+
+        private async Task Play()
+        {
+            await NavigationService.Navigate<PlayerViewModel, IMediaItem>(SelectedMediaItem);
         }
 
         public override async Task Initialize()

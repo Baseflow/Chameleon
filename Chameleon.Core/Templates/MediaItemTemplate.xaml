@@ -1,9 +1,51 @@
-﻿<?xml version="1.0" encoding="UTF-8" ?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentView
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
     x:Class="Chameleon.Core.Templates.MediaItemTemplate">
     <ContentView.Content>
-        <Label Text="{Binding Title}" TextColor="White" HorizontalOptions="FillAndExpand" HeightRequest="50" />
+        <Grid Margin="0,4" RowSpacing="5" ColumnSpacing="12">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="28"/>
+                <RowDefinition Height="28"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="55"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Frame
+                Padding="1"
+                CornerRadius="3"
+                Grid.Column="0"
+                Grid.RowSpan="2"
+                HasShadow="True"
+                HeightRequest="55"
+                WidthRequest="55"
+                BackgroundColor="{StaticResource CharcoalGrey}"
+                HorizontalOptions="Center"
+                VerticalOptions="Center">
+                <Image
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Source="chameleon_logo"/>
+            </Frame>
+            <Label
+                mvx:Bi.nd="Text Title"
+                Grid.Column="1"
+                Grid.Row="0"
+                VerticalOptions="End"
+                TextColor="{StaticResource White}"
+                FontFamily="FiraSans#600"
+                FontSize="16"/>
+            <Label
+                mvx:Bi.nd="Text Album"
+                Grid.Column="1"
+                Grid.Row="1"
+                VerticalOptions="Start"
+                TextColor="{StaticResource White_70}"
+                FontFamily="FiraSans#400"
+                FontSize="12"/>
+        </Grid>
     </ContentView.Content>
 </ContentView>

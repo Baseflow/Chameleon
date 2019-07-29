@@ -32,8 +32,8 @@ namespace Chameleon.Core.ViewModels
         private IMvxAsyncCommand<IMediaItem> _playCommand;
         public IMvxAsyncCommand<IMediaItem> PlayCommand => _playCommand ?? (_playCommand = new MvxAsyncCommand<IMediaItem>(Play));
 
-        private IMediaItem _selectedItem;
-        public IMediaItem SelectedItem
+        private string _selectedItem;
+        public string SelectedItem
         {
             get => _selectedItem;
             set => SetProperty(ref _selectedItem, value);
@@ -46,7 +46,7 @@ namespace Chameleon.Core.ViewModels
 
         private async Task Play(IMediaItem arg)
         {
-            await NavigationService.Navigate<PlayerViewModel, IMediaItem>(SelectedItem);
+            await NavigationService.Navigate<PlayerViewModel, string>(SelectedItem);
         }
 
         public override void Prepare(IPlaylist parameter)

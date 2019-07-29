@@ -47,8 +47,22 @@ namespace Chameleon.Core.ViewModels
         public double Position
         {
             get => _position;
-            set => SetProperty(ref _position, value);
+            set
+            {
+                SetProperty(ref _position, value);
+                var seconds = (MediaManager.Duration.TotalSeconds * value) / 100;
+                var position = TimeSpan.FromSeconds(seconds);
+                MediaManager.MediaPlayer.SeekTo(position);
+            }
         }
+
+        //private async Task ChangePostition()
+        //{
+        //    var value = Position;
+        //    var seconds = (MediaManager.Duration.TotalSeconds * value) / 100;
+        //    var position = TimeSpan.FromSeconds(seconds);
+        //    await MediaManager.MediaPlayer.SeekTo(position);
+        //}
 
         private ImageSource _playPauseImage = ImageSource.FromFile("playback_controls_pause_button");
         public ImageSource PlayPauseImage

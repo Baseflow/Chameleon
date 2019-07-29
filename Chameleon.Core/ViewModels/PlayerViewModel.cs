@@ -23,8 +23,8 @@ namespace Chameleon.Core.ViewModels
 
         private void MediaManager_PositionChanged(object sender, MediaManager.Playback.PositionChangedEventArgs e)
         {
-            float percentComplete = (float)Math.Round((double)(100 * e.Position.TotalSeconds) / MediaManager.Duration.TotalSeconds) / 100;
-            Position = percentComplete;
+            Position = e.Position.TotalSeconds;
+            Duration = MediaManager.Duration.TotalSeconds;
         }
 
         private string _source;
@@ -47,22 +47,15 @@ namespace Chameleon.Core.ViewModels
         public double Position
         {
             get => _position;
-            set
-            {
-                SetProperty(ref _position, value);
-                var seconds = (MediaManager.Duration.TotalSeconds * value) / 100;
-                var position = TimeSpan.FromSeconds(seconds);
-                MediaManager.MediaPlayer.SeekTo(position);
-            }
+            set => SetProperty(ref _position, value);
         }
 
-        //private async Task ChangePostition()
-        //{
-        //    var value = Position;
-        //    var seconds = (MediaManager.Duration.TotalSeconds * value) / 100;
-        //    var position = TimeSpan.FromSeconds(seconds);
-        //    await MediaManager.MediaPlayer.SeekTo(position);
-        //}
+        private double _Duration;
+        public double Duration
+        {
+            get => _Duration;
+            set => SetProperty(ref _Duration, value);
+        }
 
         private ImageSource _playPauseImage = ImageSource.FromFile("playback_controls_pause_button");
         public ImageSource PlayPauseImage
@@ -70,6 +63,9 @@ namespace Chameleon.Core.ViewModels
             get => _playPauseImage;
             set => SetProperty(ref _playPauseImage, value);
         }
+
+        private IMvxAsyncCommand _dragCompletedCommand;
+        public IMvxAsyncCommand DragCompletedCommand => _dragCompletedCommand ?? (_dragCompletedCommand = new MvxAsyncCommand(() => MediaManager.SeekTo(TimeSpan.FromSeconds(Position))));
 
         private IMvxAsyncCommand _previousCommand;
         public IMvxAsyncCommand PreviousCommand => _previousCommand ?? (_previousCommand = new MvxAsyncCommand(() => MediaManager.PlayPrevious()));

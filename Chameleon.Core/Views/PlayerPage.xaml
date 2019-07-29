@@ -120,7 +120,7 @@
                <Slider
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="Center"
-                    mvx:Bi.nd="Value Position; Duration Duration"/>
+                    mvx:Bi.nd="Value Position; Maximum Duration; DragCompletedCommand DragCompletedCommand"/>
 
                <Label Text="{Binding Source.Duration}" 
                    HorizontalOptions="End"

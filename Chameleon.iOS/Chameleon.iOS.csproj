@@ -185,6 +185,10 @@
     <ImageAsset Include="Assets.xcassets\tab_bar_settings_active.imageset\tab_bar_settings_active.png" />
     <ImageAsset Include="Assets.xcassets\tab_bar_settings_active.imageset\tab_bar_settings_active%402x.png" />
     <ImageAsset Include="Assets.xcassets\tab_bar_settings_active.imageset\tab_bar_settings_active%403x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_skip_backwards.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_skip_backwards.imageset\playback_controls_skip_backwards-1.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_skip_backwards.imageset\playback_controls_skip_backwards%402x-1.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_skip_backwards.imageset\playback_controls_skip_backwards%403x-1.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -266,6 +270,7 @@
     <Folder Include="Assets.xcassets\tab_bar_settings.imageset\" />
     <Folder Include="Assets.xcassets\tab_bar_icon_home_active.imageset\" />
     <Folder Include="Assets.xcassets\tab_bar_settings_active.imageset\" />
+    <Folder Include="Assets.xcassets\playback_controls_skip_backwards.imageset\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

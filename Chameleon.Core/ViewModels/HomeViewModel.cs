@@ -7,6 +7,7 @@ using MediaManager.Media;
 using MvvmCross.Commands;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
+using Plugin.Media;
 
 namespace Chameleon.Core.ViewModels
 {
@@ -26,7 +27,7 @@ namespace Chameleon.Core.ViewModels
 
         private IMvxAsyncCommand _playerCommand;
         public IMvxAsyncCommand PlayerCommand => _playerCommand ?? (_playerCommand = new MvxAsyncCommand(
-            () => NavigationService.Navigate<PlayerViewModel, IMediaItem>(new MediaItem("https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"))));
+            () => NavigationService.Navigate<PlayerViewModel, string>("https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4")));
 
         private IMvxAsyncCommand _openUrlCommand;
         public IMvxAsyncCommand OpenUrlCommand => _openUrlCommand ?? (_openUrlCommand = new MvxAsyncCommand(OpenUrl));
@@ -40,12 +41,18 @@ namespace Chameleon.Core.ViewModels
 
             //TODO: Check if the url is valid
             if (!string.IsNullOrWhiteSpace(result.Value))
-                await NavigationService.Navigate<PlayerViewModel, IMediaItem>(new MediaItem(result.Value));
+                await NavigationService.Navigate<PlayerViewModel, string>(result.Value);
         }
 
         private async Task OpenFile()
         {
-            //TODO: Open gallery
+            if (await CrossMedia.Current.Initialize())
+            {
+                var videoMediaFile = await CrossMedia.Current.PickVideoAsync();
+                
+                if (videoMediaFile!=null)
+                    await NavigationService.Navigate<PlayerViewModel, string>(videoMediaFile.Path);
+            }
         }
     }
 }

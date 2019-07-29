@@ -13,7 +13,7 @@ using Xamarin.Forms;
 
 namespace Chameleon.Core.ViewModels
 {
-    public class PlayerViewModel : BaseViewModel<IMediaItem>
+    public class PlayerViewModel : BaseViewModel<string>
     {
         public PlayerViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IMediaManager mediaManager) : base(logProvider, navigationService)
         {
@@ -23,12 +23,12 @@ namespace Chameleon.Core.ViewModels
 
         private void MediaManager_PositionChanged(object sender, MediaManager.Playback.PositionChangedEventArgs e)
         {
-            float percentComplete = (float)Math.Round((double)(100 * e.Position.TotalSeconds) / MediaManager.Duration.TotalSeconds) / 100;
-            Position = percentComplete;
+            Position = e.Position.TotalSeconds;
+            Duration = MediaManager.Duration.TotalSeconds;
         }
 
-        private IMediaItem _source;
-        public IMediaItem Source
+        private string _source;
+        public string Source
         {
             get => _source;
             set => SetProperty(ref _source, value);
@@ -50,12 +50,22 @@ namespace Chameleon.Core.ViewModels
             set => SetProperty(ref _position, value);
         }
 
+        private double _Duration;
+        public double Duration
+        {
+            get => _Duration;
+            set => SetProperty(ref _Duration, value);
+        }
+
         private ImageSource _playPauseImage = ImageSource.FromFile("playback_controls_pause_button");
         public ImageSource PlayPauseImage
         {
             get => _playPauseImage;
             set => SetProperty(ref _playPauseImage, value);
         }
+
+        private IMvxAsyncCommand _dragCompletedCommand;
+        public IMvxAsyncCommand DragCompletedCommand => _dragCompletedCommand ?? (_dragCompletedCommand = new MvxAsyncCommand(() => MediaManager.SeekTo(TimeSpan.FromSeconds(Position))));
 
         private IMvxAsyncCommand _previousCommand;
         public IMvxAsyncCommand PreviousCommand => _previousCommand ?? (_previousCommand = new MvxAsyncCommand(() => MediaManager.PlayPrevious()));
@@ -79,7 +89,7 @@ namespace Chameleon.Core.ViewModels
         public IMvxAsyncCommand QueueCommand => _queueCommand ?? (_queueCommand = new MvxAsyncCommand(
             () => NavigationService.Navigate<QueueViewModel>()));
 
-        public override void Prepare(IMediaItem parameter)
+        public override void Prepare(string parameter)
         {
             Source = parameter;
         }

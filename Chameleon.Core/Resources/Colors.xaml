@@ -5,8 +5,9 @@
     x:Class="Chameleon.Core.Resources.Colors">
 
     <Color x:Key="Black">#000000</Color>
+    <Color x:Key="White">#FFFFFF</Color>
+    <Color x:Key="White_30">#4DFFFFFF</Color>
     <Color x:Key="White_70">#B3FFFFFF</Color>
-    <Color x:Key="White">#ffffff</Color>
 
     <Color x:Key="CharcoalGrey">#30313c</Color>
 

@@ -186,6 +186,13 @@
     <ImageAsset Include="Assets.xcassets\tab_bar_settings_active.imageset\tab_bar_settings_active.png" />
     <ImageAsset Include="Assets.xcassets\tab_bar_settings_active.imageset\tab_bar_settings_active%402x.png" />
     <ImageAsset Include="Assets.xcassets\tab_bar_settings_active.imageset\tab_bar_settings_active%403x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\cover_art_placeholder\cover_art_placeholder.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\cover_art_placeholder\cover_art_placeholder%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\cover_art_placeholder\cover_art_placeholder%403x.png" />
+    <ImageAsset Include="Assets.xcassets\cover_art_placeholder.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\cover_art_placeholder.imageset\cover_art_placeholder.png" />
+    <ImageAsset Include="Assets.xcassets\cover_art_placeholder.imageset\cover_art_placeholder%402x.png" />
+    <ImageAsset Include="Assets.xcassets\cover_art_placeholder.imageset\cover_art_placeholder%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -267,6 +274,7 @@
     <Folder Include="Assets.xcassets\tab_bar_settings.imageset\" />
     <Folder Include="Assets.xcassets\tab_bar_icon_home_active.imageset\" />
     <Folder Include="Assets.xcassets\tab_bar_settings_active.imageset\" />
+    <Folder Include="Assets.xcassets\cover_art_placeholder.imageset\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

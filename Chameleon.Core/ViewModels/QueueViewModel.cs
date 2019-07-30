@@ -41,6 +41,14 @@ namespace Chameleon.Core.ViewModels
         private IMvxAsyncCommand _openPlayerCommand;
         public IMvxAsyncCommand OpenPlayerCommand => _openPlayerCommand ?? (_openPlayerCommand = new MvxAsyncCommand(Play));
 
+        private IMvxAsyncCommand _closeCommand;
+        public IMvxAsyncCommand CloseCommand => _closeCommand ?? (_closeCommand = new MvxAsyncCommand(Close));
+
+        private async Task Close()
+        {
+            await NavigationService.Close(this);
+        }
+
         private async Task Play()
         {
             await NavigationService.Navigate<PlayerViewModel, string>(SelectedMediaItem.MediaUri);

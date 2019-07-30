@@ -22,6 +22,7 @@
                 HasShadow="True"
                 HeightRequest="55"
                 WidthRequest="55"
+                IsClippedToBounds="True"
                 BackgroundColor="{StaticResource CharcoalGrey}"
                 HorizontalOptions="Center"
                 VerticalOptions="Center">

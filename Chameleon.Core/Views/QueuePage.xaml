@@ -14,6 +14,10 @@
     Style="{StaticResource PrimaryContentPage}"
     x:Class="Chameleon.Core.Views.QueuePage">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="icon_close" mvx:Bi.nd="Command CloseCommand"/>
+    </ContentPage.ToolbarItems>
+
     <ContentPage.Content>
         <StackLayout>
             <Label mvx:La.ng="Text Queue" FontFamily="FiraSans#600" FontSize="16" TextColor="#FF6C6E81" Margin="0,0,0,20"/>

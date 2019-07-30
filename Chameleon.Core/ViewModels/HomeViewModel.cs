@@ -20,6 +20,11 @@ namespace Chameleon.Core.ViewModels
             _userDialogs = userDialogs ?? throw new ArgumentNullException(nameof(userDialogs));
         }
 
+        //Temporary command for queue
+        private IMvxAsyncCommand _queueCommand;
+        public IMvxAsyncCommand QueueCommand => _queueCommand ?? (_queueCommand = new MvxAsyncCommand(
+            () => NavigationService.Navigate<QueueViewModel>()));
+
         private IMvxAsyncCommand _playerCommand;
         public IMvxAsyncCommand PlayerCommand => _playerCommand ?? (_playerCommand = new MvxAsyncCommand(
             () => NavigationService.Navigate<PlayerViewModel, string>("https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4")));

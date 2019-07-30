@@ -8,8 +8,40 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModels="clr-namespace:Chameleon.Core.ViewModels;assembly=Chameleon.Core"
     xmlns:mm="clr-namespace:MediaManager.Forms;assembly=MediaManager.Forms"
+    xmlns:templates="clr-namespace:Chameleon.Core.Templates;assembly=Chameleon.Core"
     mc:Ignorable="d"
     x:TypeArguments="viewModels:QueueViewModel"
+    Style="{StaticResource PrimaryContentPage}"
     x:Class="Chameleon.Core.Views.QueuePage">
-    
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="icon_close" mvx:Bi.nd="Command CloseCommand"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Label mvx:La.ng="Text Queue" FontFamily="FiraSans#600" FontSize="16" TextColor="#FF6C6E81" Margin="0,0,0,20"/>
+            <CollectionView
+                x:Name="MyCollectionView"
+                ItemsSource="{mvx:MvxBind MediaItems}"
+                SelectionMode="Single"
+                SelectedItem="{Binding SelectedMediaItem, Mode=TwoWay}"
+                SelectionChangedCommand="{Binding OpenPlayerCommand}"
+                VerticalOptions="FillAndExpand">
+
+                <CollectionView.EmptyView>
+                    <StackLayout>
+                        <ActivityIndicator Color="DimGray" IsRunning="True" HeightRequest="50" />
+                    </StackLayout>
+                </CollectionView.EmptyView>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <templates:MediaItemTemplate/>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+ 
 </core:MvxContentPage>

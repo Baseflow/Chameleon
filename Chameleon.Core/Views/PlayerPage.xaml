@@ -18,13 +18,11 @@
 
     <Grid
         ColumnSpacing="0"
-        RowSpacing="0"
-        BackgroundColor="#30313c">
+        RowSpacing="0">
 
         <StackLayout
             HorizontalOptions="FillAndExpand"
             VerticalOptions="FillAndExpand"
-            BackgroundColor="#30313c"
             Margin="0,100,0,100">
 
          <mm:VideoView
@@ -38,8 +36,7 @@
         <StackLayout
             HorizontalOptions="End"
             VerticalOptions="Start"
-            Padding="20"
-            BackgroundColor="#30313c">
+            Padding="20">
 
                 <ImageButton
                 Source="icon_close"
@@ -51,8 +48,7 @@
         <StackLayout
             HorizontalOptions="Start"
             VerticalOptions="StartAndExpand"
-            Margin="20"
-            BackgroundColor="#30313c">
+            Margin="20">
 
             <Label Text="Title {Binding Source.DisplayTitle}"
                 FontFamily="FiraSans#600" FontSize="20" 
@@ -71,14 +67,12 @@
         <StackLayout
             HorizontalOptions="FillAndExpand"
             VerticalOptions="EndAndExpand"
-            Orientation="Vertical"
-            BackgroundColor="#30313c">
+            Orientation="Vertical">
 
         <StackLayout
             Orientation="Horizontal"
             HorizontalOptions="FillAndExpand"
             VerticalOptions="EndAndExpand"
-            BackgroundColor="#30313c"
             Padding="20">
 
             <Slider
@@ -89,7 +83,6 @@
             <Label Text="{Binding Source.Duration}" 
                 HorizontalOptions="End"
                 VerticalOptions="Center"
-                BackgroundColor="Transparent"
                 TextColor="White"/>
         </StackLayout>
 
@@ -97,7 +90,6 @@
             Orientation="Horizontal"
             VerticalOptions="EndAndExpand"
             HorizontalOptions="Center"
-            BackgroundColor="#30313c"
             Spacing="15">
                      
             <ImageButton

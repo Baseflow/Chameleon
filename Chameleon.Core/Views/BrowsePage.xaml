@@ -11,7 +11,7 @@
     mc:Ignorable="d"
     x:TypeArguments="viewModels:BrowseViewModel"
     x:Class="Chameleon.Core.Views.BrowsePage"
-    Padding="24"
+    Padding="24,24,24,0"
     mvx:La.ng="Title Title" >
     
     <ContentPage.Content>
@@ -24,10 +24,11 @@
                     CancelButtonColor="{StaticResource White}"
                     PlaceholderColor="{StaticResource White_30}"
                     BackgroundColor="{StaticResource BackgroundColor}"/>
-                <Label mvx:La.ng="Text Artists" FontFamily="FiraSans#600" FontSize="16" TextColor="#FF6C6E81"/>
+                <Label mvx:La.ng="Text Artists" FontFamily="FiraSans#600" FontSize="16" TextColor="#FF6C6E81" Margin="0,0,0,20"/>
                 <CollectionView
                     x:Name="MyCollectionView"
-                    ItemsSource="{mvx:MvxBind FavoriteArtists}">
+                    ItemsSource="{mvx:MvxBind FavoriteArtists}"
+                    HeightRequest="250" >
 
                     <CollectionView.ItemsLayout>
                         <GridItemsLayout
@@ -48,6 +49,8 @@
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
+
+                <Label mvx:La.ng="Text Recent" FontFamily="FiraSans#400" FontSize="14" TextColor="#FF6C6E81" Margin="0,0,0,8"/>
 
                 <CollectionView
                     x:Name="MyCollectionView2"

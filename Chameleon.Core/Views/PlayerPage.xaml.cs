@@ -45,10 +45,10 @@ namespace Chameleon.Core.Views
 
         private void UpdateContent(DisplayOrientation orientation)
         {
-            if (orientation == DisplayOrientation.Portrait && Content != PortraitView)
-                Content = PortraitView;
-            else if (orientation == DisplayOrientation.Landscape && Content != LandscapeView)
-                Content = LandscapeView;
+            //if (orientation == DisplayOrientation.Portrait && Content != PortraitView)
+            //    Content = PortraitView;
+            //else if (orientation == DisplayOrientation.Landscape && Content != LandscapeView)
+            //    Content = LandscapeView;
         }
     }
 }

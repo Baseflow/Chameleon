@@ -5,31 +5,28 @@
     xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
     x:Class="Chameleon.Core.Templates.MediaItemTemplate">
     <ContentView.Content>
-        <Grid Margin="0,4" RowSpacing="5" ColumnSpacing="12">
+        <Grid Margin="0,4" Padding="0" RowSpacing="0" ColumnSpacing="12">
             <Grid.RowDefinitions>
                 <RowDefinition Height="28"/>
                 <RowDefinition Height="28"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="55"/>
+                <ColumnDefinition Width="56"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Frame
-                Padding="1"
+                Padding="0"
                 CornerRadius="3"
                 Grid.Column="0"
                 Grid.RowSpan="2"
                 HasShadow="True"
-                HeightRequest="55"
-                WidthRequest="55"
                 IsClippedToBounds="True"
-                BackgroundColor="{StaticResource CharcoalGrey}"
-                HorizontalOptions="Center"
-                VerticalOptions="Center">
+                BackgroundColor="{StaticResource CharcoalGrey}">
                 <Image
                     HorizontalOptions="Center"
                     VerticalOptions="Center"
-                    Source="chameleon_logo"/>
+                    Aspect="AspectFill"
+                    Source="cover_art_placeholder"/>
             </Frame>
             <Label
                 mvx:Bi.nd="Text Title"

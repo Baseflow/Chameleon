@@ -9,10 +9,9 @@
     <Color x:Key="White_30">#4DFFFFFF</Color>
     <Color x:Key="White_70">#B3FFFFFF</Color>
 
-    <Color x:Key="CharcoalGrey">#30313c</Color>
+    <Color x:Key="CharcoalGrey">#30313C</Color>
 
     <Color x:Key="TabBarColor">#393A47</Color>
-    <Color x:Key="BackgroundColor">#30313c</Color>
-
+    <Color x:Key="BackgroundColor">#30313C</Color>
 
 </ResourceDictionary>

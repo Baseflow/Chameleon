@@ -76,7 +76,8 @@
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="MaterialFrameRenderer.cs" />
+    <Compile Include="CustomRenderers\MaterialFrameRenderer.cs" />
+    <Compile Include="CustomRenderers\MaterialSearchBarRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
@@ -275,6 +276,7 @@
     <Folder Include="Assets.xcassets\tab_bar_icon_home_active.imageset\" />
     <Folder Include="Assets.xcassets\tab_bar_settings_active.imageset\" />
     <Folder Include="Assets.xcassets\cover_art_placeholder.imageset\" />
+    <Folder Include="CustomRenderers\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

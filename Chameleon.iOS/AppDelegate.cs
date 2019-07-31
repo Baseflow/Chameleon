@@ -19,9 +19,6 @@ namespace Chameleon.iOS
         {
             Forms.SetFlags("CollectionView_Experimental");
 
-            //UINavigationBar.Appearance.BarTintColor = UIColor.FromRGB(48, 49, 60);
-            //UINavigationBar.Appearance.TintColor = UIColor.FromRGB(255, 255, 255);
-
             FFImageLoading.Forms.Platform.CachedImageRenderer.Init();
 
             return base.FinishedLaunching(app, options);

@@ -36,7 +36,8 @@ namespace Chameleon.Core.ViewModels
 
         public override async Task Initialize()
         {
-            Playlists.ReplaceWith(await _playlistService.GetPlaylists());
+            FavoriteArtists.ReplaceWith(await _playlistService.GetPlaylist());
+            RecentlyPlayedItems.ReplaceWith(await _playlistService.GetPlaylist());
         }
 
         private async Task OpenPlaylist(IPlaylist arg)

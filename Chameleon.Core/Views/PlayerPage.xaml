@@ -18,17 +18,28 @@
 
     <Grid
         ColumnSpacing="0"
-        RowSpacing="0">
+        RowSpacing="0"
+        BackgroundColor="#30313c">
+
+        <StackLayout
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+            BackgroundColor="#30313c"
+            Padding="0,120,0,120">
 
          <mm:VideoView
             HorizontalOptions="FillAndExpand"
             VerticalOptions="FillAndExpand"
-            mvx:Bi.nd="Source Source"/>
+            mvx:Bi.nd="Source Source"
+            Margin=" 0,0,0, 280"/>
+        </StackLayout>
+
 
         <StackLayout
             HorizontalOptions="End"
             VerticalOptions="Start"
-            Padding="20">
+            Padding="20"
+            BackgroundColor="#30313c">
 
                 <ImageButton
                 Source="icon_close"
@@ -40,7 +51,8 @@
         <StackLayout
             HorizontalOptions="Start"
             VerticalOptions="StartAndExpand"
-            Padding="10">
+            Padding="10"
+            BackgroundColor="#30313c">
 
             <Label Text="Title {Binding Source.DisplayTitle}"
                 FontFamily="FiraSans#600" FontSize="20" 
@@ -57,16 +69,17 @@
         </StackLayout>
 
         <StackLayout
-        HorizontalOptions="FillAndExpand"
-        VerticalOptions="FillAndExpand"
-        Orientation="Vertical">
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="EndAndExpand"
+            Orientation="Vertical"
+                        BackgroundColor="#30313c"
+>
 
         <StackLayout
             Orientation="Horizontal"
-            BackgroundColor="Transparent"
             HorizontalOptions="FillAndExpand"
             VerticalOptions="EndAndExpand"
-
+            BackgroundColor="#30313c"
             Padding="5"
             Spacing="15">
 
@@ -87,7 +100,8 @@
             VerticalOptions="End"
             HorizontalOptions="FillAndExpand"
             Padding="10"
-            Spacing="20">
+            Spacing="20"
+            BackgroundColor="#30313c">
                      
             <ImageButton
                 Source="playback_controls_previous"

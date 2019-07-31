@@ -25,13 +25,13 @@
             HorizontalOptions="FillAndExpand"
             VerticalOptions="FillAndExpand"
             BackgroundColor="#30313c"
-            Padding="0,120,0,120">
+            Margin="0,100,0,100">
 
          <mm:VideoView
             HorizontalOptions="FillAndExpand"
             VerticalOptions="FillAndExpand"
             mvx:Bi.nd="Source Source"
-            Margin=" 0,0,0, 280"/>
+            Margin=" 0,0,0, 180"/>
         </StackLayout>
 
 
@@ -51,7 +51,7 @@
         <StackLayout
             HorizontalOptions="Start"
             VerticalOptions="StartAndExpand"
-            Padding="10"
+            Margin="20"
             BackgroundColor="#30313c">
 
             <Label Text="Title {Binding Source.DisplayTitle}"
@@ -76,14 +76,13 @@
 
         <StackLayout
             Orientation="Horizontal"
-            HorizontalOptions="FillAndExpand"
+            HorizontalOptions="CenterAndExpand"
             VerticalOptions="EndAndExpand"
             BackgroundColor="#30313c"
-            Padding="5"
-            Spacing="15">
+            >
 
             <Slider
-                HorizontalOptions="FillAndExpand"
+                HorizontalOptions="CenterAndExpand"
                 VerticalOptions="Center"
                 mvx:Bi.nd="Value Position; Maximum Duration; DragCompletedCommand DragCompletedCommand"/>
 
@@ -96,10 +95,8 @@
 
         <StackLayout
             Orientation="Horizontal"
-            VerticalOptions="End"
-            HorizontalOptions="FillAndExpand"
-            Padding="10, 5, 10, 10"
-            Spacing="20"
+            VerticalOptions="EndAndExpand"
+            HorizontalOptions="Center"
             BackgroundColor="#30313c">
                      
             <ImageButton

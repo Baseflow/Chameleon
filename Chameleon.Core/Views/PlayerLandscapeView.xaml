@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
+             xmlns:mm="clr-namespace:MediaManager.Forms;assembly=MediaManager.Forms"
+             mc:Ignorable="d"
+             x:Class="Chameleon.Core.Views.PlayerLandscapeView">
+  <ContentView.Content>
+        <Grid>
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*"/>
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="*"/>
+         <RowDefinition Height="*"/>
+         <RowDefinition Height="*"/>
+         <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+
+        <StackLayout Grid.Column = "0" Grid.Row = "0" Orientation = "Vertical"> 
+             <Label Text="Title {Binding Source.DisplayTitle}"
+                FontFamily="FiraSans#600" FontSize="20" 
+                TextColor="White"/> 
+
+             <Label 
+                Text=" Subtitle {Binding Source.DisplaySubtitle}"
+                FontFamily="FiraSans#400" FontSize="14"
+                TextColor="White"/> 
+         </StackLayout>  
+
+         <mm:VideoView
+            mvx:Bi.nd="Source Source"
+            Grid.Column = "0" Grid.Row = "1"/> 
+
+         <StackLayout
+             Grid.Column = "0" Grid.Row = "2"
+             Orientation="Horizontal"
+             Padding="5"
+             Spacing="15">
+
+            <Slider
+                mvx:Bi.nd="Value Position; Maximum Duration; DragCompletedCommand DragCompletedCommand"/>
+
+            <Label
+                Text="{Binding Source.Duration}" 
+                TextColor="White"/>
+         </StackLayout>
+
+         <StackLayout
+             Grid.Column = "0" Grid.Row = "3"
+                      Orientation="Horizontal"
+                      Padding="10"
+                      Spacing="20">
+                     
+            <ImageButton
+                Source="playback_controls_previous"
+                mvx:Bi.nd="Command PreviousCommand"/>
+                
+            <ImageButton
+                Source="playback_controls_skip_backwards"
+                mvx:Bi.nd="Command SkipBackwardsCommand"/>
+
+            <ImageButton
+                Source="{Binding PlayPauseImage}"
+                mvx:Bi.nd="Command PlayPauseCommand" />
+
+            <ImageButton
+                Source="playback_controls_skip_forward"
+                mvx:Bi.nd="Command SkipForwardCommand"/>
+                
+            <ImageButton
+                Source="playback_controls_next"
+                mvx:Bi.nd="Command NextCommand"/>   
+            </StackLayout>
+
+         
+
+    </Grid>
+    </ContentView.Content>
+</ContentView>

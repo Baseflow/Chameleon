@@ -8,7 +8,6 @@ using Android.Widget;
 using Android.OS;
 using MvvmCross.Forms.Platforms.Android.Views;
 using Chameleon.Core;
-using Chameleon.Droid;
 using MediaManager;
 using Xamarin.Forms;
 using Plugin.CurrentActivity;
@@ -28,9 +27,9 @@ namespace Chameleon.Android
             Forms.SetFlags("CollectionView_Experimental");
             CrossCurrentActivity.Current.Init(this, savedInstanceState);
 
-            TabLayoutResource = Droid.Resource.Layout.Tabbar;
-            ToolbarResource = Droid.Resource.Layout.Toolbar;
-            SetTheme(Droid.Resource.Style.MainTheme);
+            TabLayoutResource = Android.Resource.Layout.Tabbar;
+            ToolbarResource = Android.Resource.Layout.Toolbar;
+            SetTheme(Android.Resource.Style.MainTheme);
 
             base.OnCreate(savedInstanceState);
 

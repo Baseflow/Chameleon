@@ -76,13 +76,13 @@
 
         <StackLayout
             Orientation="Horizontal"
-            HorizontalOptions="CenterAndExpand"
+            HorizontalOptions="FillAndExpand"
             VerticalOptions="EndAndExpand"
             BackgroundColor="#30313c"
-            >
+            Padding="20">
 
             <Slider
-                HorizontalOptions="CenterAndExpand"
+                HorizontalOptions="FillAndExpand"
                 VerticalOptions="Center"
                 mvx:Bi.nd="Value Position; Maximum Duration; DragCompletedCommand DragCompletedCommand"/>
 
@@ -97,7 +97,8 @@
             Orientation="Horizontal"
             VerticalOptions="EndAndExpand"
             HorizontalOptions="Center"
-            BackgroundColor="#30313c">
+            BackgroundColor="#30313c"
+            Spacing="15">
                      
             <ImageButton
                 Source="playback_controls_previous"

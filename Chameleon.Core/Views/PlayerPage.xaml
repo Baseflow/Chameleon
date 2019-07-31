@@ -8,12 +8,133 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModels="clr-namespace:Chameleon.Core.ViewModels;assembly=Chameleon.Core"
     xmlns:mm="clr-namespace:MediaManager.Forms;assembly=MediaManager.Forms"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    ios:Page.UseSafeArea="True"
     mc:Ignorable="d"
     x:TypeArguments="viewModels:PlayerViewModel"
     x:Class="Chameleon.Core.Views.PlayerPage"
-    NavigationPage.HasNavigationBar="false">
-    
+    NavigationPage.HasNavigationBar="False"
+    BackgroundColor="#30313c">
+
     <Grid
+        ColumnSpacing="0"
+        RowSpacing="0">
+
+        <StackLayout
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+            Margin="0,100,0,100">
+
+         <mm:VideoView
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+            mvx:Bi.nd="Source Source"
+            Margin=" 0,0,0, 180"/>
+        </StackLayout>
+
+
+        <StackLayout
+            HorizontalOptions="End"
+            VerticalOptions="Start"
+            Padding="20">
+
+                <ImageButton
+                Source="icon_close"
+                mvx:Bi.nd="Command BackCommand"
+                HorizontalOptions="End"
+                VerticalOptions="Start"/>  
+        </StackLayout>
+
+        <StackLayout
+            HorizontalOptions="Start"
+            VerticalOptions="StartAndExpand"
+            Margin="20">
+
+            <Label Text="Title {Binding Source.DisplayTitle}"
+                FontFamily="FiraSans#600" FontSize="20" 
+                HorizontalOptions="Start"
+                VerticalOptions="StartAndExpand"
+                TextColor="White"/>
+
+            <Label 
+                Text=" Subtitle {Binding Source.DisplaySubtitle}"
+                FontFamily="FiraSans#400" FontSize="14"
+                HorizontalOptions="Start" 
+                VerticalOptions="StartAndExpand"
+                TextColor="White"/>
+        </StackLayout>
+
+        <StackLayout
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="EndAndExpand"
+            Orientation="Vertical">
+
+        <StackLayout
+            Orientation="Horizontal"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="EndAndExpand"
+            Padding="20">
+
+            <Slider
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="Center"
+                mvx:Bi.nd="Value Position; Maximum Duration; DragCompletedCommand DragCompletedCommand"/>
+
+            <Label Text="{Binding Source.Duration}" 
+                HorizontalOptions="End"
+                VerticalOptions="Center"
+                TextColor="White"/>
+        </StackLayout>
+
+        <StackLayout
+            Orientation="Horizontal"
+            VerticalOptions="EndAndExpand"
+            HorizontalOptions="Center"
+            Spacing="15">
+                     
+            <ImageButton
+                Source="playback_controls_previous"
+                mvx:Bi.nd="Command PreviousCommand"
+                HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand"
+                BackgroundColor="Transparent"/>
+                
+            <ImageButton
+                Source="playback_controls_skip_backwards"
+                mvx:Bi.nd="Command SkipBackwardsCommand"
+                HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand"
+                BackgroundColor="Transparent"/>
+
+            <ImageButton
+                Source="{Binding PlayPauseImage}"
+                mvx:Bi.nd="Command PlayPauseCommand"
+                HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand"
+                BackgroundColor="Transparent" />
+
+            <ImageButton
+                Source="playback_controls_skip_forward"
+                mvx:Bi.nd="Command SkipForwardCommand"
+                HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand"
+                BackgroundColor="Transparent"/>
+                
+            <ImageButton
+                Source="playback_controls_next"
+                mvx:Bi.nd="Command NextCommand"
+                HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand"
+                BackgroundColor="Transparent"/>   
+            </StackLayout>
+         </StackLayout>
+    </Grid>
+
+</core:MvxContentPage>
+
+
+
+    <!--<Grid
         ColumnSpacing="0"
         RowSpacing="0">
         <Grid.GestureRecognizers>
@@ -131,4 +252,4 @@
             </StackLayout>    
         </StackLayout>
     </Grid>  
-</core:MvxContentPage>
+</core:MvxContentPage>-->

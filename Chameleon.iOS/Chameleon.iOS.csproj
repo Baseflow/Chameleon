@@ -167,6 +167,10 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-83.5%402x.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-60%402x-1.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-60%403x-1.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_skip_backwards.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_skip_backwards.imageset\playback_controls_skip_backwards.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_skip_backwards.imageset\playback_controls_skip_backwards%402x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_skip_backwards.imageset\playback_controls_skip_backwards%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -248,6 +252,7 @@
     <Folder Include="Assets.xcassets\tab_bar_settings.imageset\" />
     <Folder Include="Assets.xcassets\tab_bar_icon_home_active.imageset\" />
     <Folder Include="Assets.xcassets\tab_bar_settings_active.imageset\" />
+    <Folder Include="Assets.xcassets\playback_controls_skip_backwards.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />

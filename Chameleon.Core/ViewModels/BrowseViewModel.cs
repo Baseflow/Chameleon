@@ -28,13 +28,16 @@ namespace Chameleon.Core.ViewModels
         }
 
         public MvxObservableCollection<IPlaylist> Playlists { get; set; } = new MvxObservableCollection<IPlaylist>();
+        public MvxObservableCollection<IMediaItem> FavoriteArtists { get; set; } = new MvxObservableCollection<IMediaItem>();
+        public MvxObservableCollection<IMediaItem> RecentlyPlayedItems { get; set; } = new MvxObservableCollection<IMediaItem>();
 
         private IMvxAsyncCommand<IPlaylist> _openPlaylistCommand;
         public IMvxAsyncCommand<IPlaylist> OpenPlaylistCommand => _openPlaylistCommand ?? (_openPlaylistCommand = new MvxAsyncCommand<IPlaylist>(OpenPlaylist));
 
         public override async Task Initialize()
         {
-            Playlists.ReplaceWith(await _playlistService.GetPlaylists());
+            FavoriteArtists.ReplaceWith(await _playlistService.GetPlaylist());
+            RecentlyPlayedItems.ReplaceWith(await _playlistService.GetPlaylist());
         }
 
         private async Task OpenPlaylist(IPlaylist arg)

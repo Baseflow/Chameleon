@@ -106,7 +106,8 @@
                 Source="playback_controls_previous"
                 mvx:Bi.nd="Command PreviousCommand"
                 HorizontalOptions="Center"
-                VerticalOptions="CenterAndExpand"/>
+                VerticalOptions="CenterAndExpand"
+                BackgroundColor="Transparent"/>
                 
             <ImageButton
                 Source="playback_controls_skip_backwards"
@@ -143,7 +144,7 @@
 
 
 
-    <Grid
+    <!--<Grid
         ColumnSpacing="0"
         RowSpacing="0">
         <Grid.GestureRecognizers>
@@ -261,4 +262,4 @@
             </StackLayout>    
         </StackLayout>
     </Grid>  
-</core:MvxContentPage>
+</core:MvxContentPage>-->

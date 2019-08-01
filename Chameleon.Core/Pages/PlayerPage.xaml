@@ -13,9 +13,215 @@
     mc:Ignorable="d"
     x:TypeArguments="viewModels:PlayerViewModel"
     x:Class="Chameleon.Core.Views.PlayerPage"
-    NavigationPage.HasNavigationBar="False"
+    NavigationPage.HasNavigationBar="True"
     BackgroundColor="#30313c">
+    <NavigationPage.TitleView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="28"/>
+                <RowDefinition Height="28"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="56"/>
+            </Grid.ColumnDefinitions>
+            <Label
+                mvx:Bi.nd="Text Source.Title"
+                Grid.Column="0"
+                Grid.Row="0"
+                VerticalOptions="End"
+                TextColor="{StaticResource White}"
+                FontFamily="FiraSans#600"
+                FontSize="16"/>
+            <Label
+                mvx:Bi.nd="Text Source.Album"
+                Grid.Column="0"
+                Grid.Row="1"
+                VerticalOptions="Start"
+                TextColor="{StaticResource White_70}"
+                FontFamily="FiraSans#400"
+                FontSize="12"/>
+            <ImageButton
+                Grid.Column="1"
+                Grid.Row="0"
+                Grid.RowSpan="2"
+                Source="icon_close"
+                BackgroundColor="Transparent"
+                mvx:Bi.nd="Command BackCommand"
+                HorizontalOptions="Center"
+                VerticalOptions="Center" />
+        </Grid>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand">
+            <ScrollView VerticalOptions="FillAndExpand">
+                <StackLayout VerticalOptions="FillAndExpand" Padding="0,18,0,18">
+                    <mm:VideoView
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Start"
+                        HeightRequest="200"
+                        mvx:Bi.nd="Source Source" />
+                    <StackLayout VerticalOptions="FillAndExpand" BindableLayout.ItemsSource="{Binding Metadata}"
+                        Orientation="Vertical">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Padding="18,0,18,0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="28"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="30*"/>
+                                        <ColumnDefinition Width="70*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label
+                                        Text="{Binding Key}"
+                                        VerticalOptions="Center"
+                                        Grid.Column="0"
+                                        TextColor="{StaticResource White}"
+                                        FontFamily="FiraSans#600"
+                                        FontSize="16"/>
+                                    <Label
+                                        Text="{Binding Value}"
+                                        VerticalOptions="Center"
+                                        Grid.Column="1"
+                                        TextColor="{StaticResource White_70}"
+                                        FontFamily="FiraSans#400"
+                                        FontSize="12"/>
+                                </Grid>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+            <StackLayout VerticalOptions="End">
+                <Grid Padding="18,0,18,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <ImageButton
+                        Grid.Column="0"
+                        Source="playback_controls_repeat"
+                        mvx:Bi.nd="Command ShuffleCommand"
+                        HorizontalOptions="Center"
+                        VerticalOptions="CenterAndExpand"
+                        BackgroundColor="Transparent"/>
+                    <ImageButton
+                        Grid.Column="1"
+                        Source="playback_controls_repeat"
+                        mvx:Bi.nd="Command RepeatCommand"
+                        HorizontalOptions="Center"
+                        VerticalOptions="CenterAndExpand"
+                        BackgroundColor="Transparent"/>
+                    <ImageButton
+                        Grid.Column="2"
+                        Source="playback_controls_repeat"
+                        mvx:Bi.nd="Command QueueCommand"
+                        HorizontalOptions="Center"
+                        VerticalOptions="CenterAndExpand"
+                        BackgroundColor="Transparent" />
+                    <ImageButton
+                        Grid.Column="3"
+                        Source="playback_controls_repeat"
+                        mvx:Bi.nd="Command AddToPlaylistCommand"
+                        HorizontalOptions="Center"
+                        VerticalOptions="CenterAndExpand"
+                        BackgroundColor="Transparent"/>
+                    <ImageButton
+                        Grid.Column="4"
+                        Source="playback_controls_repeat"
+                        mvx:Bi.nd="Command FavoriteCommand"
+                        HorizontalOptions="Center"
+                        VerticalOptions="CenterAndExpand"
+                        BackgroundColor="Transparent"/>
+                </Grid>
+                <Slider
+                    x:Name="Slider"
+                    Margin="18,0,18,0"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="End"
+                    mvx:Bi.nd="Value Position; Maximum Duration; DragStartedCommand DragStartedCommand; DragCompletedCommand DragCompletedCommand"
+                    MaximumTrackColor="#FFFFFF"
+                    MinimumTrackColor="#FFF14431"/>
+                <Grid Padding="18,0,18,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label
+                        Grid.Column="0"
+                        mvx:Bi.nd="Text TimeSpanToString(TimeSpanPosition)"
+                        HorizontalOptions="Start"
+                        VerticalOptions="Center"
+                        TextColor="White"/>
+                    <Label
+                        Grid.Column="1"
+                        mvx:Bi.nd="Text TimeSpanToString(TimeSpanDuration)"
+                        HorizontalOptions="End"
+                        VerticalOptions="Center"
+                        TextColor="White"/>
+                </Grid>
+                <Grid Padding="18,0,18,18">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="70"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <ImageButton
+                        Grid.Column="0"
+                        Source="playback_controls_previous"
+                        mvx:Bi.nd="Command PreviousCommand"
+                        HorizontalOptions="Center"
+                        VerticalOptions="CenterAndExpand"
+                        BackgroundColor="Transparent"/>
+                    <ImageButton
+                        Grid.Column="1"
+                        Source="playback_controls_skip_backwards"
+                        mvx:Bi.nd="Command SkipBackwardsCommand"
+                        HorizontalOptions="Center"
+                        VerticalOptions="CenterAndExpand"
+                        BackgroundColor="Transparent"/>
+                    <ImageButton
+                        Grid.Column="2"
+                        Source="{Binding PlayPauseImage}"
+                        mvx:Bi.nd="Command PlayPauseCommand"
+                        HorizontalOptions="Center"
+                        VerticalOptions="CenterAndExpand"
+                        BackgroundColor="Transparent" />
+                    <ImageButton
+                        Grid.Column="3"
+                        Source="playback_controls_skip_forward"
+                        mvx:Bi.nd="Command SkipForwardCommand"
+                        HorizontalOptions="Center"
+                        VerticalOptions="CenterAndExpand"
+                        BackgroundColor="Transparent"/>
+                    <ImageButton
+                        Grid.Column="4"
+                        Source="playback_controls_next"
+                        mvx:Bi.nd="Command NextCommand"
+                        HorizontalOptions="Center"
+                        VerticalOptions="CenterAndExpand"
+                        BackgroundColor="Transparent"/>
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
 
+    <!--
     <Grid
         ColumnSpacing="0"
         RowSpacing="0">
@@ -140,7 +346,7 @@
             </StackLayout>
          </StackLayout>
     </Grid>
-
+-->
 </core:MvxContentPage>
 
 

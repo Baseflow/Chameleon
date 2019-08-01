@@ -20,7 +20,13 @@
     <local:Views.MePage />
 
     <NavigationPage.TitleView>
-        <Image Source="chameleon_logo" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+        <Image Source="chameleon_logo" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Aspect="AspectFit">
+            <Image.Scale>
+                <OnPlatform x:TypeArguments="x:Double">
+                    <On Platform="Android">0.5</On>
+                </OnPlatform>
+            </Image.Scale>
+        </Image>
     </NavigationPage.TitleView>
     
 </core:MvxTabbedPage>

@@ -25,14 +25,13 @@
             VerticalOptions="FillAndExpand"
             Margin="0,100,0,100">
 
-         <mm:VideoView
+        <mm:VideoView
             HorizontalOptions="FillAndExpand"
             VerticalOptions="FillAndExpand"
             mvx:Bi.nd="Source Source"
             Margin=" 0,0,0, 180"/>
         </StackLayout>
-
-
+        
         <StackLayout
             HorizontalOptions="End"
             VerticalOptions="Start"
@@ -76,11 +75,18 @@
             Padding="20">
 
             <Slider
+                x:Name="Slider"
                 HorizontalOptions="FillAndExpand"
                 VerticalOptions="Center"
-                mvx:Bi.nd="Value Position; Maximum Duration; DragCompletedCommand DragCompletedCommand"/>
+                mvx:Bi.nd="Value Position; Maximum Duration; DragCompletedCommand DragCompletedCommand"
+                MaximumTrackColor="#FFFFFF"
+                MinimumTrackColor="#FFF14431"/>
 
-            <Label Text="{Binding Source.Duration}" 
+            <Label
+                Text="{Binding Source={x:Reference Slider},
+                              Path= Value,
+                              StringFormat='{0:F2}'}"
+                mvx:Bi.nd="{Binding Source.Duration}"
                 HorizontalOptions="End"
                 VerticalOptions="Center"
                 TextColor="White"/>

@@ -27,6 +27,13 @@ namespace Chameleon.Core.ViewModels
             _playlistService = playlistService ?? throw new ArgumentNullException(nameof(playlistService));
         }
 
+        private IMediaItem _selectedMediaItem;
+        public IMediaItem SelectedMediaItem
+        {
+            get => _selectedMediaItem;
+            set => SetProperty(ref _selectedMediaItem, value);
+        }
+
         public MvxObservableCollection<IPlaylist> Playlists { get; set; } = new MvxObservableCollection<IPlaylist>();
         public MvxObservableCollection<IMediaItem> FavoriteArtists { get; set; } = new MvxObservableCollection<IMediaItem>();
         public MvxObservableCollection<IMediaItem> RecentlyPlayedItems { get; set; } = new MvxObservableCollection<IMediaItem>();
@@ -34,9 +41,14 @@ namespace Chameleon.Core.ViewModels
         private IMvxAsyncCommand<IPlaylist> _openPlaylistCommand;
         public IMvxAsyncCommand<IPlaylist> OpenPlaylistCommand => _openPlaylistCommand ?? (_openPlaylistCommand = new MvxAsyncCommand<IPlaylist>(OpenPlaylist));
 
+        private IMvxAsyncCommand _playerCommand;
+        public IMvxAsyncCommand PlayerCommand => _playerCommand ?? (_playerCommand = new MvxAsyncCommand(
+            () => NavigationService.Navigate<PlayerViewModel, IMediaItem>(SelectedMediaItem)));
+
         public override async Task Initialize()
         {
-            FavoriteArtists.ReplaceWith(await _playlistService.GetPlaylist());
+            //FavoriteArtists.ReplaceWith(await _playlistService.GetPlaylist());
+
             RecentlyPlayedItems.ReplaceWith(await _playlistService.GetPlaylist());
         }
 

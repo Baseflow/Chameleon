@@ -25,7 +25,7 @@
         <Setter Property="BarBackgroundColor" Value="{StaticResource CharcoalGrey}" />
         <Setter Property="BarTextColor" Value="{StaticResource White}"/>
         <Setter Property="SelectedTabColor" Value="{StaticResource White}"/>
-        <Setter Property="UnselectedTabColor" Value="{StaticResource Black}"/>
+        <Setter Property="UnselectedTabColor" Value="{StaticResource White}"/>
     </Style>
 
     <Style TargetType="{x:Type NavigationPage}" ApplyToDerivedTypes="True">

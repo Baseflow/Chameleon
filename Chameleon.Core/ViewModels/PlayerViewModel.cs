@@ -13,28 +13,28 @@ using Xamarin.Forms;
 
 namespace Chameleon.Core.ViewModels
 {
-    public class PlayerViewModel : BaseViewModel<string>
+    public class PlayerViewModel : BaseViewModel<IMediaItem>
     {
+        private readonly IMediaManager _mediaManager;
+
         public PlayerViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IMediaManager mediaManager) : base(logProvider, navigationService)
         {
-            MediaManager = mediaManager ?? throw new ArgumentNullException(nameof(mediaManager));
-            MediaManager.PositionChanged += MediaManager_PositionChanged;
+            _mediaManager = mediaManager ?? throw new ArgumentNullException(nameof(mediaManager));
+            _mediaManager.PositionChanged += MediaManager_PositionChanged;
         }
 
         private void MediaManager_PositionChanged(object sender, MediaManager.Playback.PositionChangedEventArgs e)
         {
             Position = e.Position.TotalSeconds;
-            Duration = MediaManager.Duration.TotalSeconds;
+            Duration = _mediaManager.Duration.TotalSeconds;
         }
 
-        private string _source;
-        public string Source
+        private IMediaItem _source;
+        public IMediaItem Source
         {
             get => _source;
             set => SetProperty(ref _source, value);
         }
-
-        public IMediaManager MediaManager { get; }
 
         private bool _showControls;
         public bool ShowControls
@@ -65,22 +65,22 @@ namespace Chameleon.Core.ViewModels
         }
 
         private IMvxAsyncCommand _dragCompletedCommand;
-        public IMvxAsyncCommand DragCompletedCommand => _dragCompletedCommand ?? (_dragCompletedCommand = new MvxAsyncCommand(() => MediaManager.SeekTo(TimeSpan.FromSeconds(Position))));
+        public IMvxAsyncCommand DragCompletedCommand => _dragCompletedCommand ?? (_dragCompletedCommand = new MvxAsyncCommand(() => _mediaManager.SeekTo(TimeSpan.FromSeconds(Position))));
 
         private IMvxAsyncCommand _previousCommand;
-        public IMvxAsyncCommand PreviousCommand => _previousCommand ?? (_previousCommand = new MvxAsyncCommand(() => MediaManager.PlayPrevious()));
+        public IMvxAsyncCommand PreviousCommand => _previousCommand ?? (_previousCommand = new MvxAsyncCommand(() => _mediaManager.PlayPrevious()));
 
         private IMvxAsyncCommand _skipBackwardsCommand;
-        public IMvxAsyncCommand SkipBackwardsCommand => _skipBackwardsCommand ?? (_skipBackwardsCommand = new MvxAsyncCommand(() => MediaManager.StepBackward()));
+        public IMvxAsyncCommand SkipBackwardsCommand => _skipBackwardsCommand ?? (_skipBackwardsCommand = new MvxAsyncCommand(() => _mediaManager.StepBackward()));
 
         private IMvxAsyncCommand _playpauseCommand;
         public IMvxAsyncCommand PlayPauseCommand => _playpauseCommand ?? (_playpauseCommand = new MvxAsyncCommand(PlayPause));
 
         private IMvxAsyncCommand _skipForwardCommand;
-        public IMvxAsyncCommand SkipForwardCommand => _skipForwardCommand ?? (_skipForwardCommand = new MvxAsyncCommand(() => MediaManager.StepForward()));
+        public IMvxAsyncCommand SkipForwardCommand => _skipForwardCommand ?? (_skipForwardCommand = new MvxAsyncCommand(() => _mediaManager.StepForward()));
 
         private IMvxAsyncCommand _nextCommand;
-        public IMvxAsyncCommand NextCommand => _nextCommand ?? (_nextCommand = new MvxAsyncCommand(() => MediaManager.PlayNext()));
+        public IMvxAsyncCommand NextCommand => _nextCommand ?? (_nextCommand = new MvxAsyncCommand(() => _mediaManager.PlayNext()));
 
         private IMvxCommand _controlsCommand;
         public IMvxCommand ControlsCommand => _controlsCommand ?? (_controlsCommand = new MvxCommand(ShowHideControls));
@@ -89,9 +89,15 @@ namespace Chameleon.Core.ViewModels
         public IMvxAsyncCommand QueueCommand => _queueCommand ?? (_queueCommand = new MvxAsyncCommand(
             () => NavigationService.Navigate<QueueViewModel>()));
 
-        public override void Prepare(string parameter)
+        public override void Prepare(IMediaItem parameter)
         {
             Source = parameter;
+        }
+
+        public override async Task Initialize()
+        {
+            if (Source == null)
+                Source = await _mediaManager.Play("https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4");
         }
 
         private void ShowHideControls()
@@ -101,9 +107,9 @@ namespace Chameleon.Core.ViewModels
 
         private async Task PlayPause()
         {
-            await MediaManager.PlayPause();
+            await _mediaManager.PlayPause();
 
-            if (MediaManager.IsPlaying())
+            if (_mediaManager.IsPlaying())
                 PlayPauseImage = ImageSource.FromFile("playback_controls_play_button");
             else
                 PlayPauseImage = ImageSource.FromFile("playback_controls_pause_button");

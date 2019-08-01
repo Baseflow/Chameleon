@@ -17,6 +17,6 @@
         <Button mvx:La.ng="Text PlayDevice" mvx:Bi.nd="Command OpenFileCommand" Style="{StaticResource PrimaryButton}"/>
         <Button mvx:La.ng="Text OpenUrl" mvx:Bi.nd="Command OpenUrlCommand" Style="{StaticResource PrimaryButton}"/>
         <Button mvx:La.ng="Text Player" mvx:Bi.nd="Command PlayerCommand" Style="{StaticResource PrimaryButton}" />
-        <Button mvx:La.ng="Text Queue" mvx:Bi.nd="Command QueueCommand" Style="{StaticResource PrimaryButton}" />
+        <!--<Button mvx:La.ng="Text Queue" mvx:Bi.nd="Command QueueCommand" Style="{StaticResource PrimaryButton}" />-->
     </StackLayout>
 </core:MvxContentPage>

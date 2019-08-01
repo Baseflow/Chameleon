@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using Acr.UserDialogs;
+using MediaManager;
 using MediaManager.Media;
 using MvvmCross.Commands;
 using MvvmCross.Logging;
@@ -27,7 +28,7 @@ namespace Chameleon.Core.ViewModels
 
         private IMvxAsyncCommand _playerCommand;
         public IMvxAsyncCommand PlayerCommand => _playerCommand ?? (_playerCommand = new MvxAsyncCommand(
-            () => NavigationService.Navigate<PlayerViewModel, string>("https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4")));
+            () => NavigationService.Navigate<PlayerViewModel>()));
 
         private IMvxAsyncCommand _openUrlCommand;
         public IMvxAsyncCommand OpenUrlCommand => _openUrlCommand ?? (_openUrlCommand = new MvxAsyncCommand(OpenUrl));
@@ -41,7 +42,10 @@ namespace Chameleon.Core.ViewModels
 
             //TODO: Check if the url is valid
             if (!string.IsNullOrWhiteSpace(result.Value))
-                await NavigationService.Navigate<PlayerViewModel, string>(result.Value);
+            {
+                var mediaItem = await CrossMediaManager.Current.Play(result.Value);
+                await NavigationService.Navigate<PlayerViewModel, IMediaItem>(mediaItem);
+            }
         }
 
         private async Task OpenFile()
@@ -50,8 +54,11 @@ namespace Chameleon.Core.ViewModels
             {
                 var videoMediaFile = await CrossMedia.Current.PickVideoAsync();
                 
-                if (videoMediaFile!=null)
-                    await NavigationService.Navigate<PlayerViewModel, string>(videoMediaFile.Path);
+                if (videoMediaFile != null)
+                {
+                    var mediaItem = await CrossMediaManager.Current.Play(videoMediaFile.Path);
+                    await NavigationService.Navigate<PlayerViewModel, IMediaItem>(mediaItem);
+                }
             }
         }
     }

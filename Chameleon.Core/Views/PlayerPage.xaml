@@ -49,14 +49,14 @@
             VerticalOptions="StartAndExpand"
             Margin="20">
 
-            <Label Text="Title {Binding Source.DisplayTitle}"
+            <Label Text="{Binding Source.DisplayTitle}"
                 FontFamily="FiraSans#600" FontSize="20" 
                 HorizontalOptions="Start"
                 VerticalOptions="StartAndExpand"
                 TextColor="White"/>
 
             <Label 
-                Text=" Subtitle {Binding Source.DisplaySubtitle}"
+                Text="{Binding Source.DisplaySubtitle}"
                 FontFamily="FiraSans#400" FontSize="14"
                 HorizontalOptions="Start" 
                 VerticalOptions="StartAndExpand"

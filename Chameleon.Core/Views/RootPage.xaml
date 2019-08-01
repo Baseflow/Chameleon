@@ -18,5 +18,9 @@
     <local:Views.HomePage />
     <local:Views.BrowsePage />
     <local:Views.MePage />
+
+    <NavigationPage.TitleView>
+        <Image Source="chameleon_logo" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+    </NavigationPage.TitleView>
     
 </core:MvxTabbedPage>

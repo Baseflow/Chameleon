@@ -22,8 +22,13 @@
 
         <StackLayout
             HorizontalOptions="FillAndExpand"
-            VerticalOptions="FillAndExpand"
-            Margin="0,100,0,100">
+            VerticalOptions="FillAndExpand">
+             <StackLayout.Margin>
+                <OnPlatform x:TypeArguments="Thickness">
+                  <On Platform="iOS" Value="0,125,0,125" />
+                  <On Platform="Android," Value="0,0,0,0" />
+                </OnPlatform>
+              </StackLayout.Margin>
 
         <mm:VideoView
             HorizontalOptions="FillAndExpand"

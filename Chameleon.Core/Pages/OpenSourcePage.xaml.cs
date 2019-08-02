@@ -15,9 +15,9 @@ namespace Chameleon.Core.Views
     // by visiting https://aka.ms/xamarinforms-previewer
     [DesignTimeVisible(false)]
     [MvxTabbedPagePresentation(WrapInNavigationPage = true, Icon = "tab_bar_settings")]
-    public partial class MePage : MvxContentPage<MeViewModel>
+    public partial class OpenSourcePage : MvxContentPage<OpenSourceViewModel>
     {
-        public MePage()
+        public OpenSourcePage()
         {
             InitializeComponent();
         }

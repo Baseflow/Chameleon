@@ -22,7 +22,7 @@ namespace Chameleon.Core.ViewModels
             var tasks = new List<Task>();
             tasks.Add(NavigationService.Navigate<HomeViewModel>());
             tasks.Add(NavigationService.Navigate<BrowseViewModel>());
-            tasks.Add(NavigationService.Navigate<MeViewModel>());
+            tasks.Add(NavigationService.Navigate<SettingsViewModel>());
             await Task.WhenAll(tasks);
         }
     }

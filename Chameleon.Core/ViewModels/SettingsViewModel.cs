@@ -14,11 +14,11 @@ using MvvmCross.ViewModels;
 
 namespace Chameleon.Core.ViewModels
 {
-    public class MeViewModel : BaseViewModel
+    public class SettingsViewModel : BaseViewModel
     {
         private readonly IUserDialogs _userDialogs;
 
-        public MeViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IUserDialogs userDialogs) : base(logProvider, navigationService)
+        public SettingsViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IUserDialogs userDialogs) : base(logProvider, navigationService)
         {
             _userDialogs = userDialogs ?? throw new ArgumentNullException(nameof(userDialogs));
         }

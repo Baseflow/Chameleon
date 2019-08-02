@@ -50,5 +50,12 @@
 	<string>This app needs access to the media library.</string>
 	<key>kTCCServiceMediaLibrary</key>
 	<string>This app needs music usage access.</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoadsInMedia</key>
+		<true/>
+		<key>NSAllowsLocalNetworking</key>
+		<true/>
+	</dict>
 </dict>
 </plist>

@@ -13,5 +13,6 @@
 
     <Color x:Key="TabBarColor">#393A47</Color>
     <Color x:Key="BackgroundColor">#30313C</Color>
+    <Color x:Key="LabelTextColor">#FF6C6E81</Color>
 
 </ResourceDictionary>

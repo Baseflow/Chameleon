@@ -22,5 +22,11 @@ namespace Chameleon.Core.ViewModels
         {
             _userDialogs = userDialogs ?? throw new ArgumentNullException(nameof(userDialogs));
         }
+
+        private IMvxAsyncCommand _githubCommand;
+        public IMvxAsyncCommand GithubCommand => _githubCommand ?? (_githubCommand = new MvxAsyncCommand(() => Xamarin.Essentials.Browser.OpenAsync("https://github.com/BaseflowIT")));
+
+        private IMvxAsyncCommand _baseflowCommand;
+        public IMvxAsyncCommand BaseflowCommand => _baseflowCommand ?? (_baseflowCommand = new MvxAsyncCommand(() => Xamarin.Essentials.Browser.OpenAsync("https://baseflow.com/")));
     }
 }

@@ -176,6 +176,38 @@
     <ImageAsset Include="Assets.xcassets\playback_controls_skip_backwards.imageset\playback_controls_skip_backwards.png" />
     <ImageAsset Include="Assets.xcassets\playback_controls_skip_backwards.imageset\playback_controls_skip_backwards%402x.png" />
     <ImageAsset Include="Assets.xcassets\playback_controls_skip_backwards.imageset\playback_controls_skip_backwards%403x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_add_to_playlist.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_add_to_playlist.imageset\playback_controls_add_to_playlist.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_add_to_playlist.imageset\playback_controls_add_to_playlist%402x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_add_to_playlist.imageset\playback_controls_add_to_playlist%403x.png" />
+    <ImageAsset Include="Assets.xcassets\icon_chromecast.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\icon_chromecast.imageset\icon_chromecast.png" />
+    <ImageAsset Include="Assets.xcassets\icon_chromecast.imageset\icon_chromecast%402x.png" />
+    <ImageAsset Include="Assets.xcassets\icon_chromecast.imageset\icon_chromecast%403x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_more.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_more.imageset\playback_controls_more.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_more.imageset\playback_controls_more%402x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_more.imageset\playback_controls_more%403x.png" />
+    <ImageAsset Include="Assets.xcassets\icon_hamburger.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\icon_hamburger.imageset\icon_hamburger.png" />
+    <ImageAsset Include="Assets.xcassets\icon_hamburger.imageset\icon_hamburger%402x.png" />
+    <ImageAsset Include="Assets.xcassets\icon_hamburger.imageset\icon_hamburger%403x.png" />
+    <ImageAsset Include="Assets.xcassets\icon_airplay.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\icon_airplay.imageset\icon_airplay.png" />
+    <ImageAsset Include="Assets.xcassets\icon_airplay.imageset\icon_airplay%402x.png" />
+    <ImageAsset Include="Assets.xcassets\icon_airplay.imageset\icon_airplay%403x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_queue.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_queue.imageset\playback_controls_queue.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_queue.imageset\playback_controls_queue%402x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_queue.imageset\playback_controls_queue%403x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_repeat.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_repeat.imageset\playback_controls_repeat.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_repeat.imageset\playback_controls_repeat%402x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_repeat.imageset\playback_controls_repeat%403x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_shuffle.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_shuffle.imageset\playback_controls_shuffle.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_shuffle.imageset\playback_controls_shuffle%402x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_shuffle.imageset\playback_controls_shuffle%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -260,6 +292,14 @@
     <Folder Include="Assets.xcassets\playback_controls_skip_backwards.imageset\" />
     <Folder Include="Assets.xcassets\cover_art_placeholder.imageset\" />
     <Folder Include="CustomRenderers\" />
+    <Folder Include="Assets.xcassets\playback_controls_add_to_playlist.imageset\" />
+    <Folder Include="Assets.xcassets\icon_chromecast.imageset\" />
+    <Folder Include="Assets.xcassets\playback_controls_more.imageset\" />
+    <Folder Include="Assets.xcassets\icon_hamburger.imageset\" />
+    <Folder Include="Assets.xcassets\icon_airplay.imageset\" />
+    <Folder Include="Assets.xcassets\playback_controls_queue.imageset\" />
+    <Folder Include="Assets.xcassets\playback_controls_repeat.imageset\" />
+    <Folder Include="Assets.xcassets\playback_controls_shuffle.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />

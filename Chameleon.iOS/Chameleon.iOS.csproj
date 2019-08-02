@@ -100,10 +100,6 @@
     <ImageAsset Include="Assets.xcassets\splash_bg.imageset\splash_bg.jpg" />
     <ImageAsset Include="Assets.xcassets\splash_bg.imageset\splash_bg%402x.jpg" />
     <ImageAsset Include="Assets.xcassets\splash_bg.imageset\splash_bg%403x.jpg" />
-    <ImageAsset Include="Assets.xcassets\playback_controls_play_button.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\playback_controls_play_button.imageset\playback_controls_play_button.png" />
-    <ImageAsset Include="Assets.xcassets\playback_controls_play_button.imageset\playback_controls_play_button%402x.png" />
-    <ImageAsset Include="Assets.xcassets\playback_controls_play_button.imageset\playback_controls_play_button%403x.png" />
     <ImageAsset Include="Assets.xcassets\playback_controls_pause_button.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\playback_controls_pause_button.imageset\playback_controls_pause_button.png" />
     <ImageAsset Include="Assets.xcassets\playback_controls_pause_button.imageset\playback_controls_pause_button%402x.png" />
@@ -212,6 +208,10 @@
     <ImageAsset Include="Assets.xcassets\playback_controls_next.imageset\playback_controls_next.png" />
     <ImageAsset Include="Assets.xcassets\playback_controls_next.imageset\playback_controls_next%402x.png" />
     <ImageAsset Include="Assets.xcassets\playback_controls_next.imageset\playback_controls_next%403x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_play_button.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_play_button.imageset\playback_controls_play_button.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_play_button.imageset\playback_controls_play_button%402x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_play_button.imageset\playback_controls_play_button%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -310,6 +310,7 @@
     <Folder Include="Assets.xcassets\playback_controls_skip_forward.imageset\" />
     <Folder Include="Assets.xcassets\playback_controls_previous.imageset\" />
     <Folder Include="Assets.xcassets\playback_controls_next.imageset\" />
+    <Folder Include="Assets.xcassets\playback_controls_play_button.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />

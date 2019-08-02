@@ -40,6 +40,23 @@
         <Setter Property="Padding" Value="24"/>
     </Style>
 
+    <Style TargetType="{x:Type Label}" ApplyToDerivedTypes="True">
+        <Setter Property="TextColor" Value="{StaticResource LabelTextColor}"/>
+    </Style>
+
+    <Style TargetType="Label" x:Key="Header1">
+        <Setter Property="FontFamily" Value="FiraSans#600"/>
+        <Setter Property="FontSize" Value="Large"/>
+        <Setter Property="Margin" Value="24,0,24,20"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+    </Style>
+
+    <Style TargetType="Label" x:Key="Header2">
+        <Setter Property="FontFamily" Value="FiraSans#400"/>
+        <Setter Property="FontSize" Value="Medium"/>
+        <Setter Property="Margin" Value="24,0,24,10"/>
+    </Style>
+
     <Style TargetType="{x:Type TabbedPage}" ApplyToDerivedTypes="True">
         <Setter Property="BarBackgroundColor" Value="{StaticResource CharcoalGrey}" />
         <Setter Property="BarTextColor" Value="{StaticResource White}"/>

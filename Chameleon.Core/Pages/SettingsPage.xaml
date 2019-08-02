@@ -15,8 +15,11 @@
     mvx:La.ng="Title Title" >
     
     <ContentPage.Content>
-        <StackLayout>
-            
-        </StackLayout>
+        <ScrollView>
+            <StackLayout>
+                <Button mvx:La.ng="Text FindUsOnGithub" mvx:Bi.nd="Command GithubCommand" Style="{StaticResource PrimaryButton}"/>
+                <Button mvx:La.ng="Text VisitBaseflow" mvx:Bi.nd="Command BaseflowCommand" Style="{StaticResource PrimaryButton}" />
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </core:MvxContentPage>

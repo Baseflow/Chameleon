@@ -107,7 +107,7 @@
                     </Grid.ColumnDefinitions>
                     <ImageButton
                         Grid.Column="0"
-                        Source="playback_controls_repeat"
+                        Source="playback_controls_shuffle"
                         mvx:Bi.nd="Command ShuffleCommand"
                         HorizontalOptions="Center"
                         VerticalOptions="CenterAndExpand"
@@ -121,21 +121,21 @@
                         BackgroundColor="Transparent"/>
                     <ImageButton
                         Grid.Column="2"
-                        Source="playback_controls_repeat"
+                        Source="playback_controls_queue"
                         mvx:Bi.nd="Command QueueCommand"
                         HorizontalOptions="Center"
                         VerticalOptions="CenterAndExpand"
                         BackgroundColor="Transparent" />
                     <ImageButton
                         Grid.Column="3"
-                        Source="playback_controls_repeat"
+                        Source="playback_controls_add_to_playlist"
                         mvx:Bi.nd="Command AddToPlaylistCommand"
                         HorizontalOptions="Center"
                         VerticalOptions="CenterAndExpand"
                         BackgroundColor="Transparent"/>
                     <ImageButton
                         Grid.Column="4"
-                        Source="playback_controls_repeat"
+                        Source="playback_controls_favorite"
                         mvx:Bi.nd="Command FavoriteCommand"
                         HorizontalOptions="Center"
                         VerticalOptions="CenterAndExpand"

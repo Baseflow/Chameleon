@@ -208,6 +208,10 @@
     <ImageAsset Include="Assets.xcassets\playback_controls_shuffle.imageset\playback_controls_shuffle.png" />
     <ImageAsset Include="Assets.xcassets\playback_controls_shuffle.imageset\playback_controls_shuffle%402x.png" />
     <ImageAsset Include="Assets.xcassets\playback_controls_shuffle.imageset\playback_controls_shuffle%403x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_favorite.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_favorite.imageset\playback_controls_favorite.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_favorite.imageset\playback_controls_favorite%402x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_favorite.imageset\playback_controls_favorite%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -300,6 +304,7 @@
     <Folder Include="Assets.xcassets\playback_controls_queue.imageset\" />
     <Folder Include="Assets.xcassets\playback_controls_repeat.imageset\" />
     <Folder Include="Assets.xcassets\playback_controls_shuffle.imageset\" />
+    <Folder Include="Assets.xcassets\playback_controls_favorite.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />

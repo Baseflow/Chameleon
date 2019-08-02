@@ -7,7 +7,7 @@
     <ResourceDictionary.MergedDictionaries>
         <styles:Resources.Colors />
     </ResourceDictionary.MergedDictionaries>
-    
+
     <Style TargetType="Button" x:Key="PrimaryButton">
         <Setter Property="TextColor" Value="White"/>
         <Setter Property="BackgroundColor" Value="Transparent"/>
@@ -15,8 +15,27 @@
         <Setter Property="BorderRadius" Value="25"/>
         <Setter Property="BorderWidth" Value="1"/>
         <Setter Property="HeightRequest" Value="50"/>
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+
+                    <VisualState x:Name="Normal">
+                        <VisualState.Setters>
+                            <Setter Property="Scale" Value="1" />
+                        </VisualState.Setters>
+                    </VisualState>
+
+                    <VisualState x:Name="Pressed">
+                        <VisualState.Setters>
+                            <Setter Property="Scale" Value="0.9" />
+                        </VisualState.Setters>
+                    </VisualState>
+
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
     </Style>
-    
+
     <Style TargetType="ContentPage" x:Key="PrimaryContentPage">
         <Setter Property="Padding" Value="24"/>
     </Style>

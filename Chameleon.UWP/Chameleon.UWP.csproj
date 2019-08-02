@@ -177,10 +177,10 @@
       <Version>6.3.1</Version>
     </PackageReference>
     <PackageReference Include="Plugin.MediaManager.Forms">
-      <Version>0.7.7</Version>
+      <Version>0.7.9</Version>
     </PackageReference>
     <PackageReference Include="Xam.Plugin.Media">
-      <Version>4.0.1.5</Version>
+      <Version>4.3.1-beta</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.FFImageLoading.Forms">
       <Version>2.4.11.982</Version>

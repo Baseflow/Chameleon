@@ -54,9 +54,10 @@ namespace Chameleon.Core.ViewModels
             await NavigationService.Navigate<PlayerViewModel, IMediaItem>(SelectedMediaItem);
         }
 
-        public override async Task Initialize()
+        public override void Prepare()
         {
-            MediaItems.ReplaceWith(await _playlistService.GetPlaylist());
+            base.Prepare();
+            MediaItems.ReplaceWith(_mediaManager.MediaQueue);
         }
     }
 }

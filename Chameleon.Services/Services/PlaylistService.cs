@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Chameleon.Services.Media;
 using Chameleon.Services.Resources;
 using MediaManager.Media;
 
@@ -50,7 +49,7 @@ namespace Chameleon.Services.Services
         public Task<IList<IPlaylist>> GetPlaylists()
         {
             IList<IPlaylist> playlists = new List<IPlaylist>();
-            playlists.Add(new Media.Playlist() { Title = "ExoPlayer" });
+            //playlists.Add(new MediaManager.Media.Playlist() { Title = "ExoPlayer" });
 
             return Task.FromResult(playlists);
         }

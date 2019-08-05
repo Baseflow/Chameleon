@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using Acr.UserDialogs;
-using Chameleon.Services.Media;
 using Chameleon.Services.Services;
 using MediaManager;
 using MediaManager.Media;

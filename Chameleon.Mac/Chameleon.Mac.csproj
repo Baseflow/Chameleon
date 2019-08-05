@@ -141,6 +141,19 @@
     <PackageReference Include="Xamarin.Forms.PancakeView">
       <Version>1.1.5</Version>
     </PackageReference>
+    <PackageReference Include="Xam.Plugin.Media">
+      <Version>4.3.1-beta</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Chameleon.Core\Chameleon.Core.csproj">
+      <Project>{77A38872-12A8-4E03-AD48-827F2AAB5318}</Project>
+      <Name>Chameleon.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Chameleon.Services\Chameleon.Services.csproj">
+      <Project>{C6591A66-5140-4888-A20C-52D3061E2677}</Project>
+      <Name>Chameleon.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
 </Project>

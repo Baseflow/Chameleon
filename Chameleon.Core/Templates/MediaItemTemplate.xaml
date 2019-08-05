@@ -39,6 +39,7 @@
                 Grid.Column="1"
                 Grid.Row="0"
                 VerticalOptions="End"
+                LineBreakMode="NoWrap"
                 Style="{StaticResource MediaItemTitle}" />
             <Label
                 mvx:Bi.nd="Text Album"

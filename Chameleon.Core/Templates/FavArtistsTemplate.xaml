@@ -35,6 +35,8 @@
             <Label
                 mvx:Bi.nd="Text Title"
                 Grid.Row="1"
+                LineBreakMode="WordWrap"
+                MaxLines="3"
                 Style="{StaticResource MediaItemTitle}" />
             <Label
                 mvx:Bi.nd="Text Album"

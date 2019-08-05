@@ -18,8 +18,8 @@
     <NavigationPage.TitleView>
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="28"/>
-                <RowDefinition Height="28"/>
+                <RowDefinition Height="23"/>
+                <RowDefinition Height="23"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>

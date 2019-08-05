@@ -19,12 +19,17 @@
                 <StackLayout Spacing="0">
                     <SearchBar
                         mvx:La.ng="Placeholder SearchBar"
-                        Margin="16,20"
-                        HorizontalOptions="StartAndExpand"
+                        HorizontalOptions="FillAndExpand"
                         TextColor="{StaticResource White}"
                         CancelButtonColor="{StaticResource White}"
                         BackgroundColor="{StaticResource BackgroundColor}"
-                        PlaceholderColor="{StaticResource White_30}"/>
+                        PlaceholderColor="{StaticResource White_30}">
+                        <SearchBar.Margin>
+                            <OnPlatform x:TypeArguments="Thickness"
+                                        iOS="16,20"
+                                        Android="0,20,24,20" />
+                        </SearchBar.Margin>
+                    </SearchBar>
                     <Label mvx:La.ng="Text Artists" Style="{StaticResource Header1}"/>
                     <CollectionView
                         x:Name="MyCollectionView"

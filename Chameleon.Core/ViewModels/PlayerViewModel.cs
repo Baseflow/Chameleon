@@ -40,25 +40,45 @@ namespace Chameleon.Core.ViewModels
             get => _source;
             set
             {
-                if(SetProperty(ref _source, value))
+                if (SetProperty(ref _source, value))
                 {
-                    _source.Title = "Title";
-                    _source.Album = "Album";
                     var metaData = new List<Metadata>();
-                    metaData.Add(new ViewModels.Metadata() { Key = "Title", Value = _source.Title });
+                    metaData.Add(new ViewModels.Metadata() { Key = "Author", Value = _source.Advertisement });
                     metaData.Add(new ViewModels.Metadata() { Key = "Album", Value = _source.Album });
-                    metaData.Add(new ViewModels.Metadata() { Key = "2", Value = _source.Title });
-                    metaData.Add(new ViewModels.Metadata() { Key = "3", Value = _source.Title });
-                    metaData.Add(new ViewModels.Metadata() { Key = "4", Value = _source.Title });
-                    metaData.Add(new ViewModels.Metadata() { Key = "5", Value = _source.Title });
-                    metaData.Add(new ViewModels.Metadata() { Key = "6", Value = _source.Title });
-                    metaData.Add(new ViewModels.Metadata() { Key = "7", Value = _source.Title });
-                    metaData.Add(new ViewModels.Metadata() { Key = "8", Value = _source.Title });
-                    metaData.Add(new ViewModels.Metadata() { Key = "9", Value = _source.Title });
-                    metaData.Add(new ViewModels.Metadata() { Key = "10", Value = _source.Title });
-                    metaData.Add(new ViewModels.Metadata() { Key = "11", Value = _source.Title });
-                    metaData.Add(new ViewModels.Metadata() { Key = "12", Value = _source.Title });
-                    metaData.Add(new ViewModels.Metadata() { Key = "13", Value = _source.Title });
+                    metaData.Add(new ViewModels.Metadata() { Key = "AlbumArt", Object = _source.AlbumArt });
+                    metaData.Add(new ViewModels.Metadata() { Key = "Album Artist", Value = _source.AlbumArtist });
+                    metaData.Add(new ViewModels.Metadata() { Key = "Album Art Uri", Value = _source.AlbumArtUri });
+                    metaData.Add(new ViewModels.Metadata() { Key = "Art", Object = _source.Art});
+                    metaData.Add(new ViewModels.Metadata() { Key = "Artist", Value = _source.Artist });
+                    metaData.Add(new ViewModels.Metadata() { Key = "Art Uri", Value = _source.ArtUri });
+                    metaData.Add(new ViewModels.Metadata() { Key = "Author", Value = _source.Author });
+                    metaData.Add(new ViewModels.Metadata() { Key = "BtFolderType", BtFolderType = _source.BtFolderType });
+                    metaData.Add(new ViewModels.Metadata() { Key = "Compilation", Value = _source.Compilation });
+                    metaData.Add(new ViewModels.Metadata() { Key = "Composer", Value = _source.Composer });
+                    metaData.Add(new ViewModels.Metadata() { Key = "Date", Value = _source.Date });
+                    metaData.Add(new ViewModels.Metadata() { Key = "Disc Number", IntValue = _source.DiscNumber });
+                    metaData.Add(new ViewModels.Metadata() { Key = "Description", Value = _source.DisplayDescription });
+                    metaData.Add(new ViewModels.Metadata() { Key = "Display Icon", Object = _source.DisplayIcon });
+                    metaData.Add(new ViewModels.Metadata() { Key = "Display Icon Uri", Value = _source.DisplayIconUri });
+                    metaData.Add(new ViewModels.Metadata() { Key = "Display Subtitle", Value = _source.DisplaySubtitle });
+                    metaData.Add(new ViewModels.Metadata() { Key = "Display Tilte", Value = _source.DisplayTitle });
+                    metaData.Add(new ViewModels.Metadata() { Key = "Download Status", DownloadStatus = _source.DownloadStatus });
+                    metaData.Add(new ViewModels.Metadata() { Key = "Duration", TimeSpan = _source.Duration });
+                    metaData.Add(new ViewModels.Metadata() { Key = "Extras", Object = _source.Extras });
+                    metaData.Add(new ViewModels.Metadata() { Key = "File Extension", Value = _source.FileExtension });
+                    metaData.Add(new ViewModels.Metadata() { Key = "Genre", Value = _source.Genre });
+                    metaData.Add(new ViewModels.Metadata() { Key = "Is Metadata Extracted", Boolean = _source.IsMetadataExtracted});
+                    metaData.Add(new ViewModels.Metadata() { Key = "MediaId", Value = _source.MediaId });
+                    metaData.Add(new ViewModels.Metadata() { Key = "MediaLocation", MediaLocation = _source.MediaLocation });
+                    metaData.Add(new ViewModels.Metadata() { Key = "Media Type", MediaType = _source.MediaType });
+                    metaData.Add(new ViewModels.Metadata() { Key = "Media Uri", Value = _source.MediaUri });
+                    metaData.Add(new ViewModels.Metadata() { Key = "Num Tracks", IntValue = _source.NumTracks });
+                    metaData.Add(new ViewModels.Metadata() { Key = "Rating", Object = _source.Rating });
+                    metaData.Add(new ViewModels.Metadata() { Key = "Title", Value = _source.Title });
+                    metaData.Add(new ViewModels.Metadata() { Key = "Track Number", IntValue = _source.TrackNumber });
+                    metaData.Add(new ViewModels.Metadata() { Key = "User Rating", Object = _source.UserRating });
+                    metaData.Add(new ViewModels.Metadata() { Key = "Writer", Value = _source.Writer });
+                    metaData.Add(new ViewModels.Metadata() { Key = "Year", IntValue = _source.Year });
                     Metadata = metaData;
                     RaisePropertyChanged(nameof(Metadata));
                 }
@@ -197,5 +217,13 @@ namespace Chameleon.Core.ViewModels
     {
         public string Key { get; set; }
         public string Value { get; set; }
+        public int IntValue { get; set; }
+        public bool Boolean { get; set; }
+        public TimeSpan TimeSpan { get; set; }
+        public MediaType MediaType { get; set; }
+        public Object Object { get; set; }
+        public BtFolderType BtFolderType { get; set; }
+        public DownloadStatus DownloadStatus { get; set; }
+        public MediaLocation MediaLocation { get; set; }
     }
 }

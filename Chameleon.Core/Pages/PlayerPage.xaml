@@ -67,26 +67,26 @@
                             <DataTemplate>
                                 <Grid Padding="18,0,18,0">
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="28"/>
+                                        <RowDefinition Height="30"/>
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="30*"/>
-                                        <ColumnDefinition Width="70*"/>
+                                        <ColumnDefinition Width="40*"/>
+                                        <ColumnDefinition Width="60*"/>
                                     </Grid.ColumnDefinitions>
                                     <Label
                                         Text="{Binding Key}"
                                         VerticalOptions="Center"
                                         Grid.Column="0"
                                         TextColor="{StaticResource White}"
-                                        FontFamily="FiraSans#600"
-                                        FontSize="16"/>
+                                        FontFamily="FiraSans-Bold#600"
+                                        FontSize="13"/>
                                     <Label
                                         Text="{Binding Value}"
                                         VerticalOptions="Center"
                                         Grid.Column="1"
                                         TextColor="{StaticResource White_70}"
-                                        FontFamily="FiraSans#400"
-                                        FontSize="12"/>
+                                        FontFamily="FiraSans-Regular#400"
+                                        FontSize="13"/>
                                 </Grid>
                             </DataTemplate>
                         </BindableLayout.ItemTemplate>

@@ -40,25 +40,25 @@ namespace Chameleon.Core.ViewModels
             get => _source;
             set
             {
-                if(SetProperty(ref _source, value))
+                if (SetProperty(ref _source, value))
                 {
-                    _source.Title = "Title";
-                    _source.Album = "Album";
+                    //_source.Title = "Title";
+                    //_source.Album = "Album";
                     var metaData = new List<Metadata>();
                     metaData.Add(new ViewModels.Metadata() { Key = "Title", Value = _source.Title });
                     metaData.Add(new ViewModels.Metadata() { Key = "Album", Value = _source.Album });
-                    metaData.Add(new ViewModels.Metadata() { Key = "2", Value = _source.Title });
-                    metaData.Add(new ViewModels.Metadata() { Key = "3", Value = _source.Title });
-                    metaData.Add(new ViewModels.Metadata() { Key = "4", Value = _source.Title });
-                    metaData.Add(new ViewModels.Metadata() { Key = "5", Value = _source.Title });
-                    metaData.Add(new ViewModels.Metadata() { Key = "6", Value = _source.Title });
-                    metaData.Add(new ViewModels.Metadata() { Key = "7", Value = _source.Title });
-                    metaData.Add(new ViewModels.Metadata() { Key = "8", Value = _source.Title });
-                    metaData.Add(new ViewModels.Metadata() { Key = "9", Value = _source.Title });
-                    metaData.Add(new ViewModels.Metadata() { Key = "10", Value = _source.Title });
-                    metaData.Add(new ViewModels.Metadata() { Key = "11", Value = _source.Title });
-                    metaData.Add(new ViewModels.Metadata() { Key = "12", Value = _source.Title });
-                    metaData.Add(new ViewModels.Metadata() { Key = "13", Value = _source.Title });
+                    metaData.Add(new ViewModels.Metadata() { Key = "Description", Value = _source.DisplayDescription });
+                    metaData.Add(new ViewModels.Metadata() { Key = "Media Type", MediaType = _source.MediaType });
+                    metaData.Add(new ViewModels.Metadata() { Key = "Duration", TimeSpan = _source.Duration });
+                    metaData.Add(new ViewModels.Metadata() { Key = "Subtitle", Value = _source.DisplaySubtitle });
+                    metaData.Add(new ViewModels.Metadata() { Key = "File Extension", Value = _source.FileExtension });
+                    metaData.Add(new ViewModels.Metadata() { Key = "Display Tilte", Value = _source.DisplayTitle });
+                    metaData.Add(new ViewModels.Metadata() { Key = "Date", Value = _source.Date });
+                    metaData.Add(new ViewModels.Metadata() { Key = "Album Artist", Value = _source.AlbumArtist });
+                    metaData.Add(new ViewModels.Metadata() { Key = "Track Number", IntValue = _source.TrackNumber });
+                    metaData.Add(new ViewModels.Metadata() { Key = "Year", IntValue = _source.Year });
+                    metaData.Add(new ViewModels.Metadata() { Key = "Rating", Object = _source.Rating });
+                    metaData.Add(new ViewModels.Metadata() { Key = "Author", Value = _source.Author });
                     Metadata = metaData;
                     RaisePropertyChanged(nameof(Metadata));
                 }
@@ -197,5 +197,9 @@ namespace Chameleon.Core.ViewModels
     {
         public string Key { get; set; }
         public string Value { get; set; }
+        public TimeSpan TimeSpan { get; set; }
+        public MediaType MediaType { get; set; }
+        public int IntValue { get; set; }
+        public Object Object { get; set; }
     }
 }

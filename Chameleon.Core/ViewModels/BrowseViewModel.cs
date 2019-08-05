@@ -47,8 +47,6 @@ namespace Chameleon.Core.ViewModels
 
         public override async Task Initialize()
         {
-            //FavoriteArtists.ReplaceWith(await _playlistService.GetPlaylist());
-
             RecentlyPlayedItems.ReplaceWith(await _playlistService.GetPlaylist());
         }
 

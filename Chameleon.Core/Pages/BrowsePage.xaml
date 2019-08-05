@@ -28,7 +28,7 @@
                     <Label mvx:La.ng="Text Artists" Style="{StaticResource Header1}"/>
                     <CollectionView
                         x:Name="MyCollectionView"
-                        ItemsSource="{mvx:MvxBind FavoriteArtists}"
+                        ItemsSource="{mvx:MvxBind RecentlyPlayedItems}"
                         HeightRequest="250" >
 
                         <CollectionView.ItemsLayout>

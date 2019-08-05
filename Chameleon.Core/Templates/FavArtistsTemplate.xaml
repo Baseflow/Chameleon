@@ -3,43 +3,50 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
+    xmlns:pan="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     x:Class="Chameleon.Core.Templates.FavArtistsTemplate">
     <ContentView.Content>
-    <Grid Margin="0" Padding="0">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="154"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="154"/>
-        </Grid.ColumnDefinitions>
-        <Frame
-            Padding="0"
-            CornerRadius="8"
-            Grid.Row="0"
-            HasShadow="True"
-            IsClippedToBounds="True">
-            <Image
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
-                Aspect="AspectFill"
-                Source="cover_art_placeholder"/>
-        </Frame>
-        <Label
-            mvx:Bi.nd="Text Title"
-            Grid.Row="1"
-            HorizontalTextAlignment="Start"
-            TextColor="{StaticResource White}"
-            FontFamily="FiraSans#600"
-            FontSize="14"/>
-        <Label
-            mvx:Bi.nd="Text Album"
-            Grid.Row="2"
-            HorizontalTextAlignment="Start"
-            TextColor="{StaticResource White_70}"
-            FontFamily="FiraSans#400"
-            FontSize="12"/>
-    </Grid>
+        <Grid Margin="24,0,0,0" Padding="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="154"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="154"/>
+            </Grid.ColumnDefinitions>
+            <pan:PancakeView
+                CornerRadius="8"
+                IsClippedToBounds="True"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                Elevation="2"
+                HasShadow="True">
+                <pan:PancakeView.HasShadow>
+                  <OnPlatform x:TypeArguments="x:Boolean"
+                              iOS="False"
+                              Android="True" />
+                </pan:PancakeView.HasShadow>
+                <Image
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Aspect="AspectFill"
+                    Source="cover_art_placeholder"/>
+            </pan:PancakeView>
+            <Label
+                mvx:Bi.nd="Text Title"
+                Grid.Row="1"
+                HorizontalTextAlignment="Start"
+                TextColor="{StaticResource White}"
+                FontFamily="FiraSans#600"
+                FontSize="14"/>
+            <Label
+                mvx:Bi.nd="Text Album"
+                Grid.Row="2"
+                HorizontalTextAlignment="Start"
+                TextColor="{StaticResource White_70}"
+                FontFamily="FiraSans#400"
+                FontSize="12"/>
+        </Grid>
     </ContentView.Content>
 </ContentView>

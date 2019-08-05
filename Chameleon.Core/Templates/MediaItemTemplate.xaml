@@ -3,9 +3,10 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
-    x:Class="Chameleon.Core.Templates.MediaItemTemplate" Padding="8,8,8,8">
+    xmlns:pan="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    x:Class="Chameleon.Core.Templates.MediaItemTemplate">
     <ContentView.Content>
-        <Grid Margin="0,4" Padding="0" RowSpacing="0" ColumnSpacing="12">
+        <Grid Margin="24,4" Padding="0" RowSpacing="0" ColumnSpacing="12">
             <Grid.RowDefinitions>
                 <RowDefinition Height="28"/>
                 <RowDefinition Height="28"/>
@@ -14,36 +15,37 @@
                 <ColumnDefinition Width="56"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Frame
-                Padding="0"
+            <pan:PancakeView
                 CornerRadius="3"
-                Grid.Column="0"
-                Grid.RowSpan="2"
-                HasShadow="True"
                 IsClippedToBounds="True"
-                BackgroundColor="{StaticResource CharcoalGrey}">
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                Elevation="2"
+                Grid.Column="0"
+                Grid.RowSpan="2">
+                <pan:PancakeView.HasShadow>
+                  <OnPlatform x:TypeArguments="x:Boolean"
+                              iOS="False"
+                              Android="True" />
+                </pan:PancakeView.HasShadow>
                 <Image
                     HorizontalOptions="Center"
                     VerticalOptions="Center"
                     Aspect="AspectFill"
                     Source="cover_art_placeholder"/>
-            </Frame>
+            </pan:PancakeView>
             <Label
                 mvx:Bi.nd="Text Title"
                 Grid.Column="1"
                 Grid.Row="0"
                 VerticalOptions="End"
-                TextColor="{StaticResource White}"
-                FontFamily="FiraSans#600"
-                FontSize="16"/>
+                Style="{StaticResource MediaItemTitle}" />
             <Label
                 mvx:Bi.nd="Text Album"
                 Grid.Column="1"
                 Grid.Row="1"
                 VerticalOptions="Start"
-                TextColor="{StaticResource White_70}"
-                FontFamily="FiraSans#400"
-                FontSize="12"/>
+                Style="{StaticResource MediaItemSubTitle}" />
         </Grid>
     </ContentView.Content>
 </ContentView>

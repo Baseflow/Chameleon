@@ -14,7 +14,65 @@
     mvx:La.ng="Title Title" >
     
     <ContentPage.Content>
-        <CollectionView
+        <ListView
+            BackgroundColor="{StaticResource BackgroundColor}"
+            ItemsSource="{mvx:MvxBind RecentlyPlayedItems}"
+            HasUnevenRows="True"
+            SeparatorVisibility="None">
+            <ListView.Header>
+                <StackLayout Spacing="0">
+                    <SearchBar
+                        mvx:La.ng="Placeholder SearchBar"
+                        HorizontalOptions="FillAndExpand"
+                        TextColor="{StaticResource White}"
+                        CancelButtonColor="{StaticResource White}"
+                        BackgroundColor="{StaticResource BackgroundColor}"
+                        PlaceholderColor="{StaticResource White_30}">
+                        <SearchBar.Margin>
+                            <OnPlatform x:TypeArguments="Thickness"
+                                        iOS="16,20"
+                                        Android="0,20,24,20" />
+                        </SearchBar.Margin>
+                    </SearchBar>
+                    <Label mvx:La.ng="Text Artists" Style="{StaticResource Header1}"/>
+                    <CollectionView
+                        x:Name="MyCollectionView"
+                        ItemsSource="{mvx:MvxBind RecentlyPlayedItems}"
+                        HeightRequest="250" >
+
+                        <CollectionView.ItemsLayout>
+                            <GridItemsLayout
+                                Orientation="Horizontal"
+                                VerticalItemSpacing="1"
+                                HorizontalItemSpacing="0" />
+                        </CollectionView.ItemsLayout>
+
+                        <CollectionView.EmptyView>
+                            <StackLayout>
+                                <ActivityIndicator Color="DimGray" IsRunning="True" HeightRequest="50" />
+                            </StackLayout>
+                        </CollectionView.EmptyView>
+
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <templates:FavArtistsTemplate/>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+
+                    <Label mvx:La.ng="Text Recent" Style="{StaticResource Header2}"/>
+                </StackLayout>
+            </ListView.Header>
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <templates:MediaItemTemplate/>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <!--<CollectionView
             x:Name="MyCollectionView"
             ItemsSource="{mvx:MvxBind RecentlyPlayedItems}"
             SelectionMode="Single"
@@ -33,7 +91,7 @@
                     <templates:MediaItemTemplate/>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
-        </CollectionView>
+        </CollectionView>-->
         
         
         <!--

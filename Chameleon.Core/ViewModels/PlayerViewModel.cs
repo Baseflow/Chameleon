@@ -191,12 +191,6 @@ namespace Chameleon.Core.ViewModels
             Source = parameter;
         }
 
-        public override async Task Initialize()
-        {
-            if (Source == null)
-                Source = await MediaManager.Play("https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4");
-        }
-
         private void ShowHideControls()
         {
             ShowControls = !ShowControls;

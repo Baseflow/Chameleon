@@ -79,7 +79,6 @@ namespace Chameleon.Core.ViewModels
                     metaData.Add(new ViewModels.Metadata() { Key = "User Rating", Object = _source.UserRating });
                     metaData.Add(new ViewModels.Metadata() { Key = "Writer", Value = _source.Writer });
                     metaData.Add(new ViewModels.Metadata() { Key = "Year", IntValue = _source.Year });
-
                     Metadata = metaData;
                     RaisePropertyChanged(nameof(Metadata));
                 }

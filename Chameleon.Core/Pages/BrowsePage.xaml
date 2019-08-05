@@ -60,7 +60,7 @@
                         </CollectionView.ItemTemplate>
                     </CollectionView>
 
-                    <Label mvx:La.ng="Text Recent" Style="{StaticResource Header2}"/>
+                    <Label mvx:La.ng="Text Recent" Style="{StaticResource Header1}"/>
                 </StackLayout>
             </ListView.Header>
 

@@ -177,7 +177,7 @@
       <Version>6.3.1</Version>
     </PackageReference>
     <PackageReference Include="Plugin.MediaManager.Forms">
-      <Version>0.7.9</Version>
+      <Version>0.8.3</Version>
     </PackageReference>
     <PackageReference Include="Xam.Plugin.Media">
       <Version>4.3.1-beta</Version>
@@ -188,6 +188,9 @@
     <PackageReference Include="Xamarin.Forms" Version="4.1.0.618606" />
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.2.8" />
     <PackageReference Include="Xamarin.Essentials" Version="1.2.0" />
+    <PackageReference Include="Xamarin.Forms.PancakeView">
+      <Version>1.1.5</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Chameleon.Core\Chameleon.Core.csproj">

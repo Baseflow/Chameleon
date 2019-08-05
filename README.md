@@ -1,5 +1,8 @@
 ![Chameleon App Screenshot](chameleon_screenshots.png?raw=true "Chameleon")
 
+
+
+
 # Chameleon
 Chameleon is a flexible media player build with Xamarin.Forms. It is made to showcase [MediaManager](https://github.com/martijn00/XamarinMediaManager)
 

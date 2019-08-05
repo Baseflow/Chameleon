@@ -20,8 +20,7 @@
                 IsClippedToBounds="True"
                 HorizontalOptions="FillAndExpand"
                 VerticalOptions="FillAndExpand"
-                Elevation="2"
-                HasShadow="True">
+                Elevation="2">
                 <pan:PancakeView.HasShadow>
                   <OnPlatform x:TypeArguments="x:Boolean"
                               iOS="False"

@@ -14,7 +14,11 @@
     mvx:La.ng="Title Title" >
     
     <ContentPage.Content>
-        <ListView BackgroundColor="{StaticResource BackgroundColor}" ItemsSource="{mvx:MvxBind RecentlyPlayedItems}" SeparatorVisibility="None">
+        <ListView
+            BackgroundColor="{StaticResource BackgroundColor}"
+            ItemsSource="{mvx:MvxBind RecentlyPlayedItems}"
+            HasUnevenRows="True"
+            SeparatorVisibility="None">
             <ListView.Header>
                 <StackLayout Spacing="0">
                     <SearchBar

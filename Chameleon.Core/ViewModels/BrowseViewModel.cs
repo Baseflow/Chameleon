@@ -33,12 +33,8 @@ namespace Chameleon.Core.ViewModels
             set => SetProperty(ref _selectedMediaItem, value);
         }
 
-        public MvxObservableCollection<IPlaylist> Playlists { get; set; } = new MvxObservableCollection<IPlaylist>();
         public MvxObservableCollection<IMediaItem> FavoriteArtists { get; set; } = new MvxObservableCollection<IMediaItem>();
         public MvxObservableCollection<IMediaItem> RecentlyPlayedItems { get; set; } = new MvxObservableCollection<IMediaItem>();
-
-        private IMvxAsyncCommand<IPlaylist> _openPlaylistCommand;
-        public IMvxAsyncCommand<IPlaylist> OpenPlaylistCommand => _openPlaylistCommand ?? (_openPlaylistCommand = new MvxAsyncCommand<IPlaylist>(OpenPlaylist));
 
         private IMvxAsyncCommand _playerCommand;
         public IMvxAsyncCommand PlayerCommand => _playerCommand ?? (_playerCommand = new MvxAsyncCommand(
@@ -47,11 +43,6 @@ namespace Chameleon.Core.ViewModels
         public override async Task Initialize()
         {
             RecentlyPlayedItems.ReplaceWith(await _playlistService.GetPlaylist());
-        }
-
-        private async Task OpenPlaylist(IPlaylist arg)
-        {
-            await NavigationService.Navigate<PlaylistViewModel, IPlaylist>(arg);
         }
     }
 }

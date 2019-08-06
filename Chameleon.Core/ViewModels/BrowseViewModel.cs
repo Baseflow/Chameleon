@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Acr.UserDialogs;
@@ -33,25 +34,51 @@ namespace Chameleon.Core.ViewModels
             set => SetProperty(ref _selectedMediaItem, value);
         }
 
-        public MvxObservableCollection<IPlaylist> Playlists { get; set; } = new MvxObservableCollection<IPlaylist>();
-        public MvxObservableCollection<IMediaItem> FavoriteArtists { get; set; } = new MvxObservableCollection<IMediaItem>();
-        public MvxObservableCollection<IMediaItem> RecentlyPlayedItems { get; set; } = new MvxObservableCollection<IMediaItem>();
-
-        private IMvxAsyncCommand<IPlaylist> _openPlaylistCommand;
-        public IMvxAsyncCommand<IPlaylist> OpenPlaylistCommand => _openPlaylistCommand ?? (_openPlaylistCommand = new MvxAsyncCommand<IPlaylist>(OpenPlaylist));
+        private MvxObservableCollection<IMediaItem> _recentlyPlayedItems = new MvxObservableCollection<IMediaItem>();
+        public MvxObservableCollection<IMediaItem> RecentlyPlayedItems
+        {
+            get
+            {
+                if (string.IsNullOrWhiteSpace(SearchText))
+                {
+                    return _recentlyPlayedItems;
+                }
+                else
+                {
+                    var searchedItems = _recentlyPlayedItems.Where(x => x.Title.ToLower().Contains(SearchText.ToLower()) || x.Album.ToLower().Contains(SearchText.ToLower()));
+                    return new MvxObservableCollection<IMediaItem>(searchedItems);
+                }
+            }
+            set => SetProperty(ref _recentlyPlayedItems, value);
+        }
 
         private IMvxAsyncCommand _playerCommand;
-        public IMvxAsyncCommand PlayerCommand => _playerCommand ?? (_playerCommand = new MvxAsyncCommand(
-            () => NavigationService.Navigate<PlayerViewModel, IMediaItem>(SelectedMediaItem)));
+        public IMvxAsyncCommand PlayerCommand => _playerCommand ?? (_playerCommand = new MvxAsyncCommand(PlayWhenSelected));
+
+        private string _searchText;
+        public string SearchText
+        {
+            get => _searchText;
+            set
+            {
+                SetProperty(ref _searchText, value);
+                RaisePropertyChanged(nameof(RecentlyPlayedItems));
+            }
+        }
 
         public override async Task Initialize()
         {
             RecentlyPlayedItems.ReplaceWith(await _playlistService.GetPlaylist());
         }
 
-        private async Task OpenPlaylist(IPlaylist arg)
+        private async Task PlayWhenSelected()
         {
-            await NavigationService.Navigate<PlaylistViewModel, IPlaylist>(arg);
+            if (_selectedMediaItem != null)
+            {
+                await NavigationService.Navigate<PlayerViewModel, IMediaItem>(SelectedMediaItem);
+                SelectedMediaItem = null;
+            }
+            return;
         }
     }
 }

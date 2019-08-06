@@ -6,7 +6,7 @@
     xmlns:pan="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     x:Class="Chameleon.Core.Templates.MediaItemTemplate">
     <ContentView.Content>
-        <Grid Margin="24,4" Padding="0" RowSpacing="0" ColumnSpacing="12">
+        <Grid Margin="24,0" Padding="0" RowSpacing="0" ColumnSpacing="12" VerticalOptions="Center">
             <Grid.RowDefinitions>
                 <RowDefinition Height="28"/>
                 <RowDefinition Height="28"/>
@@ -39,12 +39,16 @@
                 Grid.Column="1"
                 Grid.Row="0"
                 VerticalOptions="End"
+                LineBreakMode="TailTruncation"
+                MaxLines="1"
                 Style="{StaticResource MediaItemTitle}" />
             <Label
                 mvx:Bi.nd="Text Album"
                 Grid.Column="1"
                 Grid.Row="1"
                 VerticalOptions="Start"
+                LineBreakMode="TailTruncation"
+                MaxLines="1"
                 Style="{StaticResource MediaItemSubTitle}" />
         </Grid>
     </ContentView.Content>

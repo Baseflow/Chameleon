@@ -6,7 +6,7 @@
     xmlns:pan="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     x:Class="Chameleon.Core.Templates.FavArtistsTemplate">
     <ContentView.Content>
-        <Grid Margin="24,0,0,0" Padding="0">
+        <Grid Margin="12" Padding="12">
             <Grid.RowDefinitions>
                 <RowDefinition Height="154"/>
                 <RowDefinition Height="auto"/>
@@ -35,11 +35,15 @@
             <Label
                 mvx:Bi.nd="Text Title"
                 Grid.Row="1"
+                LineBreakMode="TailTruncation"
+                MaxLines="2"
                 Style="{StaticResource MediaItemTitle}" />
             <Label
                 mvx:Bi.nd="Text Album"
                 Grid.Row="2"
                 HorizontalTextAlignment="Start"
+                LineBreakMode="TailTruncation"
+                MaxLines="1"
                 Style="{StaticResource MediaItemSubTitle}" />
         </Grid>
     </ContentView.Content>

@@ -14,15 +14,19 @@
     mvx:La.ng="Title Title" >
     
     <ContentPage.Content>
-        <ListView
+        <core:MvxListView
             BackgroundColor="{StaticResource BackgroundColor}"
             ItemsSource="{mvx:MvxBind RecentlyPlayedItems}"
-            HasUnevenRows="True"
+            RowHeight="60"
+            SelectionMode="Single"
+            SelectedItem="{Binding SelectedMediaItem, Mode=TwoWay}"
+            ItemClick="{mvx:MvxBind PlayerCommand}"
             SeparatorVisibility="None">
-            <ListView.Header>
+            <core:MvxListView.Header>
                 <StackLayout Spacing="0">
                     <SearchBar
                         mvx:La.ng="Placeholder SearchBar"
+                        Text="{mvx:MvxBind SearchText}"
                         HorizontalOptions="FillAndExpand"
                         TextColor="{StaticResource White}"
                         CancelButtonColor="{StaticResource White}"
@@ -38,6 +42,9 @@
                     <CollectionView
                         x:Name="MyCollectionView"
                         ItemsSource="{mvx:MvxBind RecentlyPlayedItems}"
+                        SelectionMode="Single"
+                        SelectedItem="{Binding SelectedMediaItem, Mode=TwoWay}"
+                        SelectionChangedCommand="{Binding PlayerCommand}"
                         HeightRequest="250" >
 
                         <CollectionView.ItemsLayout>
@@ -60,95 +67,17 @@
                         </CollectionView.ItemTemplate>
                     </CollectionView>
 
-                    <Label mvx:La.ng="Text Recent" Style="{StaticResource Header2}"/>
+                    <Label mvx:La.ng="Text Recent" Style="{StaticResource Header1}" Margin="24,16"/>
                 </StackLayout>
-            </ListView.Header>
+            </core:MvxListView.Header>
 
-            <ListView.ItemTemplate>
+            <core:MvxListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <templates:MediaItemTemplate/>
                     </ViewCell>
                 </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-        <!--<CollectionView
-            x:Name="MyCollectionView"
-            ItemsSource="{mvx:MvxBind RecentlyPlayedItems}"
-            SelectionMode="Single"
-            SelectedItem="{Binding SelectedMediaItem, Mode=TwoWay}"
-            SelectionChangedCommand="{Binding PlayerCommand}"
-            VerticalOptions="FillAndExpand">
-
-            <CollectionView.EmptyView>
-                <StackLayout>
-                    <ActivityIndicator Color="DimGray" IsRunning="True" HeightRequest="50" />
-                </StackLayout>
-            </CollectionView.EmptyView>
-
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <templates:MediaItemTemplate/>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>-->
-        
-        
-        <!--
-        <ScrollView>
-            <StackLayout Spacing="0">
-                <SearchBar
-                    mvx:La.ng="Placeholder SearchBar"
-                    Margin="0,0,0,30"
-                    TextColor="{StaticResource White}"
-                    CancelButtonColor="{StaticResource White}"
-                    PlaceholderColor="{StaticResource White_30}"
-                    BackgroundColor="{StaticResource BackgroundColor}"/>
-                <Label mvx:La.ng="Text Artists" FontFamily="FiraSans#600" FontSize="16" TextColor="#FF6C6E81" Margin="0,0,0,20"/>
-                <CollectionView
-                    x:Name="MyCollectionView"
-                    ItemsSource="{mvx:MvxBind FavoriteArtists}"
-                    HeightRequest="250" >
-
-                    <CollectionView.ItemsLayout>
-                        <GridItemsLayout
-                            Orientation="Horizontal"
-                            VerticalItemSpacing="1"
-                            HorizontalItemSpacing="10" />
-                    </CollectionView.ItemsLayout>
-
-                    <CollectionView.EmptyView>
-                        <StackLayout>
-                            <ActivityIndicator Color="DimGray" IsRunning="True" HeightRequest="50" />
-                        </StackLayout>
-                    </CollectionView.EmptyView>
-
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
-                            <templates:FavArtistsTemplate/>
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
-
-                <Label mvx:La.ng="Text Recent" FontFamily="FiraSans#400" FontSize="14" TextColor="#FF6C6E81" Margin="0,0,0,8"/>
-
-                <CollectionView
-                    x:Name="MyCollectionView2"
-                    ItemsSource="{mvx:MvxBind RecentlyPlayedItems}">
-
-                    <CollectionView.EmptyView>
-                        <StackLayout>
-                            <ActivityIndicator Color="DimGray" IsRunning="True" HeightRequest="50" />
-                        </StackLayout>
-                    </CollectionView.EmptyView>
-
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
-                            <templates:MediaItemTemplate/>
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
-            </StackLayout>
-        </ScrollView>-->
+            </core:MvxListView.ItemTemplate>
+        </core:MvxListView>
     </ContentPage.Content>
 </core:MvxContentPage>

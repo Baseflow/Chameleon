@@ -17,8 +17,9 @@
         <core:MvxListView
             BackgroundColor="{StaticResource BackgroundColor}"
             ItemsSource="{mvx:MvxBind RecentlyPlayedItems}"
-            SelectionMode="None"
             RowHeight="60"
+            SelectionMode="Single"
+            SelectedItem="{Binding SelectedMediaItem, Mode=TwoWay}"
             ItemClick="{mvx:MvxBind PlayerCommand}"
             SeparatorVisibility="None">
             <core:MvxListView.Header>

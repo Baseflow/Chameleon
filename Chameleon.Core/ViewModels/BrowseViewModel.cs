@@ -37,12 +37,31 @@ namespace Chameleon.Core.ViewModels
         public MvxObservableCollection<IMediaItem> RecentlyPlayedItems { get; set; } = new MvxObservableCollection<IMediaItem>();
 
         private IMvxAsyncCommand _playerCommand;
-        public IMvxAsyncCommand PlayerCommand => _playerCommand ?? (_playerCommand = new MvxAsyncCommand(
-            () => NavigationService.Navigate<PlayerViewModel, IMediaItem>(SelectedMediaItem)));
+        public IMvxAsyncCommand PlayerCommand => _playerCommand ?? (_playerCommand = new MvxAsyncCommand(PlayWhenSelected));
+
+        private IMvxCommand _searchCommand;
+        public IMvxCommand SearchCommand
+        {
+            get
+            {
+                return _searchCommand ?? (_searchCommand = new MvxCommand<string>((text) =>
+            }
+
+        }
 
         public override async Task Initialize()
         {
             RecentlyPlayedItems.ReplaceWith(await _playlistService.GetPlaylist());
+        }
+
+        private async Task PlayWhenSelected()
+        {
+            if (_selectedMediaItem != null)
+            {
+                await NavigationService.Navigate<PlayerViewModel, IMediaItem>(SelectedMediaItem);
+                SelectedMediaItem = null;
+            }
+            return;
         }
     }
 }

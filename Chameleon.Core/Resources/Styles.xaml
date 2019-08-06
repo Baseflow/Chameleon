@@ -47,7 +47,7 @@
     <Style TargetType="Label" x:Key="Header1">
         <Setter Property="FontFamily" Value="FiraSans#600"/>
         <Setter Property="FontSize" Value="Large"/>
-        <Setter Property="Margin" Value="24,0,24,20"/>
+        <Setter Property="Margin" Value="24,0"/>
         <Setter Property="FontAttributes" Value="Bold"/>
     </Style>
 

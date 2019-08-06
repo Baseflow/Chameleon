@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MediaManager;
 using MediaManager.Media;
+using MediaManager.Playback;
 using MvvmCross.Commands;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
@@ -142,6 +143,13 @@ namespace Chameleon.Core.ViewModels
             set => SetProperty(ref _playPauseImage, value);
         }
 
+        private ImageSource _repeatImage = ImageSource.FromFile("playback_controls_repeat_off");
+        public ImageSource RepeatImage
+        {
+            get => _repeatImage;
+            set => SetProperty(ref _repeatImage, value);
+        }
+
         private IMvxAsyncCommand _dragCompletedCommand;
         public IMvxAsyncCommand DragCompletedCommand => _dragCompletedCommand ?? (_dragCompletedCommand = new MvxAsyncCommand(() =>
         {
@@ -175,7 +183,7 @@ namespace Chameleon.Core.ViewModels
             () => NavigationService.Navigate<QueueViewModel>()));
 
         private IMvxCommand _repeatCommand;
-        public IMvxCommand RepeatCommand => _repeatCommand ?? (_repeatCommand = new MvxCommand(() => MediaManager.ToggleRepeat()));
+        public IMvxCommand RepeatCommand => _repeatCommand ?? (_repeatCommand = new MvxCommand(RepeatModes));
 
         private IMvxCommand _shuffleCommand;
         public IMvxCommand ShuffleCommand => _shuffleCommand ?? (_shuffleCommand = new MvxCommand(() => MediaManager.ToggleShuffle()));
@@ -204,6 +212,24 @@ namespace Chameleon.Core.ViewModels
                 PlayPauseImage = ImageSource.FromFile("playback_controls_play_button");
             else
                 PlayPauseImage = ImageSource.FromFile("playback_controls_pause_button");
+        }
+
+
+        private void RepeatModes()
+        {
+            MediaManager.ToggleRepeat();
+            switch (MediaManager.RepeatMode)
+            {
+                case RepeatMode.Off:
+                    RepeatImage = ImageSource.FromFile("playback_controls_repeat_off");
+                    break;
+                case RepeatMode.One:
+                    RepeatImage = ImageSource.FromFile("playback_controls_repeat_once_on");
+                    break;
+                case RepeatMode.All:
+                    RepeatImage = ImageSource.FromFile("playback_controls_repeat_on");
+                    break;
+            }
         }
     }
 

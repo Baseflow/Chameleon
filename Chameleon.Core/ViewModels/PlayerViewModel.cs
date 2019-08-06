@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using MediaManager;
 using MediaManager.Media;
 using MediaManager.Playback;
+using MediaManager.Queue;
 using MvvmCross.Commands;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
@@ -150,6 +151,13 @@ namespace Chameleon.Core.ViewModels
             set => SetProperty(ref _repeatImage, value);
         }
 
+        private ImageSource _shuffleImage = ImageSource.FromFile("playback_controls_shuffle_off");
+        public ImageSource ShuffleImage
+        {
+            get => _shuffleImage;
+            set => SetProperty(ref _shuffleImage, value);
+        }
+
         private IMvxAsyncCommand _dragCompletedCommand;
         public IMvxAsyncCommand DragCompletedCommand => _dragCompletedCommand ?? (_dragCompletedCommand = new MvxAsyncCommand(() =>
         {
@@ -183,10 +191,10 @@ namespace Chameleon.Core.ViewModels
             () => NavigationService.Navigate<QueueViewModel>()));
 
         private IMvxCommand _repeatCommand;
-        public IMvxCommand RepeatCommand => _repeatCommand ?? (_repeatCommand = new MvxCommand(RepeatModes));
+        public IMvxCommand RepeatCommand => _repeatCommand ?? (_repeatCommand = new MvxCommand(Repeat));
 
         private IMvxCommand _shuffleCommand;
-        public IMvxCommand ShuffleCommand => _shuffleCommand ?? (_shuffleCommand = new MvxCommand(() => MediaManager.ToggleShuffle()));
+        public IMvxCommand ShuffleCommand => _shuffleCommand ?? (_shuffleCommand = new MvxCommand(Shuffle));
 
         private IMvxAsyncCommand _addToPlaylistCommand;
         public IMvxAsyncCommand AddToPlaylistCommand => _addToPlaylistCommand ?? (_addToPlaylistCommand = new MvxAsyncCommand(() => MediaManager.PlayNext()));
@@ -214,8 +222,7 @@ namespace Chameleon.Core.ViewModels
                 PlayPauseImage = ImageSource.FromFile("playback_controls_pause_button");
         }
 
-
-        private void RepeatModes()
+        private void Repeat()
         {
             MediaManager.ToggleRepeat();
             switch (MediaManager.RepeatMode)
@@ -228,6 +235,20 @@ namespace Chameleon.Core.ViewModels
                     break;
                 case RepeatMode.All:
                     RepeatImage = ImageSource.FromFile("playback_controls_repeat_on");
+                    break;
+            }
+        }
+        
+        private void Shuffle()
+        {
+            MediaManager.ToggleShuffle();
+            switch (MediaManager.ShuffleMode)
+            {
+                case ShuffleMode.Off:
+                    ShuffleImage = ImageSource.FromFile("playback_controls_shuffle_off");
+                    break;
+                case ShuffleMode.All:
+                    ShuffleImage = ImageSource.FromFile("playback_controls_shuffle_on");
                     break;
             }
         }

@@ -107,7 +107,7 @@
                     </Grid.ColumnDefinitions>
                     <ImageButton
                         Grid.Column="0"
-                        Source="playback_controls_shuffle"
+                        Source="{Binding ShuffleImage}"
                         mvx:Bi.nd="Command ShuffleCommand"
                         HorizontalOptions="Center"
                         VerticalOptions="CenterAndExpand"
@@ -119,7 +119,6 @@
                         VerticalOptions="CenterAndExpand"
                         BackgroundColor="Transparent"
                         Source="{Binding RepeatImage}"/>
-              
                     <ImageButton
                         Grid.Column="2"
                         Source="playback_controls_queue"

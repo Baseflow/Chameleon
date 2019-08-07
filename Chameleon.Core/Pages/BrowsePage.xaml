@@ -38,7 +38,10 @@
                                         Android="0,20,24,20" />
                         </SearchBar.Margin>
                     </SearchBar>
-                    <Label mvx:La.ng="Text Artists" Style="{StaticResource Header1}"/>
+                    <Label
+                        mvx:La.ng="Text Artists"
+                        Style="{StaticResource Header1}"
+                        Margin="24,0" />
                     <CollectionView
                         x:Name="MyCollectionView"
                         ItemsSource="{mvx:MvxBind RecentlyPlayedItems}"

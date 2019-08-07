@@ -6,17 +6,77 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:templates="clr-namespace:Chameleon.Core.Templates;assembly=Chameleon.Core"
     xmlns:viewModels="clr-namespace:Chameleon.Core.ViewModels;assembly=Chameleon.Core" 
     mc:Ignorable="d"
     x:TypeArguments="viewModels:HomeViewModel"
     x:Class="Chameleon.Core.Views.HomePage"
-    Style="{StaticResource PrimaryContentPage}"
     mvx:La.ng="Title Title" >
+
+    <ScrollView>
+        <StackLayout VerticalOptions="End">
+            <Label
+                mvx:La.ng="Text Recent"
+                Style="{StaticResource Header1}"
+                Margin="24,20,24,0" />
+            <CollectionView
+                x:Name="RecentCollectionView"
+                ItemsSource="{mvx:MvxBind RecentlyPlayedItems}"
+                SelectionMode="Single"
+                SelectedItem="{Binding SelectedMediaItem, Mode=TwoWay}"
+                SelectionChangedCommand="{Binding PlayerCommand}"
+                HeightRequest="250" >
+
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout
+                        Orientation="Horizontal"/>
+                </CollectionView.ItemsLayout>
+
+                <CollectionView.EmptyView>
+                    <StackLayout>
+                        <ActivityIndicator Color="DimGray" IsRunning="True" HeightRequest="50" />
+                    </StackLayout>
+                </CollectionView.EmptyView>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <templates:HorizontalMediaItemsTemplate/>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Label
+                mvx:La.ng="Text Playlists"
+                Style="{StaticResource Header1}"
+                Margin="24,0" />
+            <CollectionView
+                x:Name="PlaylistsCollectionView"
+                ItemsSource="{mvx:MvxBind Playlists}"
+                SelectionMode="Single"
+                SelectedItem="{Binding SelectedPlaylist, Mode=TwoWay}"
+                SelectionChangedCommand="{Binding OpenPlaylistCommand}"
+                HeightRequest="250" >
+
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout
+                        Orientation="Horizontal"/>
+                </CollectionView.ItemsLayout>
+
+                <CollectionView.EmptyView>
+                    <StackLayout>
+                        <ActivityIndicator Color="DimGray" IsRunning="True" HeightRequest="50" />
+                    </StackLayout>
+                </CollectionView.EmptyView>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <templates:HorizontalMediaItemsTemplate/>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Button mvx:La.ng="Text PlayDevice" mvx:Bi.nd="Command OpenFileCommand" Style="{StaticResource PrimaryButton}"/>
+            <Button mvx:La.ng="Text OpenUrl" mvx:Bi.nd="Command OpenUrlCommand" Style="{StaticResource PrimaryButton}"/>
+            <Button mvx:La.ng="Text Player" mvx:Bi.nd="Command PlayerCommand" Style="{StaticResource PrimaryButton}" />
+        </StackLayout>
+    </ScrollView>
     
-    <StackLayout VerticalOptions="End">
-        <Button mvx:La.ng="Text PlayDevice" mvx:Bi.nd="Command OpenFileCommand" Style="{StaticResource PrimaryButton}"/>
-        <Button mvx:La.ng="Text OpenUrl" mvx:Bi.nd="Command OpenUrlCommand" Style="{StaticResource PrimaryButton}"/>
-        <Button mvx:La.ng="Text Player" mvx:Bi.nd="Command PlayerCommand" Style="{StaticResource PrimaryButton}" />
-        <!--<Button mvx:La.ng="Text Queue" mvx:Bi.nd="Command QueueCommand" Style="{StaticResource PrimaryButton}" />-->
-    </StackLayout>
 </core:MvxContentPage>

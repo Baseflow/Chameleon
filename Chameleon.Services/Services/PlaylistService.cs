@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Chameleon.Services.Resources;
+using MediaManager;
 using MediaManager.Library;
 using MediaManager.Media;
 
@@ -14,7 +15,7 @@ namespace Chameleon.Services.Services
         {
         }
 
-        public Task<IList<IMediaItem>> GetPlaylist()
+        public async Task<IList<IMediaItem>> GetPlaylist()
         {
             var json = ExoPlayerSamples.GetEmbeddedResourceString("media.exolist.json");
             var jsonList = ExoPlayerSamples.FromJson(json);
@@ -26,6 +27,12 @@ namespace Chameleon.Services.Services
                 {
                     if (!string.IsNullOrEmpty(sample.Uri))
                     {
+                        //TODO: Fix this code in MediaManager
+                        /*var mediaItem = await CrossMediaManager.Current.MediaExtractor.CreateMediaItem(sample.Uri);
+                        mediaItem.Title = sample.Name;
+                        mediaItem.Album = item.Name;
+                        mediaItem.FileExtension = sample.Extension ?? "";*/
+
                         var mediaItem = new MediaItem(sample.Uri)
                         {
                             Title = sample.Name,
@@ -44,7 +51,7 @@ namespace Chameleon.Services.Services
                 }
             }
 
-            return Task.FromResult(items);
+            return items;
         }
 
         public Task<IList<IPlaylist>> GetPlaylists()

@@ -244,14 +244,6 @@ namespace Chameleon.Core.ViewModels
                     break;
             }
         }
-
-        public override async Task Initialize()
-        {
-            if (Source == null)
-                Source = await MediaManager.Play("https://ia600605.us.archive.org/32/items/Mp3Playlist_555/AaronNeville-CrazyLove.mp3");
-
-        }
-
     }
 
     public class Metadata

@@ -5,9 +5,9 @@ using Xamarin.Forms;
 
 namespace Chameleon.Core.Templates
 {
-    public partial class FavArtistsTemplate : ContentView
+    public partial class HorizontalMediaItemsTemplate : ContentView
     {
-        public FavArtistsTemplate()
+        public HorizontalMediaItemsTemplate()
         {
             InitializeComponent();
         }

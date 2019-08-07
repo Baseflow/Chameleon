@@ -11,5 +11,7 @@ namespace Chameleon.Services.Services
         Task<IList<IPlaylist>> GetPlaylists();
 
         Task<IList<IMediaItem>> GetPlaylist();
+
+        Task SavePlaylist(IPlaylist playlist);
     }
 }

@@ -6,13 +6,18 @@ using Chameleon.Services.Resources;
 using MediaManager;
 using MediaManager.Library;
 using MediaManager.Media;
+using MonkeyCache;
+using MonkeyCache.LiteDB;
 
 namespace Chameleon.Services.Services
 {
     public class PlaylistService : IPlaylistService
     {
-        public PlaylistService()
+        private readonly IBarrel _barrel;
+
+        public PlaylistService(IBarrel barrel)
         {
+            _barrel = barrel ?? throw new ArgumentNullException(nameof(barrel));
         }
 
         public async Task<IList<IMediaItem>> GetPlaylist()
@@ -60,6 +65,12 @@ namespace Chameleon.Services.Services
             //playlists.Add(new MediaManager.Media.Playlist() { Title = "ExoPlayer" });
 
             return Task.FromResult(playlists);
+        }
+
+        public Task SavePlaylist(IPlaylist playlist)
+        {
+            _barrel.Add<IPlaylist>(playlist.PlaylistId, playlist, TimeSpan.MaxValue);
+            return Task.CompletedTask;
         }
     }
 }

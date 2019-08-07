@@ -62,7 +62,7 @@
 
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
-                                <templates:FavArtistsTemplate/>
+                                <templates:HorizontalMediaItemsTemplate/>
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>

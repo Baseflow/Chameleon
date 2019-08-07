@@ -88,7 +88,7 @@ namespace Chameleon.Core.ViewModels
             set => SetProperty(ref _showControls, value);
         }
 
-        private bool _dragStarted;
+        private bool _dragStarted = false;
         public bool DragStarted
         {
             get => _dragStarted;
@@ -197,6 +197,14 @@ namespace Chameleon.Core.ViewModels
         public override void Prepare(IMediaItem parameter)
         {
             Source = parameter;
+        }
+
+        public override void ViewAppearing()
+        {
+            TimeSpanPosition = MediaManager.Position;
+            Position = MediaManager.Position.TotalSeconds;
+            TimeSpanDuration = MediaManager.Duration;
+            Duration = MediaManager.Duration.TotalSeconds;
         }
 
         private void ShowHideControls()

@@ -8,12 +8,18 @@
         <styles:Resources.Colors />
     </ResourceDictionary.MergedDictionaries>
 
+    <Style TargetType="{x:Type Button}" ApplyToDerivedTypes="True">
+        <Setter Property="FontAttributes" Value="Bold"/>
+    </Style>
+
     <Style TargetType="Button" x:Key="PrimaryButton">
         <Setter Property="TextColor" Value="White"/>
         <Setter Property="BackgroundColor" Value="Transparent"/>
         <Setter Property="BorderColor" Value="#252525"/>
         <Setter Property="BorderRadius" Value="25"/>
         <Setter Property="BorderWidth" Value="1"/>
+        <Setter Property="FontFamily" Value="FiraSans#600"/>
+        <Setter Property="FontSize" Value="14"/>
         <Setter Property="HeightRequest" Value="50"/>
         <Setter Property="VisualStateManager.VisualStateGroups">
             <VisualStateGroupList>
@@ -34,6 +40,16 @@
                 </VisualStateGroup>
             </VisualStateGroupList>
         </Setter>
+    </Style>
+
+    <Style TargetType="Button" x:Key="SecondaryButton">
+        <Setter Property="TextColor" Value="#FF898CB2"/>
+        <Setter Property="BackgroundColor" Value="#252525"/>
+        <Setter Property="CornerRadius" Value="20"/>
+        <Setter Property="HeightRequest" Value="40"/>
+        <Setter Property="WidthRequest" Value="106"/>
+        <Setter Property="FontFamily" Value="FiraSans#500"/>
+        <Setter Property="FontSize" Value="13"/>
     </Style>
 
     <Style TargetType="ContentPage" x:Key="PrimaryContentPage">

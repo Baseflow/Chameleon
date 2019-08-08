@@ -70,7 +70,6 @@ namespace Chameleon.Core.ViewModels
         {
             Playlists.ReplaceWith(await _playlistService.GetPlaylists());
             RecentlyPlayedItems.ReplaceWith(await _playlistService.GetPlaylist());
-            var floep = 1;
         }
 
         private async Task OpenUrl()

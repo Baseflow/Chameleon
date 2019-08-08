@@ -11,14 +11,15 @@
     mc:Ignorable="d"
     x:TypeArguments="viewModels:HomeViewModel"
     x:Class="Chameleon.Core.Views.HomePage"
-    mvx:La.ng="Title Title" >
+    mvx:La.ng="Title Title"
+    Padding="0,20">
 
     <ScrollView>
         <StackLayout VerticalOptions="End">
             <Label
                 mvx:La.ng="Text Recent"
                 Style="{StaticResource Header1}"
-                Margin="24,20,24,0" />
+                Margin="24,0" />
             <CollectionView
                 x:Name="RecentCollectionView"
                 ItemsSource="{mvx:MvxBind RecentlyPlayedItems}"
@@ -44,10 +45,17 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-            <Label
-                mvx:La.ng="Text Playlists"
-                Style="{StaticResource Header1}"
-                Margin="24,0" />
+            <StackLayout Spacing="0" Orientation="Horizontal" Padding="24,0">
+                <Label
+                    mvx:La.ng="Text Playlists"
+                    Style="{StaticResource Header1}"
+                    HorizontalOptions="Start"
+                    VerticalTextAlignment="Center"/>
+                <Button
+                    mvx:La.ng="Text AllPlaylists"
+                    Style="{StaticResource SecondaryButton}"
+                    HorizontalOptions="EndAndExpand"/>
+            </StackLayout>
             <CollectionView
                 x:Name="PlaylistsCollectionView"
                 ItemsSource="{mvx:MvxBind Playlists}"
@@ -73,9 +81,9 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-            <Button mvx:La.ng="Text PlayDevice" mvx:Bi.nd="Command OpenFileCommand" Style="{StaticResource PrimaryButton}"/>
-            <Button mvx:La.ng="Text OpenUrl" mvx:Bi.nd="Command OpenUrlCommand" Style="{StaticResource PrimaryButton}"/>
-            <Button mvx:La.ng="Text Player" mvx:Bi.nd="Command PlayerCommand" Style="{StaticResource PrimaryButton}" />
+            <Button mvx:La.ng="Text PlayDevice" mvx:Bi.nd="Command OpenFileCommand" Style="{StaticResource PrimaryButton}" Margin="24,0"/>
+            <Button mvx:La.ng="Text OpenUrl" mvx:Bi.nd="Command OpenUrlCommand" Style="{StaticResource PrimaryButton}" Margin="24,0"/>
+            <Button mvx:La.ng="Text Player" mvx:Bi.nd="Command PlayerCommand" Style="{StaticResource PrimaryButton}" Margin="24,0"/>
         </StackLayout>
     </ScrollView>
     

@@ -1,5 +1,6 @@
 ﻿{
   "Title": "Settings",
+    "PowerdByText": "This app showcases the possibilities of the Xamarin Media Manager plugin, developed by Baseflow. This plugin is available as open source project on Github.\n\nNeed help  with integrating functionalities within your own apps? Contact us at hello@baseflow.com",
   "FindUsOnGithub": "Find us on Github",
   "VisitBaseflow":  "Visit baseflow.com"
 }

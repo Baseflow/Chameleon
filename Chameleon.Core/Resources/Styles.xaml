@@ -47,7 +47,6 @@
         <Setter Property="BackgroundColor" Value="#252525"/>
         <Setter Property="CornerRadius" Value="20"/>
         <Setter Property="HeightRequest" Value="40"/>
-        <Setter Property="WidthRequest" Value="106"/>
         <Setter Property="FontFamily" Value="FiraSans#500"/>
         <Setter Property="FontSize" Value="13"/>
     </Style>

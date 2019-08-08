@@ -51,9 +51,9 @@ namespace Chameleon.Android
 
         private async void HandleIntent()
         {
-            var receiverdIntent = Intent;
-            var receivedAction = receiverdIntent.Action;
-            var receivedType = receiverdIntent.Type;
+            var receivedIntent = Intent;
+            var receivedAction = receivedIntent.Action;
+            var receivedType = receivedIntent.Type;
 
             if (receivedAction == Intent.ActionSend)
             {
@@ -61,7 +61,7 @@ namespace Chameleon.Android
 
                 if (receivedType.StartsWith("video/") || receivedType.StartsWith("audio/"))
                 {
-                    var receiveUri = receiverdIntent.GetParcelableExtra(Intent.ExtraStream) as Uri;
+                    var receiveUri = receivedIntent.GetParcelableExtra(Intent.ExtraStream) as Uri;
                     path = receiveUri.ToString();
                 }
                 if (!string.IsNullOrEmpty(path))
@@ -76,7 +76,7 @@ namespace Chameleon.Android
 
                 if (receivedType.StartsWith("video/") || receivedType.StartsWith("audio/"))
                 {
-                    var receiveUris = receiverdIntent.GetParcelableArrayListExtra(Intent.ExtraStream);
+                    var receiveUris = receivedIntent.GetParcelableArrayListExtra(Intent.ExtraStream);
                     mediaUrls = receiveUris.Cast<Uri>().Select(x => x.ToString());
                 }
                 if (mediaUrls != null)
@@ -84,10 +84,6 @@ namespace Chameleon.Android
                     await CrossMediaManager.Current.Play(mediaUrls);
                     await Mvx.IoCProvider.Resolve<IMvxNavigationService>().Navigate<PlayerViewModel>();
                 }
-            }
-            else if (receivedAction.Equals(Intent.ActionMain))
-            {
-                Console.WriteLine("nothing shared");
             }
         }
 

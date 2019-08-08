@@ -16,7 +16,10 @@
     
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout>
+            <StackLayout VerticalOptions="End">
+
+                <Image Source="powered_by_baseflow_logo" Margin="10,0,0,10" HorizontalOptions="Start"/>
+                <Label mvx:La.ng="Text PowerdByText" WidthRequest="200" HeightRequest="140" FontFamily="FiraSans#400" FontSize="12" FontAttributes="None" TextColor="#FFE3E5F6" LineHeight="1.3" Margin="10,0,10,0" />
                 <Button mvx:La.ng="Text FindUsOnGithub" mvx:Bi.nd="Command GithubCommand" Style="{StaticResource PrimaryButton}"/>
                 <Button mvx:La.ng="Text VisitBaseflow" mvx:Bi.nd="Command BaseflowCommand" Style="{StaticResource PrimaryButton}" />
             </StackLayout>

@@ -21,5 +21,11 @@ namespace Chameleon.Core.ViewModels
         {
             _userDialogs = userDialogs ?? throw new ArgumentNullException(nameof(userDialogs));
         }
+
+        private IMvxAsyncCommand _mediaManagerCommand;
+        public IMvxAsyncCommand MediaManagerCommand => _mediaManagerCommand ?? (_mediaManagerCommand = new MvxAsyncCommand(() => Xamarin.Essentials.Browser.OpenAsync("https://github.com/martijn00/XamarinMediaManager")));
+
+        private IMvxAsyncCommand _xamarinFormsCommand;
+        public IMvxAsyncCommand XamarinFormsCommand => _xamarinFormsCommand ?? (_xamarinFormsCommand = new MvxAsyncCommand(() => Xamarin.Essentials.Browser.OpenAsync("https://docs.microsoft.com/en-us/xamarin/xamarin-forms/")));
     }
 }

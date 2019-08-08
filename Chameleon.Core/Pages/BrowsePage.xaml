@@ -40,10 +40,12 @@
                     </SearchBar>
                     <Label
                         mvx:La.ng="Text Artists"
+                        IsVisible="{Binding IsVisible, Mode=OneWay}"
                         Style="{StaticResource Header1}"
                         Margin="24,0" />
                     <CollectionView
                         x:Name="MyCollectionView"
+                        IsVisible="{Binding IsVisible, Mode=OneWay}"
                         ItemsSource="{mvx:MvxBind RecentlyPlayedItems}"
                         SelectionMode="Single"
                         SelectedItem="{Binding SelectedMediaItem, Mode=TwoWay}"

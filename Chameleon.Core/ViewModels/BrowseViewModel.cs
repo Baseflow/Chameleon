@@ -34,6 +34,14 @@ namespace Chameleon.Core.ViewModels
             set => SetProperty(ref _selectedMediaItem, value);
         }
 
+        public bool IsVisible
+        {
+            get
+            {
+                return string.IsNullOrEmpty(SearchText);
+            }
+        }
+
         private MvxObservableCollection<IMediaItem> _recentlyPlayedItems = new MvxObservableCollection<IMediaItem>();
         public MvxObservableCollection<IMediaItem> RecentlyPlayedItems
         {
@@ -63,6 +71,7 @@ namespace Chameleon.Core.ViewModels
             {
                 SetProperty(ref _searchText, value);
                 RaisePropertyChanged(nameof(RecentlyPlayedItems));
+                RaisePropertyChanged(nameof(IsVisible));
             }
         }
 

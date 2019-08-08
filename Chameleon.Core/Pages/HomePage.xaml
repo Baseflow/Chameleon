@@ -54,7 +54,8 @@
                 <Button
                     mvx:La.ng="Text AllPlaylists"
                     Style="{StaticResource SecondaryButton}"
-                    HorizontalOptions="EndAndExpand"/>
+                    HorizontalOptions="EndAndExpand"
+                    Padding="19,0"/>
             </StackLayout>
             <CollectionView
                 x:Name="PlaylistsCollectionView"

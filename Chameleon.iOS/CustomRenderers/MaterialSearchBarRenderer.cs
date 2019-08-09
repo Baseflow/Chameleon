@@ -9,11 +9,14 @@ namespace Chameleon.iOS.CustomRenderers
 {
     public class MaterialSearchBarRenderer : SearchBarRenderer
     {
-        protected override void OnElementChanged(ElementChangedEventArgs<SearchBar> args)
+        protected override void OnElementChanged(ElementChangedEventArgs<SearchBar> e)
         {
-            base.OnElementChanged(args);
+            base.OnElementChanged(e);
 
-            UISearchBar bar = (UISearchBar)this.Control;
+            UISearchBar bar = Control;
+
+            if (bar == null)
+                return;
 
             bar.AutocapitalizationType = UITextAutocapitalizationType.None;
             bar.AutocorrectionType = UITextAutocorrectionType.No;

@@ -53,6 +53,7 @@
                     VerticalTextAlignment="Center"/>
                 <Button
                     mvx:La.ng="Text AllPlaylists"
+                    mvx:Bi.nd="Command OpenPlaylistOverviewCommand"
                     Style="{StaticResource SecondaryButton}"
                     HorizontalOptions="EndAndExpand"
                     Padding="19,0"/>

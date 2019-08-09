@@ -38,6 +38,5 @@
     <Compile Update="**\*.xaml.cs" DependentUpon="%(Filename)" />
     <None Remove="Resources\**\*.json" />
     <EmbeddedResource Include="Resources\**\*.json" />
-    <None Remove="Templates\SettingsItemTemplate.xml" />
   </ItemGroup>
 </Project>

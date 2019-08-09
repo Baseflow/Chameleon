@@ -22,18 +22,6 @@ namespace Chameleon.Core.ViewModels
         public PlayerViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IMediaManager mediaManager) : base(logProvider, navigationService)
         {
             MediaManager = mediaManager ?? throw new ArgumentNullException(nameof(mediaManager));
-            MediaManager.PositionChanged += MediaManager_PositionChanged;
-        }
-
-        private void MediaManager_PositionChanged(object sender, MediaManager.Playback.PositionChangedEventArgs e)
-        {
-            if (!DragStarted)
-            {
-                TimeSpanPosition = e.Position;
-                Position = e.Position.TotalSeconds;
-            }
-            TimeSpanDuration = MediaManager.Duration;
-            Duration = MediaManager.Duration.TotalSeconds;
         }
 
         private IMediaItem _source;
@@ -201,8 +189,27 @@ namespace Chameleon.Core.ViewModels
 
         public override void ViewAppearing()
         {
+            MediaManager.PositionChanged += MediaManager_PositionChanged;
             TimeSpanPosition = MediaManager.Position;
             Position = MediaManager.Position.TotalSeconds;
+            TimeSpanDuration = MediaManager.Duration;
+            Duration = MediaManager.Duration.TotalSeconds;
+            base.ViewAppearing();
+        }
+
+        public override void ViewDisappearing()
+        {
+            MediaManager.PositionChanged -= MediaManager_PositionChanged;
+            base.ViewDisappearing();
+        }
+
+        private void MediaManager_PositionChanged(object sender, MediaManager.Playback.PositionChangedEventArgs e)
+        {
+            if (!DragStarted)
+            {
+                TimeSpanPosition = e.Position;
+                Position = e.Position.TotalSeconds;
+            }
             TimeSpanDuration = MediaManager.Duration;
             Duration = MediaManager.Duration.TotalSeconds;
         }

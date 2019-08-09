@@ -60,7 +60,7 @@
                         </Grid>
                   </ViewCell>
                   <ViewCell   IsEnabled="false" >
-                       <Grid Margin="10,5">
+                       <Grid Margin="15,15">
                        <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />

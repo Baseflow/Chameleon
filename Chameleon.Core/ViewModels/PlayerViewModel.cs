@@ -221,12 +221,12 @@ namespace Chameleon.Core.ViewModels
 
         private async Task PlayPause()
         {
-            await MediaManager.PlayPause();
-
             if (MediaManager.IsPlaying())
                 PlayPauseImage = ImageSource.FromFile("playback_controls_play_button");
             else
                 PlayPauseImage = ImageSource.FromFile("playback_controls_pause_button");
+
+            await MediaManager.PlayPause();
         }
 
         private void Repeat()

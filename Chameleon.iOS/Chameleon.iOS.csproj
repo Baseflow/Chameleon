@@ -239,6 +239,10 @@
     <ImageAsset Include="Assets.xcassets\playback_controls_favorite_on.imageset\playback_controls_favorite_on.png" />
     <ImageAsset Include="Assets.xcassets\playback_controls_favorite_on.imageset\playback_controls_favorite_on%402x.png" />
     <ImageAsset Include="Assets.xcassets\playback_controls_favorite_on.imageset\playback_controls_favorite_on%403x.png" />
+    <ImageAsset Include="Assets.xcassets\disclosure_button.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\disclosure_button.imageset\disclosure_button.png" />
+    <ImageAsset Include="Assets.xcassets\disclosure_button.imageset\disclosure_button%402x.png" />
+    <ImageAsset Include="Assets.xcassets\disclosure_button.imageset\disclosure_button%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -349,6 +353,8 @@
     <Folder Include="Assets.xcassets\playback_controls_shuffle_off.imageset\" />
     <Folder Include="Assets.xcassets\playback_controls_favorite_off.imageset\" />
     <Folder Include="Assets.xcassets\playback_controls_favorite_on.imageset\" />
+    <Folder Include="Assets.xcassets\disclosure_button.imageset\" />
+    <Folder Include="Assets.xcassets\disclosure_button.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />

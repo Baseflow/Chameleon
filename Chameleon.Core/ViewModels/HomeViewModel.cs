@@ -65,7 +65,10 @@ namespace Chameleon.Core.ViewModels
 
         private IMvxAsyncCommand _openPlaylistCommand;
         public IMvxAsyncCommand OpenPlaylistCommand => _openPlaylistCommand ?? (_openPlaylistCommand = new MvxAsyncCommand(OpenPlaylist));
-        
+
+        private IMvxAsyncCommand _openPlaylistOverviewCommand;
+        public IMvxAsyncCommand OpenPlaylistOverviewCommand => _openPlaylistOverviewCommand ?? (_openPlaylistOverviewCommand = new MvxAsyncCommand(() => NavigationService.Navigate<PlaylistOverviewViewModel>()));
+
         public override async Task Initialize()
         {
             RecentlyPlayedItems.ReplaceWith(await _playlistService.GetPlaylist());

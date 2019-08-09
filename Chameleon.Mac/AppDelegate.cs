@@ -1,6 +1,7 @@
 ﻿using AppKit;
 using Chameleon.Core;
 using Foundation;
+using MediaManager;
 using MvvmCross.Forms.Platforms.Mac.Core;
 
 namespace Chameleon.Mac
@@ -10,6 +11,12 @@ namespace Chameleon.Mac
     {
         public AppDelegate()
         {
+        }
+
+        public override void DidFinishLaunching(NSNotification notification)
+        {
+            CrossMediaManager.Current.Init();
+            base.DidFinishLaunching(notification);
         }
     }
 }

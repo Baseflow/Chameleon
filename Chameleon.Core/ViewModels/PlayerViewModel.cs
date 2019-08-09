@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Text;
 using System.Threading.Tasks;
 using MediaManager;
+using MediaManager.Library;
 using MediaManager.Media;
 using MediaManager.Playback;
 using MediaManager.Queue;
@@ -52,7 +53,7 @@ namespace Chameleon.Core.ViewModels
                     metaData.Add(new ViewModels.Metadata() { Key = "Duration", Value = _source.Duration.ToString(@"mm\:ss") });
                     metaData.Add(new ViewModels.Metadata() { Key = "File Extension", Value = _source.FileExtension });
                     metaData.Add(new ViewModels.Metadata() { Key = "Genre", Value = _source.Genre });
-                    metaData.Add(new ViewModels.Metadata() { Key = "MediaId", Value = _source.MediaId });
+                    metaData.Add(new ViewModels.Metadata() { Key = "Id", Value = _source.Id.ToString() });
                     metaData.Add(new ViewModels.Metadata() { Key = "MediaLocation", Value = _source.MediaLocation.ToString() });
                     metaData.Add(new ViewModels.Metadata() { Key = "Media Type", Value = _source.MediaType.ToString() });
                     metaData.Add(new ViewModels.Metadata() { Key = "Media Uri", Value = _source.MediaUri });

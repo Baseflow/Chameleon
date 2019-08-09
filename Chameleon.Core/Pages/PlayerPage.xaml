@@ -60,6 +60,7 @@
                         HorizontalOptions="FillAndExpand"
                         VerticalOptions="Start"
                         HeightRequest="200"
+                        ShowControls="False"
                         mvx:Bi.nd="Source Source" />
                     <StackLayout VerticalOptions="FillAndExpand" BindableLayout.ItemsSource="{Binding Metadata}"
                         Orientation="Vertical">

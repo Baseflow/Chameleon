@@ -51,39 +51,9 @@ namespace Chameleon.Android
 
         private async void HandleIntent()
         {
-            var receivedIntent = Intent;
-            var receivedAction = receivedIntent.Action;
-            var receivedType = receivedIntent.Type;
-
-            if (receivedAction == Intent.ActionSend)
+            if(await CrossMediaManager.Android.HandleIntent(Intent))
             {
-                string path = "";
-
-                if (receivedType.StartsWith("video/") || receivedType.StartsWith("audio/"))
-                {
-                    var receiveUri = receivedIntent.GetParcelableExtra(Intent.ExtraStream) as Uri;
-                    path = receiveUri.ToString();
-                }
-                if (!string.IsNullOrEmpty(path))
-                {
-                    await CrossMediaManager.Current.Play(path);
-                    await Mvx.IoCProvider.Resolve<IMvxNavigationService>().Navigate<PlayerViewModel>();
-                }
-            }
-            else if(receivedAction == Intent.ActionSendMultiple)
-            {
-                IEnumerable<string> mediaUrls = null;
-
-                if (receivedType.StartsWith("video/") || receivedType.StartsWith("audio/"))
-                {
-                    var receiveUris = receivedIntent.GetParcelableArrayListExtra(Intent.ExtraStream);
-                    mediaUrls = receiveUris.Cast<Uri>().Select(x => x.ToString());
-                }
-                if (mediaUrls != null)
-                {
-                    await CrossMediaManager.Current.Play(mediaUrls);
-                    await Mvx.IoCProvider.Resolve<IMvxNavigationService>().Navigate<PlayerViewModel>();
-                }
+                await Mvx.IoCProvider.Resolve<IMvxNavigationService>().Navigate<PlayerViewModel>();
             }
         }
 

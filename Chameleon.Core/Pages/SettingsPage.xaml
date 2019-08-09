@@ -59,7 +59,7 @@
                             <Image Source="disclosure_button" HorizontalOptions="End" BackgroundColor="Transparent" Grid.Column="1"/>
                         </Grid>
                   </ViewCell>
-                  <ViewCell IsEnabled="False" BindingContext="{Binding .}" >
+                  <ViewCell IsEnabled="True" BindingContext="{Binding .}" >
                        <Grid Margin="15,15">
                        <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />

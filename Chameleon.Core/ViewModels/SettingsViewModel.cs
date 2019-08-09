@@ -27,5 +27,20 @@ namespace Chameleon.Core.ViewModels
 
         private IMvxAsyncCommand _baseflowCommand;
         public IMvxAsyncCommand BaseflowCommand => _baseflowCommand ?? (_baseflowCommand = new MvxAsyncCommand(() => Xamarin.Essentials.Browser.OpenAsync("https://baseflow.com/")));
+
+        private IMvxAsyncCommand _openSourceCommand;
+        public IMvxAsyncCommand OpenSourceCommand => _openSourceCommand ?? (_openSourceCommand = new MvxAsyncCommand(() => NavigationService.Navigate<OpenSourceViewModel>()));
+
+        //public async Task Handle_Tapped(object sender, System.EventArgs e)
+        //{
+        //   await NavigationService.Navigate<OpenSourceViewModel>();
+
+        //}
+
+        async Task OnViewCellTapped(object sender, EventArgs e)
+        {
+            await NavigationService.Navigate<OpenSourceViewModel>();
+            
+        }
     }
 }

@@ -354,6 +354,7 @@
     <Folder Include="Assets.xcassets\playback_controls_favorite_off.imageset\" />
     <Folder Include="Assets.xcassets\playback_controls_favorite_on.imageset\" />
     <Folder Include="Assets.xcassets\disclosure_button.imageset\" />
+    <Folder Include="Assets.xcassets\disclosure_button.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />

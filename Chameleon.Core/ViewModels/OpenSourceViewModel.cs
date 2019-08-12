@@ -25,99 +25,28 @@ namespace Chameleon.Core.ViewModels
 
         }
 
-        private List<OpenSourceButton> _openSourceButtons = new List<OpenSourceButton>();
-        public List<OpenSourceButton> OpenSourceButtons
+        private IList<OpenSourceButton> _openSourceList;
+        public IList<OpenSourceButton> OpenSourceList
         {
-            get => _openSourceButtons;
-            set => SetProperty(ref _openSourceButtons, value);
+            get => _openSourceList;
+            set => SetProperty(ref _openSourceList, value);
         }
 
+        private IMvxAsyncCommand<OpenSourceButton> _itemClickedCommand;
+        public IMvxAsyncCommand<OpenSourceButton> ItemClickedCommand => _itemClickedCommand ?? (_itemClickedCommand = new MvxAsyncCommand<OpenSourceButton>(ItemClicked));
 
-        public override async Task Initialize()
+        private async Task ItemClicked(OpenSourceButton arg)
         {
-
-
-
-
+            await Xamarin.Essentials.Browser.OpenAsync(arg.Url);
         }
 
-        public Task<IList<OpenSourceButton>> OpenSourceButtonsObject()
+        public override void Prepare()
         {
-            IList<OpenSourceButton> openSourceButtonsItem;
-            if (openSourceButtonsItem != null)
+            base.Prepare();
+            OpenSourceList = new List<OpenSourceButton>()
             {
-                foreach (var item in openSourceButtonsItem)
-                {
-                    var urlMediaManager = "https://github.com/martijn00/XamarinMediaManager";
-                    var title = Title;
-                    var command = OpenBrowserCommand;
-                    var mediaManger = urlMediaManager + title + command;
-                }
-            }
-
-
-            return Task.FromResult<OpenSourceButton>(openSourceButtonsItem);
-        }
-
-
-        //public Task<IList<OpenSourceButton>> OpenSourceButtonsObject()
-        //{
-        //    IList<OpenSourceButton> openSourceButtonsItem;
-        //    foreach (var item in openSourceButtonsItem)
-        //    {
-
-        //    }
-        //    var mediaManager = "https://github.com/martijn00/XamarinMediaManager";
-        //    var title = OpenSourceButton.;
-
-        //    return Task.FromResult<OpenSourceButton>(urls);
-        //}
-
-        //public Task<IList<OpenSourceButton>> OpenSourceButtonsObject()
-        //{
-        //    var myUrl = CommonValues.URL + "images/Uploads/e0111.png";
-
-        //    var mediaManager = "https://github.com/martijn00/XamarinMediaManager";
-        //    var title = OpenSourceButton.;
-
-
-
-
-        //    "https://github.com/martijn00/XamarinMediaManager", "https://docs.microsoft.com/en-us/xamarin/xamarin-forms/"
-
-
-        //    IList<string> urls = new List<string>();
-
-        //    string[] url = { "https://github.com/martijn00/XamarinMediaManager", "https://docs.microsoft.com/en-us/xamarin/xamarin-forms/" };
-
-        //    foreach (string strings in url)
-        //    {
-        //        urls.Add(strings);
-        //    }
-
-            //for (int i = 0; i < urls.Count; i++) { 
-                
-            //    //  // Inflate the tile
-            //    var tile = LayoutInflater.Inflate(Resource.Layout.Tile, null);
-
-            //    //    // Set its attributes
-            //    //    tile.FindViewById<TextView>(Resource.Id.projectName).Text = currentProject;
-
-            //    //  // Add the tile
-            //    //  projectScrollView.AddView(tile);
-                //}
-
-                return Task.FromResult(urls);
+                new OpenSourceButton(){Title = "test", Command = ItemClickedCommand, Url = "test.com"}
+            };
         }
     }
-
-        
 }
-
-
-       
-
-            
-
-
-

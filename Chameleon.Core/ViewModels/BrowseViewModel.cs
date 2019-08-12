@@ -28,6 +28,10 @@ namespace Chameleon.Core.ViewModels
             _playlistService = playlistService ?? throw new ArgumentNullException(nameof(playlistService));
         }
 
+        private IMvxAsyncCommand _addCommand;
+        public IMvxAsyncCommand AddCommand => _addCommand ?? (_addCommand = new MvxAsyncCommand(() => NavigationService.Navigate<AddProviderViewModel>()));
+
+
         private IMediaItem _selectedMediaItem;
         public IMediaItem SelectedMediaItem
         {

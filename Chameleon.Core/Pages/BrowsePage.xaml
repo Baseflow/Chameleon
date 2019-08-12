@@ -12,7 +12,9 @@
     x:TypeArguments="viewModels:BrowseViewModel"
     x:Class="Chameleon.Core.Views.BrowsePage"
     mvx:La.ng="Title Title" >
-    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="playback_controls_add_to_playlist" Order="Primary" mvx:Bi.nd="Command AddCommand"/>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <core:MvxListView
             BackgroundColor="{StaticResource BackgroundColor}"

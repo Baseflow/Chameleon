@@ -247,6 +247,10 @@
     <ImageAsset Include="Assets.xcassets\icon_more.imageset\icon_more.png" />
     <ImageAsset Include="Assets.xcassets\icon_more.imageset\icon_more%402x.png" />
     <ImageAsset Include="Assets.xcassets\icon_more.imageset\icon_more%403x.png" />
+    <ImageAsset Include="Assets.xcassets\icon_plus.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\icon_plus.imageset\icon_plus.png" />
+    <ImageAsset Include="Assets.xcassets\icon_plus.imageset\icon_plus%402x.png" />
+    <ImageAsset Include="Assets.xcassets\icon_plus.imageset\icon_plus%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -360,6 +364,7 @@
     <Folder Include="Assets.xcassets\disclosure_button.imageset\" />
     <Folder Include="Assets.xcassets\disclosure_button.imageset\" />
     <Folder Include="Assets.xcassets\icon_more.imageset\" />
+    <Folder Include="Assets.xcassets\icon_plus.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />

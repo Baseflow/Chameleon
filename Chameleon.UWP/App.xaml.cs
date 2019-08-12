@@ -20,6 +20,7 @@ using MvvmCross.Forms.Platforms.Uap.Views;
 using MvvmCross.Platforms.Uap.Core;
 using Chameleon.Core;
 using Xamarin.Forms;
+using MediaManager;
 
 namespace Chameleon.UWP
 {
@@ -28,6 +29,7 @@ namespace Chameleon.UWP
         public App()
         {
             Forms.SetFlags("CollectionView_Experimental");
+            CrossMediaManager.Current.Init();
             InitializeComponent();
         }
     }

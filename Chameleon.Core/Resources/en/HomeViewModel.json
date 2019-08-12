@@ -3,5 +3,8 @@
   "Player": "Go to player",
   "PlayDevice":  "Play video from device",
   "OpenUrl": "Open video from URL",
-  "Queue":  "(temporary button to open queue)"
+  "Queue":  "(temporary button to open queue)",
+  "Recent":  "RECENTLY PLAYED",
+  "Playlists":  "PLAYLISTS",
+  "AllPlaylists":  "All playlists"
 }

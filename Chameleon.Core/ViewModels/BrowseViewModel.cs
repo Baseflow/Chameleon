@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Acr.UserDialogs;
 using Chameleon.Services.Services;
 using MediaManager;
+using MediaManager.Library;
 using MediaManager.Media;
 using MvvmCross.Commands;
 using MvvmCross.Logging;
@@ -32,6 +33,14 @@ namespace Chameleon.Core.ViewModels
         {
             get => _selectedMediaItem;
             set => SetProperty(ref _selectedMediaItem, value);
+        }
+
+        public bool IsVisible
+        {
+            get
+            {
+                return string.IsNullOrEmpty(SearchText);
+            }
         }
 
         private MvxObservableCollection<IMediaItem> _recentlyPlayedItems = new MvxObservableCollection<IMediaItem>();
@@ -63,6 +72,7 @@ namespace Chameleon.Core.ViewModels
             {
                 SetProperty(ref _searchText, value);
                 RaisePropertyChanged(nameof(RecentlyPlayedItems));
+                RaisePropertyChanged(nameof(IsVisible));
             }
         }
 

@@ -21,5 +21,10 @@ namespace Chameleon.Core.Views
         {
             InitializeComponent();
         }
+
+        private async void ViewCell_Tapped(object sender, EventArgs e)
+        {
+            await ViewModel.OpenSourceCommand.ExecuteAsync();
+        }
     }
 }

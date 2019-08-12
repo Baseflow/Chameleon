@@ -26,10 +26,36 @@ namespace Chameleon.Core.ViewModels
             _playlistService = playlistService ?? throw new ArgumentNullException(nameof(playlistService));
         }
 
-        public MvxObservableCollection<IPlaylist> Playlists { get; set; } = new MvxObservableCollection<IPlaylist>();
+        private MvxObservableCollection<IPlaylist> _playlists = new MvxObservableCollection<IPlaylist>();
+        public MvxObservableCollection<IPlaylist> Playlists
+        {
+            get => _playlists;
+            set => SetProperty(ref _playlists, value);
+        }
+
+        private MvxObservableCollection<IMediaItem> _recentlyPlayedItems = new MvxObservableCollection<IMediaItem>();
+        public MvxObservableCollection<IMediaItem> RecentlyPlayedItems
+        {
+            get => _recentlyPlayedItems;
+            set => SetProperty(ref _recentlyPlayedItems, value);
+        }
+
+        private IMediaItem _selectedMediaItem;
+        public IMediaItem SelectedMediaItem
+        {
+            get => _selectedMediaItem;
+            set => SetProperty(ref _selectedMediaItem, value);
+        }
+
+        private IPlaylist _selectedPlaylist;
+        public IPlaylist SelectedPlaylist
+        {
+            get => _selectedPlaylist;
+            set => SetProperty(ref _selectedPlaylist, value);
+        }
 
         private IMvxAsyncCommand _playerCommand;
-        public IMvxAsyncCommand PlayerCommand => _playerCommand ?? (_playerCommand = new MvxAsyncCommand(() => NavigationService.Navigate<PlayerViewModel>()));
+        public IMvxAsyncCommand PlayerCommand => _playerCommand ?? (_playerCommand = new MvxAsyncCommand(PlaySelectedMediaItem));
 
         private IMvxAsyncCommand _openUrlCommand;
         public IMvxAsyncCommand OpenUrlCommand => _openUrlCommand ?? (_openUrlCommand = new MvxAsyncCommand(OpenUrl));
@@ -37,8 +63,15 @@ namespace Chameleon.Core.ViewModels
         private IMvxAsyncCommand _openFileCommand;
         public IMvxAsyncCommand OpenFileCommand => _openFileCommand ?? (_openFileCommand = new MvxAsyncCommand(OpenFile));
 
+        private IMvxAsyncCommand _openPlaylistCommand;
+        public IMvxAsyncCommand OpenPlaylistCommand => _openPlaylistCommand ?? (_openPlaylistCommand = new MvxAsyncCommand(OpenPlaylist));
+
+        private IMvxAsyncCommand _openPlaylistOverviewCommand;
+        public IMvxAsyncCommand OpenPlaylistOverviewCommand => _openPlaylistOverviewCommand ?? (_openPlaylistOverviewCommand = new MvxAsyncCommand(() => NavigationService.Navigate<PlaylistOverviewViewModel>()));
+
         public override async Task Initialize()
         {
+            RecentlyPlayedItems.ReplaceWith(await _playlistService.GetPlaylist());
             Playlists.ReplaceWith(await _playlistService.GetPlaylists());
         }
 
@@ -66,6 +99,26 @@ namespace Chameleon.Core.ViewModels
                     await NavigationService.Navigate<PlayerViewModel, IMediaItem>(mediaItem);
                 }
             }
+        }
+
+        private async Task PlaySelectedMediaItem()
+        {
+            if (_selectedMediaItem != null)
+            {
+                await NavigationService.Navigate<PlayerViewModel, IMediaItem>(SelectedMediaItem);
+                SelectedMediaItem = null;
+            }
+            return;
+        }
+
+        private async Task OpenPlaylist()
+        {
+            if (_selectedPlaylist != null)
+            {
+                await NavigationService.Navigate<PlaylistViewModel, IPlaylist>(SelectedPlaylist);
+                SelectedPlaylist = null;
+            }
+            return;
         }
     }
 }

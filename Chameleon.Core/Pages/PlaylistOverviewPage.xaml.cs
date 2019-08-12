@@ -15,10 +15,10 @@ namespace Chameleon.Core.Views
     // by visiting https://aka.ms/xamarinforms-previewer
     [DesignTimeVisible(false)]
     [MvxContentPagePresentation(WrapInNavigationPage = true)]
-    public partial class OpenSourcePage : MvxContentPage<OpenSourceViewModel>
+    public partial class PlaylistOverviewPage : MvxContentPage<PlaylistOverviewViewModel>
     {
-        public OpenSourcePage()
-        {
+        public PlaylistOverviewPage()
+        { 
             InitializeComponent();
         }
     }

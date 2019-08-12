@@ -69,7 +69,7 @@ namespace Chameleon.Services.Services
 
         public Task SavePlaylist(IPlaylist playlist)
         {
-            _barrel.Add<IPlaylist>(playlist.PlaylistId, playlist, TimeSpan.MaxValue);
+            _barrel.Add<IPlaylist>(playlist.Id.ToString(), playlist, TimeSpan.MaxValue);
             return Task.CompletedTask;
         }
     }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Chameleon.Core;
 using Foundation;
+using MediaManager;
 using MvvmCross.Forms.Platforms.Ios.Core;
 using UIKit;
 using Xamarin.Forms;
@@ -20,6 +21,7 @@ namespace Chameleon.iOS
             Forms.SetFlags("CollectionView_Experimental");
 
             FFImageLoading.Forms.Platform.CachedImageRenderer.Init();
+            CrossMediaManager.Current.Init();
 
             return base.FinishedLaunching(app, options);
         }

@@ -11,15 +11,70 @@
     mc:Ignorable="d"
     x:TypeArguments="viewModels:SettingsViewModel"
     x:Class="Chameleon.Core.Views.SettingsPage"
-    Padding="24"
     mvx:La.ng="Title Title" >
     
     <ContentPage.Content>
-        <ScrollView>
-            <StackLayout>
-                <Button mvx:La.ng="Text FindUsOnGithub" mvx:Bi.nd="Command GithubCommand" Style="{StaticResource PrimaryButton}"/>
-                <Button mvx:La.ng="Text VisitBaseflow" mvx:Bi.nd="Command BaseflowCommand" Style="{StaticResource PrimaryButton}" />
-            </StackLayout>
-        </ScrollView>
+       <TableView Intent="Settings"
+                  BackgroundColor="{StaticResource BackgroundColor}"
+                  HasUnevenRows="True">
+          <TableRoot>
+              <TableSection>
+                  <!--
+                  <ViewCell>
+                        <Grid Margin="15,15">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                            <Label Text="ExternalDevices" Style="{StaticResource MediaItemTitle}" Grid.Column="0"/>
+                            <Image Source="disclosure_button" HorizontalOptions="End" BackgroundColor="Transparent" Grid.Column="1"/>
+                        </Grid>
+                  </ViewCell>
+                  <ViewCell >
+                        <Grid Margin="15,15">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                            <Label Text="Equalizer" Style="{StaticResource MediaItemTitle}" Grid.Column="0"/>
+                            <Image Source="disclosure_button" HorizontalOptions="End" Grid.Column="1"/>
+                       </Grid>
+                  </ViewCell>-->
+                  <ViewCell Tapped="ViewCell_Tapped">
+                        <Grid Margin="15,15">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                                <Label mvx:La.ng="Text OpenSourceSoftware" Style="{StaticResource MediaItemTitle}" Grid.Column="0"/>
+                            <Image Source="disclosure_button" HorizontalOptions="End" BackgroundColor="Transparent" Grid.Column="1"/>
+                        </Grid>
+                  </ViewCell>
+                  <ViewCell IsEnabled="True" BindingContext="{Binding .}" >
+                       <Grid Margin="15,15">
+                           <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                                <Image Source="powered_by_baseflow_logo" Margin="10,0,0,10" HorizontalOptions="Start" Grid.Row="0"/>
+                                <Label mvx:La.ng="Text PowerdByText" FontFamily="FiraSans#400" FontSize="12" FontAttributes="None" TextColor="#FFE3E5F6" LineHeight="1.3"  Margin="10,0,10,25" Grid.Row="1"/>
+                                <Button mvx:La.ng="Text FindUsOnGithub" mvx:Bi.nd="Command GithubCommand" Style="{StaticResource PrimaryButton}"  Margin="0,0,0,10" Grid.Row="2"/>
+                            <Button mvx:La.ng="Text VisitBaseflow" mvx:Bi.nd="Command BaseflowCommand" Style="{StaticResource PrimaryButton}"  Margin="0,0,0,10" Grid.Row="3"/>
+                        </Grid>
+                  </ViewCell>
+              </TableSection>
+          </TableRoot>
+        </TableView>
     </ContentPage.Content>
 </core:MvxContentPage>

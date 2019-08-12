@@ -45,7 +45,15 @@ namespace Chameleon.Core.ViewModels
             base.Prepare();
             OpenSourceList = new List<OpenSourceButton>()
             {
-                new OpenSourceButton(){Title = "test", Command = ItemClickedCommand, Url = "test.com"}
+                new OpenSourceButton(){Title = "MediaManager", Command = ItemClickedCommand, Url = "https://github.com/martijn00/XamarinMediaManager"},
+                new OpenSourceButton(){Title = "Xamarin Forms", Command = ItemClickedCommand, Url = "https://docs.microsoft.com/en-us/xamarin/xamarin-forms/"},
+                new OpenSourceButton(){Title = "MvvmCross", Command = ItemClickedCommand, Url = "https://github.com/MvvmCross/MvvmCross"},
+                new OpenSourceButton(){Title = "Lottie", Command = ItemClickedCommand, Url = "https://github.com/martijn00/LottieXamarin"},
+                new OpenSourceButton(){Title = "Xamarin Essentials", Command = ItemClickedCommand, Url = "https://github.com/xamarin/Essentials"},
+                new OpenSourceButton(){Title = "FFImageLoading", Command = ItemClickedCommand, Url = "https://github.com/luberda-molinet/FFImageLoading"},
+                new OpenSourceButton(){Title = "UserDialogs", Command = ItemClickedCommand, Url = "https://github.com/aritchie/userdialogs"},
+                new OpenSourceButton(){Title = "MonkeyCache", Command = ItemClickedCommand, Url = "https://github.com/jamesmontemagno/monkey-cache"},
+                new OpenSourceButton(){Title = "Xam Plugin Media", Command = ItemClickedCommand, Url = "https://github.com/jamesmontemagno/MediaPlugin"}
             };
         }
     }

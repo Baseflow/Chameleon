@@ -14,6 +14,7 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="56"/>
                 <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <pan:PancakeView
                 CornerRadius="3"
@@ -50,6 +51,11 @@
                 LineBreakMode="TailTruncation"
                 MaxLines="1"
                 Style="{StaticResource MediaItemSubTitle}" />
+            <ImageButton
+                Source="icon_more"
+                Grid.Column="3"
+                Grid.RowSpan="2"
+                HorizontalOptions="End"/>
         </Grid>
     </ContentView.Content>
 </ContentView>

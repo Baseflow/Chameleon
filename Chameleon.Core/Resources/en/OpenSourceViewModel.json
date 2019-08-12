@@ -1,3 +1,7 @@
 ﻿{
-  "Title": "Open source"
+  "Title": "Open source",
+  "MediaManager": "Media Manager",
+  "XamarinForms": "Xamarin Forms",
+  "OpenSourcesoftware": "Open Source software",
+  "Components": "This app uses several Open Source components"
 }

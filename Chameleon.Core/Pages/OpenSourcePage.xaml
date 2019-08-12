@@ -13,10 +13,23 @@
     x:Class="Chameleon.Core.Views.OpenSourcePage"
     Padding="24"
     mvx:La.ng="Title Title" >
-    
+
     <ContentPage.Content>
-        <StackLayout>
-            
-        </StackLayout>
+        <ScrollView>
+            <StackLayout>
+                <Label mvx:La.ng="Text OpenSourcesoftware" FontFamily="FiraSans#700" FontSize="18" FontAttributes="Bold" TextColor="#FFE3E5F6" />
+                <Label mvx:La.ng="Text Components" FontFamily="FiraSans#400" FontSize="14" FontAttributes="None" TextColor="#FFE3E5F6" Margin="0,0,0,20"/>
+
+                <StackLayout BindableLayout.ItemsSource="{Binding OpenSourceList}">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <Button mvx:Bi.nd="Command Command; CommandParameter ." Text="{Binding Title}" Style="{StaticResource PrimaryButton}"/>
+                            </StackLayout>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </core:MvxContentPage>

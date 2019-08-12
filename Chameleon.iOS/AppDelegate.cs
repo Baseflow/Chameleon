@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Chameleon.Core;
+﻿using Chameleon.Core;
 using Foundation;
 using MediaManager;
 using MvvmCross.Forms.Platforms.Ios.Core;

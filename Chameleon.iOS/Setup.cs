@@ -1,8 +1,5 @@
-﻿using System.Net.Http;
-using Chameleon.Core;
-using MvvmCross;
+﻿using Chameleon.Core;
 using MvvmCross.Forms.Platforms.Ios.Core;
-using MvvmCross.IoC;
 
 namespace Chameleon.iOS
 {

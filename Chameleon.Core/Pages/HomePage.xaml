@@ -17,14 +17,14 @@
         <StackLayout>
             <Label
                 mvx:La.ng="Text Recent"
+                IsVisible="{Binding HasRecent}"
                 Style="{StaticResource Header1}"
                 Margin="24,0" />
             <CollectionView
                 x:Name="RecentCollectionView"
-                ItemsSource="{mvx:MvxBind RecentlyPlayedItems}"
                 SelectionMode="Single"
-                SelectedItem="{Binding SelectedMediaItem, Mode=TwoWay}"
-                SelectionChangedCommand="{Binding PlayerCommand}"
+                IsVisible="{Binding HasRecent}"
+                mvx:Bi.nd="ItemsSource RecentlyPlayedItems; SelectionChangedCommand PlayerCommand; SelectionChangedCommandParameter SelectedMediaItem; SelectedItem SelectedMediaItem"
                 HeightRequest="250" >
 
                 <CollectionView.ItemsLayout>
@@ -59,10 +59,8 @@
             </StackLayout>
             <CollectionView
                 x:Name="PlaylistsCollectionView"
-                ItemsSource="{mvx:MvxBind Playlists}"
                 SelectionMode="Single"
-                SelectedItem="{Binding SelectedPlaylist, Mode=TwoWay}"
-                SelectionChangedCommand="{Binding OpenPlaylistCommand}"
+                mvx:Bi.nd="ItemsSource Playlists; SelectionChangedCommand OpenPlaylistCommand; SelectionChangedCommandParameter SelectedPlaylist; SelectedItem SelectedPlaylist"
                 HeightRequest="250" >
 
                 <CollectionView.ItemsLayout>
@@ -73,7 +71,7 @@
                 <CollectionView.EmptyView>
                     <StackLayout>
                         <ActivityIndicator Color="DimGray" IsVisible="{Binding IsLoading}" IsRunning="{Binding IsLoading}" HeightRequest="50" />
-                        <Label Text="Add a playlist to start" />
+                        <Label IsVisible="{Binding HasNoPlaylists}" Text="No playlists available" Margin="24,0" HeightRequest="50" />
                     </StackLayout>
                 </CollectionView.EmptyView>
 

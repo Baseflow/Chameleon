@@ -1,22 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Chameleon.Services.Resources;
 using MediaManager.Library;
-using MonkeyCache;
 
 namespace Chameleon.Services.Services
 {
-    public class PlaylistService : IPlaylistService
+    public class BrowseService : IBrowseService
     {
-        private readonly IBarrel _barrel;
-
-        public PlaylistService(IBarrel barrel)
+        public Task<IList<IArtist>> GetFavoriteArtists()
         {
-            _barrel = barrel ?? throw new ArgumentNullException(nameof(barrel));
+            return null;
         }
 
-        public Task<IList<IMediaItem>> GetPlaylist()
+        public Task<IList<IMediaItem>> GetMedia()
         {
             var json = ExoPlayerSamples.GetEmbeddedResourceString("media.exolist.json");
             var jsonList = ExoPlayerSamples.FromJson(json);
@@ -55,24 +51,9 @@ namespace Chameleon.Services.Services
             return Task.FromResult(items);
         }
 
-        public Task<IList<IPlaylist>> GetPlaylists()
+        public Task<IList<IMediaItem>> GetRecentMedia()
         {
-            var playlists = _barrel.Get<IList<IPlaylist>>("playlists");
-            if (playlists == null)
-                playlists = new List<IPlaylist>();
-            return Task.FromResult(playlists);
-        }
-
-        public Task SavePlaylist(IPlaylist playlist)
-        {
-            //_barrel.Add<IPlaylist>(playlist.Id.ToString(), playlist, TimeSpan.MaxValue);
-            return Task.CompletedTask;
-        }
-
-        public Task SavePlaylists(IList<IPlaylist> playlists)
-        {
-            _barrel.Add("playlists", playlists, TimeSpan.MaxValue);
-            return Task.CompletedTask;
+            return null;
         }
     }
 }

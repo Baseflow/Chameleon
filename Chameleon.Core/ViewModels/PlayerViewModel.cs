@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Text;
 using System.Threading.Tasks;
 using MediaManager;
 using MediaManager.Library;
-using MediaManager.Media;
 using MediaManager.Playback;
 using MediaManager.Queue;
 using MvvmCross.Commands;
@@ -246,7 +242,7 @@ namespace Chameleon.Core.ViewModels
                     break;
             }
         }
-        
+
         private void Shuffle()
         {
             MediaManager.ToggleShuffle();

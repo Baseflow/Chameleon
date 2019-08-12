@@ -15,21 +15,7 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <SearchBar mvx:La.ng="Placeholder SearchBar" Text="{mvx:MvxBind SearchText}">
-            </SearchBar>
-            <CollectionView x:Name="MyCollectionView" ItemsSource="{mvx:MvxBind Playlists}" SelectionMode="Single" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" SelectionChangedCommand="{Binding OpenPlaylistCommand}" SelectionChangedCommandParameter="{Binding Source={x:Reference MyCollectionView}, Path=SelectedItem}" VerticalOptions="FillAndExpand">
-                <CollectionView.EmptyView>
-                    <StackLayout>
-                        <ActivityIndicator Color="DimGray" IsRunning="True" HeightRequest="50" />
-                    </StackLayout>
-                </CollectionView.EmptyView>
-
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <templates:MediaItemTemplate/>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
+            
         </StackLayout>
     </ContentPage.Content>
 </core:MvxContentPage>

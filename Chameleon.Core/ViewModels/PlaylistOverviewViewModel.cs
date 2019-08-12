@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using Acr.UserDialogs;
 using Chameleon.Services.Services;
 using MediaManager;
 using MediaManager.Library;
-using MediaManager.Media;
 using MvvmCross.Commands;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
@@ -17,13 +14,11 @@ namespace Chameleon.Core.ViewModels
     public class PlaylistOverviewViewModel : BaseViewModel
     {
         private readonly IUserDialogs _userDialogs;
-        private readonly IMediaManager _mediaManager;
         private readonly IPlaylistService _playlistService;
 
         public PlaylistOverviewViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IUserDialogs userDialogs, IMediaManager mediaManager, IPlaylistService playlistService) : base(logProvider, navigationService)
         {
             _userDialogs = userDialogs ?? throw new ArgumentNullException(nameof(userDialogs));
-            _mediaManager = mediaManager ?? throw new ArgumentNullException(nameof(mediaManager));
             _playlistService = playlistService ?? throw new ArgumentNullException(nameof(playlistService));
         }
 
@@ -32,8 +27,20 @@ namespace Chameleon.Core.ViewModels
         private IMvxAsyncCommand<IPlaylist> _openPlaylistCommand;
         public IMvxAsyncCommand<IPlaylist> OpenPlaylistCommand => _openPlaylistCommand ?? (_openPlaylistCommand = new MvxAsyncCommand<IPlaylist>(OpenPlaylist));
 
-        private IMvxCommand _addPlaylistCommand;
-        public IMvxCommand AddPlaylistCommand => _addPlaylistCommand ?? (_addPlaylistCommand = new MvxCommand(() => Playlists.Add(new Playlist() { Title = "test" })));
+        private IMvxAsyncCommand _addPlaylistCommand;
+        public IMvxAsyncCommand AddPlaylistCommand => _addPlaylistCommand ?? (_addPlaylistCommand = new MvxAsyncCommand(AddPlaylist));
+
+        private async Task AddPlaylist()
+        {
+            var config = new PromptConfig();
+            config.Message = "Enter the name of your new playlist";
+            var result = await _userDialogs.PromptAsync(config);
+            if (result.Ok && !string.IsNullOrEmpty(result.Value))
+            {
+                Playlists.Add(new Playlist() { Title = result.Value });
+                await _playlistService.SavePlaylists(Playlists);
+            }
+        }
 
         private IPlaylist _selectedItem;
         public IPlaylist SelectedItem

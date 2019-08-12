@@ -37,7 +37,7 @@ namespace Chameleon.Services.Resources
         public string DrmLicenseUrl { get; set; }
 
         [JsonProperty("playlist", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Playlist> Playlist { get; set; }
+        public List<ExoPlaylist> Playlist { get; set; }
 
         [JsonProperty("ad_tag_uri", NullValueHandling = NullValueHandling.Ignore)]
         public string AdTagUri { get; set; }
@@ -46,7 +46,7 @@ namespace Chameleon.Services.Resources
         public string SphericalStereoMode { get; set; }
     }
 
-    public partial class Playlist
+    public partial class ExoPlaylist
     {
         [JsonProperty("uri")]
         public string Uri { get; set; }

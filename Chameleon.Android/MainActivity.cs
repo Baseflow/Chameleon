@@ -1,25 +1,17 @@
-﻿using System;
-
+﻿
 using Android.App;
 using Android.Content.PM;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
-using MvvmCross.Forms.Platforms.Android.Views;
+using Android.Runtime;
 using Chameleon.Core;
-using MediaManager;
-using Xamarin.Forms;
-using Plugin.CurrentActivity;
-using Intent = global::Android.Content.Intent;
-using Uri = global::Android.Net.Uri;
-using MvvmCross;
-using MvvmCross.Navigation;
 using Chameleon.Core.ViewModels;
-using Android.Provider;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
+using MediaManager;
+using MvvmCross;
+using MvvmCross.Forms.Platforms.Android.Views;
+using MvvmCross.Navigation;
+using Plugin.CurrentActivity;
+using Xamarin.Forms;
+using Intent = global::Android.Content.Intent;
 
 namespace Chameleon.Android
 {
@@ -51,7 +43,7 @@ namespace Chameleon.Android
 
         private async void HandleIntent()
         {
-            if(await CrossMediaManager.Android.HandleIntent(Intent))
+            if (await CrossMediaManager.Android.HandleIntent(Intent))
             {
                 await Mvx.IoCProvider.Resolve<IMvxNavigationService>().Navigate<PlayerViewModel>();
             }

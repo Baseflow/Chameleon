@@ -1,5 +1,4 @@
-﻿using System;
-using MvvmCross.Commands;
+﻿using MvvmCross.Commands;
 
 namespace Chameleon.Core.Helpers
 {

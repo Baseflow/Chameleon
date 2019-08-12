@@ -1,7 +1,5 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Chameleon.Core.ViewModels;
-using FFImageLoading;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 

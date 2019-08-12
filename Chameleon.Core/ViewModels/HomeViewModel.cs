@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using Acr.UserDialogs;
 using Chameleon.Services.Services;
 using MediaManager;
 using MediaManager.Library;
-using MediaManager.Media;
 using MvvmCross.Commands;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
@@ -19,12 +16,16 @@ namespace Chameleon.Core.ViewModels
     {
         private readonly IUserDialogs _userDialogs;
         private readonly IPlaylistService _playlistService;
+        private readonly IBrowseService _browseService;
 
-        public HomeViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IUserDialogs userDialogs, IPlaylistService playlistService) : base(logProvider, navigationService)
+        public HomeViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IUserDialogs userDialogs, IPlaylistService playlistService, IBrowseService browseService) : base(logProvider, navigationService)
         {
             _userDialogs = userDialogs ?? throw new ArgumentNullException(nameof(userDialogs));
             _playlistService = playlistService ?? throw new ArgumentNullException(nameof(playlistService));
+            _browseService = browseService ?? throw new ArgumentNullException(nameof(browseService));
         }
+
+        private bool _isInitialized;
 
         private MvxObservableCollection<IPlaylist> _playlists = new MvxObservableCollection<IPlaylist>();
         public MvxObservableCollection<IPlaylist> Playlists
@@ -54,8 +55,11 @@ namespace Chameleon.Core.ViewModels
             set => SetProperty(ref _selectedPlaylist, value);
         }
 
-        private IMvxAsyncCommand _playerCommand;
-        public IMvxAsyncCommand PlayerCommand => _playerCommand ?? (_playerCommand = new MvxAsyncCommand(PlaySelectedMediaItem));
+        public bool HasRecent => !IsLoading && RecentlyPlayedItems.Count > 0;
+        public bool HasNoPlaylists => !IsLoading && Playlists.Count == 0;
+
+        private IMvxAsyncCommand<IMediaItem> _playerCommand;
+        public IMvxAsyncCommand<IMediaItem> PlayerCommand => _playerCommand ?? (_playerCommand = new MvxAsyncCommand<IMediaItem>(PlaySelectedMediaItem));
 
         private IMvxAsyncCommand _openUrlCommand;
         public IMvxAsyncCommand OpenUrlCommand => _openUrlCommand ?? (_openUrlCommand = new MvxAsyncCommand(OpenUrl));
@@ -63,19 +67,34 @@ namespace Chameleon.Core.ViewModels
         private IMvxAsyncCommand _openFileCommand;
         public IMvxAsyncCommand OpenFileCommand => _openFileCommand ?? (_openFileCommand = new MvxAsyncCommand(OpenFile));
 
-        private IMvxAsyncCommand _openPlaylistCommand;
-        public IMvxAsyncCommand OpenPlaylistCommand => _openPlaylistCommand ?? (_openPlaylistCommand = new MvxAsyncCommand(OpenPlaylist));
+        private IMvxAsyncCommand<IPlaylist> _openPlaylistCommand;
+        public IMvxAsyncCommand<IPlaylist> OpenPlaylistCommand => _openPlaylistCommand ?? (_openPlaylistCommand = new MvxAsyncCommand<IPlaylist>(OpenPlaylist));
 
         private IMvxAsyncCommand _openPlaylistOverviewCommand;
         public IMvxAsyncCommand OpenPlaylistOverviewCommand => _openPlaylistOverviewCommand ?? (_openPlaylistOverviewCommand = new MvxAsyncCommand(() => NavigationService.Navigate<PlaylistOverviewViewModel>()));
 
-        public override async Task Initialize()
+        public override async void ViewAppearing()
+        {
+            base.ViewAppearing();
+            if (_isInitialized)
+                await ReloadData().ConfigureAwait(false);
+            _isInitialized = true;
+        }
+
+        public override async Task ReloadData(bool forceReload = false)
         {
             IsLoading = true;
 
-            RecentlyPlayedItems.ReplaceWith(await _playlistService.GetPlaylist());
-            Playlists.ReplaceWith(await _playlistService.GetPlaylists());
+            var recentMedia = await _browseService.GetRecentMedia().ConfigureAwait(false);
+            if (recentMedia != null)
+                RecentlyPlayedItems.ReplaceWith(recentMedia);
 
+            var playlists = await _playlistService.GetPlaylists().ConfigureAwait(false);
+            if (playlists != null)
+                Playlists.ReplaceWith(playlists);
+
+            RaisePropertyChanged(nameof(HasRecent));
+            RaisePropertyChanged(nameof(HasNoPlaylists));
             IsLoading = false;
         }
 
@@ -96,7 +115,7 @@ namespace Chameleon.Core.ViewModels
             if (await CrossMedia.Current.Initialize())
             {
                 var videoMediaFile = await CrossMedia.Current.PickVideoAsync();
-                
+
                 if (videoMediaFile != null)
                 {
                     var mediaItem = await CrossMediaManager.Current.Play(videoMediaFile.Path);
@@ -105,24 +124,16 @@ namespace Chameleon.Core.ViewModels
             }
         }
 
-        private async Task PlaySelectedMediaItem()
+        private async Task PlaySelectedMediaItem(IMediaItem mediaItem)
         {
-            if (_selectedMediaItem != null)
-            {
-                await NavigationService.Navigate<PlayerViewModel, IMediaItem>(SelectedMediaItem);
-                SelectedMediaItem = null;
-            }
-            return;
+            await NavigationService.Navigate<PlayerViewModel, IMediaItem>(mediaItem);
+            SelectedMediaItem = null;
         }
 
-        private async Task OpenPlaylist()
+        private async Task OpenPlaylist(IPlaylist playlist)
         {
-            if (_selectedPlaylist != null)
-            {
-                await NavigationService.Navigate<PlaylistViewModel, IPlaylist>(SelectedPlaylist);
-                SelectedPlaylist = null;
-            }
-            return;
+            await NavigationService.Navigate<PlaylistViewModel, IPlaylist>(playlist);
+            SelectedPlaylist = null;
         }
     }
 }

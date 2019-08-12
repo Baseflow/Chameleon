@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Net.Http;
-using System.Text;
-using Acr.UserDialogs;
+﻿using Acr.UserDialogs;
 using Chameleon.Services.Services;
-using FFImageLoading.Config;
 using MediaManager;
 using MonkeyCache;
 using MonkeyCache.LiteDB;
@@ -32,12 +26,13 @@ namespace Chameleon.Core
             Mvx.IoCProvider.RegisterSingleton<IMvxTextProviderBuilder>(textProviderBuilder);
             Mvx.IoCProvider.RegisterSingleton<IMvxTextProvider>(textProviderBuilder.TextProvider);
 
-            Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IPlaylistService, PlaylistService>();
-
             CreatableTypes()
                 .EndingWith("Service")
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
+
+            Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IPlaylistService, PlaylistService>();
+            Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IBrowseService, BrowseService>();
 
             /*var language = Mvx.IoCProvider.Resolve<ILanguageService>()?.GetLanguage()?.TwoLetterISOLanguageName;
             var textProviderBuilder = ((TextProviderBuilder)Mvx.IoCProvider.GetSingleton<IMvxTextProviderBuilder>());

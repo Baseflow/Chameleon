@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 using System.Threading.Tasks;
 using Acr.UserDialogs;
 using Chameleon.Services.Services;
 using MediaManager;
 using MediaManager.Library;
-using MediaManager.Media;
 using MvvmCross.Commands;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
@@ -27,31 +25,74 @@ namespace Chameleon.Core.ViewModels
             _playlistService = playlistService ?? throw new ArgumentNullException(nameof(playlistService));
         }
 
-        public MvxObservableCollection<IMediaItem> MediaItems { get; set; } = new MvxObservableCollection<IMediaItem>();
-
-        private IMvxAsyncCommand<IMediaItem> _playCommand;
-        public IMvxAsyncCommand<IMediaItem> PlayCommand => _playCommand ?? (_playCommand = new MvxAsyncCommand<IMediaItem>(Play));
-
-        private IMediaItem _selectedItem;
-        public IMediaItem SelectedItem
+        private IMediaItem _selectedMediaItem;
+        public IMediaItem SelectedMediaItem
         {
-            get => _selectedItem;
-            set => SetProperty(ref _selectedItem, value);
+            get => _selectedMediaItem;
+            set => SetProperty(ref _selectedMediaItem, value);
         }
 
-        public override async Task Initialize()
+        private IPlaylist _playlist;
+        public IPlaylist Playlist
         {
-            MediaItems.ReplaceWith(await _playlistService.GetPlaylist());
+            get => _playlist;
+            set => SetProperty(ref _playlist, value);
         }
 
-        private async Task Play(IMediaItem arg)
+        public bool IsVisible
         {
-            await NavigationService.Navigate<PlayerViewModel, IMediaItem>(SelectedItem);
+            get
+            {
+                return string.IsNullOrEmpty(SearchText);
+            }
         }
 
-        public override void Prepare(IPlaylist parameter)
+        private MvxObservableCollection<IMediaItem> _playlistItems = new MvxObservableCollection<IMediaItem>();
+        public MvxObservableCollection<IMediaItem> PlaylistItems
         {
+            get
+            {
+                if (string.IsNullOrWhiteSpace(SearchText))
+                {
+                    return _playlistItems;
+                }
+                else
+                {
+                    var searchedItems = _playlistItems.Where(x => x.Title.ToLower().Contains(SearchText.ToLower()) || x.Album.ToLower().Contains(SearchText.ToLower()));
+                    return new MvxObservableCollection<IMediaItem>(searchedItems);
+                }
+            }
+            set => SetProperty(ref _playlistItems, value);
+        }
 
+        private IMvxAsyncCommand _playerCommand;
+        public IMvxAsyncCommand PlayerCommand => _playerCommand ?? (_playerCommand = new MvxAsyncCommand(PlayWhenSelected));
+
+        private string _searchText;
+        public string SearchText
+        {
+            get => _searchText;
+            set
+            {
+                SetProperty(ref _searchText, value);
+                RaisePropertyChanged(nameof(PlaylistItems));
+                RaisePropertyChanged(nameof(IsVisible));
+            }
+        }
+
+        public override void Prepare(IPlaylist playlist)
+        {
+            Playlist = playlist;
+        }
+
+        private async Task PlayWhenSelected()
+        {
+            if (_selectedMediaItem != null)
+            {
+                await NavigationService.Navigate<PlayerViewModel, IMediaItem>(SelectedMediaItem);
+                SelectedMediaItem = null;
+            }
+            return;
         }
     }
 }

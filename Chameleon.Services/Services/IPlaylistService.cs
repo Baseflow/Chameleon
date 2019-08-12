@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using MediaManager.Library;
-using MediaManager.Media;
 
 namespace Chameleon.Services.Services
 {
@@ -10,8 +8,10 @@ namespace Chameleon.Services.Services
     {
         Task<IList<IPlaylist>> GetPlaylists();
 
-        Task<IList<IMediaItem>> GetPlaylist();
+        //Task<IList<IMediaItem>> GetPlaylist();
 
-        Task SavePlaylist(IPlaylist playlist);
+        // Task SavePlaylist(IPlaylist playlist);
+
+        Task SavePlaylists(IList<IPlaylist> playlists);
     }
 }

@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using System.Text;
+﻿using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
+using Acr.UserDialogs;
 using Chameleon.Services;
-using Microsoft.AppCenter.Analytics;
 using MvvmCross;
 using MvvmCross.Commands;
 using MvvmCross.Localization;
@@ -38,6 +35,16 @@ namespace Chameleon.Core.ViewModels
             set => SetProperty(ref _isLoading, value);
         }
 
+        private IMvxAsyncCommand _optionsCommand;
+        public IMvxAsyncCommand OptionsCommand => _optionsCommand ?? (_optionsCommand = new MvxAsyncCommand(OpenOptions));
+
+        private async Task OpenOptions()
+        {
+            var result = await UserDialogs.Instance.ActionSheetAsync("title", "cancel", "destruct", null, new[] { "1", "2" });
+            if (result == "1")
+                ;
+        }
+
         public override Task Initialize()
         {
             return ReloadData();
@@ -53,7 +60,7 @@ namespace Chameleon.Core.ViewModels
         {
             return _textProvider.GetText(AppSettings.TextProviderNamespace, viewModel, key);
         }
-        
+
         public virtual string GetText(string key)
         {
             return GetText(GetType().Name, key);
@@ -71,7 +78,8 @@ namespace Chameleon.Core.ViewModels
         {
             get
             {
-                return _reloadCommand = _reloadCommand ?? new MvxAsyncCommand<bool>(async (forceReload) => {
+                return _reloadCommand = _reloadCommand ?? new MvxAsyncCommand<bool>(async (forceReload) =>
+                {
                     IsLoading = true;
 
                     await ReloadData(forceReload).ConfigureAwait(false);

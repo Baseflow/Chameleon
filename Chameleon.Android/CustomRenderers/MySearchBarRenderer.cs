@@ -1,11 +1,8 @@
-﻿using System;
-using Android.Content;
+﻿using Android.Content;
 using Android.Widget;
-using Android.Graphics;
 using Chameleon.Android.CustomRenderers;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
-using Android.Views;
 
 [assembly: ExportRenderer(typeof(SearchBar), typeof(MySearchBarRenderer))]
 namespace Chameleon.Android.CustomRenderers

@@ -13,6 +13,10 @@
     x:TypeArguments="viewModels:PlaylistOverviewViewModel"
     x:Class="Chameleon.Core.Views.PlaylistOverviewPage">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="icon_plus" Command="{Binding AddPlaylistCommand}" />
+    </ContentPage.ToolbarItems>
+
     <ContentPage.Content>
         <StackLayout>
             <SearchBar mvx:La.ng="Placeholder SearchBar" Text="{mvx:MvxBind SearchText}">

@@ -1,5 +1,4 @@
-﻿using AppKit;
-using Chameleon.Core;
+﻿using Chameleon.Core;
 using Foundation;
 using MediaManager;
 using MvvmCross.Forms.Platforms.Mac.Core;

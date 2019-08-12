@@ -1,5 +1,4 @@
-﻿using System;
-using Chameleon.iOS.CustomRenderers;
+﻿using Chameleon.iOS.CustomRenderers;
 using UIKit;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;

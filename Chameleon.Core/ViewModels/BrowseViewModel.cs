@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Acr.UserDialogs;
 using Chameleon.Services.Services;
 using MediaManager;
 using MediaManager.Library;
-using MediaManager.Media;
 using MvvmCross.Commands;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
@@ -19,13 +16,13 @@ namespace Chameleon.Core.ViewModels
     {
         private readonly IUserDialogs _userDialogs;
         private readonly IMediaManager _mediaManager;
-        private readonly IPlaylistService _playlistService;
+        private readonly IBrowseService _browseService;
 
-        public BrowseViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IUserDialogs userDialogs, IMediaManager mediaManager, IPlaylistService playlistService) : base(logProvider, navigationService)
+        public BrowseViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IUserDialogs userDialogs, IMediaManager mediaManager, IBrowseService browseService) : base(logProvider, navigationService)
         {
             _userDialogs = userDialogs ?? throw new ArgumentNullException(nameof(userDialogs));
             _mediaManager = mediaManager ?? throw new ArgumentNullException(nameof(mediaManager));
-            _playlistService = playlistService ?? throw new ArgumentNullException(nameof(playlistService));
+            _browseService = browseService ?? throw new ArgumentNullException(nameof(browseService));
         }
 
         private IMvxAsyncCommand _addCommand;
@@ -82,7 +79,7 @@ namespace Chameleon.Core.ViewModels
 
         public override async Task Initialize()
         {
-            RecentlyPlayedItems.ReplaceWith(await _playlistService.GetPlaylist());
+            RecentlyPlayedItems.ReplaceWith(await _browseService.GetMedia());
         }
 
         private async Task PlayWhenSelected()

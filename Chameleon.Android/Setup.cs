@@ -1,13 +1,8 @@
-﻿using System;
-using System.Net.Http;
-using Acr.UserDialogs;
-using Android.App;
+﻿using Acr.UserDialogs;
 using Chameleon.Core;
 using MvvmCross;
 using MvvmCross.Forms.Platforms.Android.Core;
-using MvvmCross.IoC;
 using MvvmCross.Platforms.Android;
-using Xamarin.Android.Net;
 
 namespace Chameleon.Android
 {

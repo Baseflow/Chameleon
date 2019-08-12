@@ -85,9 +85,9 @@ namespace Chameleon.Core.ViewModels
         {
             IsLoading = true;
 
-            var recentMedia = await _browseService.GetRecentMedia().ConfigureAwait(false);
-            if (recentMedia != null)
-                RecentlyPlayedItems.ReplaceWith(recentMedia);
+            //var recentMedia = await _browseService.GetRecentMedia().ConfigureAwait(false);
+            //if (recentMedia != null)
+            //    RecentlyPlayedItems.ReplaceWith(recentMedia);
 
             var playlists = await _playlistService.GetPlaylists().ConfigureAwait(false);
             if (playlists != null)

@@ -44,7 +44,7 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-            <StackLayout Spacing="0" Orientation="Horizontal" Padding="24,0">
+            <StackLayout Spacing="0" Orientation="Horizontal" Padding="24,0" Margin="0,24,0,0">
                 <Label
                     mvx:La.ng="Text Playlists"
                     Style="{StaticResource Header1}"

@@ -36,13 +36,7 @@ namespace Chameleon.Core.ViewModels
             set => SetProperty(ref _selectedMediaItem, value);
         }
 
-        public bool IsVisible
-        {
-            get
-            {
-                return string.IsNullOrEmpty(SearchText);
-            }
-        }
+        public bool IsArtistsVisible => string.IsNullOrEmpty(SearchText) && FavoriteArtists.Count > 0;
 
         private MvxObservableCollection<IMediaItem> _recentlyPlayedItems = new MvxObservableCollection<IMediaItem>();
         public MvxObservableCollection<IMediaItem> RecentlyPlayedItems
@@ -62,6 +56,16 @@ namespace Chameleon.Core.ViewModels
             set => SetProperty(ref _recentlyPlayedItems, value);
         }
 
+        public MvxObservableCollection<IArtist> FavoriteArtists { get; set; } = new MvxObservableCollection<IArtist>();
+
+        private IMvxAsyncCommand<IArtist> _openArtistCommand;
+        public IMvxAsyncCommand<IArtist> OpenArtistCommand => _openArtistCommand ?? (_openArtistCommand = new MvxAsyncCommand<IArtist>(OpenArtist));
+
+        private async Task OpenArtist(IArtist arg)
+        {
+            //TODO:
+        }
+
         private IMvxAsyncCommand _playerCommand;
         public IMvxAsyncCommand PlayerCommand => _playerCommand ?? (_playerCommand = new MvxAsyncCommand(PlayWhenSelected));
 
@@ -73,7 +77,7 @@ namespace Chameleon.Core.ViewModels
             {
                 SetProperty(ref _searchText, value);
                 RaisePropertyChanged(nameof(RecentlyPlayedItems));
-                RaisePropertyChanged(nameof(IsVisible));
+                RaisePropertyChanged(nameof(IsArtistsVisible));
             }
         }
 
@@ -84,12 +88,8 @@ namespace Chameleon.Core.ViewModels
 
         private async Task PlayWhenSelected()
         {
-            if (_selectedMediaItem != null)
-            {
-                await NavigationService.Navigate<PlayerViewModel, IMediaItem>(SelectedMediaItem);
-                SelectedMediaItem = null;
-            }
-            return;
+            await NavigationService.Navigate<PlayerViewModel, IMediaItem>(SelectedMediaItem);
+            SelectedMediaItem = null;
         }
     }
 }

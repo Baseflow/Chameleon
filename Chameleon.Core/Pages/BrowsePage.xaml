@@ -42,42 +42,34 @@
                     </SearchBar>
                     <Label
                         mvx:La.ng="Text Artists"
-                        IsVisible="{Binding IsVisible, Mode=OneWay}"
+                        IsVisible="{Binding IsArtistsVisible, Mode=OneWay}"
                         Style="{StaticResource Header1}"
                         Margin="24,0" />
                     <CollectionView
                         x:Name="MyCollectionView"
-                        IsVisible="{Binding IsVisible, Mode=OneWay}"
-                        ItemsSource="{mvx:MvxBind RecentlyPlayedItems}"
+                        IsVisible="{Binding IsArtistsVisible, Mode=OneWay}"
+                        mvx:Bi.nd="ItemsSource FavoriteArtists; SelectionChangedCommand OpenArtistCommand; SelectionChangedCommandParameter SelectedArtist; SelectedItem SelectedArtist"
                         SelectionMode="Single"
-                        SelectedItem="{Binding SelectedMediaItem, Mode=TwoWay}"
-                        SelectionChangedCommand="{Binding PlayerCommand}"
                         HeightRequest="250" >
-
                         <CollectionView.ItemsLayout>
                             <GridItemsLayout
                                 Orientation="Horizontal"
                                 VerticalItemSpacing="1"
                                 HorizontalItemSpacing="0" />
                         </CollectionView.ItemsLayout>
-
                         <CollectionView.EmptyView>
                             <StackLayout>
                                 <ActivityIndicator Color="DimGray" IsRunning="True" HeightRequest="50" />
                             </StackLayout>
                         </CollectionView.EmptyView>
-
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
                                 <templates:HorizontalMediaItemsTemplate/>
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>
-
-                    <Label mvx:La.ng="Text Recent" Style="{StaticResource Header1}" Margin="24,16"/>
                 </StackLayout>
             </core:MvxListView.Header>
-
             <core:MvxListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>

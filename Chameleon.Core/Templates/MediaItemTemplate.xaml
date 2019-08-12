@@ -55,7 +55,8 @@
                 Source="icon_more"
                 Grid.Column="3"
                 Grid.RowSpan="2"
-                HorizontalOptions="End"/>
+                HorizontalOptions="End"
+                BackgroundColor="Transparent"/>
         </Grid>
     </ContentView.Content>
 </ContentView>

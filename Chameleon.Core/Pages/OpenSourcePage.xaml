@@ -18,8 +18,20 @@
         <StackLayout>
             <Label mvx:La.ng="Text OpenSourcesoftware" FontFamily="FiraSans#700" FontSize="18" FontAttributes="Bold" TextColor="#FFE3E5F6" />
             <Label mvx:La.ng="Text Components" FontFamily="FiraSans#400" FontSize="14" FontAttributes="None" TextColor="#FFE3E5F6" Margin="0,0,0,100"/>
-            <Button mvx:La.ng="Text MediaManager" mvx:Bi.nd="Command MediaManagerCommand" Style="{StaticResource PrimaryButton}"/>
-            <Button mvx:La.ng="Text XamarinForms" mvx:Bi.nd="Command XamarinFormsCommand" Style="{StaticResource PrimaryButton}" />
+
+             <core:MvxListView  ItemsSource="{mvx:MvxBind OpenSourceList}" SelectedItem="{mvx:MvxBind OpenSourceList, Mode=TwoWay}" >
+             <ListView.ItemTemplate>
+                <DataTemplate>
+                   <StackLayout>
+                     <Button Text="Text" Style="{StaticResource PrimaryButton}"/>
+                   </StackLayout>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+         </core:MvxListView>
+         
         </StackLayout>
     </ContentPage.Content>
 </core:MvxContentPage>
+
+   <!--<Button mvx:La.ng="Text MediaManager" mvx:Bi.nd="Command MediaManagerCommand" Style="{StaticResource PrimaryButton}"/>
+            <Button mvx:La.ng="Text XamarinForms" mvx:Bi.nd="Command XamarinFormsCommand" Style="{StaticResource PrimaryButton}" />-->

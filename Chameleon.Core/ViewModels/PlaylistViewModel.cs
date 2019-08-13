@@ -48,6 +48,13 @@ namespace Chameleon.Core.ViewModels
             }
         }
 
+        private FormattedString _trackAmount;
+        public FormattedString TrackAmount
+        {
+            get => _trackAmount;
+            set => SetProperty(ref _trackAmount, value);
+        }
+
         private ImageSource _playPauseImage = ImageSource.FromFile("playback_controls_pause_button");
         public ImageSource PlayPauseImage
         {
@@ -91,6 +98,10 @@ namespace Chameleon.Core.ViewModels
         public override void Prepare(IPlaylist playlist)
         {
             Playlist = playlist;
+            var trackAmount = new FormattedString();
+            trackAmount.Spans.Add(new Span { Text = Playlist.Count.ToString(), FontAttributes = FontAttributes.Bold });
+            trackAmount.Spans.Add(new Span { Text = " tracks" });
+            TrackAmount = trackAmount;
         }
 
         private async Task PlayWhenSelected()

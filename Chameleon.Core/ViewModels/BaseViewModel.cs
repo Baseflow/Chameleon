@@ -35,16 +35,6 @@ namespace Chameleon.Core.ViewModels
             set => SetProperty(ref _isLoading, value);
         }
 
-        private IMvxAsyncCommand _optionsCommand;
-        public IMvxAsyncCommand OptionsCommand => _optionsCommand ?? (_optionsCommand = new MvxAsyncCommand(OpenOptions));
-
-        private async Task OpenOptions()
-        {
-            var result = await UserDialogs.Instance.ActionSheetAsync("title", "cancel", "destruct", null, new[] { "1", "2" });
-            if (result == "1")
-                ;
-        }
-
         public override Task Initialize()
         {
             return ReloadData();

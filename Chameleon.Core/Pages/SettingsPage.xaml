@@ -8,15 +8,18 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModels="clr-namespace:Chameleon.Core.ViewModels;assembly=Chameleon.Core"
     xmlns:templates="clr-namespace:Chameleon.Core.Templates;assembly=Chameleon.Core"
+    xmlns:coloredTableView="clr-namespace:Chameleon.Core;assembly=Chameleon.Core"
     mc:Ignorable="d"
     x:TypeArguments="viewModels:SettingsViewModel"
     x:Class="Chameleon.Core.Views.SettingsPage"
     mvx:La.ng="Title Title" >
     
     <ContentPage.Content>
-       <TableView Intent="Settings"
+       <coloredTableView:ColoredTableView
+                  Intent="Settings"
                   BackgroundColor="{StaticResource BackgroundColor}"
-                  HasUnevenRows="True">
+                  HasUnevenRows="True"
+                  SeparatorColor="#30313C">
           <TableRoot>
               <TableSection>
                   <!--
@@ -75,6 +78,6 @@
                   </ViewCell>
               </TableSection>
           </TableRoot>
-        </TableView>
+        </coloredTableView:ColoredTableView>
     </ContentPage.Content>
 </core:MvxContentPage>

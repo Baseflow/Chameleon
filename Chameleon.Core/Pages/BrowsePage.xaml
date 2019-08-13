@@ -28,17 +28,7 @@
                 <StackLayout Spacing="0">
                     <SearchBar
                         mvx:La.ng="Placeholder SearchBar"
-                        Text="{mvx:MvxBind SearchText}"
-                        HorizontalOptions="FillAndExpand"
-                        TextColor="{StaticResource White}"
-                        CancelButtonColor="{StaticResource White}"
-                        BackgroundColor="{StaticResource BackgroundColor}"
-                        PlaceholderColor="{StaticResource White_30}">
-                        <SearchBar.Margin>
-                            <OnPlatform x:TypeArguments="Thickness"
-                                        iOS="16,20"
-                                        Android="0,20,24,20" />
-                        </SearchBar.Margin>
+                        Text="{mvx:MvxBind SearchText}">
                     </SearchBar>
                     <Label
                         mvx:La.ng="Text Artists"

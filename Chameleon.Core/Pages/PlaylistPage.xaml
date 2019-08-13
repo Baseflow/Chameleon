@@ -47,9 +47,11 @@
                         VerticalOptions="Center"
                         Aspect="AspectFill"
                         Source="cover_art_placeholder"/>
-                        <Image Source="{mvx:MvxBind PlayPauseImage}"
-                               AbsoluteLayout.LayoutFlags="All"
-                               AbsoluteLayout.LayoutBounds=".5,.5,.5,.5"/>
+                        <ImageButton
+                            Source="{mvx:MvxBind PlayPauseImage}"
+                            Command="{mvx:MvxBind StartPlaylistCommand}"
+                            AbsoluteLayout.LayoutFlags="All"
+                            AbsoluteLayout.LayoutBounds=".5,.5,.5,.5"/>
                     </AbsoluteLayout>
                 </pan:PancakeView>
                 <StackLayout Margin="18,4,0,4" Grid.Column="1">

@@ -16,13 +16,14 @@ namespace Chameleon.Core.ViewModels
     public class PlaylistViewModel : BaseViewModel<IPlaylist>
     {
         private readonly IUserDialogs _userDialogs;
-        private readonly IMediaManager _mediaManager;
+        public IMediaManager MediaManager;
         private readonly IPlaylistService _playlistService;
 
-        public PlaylistViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IUserDialogs userDialogs, IMediaManager mediaManager, IPlaylistService playlistService) : base(logProvider, navigationService)
+        public PlaylistViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IUserDialogs userDialogs, IMediaManager mediaManager, IPlaylistService playlistService)
+            : base(logProvider, navigationService)
         {
             _userDialogs = userDialogs ?? throw new ArgumentNullException(nameof(userDialogs));
-            _mediaManager = mediaManager ?? throw new ArgumentNullException(nameof(mediaManager));
+            MediaManager = mediaManager ?? throw new ArgumentNullException(nameof(mediaManager));
             _playlistService = playlistService ?? throw new ArgumentNullException(nameof(playlistService));
         }
 
@@ -77,15 +78,12 @@ namespace Chameleon.Core.ViewModels
             set => SetProperty(ref _playlistTime, value);
         }
 
-        private ImageSource _playPauseImage = ImageSource.FromFile("playback_controls_pause_button");
+        private ImageSource _playPauseImage = ImageSource.FromFile("playback_controls_play_button");
         public ImageSource PlayPauseImage
         {
             get => _playPauseImage;
             set => SetProperty(ref _playPauseImage, value);
         }
-
-        private IMvxAsyncCommand _playerCommand;
-        public IMvxAsyncCommand PlayerCommand => _playerCommand ?? (_playerCommand = new MvxAsyncCommand(PlayWhenSelected));
 
         private string _searchText;
         public string SearchText
@@ -98,6 +96,12 @@ namespace Chameleon.Core.ViewModels
                 RaisePropertyChanged(nameof(IsVisible));
             }
         }
+
+        private IMvxAsyncCommand _playerCommand;
+        public IMvxAsyncCommand PlayerCommand => _playerCommand ?? (_playerCommand = new MvxAsyncCommand(PlayWhenSelected));
+
+        private IMvxAsyncCommand _startPlaylistCommand;
+        public IMvxAsyncCommand StartPlaylistCommand => _startPlaylistCommand ?? (_startPlaylistCommand = new MvxAsyncCommand(StartPlaylist));
 
         public override void Prepare(IPlaylist playlist)
         {
@@ -122,6 +126,18 @@ namespace Chameleon.Core.ViewModels
         {
             await NavigationService.Navigate<PlayerViewModel, IMediaItem>(SelectedMediaItem);
             SelectedMediaItem = null;
+        }
+
+        private async Task StartPlaylist()
+        {
+            await NavigationService.Navigate<PlayerViewModel, IMediaItem>(CurrentPlaylist.FirstOrDefault());
+
+            MediaManager.MediaQueue.Clear();
+
+            foreach (var item in CurrentPlaylist)
+            {
+                MediaManager.MediaQueue.Add(item);
+            }
         }
     }
 }

@@ -22,7 +22,8 @@
                 Text="{mvx:MvxBind SearchText}"/>
             <Label mvx:La.ng="Text Title" Style="{StaticResource Header1}" Margin="24,0,24,14"/>
             <Grid x:Name="PlaylistHeader"
-                Padding="24,0">
+                  Padding="24,0"
+                  Margin="0,0,0,30">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="114"/>
                     <ColumnDefinition Width="*"/>
@@ -67,19 +68,20 @@
                         FontSize="12"
                         TextColor="#FFFFFFFF"/>
                     <Label
-                        Text="2 hours, 23 minutes"
+                        FormattedText="{Binding PlaylistTime}"
                         FontFamily="FiraSans#700"
                         FontSize="12"
                         TextColor="#FFFFFFFF"/>
                 </StackLayout>
             </Grid>
             
-            <CollectionView x:Name="MyCollectionView"
-                            ItemsSource="{mvx:MvxBind MediaItems}"
+            <CollectionView x:Name="PlaylistItems"
+                            mvx:Bi.nd="
+                                ItemsSource CurrentPlaylist;
+                                SelectionChangedCommand PlayerCommand;
+                                SelectionChangedCommandParameter SelectedItem;
+                                SelectedItem SelectedItem"
                             SelectionMode="Single"
-                            SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
-                            SelectionChangedCommand="{Binding PlayCommand}"
-                            SelectionChangedCommandParameter="{Binding Source={x:Reference MyCollectionView}, Path=SelectedItem}"
                             VerticalOptions="FillAndExpand">
                 <CollectionView.EmptyView>
                     <StackLayout>

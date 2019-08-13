@@ -33,11 +33,26 @@ namespace Chameleon.Core.ViewModels
             set => SetProperty(ref _selectedMediaItem, value);
         }
 
-        private IPlaylist _playlist;
-        public IPlaylist Playlist
+        private IPlaylist _currentPlaylist = new Playlist();
+        public IPlaylist CurrentPlaylist
         {
-            get => _playlist;
-            set => SetProperty(ref _playlist, value);
+            get
+            {
+                if (string.IsNullOrWhiteSpace(SearchText))
+                {
+                    return _currentPlaylist;
+                }
+                else
+                {
+                    var searchedItems = _currentPlaylist.Where(x => x.Title.ToLower().Contains(SearchText.ToLower()) || x.Album.ToLower().Contains(SearchText.ToLower()));
+                    var playlist = new Playlist();
+                    foreach (var item in searchedItems)
+                        playlist.Add(item);
+
+                    return playlist;
+                }
+            }
+            set => SetProperty(ref _currentPlaylist, value);
         }
 
         public bool IsVisible
@@ -55,29 +70,18 @@ namespace Chameleon.Core.ViewModels
             set => SetProperty(ref _trackAmount, value);
         }
 
+        private FormattedString _playlistTime;
+        public FormattedString PlaylistTime
+        {
+            get => _playlistTime;
+            set => SetProperty(ref _playlistTime, value);
+        }
+
         private ImageSource _playPauseImage = ImageSource.FromFile("playback_controls_pause_button");
         public ImageSource PlayPauseImage
         {
             get => _playPauseImage;
             set => SetProperty(ref _playPauseImage, value);
-        }
-
-        private MvxObservableCollection<IMediaItem> _playlistItems = new MvxObservableCollection<IMediaItem>();
-        public MvxObservableCollection<IMediaItem> PlaylistItems
-        {
-            get
-            {
-                if (string.IsNullOrWhiteSpace(SearchText))
-                {
-                    return _playlistItems;
-                }
-                else
-                {
-                    var searchedItems = _playlistItems.Where(x => x.Title.ToLower().Contains(SearchText.ToLower()) || x.Album.ToLower().Contains(SearchText.ToLower()));
-                    return new MvxObservableCollection<IMediaItem>(searchedItems);
-                }
-            }
-            set => SetProperty(ref _playlistItems, value);
         }
 
         private IMvxAsyncCommand _playerCommand;
@@ -90,28 +94,34 @@ namespace Chameleon.Core.ViewModels
             set
             {
                 SetProperty(ref _searchText, value);
-                RaisePropertyChanged(nameof(PlaylistItems));
+                RaisePropertyChanged(nameof(CurrentPlaylist));
                 RaisePropertyChanged(nameof(IsVisible));
             }
         }
 
         public override void Prepare(IPlaylist playlist)
         {
-            Playlist = playlist;
+            playlist.Add(new MediaItem("http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4") { Title = "Item 1", Album = "Album 1" });
+            playlist.Add(new MediaItem("http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4") { Title = "Item 2", Album = "Album 2" });
+            CurrentPlaylist = playlist;
+
             var trackAmount = new FormattedString();
-            trackAmount.Spans.Add(new Span { Text = Playlist.Count.ToString(), FontAttributes = FontAttributes.Bold });
+            trackAmount.Spans.Add(new Span { Text = CurrentPlaylist.Count.ToString(), FontAttributes = FontAttributes.Bold, FontSize = 12 });
             trackAmount.Spans.Add(new Span { Text = " tracks" });
             TrackAmount = trackAmount;
+
+            var playlistTime = new FormattedString();
+            playlistTime.Spans.Add(new Span { Text = CurrentPlaylist.TotalTime.Hours.ToString(), FontAttributes = FontAttributes.Bold, FontSize = 12 });
+            playlistTime.Spans.Add(new Span { Text = " hours, "});
+            playlistTime.Spans.Add(new Span { Text = CurrentPlaylist.TotalTime.Minutes.ToString(), FontAttributes = FontAttributes.Bold, FontSize = 12 });
+            playlistTime.Spans.Add(new Span { Text = " minutes"});
+            PlaylistTime = playlistTime;
         }
 
         private async Task PlayWhenSelected()
         {
-            if (_selectedMediaItem != null)
-            {
-                await NavigationService.Navigate<PlayerViewModel, IMediaItem>(SelectedMediaItem);
-                SelectedMediaItem = null;
-            }
-            return;
+            await NavigationService.Navigate<PlayerViewModel, IMediaItem>(SelectedMediaItem);
+            SelectedMediaItem = null;
         }
     }
 }

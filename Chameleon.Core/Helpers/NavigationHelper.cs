@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using Acr.UserDialogs;
+using Chameleon.Core.ViewModels;
 using MediaManager;
 using MediaManager.Library;
 using MvvmCross;
@@ -29,8 +30,8 @@ namespace Chameleon.Core.Helpers
                 config.UseBottomSheet = true;
                 //config.Title = "";
                 //config.Message = "";
-                config.Add("Add to playlist", () => {
-
+                config.Add("Add to playlist", async () => {
+                    await navigationService.Navigate<AddToPlaylistViewModel, IMediaItem>(mediaItem);
                 });
                 config.Add("Add to queue", () => mediaManager.MediaQueue.Add(mediaItem));
                 //config.Add("Show artist", () => { });

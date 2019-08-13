@@ -1,5 +1,4 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using Android.Content;
 using Android.Graphics.Drawables;
 using Chameleon.Android.CustomRenderers;

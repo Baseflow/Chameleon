@@ -1,5 +1,4 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using Chameleon.Core;
 using Chameleon.iOS.CustomRenderers;
 using UIKit;

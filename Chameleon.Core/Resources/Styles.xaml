@@ -32,10 +32,6 @@
         <Setter Property="FontSize" Value="13"/>
     </Style>
 
-    <Style TargetType="ContentPage" x:Key="PrimaryContentPage">
-        <Setter Property="Padding" Value="24"/>
-    </Style>
-
     <Style TargetType="{x:Type Label}" ApplyToDerivedTypes="True">
         <Setter Property="TextColor" Value="{StaticResource LabelTextColor}"/>
     </Style>

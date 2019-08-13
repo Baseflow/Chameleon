@@ -11,7 +11,6 @@
     xmlns:templates="clr-namespace:Chameleon.Core.Templates;assembly=Chameleon.Core"
     mc:Ignorable="d"
     x:TypeArguments="viewModels:QueueViewModel"
-    Style="{StaticResource PrimaryContentPage}"
     x:Class="Chameleon.Core.Views.QueuePage">
 
     <ContentPage.ToolbarItems>

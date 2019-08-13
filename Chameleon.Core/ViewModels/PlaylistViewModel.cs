@@ -9,6 +9,7 @@ using MvvmCross.Commands;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
+using Xamarin.Forms;
 
 namespace Chameleon.Core.ViewModels
 {
@@ -45,6 +46,13 @@ namespace Chameleon.Core.ViewModels
             {
                 return string.IsNullOrEmpty(SearchText);
             }
+        }
+
+        private ImageSource _playPauseImage = ImageSource.FromFile("playback_controls_pause_button");
+        public ImageSource PlayPauseImage
+        {
+            get => _playPauseImage;
+            set => SetProperty(ref _playPauseImage, value);
         }
 
         private MvxObservableCollection<IMediaItem> _playlistItems = new MvxObservableCollection<IMediaItem>();

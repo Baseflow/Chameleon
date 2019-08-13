@@ -1,4 +1,7 @@
 ﻿{
-  "Title": "Playlist",
-  "SearchBar": "Search..."
+  "Title": "PLAYLIST",
+  "SearchBar": "Search...",
+  "Tracks": "tracks",
+  "Hours": "hours",
+  "Minutes": "minutes"
 }

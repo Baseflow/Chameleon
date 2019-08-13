@@ -83,4 +83,17 @@
         <Setter Property="BackgroundColor" Value="{StaticResource BackgroundColor}" />
     </Style>
 
+    <Style TargetType="{x:Type SearchBar}" ApplyToDerivedTypes="True">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        <Setter Property="TextColor" Value="{StaticResource White}"/>
+        <Setter Property="CancelButtonColor" Value="{StaticResource White}"/>
+        <Setter Property="BackgroundColor" Value="{StaticResource BackgroundColor}"/>
+        <Setter Property="PlaceholderColor" Value="{StaticResource White}"/>
+        <Setter Property="Margin">
+            <OnPlatform x:TypeArguments="Thickness"
+                        iOS="16,20"
+                        Android="0,20,24,20"/>
+        </Setter>
+    </Style>
+
 </ResourceDictionary>

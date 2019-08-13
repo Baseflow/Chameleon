@@ -24,7 +24,11 @@
                 x:Name="RecentCollectionView"
                 SelectionMode="Single"
                 IsVisible="{Binding HasRecent}"
-                mvx:Bi.nd="ItemsSource RecentlyPlayedItems; SelectionChangedCommand PlayerCommand; SelectionChangedCommandParameter SelectedMediaItem; SelectedItem SelectedMediaItem"
+                mvx:Bi.nd=
+                    "ItemsSource RecentlyPlayedItems;
+                    SelectionChangedCommand PlayerCommand;
+                    SelectionChangedCommandParameter SelectedMediaItem;
+                    SelectedItem SelectedMediaItem"
                 HeightRequest="250" >
 
                 <CollectionView.ItemsLayout>

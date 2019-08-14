@@ -12,15 +12,14 @@
     mc:Ignorable="d"
     BackgroundColor="#A0000000"
     x:TypeArguments="viewModels:AddToPlaylistViewModel"
-    x:Class="Chameleon.Core.Views.AddToPlaylistPage">
-
+    x:Class="Chameleon.Core.Views.AddToPlaylistPage"
+    mvx:La.ng="Title Title">
 
    <ContentPage.Content>  
         <Grid VerticalOptions="Center"
             HorizontalOptions="Center"
             WidthRequest="300"
             HeightRequest="400"
-            Padding="15, 10"
             BackgroundColor="#ecedf4">
             <Grid.RowDefinitions>
                 <RowDefinition Height="50" />
@@ -29,33 +28,39 @@
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="81" />
             </Grid.ColumnDefinitions>
-            <Entry mvx:La.ng="Placeholder NewPlaylist"
-                    Grid.Column="0"
-                    Grid.Row="0"
-                    TextColor="#a8aaba"/>
-            <Button mvx:La.ng="Text Add"
-                    Grid.Column="1"
-                    Grid.Row="0"
-                    HorizontalOptions="End"
-                    BackgroundColor="#30313c"
-                    TextColor="#ffffff"/>
+            <Entry
+                mvx:La.ng="Text NewPlaylist"
+                Grid.Column="0"
+                Grid.Row="0"
+                TextColor="#a8aaba"
+                 Margin="10,10,5,0"/>
+            <Button
+                mvx:La.ng="Text Add"
+                Grid.Column="1"
+                Grid.Row="0"
+                BackgroundColor="#30313c"
+                TextColor="#ffffff"
+                HorizontalOptions="End"
+                Margin="0,10,10,0"/>
             <core:MvxListView
                 Grid.Row="1"
                 Grid.ColumnSpan="2"
-                BackgroundColor="{StaticResource BackgroundColor}"
+                BackgroundColor="#ecedf4"
                 ItemsSource="{mvx:MvxBind Playlists}"
                 SelectionMode="Single"
                 SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
-                ItemClick="{mvx:MvxBind AddToPlaylistCommand}" >
-                 <core:MvxListView.ItemTemplate>
+                ItemClick="{mvx:MvxBind AddToPlaylistCommand}"
+                VerticalOptions="Start"
+                Margin="10,0,10, 0">
+                <core:MvxListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <templates:AddToPlaylistItemTemplate/>
                         </ViewCell>
                     </DataTemplate>
-                 </core:MvxListView.ItemTemplate>
+                </core:MvxListView.ItemTemplate>
             </core:MvxListView>
             <Button HorizontalOptions="FillAndExpand"
                     mvx:La.ng="Text NewPlaylist"
@@ -63,30 +68,6 @@
                     Grid.ColumnSpan="2"
                     BackgroundColor="#ffffff"
                     TextColor="#252525"/>
-            </Grid>
-        </ContentPage.Content>
+        </Grid>
+   </ContentPage.Content>
 </core:MvxContentPage>
-
-
-  <!--<Frame VerticalOptions="Center"
-            HorizontalOptions="Center"
-            WidthRequest="300"
-            HeightRequest="400"
-            Padding="15, 10"
-            BackgroundColor="#ecedf4">-->
-   
-        <!--<Frame VerticalOptions="Center"
-           HorizontalOptions="Center"
-           WidthRequest="300"
-           HeightRequest="400"
-           Padding="15, 10"
-           BackgroundColor="#ecedf4">
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms Popups!"
-                   HorizontalOptions="Center"
-                   VerticalOptions="CenterAndExpand" />
-            <Button Text="Close"
-                    HorizontalOptions="End"
-                    VerticalOptions="End" />
-        </StackLayout>
-    </Frame>-->

@@ -12,7 +12,9 @@
     mc:Ignorable="d"
     x:TypeArguments="viewModels:AddToPlaylistViewModel"
     x:Class="Chameleon.Core.Views.AddToPlaylistPage"
-    mvx:La.ng="Title Title">
+    mvx:La.ng="Title Title"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    ios:Page.UseSafeArea="True">
 
    <ContentPage.Content>  
         <Grid VerticalOptions="Center"

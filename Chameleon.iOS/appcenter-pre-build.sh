@@ -56,7 +56,7 @@ if [ -e "$SETTINGS_FILE" ]
 then
 
 	echo "Arguments for updating:"
-	echo " - AppSecret: $APP_SECRET_ANDROID"
+	echo " - AppSecret: $APP_SECRET_IOS"
 
 	# Updating ids
 

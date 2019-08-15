@@ -44,3 +44,23 @@ then
     echo "File content:"
     cat $INFO_PLIST_FILE
 fi
+
+if [ ! -n "$APP_SECRET_IOS" ]
+then
+
+	echo "Arguments for updating:"
+	echo " - AppSecret: $APP_SECRET_IOS"
+
+	# Updating ids
+
+	IdFile=$BUILD_REPOSITORY_LOCALPATH/Chameleon.Services/AppSettings.cs
+
+	sed -i '' "s/APP_SECRET_ANDROID/$APP_SECRET_ANDROID/g" $IdFile
+	sed -i '' "s/APP_SECRET_IOS/$APP_SECRET_IOS/g" $IdFile
+	sed -i '' "s/APP_SECRET_UWP/$APP_SECRET_UWP/g" $IdFile
+
+	# Print out file for reference
+	cat $IdFile
+
+	echo "Updated id!"
+fi

@@ -63,4 +63,5 @@ then
 	cat $IdFile
 
 	echo "Updated id!"
+	exit
 fi

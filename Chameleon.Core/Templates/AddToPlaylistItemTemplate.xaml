@@ -6,9 +6,16 @@
     xmlns:local="clr-namespace:Chameleon.Core.Helpers"
     x:Class="Chameleon.Core.Templates.AddToPlaylistItemTemplate">
     <ContentView.Content>
-       <StackLayout Orientation="Horizontal">
-                <Image Source="cover_art_placeholder"/>
-                <Label Text="Title" TextColor="#30313c"/>
-         </StackLayout> 
+        <StackLayout Orientation="Horizontal">
+            <Frame CornerRadius="10"  
+                    IsClippedToBounds="True"
+                    Padding="0"
+                    Margin="5">
+                    <Image Source="cover_art_placeholder"  HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           Aspect="AspectFill"/>
+             </Frame>
+             <Label Text="Title {mvx:MvxBind PlaylistName}" TextColor="#30313c" VerticalOptions="Center" />
+        </StackLayout>
     </ContentView.Content>
 </ContentView>

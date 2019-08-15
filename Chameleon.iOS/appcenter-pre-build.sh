@@ -15,6 +15,12 @@ then
     exit
 fi
 
+if [ ! -n "$APP_SECRET_IOS" ]
+then
+    echo "You need to define the APP_SECRET_IOS variable in App Center"
+    exit
+fi
+
 INFO_PLIST_FILE=$APPCENTER_SOURCE_DIRECTORY/Chameleon.iOS/Info.plist
 VERSION=${VERSION_NAME}.${APPCENTER_BUILD_ID}
 SHORT_VERSION=${VERSION_NAME}
@@ -45,23 +51,21 @@ then
     cat $INFO_PLIST_FILE
 fi
 
-if [ ! -n "$APP_SECRET_IOS" ]
+SETTINGS_FILE=$APPCENTER_SOURCE_DIRECTORY/Chameleon.Services/AppSettings.cs
+if [ -e "$SETTINGS_FILE" ]
 then
 
 	echo "Arguments for updating:"
-	echo " - AppSecret: $APP_SECRET_IOS"
+	echo " - AppSecret: $APP_SECRET_ANDROID"
 
 	# Updating ids
 
-	IdFile=$BUILD_REPOSITORY_LOCALPATH/Chameleon.Services/AppSettings.cs
-
-	sed -i '' "s/APP_SECRET_ANDROID/$APP_SECRET_ANDROID/g" $IdFile
-	sed -i '' "s/APP_SECRET_IOS/$APP_SECRET_IOS/g" $IdFile
-	sed -i '' "s/APP_SECRET_UWP/$APP_SECRET_UWP/g" $IdFile
+	sed -i '' "s/APP_SECRET_ANDROID/$APP_SECRET_ANDROID/g" $SETTINGS_FILE
+	sed -i '' "s/APP_SECRET_IOS/$APP_SECRET_IOS/g" $SETTINGS_FILE
+	sed -i '' "s/APP_SECRET_UWP/$APP_SECRET_UWP/g" $SETTINGS_FILE
 
 	# Print out file for reference
-	cat $IdFile
+	cat $SETTINGS_FILE
 
 	echo "Updated id!"
-	exit
 fi

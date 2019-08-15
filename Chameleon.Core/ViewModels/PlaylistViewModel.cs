@@ -67,6 +67,13 @@ namespace Chameleon.Core.ViewModels
             }
         }
 
+        private IMediaItem _activeMediaItem;
+        public IMediaItem ActiveMediaItem
+        {
+            get => _activeMediaItem;
+            set => SetProperty(ref _activeMediaItem, value);
+        }
+
         private FormattedString _trackAmount;
         public FormattedString TrackAmount
         {
@@ -120,6 +127,26 @@ namespace Chameleon.Core.ViewModels
             playlistTime.Spans.Add(new Span { Text = CurrentPlaylist.TotalTime.Minutes.ToString(), FontAttributes = FontAttributes.Bold, FontSize = 12 });
             playlistTime.Spans.Add(new Span { Text = " minutes"});
             PlaylistTime = playlistTime;
+        }
+
+        public override void ViewAppearing()
+        {
+            MediaManager.MediaItemChanged += MediaManager_MediaItemChanged;
+            ActiveMediaItem = MediaManager.MediaQueue.Current;
+            var a = 1;
+            base.ViewAppearing();
+        }
+
+        public override void ViewDisappearing()
+        {
+            MediaManager.MediaItemChanged -= MediaManager_MediaItemChanged;
+            base.ViewDisappearing();
+        }
+
+        private void MediaManager_MediaItemChanged(object sender, MediaItemEventArgs e)
+        {
+            ActiveMediaItem = MediaManager.MediaQueue.Current;
+            var a = 1;
         }
 
         private async Task PlayWhenSelected()

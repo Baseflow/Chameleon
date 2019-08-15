@@ -29,6 +29,7 @@
             </Grid.ColumnDefinitions>
             <Entry
                 mvx:La.ng="Placeholder NewPlaylist"
+                mvx:Bi.nd="Text PlaylistName"
                 Grid.Column="0"
                 Grid.Row="0"
                 TextColor="#a8aaba"
@@ -46,13 +47,9 @@
             <core:MvxListView
                 Grid.Row="1"
                 Grid.ColumnSpan="2"
-                BackgroundColor="#ecedf4"
                 ItemsSource="{mvx:MvxBind Playlists}"
-                SelectionMode="Single"
-                SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
                 ItemClick="{mvx:MvxBind AddToPlaylistCommand}"
-                VerticalOptions="FillAndExpand"
-                Margin="10,0,10,0">
+                VerticalOptions="FillAndExpand">
                 <core:MvxListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

@@ -32,13 +32,13 @@ namespace Chameleon.Core.ViewModels
         private IMvxAsyncCommand _addPlaylistCommand;
         public IMvxAsyncCommand AddPlaylistCommand => _addPlaylistCommand ?? (_addPlaylistCommand = new MvxAsyncCommand(AddPlaylist));
 
-        private IMediaItem _selectedItem;
+        /*private IMediaItem _selectedItem;
 
         public IMediaItem SelectedItem
         {
             get => _selectedItem;
             set => SetProperty(ref _selectedItem, value);
-        }
+        }*/
 
         private string _playlistName;
         public string PlaylistName
@@ -58,9 +58,7 @@ namespace Chameleon.Core.ViewModels
         private async Task AddToPlaylist(IPlaylist arg)
         {
             arg.Add(_mediaItem);
-
-            //TODO: Save playlist
-            //await _playlistService.Save();
+            await _playlistService.SavePlaylists(Playlists);
 
             await NavigationService.Close(this);
         }
@@ -72,14 +70,14 @@ namespace Chameleon.Core.ViewModels
 
         private async Task AddPlaylist()
         {
-            //var config = new PromptConfig();
-            //config.Message = "Enter the name of your new playlist";
-            //var result = await _userDialogs.PromptAsync(config);
-            if (!string.IsNullOrEmpty(Title))
+            if (!string.IsNullOrEmpty(PlaylistName))
             {
-                Playlists.Add(new Playlist() { Title = ""});
+                Playlists.Add(new Playlist() { Title = PlaylistName });
                 await _playlistService.SavePlaylists(Playlists);
+                PlaylistName = string.Empty;
             }
+            else
+                await _userDialogs.AlertAsync("Please fill in a valid name");
         }
     }
 }

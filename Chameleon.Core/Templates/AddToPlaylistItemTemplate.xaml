@@ -15,7 +15,7 @@
                            VerticalOptions="Center"
                            Aspect="AspectFill"/>
             </Frame>
-            <Label Text="Title {mvx:MvxBind PlaylistName}" TextColor="#30313c" VerticalOptions="Center" />
+            <Label Text="{mvx:MvxBind Title}" TextColor="#30313c" VerticalOptions="Center" />
         </StackLayout>
     </ContentView.Content>
 </ContentView>

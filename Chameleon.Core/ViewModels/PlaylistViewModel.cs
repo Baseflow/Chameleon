@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Acr.UserDialogs;
 using Chameleon.Services.Services;
 using MediaManager;
 using MediaManager.Library;
+using MediaManager.Media;
 using MvvmCross.Commands;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
@@ -16,8 +18,9 @@ namespace Chameleon.Core.ViewModels
     public class PlaylistViewModel : BaseViewModel<IPlaylist>
     {
         private readonly IUserDialogs _userDialogs;
-        public IMediaManager MediaManager;
         private readonly IPlaylistService _playlistService;
+
+        public IMediaManager MediaManager;
 
         public PlaylistViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IUserDialogs userDialogs, IMediaManager mediaManager, IPlaylistService playlistService)
             : base(logProvider, navigationService)
@@ -34,7 +37,7 @@ namespace Chameleon.Core.ViewModels
             set => SetProperty(ref _selectedMediaItem, value);
         }
 
-        private IPlaylist _currentPlaylist = new Playlist();
+        private IPlaylist _currentPlaylist;
         public IPlaylist CurrentPlaylist
         {
             get
@@ -78,13 +81,6 @@ namespace Chameleon.Core.ViewModels
             set => SetProperty(ref _playlistTime, value);
         }
 
-        private ImageSource _playPauseImage = ImageSource.FromFile("playback_controls_play_button");
-        public ImageSource PlayPauseImage
-        {
-            get => _playPauseImage;
-            set => SetProperty(ref _playPauseImage, value);
-        }
-
         private string _searchText;
         public string SearchText
         {
@@ -105,8 +101,12 @@ namespace Chameleon.Core.ViewModels
 
         public override void Prepare(IPlaylist playlist)
         {
+            playlist.Clear();
             playlist.Add(new MediaItem("http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4") { Title = "Item 1", Album = "Album 1" });
             playlist.Add(new MediaItem("http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4") { Title = "Item 2", Album = "Album 2" });
+            playlist.Add(new MediaItem("http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4") { Title = "Item 3", Album = "Album 3" });
+            playlist.Add(new MediaItem("http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4") { Title = "Item 4", Album = "Album 4" });
+            playlist.Add(new MediaItem("http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4") { Title = "Item 5", Album = "Album 5" });
             CurrentPlaylist = playlist;
 
             var trackAmount = new FormattedString();
@@ -130,14 +130,7 @@ namespace Chameleon.Core.ViewModels
 
         private async Task StartPlaylist()
         {
-            await NavigationService.Navigate<PlayerViewModel, IMediaItem>(CurrentPlaylist.FirstOrDefault());
-
-            MediaManager.MediaQueue.Clear();
-
-            foreach (var item in CurrentPlaylist)
-            {
-                MediaManager.MediaQueue.Add(item);
-            }
+            await MediaManager.Play(CurrentPlaylist);
         }
     }
 }

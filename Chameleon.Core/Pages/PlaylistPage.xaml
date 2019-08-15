@@ -48,7 +48,7 @@
                         Aspect="AspectFill"
                         Source="cover_art_placeholder"/>
                         <ImageButton
-                            Source="{mvx:MvxBind PlayPauseImage}"
+                            Source="playback_controls_play_button"
                             Command="{mvx:MvxBind StartPlaylistCommand}"
                             AbsoluteLayout.LayoutFlags="All"
                             AbsoluteLayout.LayoutBounds=".5,.5,.5,.5"/>

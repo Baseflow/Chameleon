@@ -15,7 +15,7 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="56"/>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="28"/>
             </Grid.ColumnDefinitions>
             <pan:PancakeView
                 CornerRadius="3"
@@ -56,7 +56,7 @@
                 Source="icon_more"
                 Command="{Binding Source={x:Static local:NavigationHelper.OptionsCommand}}"
                 CommandParameter="{Binding .}"
-                Grid.Column="3"
+                Grid.Column="2"
                 Grid.RowSpan="2"
                 HorizontalOptions="End"
                 BackgroundColor="Transparent"/>

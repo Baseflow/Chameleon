@@ -19,14 +19,13 @@ namespace Chameleon.Core.ViewModels
     {
         private readonly IUserDialogs _userDialogs;
         private readonly IPlaylistService _playlistService;
-
-        public IMediaManager MediaManager;
+        private IMediaManager _mediaManager;
 
         public PlaylistViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IUserDialogs userDialogs, IMediaManager mediaManager, IPlaylistService playlistService)
             : base(logProvider, navigationService)
         {
             _userDialogs = userDialogs ?? throw new ArgumentNullException(nameof(userDialogs));
-            MediaManager = mediaManager ?? throw new ArgumentNullException(nameof(mediaManager));
+            _mediaManager = mediaManager ?? throw new ArgumentNullException(nameof(mediaManager));
             _playlistService = playlistService ?? throw new ArgumentNullException(nameof(playlistService));
         }
 
@@ -131,22 +130,20 @@ namespace Chameleon.Core.ViewModels
 
         public override void ViewAppearing()
         {
-            MediaManager.MediaItemChanged += MediaManager_MediaItemChanged;
-            ActiveMediaItem = MediaManager.MediaQueue.Current;
-            var a = 1;
+            _mediaManager.MediaItemChanged += MediaManager_MediaItemChanged;
+            ActiveMediaItem = _mediaManager.MediaQueue.Current;
             base.ViewAppearing();
         }
 
         public override void ViewDisappearing()
         {
-            MediaManager.MediaItemChanged -= MediaManager_MediaItemChanged;
+            _mediaManager.MediaItemChanged -= MediaManager_MediaItemChanged;
             base.ViewDisappearing();
         }
 
         private void MediaManager_MediaItemChanged(object sender, MediaItemEventArgs e)
         {
-            ActiveMediaItem = MediaManager.MediaQueue.Current;
-            var a = 1;
+            ActiveMediaItem = _mediaManager.MediaQueue.Current;
         }
 
         private async Task PlayWhenSelected()
@@ -157,7 +154,7 @@ namespace Chameleon.Core.ViewModels
 
         private async Task StartPlaylist()
         {
-            await MediaManager.Play(CurrentPlaylist);
+            await _mediaManager.Play(CurrentPlaylist);
         }
     }
 }

@@ -35,9 +35,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="**\*.xaml.cs" DependentUpon="AddToPlaylistItemTemplate.xaml" />
+    <Compile Update="**\*.xaml.cs" DependentUpon="%(Filename)" />
     <None Remove="Resources\**\*.json" />
     <EmbeddedResource Include="Resources\**\*.json" />
-    <None Remove="Templates\AddToPlaylistItemTemplate.xml" />
   </ItemGroup>
 </Project>

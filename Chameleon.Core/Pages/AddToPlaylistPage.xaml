@@ -10,7 +10,6 @@
     xmlns:mm="clr-namespace:MediaManager.Forms;assembly=MediaManager.Forms"
     xmlns:templates="clr-namespace:Chameleon.Core.Templates;assembly=Chameleon.Core"
     mc:Ignorable="d"
-    BackgroundColor="#A0000000"
     x:TypeArguments="viewModels:AddToPlaylistViewModel"
     x:Class="Chameleon.Core.Views.AddToPlaylistPage"
     mvx:La.ng="Title Title">
@@ -18,8 +17,6 @@
    <ContentPage.Content>  
         <Grid VerticalOptions="Center"
             HorizontalOptions="Center"
-            WidthRequest="300"
-            HeightRequest="400"
             BackgroundColor="#ecedf4">
             <Grid.RowDefinitions>
                 <RowDefinition Height="50" />

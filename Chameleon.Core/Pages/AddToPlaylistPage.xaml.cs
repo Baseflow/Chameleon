@@ -1,7 +1,9 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using Chameleon.Core.ViewModels;
 using MvvmCross.Forms.Presenters.Attributes;
 using MvvmCross.Forms.Views;
+using Xamarin.Forms;
 
 namespace Chameleon.Core.Views
 {

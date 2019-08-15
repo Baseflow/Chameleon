@@ -35,7 +35,7 @@
                 Grid.Column="0"
                 Grid.Row="0"
                 TextColor="#a8aaba"
-                 Margin="10,10,5,0"/>
+                Margin="10,10,5,0"/>
             <Button
                 mvx:La.ng="Text Add"
                 Grid.Column="1"
@@ -69,7 +69,7 @@
                     Grid.ColumnSpan="2"
                     BackgroundColor="#ffffff"
                     TextColor="#252525"
-                    mvx:Bi.nd="Command CancelCommand"/>
+                    mvx:Bi.nd="Command BackCommand"/>
         </Grid>
    </ContentPage.Content>
 </core:MvxContentPage>

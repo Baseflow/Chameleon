@@ -36,16 +36,6 @@ namespace Chameleon.Core.ViewModels
             set => SetProperty(ref _selectedItem, value);
         }
 
-        private string _addNewPlaylistName;
-        public string AddNewPlaylistName
-        {
-            get => _addNewPlaylistName;
-            set
-            {
-                SetProperty(ref _addNewPlaylistName, value);
-            }
-        }
-
         public override async Task Initialize()
         {
             Playlists.ReplaceWith(await _playlistService.GetPlaylists());
@@ -65,7 +55,5 @@ namespace Chameleon.Core.ViewModels
         {
             _mediaItem = parameter;
         }
-
-     
     }
 }

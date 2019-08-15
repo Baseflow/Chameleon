@@ -14,8 +14,8 @@
                     <Image Source="cover_art_placeholder"  HorizontalOptions="Center"
                            VerticalOptions="Center"
                            Aspect="AspectFill"/>
-             </Frame>
-             <Label Text="Title {mvx:MvxBind PlaylistName}" TextColor="#30313c" VerticalOptions="Center" />
+            </Frame>
+            <Label Text="Title {mvx:MvxBind PlaylistName}" TextColor="#30313c" VerticalOptions="Center" />
         </StackLayout>
     </ContentView.Content>
 </ContentView>

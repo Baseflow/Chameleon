@@ -75,9 +75,9 @@ namespace Chameleon.Core.ViewModels
             //var config = new PromptConfig();
             //config.Message = "Enter the name of your new playlist";
             //var result = await _userDialogs.PromptAsync(config);
-            if (!string.IsNullOrEmpty(PlaylistName))
+            if (!string.IsNullOrEmpty(Title))
             {
-                Playlists.Add(new Playlist() { Title = PlaylistName});
+                Playlists.Add(new Playlist() { Title = ""});
                 await _playlistService.SavePlaylists(Playlists);
             }
         }

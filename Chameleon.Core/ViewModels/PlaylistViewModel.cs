@@ -107,12 +107,7 @@ namespace Chameleon.Core.ViewModels
 
         public override void Prepare(IPlaylist playlist)
         {
-            playlist.Clear();
-            playlist.Add(new MediaItem("http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4") { Title = "Item 1", Album = "Album 1" });
-            playlist.Add(new MediaItem("http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4") { Title = "Item 2", Album = "Album 2" });
-            playlist.Add(new MediaItem("http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4") { Title = "Item 3", Album = "Album 3" });
-            playlist.Add(new MediaItem("http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4") { Title = "Item 4", Album = "Album 4" });
-            playlist.Add(new MediaItem("http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4") { Title = "Item 5", Album = "Album 5" });
+            
             CurrentPlaylist = playlist;
 
             var trackAmount = new FormattedString();

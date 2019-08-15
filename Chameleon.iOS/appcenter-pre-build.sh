@@ -56,13 +56,13 @@ if [ -e "$SETTINGS_FILE" ]
 then
 
 	echo "Arguments for updating:"
-	echo " - AppSecret: $APP_SECRET_IOS"
+	echo " - AppSecret: $APP_SECRET_ANDROID"
 
 	# Updating ids
 
-	sed -i '' 's/APP_SECRET_ANDROID/$APP_SECRET_ANDROID/g' $SETTINGS_FILE
-	sed -i '' 's/APP_SECRET_IOS/$APP_SECRET_IOS/g' $SETTINGS_FILE
-	sed -i '' 's/APP_SECRET_UWP/$APP_SECRET_UWP/g' $SETTINGS_FILE
+	sed -i '' "s/APP_SECRET_ANDROID/$APP_SECRET_ANDROID/g" $SETTINGS_FILE
+	sed -i '' "s/APP_SECRET_IOS/$APP_SECRET_IOS/g" $SETTINGS_FILE
+	sed -i '' "s/APP_SECRET_UWP/$APP_SECRET_UWP/g" $SETTINGS_FILE
 
 	# Print out file for reference
 	cat $SETTINGS_FILE

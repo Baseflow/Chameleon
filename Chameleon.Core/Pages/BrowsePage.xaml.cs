@@ -2,6 +2,7 @@
 using Chameleon.Core.ViewModels;
 using MvvmCross.Forms.Presenters.Attributes;
 using MvvmCross.Forms.Views;
+using Xamarin.Forms;
 
 namespace Chameleon.Core.Views
 {
@@ -14,6 +15,17 @@ namespace Chameleon.Core.Views
         public BrowsePage()
         {
             InitializeComponent();
+        }
+
+        protected override void OnAppearing()
+        {
+            IconImageSource = ImageSource.FromFile("tab_bar_browse_active");
+            base.OnAppearing();
+        }
+        protected override void OnDisappearing()
+        {
+            IconImageSource = ImageSource.FromFile("tab_bar_browse");
+            base.OnDisappearing();
         }
     }
 }

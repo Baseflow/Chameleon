@@ -26,8 +26,8 @@ namespace Chameleon.Core.ViewModels
         private IMvxAsyncCommand<IPlaylist> _addToPlaylistCommand;
         public IMvxAsyncCommand<IPlaylist> AddToPlaylistCommand => _addToPlaylistCommand ?? (_addToPlaylistCommand = new MvxAsyncCommand<IPlaylist>(AddToPlaylist));
 
-        private IMvxAsyncCommand<IPlaylist> _addNewPlaylistCommand;
-        public IMvxAsyncCommand<IPlaylist> AddNewPlaylistCommand => _addNewPlaylistCommand ?? (_addNewPlaylistCommand = new MvxAsyncCommand<IPlaylist>(AddNewPlaylist));
+        private IMvxAsyncCommand _cancelCommand;
+        public IMvxAsyncCommand CancelCommand => _cancelCommand ?? (_cancelCommand = new MvxAsyncCommand(() => NavigationService.Navigate<BrowseViewModel>()));
 
         private IMediaItem _selectedItem;
         public IMediaItem SelectedItem
@@ -54,17 +54,6 @@ namespace Chameleon.Core.ViewModels
         private async Task AddToPlaylist(IPlaylist arg)
         {
             arg.Add(_mediaItem);
-
-            //TODO: Save playlist
-            //await _playlistService.Save();
-
-            await NavigationService.Close(this);
-        }
-
-
-        private async Task AddNewPlaylist(IPlaylist arg)
-        {
-            arg.Add((MediaManager.Library.IMediaItem)Playlists);
 
             //TODO: Save playlist
             //await _playlistService.Save();

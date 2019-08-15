@@ -28,10 +28,10 @@
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="81" />
+                <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
             <Entry
-                mvx:La.ng="Text NewPlaylist"
+                mvx:La.ng="Placeholder NewPlaylist"
                 Grid.Column="0"
                 Grid.Row="0"
                 TextColor="#a8aaba"
@@ -43,7 +43,8 @@
                 BackgroundColor="#30313c"
                 TextColor="#ffffff"
                 HorizontalOptions="End"
-                Margin="0,10,10,0"/>
+                Margin="0,10,10,0"
+                WidthRequest="80"/>
             <core:MvxListView
                 Grid.Row="1"
                 Grid.ColumnSpan="2"
@@ -63,11 +64,12 @@
                 </core:MvxListView.ItemTemplate>
             </core:MvxListView>
             <Button HorizontalOptions="FillAndExpand"
-                    mvx:La.ng="Text NewPlaylist"
+                    mvx:La.ng="Text Cancel"
                     Grid.Row="2"
                     Grid.ColumnSpan="2"
                     BackgroundColor="#ffffff"
-                    TextColor="#252525"/>
+                    TextColor="#252525"
+                    mvx:Bi.nd="Command CancelCommand"/>
         </Grid>
    </ContentPage.Content>
 </core:MvxContentPage>

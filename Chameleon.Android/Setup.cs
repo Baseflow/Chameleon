@@ -1,4 +1,6 @@
-﻿using Acr.UserDialogs;
+﻿using System.Collections.Generic;
+using System.Reflection;
+using Acr.UserDialogs;
 using Chameleon.Core;
 using MvvmCross;
 using MvvmCross.Forms.Platforms.Android.Core;
@@ -15,5 +17,11 @@ namespace Chameleon.Android
             UserDialogs.Init(() => Mvx.IoCProvider.Resolve<IMvxAndroidCurrentTopActivity>().Activity);
             //Mvx.IoCProvider.RegisterSingleton<HttpMessageHandler>(new AndroidClientHandler());
         }
+
+        protected override IEnumerable<Assembly> AndroidViewAssemblies =>
+            new List<Assembly>(base.AndroidViewAssemblies)
+            {
+                typeof(global::Android.Support.Design.Widget.BottomNavigationView).Assembly
+            };
     }
 }

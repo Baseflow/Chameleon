@@ -21,6 +21,7 @@
     <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <AndroidLinkSkip>Xamarin.Android.Support.v7.AppCompat;Xamarin.Android.Support.v4;Android.Support.Design</AndroidLinkSkip>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,11 +31,11 @@
     <DefineConstants>DEBUG;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <AndroidLinkMode>None</AndroidLinkMode>
     <AndroidUseAapt2>true</AndroidUseAapt2>
     <AndroidDexTool>d8</AndroidDexTool>
     <AndroidLinkTool>r8</AndroidLinkTool>
     <JavaMaximumHeapSize>1G</JavaMaximumHeapSize>
+    <AndroidLinkMode>None</AndroidLinkMode>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

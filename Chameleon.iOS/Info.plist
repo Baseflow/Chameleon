@@ -42,8 +42,6 @@
 	<string>UIStatusBarStyleBlackTranslucent</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-	<key>CFBundleShortVersionString</key>
-	<string>1</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>This app needs access to the photo gallery.</string>
 	<key>NSAppleMusicUsageDescription</key>
@@ -57,5 +55,7 @@
 		<key>NSAllowsLocalNetworking</key>
 		<true/>
 	</dict>
+	<key>CFBundleShortVersionString</key>
+	<string>2</string>
 </dict>
 </plist>

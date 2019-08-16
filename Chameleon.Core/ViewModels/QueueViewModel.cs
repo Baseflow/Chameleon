@@ -15,7 +15,6 @@ namespace Chameleon.Core.ViewModels
     {
         private readonly IUserDialogs _userDialogs;
         private readonly IMediaManager _mediaManager;
-        private readonly IPlaylistService _playlistService;
 
         public QueueViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService,
                                 IUserDialogs userDialogs, IMediaManager mediaManager, IPlaylistService playlistService)
@@ -23,7 +22,6 @@ namespace Chameleon.Core.ViewModels
         {
             _userDialogs = userDialogs ?? throw new ArgumentNullException(nameof(userDialogs));
             _mediaManager = mediaManager ?? throw new ArgumentNullException(nameof(mediaManager));
-            _playlistService = playlistService ?? throw new ArgumentNullException(nameof(playlistService));
         }
 
         public MvxObservableCollection<IMediaItem> MediaItems { get; set; } = new MvxObservableCollection<IMediaItem>();
@@ -35,26 +33,24 @@ namespace Chameleon.Core.ViewModels
             set => SetProperty(ref _selectedMediaItem, value);
         }
 
-        private IMvxAsyncCommand _openPlayerCommand;
-        public IMvxAsyncCommand OpenPlayerCommand => _openPlayerCommand ?? (_openPlayerCommand = new MvxAsyncCommand(Play));
+        public string QueueTitle => $"{GetText("Queue")} ({MediaItems.Count})";
+
+        private IMvxAsyncCommand<IMediaItem> _playerCommand;
+        public IMvxAsyncCommand<IMediaItem> PlayerCommand => _playerCommand ?? (_playerCommand = new MvxAsyncCommand<IMediaItem>(Play));
 
         private IMvxAsyncCommand _closeCommand;
-        public IMvxAsyncCommand CloseCommand => _closeCommand ?? (_closeCommand = new MvxAsyncCommand(Close));
+        public IMvxAsyncCommand CloseCommand => _closeCommand ?? (_closeCommand = new MvxAsyncCommand(() => NavigationService.Close(this)));
 
-        private async Task Close()
+        private async Task Play(IMediaItem mediaItem)
         {
-            await NavigationService.Close(this);
+            await _mediaManager.PlayQueueItem(mediaItem);
         }
 
-        private async Task Play()
+        public override void ViewAppearing()
         {
-            await NavigationService.Navigate<PlayerViewModel, IMediaItem>(SelectedMediaItem);
-        }
-
-        public override void Prepare()
-        {
-            base.Prepare();
+            base.ViewAppearing();
             MediaItems.ReplaceWith(_mediaManager.MediaQueue);
+            RaisePropertyChanged(nameof(QueueTitle));
         }
     }
 }

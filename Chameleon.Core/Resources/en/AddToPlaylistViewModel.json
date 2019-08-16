@@ -3,5 +3,6 @@
   "NewPlaylist": "Add new playlist",
   "Add": "Add",
   "Cancel": "Cancel",
-  "InvalidName": "Please fill in a valid name"
+  "InvalidName": "Please fill in a valid name",
+  "PlaylistAdded": "Item is added to the playlist"
 }

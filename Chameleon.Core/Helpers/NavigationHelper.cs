@@ -9,8 +9,10 @@ using MediaManager;
 using MediaManager.Library;
 using MvvmCross;
 using MvvmCross.Commands;
+using MvvmCross.Forms.Presenters;
 using MvvmCross.Localization;
 using MvvmCross.Navigation;
+using System.Linq;
 
 namespace Chameleon.Core.Helpers
 {
@@ -20,6 +22,8 @@ namespace Chameleon.Core.Helpers
         private static IUserDialogs _userDialogs => UserDialogs.Instance;
         private static IMvxNavigationService _navigationService => Mvx.IoCProvider.Resolve<IMvxNavigationService>();
         private static IMvxTextProvider _textProvider => Mvx.IoCProvider.Resolve<IMvxTextProvider>();
+        private static IMvxFormsPagePresenter _formsPagePresenter => Mvx.IoCProvider.Resolve<IMvxFormsPagePresenter>();
+        private static Type _topViewModel => _formsPagePresenter.CurrentPageTree.LastOrDefault()?.BindingContext?.GetType();
 
         private static IMvxAsyncCommand<IContentItem> _optionsCommand;
         public static IMvxAsyncCommand<IContentItem> OptionsCommand => _optionsCommand ?? (_optionsCommand = new MvxAsyncCommand<IContentItem>(OpenOptions));
@@ -34,7 +38,7 @@ namespace Chameleon.Core.Helpers
             return GetText("Shared", key);
         }
 
-        private static async Task OpenOptions(IContentItem contentItem)
+        private static Task OpenOptions(IContentItem contentItem)
         {
             var config = new ActionSheetConfig();
             config.UseBottomSheet = true;
@@ -44,13 +48,30 @@ namespace Chameleon.Core.Helpers
 
             if (contentItem is IMediaItem mediaItem)
             {
-                config.Add(GetText("AddToPlaylist"), async () => {
+                if (_topViewModel == typeof(QueueViewModel))
+                {
+                    config.Add(GetText("RemoveFromQueue"), () =>
+                    {
+                        _mediaManager.MediaQueue.Remove(mediaItem);
+                        _userDialogs.Toast(GetText("ItemRemovedFromQueue"));
+                    });
+                }
+                else
+                {
+                    config.Add(GetText("AddToQueue"), () =>
+                    {
+                        _mediaManager.MediaQueue.Add(mediaItem);
+                        _userDialogs.Toast(GetText("ItemAddedToQueue"));
+                    });
+                }
+                config.Add(GetText("AddToPlaylist"), async () =>
+                {
                     await _navigationService.Navigate<AddToPlaylistViewModel, IMediaItem>(mediaItem);
                 });
-                config.Add(GetText("AddToQueue"), () => _mediaManager.MediaQueue.Add(mediaItem));
-                //config.Add(GetText("ShowArtist"), () => { });
-                //config.Add(GetText("ShowAlbum"), () => { });
-                
+                    
+                //config.Add(GetText("ShowArtist"), () => _navigationService.Navigate<ArtistViewModel>());
+                //config.Add(GetText("ShowAlbum"), () => _navigationService.Navigate<AlbumViewModel>());
+                //config.Add(GetText("Share"), () => { });
             }
             else if(contentItem is IPlaylist playlist)
             {
@@ -74,13 +95,14 @@ namespace Chameleon.Core.Helpers
                 });
             }
             _userDialogs.ActionSheet(config);
+            return Task.CompletedTask;
         }
 
         private static async Task DeletePlaylist(IPlaylist playlist)
         {
             if(await _userDialogs.ConfirmAsync(GetText("SureToDelete")))
             {
-
+                _userDialogs.Toast(GetText("PlaylistDeleted"));
             }
         }
 
@@ -93,6 +115,7 @@ namespace Chameleon.Core.Helpers
             {
                 playlist.Title = result.Value;
                 //TODO: Save
+                _userDialogs.Toast(GetText("RenameSuccessful"));
             }
         }
     }

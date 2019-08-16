@@ -59,7 +59,7 @@ namespace Chameleon.Core.ViewModels
         public bool HasNoPlaylists => !IsLoading && Playlists.Count == 0;
 
         private IMvxAsyncCommand<IMediaItem> _playerCommand;
-        public IMvxAsyncCommand<IMediaItem> PlayerCommand => _playerCommand ?? (_playerCommand = new MvxAsyncCommand<IMediaItem>(PlaySelectedMediaItem));
+        public IMvxAsyncCommand<IMediaItem> PlayerCommand => _playerCommand ?? (_playerCommand = new MvxAsyncCommand<IMediaItem>(Play));
 
         private IMvxAsyncCommand _openUrlCommand;
         public IMvxAsyncCommand OpenUrlCommand => _openUrlCommand ?? (_openUrlCommand = new MvxAsyncCommand(OpenUrl));
@@ -124,7 +124,7 @@ namespace Chameleon.Core.ViewModels
             }
         }
 
-        private async Task PlaySelectedMediaItem(IMediaItem mediaItem)
+        private async Task Play(IMediaItem mediaItem)
         {
             await NavigationService.Navigate<PlayerViewModel, IMediaItem>(mediaItem);
             SelectedMediaItem = null;

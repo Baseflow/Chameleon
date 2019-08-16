@@ -12,20 +12,28 @@
     mc:Ignorable="d"
     x:TypeArguments="viewModels:QueueViewModel"
     x:Class="Chameleon.Core.Views.QueuePage">
-
+    
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center" Spacing="10" HeightRequest="30">
+            <Image Source="chameleon_logo"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    
     <ContentPage.ToolbarItems>
         <ToolbarItem IconImageSource="icon_close" mvx:Bi.nd="Command CloseCommand"/>
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
         <StackLayout>
-            <Label mvx:La.ng="Text Queue" Style="{StaticResource QueueText}" Margin="0,0,0,20"/>
+            <Label mvx:Bi.nd="Text QueueTitle" Style="{StaticResource QueueText}" Margin="24,0,0,24"/>
             <CollectionView
                 x:Name="MyCollectionView"
-                ItemsSource="{mvx:MvxBind MediaItems}"
+                mvx:Bi.nd=
+                    "ItemsSource MediaItems;
+                    SelectionChangedCommand PlayerCommand;
+                    SelectionChangedCommandParameter SelectedMediaItem;
+                    SelectedItem SelectedMediaItem"
                 SelectionMode="Single"
-                SelectedItem="{Binding SelectedMediaItem, Mode=TwoWay}"
-                SelectionChangedCommand="{Binding OpenPlayerCommand}"
                 VerticalOptions="FillAndExpand">
 
                 <CollectionView.EmptyView>

@@ -8,5 +8,10 @@
   "ShowArtist": "Show artist",
   "ShowAlbum": "Show album",
   "SureToDelete": "Are you sure you want to delete this playlist?",
-  "Cancel": "Cancel"
+  "Cancel": "Cancel",
+  "ItemAddedToQueue": "Item added to queue",
+  "RenameSuccessful": "Rename successful",
+  "PlaylistDeleted": "Playlist deleted",
+  "RemoveFromQueue": "Remove from queue",
+  "ItemRemovedFromQueue": "Item removed from queue"
 }

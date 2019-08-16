@@ -51,6 +51,7 @@ namespace Chameleon.Core.ViewModels
         {
             arg.Add(_mediaItem);
             await _playlistService.SavePlaylists(Playlists);
+            _userDialogs.Toast(GetText("PlaylistAdded"));
 
             await NavigationService.Close(this);
         }

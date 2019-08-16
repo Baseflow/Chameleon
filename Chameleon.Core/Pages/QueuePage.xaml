@@ -19,7 +19,7 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <Label mvx:La.ng="Text Queue" FontFamily="FiraSans#600" FontSize="16" TextColor="#FF6C6E81" Margin="0,0,0,20"/>
+            <Label mvx:La.ng="Text Queue" Style="{StaticResource Queue}" Margin="0,0,0,20"/>
             <CollectionView
                 x:Name="MyCollectionView"
                 ItemsSource="{mvx:MvxBind MediaItems}"

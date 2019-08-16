@@ -137,5 +137,15 @@ namespace Chameleon.Android
         {
             plugin.Load();
         }
+
+        public void Include(global::Android.Support.V7.Widget.AlertDialogLayout alertDialog)
+        {
+            _ = new global::Android.Support.V7.Widget.AlertDialogLayout(Application.Context);
+        }
+
+        public void Include(global::Android.Support.Design.Internal.BaselineLayout baselineLayout)
+        {
+            _ = new global::Android.Support.Design.Internal.BaselineLayout(Application.Context);
+        }
     }
 }

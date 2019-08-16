@@ -21,7 +21,9 @@
                 mvx:La.ng="Placeholder SearchBar"
                 Text="{mvx:MvxBind SearchText}"/>
             <Label mvx:La.ng="Text Title" Style="{StaticResource Header1}" Margin="24,0,24,14"/>
-            <Grid Padding="24,0">
+            <Grid x:Name="PlaylistHeader"
+                  Padding="24,0"
+                  Margin="0,0,0,30">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="114"/>
                     <ColumnDefinition Width="*"/>
@@ -45,9 +47,11 @@
                         VerticalOptions="Center"
                         Aspect="AspectFill"
                         Source="cover_art_placeholder"/>
-                        <Image Source="{mvx:MvxBind PlayPauseImage}"
-                               AbsoluteLayout.LayoutFlags="All"
-                               AbsoluteLayout.LayoutBounds=".5,.5,.5,.5"/>
+                        <ImageButton
+                            Source="playback_controls_play_button"
+                            Command="{mvx:MvxBind StartPlaylistCommand}"
+                            AbsoluteLayout.LayoutFlags="All"
+                            AbsoluteLayout.LayoutBounds=".5,.5,.5,.5"/>
                     </AbsoluteLayout>
                 </pan:PancakeView>
                 <StackLayout Margin="18,4,0,4" Grid.Column="1">
@@ -60,25 +64,26 @@
                         TextColor="#FFFFFFFF"
                         FontSize="24"/>
                     <Label
-                        Text="45 tracks"
+                        FormattedText="{Binding TrackAmount}"
                         VerticalOptions="EndAndExpand"
                         FontFamily="FiraSans#700"
                         FontSize="12"
                         TextColor="#FFFFFFFF"/>
                     <Label
-                        Text="2 hours, 23 minutes"
+                        FormattedText="{Binding PlaylistTime}"
                         FontFamily="FiraSans#700"
                         FontSize="12"
                         TextColor="#FFFFFFFF"/>
                 </StackLayout>
             </Grid>
             
-            <CollectionView x:Name="MyCollectionView"
-                            ItemsSource="{mvx:MvxBind MediaItems}"
+            <CollectionView x:Name="PlaylistItems"
+                            mvx:Bi.nd="
+                                ItemsSource CurrentPlaylist;
+                                SelectionChangedCommand PlayerCommand;
+                                SelectionChangedCommandParameter SelectedItem;
+                                SelectedItem SelectedItem"
                             SelectionMode="Single"
-                            SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
-                            SelectionChangedCommand="{Binding PlayCommand}"
-                            SelectionChangedCommandParameter="{Binding Source={x:Reference MyCollectionView}, Path=SelectedItem}"
                             VerticalOptions="FillAndExpand">
                 <CollectionView.EmptyView>
                     <StackLayout>

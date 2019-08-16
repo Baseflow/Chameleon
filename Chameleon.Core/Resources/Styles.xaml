@@ -19,7 +19,7 @@
         <Setter Property="BorderRadius" Value="25"/>
         <Setter Property="BorderWidth" Value="1"/>
         <Setter Property="FontFamily" Value="FiraSans#600"/>
-        <Setter Property="FontSize" Value="{OnPlatform Android='11', iOS='14'}"/>
+        <Setter Property="FontSize" Value="14"/>
         <Setter Property="HeightRequest" Value="50"/>
     </Style>
 
@@ -29,7 +29,7 @@
         <Setter Property="CornerRadius" Value="20"/>
         <Setter Property="HeightRequest" Value="40"/>
         <Setter Property="FontFamily" Value="FiraSans#500"/>
-        <Setter Property="FontSize" Value="{OnPlatform Android='11', iOS='13'}"/>
+        <Setter Property="FontSize" Value="13"/>
     </Style>
 
     <Style TargetType="{x:Type Label}" ApplyToDerivedTypes="True">
@@ -38,13 +38,13 @@
 
     <Style TargetType="Label" x:Key="Header1">
         <Setter Property="FontFamily" Value="FiraSans#600"/>
-        <Setter Property="FontSize" Value="{OnPlatform Android='13', iOS='16'}"/>
+        <Setter Property="FontSize" Value="16"/>
         <Setter Property="FontAttributes" Value="Bold"/>
     </Style>
 
     <Style TargetType="Label" x:Key="Header2">
         <Setter Property="FontFamily" Value="FiraSans#400"/>
-        <Setter Property="FontSize" Value="{OnPlatform Android='12', iOS='14'}"/>
+        <Setter Property="FontSize" Value="14"/>
         <Setter Property="FontAttributes" Value="Bold"/>
     </Style>
 
@@ -52,13 +52,13 @@
         <Setter Property="FontFamily" Value="FiraSans#600"/>
         <Setter Property="HorizontalTextAlignment" Value="Start"/>
         <Setter Property="TextColor" Value="{StaticResource White}"/>
-        <Setter Property="FontSize" Value="{OnPlatform Android='12', iOS='14'}"/>
+        <Setter Property="FontSize" Value="14"/>
         <Setter Property="FontAttributes" Value="Bold"/>
     </Style>
 
     <Style TargetType="Label" x:Key="MediaItemSubTitle">
         <Setter Property="FontFamily" Value="FiraSans#400"/>
-        <Setter Property="FontSize" Value="{OnPlatform Android='10', iOS='12'}"/>
+        <Setter Property="FontSize" Value="12"/>
         <Setter Property="TextColor" Value="{StaticResource White_70}"/>
         <Setter Property="HorizontalTextAlignment" Value="Start"/>
     </Style>
@@ -85,7 +85,7 @@
         <Setter Property="CancelButtonColor" Value="{StaticResource White}"/>
         <Setter Property="BackgroundColor" Value="{StaticResource BackgroundColor}"/>
         <Setter Property="PlaceholderColor" Value="{StaticResource White}"/>
-        <Setter Property="FontSize" Value="{OnPlatform Android='13', iOS='14'}"/>
+        <Setter Property="FontSize" Value="14"/>
         <Setter Property="Margin">
             <OnPlatform x:TypeArguments="Thickness"
                         iOS="16,20"
@@ -113,21 +113,21 @@
 
     <Style TargetType="Label" x:Key="OpenSourceSubtitle">
         <Setter Property="FontFamily" Value="FiraSans#400"/>
-        <Setter Property="FontSize" Value="{OnPlatform Android='13', iOS='14'}"/>
+        <Setter Property="FontSize" Value="14"/>
         <Setter Property="FontAttributes" Value="Bold"/>
         <Setter Property="TextColor" Value="#FFE3E5F6"/>
     </Style>
 
      <Style TargetType="Label" x:Key="OpenSourceTitle">
         <Setter Property="FontFamily" Value="FiraSans#700"/>
-        <Setter Property="FontSize" Value="{OnPlatform Android='16', iOS='18'}"/>
+        <Setter Property="FontSize" Value="18"/>
         <Setter Property="FontAttributes" Value="Bold"/>
         <Setter Property="TextColor" Value="#FFE3E5F6"/>
     </Style>
 
      <Style TargetType="Label" x:Key="PowerdByText">
         <Setter Property="FontFamily" Value="FiraSans#400"/>
-        <Setter Property="FontSize" Value="{OnPlatform Android='11', iOS='12'}"/>
+        <Setter Property="FontSize" Value="12"/>
         <Setter Property="TextColor" Value="#FFE3E5F6"/>
         <Setter Property="LineHeight" Value="1.3"/>
     </Style>

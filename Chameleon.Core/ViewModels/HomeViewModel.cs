@@ -103,7 +103,7 @@ namespace Chameleon.Core.ViewModels
 
         private async Task OpenUrl()
         {
-            var result = await _userDialogs.PromptAsync("Enter url", inputType: InputType.Url);
+            var result = await _userDialogs.PromptAsync(GetText("EnterUrl"), inputType: InputType.Url);
 
             //TODO: Check if the url is valid
             if (!string.IsNullOrWhiteSpace(result.Value))

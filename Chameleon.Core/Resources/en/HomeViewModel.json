@@ -1,11 +1,12 @@
 ﻿{
   "Title": "Home",
   "Player": "Go to player",
-  "PlayDevice":  "Play video from device",
+  "PlayDevice": "Play video from device",
   "OpenUrl": "Open video from URL",
-  "Queue":  "(temporary button to open queue)",
-  "Recent":  "RECENTLY PLAYED",
+  "Queue": "(temporary button to open queue)",
+  "Recent": "RECENTLY PLAYED",
   "AddPlaylist": "Add new Playlist",
-  "Playlists":  "PLAYLISTS",
-  "AllPlaylists":  "All playlists"
+  "Playlists": "PLAYLISTS",
+  "AllPlaylists": "All playlists",
+  "EnterUrl": "Enter url"
 }

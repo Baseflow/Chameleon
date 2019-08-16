@@ -61,6 +61,12 @@ namespace Chameleon.Core.ViewModels
         private IMvxAsyncCommand<IMediaItem> _playerCommand;
         public IMvxAsyncCommand<IMediaItem> PlayerCommand => _playerCommand ?? (_playerCommand = new MvxAsyncCommand<IMediaItem>(Play));
 
+        private IMvxAsyncCommand _addPlaylistCommand;
+        public IMvxAsyncCommand AddPlaylistCommand => _addPlaylistCommand ?? (_addPlaylistCommand = new MvxAsyncCommand(AddPlaylist));
+
+        private IMvxAsyncCommand _addPlaylistCommand;
+        public IMvxAsyncCommand AddPlaylistCommand => _addPlaylistCommand ?? (_addPlaylistCommand = new MvxAsyncCommand(AddPlaylist));
+
         private IMvxAsyncCommand _openUrlCommand;
         public IMvxAsyncCommand OpenUrlCommand => _openUrlCommand ?? (_openUrlCommand = new MvxAsyncCommand(OpenUrl));
 
@@ -134,6 +140,20 @@ namespace Chameleon.Core.ViewModels
         {
             await NavigationService.Navigate<PlaylistViewModel, IPlaylist>(playlist);
             SelectedPlaylist = null;
+        }
+
+        private async Task AddPlaylist()
+        {
+            var config = new PromptConfig();
+            config.Message = "Enter the name of your new playlist";
+            var result = await _userDialogs.PromptAsync(config);
+            if (result.Ok && !string.IsNullOrEmpty(result.Value))
+            {
+                Playlists.Add(new Playlist() { Title = result.Value });
+                await _playlistService.SavePlaylists(Playlists);
+            }
+
+            await ReloadData();
         }
     }
 }

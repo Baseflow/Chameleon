@@ -87,6 +87,7 @@
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="154" />
+                            <RowDefinition Height="auto" />
                         </Grid.RowDefinitions>
                         <pan:PancakeView
                             CornerRadius="8"
@@ -103,21 +104,13 @@
                                     iOS="False"
                                     Android="True" />
                             </pan:PancakeView.HasShadow>
-                            <StackLayout
-                                HorizontalOptions="Center"
-                                VerticalOptions="Center">
-                                <ImageButton
-                                    HorizontalOptions="Center"
-                                    VerticalOptions="Center"
-                                    BackgroundColor="Transparent"
-                                    Source="icon_plus" />
-                                <Label
-                                    Text="Add new Playlist" 
-                                    HorizontalTextAlignment="Center"
-                                    FontSize="14"
-                                    FontAttributes="Bold"
-                                    TextColor="White"/>
-                            </StackLayout>
+                            <ImageButton
+                                HorizontalOptions="FillAndExpand"
+                                Padding="50"
+                                VerticalOptions="FillAndExpand"
+                                BackgroundColor="#FF252525"
+                                Command="{Binding Source={x:Reference homePage}, Path=BindingContext.AddPlaylistCommand}"
+                                Source="icon_plus" />
                         </pan:PancakeView>
                     </Grid>
                 </CollectionView.EmptyView>

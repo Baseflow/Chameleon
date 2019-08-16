@@ -33,7 +33,7 @@ namespace Chameleon.Core.ViewModels
         private async Task AddPlaylist()
         {
             var config = new PromptConfig();
-            config.Message = "Enter the name of your new playlist";
+            config.Message = GetText("EnterNewName");
             var result = await _userDialogs.PromptAsync(config);
             if (result.Ok && !string.IsNullOrEmpty(result.Value))
             {

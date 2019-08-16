@@ -1,0 +1,12 @@
+﻿{
+  "AddToQueue": "Add to queue",
+  "AddToPlaylist": "Add to playlist",
+  "RenamePlaylist": "Rename playlist",
+  "DeletePlaylist": "Delete playlist",
+  "Share": "Share",
+  "EnterNewName": "Enter a new name for this playlist",
+  "ShowArtist": "Show artist",
+  "ShowAlbum": "Show album",
+  "SureToDelete": "Are you sure you want to delete this playlist?",
+  "Cancel": "Cancel"
+}

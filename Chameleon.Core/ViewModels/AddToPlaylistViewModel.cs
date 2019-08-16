@@ -32,14 +32,6 @@ namespace Chameleon.Core.ViewModels
         private IMvxAsyncCommand _addPlaylistCommand;
         public IMvxAsyncCommand AddPlaylistCommand => _addPlaylistCommand ?? (_addPlaylistCommand = new MvxAsyncCommand(AddPlaylist));
 
-        /*private IMediaItem _selectedItem;
-
-        public IMediaItem SelectedItem
-        {
-            get => _selectedItem;
-            set => SetProperty(ref _selectedItem, value);
-        }*/
-
         private string _playlistName;
         public string PlaylistName
         {
@@ -77,7 +69,7 @@ namespace Chameleon.Core.ViewModels
                 PlaylistName = string.Empty;
             }
             else
-                await _userDialogs.AlertAsync("Please fill in a valid name");
+                await _userDialogs.AlertAsync(GetText("InvalidName"));
         }
     }
 }

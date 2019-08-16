@@ -26,7 +26,6 @@ namespace Chameleon.Core.ViewModels
             _playlistService = playlistService ?? throw new ArgumentNullException(nameof(playlistService));
         }
 
-        //private MvxObservableCollection<IMediaItem> _mediaItems;
         public MvxObservableCollection<IMediaItem> MediaItems { get; set; } = new MvxObservableCollection<IMediaItem>();
 
         private IMediaItem _selectedMediaItem;

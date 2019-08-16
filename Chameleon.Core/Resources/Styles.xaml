@@ -92,4 +92,73 @@
         </Setter>
     </Style>
 
+    <Style TargetType="Button" x:Key="AddToPlaylistButton">
+        <Setter Property="TextColor" Value="#FFFFFF"/>
+        <Setter Property="BackgroundColor" Value="#30313c"/>
+        <Setter Property="WidthRequest" Value="80"/>
+        <Setter Property="FontSize" Value="13"/>
+    </Style>
+
+    <Style TargetType="Button" x:Key="CancelButton">
+        <Setter Property="TextColor" Value="#252525"/>
+        <Setter Property="BackgroundColor" Value="#FFFFFF"/>
+        <Setter Property="FontSize" Value="13"/>
+    </Style>
+
+    <Style TargetType="Entry" x:Key="TextColorEntry">
+        <Setter Property="TextColor" Value="#a8aaba"/>
+        <Setter Property="FontSize" Value="13"/>
+    </Style>
+
+    <Style TargetType="Label" x:Key="OpenSourceSubtitle">
+        <Setter Property="FontFamily" Value="FiraSans#400"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="TextColor" Value="#FFE3E5F6"/>
+    </Style>
+
+     <Style TargetType="Label" x:Key="OpenSourceTitle">
+        <Setter Property="FontFamily" Value="FiraSans#700"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="TextColor" Value="#FFE3E5F6"/>
+    </Style>
+
+     <Style TargetType="Label" x:Key="PowerdByText">
+        <Setter Property="FontFamily" Value="FiraSans#400"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="TextColor" Value="#FFE3E5F6"/>
+        <Setter Property="LineHeight" Value="1.3"/>
+    </Style>
+
+     <Style TargetType="Label" x:Key="QueueText">
+        <Setter Property="FontFamily" Value="FiraSans#600"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="TextColor" Value="#FF6C6E81"/>
+    </Style>
+
+     <Style TargetType="Label" x:Key="TitleText">
+        <Setter Property="FontFamily" Value="FiraSans#600"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="TextColor" Value="#FFFFFF"/>
+    </Style>
+
+    <Style TargetType="Label" x:Key="AlbumText">
+        <Setter Property="FontFamily" Value="FiraSans#400"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="TextColor" Value="#B3FFFFFF"/>
+    </Style>
+
+     <Style TargetType="Label" x:Key="Data1">
+        <Setter Property="FontFamily" Value="FiraSans-Bold#600"/>
+        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="TextColor" Value="#FFFFFF"/>
+    </Style>
+
+     <Style TargetType="Label" x:Key="Data2">
+        <Setter Property="FontFamily" Value="FiraSans-Regular#400"/>
+        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="TextColor" Value="#B3FFFFFF"/>
+    </Style>
+
 </ResourceDictionary>

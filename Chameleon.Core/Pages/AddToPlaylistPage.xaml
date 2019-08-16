@@ -19,7 +19,7 @@
    <ContentPage.Content>  
         <Grid VerticalOptions="Center"
             HorizontalOptions="Center"
-            BackgroundColor="#ecedf4">
+            BackgroundColor="{StaticResource BackgroundColorAddToPlaylist}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="50" />
                 <RowDefinition Height="Auto" />
@@ -34,17 +34,15 @@
                 mvx:Bi.nd="Text PlaylistName"
                 Grid.Column="0"
                 Grid.Row="0"
-                TextColor="#a8aaba"
+                Style="{StaticResource TextColorEntry}"
                 Margin="10,10,5,0"/>
             <Button
                 mvx:La.ng="Text Add"
                 Grid.Column="1"
                 Grid.Row="0"
-                BackgroundColor="#30313c"
-                TextColor="#ffffff"
                 HorizontalOptions="End"
                 Margin="0,10,10,0"
-                WidthRequest="80"
+                Style="{StaticResource AddToPlaylistButton}"
                 mvx:Bi.nd="Command AddPlaylistCommand"/>
             <core:MvxListView
                 Grid.Row="1"
@@ -64,8 +62,7 @@
                     mvx:La.ng="Text Cancel"
                     Grid.Row="2"
                     Grid.ColumnSpan="2"
-                    BackgroundColor="#ffffff"
-                    TextColor="#252525"
+                    Style="{StaticResource CancelButton}"
                     mvx:Bi.nd="Command BackCommand"/>
         </Grid>
    </ContentPage.Content>

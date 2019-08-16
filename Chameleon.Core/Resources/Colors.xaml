@@ -14,5 +14,8 @@
     <Color x:Key="TabBarColor">#393A47</Color>
     <Color x:Key="BackgroundColor">#30313C</Color>
     <Color x:Key="LabelTextColor">#FF6C6E81</Color>
+    <Color x:Key="BackgroundColorAddToPlaylist">#ecedf4</Color>
+    <Color x:Key="SeparatorColor">#30313C</Color>
+    <Color x:Key="MinimumTrackColor">#FFF14431</Color>
 
 </ResourceDictionary>

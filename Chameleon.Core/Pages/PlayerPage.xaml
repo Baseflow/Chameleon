@@ -14,7 +14,7 @@
     x:TypeArguments="viewModels:PlayerViewModel"
     x:Class="Chameleon.Core.Views.PlayerPage"
     NavigationPage.HasNavigationBar="True"
-    BackgroundColor="#30313c">
+    BackgroundColor="{StaticResource BackgroundColor}">
     <NavigationPage.TitleView>
         <Grid>
             <Grid.RowDefinitions>
@@ -30,17 +30,13 @@
                 Grid.Column="0"
                 Grid.Row="0"
                 VerticalOptions="End"
-                TextColor="{StaticResource White}"
-                FontFamily="FiraSans#600"
-                FontSize="16"/>
+                Style="{StaticResource TitleText}"/>
             <Label
                 mvx:Bi.nd="Text Source.Album"
                 Grid.Column="0"
                 Grid.Row="1"
                 VerticalOptions="Start"
-                TextColor="{StaticResource White_70}"
-                FontFamily="FiraSans#400"
-                FontSize="12"/>
+                Style="{StaticResource AlbumText}"/>
             <ImageButton
                 Grid.Column="1"
                 Grid.Row="0"
@@ -78,16 +74,12 @@
                                         Text="{Binding Key}"
                                         VerticalOptions="Center"
                                         Grid.Column="0"
-                                        TextColor="{StaticResource White}"
-                                        FontFamily="FiraSans-Bold#600"
-                                        FontSize="13"/>
+                                        Style="{StaticResource Data1}"/>
                                     <Label
                                         Text="{Binding Value}"
                                         VerticalOptions="Center"
                                         Grid.Column="1"
-                                        TextColor="{StaticResource White_70}"
-                                        FontFamily="FiraSans-Regular#400"
-                                        FontSize="13"/>
+                                        Style="{StaticResource Data2}"/>
                                 </Grid>
                             </DataTemplate>
                         </BindableLayout.ItemTemplate>
@@ -148,8 +140,8 @@
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="End"
                     mvx:Bi.nd="Value Position; Maximum Duration; DragStartedCommand DragStartedCommand; DragCompletedCommand DragCompletedCommand"
-                    MaximumTrackColor="#FFFFFF"
-                    MinimumTrackColor="#FFF14431"/>
+                    MaximumTrackColor="White"
+                    MinimumTrackColor="{StaticResource MinimumTrackColor}"/>
                 <Grid Padding="18,0,18,0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="20"/>

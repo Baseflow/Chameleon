@@ -27,6 +27,15 @@ namespace Chameleon.Core.ViewModels
 
         private bool _isInitialized;
 
+        public string AddPlaylistLabel
+        {
+            get
+            {
+                var text = GetText("AddPlaylist");
+                return text;
+            }
+        }
+
         private MvxObservableCollection<IPlaylist> _playlists = new MvxObservableCollection<IPlaylist>();
         public MvxObservableCollection<IPlaylist> Playlists
         {

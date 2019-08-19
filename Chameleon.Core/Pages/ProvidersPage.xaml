@@ -32,8 +32,17 @@
                         mvx:La.ng="Text Recommended"
                         Style="{StaticResource Titels}"
                         Margin="24,0" />
-                    <CollectionView>
-                        <CollectionView.ItemTemplate>
+
+                     <CollectionView
+                        x:Name="MyCollectionView"
+                        HeightRequest="250" >
+                        <CollectionView.ItemsLayout>
+                            <GridItemsLayout
+                                Orientation="Horizontal"
+                                VerticalItemSpacing="1"
+                                HorizontalItemSpacing="0" />
+                        </CollectionView.ItemsLayout>
+                     <CollectionView.ItemTemplate>
                             <DataTemplate>
                                 <templates:HorizontalSourceItemTemplate/>
                             </DataTemplate>
@@ -46,6 +55,7 @@
                     <ViewCell>
                         <StackLayout>
                             <Label
+                                Text="Sample"
                                 mvx:La.ng="Text Sources"
                                 Style="{StaticResource Titels}"
                                 Margin="24,0" />                                          

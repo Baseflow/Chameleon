@@ -31,9 +31,9 @@
                     Source="cover_art_placeholder"/>
             </pan:PancakeView>
             <Label
+                Text="Title"
                 mvx:Bi.nd="Text Title"
                 Grid.Row="0" Grid.Column="0"
-                LineBreakMode="TailTruncation"
                 MaxLines="1"
                 Style="{StaticResource MediaItemTitle}" />
         </Grid>

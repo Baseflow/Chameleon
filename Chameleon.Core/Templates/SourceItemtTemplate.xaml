@@ -7,7 +7,7 @@
     x:Class="Chameleon.Core.Templates.SourceItemtTemplate">
     <ContentView.Content>
        <StackLayout>
-            <Label mvx:La.ng="here name" Style="{StaticResource MediaItemTitle}" />
+            <Label Text="Title" mvx:La.ng="here name" Style="{StaticResource MediaItemTitle}" />
             <Image Source="disclosure_button" BackgroundColor="Transparent" HorizontalOptions="End"/>
        </StackLayout>
     </ContentView.Content>

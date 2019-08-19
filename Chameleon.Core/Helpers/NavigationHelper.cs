@@ -41,8 +41,11 @@ namespace Chameleon.Core.Helpers
         private static Task OpenOptions(IContentItem contentItem)
         {
             var config = new ActionSheetConfig();
-            config.UseBottomSheet = true;
-            config.Destructive = new ActionSheetOption(GetText("Cancel"));
+
+            //TODO: Bug in Acr.Userdialogs where style is not applied
+            //config.UseBottomSheet = true;
+
+            config.Cancel = new ActionSheetOption(GetText("Cancel"));
             //config.Title = "";
             //config.Message = "";
 

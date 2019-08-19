@@ -26,7 +26,7 @@ namespace Chameleon.Core.ViewModels
         }
 
         private IMvxAsyncCommand _addCommand;
-        public IMvxAsyncCommand AddCommand => _addCommand ?? (_addCommand = new MvxAsyncCommand(() => NavigationService.Navigate<AddProviderViewModel>()));
+        public IMvxAsyncCommand AddCommand => _addCommand ?? (_addCommand = new MvxAsyncCommand(() => NavigationService.Navigate<ProvidersViewModel>()));
 
 
         private IMediaItem _selectedMediaItem;

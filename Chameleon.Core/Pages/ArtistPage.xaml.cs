@@ -1,7 +1,9 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using Chameleon.Core.ViewModels;
 using MvvmCross.Forms.Presenters.Attributes;
 using MvvmCross.Forms.Views;
+using Xamarin.Forms;
 
 namespace Chameleon.Core.Views
 {
@@ -9,9 +11,9 @@ namespace Chameleon.Core.Views
     // by visiting https://aka.ms/xamarinforms-previewer
     [DesignTimeVisible(false)]
     [MvxContentPagePresentation(WrapInNavigationPage = true)]
-    public partial class AddProviderPage : MvxContentPage<AddProviderViewModel>
+    public partial class ArtistPage : MvxContentPage<ArtistViewModel>
     {
-        public AddProviderPage()
+        public ArtistPage()
         {
             InitializeComponent();
         }

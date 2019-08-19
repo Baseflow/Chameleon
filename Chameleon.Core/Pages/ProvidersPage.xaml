@@ -13,19 +13,23 @@
     x:TypeArguments="viewModels:ProvidersViewModel"
     x:Class="Chameleon.Core.Views.ProvidersPage">
 
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center" Spacing="10" HeightRequest="30">
+            <Image Source="chameleon_logo"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    
     <ContentPage.ToolbarItems>
-        <ToolbarItem Icon="chameleon_logo" Order="Primary" />
-        <ToolbarItem Icon="icon_close" Order="Primary"  Command="{Binding BackCommand}" />
+        <ToolbarItem IconImageSource="icon_close" mvx:Bi.nd="Command BackCommand"/>
     </ContentPage.ToolbarItems>
+
     <ContentPage.Content>
         <core:MvxListView
             BackgroundColor="{StaticResource BackgroundColor}"
-            ItemsSource="{mvx:MvxBind RecommendedItems}"
+            ItemsSource="{mvx:MvxBind Providers}"
             RowHeight="60"
             SelectionMode="Single"
-            SelectedItem="{Binding SelectedMediaItem}"
-            ItemClick="{mvx:MvxBind SourceCommand}"
-            SeparatorVisibility="None">
+            ItemClick="{mvx:MvxBind SourceCommand}">
             <core:MvxListView.Header>
                 <StackLayout Spacing="0">
                     <Label
@@ -35,6 +39,8 @@
 
                      <CollectionView
                         x:Name="MyCollectionView"
+                        mvx:Bi.nd="ItemsSource RecommendedProviders; SelectionChangedCommand SourceCommand; SelectionChangedCommandParameter SelectedItem; SelectedItem SelectedItem"
+                        SelectionMode="Single"
                         HeightRequest="250" >
                         <CollectionView.ItemsLayout>
                             <GridItemsLayout
@@ -55,11 +61,9 @@
                     <ViewCell>
                         <StackLayout>
                             <Label
-                                Text="Sample"
-                                mvx:La.ng="Text Sources"
+                                Text="{Binding Title}"
                                 Style="{StaticResource Titels}"
-                                Margin="24,0" />                                          
-                            <templates:SourceItemtTemplate/>
+                                Margin="24,0" />
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>

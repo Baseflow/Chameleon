@@ -4,7 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
     xmlns:pan="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
-    x:Class="Chameleon.Core.Templates.HorizontalMediaItemsTemplate">
+    x:Class="Chameleon.Core.Templates.SourceItemtTemplate">
     <ContentView.Content>
        <StackLayout>
             <Label mvx:La.ng="here name" Style="{StaticResource MediaItemTitle}" />

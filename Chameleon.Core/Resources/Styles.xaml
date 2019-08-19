@@ -44,7 +44,7 @@
 
     <Style TargetType="Label" x:Key="Header2">
         <Setter Property="FontFamily" Value="FiraSans#400"/>
-        <Setter Property="FontSize" Value="{OnPlatform Android='13', iOS='14'}"/>
+        <Setter Property="FontSize" Value="14"/>
         <Setter Property="FontAttributes" Value="Bold"/>
     </Style>
 

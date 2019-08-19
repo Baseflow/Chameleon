@@ -13,9 +13,60 @@
     x:TypeArguments="viewModels:ProvidersViewModel"
     x:Class="Chameleon.Core.Views.ProvidersPage">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="chameleon_logo" Order="Primary" />
+        <ToolbarItem Icon="icon_close" Order="Primary"  Command="{Binding BackCommand}" />
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <StackLayout>
-            
-        </StackLayout>
+        <core:MvxListView
+            BackgroundColor="{StaticResource BackgroundColor}"
+            ItemsSource="{mvx:MvxBind RecommendedItems}"
+            RowHeight="60"
+            SelectionMode="Single"
+            SelectedItem="{Binding SelectedMediaItem}"
+            ItemClick="{mvx:MvxBind SourceCommand}"
+            SeparatorVisibility="None">
+            <core:MvxListView.Header>
+                <StackLayout Spacing="0">
+                    <Label
+                        mvx:La.ng="Text Recommended"
+                        Style="{StaticResource Titels}"
+                        Margin="24,0" />
+                    <CollectionView>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <templates:HorizontalSourceItemTemplate/>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
+            </core:MvxListView.Header>
+            <core:MvxListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <Label
+                                mvx:La.ng="Text Sources"
+                                Style="{StaticResource Titels}"
+                                Margin="24,0" />                                          
+                            <templates:SourceItemtTemplate/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </core:MvxListView.ItemTemplate>
+        </core:MvxListView>
     </ContentPage.Content>
 </core:MvxContentPage>
+
+
+   <!--x:Name="MyCollectionView"
+                        IsVisible="{Binding IsArtistsVisible, Mode=OneWay}"
+                        mvx:Bi.nd="ItemsSource FavoriteArtists; SelectionChangedCommand OpenArtistCommand; SelectionChangedCommandParameter SelectedArtist; SelectedItem SelectedArtist"
+                        SelectionMode="Single"
+                        HeightRequest="250" >
+                        <CollectionView.ItemsLayout>
+                            <GridItemsLayout
+                                Orientation="Horizontal"
+                                VerticalItemSpacing="1"
+                                HorizontalItemSpacing="0" />
+                        </CollectionView.ItemsLayout>-->

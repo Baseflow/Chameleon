@@ -40,7 +40,7 @@
 
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <templates:MediaItemTemplate />
+                        <templates:MediaItemTemplate Padding="0,4"/>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>

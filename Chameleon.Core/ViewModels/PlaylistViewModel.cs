@@ -99,8 +99,8 @@ namespace Chameleon.Core.ViewModels
             }
         }
 
-        private IMvxAsyncCommand _playerCommand;
-        public IMvxAsyncCommand PlayerCommand => _playerCommand ?? (_playerCommand = new MvxAsyncCommand(PlayWhenSelected));
+        private IMvxAsyncCommand<IMediaItem> _playerCommand;
+        public IMvxAsyncCommand<IMediaItem> PlayerCommand => _playerCommand ?? (_playerCommand = new MvxAsyncCommand<IMediaItem>(Play));
 
         private IMvxAsyncCommand _startPlaylistCommand;
         public IMvxAsyncCommand StartPlaylistCommand => _startPlaylistCommand ?? (_startPlaylistCommand = new MvxAsyncCommand(StartPlaylist));
@@ -141,9 +141,9 @@ namespace Chameleon.Core.ViewModels
             ActiveMediaItem = _mediaManager.MediaQueue.Current;
         }
 
-        private async Task PlayWhenSelected()
+        private async Task Play(IMediaItem mediaItem)
         {
-            await NavigationService.Navigate<PlayerViewModel, IMediaItem>(SelectedMediaItem);
+            await NavigationService.Navigate<PlayerViewModel, IMediaItem>(mediaItem);
             SelectedMediaItem = null;
         }
 

@@ -252,6 +252,22 @@
     <ImageAsset Include="Assets.xcassets\icon_plus.imageset\icon_plus.png" />
     <ImageAsset Include="Assets.xcassets\icon_plus.imageset\icon_plus%402x.png" />
     <ImageAsset Include="Assets.xcassets\icon_plus.imageset\icon_plus%403x.png" />
+    <ImageAsset Include="Assets.xcassets\add_to_playlist.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\add_to_playlist.imageset\add_to_playlist.png" />
+    <ImageAsset Include="Assets.xcassets\add_to_playlist.imageset\add_to_playlist%402x.png" />
+    <ImageAsset Include="Assets.xcassets\add_to_playlist.imageset\add_to_playlist%403x.png" />
+    <ImageAsset Include="Assets.xcassets\add_to_queue.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\add_to_queue.imageset\add_to_queue.png" />
+    <ImageAsset Include="Assets.xcassets\add_to_queue.imageset\add_to_queue%402x.png" />
+    <ImageAsset Include="Assets.xcassets\add_to_queue.imageset\add_to_queue%403x.png" />
+    <ImageAsset Include="Assets.xcassets\share.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\share.imageset\share.png" />
+    <ImageAsset Include="Assets.xcassets\share.imageset\share%402x.png" />
+    <ImageAsset Include="Assets.xcassets\share.imageset\share%403x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_speed.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\playback_speed.imageset\playback_speed.png" />
+    <ImageAsset Include="Assets.xcassets\playback_speed.imageset\playback_speed%402x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_speed.imageset\playback_speed%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -363,6 +379,10 @@
     <Folder Include="Assets.xcassets\disclosure_button.imageset\" />
     <Folder Include="Assets.xcassets\icon_more.imageset\" />
     <Folder Include="Assets.xcassets\icon_plus.imageset\" />
+    <Folder Include="Assets.xcassets\add_to_playlist.imageset\" />
+    <Folder Include="Assets.xcassets\add_to_queue.imageset\" />
+    <Folder Include="Assets.xcassets\share.imageset\" />
+    <Folder Include="Assets.xcassets\playback_speed.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />

@@ -28,7 +28,8 @@
             BackgroundColor="{StaticResource BackgroundColor}"
             ItemsSource="{mvx:MvxBind Providers}"
             SelectionMode="Single"
-            ItemClick="{mvx:MvxBind SourceCommand}">
+            ItemClick="{mvx:MvxBind SourceCommand}"
+            SeparatorColor="Black">
             <core:MvxListView.Header>
                 <StackLayout Spacing="0">
                     <Label

@@ -50,6 +50,7 @@
                         <ImageButton
                             Source="playback_controls_play_button"
                             Command="{mvx:MvxBind StartPlaylistCommand}"
+                            BackgroundColor="Transparent"
                             AbsoluteLayout.LayoutFlags="All"
                             AbsoluteLayout.LayoutBounds=".5,.5,.5,.5"/>
                     </AbsoluteLayout>

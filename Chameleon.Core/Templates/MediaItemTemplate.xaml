@@ -7,7 +7,7 @@
     xmlns:local="clr-namespace:Chameleon.Core.Helpers"
     x:Class="Chameleon.Core.Templates.MediaItemTemplate">
     <ContentView.Content>
-        <Grid Margin="24,0" Padding="0,4" RowSpacing="0" ColumnSpacing="12" VerticalOptions="Center">
+        <Grid Margin="24,0" RowSpacing="0" ColumnSpacing="12" VerticalOptions="Center">
             <Grid.RowDefinitions>
                 <RowDefinition Height="28"/>
                 <RowDefinition Height="28"/>
@@ -20,8 +20,6 @@
             <pan:PancakeView
                 CornerRadius="3"
                 IsClippedToBounds="True"
-                HorizontalOptions="FillAndExpand"
-                VerticalOptions="FillAndExpand"
                 Elevation="2"
                 Grid.Column="0"
                 Grid.RowSpan="2">

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <core:MvxContentPage
-    xmlns:core="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms" 
+    xmlns:core="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
     xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -9,18 +9,15 @@
     xmlns:viewModels="clr-namespace:Chameleon.Core.ViewModels;assembly=Chameleon.Core"
     xmlns:templates="clr-namespace:Chameleon.Core.Templates;assembly=Chameleon.Core"
     mc:Ignorable="d"
-    x:TypeArguments="viewModels:BrowseViewModel"
     x:Class="Chameleon.Core.Views.BrowsePage"
+    x:TypeArguments="viewModels:BrowseViewModel"
     mvx:La.ng="Title Title" >
-    <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="icon_plus" Order="Primary" mvx:Bi.nd="Command AddCommand"/>
-    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <core:MvxListView
             BackgroundColor="{StaticResource BackgroundColor}"
             ItemsSource="{mvx:MvxBind RecentlyPlayedItems}"
-            RowHeight="60"
             SelectionMode="Single"
+            RowHeight="60"
             SelectedItem="{Binding SelectedMediaItem, Mode=TwoWay}"
             ItemClick="{mvx:MvxBind PlayerCommand}"
             SeparatorVisibility="None">
@@ -38,9 +35,13 @@
                     <CollectionView
                         x:Name="MyCollectionView"
                         IsVisible="{Binding IsArtistsVisible, Mode=OneWay}"
-                        mvx:Bi.nd="ItemsSource FavoriteArtists; SelectionChangedCommand OpenArtistCommand; SelectionChangedCommandParameter SelectedArtist; SelectedItem SelectedArtist"
+                        mvx:Bi.nd="
+                                    ItemsSource FavoriteArtists;
+                                    SelectionChangedCommand OpenArtistCommand;
+                                    SelectionChangedCommandParameter SelectedArtist;
+                                    SelectedItem SelectedArtist "
                         SelectionMode="Single"
-                        HeightRequest="250" >
+                        HeightRequest="250">
                         <CollectionView.ItemsLayout>
                             <GridItemsLayout
                                 Orientation="Horizontal"
@@ -49,12 +50,14 @@
                         </CollectionView.ItemsLayout>
                         <CollectionView.EmptyView>
                             <StackLayout>
-                                <ActivityIndicator Color="DimGray" IsRunning="True" HeightRequest="50" />
+                                <ActivityIndicator Color="DimGray"
+                                                   IsRunning="True"
+                                                   HeightRequest="50" />
                             </StackLayout>
                         </CollectionView.EmptyView>
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
-                                <templates:HorizontalMediaItemsTemplate/>
+                                <templates:HorizontalMediaItemsTemplate />
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>
@@ -63,7 +66,7 @@
             <core:MvxListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <templates:MediaItemTemplate/>
+                        <templates:MediaItemTemplate />
                     </ViewCell>
                 </DataTemplate>
             </core:MvxListView.ItemTemplate>

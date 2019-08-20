@@ -27,7 +27,6 @@
         <core:MvxListView
             BackgroundColor="{StaticResource BackgroundColor}"
             ItemsSource="{mvx:MvxBind Providers}"
-            RowHeight="60"
             SelectionMode="Single"
             ItemClick="{mvx:MvxBind SourceCommand}">
             <core:MvxListView.Header>
@@ -35,13 +34,12 @@
                     <Label
                         mvx:La.ng="Text Recommended"
                         Style="{StaticResource Titels}"
-                        Margin="24,0" />
-
+                        Margin="20,0" />
                      <CollectionView
                         x:Name="MyCollectionView"
                         mvx:Bi.nd="ItemsSource RecommendedProviders; SelectionChangedCommand SourceCommand; SelectionChangedCommandParameter SelectedItem; SelectedItem SelectedItem"
                         SelectionMode="Single"
-                        HeightRequest="250" >
+                        HeightRequest="150" >
                         <CollectionView.ItemsLayout>
                             <GridItemsLayout
                                 Orientation="Horizontal"
@@ -54,17 +52,26 @@
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>
+                     <Label
+                        mvx:La.ng="Text Sources"
+                        Style="{StaticResource Titels}"
+                        Margin="20,10,0,15" /> 
                 </StackLayout>
             </core:MvxListView.Header>
             <core:MvxListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout>
-                            <Label
-                                Text="{Binding Title}"
-                                Style="{StaticResource Titels}"
-                                Margin="24,0" />
-                        </StackLayout>
+                        <Grid  Margin="25,12,25,12">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="{Binding Title}" Style="{StaticResource MediaItemTitle}" Grid.Column="0"/>
+                            <Image Source="disclosure_button" HorizontalOptions="End" BackgroundColor="Transparent" Grid.Column="1"/>
+                        </Grid>
                     </ViewCell>
                 </DataTemplate>
             </core:MvxListView.ItemTemplate>
@@ -72,15 +79,3 @@
     </ContentPage.Content>
 </core:MvxContentPage>
 
-
-   <!--x:Name="MyCollectionView"
-                        IsVisible="{Binding IsArtistsVisible, Mode=OneWay}"
-                        mvx:Bi.nd="ItemsSource FavoriteArtists; SelectionChangedCommand OpenArtistCommand; SelectionChangedCommandParameter SelectedArtist; SelectedItem SelectedArtist"
-                        SelectionMode="Single"
-                        HeightRequest="250" >
-                        <CollectionView.ItemsLayout>
-                            <GridItemsLayout
-                                Orientation="Horizontal"
-                                VerticalItemSpacing="1"
-                                HorizontalItemSpacing="0" />
-                        </CollectionView.ItemsLayout>-->

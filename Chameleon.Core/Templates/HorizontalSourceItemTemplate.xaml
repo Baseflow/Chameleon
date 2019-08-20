@@ -6,12 +6,12 @@
     xmlns:pan="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     x:Class="Chameleon.Core.Templates.HorizontalSourceItemTemplate">
     <ContentView.Content>
-        <Grid Margin="12" Padding="12">
+        <Grid Margin="20,15,0,20">
             <Grid.RowDefinitions>
-                <RowDefinition Height="100"/>
+                <RowDefinition Height="107"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="154"/>
+                <ColumnDefinition Width="156"/>
             </Grid.ColumnDefinitions>
             <pan:PancakeView
                 CornerRadius="8"
@@ -25,16 +25,17 @@
                               Android="True" />
                 </pan:PancakeView.HasShadow>
                 <Image
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
                     Aspect="AspectFill"
                     Source="cover_art_placeholder"/>
             </pan:PancakeView>
             <Label
-                Text="Title"
                 mvx:Bi.nd="Text Title"
                 Grid.Row="0" Grid.Column="0"
+                VerticalOptions="EndAndExpand"
                 MaxLines="1"
+                Margin="10"
                 Style="{StaticResource MediaItemTitle}" />
         </Grid>
     </ContentView.Content>

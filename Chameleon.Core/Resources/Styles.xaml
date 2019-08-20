@@ -8,9 +8,9 @@
         <styles:Resources.Colors />
     </ResourceDictionary.MergedDictionaries>
 
-    <!--<Style TargetType="{x:Type Button}" ApplyToDerivedTypes="True">
+    <Style TargetType="{x:Type Button}" ApplyToDerivedTypes="True">
         <Setter Property="FontAttributes" Value="Bold"/>
-    </Style>-->
+    </Style>
 
     <Style TargetType="Button" x:Key="PrimaryButton">
         <Setter Property="TextColor" Value="White"/>

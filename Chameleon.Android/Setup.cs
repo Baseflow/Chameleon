@@ -2,6 +2,7 @@
 using System.Reflection;
 using Acr.UserDialogs;
 using Chameleon.Core;
+using Chameleon.Services;
 using MvvmCross;
 using MvvmCross.Forms.Platforms.Android.Core;
 using MvvmCross.Platforms.Android;
@@ -15,6 +16,7 @@ namespace Chameleon.Android
             base.InitializeIoC();
 
             UserDialogs.Init(() => Mvx.IoCProvider.Resolve<IMvxAndroidCurrentTopActivity>().Activity);
+            ActionSheetConfig.DefaultAndroidStyleId = Resource.Style.MainTheme_Alert;
             //Mvx.IoCProvider.RegisterSingleton<HttpMessageHandler>(new AndroidClientHandler());
         }
 

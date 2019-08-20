@@ -2,6 +2,9 @@
 using Chameleon.Core.ViewModels;
 using MvvmCross.Forms.Presenters.Attributes;
 using MvvmCross.Forms.Views;
+using MvvmCross.Presenters;
+using MvvmCross.Presenters.Attributes;
+using MvvmCross.ViewModels;
 using Xamarin.Essentials;
 
 namespace Chameleon.Core.Views
@@ -9,8 +12,7 @@ namespace Chameleon.Core.Views
     // Learn more about making custom code visible in the Xamarin.Forms previewer
     // by visiting https://aka.ms/xamarinforms-previewer
     [DesignTimeVisible(false)]
-    [MvxModalPresentation(WrapInNavigationPage = true)]
-    public partial class PlayerPage : MvxContentPage<PlayerViewModel>
+    public partial class PlayerPage : MvxContentPage<PlayerViewModel>, IMvxOverridePresentationAttribute
     {
         //PlayerPortraitView PortraitView = new PlayerPortraitView();
         //PlayerLandscapeView LandscapeView = new PlayerLandscapeView();
@@ -19,6 +21,15 @@ namespace Chameleon.Core.Views
         {
             InitializeComponent();
             //UpdateContent(DeviceDisplay.MainDisplayInfo.Orientation);
+        }
+
+        public MvxBasePresentationAttribute PresentationAttribute(MvxViewModelRequest request)
+        {
+            //TODO: Detect when the player starts from another app
+            //if(Navigation.NavigationStack.Count > 0)
+                return new MvxModalPresentationAttribute() { WrapInNavigationPage = true };
+            //else
+            //    return new MvxContentPagePresentationAttribute() { WrapInNavigationPage = true };
         }
 
         protected override void OnAppearing()

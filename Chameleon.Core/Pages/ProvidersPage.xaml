@@ -29,13 +29,14 @@
             ItemsSource="{mvx:MvxBind Providers}"
             SelectionMode="Single"
             ItemClick="{mvx:MvxBind SourceCommand}"
-            SeparatorColor="Black">
+            SeparatorColor="Black"
+            RowHeight="60">
             <core:MvxListView.Header>
                 <StackLayout Spacing="0">
                     <Label
                         mvx:La.ng="Text Recommended"
                         Style="{StaticResource Titels}"
-                        Margin="20,10,0,0" />
+                        Margin="15,10,0,0" />
                      <CollectionView
                         x:Name="MyCollectionView"
                         mvx:Bi.nd="ItemsSource RecommendedProviders; SelectionChangedCommand SourceCommand; SelectionChangedCommandParameter SelectedItem; SelectedItem SelectedItem"
@@ -56,13 +57,13 @@
                      <Label
                         mvx:La.ng="Text Sources"
                         Style="{StaticResource Titels}"
-                        Margin="20,10,0,15" /> 
+                        Margin="15,10,0,15" /> 
                 </StackLayout>
             </core:MvxListView.Header>
             <core:MvxListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Grid  Margin="25,12,25,12">
+                        <Grid  Margin="20">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*" />
                             </Grid.RowDefinitions>

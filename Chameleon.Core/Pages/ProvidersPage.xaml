@@ -34,7 +34,7 @@
                     <Label
                         mvx:La.ng="Text Recommended"
                         Style="{StaticResource Titels}"
-                        Margin="20,0" />
+                        Margin="20,10,0,0" />
                      <CollectionView
                         x:Name="MyCollectionView"
                         mvx:Bi.nd="ItemsSource RecommendedProviders; SelectionChangedCommand SourceCommand; SelectionChangedCommandParameter SelectedItem; SelectedItem SelectedItem"

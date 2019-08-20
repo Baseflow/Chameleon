@@ -16,7 +16,7 @@ namespace Chameleon.Android
             base.InitializeIoC();
 
             UserDialogs.Init(() => Mvx.IoCProvider.Resolve<IMvxAndroidCurrentTopActivity>().Activity);
-            ActionSheetConfig.DefaultAndroidStyleId = Resource.Style.MainTheme_Alert;
+            ActionSheetConfig.DefaultAndroidStyleId = Android.Resource.Style.MainTheme_BottomSheet;
             //Mvx.IoCProvider.RegisterSingleton<HttpMessageHandler>(new AndroidClientHandler());
         }
 

@@ -43,7 +43,7 @@ namespace Chameleon.Core.Helpers
             var config = new ActionSheetConfig();
 
             //TODO: Bug in Acr.Userdialogs where style is not applied
-            //config.UseBottomSheet = true;
+            config.UseBottomSheet = true;
 
             config.Cancel = new ActionSheetOption(GetText("Cancel"));
             //config.Title = "";

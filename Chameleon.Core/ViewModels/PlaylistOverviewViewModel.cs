@@ -57,6 +57,7 @@ namespace Chameleon.Core.ViewModels
         private async Task OpenPlaylist(IPlaylist arg)
         {
             await NavigationService.Navigate<PlaylistViewModel, IPlaylist>(SelectedItem);
+            SelectedItem = null;
         }
     }
 }

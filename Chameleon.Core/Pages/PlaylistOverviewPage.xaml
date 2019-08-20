@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <core:MvxContentPage
-    xmlns:core="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms" 
+    xmlns:core="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
     xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -14,23 +14,33 @@
     x:Class="Chameleon.Core.Views.PlaylistOverviewPage">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Icon="icon_plus" Command="{Binding AddPlaylistCommand}" />
+        <ToolbarItem Icon="icon_plus"
+                     Command="{Binding AddPlaylistCommand}" />
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
         <StackLayout>
-            <SearchBar mvx:La.ng="Placeholder SearchBar" Text="{mvx:MvxBind SearchText}">
+            <SearchBar mvx:La.ng="Placeholder SearchBar"
+                       Text="{mvx:MvxBind SearchText}">
             </SearchBar>
-            <CollectionView x:Name="MyCollectionView" ItemsSource="{mvx:MvxBind Playlists}" SelectionMode="Single" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" SelectionChangedCommand="{Binding OpenPlaylistCommand}" SelectionChangedCommandParameter="{Binding Source={x:Reference MyCollectionView}, Path=SelectedItem}" VerticalOptions="FillAndExpand">
+            <CollectionView x:Name="MyCollectionView"
+                            mvx:Bi.nd="ItemsSource Playlists;
+                    SelectionChangedCommand OpenPlaylistCommand;
+                    SelectionChangedCommandParameter SelectedItem;
+                    SelectedItem SelectedItem"
+                            SelectionMode="Single"
+                            VerticalOptions="FillAndExpand">
                 <CollectionView.EmptyView>
                     <StackLayout>
-                        <ActivityIndicator Color="DimGray" IsRunning="True" HeightRequest="50" />
+                        <ActivityIndicator Color="DimGray"
+                                           IsRunning="True"
+                                           HeightRequest="50" />
                     </StackLayout>
                 </CollectionView.EmptyView>
 
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <templates:MediaItemTemplate/>
+                        <templates:MediaItemTemplate />
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>

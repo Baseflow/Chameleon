@@ -68,11 +68,13 @@
                                 <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="35"/>
+                                <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
                             <Label Text="{Binding Title}" Style="{StaticResource MediaItemTitle}" Grid.Column="0"/>
-                            <Image Source="disclosure_button" HorizontalOptions="End" BackgroundColor="Transparent" Grid.Column="1"/>
+                            <Label mvx:La.ng="Text Soon" BackgroundColor="#FF1B1C22" TextColor="White" Grid.Column="1"/>
+                            <Image Source="disclosure_button" HorizontalOptions="End" BackgroundColor="Transparent" Grid.Column="2"/>
                         </Grid>
                     </ViewCell>
                 </DataTemplate>

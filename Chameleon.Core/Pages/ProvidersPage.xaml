@@ -64,16 +64,20 @@
             <core:MvxListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Grid  Margin="20">
+                        <Grid  Margin="15">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition Width="35"/>
+                                <ColumnDefinition Width="50"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
-                            <Label Text="{Binding Title}" Style="{StaticResource MediaItemTitle}" Grid.Column="0"/>
+                            <Label Text="{Binding Title}"
+                                   Style="{StaticResource MediaItemTitle}"
+                                   Grid.Column="0"
+                                   HorizontalOptions="StartAndExpand"
+                                VerticalOptions="CenterAndExpand"/>
                             <pan:PancakeView Grid.Column="1"
                                 IsVisible="{Binding Soon}"
                                 CornerRadius="4"
@@ -87,7 +91,7 @@
                                 iOS="False"
                                 Android="True" />
                                 </pan:PancakeView.HasShadow>
-                                <Label Text="Soon" TextColor="White" />
+                                <Label Text="Soon" Style="{StaticResource Data1}"/>
                             </pan:PancakeView>
                             <Image Source="disclosure_button" HorizontalOptions="End" BackgroundColor="Transparent" Grid.Column="2"/>
                         </Grid>

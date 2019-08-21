@@ -12,8 +12,23 @@
     xmlns:templates="clr-namespace:Chameleon.Core.Templates;assembly=Chameleon.Core"
     mc:Ignorable="d"
     x:TypeArguments="viewModels:PlaylistViewModel"
-    x:Class="Chameleon.Core.Views.PlaylistPage">
+    x:Class="Chameleon.Core.Views.PlaylistPage"
+    x:Name="playlistPage">
 
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="activeTemplate">
+                <templates:ActiveMediaItemTemplate/>
+            </DataTemplate>
+            <DataTemplate x:Key="inActiveTemplate">
+                <templates:MediaItemTemplate/>
+            </DataTemplate>
+            <templates:MediaItemTemplateSelector
+                x:Key="mediaItemTemplateSelector"
+                ActiveTemplate="{StaticResource activeTemplate}"
+                InActiveTemplate="{StaticResource inActiveTemplate}"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
     <ContentPage.Content>
         <StackLayout>
@@ -85,18 +100,13 @@
                                 SelectionChangedCommandParameter SelectedMediaItem;
                                 SelectedItem SelectedMediaItem"
                             SelectionMode="Single"
-                            VerticalOptions="FillAndExpand">
+                            VerticalOptions="FillAndExpand"
+                            ItemTemplate="{StaticResource mediaItemTemplateSelector}">
                 <CollectionView.EmptyView>
                     <StackLayout>
                         <ActivityIndicator Color="DimGray" IsRunning="True" HeightRequest="50" />
                     </StackLayout>
                 </CollectionView.EmptyView>
-
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <templates:MediaItemTemplate/>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
             </CollectionView>
         </StackLayout>
     </ContentPage.Content>

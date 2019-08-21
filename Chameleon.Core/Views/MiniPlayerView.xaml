@@ -83,7 +83,7 @@
                      Grid.ColumnSpan="7"
                      Color="Black"
                      Margin="0,12,0,.5"
-                     HeightRequest=".5"/>
+                     HeightRequest=".5" />
         </Grid>
     </ContentView.Content>
 </ContentView>

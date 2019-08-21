@@ -11,6 +11,6 @@ namespace Chameleon.Services.Models
 
         public string ImageUrl { get; set; }
 
-        public bool Available { get; set; }
+        public bool Soon { get; set; }
     }
 }

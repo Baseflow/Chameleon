@@ -43,7 +43,7 @@ namespace Chameleon.Core.ViewModels
             Providers = new List<Provider>() {
                 new Provider(){ Title = "Internet Radio" },
                 new Provider(){ Title = "Podcasts" },
-                new Provider(){ Title = "Youtube" },
+                new Provider(){ Title = "Youtube", Soon = true },
                 new Provider(){ Title = "Spotify" },
                 new Provider(){ Title = "Tidal" },
                 new Provider(){ Title = "Soundcloud" },

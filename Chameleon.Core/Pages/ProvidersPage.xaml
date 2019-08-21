@@ -79,6 +79,7 @@
                                    HorizontalOptions="StartAndExpand"
                                 VerticalOptions="CenterAndExpand"/>
                             <pan:PancakeView Grid.Column="1"
+                                Margin="8,0,0,0"
                                 IsVisible="{Binding Soon}"
                                 CornerRadius="4"
                                 IsClippedToBounds="True"

@@ -65,13 +65,14 @@
                         <ImageButton
                             Source="playback_controls_play_button"
                             Command="{mvx:MvxBind StartPlaylistCommand}"
+                            BackgroundColor="Transparent"
                             AbsoluteLayout.LayoutFlags="All"
                             AbsoluteLayout.LayoutBounds=".5,.5,.5,.5"/>
                     </AbsoluteLayout>
                 </pan:PancakeView>
                 <StackLayout Margin="18,4,0,4" Grid.Column="1">
                     <Label
-                        Text="Deze titel is extra lang gemaakt zodat je niet meer kunt zien wat er staat"
+                        Text="{Binding CurrentPlaylist.Title}"
                         MaxLines="2"
                         LineBreakMode="TailTruncation"
                         FontFamily="FiraSans#600"
@@ -96,8 +97,8 @@
                             mvx:Bi.nd="
                                 ItemsSource CurrentPlaylist;
                                 SelectionChangedCommand PlayerCommand;
-                                SelectionChangedCommandParameter SelectedItem;
-                                SelectedItem SelectedItem"
+                                SelectionChangedCommandParameter SelectedMediaItem;
+                                SelectedItem SelectedMediaItem"
                             SelectionMode="Single"
                             VerticalOptions="FillAndExpand"
                             ItemTemplate="{StaticResource mediaItemTemplateSelector}">

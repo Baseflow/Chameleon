@@ -51,13 +51,29 @@ namespace Chameleon.Core.ViewModels
 
         public override async Task Initialize()
         {
-            Playlists.ReplaceWith(await _playlistService.GetPlaylists());
+            await LoadData();
         }
 
         private async Task OpenPlaylist(IPlaylist arg)
         {
             await NavigationService.Navigate<PlaylistViewModel, IPlaylist>(SelectedItem);
             SelectedItem = null;
+        }
+
+        private async Task LoadData()
+        {
+            IsLoading = true;
+
+            try
+            {
+                Playlists.ReplaceWith(await _playlistService.GetPlaylists());
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            IsLoading = false;
         }
     }
 }

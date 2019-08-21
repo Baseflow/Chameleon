@@ -43,7 +43,7 @@ namespace Chameleon.Core.Helpers
             var config = new ActionSheetConfig();
 
             //TODO: Bug in Acr.Userdialogs where style is not applied
-            //config.UseBottomSheet = true;
+            config.UseBottomSheet = true;
 
             config.Cancel = new ActionSheetOption(GetText("Cancel"));
             //config.Title = "";
@@ -65,12 +65,12 @@ namespace Chameleon.Core.Helpers
                     {
                         _mediaManager.MediaQueue.Add(mediaItem);
                         _userDialogs.Toast(GetText("ItemAddedToQueue"));
-                    });
+                    }, "add_to_queue");
                 }
                 config.Add(GetText("AddToPlaylist"), async () =>
                 {
                     await _navigationService.Navigate<AddToPlaylistViewModel, IMediaItem>(mediaItem);
-                });
+                }, "add_to_playlist");
                     
                 //config.Add(GetText("ShowArtist"), () => _navigationService.Navigate<ArtistViewModel>());
                 //config.Add(GetText("ShowAlbum"), () => _navigationService.Navigate<AlbumViewModel>());

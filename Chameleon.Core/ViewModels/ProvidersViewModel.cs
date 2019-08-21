@@ -41,19 +41,17 @@ namespace Chameleon.Core.ViewModels
         {
             base.Prepare();
             Providers = new List<Provider>() {
+                new Provider(){ Title = "URL Source" },
+                new Provider(){ Title = "ExoPlayer samples" },
                 new Provider(){ Title = "Internet Radio", Soon = true  },
                 new Provider(){ Title = "Podcasts", Soon = true  },
                 new Provider(){ Title = "Youtube", Soon = true },
                 new Provider(){ Title = "Spotify", Soon = true  },
                 new Provider(){ Title = "Tidal", Soon = true  },
-                new Provider(){ Title = "Soundcloud", Soon = true  },
-                new Provider(){ Title = "URL Source" }
+                new Provider(){ Title = "Soundcloud", Soon = true  }
             };
 
-            RecommendedProviders = new List<Provider>() {
-                new Provider(){ Title = "Internet Radio" },
-                new Provider(){ Title = "URL Source" }
-            };
+            RecommendedProviders = Providers.Where(x => !x.Soon).ToList();
         }
 
         private IMvxAsyncCommand<Provider> _sourceCommand;

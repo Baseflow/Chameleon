@@ -64,7 +64,7 @@
             <core:MvxListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Grid  Margin="15">
+                        <Grid  Margin="20,0,20,0">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
@@ -85,13 +85,14 @@
                                 HorizontalOptions="StartAndExpand"
                                 VerticalOptions="CenterAndExpand"
                                 BackgroundColor="#FF1B1C22" 
-                                Elevation="2">
+                                Elevation="2"
+                                Padding="5">
                                 <pan:PancakeView.HasShadow>
                                     <OnPlatform x:TypeArguments="x:Boolean"
                                 iOS="False"
                                 Android="True" />
                                 </pan:PancakeView.HasShadow>
-                                <Label Text="Soon" Style="{StaticResource Data1}"/>
+                                <Label Text="Soon" Style="{StaticResource Data1}" />
                             </pan:PancakeView>
                             <Image Source="disclosure_button" HorizontalOptions="End" BackgroundColor="Transparent" Grid.Column="2"/>
                         </Grid>

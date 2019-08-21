@@ -9,143 +9,148 @@
     xmlns:templates="clr-namespace:Chameleon.Core.Templates;assembly=Chameleon.Core"
     xmlns:pan="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     xmlns:viewModels="clr-namespace:Chameleon.Core.ViewModels;assembly=Chameleon.Core"
+    xmlns:views="clr-namespace:Chameleon.Core.Views;assembly=Chameleon.Core"
     mc:Ignorable="d"
     x:TypeArguments="viewModels:HomeViewModel"
     x:Class="Chameleon.Core.Views.HomePage"
     x:Name="homePage"
     mvx:La.ng="Title Title">
 
-    <ScrollView>
-        <StackLayout>
-            <Label
-                mvx:La.ng="Text Recent"
-                IsVisible="{Binding HasRecent}"
-                Style="{StaticResource Header1}"
-                Margin="24,0" />
-            <CollectionView
-                x:Name="RecentCollectionView"
-                SelectionMode="Single"
-                IsVisible="{Binding HasRecent}"
-                mvx:Bi.nd="ItemsSource RecentlyPlayedItems;
+    <StackLayout Spacing="0">
+        <ScrollView Padding="0,0,0,100">
+            <StackLayout>
+                <Label
+                    mvx:La.ng="Text Recent"
+                    IsVisible="{Binding HasRecent}"
+                    Style="{StaticResource Header1}"
+                    Margin="24,0" />
+                <CollectionView
+                    x:Name="RecentCollectionView"
+                    SelectionMode="Single"
+                    IsVisible="{Binding HasRecent}"
+                    mvx:Bi.nd="ItemsSource RecentlyPlayedItems;
                     SelectionChangedCommand PlayerCommand;
                     SelectionChangedCommandParameter SelectedMediaItem;
                     SelectedItem SelectedMediaItem"
-                HeightRequest="250">
+                    HeightRequest="250">
 
-                <CollectionView.ItemsLayout>
-                    <GridItemsLayout
-                        Orientation="Horizontal" />
-                </CollectionView.ItemsLayout>
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout
+                            Orientation="Horizontal" />
+                    </CollectionView.ItemsLayout>
 
-                <CollectionView.EmptyView>
-                    <StackLayout>
-                        <ActivityIndicator
-                            Color="DimGray"
-                            IsRunning="{Binding IsLoading}"
-                            HeightRequest="50" />
-                    </StackLayout>
-                </CollectionView.EmptyView>
+                    <CollectionView.EmptyView>
+                        <StackLayout>
+                            <ActivityIndicator
+                                Color="DimGray"
+                                IsRunning="{Binding IsLoading}"
+                                HeightRequest="50" />
+                        </StackLayout>
+                    </CollectionView.EmptyView>
 
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <templates:HorizontalMediaItemsTemplate />
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-            <StackLayout
-                Spacing="0"
-                Orientation="Horizontal"
-                Padding="24,0"
-                Margin="0,24,0,0">
-                <Label
-                    mvx:La.ng="Text Playlists"
-                    Style="{StaticResource Header1}"
-                    HorizontalOptions="Start"
-                    VerticalTextAlignment="Center" />
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <templates:HorizontalMediaItemsTemplate />
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                <StackLayout
+                    Spacing="0"
+                    Orientation="Horizontal"
+                    Padding="24,0"
+                    Margin="0,24,0,0">
+                    <Label
+                        mvx:La.ng="Text Playlists"
+                        Style="{StaticResource Header1}"
+                        HorizontalOptions="Start"
+                        VerticalTextAlignment="Center" />
+                    <Button
+                        mvx:La.ng="Text AllPlaylists"
+                        mvx:Bi.nd="Command OpenPlaylistOverviewCommand"
+                        Style="{StaticResource SecondaryButton}"
+                        HorizontalOptions="EndAndExpand"
+                        Padding="19,0" />
+                </StackLayout>
+                <CollectionView
+                    x:Name="PlaylistsCollectionView"
+                    SelectionMode="Single"
+                    mvx:Bi.nd="ItemsSource Playlists; SelectionChangedCommand OpenPlaylistCommand; SelectionChangedCommandParameter SelectedPlaylist; SelectedItem SelectedPlaylist"
+                    HeightRequest="250">
+
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout
+                            Orientation="Horizontal" />
+                    </CollectionView.ItemsLayout>
+
+                    <CollectionView.EmptyView>
+                        <Grid Padding="24,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="154" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="154" />
+                                <RowDefinition Height="auto" />
+                            </Grid.RowDefinitions>
+                            <pan:PancakeView
+                                CornerRadius="8"
+                                WidthRequest="154"
+                                HeightRequest="154"
+                                IsClippedToBounds="True"
+                                HorizontalOptions="FillAndExpand"
+                                BackgroundColor="#FF252525"
+                                VerticalOptions="FillAndExpand"
+                                Elevation="2">
+                                <pan:PancakeView.HasShadow>
+                                    <OnPlatform
+                                        x:TypeArguments="x:Boolean"
+                                        iOS="False"
+                                        Android="True" />
+                                </pan:PancakeView.HasShadow>
+                                <AbsoluteLayout>
+                                    <ImageButton
+                                        AbsoluteLayout.LayoutFlags="All"
+                                        AbsoluteLayout.LayoutBounds=".5,.5,1,1"
+                                        Padding="50"
+                                        BackgroundColor="#FF252525"
+                                        Command="{Binding Source={x:Reference Name=homePage}, Path=BindingContext.DataContext.AddPlaylistCommand}"
+                                        Source="icon_plus" />
+                                    <Label
+                                        Text="{Binding Source={x:Reference Name=homePage}, Path=BindingContext.DataContext.AddPlaylistLabel}"
+                                        FontSize="14"
+                                        FontAttributes="Bold"
+                                        HorizontalTextAlignment="Center"
+                                        VerticalTextAlignment="End"
+                                        AbsoluteLayout.LayoutFlags="PositionProportional"
+                                        AbsoluteLayout.LayoutBounds=".5,.9,AutoSize,AutoSize" />
+                                </AbsoluteLayout>
+                            </pan:PancakeView>
+                        </Grid>
+                    </CollectionView.EmptyView>
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <templates:HorizontalMediaItemsTemplate />
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
                 <Button
-                    mvx:La.ng="Text AllPlaylists"
-                    mvx:Bi.nd="Command OpenPlaylistOverviewCommand"
-                    Style="{StaticResource SecondaryButton}"
-                    HorizontalOptions="EndAndExpand"
-                    Padding="19,0" />
+                    mvx:La.ng="Text PlayDevice"
+                    mvx:Bi.nd="Command OpenFileCommand"
+                    Style="{StaticResource PrimaryButton}"
+                    Margin="24,0" />
+                <Button
+                    mvx:La.ng="Text OpenUrl"
+                    mvx:Bi.nd="Command OpenUrlCommand"
+                    Style="{StaticResource PrimaryButton}"
+                    Margin="24,0" />
+                <Button
+                    mvx:La.ng="Text Player"
+                    mvx:Bi.nd="Command PlayerCommand"
+                    Style="{StaticResource PrimaryButton}"
+                    Margin="24,0" />
             </StackLayout>
-            <CollectionView
-                x:Name="PlaylistsCollectionView"
-                SelectionMode="Single"
-                mvx:Bi.nd="ItemsSource Playlists; SelectionChangedCommand OpenPlaylistCommand; SelectionChangedCommandParameter SelectedPlaylist; SelectedItem SelectedPlaylist"
-                HeightRequest="250">
+        </ScrollView>
+        <views:MiniPlayerView/>
+    </StackLayout>
 
-                <CollectionView.ItemsLayout>
-                    <GridItemsLayout
-                        Orientation="Horizontal" />
-                </CollectionView.ItemsLayout>
-
-                <CollectionView.EmptyView>
-                    <Grid Padding="24,0">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="154" />
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="154" />
-                            <RowDefinition Height="auto" />
-                        </Grid.RowDefinitions>
-                        <pan:PancakeView
-                            CornerRadius="8"
-                            WidthRequest="154"
-                            HeightRequest="154"
-                            IsClippedToBounds="True"
-                            HorizontalOptions="FillAndExpand"
-                            BackgroundColor="#FF252525"
-                            VerticalOptions="FillAndExpand"
-                            Elevation="2">
-                            <pan:PancakeView.HasShadow>
-                                <OnPlatform
-                                    x:TypeArguments="x:Boolean"
-                                    iOS="False"
-                                    Android="True" />
-                            </pan:PancakeView.HasShadow>
-                            <AbsoluteLayout>
-                                <ImageButton
-                                    AbsoluteLayout.LayoutFlags="All"
-                                    AbsoluteLayout.LayoutBounds=".5,.5,1,1"
-                                    Padding="50"
-                                    BackgroundColor="#FF252525"
-                                    Command="{Binding Source={x:Reference Name=homePage}, Path=BindingContext.DataContext.AddPlaylistCommand}"
-                                    Source="icon_plus" />
-                                <Label
-                                    Text="{Binding Source={x:Reference Name=homePage}, Path=BindingContext.DataContext.AddPlaylistLabel}"
-                                    FontSize="14"
-                                    FontAttributes="Bold"
-                                    HorizontalTextAlignment="Center"
-                                    VerticalTextAlignment="End"
-                                    AbsoluteLayout.LayoutFlags="PositionProportional"
-                                    AbsoluteLayout.LayoutBounds=".5,.9,AutoSize,AutoSize" />
-                            </AbsoluteLayout>
-                        </pan:PancakeView>
-                    </Grid>
-                </CollectionView.EmptyView>
-
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <templates:HorizontalMediaItemsTemplate />
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-            <Button
-                mvx:La.ng="Text PlayDevice"
-                mvx:Bi.nd="Command OpenFileCommand"
-                Style="{StaticResource PrimaryButton}"
-                Margin="24,0" />
-            <Button
-                mvx:La.ng="Text OpenUrl"
-                mvx:Bi.nd="Command OpenUrlCommand"
-                Style="{StaticResource PrimaryButton}"
-                Margin="24,0" />
-            <Button
-                mvx:La.ng="Text Player"
-                mvx:Bi.nd="Command PlayerCommand"
-                Style="{StaticResource PrimaryButton}"
-                Margin="24,0" />
-        </StackLayout>
-    </ScrollView>
 </core:MvxContentPage>

@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Chameleon.Core.Views.MiniPlayerView">
+    <ContentView.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1"
+                               x:Name="progressBar" />
+                <RowDefinition Height="auto"
+                               x:Name="mediaInfo" />
+                <RowDefinition Height="35"
+                               x:Name="miniPlayerButtons" />
+                <RowDefinition Height="Auto"
+                               x:Name="divider" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="24" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="24" />
+            </Grid.ColumnDefinitions>
+
+            <ProgressBar Grid.ColumnSpan="7"
+                         HorizontalOptions="FillAndExpand"
+                         ProgressColor="#FFF14431"
+                         Progress=".5" />
+            <Label Grid.Row="1"
+                   Grid.ColumnSpan="7"
+                   Margin="0,9"
+                   FontSize="12"
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   HorizontalTextAlignment="Center"
+                   Text="Track Title Artist" />
+            <ImageButton Grid.Row="2"
+                         Grid.Column="1"
+                         HeightRequest="32"
+                         WidthRequest="32"
+                         VerticalOptions="Center"
+                         HorizontalOptions="Center"
+                         BackgroundColor="Transparent"
+                         Source="playback_controls_shuffle_on" />
+            <ImageButton Grid.Row="2"
+                         Grid.Column="2"
+                         HeightRequest="32"
+                         WidthRequest="32"
+                         HorizontalOptions="Center"
+                         VerticalOptions="Center"
+                         BackgroundColor="Transparent"
+                         Source="playback_controls_previous" />
+            <ImageButton Grid.Row="2"
+                         Grid.Column="3"
+                         HeightRequest="35"
+                         WidthRequest="35"
+                         HorizontalOptions="Center"
+                         Source="playback_controls_play_button" />
+            <ImageButton Grid.Row="2"
+                         Grid.Column="4"
+                         HeightRequest="32"
+                         WidthRequest="32"
+                         HorizontalOptions="Center"
+                         VerticalOptions="Center"
+                         BackgroundColor="Transparent"
+                         Source="playback_controls_next" />
+            <ImageButton Grid.Row="2"
+                         Grid.Column="5"
+                         HeightRequest="32"
+                         WidthRequest="32"
+                         HorizontalOptions="Center"
+                         VerticalOptions="Center"
+                         BackgroundColor="Transparent"
+                         Source="icon_more" />
+            <BoxView Grid.Row="3"
+                     Grid.ColumnSpan="7"
+                     Color="Black"
+                     Margin="0,12,0,.5"
+                     HeightRequest=".5"/>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

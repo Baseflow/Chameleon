@@ -34,7 +34,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="**\*.xaml.cs" DependentUpon="HorizontalSourceItemTemplate.xaml" />
+    <Compile Update="**\*.xaml.cs" DependentUpon="%(Filename)" />
     <None Remove="Resources\**\*.json" />
     <EmbeddedResource Include="Resources\**\*.json" />
   </ItemGroup>

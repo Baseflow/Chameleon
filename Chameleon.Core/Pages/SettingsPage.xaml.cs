@@ -18,9 +18,14 @@ namespace Chameleon.Core.Views
             InitializeComponent();
         }
 
-        private async void ViewCell_Tapped(object sender, EventArgs e)
+        private async void ViewCell_TappedOpenSource(object sender, EventArgs e)
         {
             await ViewModel.OpenSourceCommand.ExecuteAsync();
+        }
+
+        private async void ViewCell_TappedPlaybackSettings(object sender, EventArgs e)
+        {
+            await ViewModel.PlaybackSettingsCommand.ExecuteAsync();
         }
 
         protected override void OnAppearing()

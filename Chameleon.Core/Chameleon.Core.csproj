@@ -38,4 +38,10 @@
     <None Remove="Resources\**\*.json" />
     <EmbeddedResource Include="Resources\**\*.json" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="Resources\en\SettingsPlaybackViewModel.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\en\SettingsPlaybackViewModel.json" />
+  </ItemGroup>
 </Project>

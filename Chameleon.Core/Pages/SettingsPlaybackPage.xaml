@@ -15,5 +15,45 @@
     mvx:La.ng="Title Title" >
     
     <ContentPage.Content>
+       <!--<coloredTableView:ColoredTableView
+                  Intent="Settings"
+                  BackgroundColor="{StaticResource BackgroundColor}"
+                  HasUnevenRows="True"
+                  SeparatorColor="{StaticResource SeparatorColor}">
+          <TableRoot>
+              <TableSection>
+                  <ViewCell>
+                     <Label mvx:La.ng=" Text Playback" Style="{StaticResource Titels}"/>  
+                  </ViewCell>
+                  <ViewCell>
+                   
+                  </ViewCell>
+                  <ViewCell>
+                     
+                  </ViewCell>
+                  <ViewCell >
+                     
+                  </ViewCell>
+                  <ViewCell >
+                        <Grid Margin="15,15">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            
+                        </Grid>
+                  </ViewCell>
+              </TableSection>
+              <TableSection>
+                   <SwitchCell Text="Facebook" On="False" OnColor="#2416849" />
+              </TableSection>
+              <TableSection>
+                   <SwitchCell  Text="Facebook"/>
+              </TableSection>
+          </TableRoot>
+        </coloredTableView:ColoredTableView>-->
     </ContentPage.Content>
 </core:MvxContentPage>

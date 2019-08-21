@@ -22,8 +22,8 @@
                   SeparatorColor="{StaticResource SeparatorColor}">
           <TableRoot>
               <TableSection>
-                  <!--
-                  <ViewCell>
+                  
+                  <ViewCell Tapped="ViewCell_TappedPlaybackSettings">
                         <Grid Margin="15,15">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*" />
@@ -32,11 +32,11 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
-                            <Label Text="ExternalDevices" Style="{StaticResource MediaItemTitle}" Grid.Column="0"/>
+                            <Label Text="PlaybackSettings" Style="{StaticResource MediaItemTitle}" Grid.Column="0"/>
                             <Image Source="disclosure_button" HorizontalOptions="End" BackgroundColor="Transparent" Grid.Column="1"/>
                         </Grid>
                   </ViewCell>
-                  <ViewCell >
+                  <!--<ViewCell >
                         <Grid Margin="15,15">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*" />
@@ -49,7 +49,7 @@
                             <Image Source="disclosure_button" HorizontalOptions="End" Grid.Column="1"/>
                        </Grid>
                   </ViewCell>-->
-                  <ViewCell Tapped="ViewCell_Tapped">
+                  <ViewCell Tapped="ViewCell_TappedOpenSource">
                         <Grid Margin="15,15">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*" />

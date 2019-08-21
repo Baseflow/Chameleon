@@ -23,5 +23,8 @@ namespace Chameleon.Core.ViewModels
 
         private IMvxAsyncCommand _openSourceCommand;
         public IMvxAsyncCommand OpenSourceCommand => _openSourceCommand ?? (_openSourceCommand = new MvxAsyncCommand(() => NavigationService.Navigate<OpenSourceViewModel>()));
+
+        private IMvxAsyncCommand _playbackSettingsCommand;
+        public IMvxAsyncCommand PlaybackSettingsCommand => _playbackSettingsCommand ?? (_playbackSettingsCommand = new MvxAsyncCommand(() => NavigationService.Navigate<SettingsPlaybackViewModel>()));
     }
 }

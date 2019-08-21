@@ -12,10 +12,11 @@
     mc:Ignorable="d"
     x:TypeArguments="viewModels:SettingsPlaybackViewModel"
     x:Class="Chameleon.Core.Views.SettingsPlaybackPage"
-    mvx:La.ng="Title Title" >
+    mvx:La.ng="Title Title"
+    >
     
     <ContentPage.Content>
-       <!--<coloredTableView:ColoredTableView
+       <coloredTableView:ColoredTableView
                   Intent="Settings"
                   BackgroundColor="{StaticResource BackgroundColor}"
                   HasUnevenRows="True"
@@ -23,37 +24,61 @@
           <TableRoot>
               <TableSection>
                   <ViewCell>
-                     <Label mvx:La.ng=" Text Playback" Style="{StaticResource Titels}"/>  
+                     <Label mvx:La.ng=" Text Playback" Style="{StaticResource Titels}" Margin="20"/>  
                   </ViewCell>
                   <ViewCell>
-                   
-                  </ViewCell>
-                  <ViewCell>
-                     
+                     <Grid Margin="20">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                            <Label mvx:La.ng=" Text Skip" Style="{StaticResource PlaybackSettingsTitle}" Grid.Row="0" />  
+                            <Label Text="{Binding Something}" Grid.Row="1"/>
+                            <Slider Grid.Row="1"/>
+                      </Grid>
                   </ViewCell>
                   <ViewCell >
-                     
+                      <Grid Margin="20">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                            <Label mvx:La.ng=" Text Volume" Style="{StaticResource PlaybackSettingsTitle}" Grid.Row="0"/>  
+                            <Label Text="{Binding Something}" Grid.Row="1"/>
+                            <Slider Maximum="100" Grid.Row="2"/>
+                        </Grid>
                   </ViewCell>
                   <ViewCell >
-                        <Grid Margin="15,15">
+                         <Grid Margin="20">
                             <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
                                 <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="Auto"/>
                             </Grid.ColumnDefinitions>
-                            
+                                <Label mvx:La.ng=" Text Balance" Style="{StaticResource PlaybackSettingsTitle}" Grid.Row="0"/>  
+                                <Label Text="{Binding Something}" Grid.Row="1"/>
+                                <Slider Grid.Row="2"/>
                         </Grid>
                   </ViewCell>
               </TableSection>
               <TableSection>
-                   <SwitchCell Text="Facebook" On="False" OnColor="#2416849" />
+                   <SwitchCell mvx:La.ng="Text Clear" Text="Facebook" On="False" OnColor="Tomato" />
               </TableSection>
               <TableSection>
-                   <SwitchCell  Text="Facebook"/>
+                   <SwitchCell mvx:La.ng="Text ScreenOn" Text="Facebook"/>
               </TableSection>
           </TableRoot>
-        </coloredTableView:ColoredTableView>-->
+        </coloredTableView:ColoredTableView>
     </ContentPage.Content>
 </core:MvxContentPage>

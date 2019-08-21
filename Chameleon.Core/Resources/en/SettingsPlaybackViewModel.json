@@ -1,6 +1,10 @@
 ﻿{
     "Title": "Settings Playback",
     "Playback": "Playback settings",
-    "FindUsOnGithub": "Find us on Github",
-    "VisitBaseflow": "Visit baseflow.com",
+    "Skip": "Skip forward/backwards in seconds",
+    "Volume": "Maximum volume",
+    "Balance": "Balance",
+    "Clear": "Clear queue on play",
+    "ScreenOn": "Keep screen on"
+
 }

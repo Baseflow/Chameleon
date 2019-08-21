@@ -8,6 +8,7 @@ using MvvmCross.Commands;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
+using Xamarin.Forms;
 
 namespace Chameleon.Core.ViewModels
 {
@@ -39,7 +40,7 @@ namespace Chameleon.Core.ViewModels
         public IMvxAsyncCommand<IMediaItem> PlayerCommand => _playerCommand ?? (_playerCommand = new MvxAsyncCommand<IMediaItem>(Play));
 
         private IMvxAsyncCommand _closeCommand;
-        public IMvxAsyncCommand CloseCommand => _closeCommand ?? (_closeCommand = new MvxAsyncCommand(() => NavigationService.Close(this)));
+        public IMvxAsyncCommand CloseCommand => _closeCommand ?? (_closeCommand = new MvxAsyncCommand(() => Application.Current.MainPage.Navigation.PopModalAsync()));
 
         private async Task Play(IMediaItem mediaItem)
         {

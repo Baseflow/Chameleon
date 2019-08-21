@@ -150,7 +150,7 @@
                     Margin="24,0" />
             </StackLayout>
         </ScrollView>
-        <views:MiniPlayerView VerticalOptions="End" />
+        <views:MiniPlayerView/>
     </StackLayout>
 
 </core:MvxContentPage>

@@ -25,7 +25,7 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <Label mvx:Bi.nd="Text QueueTitle" Style="{StaticResource QueueText}" Margin="24,0,0,24"/>
+            <Label mvx:Bi.nd="Text QueueTitle" Style="{StaticResource Titels}" Margin="24,0,0,24"/>
             <CollectionView
                 x:Name="MyCollectionView"
                 mvx:Bi.nd=

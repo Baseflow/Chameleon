@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
+    xmlns:pan="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    x:Class="Chameleon.Core.Templates.HorizontalSourceItemTemplate">
+    <ContentView.Content>
+        <Grid Margin="20,15,0,20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="107"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="156"/>
+            </Grid.ColumnDefinitions>
+            <pan:PancakeView
+                CornerRadius="8"
+                IsClippedToBounds="True"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                Elevation="2">
+                <pan:PancakeView.HasShadow>
+                  <OnPlatform x:TypeArguments="x:Boolean"
+                              iOS="False"
+                              Android="True" />
+                </pan:PancakeView.HasShadow>
+                <Image
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    Aspect="AspectFill"
+                    Source="cover_art_placeholder"/>
+            </pan:PancakeView>
+            <Label
+                mvx:Bi.nd="Text Title"
+                Grid.Row="0" Grid.Column="0"
+                VerticalOptions="EndAndExpand"
+                MaxLines="1"
+                Margin="10"
+                Style="{StaticResource MediaItemTitle}" />
+        </Grid>
+    </ContentView.Content>
+</ContentView>

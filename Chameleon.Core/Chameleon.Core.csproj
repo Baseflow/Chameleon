@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -38,6 +38,7 @@
     <None Remove="Resources\**\*.json" />
     <EmbeddedResource Include="Resources\**\*.json" />
   </ItemGroup>
+</Project>
   <ItemGroup>
     <EmbeddedResource Remove="Resources\en\SettingsPlaybackViewModel.json" />
   </ItemGroup>

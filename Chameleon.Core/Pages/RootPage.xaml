@@ -13,7 +13,8 @@
     x:TypeArguments="viewModels:RootViewModel"
     x:Class="Chameleon.Core.Views.RootPage"
     IconImageSource="chameleon_logo.png"
-    android:TabbedPage.ToolbarPlacement="Bottom" >
+    android:TabbedPage.IsSwipePagingEnabled="False" 
+    android:TabbedPage.ToolbarPlacement="Bottom">
     
     <local:Views.HomePage />
     <local:Views.BrowsePage />

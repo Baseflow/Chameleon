@@ -4,6 +4,7 @@ using Acr.UserDialogs;
 using Chameleon.Services.Services;
 using MediaManager;
 using MediaManager.Library;
+using MvvmCross;
 using MvvmCross.Commands;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
@@ -45,6 +46,16 @@ namespace Chameleon.Core.ViewModels
         {
             get => _isPlaying;
             set => SetProperty(ref _isPlaying, value);
+        }
+
+        private MiniPlayerViewModel _miniPlayerViewModel;
+        public MiniPlayerViewModel MiniPlayerViewModel
+        {
+            get => _miniPlayerViewModel;
+            set
+            {
+                SetProperty(ref _miniPlayerViewModel, value);
+            }
         }
 
         private MvxObservableCollection<IPlaylist> _playlists = new MvxObservableCollection<IPlaylist>();
@@ -95,6 +106,12 @@ namespace Chameleon.Core.ViewModels
 
         private IMvxAsyncCommand _openPlaylistOverviewCommand;
         public IMvxAsyncCommand OpenPlaylistOverviewCommand => _openPlaylistOverviewCommand ?? (_openPlaylistOverviewCommand = new MvxAsyncCommand(() => NavigationService.Navigate<PlaylistOverviewViewModel>()));
+
+        public override void Prepare()
+        {
+            var vm = Mvx.IoCProvider.Resolve<IMvxViewModelLoader>().LoadViewModel(MvxViewModelRequest<MiniPlayerViewModel>.GetDefaultRequest(), null) as MiniPlayerViewModel;
+            MiniPlayerViewModel = vm;
+        }
 
         public override async void ViewAppearing()
         {

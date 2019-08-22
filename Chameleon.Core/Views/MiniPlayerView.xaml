@@ -6,6 +6,7 @@
                      xmlns:d="http://xamarin.com/schemas/2014/forms/design"
                      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                      xmlns:viewModels="clr-namespace:Chameleon.Core.ViewModels;assembly=Chameleon.Core"
+                     x:TypeArguments="viewModels:MiniPlayerViewModel"
                      mc:Ignorable="d"
                      x:Class="Chameleon.Core.Views.MiniPlayerView">
 
@@ -64,6 +65,7 @@
                          HeightRequest="35"
                          WidthRequest="35"
                          HorizontalOptions="Center"
+                         Command="{Binding PlayPauseCommand}"
                          Source="playback_controls_play_button" />
             <ImageButton Grid.Row="2"
                          Grid.Column="4"

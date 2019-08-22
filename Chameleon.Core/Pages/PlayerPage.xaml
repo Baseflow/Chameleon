@@ -9,6 +9,7 @@
     xmlns:viewModels="clr-namespace:Chameleon.Core.ViewModels;assembly=Chameleon.Core"
     xmlns:mm="clr-namespace:MediaManager.Forms;assembly=MediaManager.Forms"
     xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:effects="clr-namespace:Chameleon.Core.Effects"
     ios:Page.UseSafeArea="True"
     mc:Ignorable="d"
     x:TypeArguments="viewModels:PlayerViewModel"
@@ -118,7 +119,11 @@
                         mvx:Bi.nd="Command QueueCommand"
                         HorizontalOptions="Center"
                         VerticalOptions="CenterAndExpand"
-                        BackgroundColor="Transparent" />
+                        BackgroundColor="Transparent">
+                        <ImageButton.Effects>
+                            <effects:TransparentSelectableEffect />
+                        </ImageButton.Effects>
+                    </ImageButton>
                     <ImageButton
                         Grid.Column="3"
                         Source="playback_controls_add_to_playlist"
@@ -195,6 +200,7 @@
                         HorizontalOptions="Center"
                         VerticalOptions="CenterAndExpand"
                         BackgroundColor="Transparent" />
+
                     <ImageButton
                         Grid.Column="3"
                         Source="playback_controls_skip_forward"

@@ -80,7 +80,7 @@ namespace Chameleon.Core.ViewModels
             set => SetProperty(ref _dragStarted, value);
         }
 
-        private double _position;
+        private double _position = 0;
         public double Position
         {
             get => _position;
@@ -90,14 +90,14 @@ namespace Chameleon.Core.ViewModels
             }
         }
 
-        private double _duration;
+        private double _duration = 0;
         public double Duration
         {
             get => _duration;
             set => SetProperty(ref _duration, value);
         }
 
-        private TimeSpan _timeSpanPosition;
+        private TimeSpan _timeSpanPosition = TimeSpan.Zero;
         public TimeSpan TimeSpanPosition
         {
             get => _timeSpanPosition;
@@ -107,7 +107,7 @@ namespace Chameleon.Core.ViewModels
             }
         }
 
-        private TimeSpan _timeSpanDuration;
+        private TimeSpan _timeSpanDuration = TimeSpan.Zero;
         public TimeSpan TimeSpanDuration
         {
             get => _timeSpanDuration;
@@ -184,20 +184,20 @@ namespace Chameleon.Core.ViewModels
             Source = parameter;
         }
 
-        public override void ViewAppearing()
+        public override void ViewAppeared()
         {
-            MediaManager.PositionChanged += MediaManager_PositionChanged;
+            base.ViewAppeared();
             TimeSpanPosition = MediaManager.Position;
             Position = MediaManager.Position.TotalSeconds;
             TimeSpanDuration = MediaManager.Duration;
             Duration = MediaManager.Duration.TotalSeconds;
-            base.ViewAppearing();
+            MediaManager.PositionChanged += MediaManager_PositionChanged;
         }
 
-        public override void ViewDisappearing()
+        public override void ViewDisappeared()
         {
+            base.ViewDisappeared();
             MediaManager.PositionChanged -= MediaManager_PositionChanged;
-            base.ViewDisappearing();
         }
 
         private void MediaManager_PositionChanged(object sender, MediaManager.Playback.PositionChangedEventArgs e)

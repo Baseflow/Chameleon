@@ -1,12 +1,14 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns:core="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
-             xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
-             xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:viewModels="clr-namespace:Chameleon.Core.ViewModels;assembly=Chameleon.Core"
-             x:Class="Chameleon.Core.Views.MiniPlayerView">
+<core:MvxContentView xmlns:core="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+                     xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
+                     xmlns="http://xamarin.com/schemas/2014/forms"
+                     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+                     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                     xmlns:viewModels="clr-namespace:Chameleon.Core.ViewModels;assembly=Chameleon.Core"
+                     mc:Ignorable="d"
+                     x:Class="Chameleon.Core.Views.MiniPlayerView">
+
     <ContentView.Content>
         <Grid>
             <Grid.RowDefinitions>
@@ -91,4 +93,4 @@
             </BoxView>
         </Grid>
     </ContentView.Content>
-</ContentView>
+</core:MvxContentView>

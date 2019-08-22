@@ -15,7 +15,6 @@
     x:TypeArguments="viewModels:HomeViewModel"
     x:Class="Chameleon.Core.Views.HomePage"
     x:Name="homePage"
-    ios:Page.UseSafeArea="True"
     mvx:La.ng="Title Title">
 
     <Grid>
@@ -156,7 +155,8 @@
                     Margin="24,0" />
             </StackLayout>
         </ScrollView>
-        <views:MiniPlayerView Grid.Row="1"/>
+        <views:MiniPlayerView Grid.Row="1"
+                              IsVisible="{Binding Source={x:Reference Name=homePage}, Path=BindingContext.DataContext.IsPlaying}" />
     </Grid>
 
 </core:MvxContentPage>

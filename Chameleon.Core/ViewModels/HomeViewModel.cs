@@ -18,11 +18,15 @@ namespace Chameleon.Core.ViewModels
         private readonly IPlaylistService _playlistService;
         private readonly IBrowseService _browseService;
 
-        public HomeViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IUserDialogs userDialogs, IPlaylistService playlistService, IBrowseService browseService) : base(logProvider, navigationService)
+        public IMediaManager MediaManager { get; }
+
+        public HomeViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IUserDialogs userDialogs, IPlaylistService playlistService, IBrowseService browseService, IMediaManager mediaManager) : base(logProvider, navigationService)
         {
             _userDialogs = userDialogs ?? throw new ArgumentNullException(nameof(userDialogs));
             _playlistService = playlistService ?? throw new ArgumentNullException(nameof(playlistService));
             _browseService = browseService ?? throw new ArgumentNullException(nameof(browseService));
+
+            MediaManager = mediaManager ?? throw new ArgumentNullException(nameof(mediaManager));
         }
 
         private bool _isInitialized;
@@ -34,6 +38,13 @@ namespace Chameleon.Core.ViewModels
                 var text = GetText("AddPlaylist");
                 return text;
             }
+        }
+
+        private bool _isPlaying;
+        public bool IsPlaying
+        {
+            get => _isPlaying;
+            set => SetProperty(ref _isPlaying, value);
         }
 
         private MvxObservableCollection<IPlaylist> _playlists = new MvxObservableCollection<IPlaylist>();
@@ -90,6 +101,8 @@ namespace Chameleon.Core.ViewModels
             base.ViewAppearing();
             if (_isInitialized)
                 await ReloadData().ConfigureAwait(false);
+
+            IsPlaying = MediaManager.MediaQueue.Count > 0;
             _isInitialized = true;
         }
 

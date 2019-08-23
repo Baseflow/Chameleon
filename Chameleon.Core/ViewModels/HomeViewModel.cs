@@ -4,6 +4,7 @@ using Acr.UserDialogs;
 using Chameleon.Services.Services;
 using MediaManager;
 using MediaManager.Library;
+using MvvmCross;
 using MvvmCross.Commands;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
@@ -18,11 +19,15 @@ namespace Chameleon.Core.ViewModels
         private readonly IPlaylistService _playlistService;
         private readonly IBrowseService _browseService;
 
-        public HomeViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IUserDialogs userDialogs, IPlaylistService playlistService, IBrowseService browseService) : base(logProvider, navigationService)
+        public IMediaManager MediaManager { get; }
+
+        public HomeViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IUserDialogs userDialogs, IPlaylistService playlistService, IBrowseService browseService, IMediaManager mediaManager) : base(logProvider, navigationService)
         {
             _userDialogs = userDialogs ?? throw new ArgumentNullException(nameof(userDialogs));
             _playlistService = playlistService ?? throw new ArgumentNullException(nameof(playlistService));
             _browseService = browseService ?? throw new ArgumentNullException(nameof(browseService));
+
+            MediaManager = mediaManager ?? throw new ArgumentNullException(nameof(mediaManager));
         }
 
         private bool _isInitialized;
@@ -33,6 +38,23 @@ namespace Chameleon.Core.ViewModels
             {
                 var text = GetText("AddPlaylist");
                 return text;
+            }
+        }
+
+        private bool _isPlaying;
+        public bool IsPlaying
+        {
+            get => _isPlaying;
+            set => SetProperty(ref _isPlaying, value);
+        }
+
+        private MiniPlayerViewModel _miniPlayerViewModel;
+        public MiniPlayerViewModel MiniPlayerViewModel
+        {
+            get => _miniPlayerViewModel;
+            set
+            {
+                SetProperty(ref _miniPlayerViewModel, value);
             }
         }
 
@@ -85,12 +107,35 @@ namespace Chameleon.Core.ViewModels
         private IMvxAsyncCommand _openPlaylistOverviewCommand;
         public IMvxAsyncCommand OpenPlaylistOverviewCommand => _openPlaylistOverviewCommand ?? (_openPlaylistOverviewCommand = new MvxAsyncCommand(() => NavigationService.Navigate<PlaylistOverviewViewModel>()));
 
+        public override void Prepare()
+        {
+            var vm = Mvx.IoCProvider.Resolve<IMvxViewModelLoader>().LoadViewModel(MvxViewModelRequest<MiniPlayerViewModel>.GetDefaultRequest(), null) as MiniPlayerViewModel;
+            MiniPlayerViewModel = vm;
+        }
+
         public override async void ViewAppearing()
         {
             base.ViewAppearing();
+            MiniPlayerViewModel.ViewAppearing();
+
             if (_isInitialized)
                 await ReloadData().ConfigureAwait(false);
+
+            IsPlaying = MediaManager.MediaQueue.Count > 0;
+
             _isInitialized = true;
+        }
+
+        public override void ViewAppeared()
+        {
+            base.ViewAppeared();
+            MiniPlayerViewModel.ViewAppeared();
+        }
+
+        public override void ViewDisappeared()
+        {
+            base.ViewDisappeared();
+            MiniPlayerViewModel.ViewDisappeared();
         }
 
         public override async Task ReloadData(bool forceReload = false)

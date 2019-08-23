@@ -126,6 +126,18 @@ namespace Chameleon.Core.ViewModels
             _isInitialized = true;
         }
 
+        public override void ViewAppeared()
+        {
+            base.ViewAppeared();
+            MiniPlayerViewModel.ViewAppeared();
+        }
+
+        public override void ViewDisappeared()
+        {
+            base.ViewDisappeared();
+            MiniPlayerViewModel.ViewDisappeared();
+        }
+
         public override async Task ReloadData(bool forceReload = false)
         {
             IsLoading = true;

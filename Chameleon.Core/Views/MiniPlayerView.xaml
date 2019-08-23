@@ -6,6 +6,7 @@
                      xmlns:d="http://xamarin.com/schemas/2014/forms/design"
                      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                      xmlns:viewModels="clr-namespace:Chameleon.Core.ViewModels;assembly=Chameleon.Core"
+                     xmlns:local="clr-namespace:Chameleon.Core.Helpers"
                      xmlns:controls="clr-namespace:Chameleon.Core.Controls"
                      x:TypeArguments="viewModels:MiniPlayerViewModel"
                      mc:Ignorable="d"
@@ -34,13 +35,13 @@
             </Grid.ColumnDefinitions>
 
             <Grid.GestureRecognizers>
-                <TapGestureRecognizer mvx:Bi.nd="Command OpenPlayerCommand"/>
+                <TapGestureRecognizer mvx:Bi.nd="Command OpenPlayerCommand" />
             </Grid.GestureRecognizers>
 
             <ProgressBar Grid.ColumnSpan="7"
                          HorizontalOptions="FillAndExpand"
                          ProgressColor="#FFF14431"
-                         Progress=".5" />
+                         mvx:Bi.nd="Progress Progress" />
             <Label Grid.Row="1"
                    Grid.Column="1"
                    LineBreakMode="TailTruncation"
@@ -94,6 +95,8 @@
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
                 BackgroundColor="Transparent"
+                Command="{Binding Source={x:Static local:NavigationHelper.OptionsCommand}}"
+                CommandParameter="{Binding CurrentlyPlaying}"
                 Source="icon_more" />
             <BoxView Grid.Row="3"
                      Grid.ColumnSpan="7"

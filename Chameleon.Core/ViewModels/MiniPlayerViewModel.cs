@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using MediaManager;
 using MediaManager.Library;
+using MediaManager.Playback;
 using MediaManager.Queue;
 using MvvmCross.Commands;
 using MvvmCross.Logging;
@@ -27,7 +28,7 @@ namespace Chameleon.Core.ViewModels
             set => SetProperty(ref _playPauseImage, value);
         }
 
-        private ImageSource _shuffleImage;
+        private ImageSource _shuffleImage = ImageSource.FromFile("playback_controls_shuffle_off");
         public ImageSource ShuffleImage
         {
             get => _shuffleImage;
@@ -53,6 +54,25 @@ namespace Chameleon.Core.ViewModels
                 return currentMediaItemText;
             }
             set => SetProperty(ref _currentMediaItemText, value);
+        }
+
+        private double _progress;
+        public double Progress
+        {
+            get => _progress;
+            set => SetProperty(ref _progress, value);
+        }
+
+        public IMediaItem CurrentlyPlaying
+        {
+            get
+            {
+                var currentlyPlaying = MediaManager.MediaQueue.Current;
+                if (currentlyPlaying != null)
+                    return currentlyPlaying;
+                else
+                    return new MediaItem();
+            }
         }
 
         private IMvxAsyncCommand _playpauseCommand;
@@ -84,17 +104,26 @@ namespace Chameleon.Core.ViewModels
             else
                 PlayPauseImage = ImageSource.FromFile("playback_controls_play_button");
 
-            switch (MediaManager.ShuffleMode)
-            {
-                case ShuffleMode.Off:
-                    ShuffleImage = ImageSource.FromFile("playback_controls_shuffle_off");
-                    break;
-                case ShuffleMode.All:
-                    ShuffleImage = ImageSource.FromFile("playback_controls_shuffle_on");
-                    break;
-            }
-
             RaisePropertyChanged(nameof(CurrentMediaItemText));
+        }
+
+        public override void ViewAppeared()
+        {
+            base.ViewAppeared();
+
+            Progress = MediaManager.Position.TotalSeconds / MediaManager.Duration.TotalSeconds;
+            MediaManager.PositionChanged += MediaManager_PositionChanged;
+        }
+
+        public override void ViewDisappeared()
+        {
+            base.ViewDisappeared();
+            MediaManager.PositionChanged -= MediaManager_PositionChanged;
+        }
+
+        private void MediaManager_PositionChanged(object sender, PositionChangedEventArgs e)
+        {
+            Progress = e.Position.TotalSeconds / MediaManager.Duration.TotalSeconds;
         }
 
         private async Task PlayPause()
@@ -125,12 +154,14 @@ namespace Chameleon.Core.ViewModels
         {
             await MediaManager.PlayPrevious();
             await RaisePropertyChanged(nameof(CurrentMediaItemText));
+            PlayPauseImage = ImageSource.FromFile("playback_controls_pause_button");
         }
 
         private async Task PlayNext()
         {
             await MediaManager.PlayNext();
             await RaisePropertyChanged(nameof(CurrentMediaItemText));
+            PlayPauseImage = ImageSource.FromFile("playback_controls_pause_button");
         }
 
         private async Task OpenPlayer()

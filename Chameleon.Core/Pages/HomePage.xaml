@@ -155,7 +155,8 @@
             </StackLayout>
         </ScrollView>
         <views:MiniPlayerView Grid.Row="1"
-                              ViewModel="{Binding MiniPlayerViewModel}" />
+                              ViewModel="{Binding MiniPlayerViewModel}"
+                              IsVisible="{Binding Source={x:Reference homePage}, Path=BindingContext.DataContext.IsPlaying}"/>
     </Grid>
 
 </core:MvxContentPage>

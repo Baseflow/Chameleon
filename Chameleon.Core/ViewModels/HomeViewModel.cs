@@ -116,10 +116,13 @@ namespace Chameleon.Core.ViewModels
         public override async void ViewAppearing()
         {
             base.ViewAppearing();
+            MiniPlayerViewModel.ViewAppearing();
+
             if (_isInitialized)
                 await ReloadData().ConfigureAwait(false);
 
             IsPlaying = MediaManager.MediaQueue.Count > 0;
+
             _isInitialized = true;
         }
 

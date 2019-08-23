@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Threading.Tasks;
 using MediaManager;
+using MediaManager.Library;
+using MediaManager.Queue;
 using MvvmCross.Commands;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
+using Xamarin.Forms;
 
 namespace Chameleon.Core.ViewModels
 {
@@ -17,17 +20,122 @@ namespace Chameleon.Core.ViewModels
             MediaManager = mediaManager ?? throw new ArgumentNullException(nameof(mediaManager));
         }
 
-        public override Task Initialize()
+        private ImageSource _playPauseImage;
+        public ImageSource PlayPauseImage
         {
-            return base.Initialize();
+            get => _playPauseImage;
+            set => SetProperty(ref _playPauseImage, value);
+        }
+
+        private ImageSource _shuffleImage;
+        public ImageSource ShuffleImage
+        {
+            get => _shuffleImage;
+            set => SetProperty(ref _shuffleImage, value);
+        }
+
+        private FormattedString _currentMediaItemText;
+        public FormattedString CurrentMediaItemText
+        {
+            get
+            {
+                var currentMediaItemText = new FormattedString();
+                if (MediaManager.MediaQueue.Current != null)
+                {
+                    currentMediaItemText.Spans.Add(new Span { Text = MediaManager.MediaQueue.Current.Title, FontAttributes = FontAttributes.Bold, FontSize = 12 });
+                    currentMediaItemText.Spans.Add(new Span { Text = " • " });
+                    currentMediaItemText.Spans.Add(new Span { Text = MediaManager.MediaQueue.Current.Album, FontSize = 12 });
+                }
+                else
+                    currentMediaItemText.Spans.Add(new Span { Text = "CHAMELEON" });
+
+                _currentMediaItemText = currentMediaItemText;
+                return currentMediaItemText;
+            }
+            set => SetProperty(ref _currentMediaItemText, value);
         }
 
         private IMvxAsyncCommand _playpauseCommand;
         public IMvxAsyncCommand PlayPauseCommand => _playpauseCommand ?? (_playpauseCommand = new MvxAsyncCommand(PlayPause));
 
-        private Task PlayPause()
+        private IMvxCommand _shuffleCommand;
+        public IMvxCommand ShuffleCommand => _shuffleCommand ?? (_shuffleCommand = new MvxCommand(Shuffle));
+
+        private IMvxAsyncCommand _previousCommand;
+        public IMvxAsyncCommand PreviousCommand => _previousCommand ?? (_previousCommand = new MvxAsyncCommand(PlayPrevious));
+
+        private IMvxAsyncCommand _nextCommand;
+        public IMvxAsyncCommand NextCommand => _nextCommand ?? (_nextCommand = new MvxAsyncCommand(PlayNext));
+
+        private IMvxAsyncCommand _openPlayerCommand;
+        public IMvxAsyncCommand OpenPlayerCommand => _openPlayerCommand ?? (_openPlayerCommand = new MvxAsyncCommand(OpenPlayer));
+
+        public override Task Initialize()
         {
-            throw new NotImplementedException();
+            return base.Initialize();
+        }
+
+        public override void ViewAppearing()
+        {
+            base.ViewAppearing();
+
+            if (MediaManager.IsPlaying())
+                PlayPauseImage = ImageSource.FromFile("playback_controls_pause_button");
+            else
+                PlayPauseImage = ImageSource.FromFile("playback_controls_play_button");
+
+            switch (MediaManager.ShuffleMode)
+            {
+                case ShuffleMode.Off:
+                    ShuffleImage = ImageSource.FromFile("playback_controls_shuffle_off");
+                    break;
+                case ShuffleMode.All:
+                    ShuffleImage = ImageSource.FromFile("playback_controls_shuffle_on");
+                    break;
+            }
+
+            RaisePropertyChanged(nameof(CurrentMediaItemText));
+        }
+
+        private async Task PlayPause()
+        {
+            if (MediaManager.IsPlaying())
+                PlayPauseImage = ImageSource.FromFile("playback_controls_play_button");
+            else
+                PlayPauseImage = ImageSource.FromFile("playback_controls_pause_button");
+
+            await MediaManager.PlayPause();
+        }
+
+        private void Shuffle()
+        {
+            MediaManager.ToggleShuffle();
+            switch (MediaManager.ShuffleMode)
+            {
+                case ShuffleMode.Off:
+                    ShuffleImage = ImageSource.FromFile("playback_controls_shuffle_off");
+                    break;
+                case ShuffleMode.All:
+                    ShuffleImage = ImageSource.FromFile("playback_controls_shuffle_on");
+                    break;
+            }
+        }
+
+        private async Task PlayPrevious()
+        {
+            await MediaManager.PlayPrevious();
+            await RaisePropertyChanged(nameof(CurrentMediaItemText));
+        }
+
+        private async Task PlayNext()
+        {
+            await MediaManager.PlayNext();
+            await RaisePropertyChanged(nameof(CurrentMediaItemText));
+        }
+
+        private async Task OpenPlayer()
+        {
+            await NavigationService.Navigate<PlayerViewModel>();
         }
     }
 }

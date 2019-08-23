@@ -169,4 +169,10 @@
         <Setter Property="TextColor" Value="#FFFFFF"/>
     </Style>
 
+     <Style TargetType="Label" x:Key="PlaybackSettingsValue">
+        <Setter Property="FontFamily" Value="FiraSans#500"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="TextColor" Value="#FFFFFF"/>
+    </Style>
+
 </ResourceDictionary>

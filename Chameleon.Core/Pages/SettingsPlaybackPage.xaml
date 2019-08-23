@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <core:MvxContentPage
-    xmlns:core="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms" 
+    xmlns:core="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
     xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -12,73 +12,148 @@
     mc:Ignorable="d"
     x:TypeArguments="viewModels:SettingsPlaybackViewModel"
     x:Class="Chameleon.Core.Views.SettingsPlaybackPage"
-    mvx:La.ng="Title Title"
-    >
-    
+    mvx:La.ng="Title Title">
+
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal"
+                     VerticalOptions="Center"
+                     HorizontalOptions="Center"
+                     Spacing="10"
+                     HeightRequest="30">
+            <Image Source="chameleon_logo" />
+        </StackLayout>
+    </NavigationPage.TitleView>
+
     <ContentPage.Content>
-       <coloredTableView:ColoredTableView
-                  Intent="Settings"
-                  BackgroundColor="{StaticResource BackgroundColor}"
-                  HasUnevenRows="True"
-                  SeparatorColor="{StaticResource SeparatorColor}">
-          <TableRoot>
-              <TableSection>
-                  <ViewCell>
-                     <Label mvx:La.ng=" Text Playback" Style="{StaticResource Titels}" Margin="20"/>  
-                  </ViewCell>
-                  <ViewCell>
-                     <Grid Margin="20">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*" />
-                            <RowDefinition Height="*" />
-                            <RowDefinition Height="*" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                            <Label mvx:La.ng=" Text Skip" Style="{StaticResource PlaybackSettingsTitle}" Grid.Row="0" />  
-                            <Label Text="{Binding Something}" Grid.Row="1"/>
-                            <Slider Grid.Row="1"/>
-                      </Grid>
-                  </ViewCell>
-                  <ViewCell >
-                      <Grid Margin="20">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*" />
-                            <RowDefinition Height="*" />
-                            <RowDefinition Height="*" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                            <Label mvx:La.ng=" Text Volume" Style="{StaticResource PlaybackSettingsTitle}" Grid.Row="0"/>  
-                            <Label Text="{Binding Something}" Grid.Row="1"/>
-                            <Slider Maximum="100" Grid.Row="2"/>
+        <coloredTableView:ColoredTableView
+            Intent="Settings"
+            BackgroundColor="{StaticResource BackgroundColor}"
+            HasUnevenRows="True"
+            SeparatorColor="{StaticResource SeparatorColor}">
+            <TableRoot>
+                <TableSection>
+                    <ViewCell BindingContext="{Binding .}">
+                        <Label mvx:La.ng=" Text Playback"
+                               Style="{StaticResource Titels}"
+                               Margin="20" />
+                    </ViewCell>
+                    <ViewCell BindingContext="{Binding .}">
+                        <Grid Margin="20">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Label mvx:La.ng=" Text Skip"
+                                   Style="{StaticResource PlaybackSettingsTitle}"
+                                   Grid.Row="0" />
+                            <Label Text="{Binding Source={x:Reference slider}, Path=Value, StringFormat='{0:F0} s'}"
+                                   Grid.Row="1"
+                                   HorizontalOptions="Center"
+                                   Style="{StaticResource  PlaybackSettingsValue}" />
+                            <Slider x:Name="slider"
+                                    Grid.Row="2"
+                                    mvx:Bi.nd="Value MediaManager.StepSize"
+                                    Margin="10,0,10,0"
+                                    Maximum="30"
+                                    Minimum="0"
+                                    MinimumTrackColor="Black" />
                         </Grid>
-                  </ViewCell>
-                  <ViewCell >
-                         <Grid Margin="20">
+                    </ViewCell>
+                    <ViewCell BindingContext="{Binding .}">
+                        <Grid Margin="20">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*" />
                                 <RowDefinition Height="*" />
                                 <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-                                <Label mvx:La.ng=" Text Balance" Style="{StaticResource PlaybackSettingsTitle}" Grid.Row="0"/>  
-                                <Label Text="{Binding Something}" Grid.Row="1"/>
-                                <Slider Grid.Row="2"/>
+                            <Label mvx:La.ng=" Text Volume"
+                                   Style="{StaticResource PlaybackSettingsTitle}"
+                                   Grid.Row="0" />
+                            <Label Text="{Binding Source={x:Reference slider2}, Path=Value, StringFormat='{00:F00} %'}"
+                                   Grid.Row="1"
+                                   HorizontalOptions="Center"
+                                   Style="{StaticResource  PlaybackSettingsValue}" />
+                            <Slider x:Name="slider2"
+                                    Maximum="100"
+                                    Minimum="0"
+                                    mvx:Bi.nd="Value MediaManager.VolumeManager.MaxVolume"
+                                    Grid.Row="2"
+                                    Margin="10,0,10,0"
+                                    MinimumTrackColor="Black" />
                         </Grid>
-                  </ViewCell>
-              </TableSection>
-              <TableSection>
-                   <SwitchCell mvx:La.ng="Text Clear" Text="Facebook" On="False" OnColor="Tomato" />
-              </TableSection>
-              <TableSection>
-                   <SwitchCell mvx:La.ng="Text ScreenOn" Text="Facebook"/>
-              </TableSection>
-          </TableRoot>
+                    </ViewCell>
+                    <ViewCell>
+                        <Grid Margin="20">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="10" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="10" />
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Balance"
+                                   Style="{StaticResource PlaybackSettingsTitle}"
+                                   Grid.ColumnSpan="3" />
+                            <Label Text="{Binding Source={x:Reference slider3}, Path=Value, StringFormat='{0:F0}'}"
+                                   HorizontalOptions="Center"
+                                   Grid.Row="1"
+                                   Grid.ColumnSpan="3"
+                                   Style="{StaticResource  PlaybackSettingsValue}" />
+                            <Slider x:Name="slider3"
+                                    Grid.Row="2"
+                                    Grid.Column="1"
+                                    mvx:Bi.nd="Value MediaManager.VolumeManager.Balance"
+                                    HorizontalOptions="FillAndExpand"
+                                    Maximum="5"
+                                    Minimum="4"
+                                    MinimumTrackColor="Black" />
+                            <Label Text="L"
+                                   VerticalTextAlignment="Center"
+                                   Grid.Row="2"
+                                   Grid.Column="0" />
+                            <Label Text="R"
+                                   VerticalTextAlignment="Center"
+                                   Grid.Row="2"
+                                   Grid.Column="2" />
+                        </Grid>
+                    </ViewCell>
+                    <ViewCell BindingContext="{Binding .}">
+                        <Grid Margin="20">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Label mvx:La.ng="Text Clear"
+                                   Style="{StaticResource PlaybackSettingsTitle}"
+                                   Grid.Column="0" />
+                            <Switch mvx:Bi.nd="On MediaManager.ClearQueueOnPlay"
+                                    Grid.Column="1"
+                                    HorizontalOptions="End"
+                                    OnColor="Tomato"/>
+                        </Grid>
+                    </ViewCell>
+                </TableSection>
+              
+                <TableSection BindingContext="{Binding .}"
+                              TextColor="White">
+                    <SwitchCell mvx:La.ng="Text ScreenOn"
+                                OnColor="Tomato"
+                                mvx:Bi.nd="On MediaManager.KeepScreenOn" />
+                </TableSection>
+            </TableRoot>
         </coloredTableView:ColoredTableView>
     </ContentPage.Content>
 </core:MvxContentPage>

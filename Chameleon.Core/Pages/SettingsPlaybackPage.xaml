@@ -34,7 +34,7 @@
                 <TableSection>
                     <ViewCell BindingContext="{Binding .}">
                         <Label mvx:La.ng=" Text Playback"
-                               Style="{StaticResource Titels}"
+                               Style="{StaticResource PlaybackSettings}"
                                Margin="20" />
                     </ViewCell>
                     <ViewCell BindingContext="{Binding .}">
@@ -114,8 +114,9 @@
                                     Grid.Column="1"
                                     mvx:Bi.nd="Value MediaManager.VolumeManager.Balance"
                                     HorizontalOptions="FillAndExpand"
-                                    Maximum="5"
-                                    Minimum="4"
+                                    Maximum="2"
+                                    Minimum="0"
+                                    Value="1"
                                     MinimumTrackColor="Black" />
                             <Label Text="L"
                                    VerticalTextAlignment="Center"
@@ -133,7 +134,7 @@
                                 <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
                             <Label mvx:La.ng="Text Clear"
@@ -145,13 +146,24 @@
                                     OnColor="Tomato"/>
                         </Grid>
                     </ViewCell>
-                </TableSection>
-              
-                <TableSection BindingContext="{Binding .}"
-                              TextColor="White">
-                    <SwitchCell mvx:La.ng="Text ScreenOn"
-                                OnColor="Tomato"
-                                mvx:Bi.nd="On MediaManager.KeepScreenOn" />
+                    <ViewCell BindingContext="{Binding .}">
+                        <Grid Margin="20">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Label mvx:La.ng="Text ScreenOn"
+                                   Style="{StaticResource PlaybackSettingsTitle}"
+                                   Grid.Column="0" />
+                            <Switch mvx:Bi.nd="On MediaManager.KeepScreenOn"
+                                    Grid.Column="1"
+                                    HorizontalOptions="End"
+                                    OnColor="Tomato"/>
+                        </Grid>
+                    </ViewCell>
                 </TableSection>
             </TableRoot>
         </coloredTableView:ColoredTableView>

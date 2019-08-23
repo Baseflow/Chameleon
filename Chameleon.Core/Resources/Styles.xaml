@@ -180,4 +180,11 @@
         <Setter Property="TextColor" Value="#FFFFFF"/>
     </Style>
 
+       <Style TargetType="Label" x:Key="PlaybackSettings">
+        <Setter Property="FontFamily" Value="FiraSans#700"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="TextColor" Value="#FFE3E5F6"/>
+    </Style>
+
 </ResourceDictionary>

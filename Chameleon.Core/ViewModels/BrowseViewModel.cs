@@ -66,8 +66,8 @@ namespace Chameleon.Core.ViewModels
             //TODO:
         }
 
-        private IMvxAsyncCommand _playerCommand;
-        public IMvxAsyncCommand PlayerCommand => _playerCommand ?? (_playerCommand = new MvxAsyncCommand(PlayWhenSelected));
+        private IMvxAsyncCommand<IMediaItem> _playerCommand;
+        public IMvxAsyncCommand<IMediaItem> PlayerCommand => _playerCommand ?? (_playerCommand = new MvxAsyncCommand<IMediaItem>(Play));
 
         private string _searchText;
         public string SearchText
@@ -86,9 +86,9 @@ namespace Chameleon.Core.ViewModels
             RecentlyPlayedItems.ReplaceWith(await _browseService.GetMedia());
         }
 
-        private async Task PlayWhenSelected()
+        private async Task Play(IMediaItem mediaItem)
         {
-            await NavigationService.Navigate<PlayerViewModel, IMediaItem>(SelectedMediaItem);
+            await NavigationService.Navigate<PlayerViewModel, IMediaItem>(mediaItem);
             SelectedMediaItem = null;
         }
     }

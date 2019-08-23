@@ -2,14 +2,19 @@
 <ResourceDictionary 
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:styles="clr-namespace:Chameleon.Core;assembly=Chameleon.Core"
+    xmlns:styles="clr-namespace:Chameleon.Core.Resources;assembly=Chameleon.Core"
+    xmlns:effects="clr-namespace:Chameleon.Core.Effects;assembly=Chameleon.Core"
     x:Class="Chameleon.Core.Resources.Styles" >
     <ResourceDictionary.MergedDictionaries>
-        <styles:Resources.Colors />
+        <styles:Colors />
     </ResourceDictionary.MergedDictionaries>
 
     <Style TargetType="{x:Type Button}" ApplyToDerivedTypes="True">
         <Setter Property="FontAttributes" Value="Bold"/>
+    </Style>
+
+    <Style TargetType="{x:Type ImageButton}" ApplyToDerivedTypes="True">
+        <Setter Property="BackgroundColor" Value="Transparent"/>
     </Style>
 
     <Style TargetType="Button" x:Key="PrimaryButton">

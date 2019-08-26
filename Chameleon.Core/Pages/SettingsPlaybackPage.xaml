@@ -56,7 +56,7 @@
                                    Style="{StaticResource  PlaybackSettingsValue}" />
                             <Slider x:Name="slider"
                                     Grid.Row="2"
-                                    mvx:Bi.nd="Value MediaManager.StepSize"
+                                    mvx:Bi.nd="Value TimeSpanToDouble (MediaManager.StepSize)"
                                     Margin="10,0,10,0"
                                     Maximum="30"
                                     Minimum="0"

@@ -12,7 +12,8 @@
     xmlns:pan="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     mc:Ignorable="d"
     x:TypeArguments="viewModels:ProvidersViewModel"
-    x:Class="Chameleon.Core.Views.ProvidersPage">
+    x:Class="Chameleon.Core.Views.ProvidersPage"
+    x:Name="providerPage">
 
     <NavigationPage.TitleView>
         <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center" Spacing="10" HeightRequest="30">
@@ -93,7 +94,7 @@
                                 iOS="False"
                                 Android="True" />
                                 </pan:PancakeView.HasShadow>
-                                <Label Text="Soon" Style="{StaticResource Data1}" />
+                                <Label Text="{Binding Source={x:Reference Name=providerPage}, Path=BindingContext.DataContext.SoonText}" Style="{StaticResource Data1}" />
                             </pan:PancakeView>
                             <Image Source="disclosure_button" HorizontalOptions="End" BackgroundColor="Transparent" Grid.Column="2"/>
                         </Grid>

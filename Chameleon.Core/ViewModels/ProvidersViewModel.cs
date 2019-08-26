@@ -23,6 +23,15 @@ namespace Chameleon.Core.ViewModels
             set => SetProperty(ref _selectedItem, value);
         }
 
+        public string SoonText
+        {
+            get
+            {
+                var text = GetText("Soon");
+                return text;
+            }
+        }
+
         private IList<Provider> _recommendedProviders;
         public IList<Provider> RecommendedProviders
         {

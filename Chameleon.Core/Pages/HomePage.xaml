@@ -67,7 +67,8 @@
                         mvx:La.ng="Text Playlists"
                         Style="{StaticResource Header1}"
                         HorizontalOptions="Start"
-                        VerticalTextAlignment="Center" />
+                        VerticalTextAlignment="Center"
+                        />
                     <Button
                         mvx:La.ng="Text AllPlaylists"
                         mvx:Bi.nd="Command OpenPlaylistOverviewCommand"
@@ -111,13 +112,6 @@
                                         Android="True" />
                                 </pan:PancakeView.HasShadow>
                                 <AbsoluteLayout>
-                                    <ImageButton
-                                        AbsoluteLayout.LayoutFlags="All"
-                                        AbsoluteLayout.LayoutBounds=".5,.5,1,1"
-                                        Padding="50"
-                                        BackgroundColor="#FF252525"
-                                        Command="{Binding Source={x:Reference Name=homePage}, Path=BindingContext.DataContext.AddPlaylistCommand}"
-                                        Source="icon_plus" />
                                     <Label
                                         Text="{Binding Source={x:Reference Name=homePage}, Path=BindingContext.DataContext.AddPlaylistLabel}"
                                         FontSize="14"
@@ -125,7 +119,21 @@
                                         HorizontalTextAlignment="Center"
                                         VerticalTextAlignment="End"
                                         AbsoluteLayout.LayoutFlags="PositionProportional"
-                                        AbsoluteLayout.LayoutBounds=".5,.9,AutoSize,AutoSize" />
+                                        AbsoluteLayout.LayoutBounds=".5,.9,AutoSize,AutoSize"
+                                        TextColor="White">
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding Source={x:Reference Name=homePage}, Path=BindingContext.DataContext.AddPlaylistCommand}"/>
+                                        </Label.GestureRecognizers>
+                                    </Label>
+                                    <ImageButton
+                                        x:Name="AddPlaylistImageButton"
+                                        AbsoluteLayout.LayoutFlags="All"
+                                        AbsoluteLayout.LayoutBounds=".5,.5,1,1"
+                                        Padding="50"
+                                        Opacity="0.3"
+                                        BackgroundColor="#FF252525"
+                                        Command="{Binding Source={x:Reference Name=homePage}, Path=BindingContext.DataContext.AddPlaylistCommand}"
+                                        Source="icon_plus" />
                                 </AbsoluteLayout>
                             </pan:PancakeView>
                         </Grid>

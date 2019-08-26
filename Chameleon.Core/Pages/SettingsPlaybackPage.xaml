@@ -50,17 +50,17 @@
                             <Label mvx:La.ng=" Text Skip"
                                    Style="{StaticResource PlaybackSettingsTitle}"
                                    Grid.Row="0" />
-                            <Label Text="{Binding Source={x:Reference slider}, Path=Value, StringFormat='{0:F0} s'}"
+                            <Label Text="{Binding Source={x:Reference slider}, Path=Value, StringFormat='{0:F0}s'}"
                                    Grid.Row="1"
                                    HorizontalOptions="Center"
                                    Style="{StaticResource  PlaybackSettingsValue}" />
                             <Slider x:Name="slider"
                                     Grid.Row="2"
-                                    mvx:Bi.nd="Value TimeSpanToDouble (MediaManager.StepSize)"
+                                    mvx:Bi.nd="Value DoubleToTimeSpan (MediaManager.StepSize)"
                                     Margin="10,0,10,0"
                                     Maximum="30"
                                     Minimum="0"
-                                    MinimumTrackColor="Black" />
+                                    MinimumTrackColor="#252525" />
                         </Grid>
                     </ViewCell>
                     <ViewCell BindingContext="{Binding .}">
@@ -76,7 +76,7 @@
                             <Label mvx:La.ng=" Text Volume"
                                    Style="{StaticResource PlaybackSettingsTitle}"
                                    Grid.Row="0" />
-                            <Label Text="{Binding Source={x:Reference slider2}, Path=Value, StringFormat='{00:F00} %'}"
+                            <Label Text="{Binding Source={x:Reference slider2}, Path=Value, StringFormat='{00:F00}%'}"
                                    Grid.Row="1"
                                    HorizontalOptions="Center"
                                    Style="{StaticResource  PlaybackSettingsValue}" />
@@ -86,7 +86,7 @@
                                     mvx:Bi.nd="Value MediaManager.VolumeManager.MaxVolume"
                                     Grid.Row="2"
                                     Margin="10,0,10,0"
-                                    MinimumTrackColor="Black" />
+                                    MinimumTrackColor="#252525" />
                         </Grid>
                     </ViewCell>
                     <ViewCell>
@@ -114,10 +114,10 @@
                                     Grid.Column="1"
                                     mvx:Bi.nd="Value MediaManager.VolumeManager.Balance"
                                     HorizontalOptions="FillAndExpand"
-                                    Maximum="2"
-                                    Minimum="0"
-                                    Value="1"
-                                    MinimumTrackColor="Black" />
+                                    Maximum="10"
+                                    Minimum="-10"
+                                    Value="0"
+                                    MinimumTrackColor="#252525" />
                             <Label Text="L"
                                    VerticalTextAlignment="Center"
                                    Grid.Row="2"

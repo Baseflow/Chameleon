@@ -140,7 +140,7 @@
                             <Label mvx:La.ng="Text Clear"
                                    Style="{StaticResource PlaybackSettingsTitle}"
                                    Grid.Column="0" />
-                            <Switch mvx:Bi.nd="On MediaManager.ClearQueueOnPlay"
+                            <Switch mvx:Bi.nd="IsToggled MediaManager.ClearQueueOnPlay"
                                     Grid.Column="1"
                                     HorizontalOptions="End"
                                     OnColor="Tomato"/>
@@ -158,7 +158,7 @@
                             <Label mvx:La.ng="Text ScreenOn"
                                    Style="{StaticResource PlaybackSettingsTitle}"
                                    Grid.Column="0" />
-                            <Switch mvx:Bi.nd="On MediaManager.KeepScreenOn"
+                            <Switch mvx:Bi.nd="IsToggled MediaManager.KeepScreenOn"
                                     Grid.Column="1"
                                     HorizontalOptions="End"
                                     OnColor="Tomato"/>

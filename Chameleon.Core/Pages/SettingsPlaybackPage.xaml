@@ -89,7 +89,7 @@
                                     MinimumTrackColor="#252525" />
                         </Grid>
                     </ViewCell>
-                    <ViewCell>
+                    <ViewCell BindingContext="{Binding .}">
                         <Grid Margin="20">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="auto" />
@@ -104,20 +104,22 @@
                             <Label Text="Balance"
                                    Style="{StaticResource PlaybackSettingsTitle}"
                                    Grid.ColumnSpan="3" />
-                            <Label Text="{Binding Source={x:Reference slider3}, Path=Value, StringFormat='{0:F0}'}"
-                                   HorizontalOptions="Center"
+                            <Label Text="{Binding Balance}"
+                                   HorizontalOptions="FillAndExpand"
+                                   HorizontalTextAlignment="Center"
                                    Grid.Row="1"
                                    Grid.ColumnSpan="3"
-                                   Style="{StaticResource  PlaybackSettingsValue}" />
+                                   Style="{StaticResource PlaybackSettingsValue}" />
                             <Slider x:Name="slider3"
                                     Grid.Row="2"
                                     Grid.Column="1"
                                     mvx:Bi.nd="Value MediaManager.VolumeManager.Balance"
+                                    DragCompletedCommand="{Binding BalanceChangedCommand}"
                                     HorizontalOptions="FillAndExpand"
-                                    Maximum="10"
-                                    Minimum="-10"
-                                    Value="0"
-                                    MinimumTrackColor="#252525" />
+                                    Maximum="1"
+                                    Minimum="-1"
+                                    MinimumTrackColor="#252525"
+                                    MaximumTrackColor="#252525"/>
                             <Label Text="L"
                                    VerticalTextAlignment="Center"
                                    Grid.Row="2"
@@ -143,7 +145,7 @@
                             <Switch mvx:Bi.nd="IsToggled MediaManager.ClearQueueOnPlay"
                                     Grid.Column="1"
                                     HorizontalOptions="End"
-                                    OnColor="Tomato"/>
+                                    OnColor="Tomato" />
                         </Grid>
                     </ViewCell>
                     <ViewCell BindingContext="{Binding .}">
@@ -161,7 +163,7 @@
                             <Switch mvx:Bi.nd="IsToggled MediaManager.KeepScreenOn"
                                     Grid.Column="1"
                                     HorizontalOptions="End"
-                                    OnColor="Tomato"/>
+                                    OnColor="Tomato" />
                         </Grid>
                     </ViewCell>
                 </TableSection>

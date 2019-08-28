@@ -106,9 +106,10 @@
     </Style>
 
     <Style TargetType="Button" x:Key="CancelButton">
-        <Setter Property="TextColor" Value="#252525"/>
-        <Setter Property="BackgroundColor" Value="#FFFFFF"/>
-        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="TextColor" Value="#FFFFFF"/>
+        <Setter Property="BackgroundColor" Value="{StaticResource BackgroundColor}"/>
+        <Setter Property="FontSize" Value="15"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
     </Style>
 
     <Style TargetType="Entry" x:Key="TextColorEntry">

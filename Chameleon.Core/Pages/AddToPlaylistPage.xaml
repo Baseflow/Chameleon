@@ -17,9 +17,7 @@
     ios:Page.UseSafeArea="True">
 
    <ContentPage.Content>  
-        <Grid VerticalOptions="Center"
-            HorizontalOptions="Center"
-            BackgroundColor="{StaticResource BackgroundColorAddToPlaylist}">
+        <Grid Margin="20" BackgroundColor="{StaticResource BackgroundColor}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="60" />
                 <RowDefinition Height="1" />
@@ -45,11 +43,11 @@
                 Margin="0,10,10,0"
                 Style="{StaticResource AddToPlaylistButton}"
                 mvx:Bi.nd="Command AddPlaylistCommand"/>
-            <BoxView Grid.Row="1" Grid.ColumnSpan="2" BackgroundColor="#bfc0cc"/>
+            <BoxView Grid.Row="1" Grid.ColumnSpan="2" BackgroundColor="{StaticResource BackgroundColor}"/>
             <core:MvxListView
                 Grid.Row="2"
                 Grid.ColumnSpan="2"
-                BackgroundColor="#ecedf4"
+                BackgroundColor="{StaticResource BackgroundColor}"
                 ItemsSource="{mvx:MvxBind Playlists}"
                 ItemClick="{mvx:MvxBind AddToPlaylistCommand}"
                 VerticalOptions="FillAndExpand"

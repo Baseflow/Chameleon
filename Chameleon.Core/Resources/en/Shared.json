@@ -13,5 +13,7 @@
   "RenameSuccessful": "Rename successful",
   "PlaylistDeleted": "Playlist deleted",
   "RemoveFromQueue": "Remove from queue",
-  "ItemRemovedFromQueue": "Item removed from queue"
+  "ItemRemovedFromQueue": "Item removed from queue",
+  "RemoveFromPlaylist": "Remove from playlist",
+  "ItemRemovedFromPlaylist": "Item is removed"
 }

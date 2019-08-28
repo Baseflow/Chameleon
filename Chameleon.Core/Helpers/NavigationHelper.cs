@@ -67,6 +67,14 @@ namespace Chameleon.Core.Helpers
                         _userDialogs.Toast(GetText("ItemAddedToQueue"));
                     }, "add_to_queue");
                 }
+                if (_topViewModel == typeof(PlaylistViewModel))
+                {
+                    config.Add(GetText("RemoveFromPlaylist"), () =>
+                    {
+                        //TODO: Remove
+                        _userDialogs.Toast(GetText("ItemRemovedFromPlaylist"));
+                    }, "remove_from_queue");
+                }
                 config.Add(GetText("AddToPlaylist"), async () =>
                 {
                     await _navigationService.Navigate<AddToPlaylistViewModel, IMediaItem>(mediaItem);

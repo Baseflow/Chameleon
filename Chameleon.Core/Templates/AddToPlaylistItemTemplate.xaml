@@ -6,16 +6,38 @@
     xmlns:local="clr-namespace:Chameleon.Core.Helpers"
     x:Class="Chameleon.Core.Templates.AddToPlaylistItemTemplate">
     <ContentView.Content>
-        <StackLayout Orientation="Horizontal">
-            <Frame CornerRadius="10"  
-                    IsClippedToBounds="True"
-                    Padding="0"
-                    Margin="5">
-                    <Image Source="cover_art_placeholder"  HorizontalOptions="Center"
-                           VerticalOptions="Center"
-                           Aspect="AspectFill"/>
+        <Grid Margin="5"
+              BackgroundColor="{StaticResource BackgroundColor}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Frame CornerRadius="8"
+                   IsClippedToBounds="True"
+                   Padding="0"
+                   Grid.Column="0"
+                   Grid.RowSpan="2">
+                <Image Source="cover_art_placeholder"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       Aspect="AspectFill"
+                       HeightRequest="56"
+                       WidthRequest="55"/>
             </Frame>
-            <Label Text="{mvx:MvxBind Title}" TextColor="#30313c" VerticalOptions="Center" />
-        </StackLayout>
+            <Label Text="Title{mvx:MvxBind Title}"
+                   Style="{StaticResource TitleText}"
+                   VerticalOptions="Center"
+                   Grid.Column="1"
+                   Grid.Row="0"/>
+            <Label Text="Subtitle {mvx:MvxBind Title}"
+                   Style="{StaticResource MediaItemSubTitle}"
+                   VerticalOptions="Center"
+                   Grid.Column="1"
+                   Grid.Row="1"/>
+        </Grid>
     </ContentView.Content>
 </ContentView>

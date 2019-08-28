@@ -72,10 +72,15 @@
                 WidthRequest="32"
                 mvx:Bi.nd="Command PreviousCommand"
                 Source="playback_controls_previous" />
-            <controls:SelectableButton
+            <ImageButton
                 Grid.Row="2"
                 Grid.Column="3"
+                HorizontalOptions="Center"
                 VerticalOptions="Center"
+                Aspect="AspectFit"
+                BackgroundColor="Transparent"
+                HeightRequest="32"
+                WidthRequest="32"
                 mvx:Bi.nd="Command PlayPauseCommand; Source PlayPauseImage" />
             <controls:SelectableButton
                 Grid.Row="2"

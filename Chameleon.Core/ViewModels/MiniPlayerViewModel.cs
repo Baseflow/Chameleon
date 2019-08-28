@@ -21,7 +21,7 @@ namespace Chameleon.Core.ViewModels
             MediaManager = mediaManager ?? throw new ArgumentNullException(nameof(mediaManager));
         }
 
-        private ImageSource _playPauseImage;
+        private ImageSource _playPauseImage = "playback_controls_pause_button";
         public ImageSource PlayPauseImage
         {
             get => _playPauseImage;

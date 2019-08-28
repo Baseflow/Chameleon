@@ -6,29 +6,40 @@
     xmlns:local="clr-namespace:Chameleon.Core.Helpers"
     x:Class="Chameleon.Core.Templates.AddToPlaylistItemTemplate">
     <ContentView.Content>
-        <Grid Margin="5" BackgroundColor="{StaticResource BackgroundColor}">
+        <Grid 
+              BackgroundColor="{StaticResource BackgroundColor}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
-                <RowDefinition Height="auto" />
+                <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
-            <Frame CornerRadius="10"  
-                    IsClippedToBounds="True"
-                    Padding="0"
-                    Grid.Column="0"
-                    Grid.Row="0"
-                    Grid.RowSpan="2">
-                    <Image Source="cover_art_placeholder"  HorizontalOptions="Center"
-                           VerticalOptions="Center"
-                           Aspect="AspectFill"/>
+            <Frame CornerRadius="8"
+                   IsClippedToBounds="True"
+                   Padding="0"
+                   Grid.Column="0"
+                   Grid.RowSpan="2">
+                <Image Source="cover_art_placeholder"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       Aspect="AspectFill"
+                       HeightRequest="56"
+                       WidthRequest="55"/>
             </Frame>
-            <Label Text="Title{mvx:MvxBind Title}" Style="{StaticResource TitleText}"  VerticalOptions="Center"   Grid.Column="1"
-                    Grid.Row="0" />
-            <Label Text="Subtitle {mvx:MvxBind Title}" Style="{StaticResource MediaItemSubTitle}"  VerticalOptions="Center"   Grid.Column="1"
-                    Grid.Row="1" />
+            <Label Text="Title{mvx:MvxBind Title}"
+                   Style="{StaticResource TitleText}"
+                   VerticalOptions="Center"
+                   Grid.Column="1"
+                   Grid.Row="0"
+                   HeightRequest="23"/>
+            <Label Text="Subtitle {mvx:MvxBind Title}"
+                   Style="{StaticResource MediaItemSubTitle}"
+                   VerticalOptions="Center"
+                   Grid.Column="1"
+                   Grid.Row="1"
+                   HeightRequest="14"/>
         </Grid>
     </ContentView.Content>
 </ContentView>

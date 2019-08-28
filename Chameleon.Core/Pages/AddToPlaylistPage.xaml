@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <core:MvxContentPage
-    xmlns:core="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms" 
+    xmlns:core="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
     xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -16,56 +16,56 @@
     xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
     ios:Page.UseSafeArea="True">
 
-   <ContentPage.Content>  
-        <Grid Margin="20" BackgroundColor="{StaticResource BackgroundColor}">
+    <ContentPage.Content>
+        <Grid Margin="20"
+              BackgroundColor="{StaticResource BackgroundColor}">
             <Grid.RowDefinitions>
-                <RowDefinition Height="60" />
-                <RowDefinition Height="1" />
+                <RowDefinition Height="55" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="50" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
-            <Entry
-                mvx:La.ng="Placeholder NewPlaylist"
-                mvx:Bi.nd="Text PlaylistName"
-                Grid.Column="0"
-                Grid.Row="0"
-                Style="{StaticResource TextColorEntry}"
-                Margin="10,10,5,0"/>
-            <Button
-                mvx:La.ng="Text Add"
-                Grid.Column="1"
-                Grid.Row="0"
-                HorizontalOptions="End"
-                Margin="0,10,10,0"
-                Style="{StaticResource AddToPlaylistButton}"
-                mvx:Bi.nd="Command AddPlaylistCommand"/>
-            <BoxView Grid.Row="1" Grid.ColumnSpan="2" BackgroundColor="{StaticResource BackgroundColor}"/>
+            <Frame BackgroundColor="#FF252525"
+                   CornerRadius="8"
+                   Grid.Row="0"
+                   Padding="5,5,0,5">
+                <StackLayout
+                    Orientation="Horizontal">
+                    <Entry
+                        mvx:La.ng="Placeholder NewPlaylist"
+                        mvx:Bi.nd="Text PlaylistName"
+                        Style="{StaticResource TextColorEntry}"
+                        WidthRequest="250"/>
+                    <Button
+                        mvx:La.ng="Text Add"
+                        HorizontalOptions="End"
+                        Style="{StaticResource AddToPlaylistButton}"
+                        mvx:Bi.nd="Command AddPlaylistCommand" />
+                 </StackLayout>
+            </Frame>
             <core:MvxListView
-                Grid.Row="2"
-                Grid.ColumnSpan="2"
+                Grid.Row="1"
                 BackgroundColor="{StaticResource BackgroundColor}"
                 ItemsSource="{mvx:MvxBind Playlists}"
                 ItemClick="{mvx:MvxBind AddToPlaylistCommand}"
                 VerticalOptions="FillAndExpand"
-                SeparatorVisibility="None">
+                SeparatorVisibility="None"
+                Margin="0,10,0,10">
                 <core:MvxListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <templates:AddToPlaylistItemTemplate/>
+                            <templates:AddToPlaylistItemTemplate />
                         </ViewCell>
                     </DataTemplate>
                 </core:MvxListView.ItemTemplate>
             </core:MvxListView>
             <Button HorizontalOptions="FillAndExpand"
                     mvx:La.ng="Text Cancel"
-                    Grid.Row="3"
-                    Grid.ColumnSpan="2"
+                    Grid.Row="2"
                     Style="{StaticResource CancelButton}"
-                    mvx:Bi.nd="Command BackCommand"/>
+                    mvx:Bi.nd="Command BackCommand" />
         </Grid>
-   </ContentPage.Content>
+    </ContentPage.Content>
 </core:MvxContentPage>

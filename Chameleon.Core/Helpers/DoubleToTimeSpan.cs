@@ -11,9 +11,11 @@ namespace Chameleon.Core.Helpers
             return TimeSpan.FromSeconds(value);
         }
 
-        //protected override double ConvertBack(TimeSpan value, Type targetType, object parameter, CultureInfo culture)
-        //{
-        //}
-    }
+        protected override double ConvertBack(TimeSpan value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return value.TotalSeconds;
 
+        }
+    }
+    
 }

@@ -11,10 +11,10 @@ namespace Chameleon.Core.Templates
 
         protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
         {
-            var currentItem = CrossMediaManager.Current.MediaQueue.Current.MediaUri;
-            var mediaItem = ((IMediaItem)item).MediaUri;
-            var b = currentItem == mediaItem ? ActiveTemplate : InActiveTemplate;
-            return b;
+            var currentItem = CrossMediaManager.Current.MediaQueue?.Current?.MediaUri;
+            var mediaItem = ((IMediaItem)item)?.MediaUri;
+            var template = currentItem == mediaItem && currentItem != null ? ActiveTemplate : InActiveTemplate;
+            return template;
         }
     }
 }

@@ -57,7 +57,7 @@ namespace Chameleon.Core.Helpers
                     {
                         _mediaManager.MediaQueue.Remove(mediaItem);
                         _userDialogs.Toast(GetText("ItemRemovedFromQueue"));
-                    });
+                    }, "remove_from_queue");
                 }
                 else
                 {
@@ -80,22 +80,22 @@ namespace Chameleon.Core.Helpers
             {
                 config.Add(GetText("RenamePlaylist"), async () => {
                     await RenamePlaylist(playlist);
-                });
+                }, "icon_contextual_rename");
                 config.Add(GetText("DeletePlaylist"), async () => {
                     await DeletePlaylist(playlist);
-                });
+                }, "delete");
             }
             else if (contentItem is IArtist artist)
             {
                 config.Add(GetText("Share"), () => {
 
-                });
+                }, "share");
             }
             else if (contentItem is IAlbum album)
             {
                 config.Add(GetText("Share"), () => {
 
-                });
+                }, "share");
             }
             _userDialogs.ActionSheet(config);
             return Task.CompletedTask;

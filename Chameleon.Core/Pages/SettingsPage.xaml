@@ -32,7 +32,7 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
-                            <Label Text="PlaybackSettings" Style="{StaticResource MediaItemTitle}" Grid.Column="0"/>
+                            <Label mvx:La.ng="Text PlaybackSettings" Style="{StaticResource MediaItemTitle}" Grid.Column="0"/>
                             <Image Source="disclosure_button" HorizontalOptions="End" BackgroundColor="Transparent" Grid.Column="1"/>
                         </Grid>
                   </ViewCell>

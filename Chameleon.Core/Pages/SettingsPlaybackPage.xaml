@@ -32,7 +32,7 @@
             SeparatorColor="{StaticResource SeparatorColor}">
             <TableRoot>
                 <TableSection>
-                    <ViewCell BindingContext="{Binding .}">
+                    <ViewCell BindingContext="{Binding .}" IsEnabled="False">
                         <Label mvx:La.ng=" Text Playback"
                                Style="{StaticResource PlaybackSettings}"
                                Margin="20" />
@@ -53,10 +53,10 @@
                             <Label Text="{Binding Source={x:Reference slider}, Path=Value, StringFormat='{0:F0}s'}"
                                    Grid.Row="1"
                                    HorizontalOptions="Center"
-                                   Style="{StaticResource  PlaybackSettingsValue}" />
+                                   Style="{StaticResource PlaybackSettingsValue}" />
                             <Slider x:Name="slider"
                                     Grid.Row="2"
-                                    mvx:Bi.nd="Value DoubleToTimeSpan (MediaManager.StepSize)"
+                                    mvx:Bi.nd="Value DoubleToTimeSpan(MediaManager.StepSize)"
                                     Margin="10,0,10,0"
                                     Maximum="30"
                                     Minimum="0"
@@ -141,9 +141,11 @@
                             </Grid.ColumnDefinitions>
                             <Label mvx:La.ng="Text Clear"
                                    Style="{StaticResource PlaybackSettingsTitle}"
+                                   VerticalOptions="Center"
                                    Grid.Column="0" />
                             <Switch mvx:Bi.nd="IsToggled MediaManager.ClearQueueOnPlay"
                                     Grid.Column="1"
+                                    VerticalOptions="Center"
                                     HorizontalOptions="End"
                                     OnColor="Tomato" />
                         </Grid>
@@ -159,9 +161,11 @@
                             </Grid.ColumnDefinitions>
                             <Label mvx:La.ng="Text ScreenOn"
                                    Style="{StaticResource PlaybackSettingsTitle}"
+                                   VerticalOptions="Center"
                                    Grid.Column="0" />
                             <Switch mvx:Bi.nd="IsToggled MediaManager.KeepScreenOn"
                                     Grid.Column="1"
+                                    VerticalOptions="Center"
                                     HorizontalOptions="End"
                                     OnColor="Tomato" />
                         </Grid>

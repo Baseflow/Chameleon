@@ -33,11 +33,13 @@
                    Padding="5,5,0,5">
                 <StackLayout
                     Orientation="Horizontal">
+                     <Image
+                        Source="add_to_playlist"/>
                     <Entry
                         mvx:La.ng="Placeholder NewPlaylist"
                         mvx:Bi.nd="Text PlaylistName"
                         Style="{StaticResource TextColorEntry}"
-                        WidthRequest="250"/>
+                        WidthRequest="200"/>
                     <Button
                         mvx:La.ng="Text Add"
                         HorizontalOptions="End"
@@ -52,7 +54,8 @@
                 ItemClick="{mvx:MvxBind AddToPlaylistCommand}"
                 VerticalOptions="FillAndExpand"
                 SeparatorVisibility="None"
-                Margin="0,10,0,10">
+                Margin="0,10,0,10"
+                HasUnevenRows="True">
                 <core:MvxListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

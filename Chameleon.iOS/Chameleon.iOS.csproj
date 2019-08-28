@@ -212,22 +212,10 @@
     <ImageAsset Include="Assets.xcassets\playback_controls_play_button.imageset\playback_controls_play_button.png" />
     <ImageAsset Include="Assets.xcassets\playback_controls_play_button.imageset\playback_controls_play_button%402x.png" />
     <ImageAsset Include="Assets.xcassets\playback_controls_play_button.imageset\playback_controls_play_button%403x.png" />
-    <ImageAsset Include="Assets.xcassets\playback_controls_repeat_on.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\playback_controls_repeat_on.imageset\playback_controls_repeat_on.png" />
-    <ImageAsset Include="Assets.xcassets\playback_controls_repeat_on.imageset\playback_controls_repeat_on%402x.png" />
-    <ImageAsset Include="Assets.xcassets\playback_controls_repeat_on.imageset\playback_controls_repeat_on%403x.png" />
     <ImageAsset Include="Assets.xcassets\playback_controls_repeat_off.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\playback_controls_repeat_off.imageset\playback_controls_repeat_off.png" />
     <ImageAsset Include="Assets.xcassets\playback_controls_repeat_off.imageset\playback_controls_repeat_off%402x.png" />
     <ImageAsset Include="Assets.xcassets\playback_controls_repeat_off.imageset\playback_controls_repeat_off%403x.png" />
-    <ImageAsset Include="Assets.xcassets\playback_controls_repeat_once_on.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\playback_controls_repeat_once_on.imageset\playback_controls_repeat_once_on.png" />
-    <ImageAsset Include="Assets.xcassets\playback_controls_repeat_once_on.imageset\playback_controls_repeat_once_on%402x.png" />
-    <ImageAsset Include="Assets.xcassets\playback_controls_repeat_once_on.imageset\playback_controls_repeat_once_on%403x.png" />
-    <ImageAsset Include="Assets.xcassets\playback_controls_shuffle_on.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\playback_controls_shuffle_on.imageset\playback_controls_shuffle_on.png" />
-    <ImageAsset Include="Assets.xcassets\playback_controls_shuffle_on.imageset\playback_controls_shuffle_on%402x.png" />
-    <ImageAsset Include="Assets.xcassets\playback_controls_shuffle_on.imageset\playback_controls_shuffle_on%403x.png" />
     <ImageAsset Include="Assets.xcassets\playback_controls_shuffle_off.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\playback_controls_shuffle_off.imageset\playback_controls_shuffle_off.png" />
     <ImageAsset Include="Assets.xcassets\playback_controls_shuffle_off.imageset\playback_controls_shuffle_off%402x.png" />
@@ -280,6 +268,22 @@
     <ImageAsset Include="Assets.xcassets\download_item.imageset\download_item.png" />
     <ImageAsset Include="Assets.xcassets\download_item.imageset\download_item%402x.png" />
     <ImageAsset Include="Assets.xcassets\download_item.imageset\download_item%403x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_repeat_on.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_repeat_on.imageset\playback_controls_repeat_on.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_repeat_on.imageset\playback_controls_repeat_on%402x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_repeat_on.imageset\playback_controls_repeat_on%403x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_repeat_once_on.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_repeat_once_on.imageset\playback_controls_repeat_once_on.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_repeat_once_on.imageset\playback_controls_repeat_once_on%402x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_repeat_once_on.imageset\playback_controls_repeat_once_on%403x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_shuffle_on.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_shuffle_on.imageset\playback_controls_shuffle_on.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_shuffle_on.imageset\playback_controls_shuffle_on%402x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_shuffle_on.imageset\playback_controls_shuffle_on%403x.png" />
+    <ImageAsset Include="Assets.xcassets\icon_contextual_rename.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\icon_contextual_rename.imageset\icon_contextual_rename.png" />
+    <ImageAsset Include="Assets.xcassets\icon_contextual_rename.imageset\icon_contextual_rename%402x.png" />
+    <ImageAsset Include="Assets.xcassets\icon_contextual_rename.imageset\icon_contextual_rename%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -398,6 +402,10 @@
     <Folder Include="Assets.xcassets\remove_from_queue.imageset\" />
     <Folder Include="Assets.xcassets\delete.imageset\" />
     <Folder Include="Assets.xcassets\download_item.imageset\" />
+    <Folder Include="Assets.xcassets\playback_controls_repeat_on.imageset\" />
+    <Folder Include="Assets.xcassets\playback_controls_repeat_once_on.imageset\" />
+    <Folder Include="Assets.xcassets\playback_controls_shuffle_on.imageset\" />
+    <Folder Include="Assets.xcassets\icon_contextual_rename.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />

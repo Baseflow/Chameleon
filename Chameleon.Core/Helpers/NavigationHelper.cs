@@ -80,7 +80,7 @@ namespace Chameleon.Core.Helpers
             {
                 config.Add(GetText("RenamePlaylist"), async () => {
                     await RenamePlaylist(playlist);
-                });
+                }, "icon_contextual_rename");
                 config.Add(GetText("DeletePlaylist"), async () => {
                     await DeletePlaylist(playlist);
                 }, "delete");

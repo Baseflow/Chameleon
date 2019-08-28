@@ -30,7 +30,7 @@
             <Frame BackgroundColor="#FF252525"
                    CornerRadius="8"
                    Grid.Row="0"
-                   Padding="5,5,0,5">
+                   Padding="5,5,5,5">
                 <StackLayout
                     Orientation="Horizontal">
                      <Image
@@ -39,7 +39,7 @@
                         mvx:La.ng="Placeholder NewPlaylist"
                         mvx:Bi.nd="Text PlaylistName"
                         Style="{StaticResource TextColorEntry}"
-                        WidthRequest="200"/>
+                        HorizontalOptions="FillAndExpand"/>
                     <Button
                         mvx:La.ng="Text Add"
                         HorizontalOptions="End"

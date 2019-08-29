@@ -43,7 +43,7 @@
                         x:Name="MyCollectionView"
                         mvx:Bi.nd="ItemsSource RecommendedProviders; SelectionChangedCommand SourceCommand; SelectionChangedCommandParameter SelectedItem; SelectedItem SelectedItem"
                         SelectionMode="Single"
-                        HeightRequest="150" >
+                        HeightRequest="140" >
                         <CollectionView.ItemsLayout>
                             <GridItemsLayout
                                 Orientation="Horizontal"

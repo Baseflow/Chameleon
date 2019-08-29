@@ -325,7 +325,7 @@ namespace Chameleon.Core.ViewModels
             {
                 favorites.Add(_source);
                 FavoriteImage = ImageSource.FromFile("playback_controls_favorite_on");
-                _userDialogs.Toast(GetText("Item added to Favorite"));
+                _userDialogs.Toast(GetText("Favorite"));
             }
         }
 

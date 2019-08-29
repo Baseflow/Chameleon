@@ -28,12 +28,12 @@
                        HeightRequest="56"
                        WidthRequest="55"/>
             </Frame>
-            <Label Text="Title{mvx:MvxBind Title}"
+            <Label Text="{mvx:MvxBind Title}"
                    Style="{StaticResource TitleText}"
                    VerticalOptions="Center"
                    Grid.Column="1"
                    Grid.Row="0"/>
-            <Label Text="Subtitle {mvx:MvxBind Title}"
+            <Label Text=""
                    Style="{StaticResource MediaItemSubTitle}"
                    VerticalOptions="Center"
                    Grid.Column="1"

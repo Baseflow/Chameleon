@@ -210,18 +210,27 @@ namespace Chameleon.Core.ViewModels
         private IMvxAsyncCommand<IPlaylist> _addToPlaylistCommand;
         public IMvxAsyncCommand<IPlaylist> AddToPlaylistCommand => _addToPlaylistCommand ?? (_addToPlaylistCommand = new MvxAsyncCommand<IPlaylist>(AddToPlaylist));
 
-        private IMvxAsyncCommand _favoriteCommand;
-        public IMvxAsyncCommand FavoriteCommand => _favoriteCommand ?? (_favoriteCommand = new MvxAsyncCommand(Favorite));
+        private IMvxCommand _favoriteCommand;
+        public IMvxCommand FavoriteCommand => _favoriteCommand ?? (_favoriteCommand = new MvxCommand(Favorite));
 
         public override void Prepare(IMediaItem parameter)
         {
             Source = parameter;
         }
 
+        public override Task Initialize()
+        {
+            Playlists.Add(new Playlist { Title = "Favorites" });
+
+            return base.Initialize();
+        }
+
         public override void ViewAppearing()
         {
             base.ViewAppearing();
-            if (Playlists.Contains(Playlists.First(x => Title == "Favorites")) && Playlists.Contains((MediaManager.Library.IPlaylist)_source))
+
+            var favorites = Playlists.First(x => x.Title == "Favorites");
+            if (favorites.Contains(_source))
             {
                 FavoriteImage = ImageSource.FromFile("playback_controls_favorite_on");
             }
@@ -304,30 +313,21 @@ namespace Chameleon.Core.ViewModels
             }
         }
 
-        private async Task Favorite()
+        private void Favorite()
         {
-            IsFavorite = !_isFavorite;
-
-            var playListfavorite = Playlists.First(x => x.Title == "Favorites");
-            if (!Playlists.Contains(playListfavorite))
+            var favorites = Playlists.First(x => x.Title == "Favorites");
+            if (favorites.Contains(_source))
             {
-                Playlists.Add(new Playlist() { Title = "Favorites" });
+                favorites.Remove(_source);
+                FavoriteImage = ImageSource.FromFile("playback_controls_favorite_off");
             }
-            playListfavorite.Add(_source);
-            FavoriteImage = ImageSource.FromFile("playback_controls_favorite_on");
-            _userDialogs.Toast(GetText("Item added to Favorite"));
+            else
+            {
+                favorites.Add(_source);
+                FavoriteImage = ImageSource.FromFile("playback_controls_favorite_on");
+                _userDialogs.Toast(GetText("Item added to Favorite"));
+            }
         }
-        
-        //private async Task AddPlaylist()
-        //{
-        //    if (Playlists == Contains.Title("Favorites"))
-        //    { 
-
-        //        Playlists.Add(new Playlist() { Title = "Favorites" });
-        //    }
-
-        //    await _playlistService.SavePlaylists(Playlists);
-        //}
 
         private async Task AddToPlaylist(IPlaylist arg)
         {

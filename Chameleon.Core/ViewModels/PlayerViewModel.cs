@@ -135,6 +135,13 @@ namespace Chameleon.Core.ViewModels
             set => SetProperty(ref _shuffleImage, value);
         }
 
+        private bool _isFavorite = false;
+        public bool IsFavorite
+        {
+            get => _isFavorite;
+            set => SetProperty(ref _isFavorite, value);
+        }
+
         private IMvxAsyncCommand _dragCompletedCommand;
         public IMvxAsyncCommand DragCompletedCommand => _dragCompletedCommand ?? (_dragCompletedCommand = new MvxAsyncCommand(() =>
         {
@@ -174,7 +181,7 @@ namespace Chameleon.Core.ViewModels
         public IMvxCommand ShuffleCommand => _shuffleCommand ?? (_shuffleCommand = new MvxCommand(Shuffle));
 
         private IMvxAsyncCommand _addToPlaylistCommand;
-        public IMvxAsyncCommand AddToPlaylistCommand => _addToPlaylistCommand ?? (_addToPlaylistCommand = new MvxAsyncCommand(() => MediaManager.PlayNext()));
+        public IMvxAsyncCommand AddToPlaylistCommand => _addToPlaylistCommand ?? (_addToPlaylistCommand = new MvxAsyncCommand((AddPlaylist)));
 
         private IMvxAsyncCommand _favoriteCommand;
         public IMvxAsyncCommand FavoriteCommand => _favoriteCommand ?? (_favoriteCommand = new MvxAsyncCommand(() => MediaManager.PlayNext()));
@@ -255,6 +262,18 @@ namespace Chameleon.Core.ViewModels
                     ShuffleImage = ImageSource.FromFile("playback_controls_shuffle_on");
                     break;
             }
+        }
+
+        private async Task AddPlaylist()
+        {
+            if (!string.IsNullOrEmpty(PlaylistName))
+            {
+                Playlists.Add(new Playlist() { Title = PlaylistName });
+                await _playlistService.SavePlaylists(Playlists);
+                PlaylistName = string.Empty;
+            }
+            else
+                await _userDialogs.AlertAsync(GetText("InvalidName"));
         }
     }
 

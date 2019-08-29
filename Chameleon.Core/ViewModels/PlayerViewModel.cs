@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Acr.UserDialogs;
 using Chameleon.Services.Services;
@@ -26,8 +27,6 @@ namespace Chameleon.Core.ViewModels
             MediaManager = mediaManager ?? throw new ArgumentNullException(nameof(mediaManager));
             _playlistService = playlistService ?? throw new ArgumentNullException(nameof(playlistService));
             _userDialogs = userDialogs ?? throw new ArgumentNullException(nameof(userDialogs));
-
-
         }
 
         private IMediaItem _source;
@@ -146,7 +145,14 @@ namespace Chameleon.Core.ViewModels
             set => SetProperty(ref _shuffleImage, value);
         }
 
-        private bool _isFavorite = false;
+        private ImageSource _favoriteImage = ImageSource.FromFile("playback_controls_favorite_off");
+        public ImageSource FavoriteImage
+        {
+            get => _favoriteImage;
+            set => SetProperty(ref _favoriteImage, value);
+        }
+
+        private bool _isFavorite;
         public bool IsFavorite
         {
             get => _isFavorite;
@@ -205,11 +211,24 @@ namespace Chameleon.Core.ViewModels
         public IMvxAsyncCommand<IPlaylist> AddToPlaylistCommand => _addToPlaylistCommand ?? (_addToPlaylistCommand = new MvxAsyncCommand<IPlaylist>(AddToPlaylist));
 
         private IMvxAsyncCommand _favoriteCommand;
-        public IMvxAsyncCommand FavoriteCommand => _favoriteCommand ?? (_favoriteCommand = new MvxAsyncCommand(() => MediaManager.PlayNext()));
+        public IMvxAsyncCommand FavoriteCommand => _favoriteCommand ?? (_favoriteCommand = new MvxAsyncCommand(Favorite));
 
         public override void Prepare(IMediaItem parameter)
         {
             Source = parameter;
+        }
+
+        public override void ViewAppearing()
+        {
+            base.ViewAppearing();
+            if (Playlists.Contains(Playlists.First(x => Title == "Favorites")) && Playlists.Contains((MediaManager.Library.IPlaylist)_source))
+            {
+                FavoriteImage = ImageSource.FromFile("playback_controls_favorite_on");
+            }
+            else
+            {
+                FavoriteImage = ImageSource.FromFile("playback_controls_favorite_off");
+            }
         }
 
         public override void ViewAppeared()
@@ -285,6 +304,31 @@ namespace Chameleon.Core.ViewModels
             }
         }
 
+        private async Task Favorite()
+        {
+            IsFavorite = !_isFavorite;
+
+            var playListfavorite = Playlists.First(x => x.Title == "Favorites");
+            if (!Playlists.Contains(playListfavorite))
+            {
+                Playlists.Add(new Playlist() { Title = "Favorites" });
+            }
+            playListfavorite.Add(_source);
+            FavoriteImage = ImageSource.FromFile("playback_controls_favorite_on");
+            _userDialogs.Toast(GetText("Item added to Favorite"));
+        }
+        
+        //private async Task AddPlaylist()
+        //{
+        //    if (Playlists == Contains.Title("Favorites"))
+        //    { 
+
+        //        Playlists.Add(new Playlist() { Title = "Favorites" });
+        //    }
+
+        //    await _playlistService.SavePlaylists(Playlists);
+        //}
+
         private async Task AddToPlaylist(IPlaylist arg)
         {
             if (arg != null)
@@ -292,7 +336,7 @@ namespace Chameleon.Core.ViewModels
                 arg.Add(_source);
             }
             await _playlistService.SavePlaylists(Playlists);
-            _userDialogs.Toast(GetText("PlaylistAdded"));
+            _userDialogs.Toast(GetText("AddedToPlaylist"));
 
             await NavigationService.Close(this);
         }

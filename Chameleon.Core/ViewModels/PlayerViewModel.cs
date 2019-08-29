@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Acr.UserDialogs;
+using Chameleon.Services.Services;
 using MediaManager;
 using MediaManager.Library;
 using MediaManager.Playback;
@@ -8,6 +10,7 @@ using MediaManager.Queue;
 using MvvmCross.Commands;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
+using MvvmCross.ViewModels;
 using Xamarin.Forms;
 
 namespace Chameleon.Core.ViewModels
@@ -15,10 +18,16 @@ namespace Chameleon.Core.ViewModels
     public class PlayerViewModel : BaseViewModel<IMediaItem>
     {
         public IMediaManager MediaManager { get; }
+        private readonly IPlaylistService _playlistService;
+        private readonly IUserDialogs _userDialogs;
 
-        public PlayerViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IMediaManager mediaManager) : base(logProvider, navigationService)
+        public PlayerViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IUserDialogs userDialogs, IMediaManager mediaManager, IPlaylistService playlistService) : base(logProvider, navigationService)
         {
             MediaManager = mediaManager ?? throw new ArgumentNullException(nameof(mediaManager));
+            _playlistService = playlistService ?? throw new ArgumentNullException(nameof(playlistService));
+            _userDialogs = userDialogs ?? throw new ArgumentNullException(nameof(userDialogs));
+
+
         }
 
         private IMediaItem _source;
@@ -65,6 +74,8 @@ namespace Chameleon.Core.ViewModels
         }
 
         public IList<Metadata> Metadata { get; set; }
+
+        public MvxObservableCollection<IPlaylist> Playlists { get; set; } = new MvxObservableCollection<IPlaylist>();
 
         private bool _showControls;
         public bool ShowControls
@@ -142,6 +153,16 @@ namespace Chameleon.Core.ViewModels
             set => SetProperty(ref _isFavorite, value);
         }
 
+        private string _playlistName;
+        public string PlaylistName
+        {
+            get => _playlistName;
+            set
+            {
+                SetProperty(ref _playlistName, value);
+            }
+        }
+
         private IMvxAsyncCommand _dragCompletedCommand;
         public IMvxAsyncCommand DragCompletedCommand => _dragCompletedCommand ?? (_dragCompletedCommand = new MvxAsyncCommand(() =>
         {
@@ -180,8 +201,8 @@ namespace Chameleon.Core.ViewModels
         private IMvxCommand _shuffleCommand;
         public IMvxCommand ShuffleCommand => _shuffleCommand ?? (_shuffleCommand = new MvxCommand(Shuffle));
 
-        private IMvxAsyncCommand _addToPlaylistCommand;
-        public IMvxAsyncCommand AddToPlaylistCommand => _addToPlaylistCommand ?? (_addToPlaylistCommand = new MvxAsyncCommand((AddPlaylist)));
+        private IMvxAsyncCommand<IPlaylist> _addToPlaylistCommand;
+        public IMvxAsyncCommand<IPlaylist> AddToPlaylistCommand => _addToPlaylistCommand ?? (_addToPlaylistCommand = new MvxAsyncCommand<IPlaylist>(AddToPlaylist));
 
         private IMvxAsyncCommand _favoriteCommand;
         public IMvxAsyncCommand FavoriteCommand => _favoriteCommand ?? (_favoriteCommand = new MvxAsyncCommand(() => MediaManager.PlayNext()));
@@ -264,17 +285,18 @@ namespace Chameleon.Core.ViewModels
             }
         }
 
-        private async Task AddPlaylist()
+        private async Task AddToPlaylist(IPlaylist arg)
         {
-            if (!string.IsNullOrEmpty(PlaylistName))
+            if (arg != null)
             {
-                Playlists.Add(new Playlist() { Title = PlaylistName });
-                await _playlistService.SavePlaylists(Playlists);
-                PlaylistName = string.Empty;
+                arg.Add(_source);
             }
-            else
-                await _userDialogs.AlertAsync(GetText("InvalidName"));
+            await _playlistService.SavePlaylists(Playlists);
+            _userDialogs.Toast(GetText("PlaylistAdded"));
+
+            await NavigationService.Close(this);
         }
+
     }
 
     public class Metadata

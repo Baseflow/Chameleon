@@ -8,7 +8,7 @@
     xmlns:controls="clr-namespace:Chameleon.Core.Controls"
     x:Class="Chameleon.Core.Templates.MediaItemTemplate">
     <ContentView.Content>
-        <Grid Margin="24,0" RowSpacing="0" ColumnSpacing="12" VerticalOptions="Center">
+        <Grid Margin="24,5" RowSpacing="0" ColumnSpacing="12" VerticalOptions="Center">
             <Grid.RowDefinitions>
                 <RowDefinition Height="28"/>
                 <RowDefinition Height="28"/>

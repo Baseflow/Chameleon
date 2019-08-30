@@ -4,5 +4,5 @@
   "Add": "Add",
   "Cancel": "Cancel",
   "InvalidName": "Please fill in a valid name",
-  "PlaylistAdded": "Item is added to the playlist"
+  "AddedToPlaylist": "Item is added to the playlist"
 }

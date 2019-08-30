@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
+using Acr.UserDialogs;
+using Chameleon.Services.Services;
 using MediaManager;
 using MediaManager.Library;
 using MediaManager.Playback;
@@ -8,6 +11,7 @@ using MediaManager.Queue;
 using MvvmCross.Commands;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
+using MvvmCross.ViewModels;
 using Xamarin.Forms;
 
 namespace Chameleon.Core.ViewModels
@@ -15,10 +19,14 @@ namespace Chameleon.Core.ViewModels
     public class PlayerViewModel : BaseViewModel<IMediaItem>
     {
         public IMediaManager MediaManager { get; }
+        private readonly IPlaylistService _playlistService;
+        private readonly IUserDialogs _userDialogs;
 
-        public PlayerViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IMediaManager mediaManager) : base(logProvider, navigationService)
+        public PlayerViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IUserDialogs userDialogs, IMediaManager mediaManager, IPlaylistService playlistService) : base(logProvider, navigationService)
         {
             MediaManager = mediaManager ?? throw new ArgumentNullException(nameof(mediaManager));
+            _playlistService = playlistService ?? throw new ArgumentNullException(nameof(playlistService));
+            _userDialogs = userDialogs ?? throw new ArgumentNullException(nameof(userDialogs));
         }
 
         private IMediaItem _source;
@@ -65,6 +73,8 @@ namespace Chameleon.Core.ViewModels
         }
 
         public IList<Metadata> Metadata { get; set; }
+
+        public MvxObservableCollection<IPlaylist> Playlists { get; set; } = new MvxObservableCollection<IPlaylist>();
 
         private bool _showControls;
         public bool ShowControls
@@ -135,6 +145,30 @@ namespace Chameleon.Core.ViewModels
             set => SetProperty(ref _shuffleImage, value);
         }
 
+        private ImageSource _favoriteImage = ImageSource.FromFile("playback_controls_favorite_off");
+        public ImageSource FavoriteImage
+        {
+            get => _favoriteImage;
+            set => SetProperty(ref _favoriteImage, value);
+        }
+
+        private bool _isFavorite;
+        public bool IsFavorite
+        {
+            get => _isFavorite;
+            set => SetProperty(ref _isFavorite, value);
+        }
+
+        private string _playlistName;
+        public string PlaylistName
+        {
+            get => _playlistName;
+            set
+            {
+                SetProperty(ref _playlistName, value);
+            }
+        }
+
         private IMvxAsyncCommand _dragCompletedCommand;
         public IMvxAsyncCommand DragCompletedCommand => _dragCompletedCommand ?? (_dragCompletedCommand = new MvxAsyncCommand(() =>
         {
@@ -173,15 +207,37 @@ namespace Chameleon.Core.ViewModels
         private IMvxCommand _shuffleCommand;
         public IMvxCommand ShuffleCommand => _shuffleCommand ?? (_shuffleCommand = new MvxCommand(Shuffle));
 
-        private IMvxAsyncCommand _addToPlaylistCommand;
-        public IMvxAsyncCommand AddToPlaylistCommand => _addToPlaylistCommand ?? (_addToPlaylistCommand = new MvxAsyncCommand(() => MediaManager.PlayNext()));
+        private IMvxAsyncCommand<IPlaylist> _addToPlaylistCommand;
+        public IMvxAsyncCommand<IPlaylist> AddToPlaylistCommand => _addToPlaylistCommand ?? (_addToPlaylistCommand = new MvxAsyncCommand<IPlaylist>(AddToPlaylist));
 
-        private IMvxAsyncCommand _favoriteCommand;
-        public IMvxAsyncCommand FavoriteCommand => _favoriteCommand ?? (_favoriteCommand = new MvxAsyncCommand(() => MediaManager.PlayNext()));
+        private IMvxCommand _favoriteCommand;
+        public IMvxCommand FavoriteCommand => _favoriteCommand ?? (_favoriteCommand = new MvxCommand(Favorite));
 
         public override void Prepare(IMediaItem parameter)
         {
             Source = parameter;
+        }
+
+        public override Task Initialize()
+        {
+            Playlists.Add(new Playlist { Title = "Favorites" });
+
+            return base.Initialize();
+        }
+
+        public override void ViewAppearing()
+        {
+            base.ViewAppearing();
+
+            var favorites = Playlists.First(x => x.Title == "Favorites");
+            if (favorites.Contains(_source))
+            {
+                FavoriteImage = ImageSource.FromFile("playback_controls_favorite_on");
+            }
+            else
+            {
+                FavoriteImage = ImageSource.FromFile("playback_controls_favorite_off");
+            }
         }
 
         public override void ViewAppeared()
@@ -256,6 +312,35 @@ namespace Chameleon.Core.ViewModels
                     break;
             }
         }
+
+        private void Favorite()
+        {
+            var favorites = Playlists.First(x => x.Title == "Favorites");
+            if (favorites.Contains(_source))
+            {
+                favorites.Remove(_source);
+                FavoriteImage = ImageSource.FromFile("playback_controls_favorite_off");
+            }
+            else
+            {
+                favorites.Add(_source);
+                FavoriteImage = ImageSource.FromFile("playback_controls_favorite_on");
+                _userDialogs.Toast(GetText("Favorite"));
+            }
+        }
+
+        private async Task AddToPlaylist(IPlaylist arg)
+        {
+            if (arg != null)
+            {
+                arg.Add(_source);
+            }
+            await _playlistService.SavePlaylists(Playlists);
+            _userDialogs.Toast(GetText("AddedToPlaylist"));
+
+            await NavigationService.Close(this);
+        }
+
     }
 
     public class Metadata

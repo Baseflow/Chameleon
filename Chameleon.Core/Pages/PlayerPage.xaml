@@ -131,8 +131,7 @@
                         BackgroundColor="Transparent"/>
                     <controls:SelectableButton
                         Grid.Column="4"
-                        Source="playback_controls_favorite"
-                        mvx:Bi.nd="Command FavoriteCommand"
+                        mvx:Bi.nd="Command FavoriteCommand; Source FavoriteImage"
                         HorizontalOptions="Center"
                         VerticalOptions="CenterAndExpand"
                         BackgroundColor="Transparent"/>

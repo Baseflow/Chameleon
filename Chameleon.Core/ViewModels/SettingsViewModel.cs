@@ -26,5 +26,8 @@ namespace Chameleon.Core.ViewModels
 
         private IMvxAsyncCommand _playbackSettingsCommand;
         public IMvxAsyncCommand PlaybackSettingsCommand => _playbackSettingsCommand ?? (_playbackSettingsCommand = new MvxAsyncCommand(() => NavigationService.Navigate<SettingsPlaybackViewModel>()));
+
+        private IMvxAsyncCommand _themingCommand;
+        public IMvxAsyncCommand ThemingCommand => _themingCommand ?? (_themingCommand = new MvxAsyncCommand(() => NavigationService.Navigate<ThemingViewModel>()));
     }
 }

@@ -38,5 +38,10 @@ namespace Chameleon.Core.Views
             IconImageSource = ImageSource.FromFile("tab_bar_settings");
             base.OnDisappearing();
         }
+
+        private async void ViewCell_TappedTheming(object sender, EventArgs e)
+        {
+            await ViewModel.ThemingCommand.ExecuteAsync();
+        }
     }
 }

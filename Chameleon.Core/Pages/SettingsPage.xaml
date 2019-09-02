@@ -13,30 +13,42 @@
     x:TypeArguments="viewModels:SettingsViewModel"
     x:Class="Chameleon.Core.Views.SettingsPage"
     mvx:La.ng="Title Title" >
-    
+
     <ContentPage.Content>
-       <coloredTableView:ColoredTableView
+        <coloredTableView:ColoredTableView
                   Intent="Settings"
                   BackgroundColor="{StaticResource BackgroundColor}"
                   HasUnevenRows="True"
                   SeparatorColor="{StaticResource SeparatorColor}">
-          <TableRoot>
-              <TableSection>
-                  
-                  <ViewCell Tapped="ViewCell_TappedPlaybackSettings">
+            <TableRoot>
+                <TableSection>
+                    <ViewCell Tapped="ViewCell_TappedPlaybackSettings">
                         <Grid Margin="15,15">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="Auto"/>
-                        </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
                             <Label mvx:La.ng="Text PlaybackSettings" Style="{StaticResource MediaItemTitle}" Grid.Column="0"/>
                             <Image Source="disclosure_button" HorizontalOptions="End" BackgroundColor="Transparent" Grid.Column="1"/>
                         </Grid>
-                  </ViewCell>
-                  <!--<ViewCell >
+                    </ViewCell>
+                    <ViewCell Tapped="ViewCell_TappedTheming">
+                        <Grid Margin="15,15">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Label mvx:La.ng="Text Theming" Style="{StaticResource MediaItemTitle}" Grid.Column="0"/>
+                            <Image Source="disclosure_button" HorizontalOptions="End" BackgroundColor="Transparent" Grid.Column="1"/>
+                        </Grid>
+                    </ViewCell>
+                    <!--<ViewCell >
                         <Grid Margin="15,15">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*" />
@@ -49,7 +61,7 @@
                             <Image Source="disclosure_button" HorizontalOptions="End" Grid.Column="1"/>
                        </Grid>
                   </ViewCell>-->
-                  <ViewCell Tapped="ViewCell_TappedOpenSource">
+                    <ViewCell Tapped="ViewCell_TappedOpenSource">
                         <Grid Margin="15,15">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*" />
@@ -58,26 +70,26 @@
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="Auto"/>
                             </Grid.ColumnDefinitions>
-                                <Label mvx:La.ng="Text OpenSourceSoftware" Style="{StaticResource MediaItemTitle}" Grid.Column="0"/>
+                            <Label mvx:La.ng="Text OpenSourceSoftware" Style="{StaticResource MediaItemTitle}" Grid.Column="0"/>
                             <Image Source="disclosure_button" HorizontalOptions="End" BackgroundColor="Transparent" Grid.Column="1"/>
                         </Grid>
-                  </ViewCell>
-                  <ViewCell IsEnabled="True" BindingContext="{Binding .}" >
-                       <Grid Margin="15,15">
-                           <Grid.RowDefinitions>
+                    </ViewCell>
+                    <ViewCell IsEnabled="True" BindingContext="{Binding .}" >
+                        <Grid Margin="15,15">
+                            <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
-                                <Image Source="powered_by_baseflow_logo" Margin="10,0,0,10" HorizontalOptions="Start" Grid.Row="0"/>
-                                <Label mvx:La.ng="Text PowerdByText" Style="{StaticResource PowerdByText}" Margin="10,0,10,25" Grid.Row="1"/>
-                                <Button mvx:La.ng="Text FindUsOnGithub" mvx:Bi.nd="Command GithubCommand" Style="{StaticResource PrimaryButton}"  Margin="0,0,0,10" Grid.Row="2"/>
+                            <Image Source="powered_by_baseflow_logo" Margin="10,0,0,10" HorizontalOptions="Start" Grid.Row="0"/>
+                            <Label mvx:La.ng="Text PowerdByText" Style="{StaticResource PowerdByText}" Margin="10,0,10,25" Grid.Row="1"/>
+                            <Button mvx:La.ng="Text FindUsOnGithub" mvx:Bi.nd="Command GithubCommand" Style="{StaticResource PrimaryButton}"  Margin="0,0,0,10" Grid.Row="2"/>
                             <Button mvx:La.ng="Text VisitBaseflow" mvx:Bi.nd="Command BaseflowCommand" Style="{StaticResource PrimaryButton}"  Margin="0,0,0,10" Grid.Row="3"/>
                         </Grid>
-                  </ViewCell>
-              </TableSection>
-          </TableRoot>
+                    </ViewCell>
+                </TableSection>
+            </TableRoot>
         </coloredTableView:ColoredTableView>
     </ContentPage.Content>
 </core:MvxContentPage>

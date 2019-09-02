@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Threading.Tasks;
 using Acr.UserDialogs;
 using MediaManager;
-using MediaManager.Library;
-using MediaManager.Volume;
-using MvvmCross.Commands;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
 
@@ -34,7 +30,7 @@ namespace Chameleon.Core.ViewModels
             get => _balance;
             set
             {
-                if(SetProperty(ref _balance, value))
+                if (SetProperty(ref _balance, value))
                 {
                     double balance = value / 10;
                     MediaManager.VolumeManager.Balance = (float)balance;
@@ -55,7 +51,7 @@ namespace Chameleon.Core.ViewModels
             {
                 balanceString = $"{balance.ToString("0.#")} {GetText("Left")}";
             }
-            else if(balance > 0)
+            else if (balance > 0)
             {
                 balanceString = $"+{balance.ToString("0.#")} {GetText("Right")}";
             }

@@ -6,7 +6,6 @@ using MvvmCross.Presenters;
 using MvvmCross.Presenters.Attributes;
 using MvvmCross.ViewModels;
 using Xamarin.Essentials;
-using Xamarin.Forms;
 
 namespace Chameleon.Core.Views
 {
@@ -28,7 +27,7 @@ namespace Chameleon.Core.Views
         {
             //TODO: Detect when the player starts from another app
             //if(Application.Current?.MainPage?.Navigation?.NavigationStack?.Count > 0)
-                return new MvxModalPresentationAttribute() { WrapInNavigationPage = true };
+            return new MvxModalPresentationAttribute() { WrapInNavigationPage = true };
             //else
             //    return new MvxContentPagePresentationAttribute() { WrapInNavigationPage = false };
         }

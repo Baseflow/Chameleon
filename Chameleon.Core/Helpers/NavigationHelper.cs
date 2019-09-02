@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 using System.Threading.Tasks;
 using Acr.UserDialogs;
 using Chameleon.Core.ViewModels;
@@ -12,7 +11,6 @@ using MvvmCross.Commands;
 using MvvmCross.Forms.Presenters;
 using MvvmCross.Localization;
 using MvvmCross.Navigation;
-using System.Linq;
 
 namespace Chameleon.Core.Helpers
 {
@@ -79,29 +77,33 @@ namespace Chameleon.Core.Helpers
                 {
                     await _navigationService.Navigate<AddToPlaylistViewModel, IMediaItem>(mediaItem);
                 }, "add_to_playlist");
-                    
+
                 //config.Add(GetText("ShowArtist"), () => _navigationService.Navigate<ArtistViewModel>());
                 //config.Add(GetText("ShowAlbum"), () => _navigationService.Navigate<AlbumViewModel>());
                 //config.Add(GetText("Share"), () => { });
             }
-            else if(contentItem is IPlaylist playlist)
+            else if (contentItem is IPlaylist playlist)
             {
-                config.Add(GetText("RenamePlaylist"), async () => {
+                config.Add(GetText("RenamePlaylist"), async () =>
+                {
                     await RenamePlaylist(playlist);
                 }, "icon_contextual_rename");
-                config.Add(GetText("DeletePlaylist"), async () => {
+                config.Add(GetText("DeletePlaylist"), async () =>
+                {
                     await DeletePlaylist(playlist);
                 }, "delete");
             }
             else if (contentItem is IArtist artist)
             {
-                config.Add(GetText("Share"), () => {
+                config.Add(GetText("Share"), () =>
+                {
 
                 }, "share");
             }
             else if (contentItem is IAlbum album)
             {
-                config.Add(GetText("Share"), () => {
+                config.Add(GetText("Share"), () =>
+                {
 
                 }, "share");
             }
@@ -111,7 +113,7 @@ namespace Chameleon.Core.Helpers
 
         private static async Task DeletePlaylist(IPlaylist playlist)
         {
-            if(await _userDialogs.ConfirmAsync(GetText("SureToDelete")))
+            if (await _userDialogs.ConfirmAsync(GetText("SureToDelete")))
             {
                 _userDialogs.Toast(GetText("PlaylistDeleted"));
             }

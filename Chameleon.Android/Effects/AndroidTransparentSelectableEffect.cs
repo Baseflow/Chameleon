@@ -1,5 +1,4 @@
 ﻿using System;
-using Android.App;
 using Android.Util;
 using Chameleon.Android.Effects;
 using Chameleon.Core.Effects;

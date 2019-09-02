@@ -2,11 +2,9 @@
 using System.Linq;
 using System.Threading.Tasks;
 using Chameleon.Services.Models;
-using MediaManager.Library;
 using MvvmCross.Commands;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
-using MvvmCross.ViewModels;
 
 namespace Chameleon.Core.ViewModels
 {

@@ -1,6 +1,5 @@
 ﻿using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
-using Acr.UserDialogs;
 using Chameleon.Services;
 using MvvmCross;
 using MvvmCross.Commands;

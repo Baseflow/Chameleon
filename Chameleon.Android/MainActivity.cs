@@ -66,7 +66,7 @@ namespace Chameleon.Android
             var action = intent.Action;
             var type = intent.Type;
 
-            if(action == Intent.ActionView)
+            if (action == Intent.ActionView)
             {
                 string path = "";
 

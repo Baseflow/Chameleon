@@ -1,6 +1,5 @@
 ﻿
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace Chameleon.Core.Views
 {

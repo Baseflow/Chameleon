@@ -6,7 +6,7 @@ namespace Chameleon.Core.Helpers
 {
     public class TimeSpanToDoubleValueConverter : MvxValueConverter<TimeSpan, double>
     {
-        protected override double Convert(TimeSpan value, Type targetType,object parameter,CultureInfo culture)
+        protected override double Convert(TimeSpan value, Type targetType, object parameter, CultureInfo culture)
         {
             return value.TotalSeconds;
         }

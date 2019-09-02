@@ -2,7 +2,6 @@
 using System.Reflection;
 using Acr.UserDialogs;
 using Chameleon.Core;
-using Chameleon.Services;
 using MvvmCross;
 using MvvmCross.Forms.Platforms.Android.Core;
 using MvvmCross.Platforms.Android;

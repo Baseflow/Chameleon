@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Acr.UserDialogs;
@@ -10,7 +9,6 @@ using MediaManager.Media;
 using MvvmCross.Commands;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
-using MvvmCross.ViewModels;
 using Xamarin.Forms;
 
 namespace Chameleon.Core.ViewModels
@@ -107,7 +105,7 @@ namespace Chameleon.Core.ViewModels
 
         public override void Prepare(IPlaylist playlist)
         {
-            
+
             CurrentPlaylist = playlist;
 
             var trackAmount = new FormattedString();
@@ -117,9 +115,9 @@ namespace Chameleon.Core.ViewModels
 
             var playlistTime = new FormattedString();
             playlistTime.Spans.Add(new Span { Text = CurrentPlaylist.TotalTime.Hours.ToString(), FontAttributes = FontAttributes.Bold, FontSize = 12 });
-            playlistTime.Spans.Add(new Span { Text = " hours, "});
+            playlistTime.Spans.Add(new Span { Text = " hours, " });
             playlistTime.Spans.Add(new Span { Text = CurrentPlaylist.TotalTime.Minutes.ToString(), FontAttributes = FontAttributes.Bold, FontSize = 12 });
-            playlistTime.Spans.Add(new Span { Text = " minutes"});
+            playlistTime.Spans.Add(new Span { Text = " minutes" });
             PlaylistTime = playlistTime;
         }
 

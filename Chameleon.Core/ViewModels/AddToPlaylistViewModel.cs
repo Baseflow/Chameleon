@@ -7,7 +7,6 @@ using MvvmCross.Commands;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
-using Xamarin.Forms;
 
 namespace Chameleon.Core.ViewModels
 {
@@ -43,7 +42,7 @@ namespace Chameleon.Core.ViewModels
         }
 
         public override async Task Initialize()
-        { 
+        {
             Playlists.ReplaceWith(await _playlistService.GetPlaylists());
         }
 

@@ -1,5 +1,4 @@
-﻿using System;
-namespace Chameleon.Services.Models
+﻿namespace Chameleon.Services.Models
 {
     public class Provider
     {

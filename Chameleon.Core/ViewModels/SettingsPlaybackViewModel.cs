@@ -28,35 +28,39 @@ namespace Chameleon.Core.ViewModels
             set => SetProperty(ref _balanceLabel, value);
         }
 
-        private string _balance;
-        public string Balance
+        private double _balance;
+        public double Balance
         {
             get => _balance;
-            set => SetProperty(ref _balance, value);
+            set
+            {
+                if(SetProperty(ref _balance, value))
+                {
+                    double balance = value / 10;
+                    MediaManager.VolumeManager.Balance = (float)balance;
+                    UpdateBalanceLabel();
+                }
+            }
         }
-
-        private IMvxCommand _balanceChangedCommand;
-        public IMvxCommand BalanceChangedCommand => _balanceChangedCommand ?? (_balanceChangedCommand = new MvxCommand(UpdateBalanceLabel));
 
         private void UpdateBalanceLabel()
         {
-            var balance = Convert.ToInt32(MediaManager.VolumeManager.Balance * 10);
+            var balance = MediaManager.VolumeManager.Balance;
             var balanceString = "";
 
             if (balance == 0)
-                balanceString = "0";
+                balanceString = $"0 {GetText("Center")}";
 
             if (balance < 0)
             {
-                balance *= -1;
-                balanceString = $"+{balance.ToString()} Left";
+                balanceString = $"{balance.ToString("0.#")} {GetText("Left")}";
             }
             else if(balance > 0)
             {
-                balanceString = $"+{balance.ToString()} Right";
+                balanceString = $"+{balance.ToString("0.#")} {GetText("Right")}";
             }
 
-            Balance = balanceString;
+            BalanceLabel = balanceString;
         }
 
         public override void ViewAppearing()

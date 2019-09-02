@@ -1,9 +1,12 @@
 ﻿{
-    "Title": "Settings Playback",
-    "Playback": "Playback settings",
-    "Skip": "Skip forward/backwards in seconds",
-    "Volume": "Maximum volume",
-    "Balance": "Balance",
-    "Clear": "Clear queue on play",
-    "ScreenOn": "Keep screen on"
+  "Title": "Settings Playback",
+  "Playback": "Playback settings",
+  "Skip": "Skip forward/backwards in seconds",
+  "Volume": "Maximum volume",
+  "Balance": "Balance",
+  "Clear": "Clear queue on play",
+  "ScreenOn": "Keep screen on",
+  "Right": "Right",
+  "Center": "Center",
+  "Left": "Left"
 }

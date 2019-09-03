@@ -230,7 +230,7 @@ namespace Chameleon.Core.ViewModels
             base.ViewAppearing();
 
             var favorites = Playlists.First(x => x.Title == "Favorites");
-            if (favorites.Contains(_source))
+            if (favorites.MediaItems.Contains(_source))
             {
                 FavoriteImage = ImageSource.FromFile("playback_controls_favorite_on");
             }
@@ -315,15 +315,15 @@ namespace Chameleon.Core.ViewModels
 
         private void Favorite()
         {
-            var favorites = Playlists.First(x => x.Title == "Favorites");
-            if (favorites.Contains(_source))
+            var favorites = Playlists.FirstOrDefault(x => x.Title == "Favorites");
+            if (favorites.MediaItems.Contains(_source))
             {
-                favorites.Remove(_source);
+                favorites.MediaItems.Remove(_source);
                 FavoriteImage = ImageSource.FromFile("playback_controls_favorite_off");
             }
             else
             {
-                favorites.Add(_source);
+                favorites.MediaItems.Add(_source);
                 FavoriteImage = ImageSource.FromFile("playback_controls_favorite_on");
                 _userDialogs.Toast(GetText("Favorite"));
             }
@@ -333,7 +333,7 @@ namespace Chameleon.Core.ViewModels
         {
             if (arg != null)
             {
-                arg.Add(_source);
+                arg.MediaItems.Add(_source);
             }
             await _playlistService.SavePlaylists(Playlists);
             _userDialogs.Toast(GetText("AddedToPlaylist"));

@@ -48,7 +48,7 @@ namespace Chameleon.Core.ViewModels
 
         private async Task AddToPlaylist(IPlaylist arg)
         {
-            arg.Add(_mediaItem);
+            arg.MediaItems.Add(_mediaItem);
             await _playlistService.SavePlaylists(Playlists);
             _userDialogs.Toast(GetText("AddedToPlaylist"));
 

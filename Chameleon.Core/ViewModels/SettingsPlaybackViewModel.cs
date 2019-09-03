@@ -33,7 +33,7 @@ namespace Chameleon.Core.ViewModels
                 if (SetProperty(ref _balance, value))
                 {
                     double balance = value / 10;
-                    MediaManager.VolumeManager.Balance = (float)balance;
+                    MediaManager.Volume.Balance = (float)balance;
                     UpdateBalanceLabel();
                 }
             }
@@ -41,7 +41,7 @@ namespace Chameleon.Core.ViewModels
 
         private void UpdateBalanceLabel()
         {
-            var balance = MediaManager.VolumeManager.Balance;
+            var balance = MediaManager.Volume.Balance;
             var balanceString = "";
 
             if (balance == 0)

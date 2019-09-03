@@ -121,7 +121,7 @@ namespace Chameleon.Core.ViewModels
             if (_isInitialized)
                 await ReloadData().ConfigureAwait(false);
 
-            IsPlaying = MediaManager.MediaQueue.Count > 0;
+            IsPlaying = MediaManager.Queue.Count > 0;
 
             _isInitialized = true;
         }

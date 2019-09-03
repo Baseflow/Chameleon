@@ -50,7 +50,7 @@ namespace Chameleon.Core.ViewModels
         public override void ViewAppearing()
         {
             base.ViewAppearing();
-            MediaItems.ReplaceWith(_mediaManager.MediaQueue);
+            MediaItems.ReplaceWith(_mediaManager.Queue);
             RaisePropertyChanged(nameof(QueueTitle));
         }
     }

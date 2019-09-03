@@ -45,10 +45,10 @@ namespace Chameleon.Core.ViewModels
                 }
                 else
                 {
-                    var searchedItems = _currentPlaylist.Where(x => x.Title.ToLower().Contains(SearchText.ToLower()) || x.Album.ToLower().Contains(SearchText.ToLower()));
+                    var searchedItems = _currentPlaylist.MediaItems.Where(x => x.Title.ToLower().Contains(SearchText.ToLower()) || x.Album.ToLower().Contains(SearchText.ToLower()));
                     var playlist = new Playlist();
                     foreach (var item in searchedItems)
-                        playlist.Add(item);
+                        playlist.MediaItems.Add(item);
 
                     return playlist;
                 }
@@ -109,7 +109,7 @@ namespace Chameleon.Core.ViewModels
             CurrentPlaylist = playlist;
 
             var trackAmount = new FormattedString();
-            trackAmount.Spans.Add(new Span { Text = CurrentPlaylist.Count.ToString(), FontAttributes = FontAttributes.Bold, FontSize = 12 });
+            trackAmount.Spans.Add(new Span { Text = CurrentPlaylist.MediaItems.Count.ToString(), FontAttributes = FontAttributes.Bold, FontSize = 12 });
             trackAmount.Spans.Add(new Span { Text = " tracks" });
             TrackAmount = trackAmount;
 
@@ -124,7 +124,7 @@ namespace Chameleon.Core.ViewModels
         public override void ViewAppearing()
         {
             _mediaManager.MediaItemChanged += MediaManager_MediaItemChanged;
-            ActiveMediaItem = _mediaManager.MediaQueue.Current;
+            ActiveMediaItem = _mediaManager.Queue.Current;
             base.ViewAppearing();
         }
 
@@ -136,7 +136,7 @@ namespace Chameleon.Core.ViewModels
 
         private void MediaManager_MediaItemChanged(object sender, MediaItemEventArgs e)
         {
-            ActiveMediaItem = _mediaManager.MediaQueue.Current;
+            ActiveMediaItem = _mediaManager.Queue.Current;
         }
 
         private async Task Play(IMediaItem mediaItem)

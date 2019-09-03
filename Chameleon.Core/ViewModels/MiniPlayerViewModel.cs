@@ -41,11 +41,11 @@ namespace Chameleon.Core.ViewModels
             get
             {
                 var currentMediaItemText = new FormattedString();
-                if (MediaManager.MediaQueue.Current != null)
+                if (MediaManager.Queue.Current != null)
                 {
-                    currentMediaItemText.Spans.Add(new Span { Text = MediaManager.MediaQueue.Current.Title, FontAttributes = FontAttributes.Bold, FontSize = 12 });
+                    currentMediaItemText.Spans.Add(new Span { Text = MediaManager.Queue.Current.Title, FontAttributes = FontAttributes.Bold, FontSize = 12 });
                     currentMediaItemText.Spans.Add(new Span { Text = " • " });
-                    currentMediaItemText.Spans.Add(new Span { Text = MediaManager.MediaQueue.Current.Album, FontSize = 12 });
+                    currentMediaItemText.Spans.Add(new Span { Text = MediaManager.Queue.Current.Album, FontSize = 12 });
                 }
                 else
                     currentMediaItemText.Spans.Add(new Span { Text = "CHAMELEON" });
@@ -67,7 +67,7 @@ namespace Chameleon.Core.ViewModels
         {
             get
             {
-                var currentlyPlaying = MediaManager.MediaQueue.Current;
+                var currentlyPlaying = MediaManager.Queue.Current;
                 if (currentlyPlaying != null)
                     return currentlyPlaying;
                 else

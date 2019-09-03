@@ -53,7 +53,7 @@ namespace Chameleon.Core.Helpers
                 {
                     config.Add(GetText("RemoveFromQueue"), () =>
                     {
-                        _mediaManager.MediaQueue.Remove(mediaItem);
+                        _mediaManager.Queue.Remove(mediaItem);
                         _userDialogs.Toast(GetText("ItemRemovedFromQueue"));
                     }, "remove_from_queue");
                 }
@@ -61,7 +61,7 @@ namespace Chameleon.Core.Helpers
                 {
                     config.Add(GetText("AddToQueue"), () =>
                     {
-                        _mediaManager.MediaQueue.Add(mediaItem);
+                        _mediaManager.Queue.Add(mediaItem);
                         _userDialogs.Toast(GetText("ItemAddedToQueue"));
                     }, "add_to_queue");
                 }

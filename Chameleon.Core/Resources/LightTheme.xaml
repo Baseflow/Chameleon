@@ -22,15 +22,13 @@
 
         <Color x:Key="PrimaryColor"></Color>
         <Color x:Key="SecondaryColor"></Color>
+
         <Color x:Key="PrimaryTextColor">Black</Color>
         <Color x:Key="SecondaryTextColor">#FF6C6E81</Color>
         <Color x:Key="TertiaryTextColor"></Color>
-
-
         <Color x:Key="CharcoalGrey">#30313C</Color>
 
         <Color x:Key="TabBarColor">#393A47</Color>
-        <Color x:Key="BackgroundColor">#FFFFFF</Color>
 
         <Color x:Key="LabelTextColor">#FF6C6E81</Color>
         <Color x:Key="SeparatorColor">#FFFFFFF</Color>

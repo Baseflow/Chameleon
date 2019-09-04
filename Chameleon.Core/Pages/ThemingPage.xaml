@@ -30,7 +30,7 @@
             Intent="Settings"
             BackgroundColor="{DynamicResource BackgroundColor}"
             HasUnevenRows="True"
-            SeparatorColor="{StaticResource SeparatorColor}">
+            SeparatorColor="{DynamicResource SeparatorColor}">
             <TableRoot>
                 <TableSection>
                     <ViewCell>

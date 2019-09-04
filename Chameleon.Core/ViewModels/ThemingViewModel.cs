@@ -61,19 +61,22 @@ namespace Chameleon.Core.ViewModels
             }
         }
 
-        public enum Themes
-        {
-            Light,
-            Dark
-        }
+        //public enum Themes
+        //{
+        //    Light,
+        //    Dark
+        //}
 
         public override void ViewAppearing()
         {
             base.ViewAppearing();
             //Resources.DarkTheme;
 
-             
-            if (Themes.)
+            //var AppRequestedTheme = App.Current.RequestedTheme;
+            //if (AppRequestedTheme == "Light")
+            resources = new Xamarin.Forms.ResourceDictionary .DarkThemeResources();
+            if (Resources.GetType() == typeof(DarkThemeResources))
+                if (true)
             {
                 FavoriteImage = ImageSource.FromFile("playback_controls_favorite_off");
             }

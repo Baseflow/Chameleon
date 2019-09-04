@@ -13,7 +13,6 @@ namespace Chameleon.Core.ViewModels
     {
         public ThemingViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService) : base(logProvider, navigationService)
         {
-
         }
 
         private ImageSource _themeDarkImage = ImageSource.FromFile("theme_dark");
@@ -36,7 +35,7 @@ namespace Chameleon.Core.ViewModels
         private IMvxCommand _themeLightCommand;
         public IMvxCommand ThemeLigthCommand => _themeLightCommand ?? (_themeLightCommand = new MvxCommand(ThemeLight));
 
-        private async void ThemeDark()
+        private void ThemeDark()
         {
             ICollection<ResourceDictionary> mergedDictionaries = Application.Current.Resources.MergedDictionaries;
             if (mergedDictionaries != null)
@@ -45,7 +44,7 @@ namespace Chameleon.Core.ViewModels
 
                 mergedDictionaries.Add(new DarkTheme());
                 ThemeDarkImage = ImageSource.FromFile("theme_dark_on");
-                await RaisePropertyChanged();
+                RaisePropertyChanged();
             }
         }
 
@@ -57,14 +56,10 @@ namespace Chameleon.Core.ViewModels
                 mergedDictionaries.Clear();
 
                 mergedDictionaries.Add(new LightTheme());
-                ThemeDarkImage = ImageSource.FromFile("theme_light_on");
+                ThemeLightImage = ImageSource.FromFile("theme_light_on");
                 RaiseAllPropertiesChanged();
             }
         }
-
-        //private IMvxCommand _changeThemeCommand;
-        //public IMvxCommand ChangeThemeCommand => _changeThemeCommand ?? (_changeThemeCommand = new MvxCommand(ChangeTheme));
-
 
         public enum Themes
         {
@@ -72,8 +67,23 @@ namespace Chameleon.Core.ViewModels
             Dark
         }
 
+        public override void ViewAppearing()
+        {
+            base.ViewAppearing();
+            //Resources.DarkTheme;
 
-        
+             
+            if (Themes.)
+            {
+                FavoriteImage = ImageSource.FromFile("playback_controls_favorite_off");
+            }
+            else
+            {
+                FavoriteImage = ImageSource.FromFile("playback_controls_favorite_on");
+            }
+        }
+
+
 
     }
 }

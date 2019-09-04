@@ -11,12 +11,13 @@
     </ResourceDictionary.MergedDictionaries>
 
     <ResourceDictionary>
-                <Color x:Key="Black">#000000</Color>
+        <Color x:Key="Black">#000000</Color>
         <Color x:Key="White">#FFFFFF</Color>
         <Color x:Key="White_30">#4DFFFFFF</Color>
         <Color x:Key="White_70">#B3FFFFFF</Color>
 
-        <Color x:Key="PageBackgroundColor">White</Color>
+        <Color x:Key="BackgroundColor">#FFFFFF</Color>
+
         <Color x:Key="NavigationBarColor">White</Color>
 
         <Color x:Key="PrimaryColor"></Color>
@@ -32,8 +33,7 @@
         <Color x:Key="BackgroundColor">#FFFFFF</Color>
 
         <Color x:Key="LabelTextColor">#FF6C6E81</Color>
-        <Color x:Key="BackgroundColorAddToPlaylist">#ecedf4</Color>
-        <Color x:Key="SeparatorColor">#30313C</Color>
+        <Color x:Key="SeparatorColor">#FFFFFFF</Color>
         <Color x:Key="MinimumTrackColor">#FFF14431</Color>
     </ResourceDictionary>
 
@@ -341,4 +341,4 @@
         <Setter Property="TextColor"
                 Value="#FFE3E5F6" />
     </Style>
- </ResourceDictionary>
+</ResourceDictionary>

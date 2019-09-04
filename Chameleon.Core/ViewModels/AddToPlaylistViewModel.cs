@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using Acr.UserDialogs;
 using Chameleon.Services.Services;
+using MediaManager;
 using MediaManager.Library;
 using MvvmCross.Commands;
 using MvvmCross.Logging;
@@ -12,13 +13,13 @@ namespace Chameleon.Core.ViewModels
 {
     public class AddToPlaylistViewModel : BaseViewModel<IMediaItem>
     {
-        private readonly IPlaylistService _playlistService;
         private readonly IUserDialogs _userDialogs;
+        private readonly IMediaManager _mediaManager;
 
-        public AddToPlaylistViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IUserDialogs userDialogs, IPlaylistService playlistService) : base(logProvider, navigationService)
+        public AddToPlaylistViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IUserDialogs userDialogs, IMediaManager mediaManager) : base(logProvider, navigationService)
         {
-            _playlistService = playlistService ?? throw new ArgumentNullException(nameof(playlistService));
             _userDialogs = userDialogs ?? throw new ArgumentNullException(nameof(userDialogs));
+            _mediaManager = mediaManager;
         }
 
         private IMediaItem _mediaItem { get; set; }
@@ -41,31 +42,32 @@ namespace Chameleon.Core.ViewModels
             }
         }
 
+        public override void Prepare(IMediaItem parameter)
+        {
+            _mediaItem = parameter;
+        }
+
         public override async Task Initialize()
         {
-            Playlists.ReplaceWith(await _playlistService.GetPlaylists());
+            Playlists.ReplaceWith(await _mediaManager.Library.GetAll<IPlaylist>());
         }
 
         private async Task AddToPlaylist(IPlaylist arg)
         {
             arg.MediaItems.Add(_mediaItem);
-            await _playlistService.SavePlaylists(Playlists);
+            await _mediaManager.Library.AddOrUpdate<IPlaylist>(arg);
             _userDialogs.Toast(GetText("AddedToPlaylist"));
 
             await NavigationService.Close(this);
-        }
-
-        public override void Prepare(IMediaItem parameter)
-        {
-            _mediaItem = parameter;
         }
 
         private async Task AddPlaylist()
         {
             if (!string.IsNullOrEmpty(PlaylistName))
             {
-                Playlists.Add(new Playlist() { Title = PlaylistName });
-                await _playlistService.SavePlaylists(Playlists);
+                var playlist = new Playlist() { Title = PlaylistName };
+                Playlists.Add(playlist);
+                await _mediaManager.Library.AddOrUpdate<IPlaylist>(playlist);
                 PlaylistName = string.Empty;
             }
             else

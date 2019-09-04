@@ -4,7 +4,7 @@ using MediaManager.Library;
 
 namespace Chameleon.Services.Services
 {
-    public interface IPlaylistService
+   /* public interface IPlaylistService
     {
         Task<IList<IPlaylist>> GetPlaylists();
 
@@ -13,5 +13,5 @@ namespace Chameleon.Services.Services
         // Task SavePlaylist(IPlaylist playlist);
 
         Task SavePlaylists(IList<IPlaylist> playlists);
-    }
+    }*/
 }

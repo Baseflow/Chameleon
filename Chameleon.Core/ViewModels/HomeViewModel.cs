@@ -16,15 +16,13 @@ namespace Chameleon.Core.ViewModels
     public class HomeViewModel : BaseViewModel
     {
         private readonly IUserDialogs _userDialogs;
-        private readonly IPlaylistService _playlistService;
         private readonly IBrowseService _browseService;
 
         public IMediaManager MediaManager { get; }
 
-        public HomeViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IUserDialogs userDialogs, IPlaylistService playlistService, IBrowseService browseService, IMediaManager mediaManager) : base(logProvider, navigationService)
+        public HomeViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IUserDialogs userDialogs, IBrowseService browseService, IMediaManager mediaManager) : base(logProvider, navigationService)
         {
             _userDialogs = userDialogs ?? throw new ArgumentNullException(nameof(userDialogs));
-            _playlistService = playlistService ?? throw new ArgumentNullException(nameof(playlistService));
             _browseService = browseService ?? throw new ArgumentNullException(nameof(browseService));
 
             MediaManager = mediaManager ?? throw new ArgumentNullException(nameof(mediaManager));
@@ -146,7 +144,7 @@ namespace Chameleon.Core.ViewModels
             //if (recentMedia != null)
             //    RecentlyPlayedItems.ReplaceWith(recentMedia);
 
-            var playlists = await _playlistService.GetPlaylists().ConfigureAwait(false);
+            var playlists = await MediaManager.Library.GetAll<IPlaylist>().ConfigureAwait(false);
             if (playlists != null)
                 Playlists.ReplaceWith(playlists);
 
@@ -200,8 +198,9 @@ namespace Chameleon.Core.ViewModels
             var result = await _userDialogs.PromptAsync(config);
             if (result.Ok && !string.IsNullOrEmpty(result.Value))
             {
-                Playlists.Add(new Playlist() { Title = result.Value });
-                await _playlistService.SavePlaylists(Playlists);
+                var playlist = new Playlist() { Title = result.Value };
+                Playlists.Add(playlist);
+                await MediaManager.Library.AddOrUpdate<IPlaylist>(playlist);
             }
 
             await ReloadData();

@@ -115,6 +115,7 @@ namespace Chameleon.Core.Helpers
         {
             if (await _userDialogs.ConfirmAsync(GetText("SureToDelete")))
             {
+                await _mediaManager.Library.Remove<IPlaylist>(playlist);
                 _userDialogs.Toast(GetText("PlaylistDeleted"));
             }
         }
@@ -127,7 +128,7 @@ namespace Chameleon.Core.Helpers
             if (result.Ok && !string.IsNullOrEmpty(result.Value))
             {
                 playlist.Title = result.Value;
-                //TODO: Save
+                await _mediaManager.Library.AddOrUpdate<IPlaylist>(playlist);
                 _userDialogs.Toast(GetText("RenameSuccessful"));
             }
         }

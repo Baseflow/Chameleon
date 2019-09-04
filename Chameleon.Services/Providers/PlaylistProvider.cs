@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LiteDB;
 using MediaManager.Library;
 using MediaManager.Media;
 using MonkeyCache;
@@ -17,21 +19,36 @@ namespace Chameleon.Services.Providers
             _barrel = barrel ?? throw new ArgumentNullException(nameof(barrel));
         }
 
-        public Task<bool> AddOrUpdate(IPlaylist item)
+        public async Task<bool> AddOrUpdate(IPlaylist item)
         {
-            _barrel.Add(item.Id, item, TimeSpan.MaxValue);
-            return Task.FromResult(true);
+            var items = (await GetAll())?.ToList();
+            var playlist = items?.FirstOrDefault(x => x.Id == item.Id);
+            if (playlist == null)
+                items.Add(item);
+            else
+            {
+                var index = items.IndexOf(playlist);
+                items.RemoveAt(index);
+                items.Insert(index, item);
+            }
+
+            _barrel.Add("playlists", items, TimeSpan.MaxValue);
+            return true;
         }
 
-        public Task<IPlaylist> Get(string id)
+        public async Task<IPlaylist> Get(string id)
         {
-            var item = _barrel.Get<IPlaylist>(id);
-            return Task.FromResult(item);
+            var items = await GetAll();
+            return items.FirstOrDefault(x => x.Id == id);
         }
 
         public Task<IEnumerable<IPlaylist>> GetAll()
         {
-            throw new NotImplementedException();
+            if(!_barrel.Exists("playlists"))
+                _barrel.Add<IEnumerable<IPlaylist>>("playlists", new List<IPlaylist>(), TimeSpan.MaxValue);
+
+            var items = _barrel.Get<IEnumerable<IPlaylist>>("playlists");
+            return Task.FromResult(items);
         }
 
         public Task<bool> Remove(IPlaylist item)

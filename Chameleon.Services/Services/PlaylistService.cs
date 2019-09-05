@@ -7,7 +7,7 @@ using MonkeyCache;
 
 namespace Chameleon.Services.Services
 {
-    public class PlaylistService : IPlaylistService
+    /*public class PlaylistService : IPlaylistService
     {
         private readonly IBarrel _barrel;
 
@@ -32,7 +32,7 @@ namespace Chameleon.Services.Services
                         /*var mediaItem = await CrossMediaManager.Current.MediaExtractor.CreateMediaItem(sample.Uri);
                         mediaItem.Title = sample.Name;
                         mediaItem.Album = item.Name;
-                        mediaItem.FileExtension = sample.Extension ?? "";*/
+                        mediaItem.FileExtension = sample.Extension ?? "";
 
                         var mediaItem = new MediaItem(sample.Uri)
                         {
@@ -74,5 +74,5 @@ namespace Chameleon.Services.Services
             _barrel.Add("playlists", playlists, TimeSpan.MaxValue);
             return Task.CompletedTask;
         }
-    }
+    }*/
 }

@@ -16,15 +16,13 @@ namespace Chameleon.Core.ViewModels
     public class PlaylistViewModel : BaseViewModel<IPlaylist>
     {
         private readonly IUserDialogs _userDialogs;
-        private readonly IPlaylistService _playlistService;
         private IMediaManager _mediaManager;
 
-        public PlaylistViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IUserDialogs userDialogs, IMediaManager mediaManager, IPlaylistService playlistService)
+        public PlaylistViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IUserDialogs userDialogs, IMediaManager mediaManager)
             : base(logProvider, navigationService)
         {
             _userDialogs = userDialogs ?? throw new ArgumentNullException(nameof(userDialogs));
             _mediaManager = mediaManager ?? throw new ArgumentNullException(nameof(mediaManager));
-            _playlistService = playlistService ?? throw new ArgumentNullException(nameof(playlistService));
         }
 
         private IMediaItem _selectedMediaItem;
@@ -105,7 +103,6 @@ namespace Chameleon.Core.ViewModels
 
         public override void Prepare(IPlaylist playlist)
         {
-
             CurrentPlaylist = playlist;
 
             var trackAmount = new FormattedString();
@@ -147,7 +144,7 @@ namespace Chameleon.Core.ViewModels
 
         private async Task StartPlaylist()
         {
-            await _mediaManager.Play(CurrentPlaylist);
+            await _mediaManager.Play(CurrentPlaylist.MediaItems);
         }
     }
 }

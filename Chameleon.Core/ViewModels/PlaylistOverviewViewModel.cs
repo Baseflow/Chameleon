@@ -14,12 +14,12 @@ namespace Chameleon.Core.ViewModels
     public class PlaylistOverviewViewModel : BaseViewModel
     {
         private readonly IUserDialogs _userDialogs;
-        private readonly IPlaylistService _playlistService;
+        private readonly IMediaManager _mediaManager;
 
-        public PlaylistOverviewViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IUserDialogs userDialogs, IMediaManager mediaManager, IPlaylistService playlistService) : base(logProvider, navigationService)
+        public PlaylistOverviewViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IUserDialogs userDialogs, IMediaManager mediaManager) : base(logProvider, navigationService)
         {
             _userDialogs = userDialogs ?? throw new ArgumentNullException(nameof(userDialogs));
-            _playlistService = playlistService ?? throw new ArgumentNullException(nameof(playlistService));
+            _mediaManager = mediaManager ?? throw new ArgumentNullException(nameof(mediaManager));
         }
 
         public MvxObservableCollection<IPlaylist> Playlists { get; set; } = new MvxObservableCollection<IPlaylist>();
@@ -37,8 +37,9 @@ namespace Chameleon.Core.ViewModels
             var result = await _userDialogs.PromptAsync(config);
             if (result.Ok && !string.IsNullOrEmpty(result.Value))
             {
-                Playlists.Add(new Playlist() { Title = result.Value });
-                await _playlistService.SavePlaylists(Playlists);
+                var playlist = new Playlist() { Title = result.Value };
+                Playlists.Add(playlist);
+                await _mediaManager.Library.AddOrUpdate<IPlaylist>(playlist);
             }
         }
 
@@ -51,22 +52,11 @@ namespace Chameleon.Core.ViewModels
 
         public override async Task Initialize()
         {
-            await LoadData();
-        }
-
-        private async Task OpenPlaylist(IPlaylist arg)
-        {
-            await NavigationService.Navigate<PlaylistViewModel, IPlaylist>(SelectedItem);
-            SelectedItem = null;
-        }
-
-        private async Task LoadData()
-        {
             IsLoading = true;
 
             try
             {
-                Playlists.ReplaceWith(await _playlistService.GetPlaylists());
+                Playlists.ReplaceWith(await _mediaManager.Library.GetAll<IPlaylist>());
             }
             catch (Exception ex)
             {
@@ -74,6 +64,12 @@ namespace Chameleon.Core.ViewModels
             }
 
             IsLoading = false;
+        }
+
+        private async Task OpenPlaylist(IPlaylist arg)
+        {
+            await NavigationService.Navigate<PlaylistViewModel, IPlaylist>(arg);
+            SelectedItem = null;
         }
     }
 }

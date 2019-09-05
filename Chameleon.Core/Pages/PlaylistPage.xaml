@@ -95,7 +95,7 @@
             
             <CollectionView x:Name="PlaylistItems"
                             mvx:Bi.nd="
-                                ItemsSource CurrentPlaylist;
+                                ItemsSource CurrentPlaylist.MediaItems;
                                 SelectionChangedCommand PlayerCommand;
                                 SelectionChangedCommandParameter SelectedMediaItem;
                                 SelectedItem SelectedMediaItem"

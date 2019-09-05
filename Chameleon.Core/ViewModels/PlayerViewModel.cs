@@ -19,13 +19,11 @@ namespace Chameleon.Core.ViewModels
     public class PlayerViewModel : BaseViewModel<IMediaItem>
     {
         public IMediaManager MediaManager { get; }
-        private readonly IPlaylistService _playlistService;
         private readonly IUserDialogs _userDialogs;
 
-        public PlayerViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IUserDialogs userDialogs, IMediaManager mediaManager, IPlaylistService playlistService) : base(logProvider, navigationService)
+        public PlayerViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IUserDialogs userDialogs, IMediaManager mediaManager) : base(logProvider, navigationService)
         {
             MediaManager = mediaManager ?? throw new ArgumentNullException(nameof(mediaManager));
-            _playlistService = playlistService ?? throw new ArgumentNullException(nameof(playlistService));
             _userDialogs = userDialogs ?? throw new ArgumentNullException(nameof(userDialogs));
         }
 
@@ -335,7 +333,8 @@ namespace Chameleon.Core.ViewModels
             {
                 arg.MediaItems.Add(_source);
             }
-            await _playlistService.SavePlaylists(Playlists);
+            await MediaManager.Library.AddOrUpdate<IPlaylist>(arg);
+
             _userDialogs.Toast(GetText("AddedToPlaylist"));
 
             await NavigationService.Close(this);

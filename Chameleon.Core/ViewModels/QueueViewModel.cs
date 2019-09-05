@@ -18,7 +18,7 @@ namespace Chameleon.Core.ViewModels
         private readonly IMediaManager _mediaManager;
 
         public QueueViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService,
-                                IUserDialogs userDialogs, IMediaManager mediaManager, IPlaylistService playlistService)
+                                IUserDialogs userDialogs, IMediaManager mediaManager)
             : base(logProvider, navigationService)
         {
             _userDialogs = userDialogs ?? throw new ArgumentNullException(nameof(userDialogs));

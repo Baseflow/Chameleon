@@ -18,7 +18,6 @@
     
     <ContentPage.Content >
         <core:MvxListView
-            BackgroundColor="{DynamicResource BackgroundColor}"
             ItemsSource="{mvx:MvxBind RecentlyPlayedItems}"
             SelectionMode="Single"
             RowHeight="60"

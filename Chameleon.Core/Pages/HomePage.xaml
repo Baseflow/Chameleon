@@ -102,7 +102,7 @@
                                 HeightRequest="154"
                                 IsClippedToBounds="True"
                                 HorizontalOptions="FillAndExpand"
-                                BackgroundColor="#FF252525"
+                                BackgroundColor="{DynamicResource SecondaryColor}"
                                 VerticalOptions="FillAndExpand"
                                 Elevation="2">
                                 <pan:PancakeView.HasShadow>
@@ -114,13 +114,11 @@
                                 <AbsoluteLayout>
                                     <Label
                                         Text="{Binding Source={x:Reference Name=homePage}, Path=BindingContext.DataContext.AddPlaylistLabel}"
-                                        FontSize="14"
-                                        FontAttributes="Bold"
+                                        Style="{StaticResource Header2}"
                                         HorizontalTextAlignment="Center"
                                         VerticalTextAlignment="End"
                                         AbsoluteLayout.LayoutFlags="PositionProportional"
-                                        AbsoluteLayout.LayoutBounds=".5,.9,AutoSize,AutoSize"
-                                        TextColor="White">
+                                        AbsoluteLayout.LayoutBounds=".5,.9,AutoSize,AutoSize">
                                         <Label.GestureRecognizers>
                                             <TapGestureRecognizer Command="{Binding Source={x:Reference Name=homePage}, Path=BindingContext.DataContext.AddPlaylistCommand}"/>
                                         </Label.GestureRecognizers>
@@ -131,7 +129,7 @@
                                         AbsoluteLayout.LayoutBounds=".5,.5,1,1"
                                         Padding="50"
                                         Opacity="0.3"
-                                        BackgroundColor="#FF252525"
+                                        BackgroundColor="{DynamicResource SecondaryColor}"
                                         Command="{Binding Source={x:Reference Name=homePage}, Path=BindingContext.DataContext.AddPlaylistCommand}"
                                         Source="icon_plus" />
                                 </AbsoluteLayout>

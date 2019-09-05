@@ -67,24 +67,24 @@ namespace Chameleon.Core.ViewModels
         //    Dark
         //}
 
-        public override void ViewAppearing()
-        {
-            base.ViewAppearing();
-            //Resources.DarkTheme;
+        //public override void ViewAppearing()
+        //{
+        //    base.ViewAppearing();
+        //    //Resources.DarkTheme;
 
-            //var AppRequestedTheme = App.Current.RequestedTheme;
-            //if (AppRequestedTheme == "Light")
-            resources = new Xamarin.Forms.ResourceDictionary .DarkThemeResources();
-            if (Resources.GetType() == typeof(DarkThemeResources))
-                if (true)
-            {
-                FavoriteImage = ImageSource.FromFile("playback_controls_favorite_off");
-            }
-            else
-            {
-                FavoriteImage = ImageSource.FromFile("playback_controls_favorite_on");
-            }
-        }
+        //    //var AppRequestedTheme = App.Current.RequestedTheme;
+        //    //if (AppRequestedTheme == "Light")
+        //    resources = new Xamarin.Forms.ResourceDictionary .DarkThemeResources();
+        //    if (Resources.GetType() == typeof(DarkThemeResources))
+        //        if (true)
+        //    {
+        //        FavoriteImage = ImageSource.FromFile("playback_controls_favorite_off");
+        //    }
+        //    else
+        //    {
+        //        FavoriteImage = ImageSource.FromFile("playback_controls_favorite_on");
+        //    }
+        //}
 
 
 

@@ -27,9 +27,9 @@
     <ContentPage.Content>
         <coloredTableView:ColoredTableView
             Intent="Settings"
-            BackgroundColor="{StaticResource BackgroundColor}"
+            BackgroundColor="{DynamicResource BackgroundColor}"
             HasUnevenRows="True"
-            SeparatorColor="{StaticResource SeparatorColor}">
+            SeparatorColor="{DynamicResource SeparatorColor}">
             <TableRoot>
                 <TableSection>
                     <ViewCell BindingContext="{Binding .}" IsEnabled="False">

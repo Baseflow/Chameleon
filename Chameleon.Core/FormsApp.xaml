@@ -8,7 +8,7 @@
              x:Class="Chameleon.Core.FormsApp">
     <Application.Resources>
         <ResourceDictionary>
-           <ResourceDictionary Source="Resources/LightTheme.xaml" />
+           <ResourceDictionary Source="Resources/DarkTheme.xaml" />
             <ResourceDictionary.MergedDictionaries>
                 <styles:Styles />
                 <styles:Colors />

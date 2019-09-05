@@ -7,7 +7,7 @@
     x:Class="Chameleon.Core.Templates.AddToPlaylistItemTemplate">
     <ContentView.Content>
         <Grid Margin="5"
-              BackgroundColor="{StaticResource BackgroundColor}">
+              BackgroundColor="{DynamicResource BackgroundColor}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />

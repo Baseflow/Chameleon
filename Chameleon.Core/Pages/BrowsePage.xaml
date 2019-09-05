@@ -16,7 +16,7 @@
         <ToolbarItem IconImageSource="icon_plus" Order="Primary" mvx:Bi.nd="Command AddCommand"/>
     </ContentPage.ToolbarItems>
     
-    <ContentPage.Content>
+    <ContentPage.Content >
         <core:MvxListView
             BackgroundColor="{StaticResource BackgroundColor}"
             ItemsSource="{mvx:MvxBind RecentlyPlayedItems}"

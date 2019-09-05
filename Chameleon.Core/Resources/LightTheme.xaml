@@ -25,7 +25,7 @@
 
         <Color x:Key="PrimaryTextColor">#000000</Color>
         <Color x:Key="SecondaryTextColor">#FF6C6E81</Color>
-        <Color x:Key="TertiaryTextColor">#FF505050"</Color>
+        <Color x:Key="TertiaryTextColor">#F505050"</Color>
         <Color x:Key="QuaternaryTextColor">#4D000000</Color>
         <Color x:Key="QuinaryTextColor">#B3000000</Color>
 

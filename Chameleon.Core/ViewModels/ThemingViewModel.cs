@@ -6,6 +6,7 @@ using Xamarin.Forms;
 using System;
 using System.Collections.Generic;
 using Chameleon.Core.Resources;
+using System.Linq;
 
 namespace Chameleon.Core.ViewModels
 {
@@ -37,61 +38,45 @@ namespace Chameleon.Core.ViewModels
 
         private void ThemeDark()
         {
-            //Application.Current.Resources.Source = new Uri("Resources/DarkTheme.xaml");
-
-            /*ICollection<ResourceDictionary> mergedDictionaries = Application.Current.Resources.MergedDictionaries;
-            if (mergedDictionaries != null)
-            {
-                mergedDictionaries.Clear();
-
-                mergedDictionaries.Add(new DarkTheme());
-                ThemeDarkImage = ImageSource.FromFile("theme_dark_on");
-                RaiseAllPropertiesChanged();
-            }*/
             Application.Current.Resources.Clear();
             var style = new Styles();
             style.MergedDictionaries.Add(new DarkColors());
 
             Application.Current.Resources = style;
-            RaiseAllPropertiesChanged();
 
+            ThemeDarkImage = ImageSource.FromFile("theme_dark_on");
+            ThemeLightImage = ImageSource.FromFile("theme_light");
         }
 
         private void ThemeLight()
         {
-            //Application.Current.Resources.Source = new Uri("Resources/LightTheme.xaml");
-            /*
-            ICollection<ResourceDictionary> mergedDictionaries = Application.Current.Resources.MergedDictionaries;
-            if (mergedDictionaries != null)
-            {
-                mergedDictionaries.Clear();
-
-                mergedDictionaries.Add(new LightTheme());
-                ThemeLightImage = ImageSource.FromFile("theme_light_on");
-                RaiseAllPropertiesChanged();
-            }*/
             Application.Current.Resources.Clear();
             var style = new Styles();
             style.MergedDictionaries.Add(new LightColors());
 
             Application.Current.Resources = style;
-            RaiseAllPropertiesChanged();
 
+            ThemeLightImage = ImageSource.FromFile("theme_light_on");
+
+            ThemeDarkImage = ImageSource.FromFile("theme_dark");
         }
 
 
-        //public enum Themes
-        //{
-        //    Light,
-        //    Dark
-        //}
 
         //public override void ViewAppearing()
         //{
         //    base.ViewAppearing();
 
+        //    ResourceDictionary Source = MergedDictionaries("Resources/LightTheme.xaml");
+
+        //    Application.Current.Resources;
+
+        //    Application.Current.Resources
+
+                
+
         //    var AppRequestedTheme = Application.Current.Resources.MergedDictionaries;
-        //    if (DarkTheme == AppRequestedTheme)
+        //    if (AppRequestedTheme == DarkColors)
         //        resources = new Xamarin.Forms.ResourceDictionary.DarkThemeResources();
         //    if (ThemeDark())
         //        if (true)

@@ -27,7 +27,7 @@
 
     <ContentPage.Content>
         <core:MvxListView
-            BackgroundColor="{DynamicResource BackgroundColor}"
+            BackgroundColor="{DynamicResource PrimaryColor}"
             ItemsSource="{mvx:MvxBind Providers}"
             SelectionMode="Single"
             ItemClick="{mvx:MvxBind SourceCommand}"

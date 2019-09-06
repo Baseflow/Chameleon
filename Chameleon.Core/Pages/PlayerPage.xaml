@@ -16,7 +16,7 @@
     x:TypeArguments="viewModels:PlayerViewModel"
     x:Class="Chameleon.Core.Views.PlayerPage"
     NavigationPage.HasNavigationBar="True"
-    BackgroundColor="{DynamicResource BackgroundColor}">
+    BackgroundColor="{DynamicResource PrimaryColor}">
     <NavigationPage.TitleView>
         <Grid>
             <Grid.RowDefinitions>

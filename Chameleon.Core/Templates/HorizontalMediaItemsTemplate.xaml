@@ -7,7 +7,7 @@
     x:Class="Chameleon.Core.Templates.HorizontalMediaItemsTemplate">
     <ContentView.Content>
         <Grid Margin="12" Padding="12"
-              BackgroundColor="{DynamicResource BackgroundColor}">
+              BackgroundColor="{DynamicResource PrimaryColor}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="154"/>
                 <RowDefinition Height="auto"/>

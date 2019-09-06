@@ -8,15 +8,18 @@
     xmlns:controls="clr-namespace:Chameleon.Core.Controls"
     x:Class="Chameleon.Core.Templates.MediaItemTemplate">
     <ContentView.Content>
-        <Grid Margin="24,5" RowSpacing="0" ColumnSpacing="12" VerticalOptions="Center">
+        <Grid Margin="24,5"
+              RowSpacing="0"
+              ColumnSpacing="12"
+              VerticalOptions="Center">
             <Grid.RowDefinitions>
-                <RowDefinition Height="28"/>
-                <RowDefinition Height="28"/>
+                <RowDefinition Height="28" />
+                <RowDefinition Height="28" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="56"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="28"/>
+                <ColumnDefinition Width="56" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="28" />
             </Grid.ColumnDefinitions>
             <pan:PancakeView
                 CornerRadius="3"
@@ -25,15 +28,15 @@
                 Grid.Column="0"
                 Grid.RowSpan="2">
                 <pan:PancakeView.HasShadow>
-                  <OnPlatform x:TypeArguments="x:Boolean"
-                              iOS="False"
-                              Android="True" />
+                    <OnPlatform x:TypeArguments="x:Boolean"
+                                iOS="False"
+                                Android="True" />
                 </pan:PancakeView.HasShadow>
                 <Image
                     HorizontalOptions="Center"
                     VerticalOptions="Center"
                     Aspect="AspectFill"
-                    Source="cover_art_placeholder"/>
+                    Source="cover_art_placeholder" />
             </pan:PancakeView>
             <Label
                 mvx:Bi.nd="Text Title"
@@ -58,7 +61,7 @@
                 Grid.Column="2"
                 Grid.RowSpan="2"
                 HorizontalOptions="End"
-                BackgroundColor="Transparent"/>
+                BackgroundColor="Transparent" />
         </Grid>
     </ContentView.Content>
 </ContentView>

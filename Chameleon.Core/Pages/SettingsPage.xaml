@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <core:MvxContentPage
-    xmlns:core="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms" 
+    xmlns:core="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
     xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -12,13 +12,13 @@
     mc:Ignorable="d"
     x:TypeArguments="viewModels:SettingsViewModel"
     x:Class="Chameleon.Core.Views.SettingsPage"
-    mvx:La.ng="Title Title" >
+    mvx:La.ng="Title Title">
 
     <ContentPage.Content>
         <coloredTableView:ColoredTableView
-                  Intent="Settings"
-                  HasUnevenRows="True"
-                  SeparatorColor="{DynamicResource PrimaryColor}">
+            Intent="Settings"
+            HasUnevenRows="True"
+            SeparatorColor="{DynamicResource PrimaryColor}">
             <TableRoot>
                 <TableSection>
                     <ViewCell Tapped="ViewCell_TappedPlaybackSettings">
@@ -27,11 +27,16 @@
                                 <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
-                            <Label mvx:La.ng="Text PlaybackSettings" Style="{StaticResource MediaItemTitle}" Grid.Column="0"/>
-                            <Image Source="disclosure_button" HorizontalOptions="End" BackgroundColor="Transparent" Grid.Column="1"/>
+                            <Label mvx:La.ng="Text PlaybackSettings"
+                                   Style="{StaticResource MediaItemTitle}"
+                                   Grid.Column="0" />
+                            <Image Source="disclosure_button"
+                                   HorizontalOptions="End"
+                                   BackgroundColor="Transparent"
+                                   Grid.Column="1" />
                         </Grid>
                     </ViewCell>
                     <ViewCell Tapped="ViewCell_TappedTheming">
@@ -40,11 +45,16 @@
                                 <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
-                            <Label mvx:La.ng="Text Theming" Style="{StaticResource MediaItemTitle}" Grid.Column="0"/>
-                            <Image Source="disclosure_button" HorizontalOptions="End" BackgroundColor="Transparent" Grid.Column="1"/>
+                            <Label mvx:La.ng="Text Theming"
+                                   Style="{StaticResource MediaItemTitle}"
+                                   Grid.Column="0" />
+                            <Image Source="disclosure_button"
+                                   HorizontalOptions="End"
+                                   BackgroundColor="Transparent"
+                                   Grid.Column="1" />
                         </Grid>
                     </ViewCell>
                     <!--<ViewCell >
@@ -66,14 +76,20 @@
                                 <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
-                            <Label mvx:La.ng="Text OpenSourceSoftware" Style="{StaticResource MediaItemTitle}" Grid.Column="0"/>
-                            <Image Source="disclosure_button" HorizontalOptions="End" BackgroundColor="Transparent" Grid.Column="1"/>
+                            <Label mvx:La.ng="Text OpenSourceSoftware"
+                                   Style="{StaticResource MediaItemTitle}"
+                                   Grid.Column="0" />
+                            <Image Source="disclosure_button"
+                                   HorizontalOptions="End"
+                                   BackgroundColor="Transparent"
+                                   Grid.Column="1" />
                         </Grid>
                     </ViewCell>
-                    <ViewCell IsEnabled="True" BindingContext="{Binding .}" >
+                    <ViewCell IsEnabled="True"
+                              BindingContext="{Binding .}">
                         <Grid Margin="15,15">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
@@ -81,10 +97,24 @@
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
-                            <Image Source="powered_by_baseflow_logo" Margin="10,0,0,10" HorizontalOptions="Start" Grid.Row="0"/>
-                            <Label mvx:La.ng="Text PowerdByText" Style="{StaticResource PowerdByText}" Margin="10,0,10,25" Grid.Row="1"/>
-                            <Button mvx:La.ng="Text FindUsOnGithub" mvx:Bi.nd="Command GithubCommand" Style="{DynamicResource PrimaryButton}"  Margin="0,0,0,10" Grid.Row="2"/>
-                            <Button mvx:La.ng="Text VisitBaseflow" mvx:Bi.nd="Command BaseflowCommand" Style="{DynamicResource PrimaryButton}"  Margin="0,0,0,10" Grid.Row="3"/>
+                            <Image Source="powered_by_baseflow_logo"
+                                   Margin="10,0,0,10"
+                                   HorizontalOptions="Start"
+                                   Grid.Row="0" />
+                            <Label mvx:La.ng="Text PowerdByText"
+                                   Style="{StaticResource PowerdByText}"
+                                   Margin="10,0,10,25"
+                                   Grid.Row="1" />
+                            <Button mvx:La.ng="Text FindUsOnGithub"
+                                    mvx:Bi.nd="Command GithubCommand"
+                                    Style="{DynamicResource PrimaryButton}"
+                                    Margin="0,0,0,10"
+                                    Grid.Row="2" />
+                            <Button mvx:La.ng="Text VisitBaseflow"
+                                    mvx:Bi.nd="Command BaseflowCommand"
+                                    Style="{DynamicResource PrimaryButton}"
+                                    Margin="0,0,0,10"
+                                    Grid.Row="3" />
                         </Grid>
                     </ViewCell>
                 </TableSection>

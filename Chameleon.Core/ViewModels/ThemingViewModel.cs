@@ -53,6 +53,8 @@ namespace Chameleon.Core.ViewModels
             style.MergedDictionaries.Add(new DarkColors());
 
             Application.Current.Resources = style;
+            RaiseAllPropertiesChanged();
+
         }
 
         private void ThemeLight()
@@ -73,6 +75,8 @@ namespace Chameleon.Core.ViewModels
             style.MergedDictionaries.Add(new LightColors());
 
             Application.Current.Resources = style;
+            RaiseAllPropertiesChanged();
+
         }
 
 

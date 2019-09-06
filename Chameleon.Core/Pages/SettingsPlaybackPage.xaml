@@ -31,7 +31,8 @@
             SeparatorColor="{DynamicResource PrimaryColor}">
             <TableRoot>
                 <TableSection>
-                    <ViewCell BindingContext="{Binding .}" IsEnabled="False">
+                    <ViewCell BindingContext="{Binding .}"
+                              IsEnabled="False">
                         <Label mvx:La.ng=" Text Playback"
                                Style="{StaticResource PlaybackSettings}"
                                Margin="20" />
@@ -117,7 +118,7 @@
                                     Maximum="10"
                                     Minimum="-10"
                                     MinimumTrackColor="#252525"
-                                    MaximumTrackColor="#252525"/>
+                                    MaximumTrackColor="#252525" />
                             <Label Text="L"
                                    VerticalTextAlignment="Center"
                                    Grid.Row="2"

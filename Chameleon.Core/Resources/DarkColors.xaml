@@ -10,8 +10,6 @@
 
     <Color x:Key="MinimumTrackColor">#FFF14431</Color>
 
-    <Color x:Key="CharcoalGrey">#30313C</Color>
-
     <Color x:Key="PrimaryTextColor">#FFFFFF</Color>
     <Color x:Key="SecondaryTextColor">#FF6C6E81"</Color>
     <Color x:Key="TertiaryTextColor">#FFE3E5F6</Color>

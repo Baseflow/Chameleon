@@ -17,6 +17,4 @@
     <Color x:Key="QuaternaryTextColor">#4D000000</Color>
     <Color x:Key="QuinaryTextColor">#B3000000</Color>
 
-    <Color x:Key="CharcoalGrey">#30313C</Color>
-
 </ResourceDictionary>

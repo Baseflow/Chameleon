@@ -18,7 +18,7 @@
         <coloredTableView:ColoredTableView
                   Intent="Settings"
                   HasUnevenRows="True"
-                  SeparatorColor="{DynamicResource SeparatorColor}">
+                  SeparatorColor="{DynamicResource PrimaryColor}">
             <TableRoot>
                 <TableSection>
                     <ViewCell Tapped="ViewCell_TappedPlaybackSettings">
@@ -83,8 +83,8 @@
                             </Grid.RowDefinitions>
                             <Image Source="powered_by_baseflow_logo" Margin="10,0,0,10" HorizontalOptions="Start" Grid.Row="0"/>
                             <Label mvx:La.ng="Text PowerdByText" Style="{StaticResource PowerdByText}" Margin="10,0,10,25" Grid.Row="1"/>
-                            <Button mvx:La.ng="Text FindUsOnGithub" mvx:Bi.nd="Command GithubCommand" Style="{StaticResource PrimaryButton}"  Margin="0,0,0,10" Grid.Row="2"/>
-                            <Button mvx:La.ng="Text VisitBaseflow" mvx:Bi.nd="Command BaseflowCommand" Style="{StaticResource PrimaryButton}"  Margin="0,0,0,10" Grid.Row="3"/>
+                            <Button mvx:La.ng="Text FindUsOnGithub" mvx:Bi.nd="Command GithubCommand" Style="{DynamicResource PrimaryButton}"  Margin="0,0,0,10" Grid.Row="2"/>
+                            <Button mvx:La.ng="Text VisitBaseflow" mvx:Bi.nd="Command BaseflowCommand" Style="{DynamicResource PrimaryButton}"  Margin="0,0,0,10" Grid.Row="3"/>
                         </Grid>
                     </ViewCell>
                 </TableSection>

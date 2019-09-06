@@ -29,12 +29,12 @@
         <coloredTableView:ColoredTableView
             Intent="Settings"
             HasUnevenRows="True"
-            SeparatorColor="{DynamicResource SeparatorColor}">
+            SeparatorColor="{DynamicResource PrimaryColor}">
             <TableRoot>
                 <TableSection>
                     <ViewCell>
                         <Label mvx:La.ng=" Text Theming"
-                               Style="{StaticResource PlaybackSettings}"
+                               Style="{DynamicResource PlaybackSettings}"
                                Margin="20" />
                     </ViewCell>
                     <ViewCell BindingContext="{Binding .}">

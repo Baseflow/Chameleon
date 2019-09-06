@@ -6,7 +6,7 @@
     xmlns:effects="clr-namespace:Chameleon.Core.Effects;assembly=Chameleon.Core"
     x:Class="Chameleon.Core.Resources.Styles" >
     <ResourceDictionary.MergedDictionaries>
-        <styles:Colors />
+        
     </ResourceDictionary.MergedDictionaries>
 
     <Style TargetType="{x:Type Button}" ApplyToDerivedTypes="True">
@@ -19,10 +19,11 @@
 
     <Style TargetType="Button" x:Key="PrimaryButton">
         <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}"/>
-        <Setter Property="BackgroundColor" Value="{DynamicResource BackgroundColor}"/>
+        <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryColor}"/>
         <Setter Property="BorderColor" Value="{DynamicResource SecondaryColor}"/>
         <Setter Property="BorderRadius" Value="25"/>
         <Setter Property="BorderWidth" Value="1"/>
+        <Setter Property="CornerRadius" Value="20"/>
         <Setter Property="FontFamily" Value="FiraSans#600"/>
         <Setter Property="FontSize" Value="14"/>
         <Setter Property="HeightRequest" Value="50"/>
@@ -38,7 +39,7 @@
     </Style>
 
     <Style TargetType="{x:Type Label}" ApplyToDerivedTypes="True">
-        <Setter Property="TextColor" Value="{DynamicResource LabelTextColor}"/>
+        <Setter Property="TextColor" Value="{DynamicResource SecondaryTextColor}"/>
     </Style>
 
     <Style TargetType="Label" x:Key="Header1">
@@ -71,26 +72,26 @@
     </Style>
 
     <Style TargetType="{x:Type TabbedPage}" ApplyToDerivedTypes="True">
-        <Setter Property="BarBackgroundColor" Value="{DynamicResource BackgroundColor}" />
+        <Setter Property="BarBackgroundColor" Value="{DynamicResource PrimaryColor}" />
         <Setter Property="BarTextColor" Value="{DynamicResource PrimaryTextColor}"/>
         <Setter Property="SelectedTabColor" Value="{DynamicResource PrimaryTextColor}"/>
         <Setter Property="UnselectedTabColor" Value="{DynamicResource PrimaryTextColor}"/>
     </Style>
 
     <Style TargetType="{x:Type NavigationPage}" ApplyToDerivedTypes="True">
-        <Setter Property="BarBackgroundColor" Value="{DynamicResource BackgroundColor}" />
+        <Setter Property="BarBackgroundColor" Value="{DynamicResource PrimaryColor}" />
         <Setter Property="BarTextColor" Value="{DynamicResource PrimaryTextColor}"/>
     </Style>
 
     <Style TargetType="{x:Type ContentPage}" ApplyToDerivedTypes="True">
-        <Setter Property="BackgroundColor" Value="{DynamicResource BackgroundColor}" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryColor}" />
     </Style>
 
     <Style TargetType="{x:Type SearchBar}" ApplyToDerivedTypes="True">
         <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
         <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}"/>
         <Setter Property="CancelButtonColor" Value="{DynamicResource PrimaryTextColor}"/>
-        <Setter Property="BackgroundColor" Value="{DynamicResource BackgroundColor}"/>
+        <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryColor}"/>
         <Setter Property="PlaceholderColor" Value="{DynamicResource PrimaryTextColor}"/>
         <Setter Property="FontSize" Value="14"/>
         <Setter Property="Margin">
@@ -110,7 +111,7 @@
 
     <Style TargetType="Button" x:Key="CancelButton">
         <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}"/>
-        <Setter Property="BackgroundColor" Value="{DynamicResource BackgroundColor}"/>
+        <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryColor}"/>
         <Setter Property="FontSize" Value="15"/>
         <Setter Property="FontAttributes" Value="Bold"/>
     </Style>

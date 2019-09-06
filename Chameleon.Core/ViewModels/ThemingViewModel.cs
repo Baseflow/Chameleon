@@ -37,20 +37,28 @@ namespace Chameleon.Core.ViewModels
 
         private void ThemeDark()
         {
-            ICollection<ResourceDictionary> mergedDictionaries = Application.Current.Resources.MergedDictionaries;
+            //Application.Current.Resources.Source = new Uri("Resources/DarkTheme.xaml");
+
+            /*ICollection<ResourceDictionary> mergedDictionaries = Application.Current.Resources.MergedDictionaries;
             if (mergedDictionaries != null)
             {
                 mergedDictionaries.Clear();
 
                 mergedDictionaries.Add(new DarkTheme());
                 ThemeDarkImage = ImageSource.FromFile("theme_dark_on");
-                RaisePropertyChanged();
-            }
-              
+                RaiseAllPropertiesChanged();
+            }*/
+            Application.Current.Resources.Clear();
+            var style = new Styles();
+            style.MergedDictionaries.Add(new DarkColors());
+
+            Application.Current.Resources = style;
         }
 
         private void ThemeLight()
         {
+            //Application.Current.Resources.Source = new Uri("Resources/LightTheme.xaml");
+            /*
             ICollection<ResourceDictionary> mergedDictionaries = Application.Current.Resources.MergedDictionaries;
             if (mergedDictionaries != null)
             {
@@ -59,8 +67,37 @@ namespace Chameleon.Core.ViewModels
                 mergedDictionaries.Add(new LightTheme());
                 ThemeLightImage = ImageSource.FromFile("theme_light_on");
                 RaiseAllPropertiesChanged();
-            }
-           
+            }*/
+            Application.Current.Resources.Clear();
+            var style = new Styles();
+            style.MergedDictionaries.Add(new LightColors());
+
+            Application.Current.Resources = style;
         }
+
+
+        //public enum Themes
+        //{
+        //    Light,
+        //    Dark
+        //}
+
+        //public override void ViewAppearing()
+        //{
+        //    base.ViewAppearing();
+
+        //    var AppRequestedTheme = Application.Current.Resources.MergedDictionaries;
+        //    if (DarkTheme == AppRequestedTheme)
+        //        resources = new Xamarin.Forms.ResourceDictionary.DarkThemeResources();
+        //    if (ThemeDark())
+        //        if (true)
+        //        {
+        //            FavoriteImage = ImageSource.FromFile("playback_controls_favorite_off");
+        //        }
+        //        else
+        //        {
+        //            FavoriteImage = ImageSource.FromFile("playback_controls_favorite_on");
+        //        }
+        //}
     }
 }

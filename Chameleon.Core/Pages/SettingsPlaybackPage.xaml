@@ -28,7 +28,7 @@
         <coloredTableView:ColoredTableView
             Intent="Settings"
             HasUnevenRows="True"
-            SeparatorColor="{DynamicResource SeparatorColor}">
+            SeparatorColor="{DynamicResource PrimaryColor}">
             <TableRoot>
                 <TableSection>
                     <ViewCell BindingContext="{Binding .}" IsEnabled="False">
@@ -47,7 +47,7 @@
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
                             <Label mvx:La.ng=" Text Skip"
-                                   Style="{StaticResource PlaybackSettingsTitle}"
+                                   Style="{DynamicResource PlaybackSettingsTitle}"
                                    Grid.Row="0" />
                             <Label Text="{Binding Source={x:Reference slider}, Path=Value, StringFormat='{0:F0}s'}"
                                    Grid.Row="1"

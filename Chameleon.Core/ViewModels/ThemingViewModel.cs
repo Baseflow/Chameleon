@@ -57,36 +57,22 @@ namespace Chameleon.Core.ViewModels
             Application.Current.Resources = style;
 
             ThemeLightImage = ImageSource.FromFile("theme_light_on");
-
             ThemeDarkImage = ImageSource.FromFile("theme_dark");
         }
 
+        public override void ViewAppearing()
+        {
+            base.ViewAppearing();
 
-
-        //public override void ViewAppearing()
-        //{
-        //    base.ViewAppearing();
-
-        //    ResourceDictionary Source = MergedDictionaries("Resources/LightTheme.xaml");
-
-        //    Application.Current.Resources;
-
-        //    Application.Current.Resources
-
-                
-
-        //    var AppRequestedTheme = Application.Current.Resources.MergedDictionaries;
-        //    if (AppRequestedTheme == DarkColors)
-        //        resources = new Xamarin.Forms.ResourceDictionary.DarkThemeResources();
-        //    if (ThemeDark())
-        //        if (true)
-        //        {
-        //            FavoriteImage = ImageSource.FromFile("playback_controls_favorite_off");
-        //        }
-        //        else
-        //        {
-        //            FavoriteImage = ImageSource.FromFile("playback_controls_favorite_on");
-        //        }
-        //}
+            var theme = Application.Current.Resources as Styles;
+            if (theme.MergedDictionaries.Any(md => md.GetType() == typeof(DarkColors)))
+            {
+                ThemeDarkImage = ImageSource.FromFile("theme_dark_on");
+            }
+            else
+            {
+                ThemeLightImage = ImageSource.FromFile("theme_light_on");
+            }
+        }           
     }
 }

@@ -12,7 +12,7 @@
     xmlns:views="clr-namespace:Chameleon.Core.Views;assembly=Chameleon.Core"
     mc:Ignorable="d"
     x:TypeArguments="viewModels:HomeViewModel"
-    x:Class="Chameleon.Core.Pages.HomePage"
+    x:Class="Chameleon.Core.Views.HomePage"
     x:Name="homePage"
     mvx:La.ng="Title Title">
 

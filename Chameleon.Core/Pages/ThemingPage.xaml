@@ -38,7 +38,7 @@
                                Margin="20" />
                     </ViewCell>
                     <ViewCell BindingContext="{Binding .}">
-                        <Grid Margin="20">
+                        <Grid Margin="5">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>

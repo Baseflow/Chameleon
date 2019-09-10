@@ -76,6 +76,7 @@
         <Setter Property="BarTextColor" Value="{DynamicResource PrimaryTextColor}"/>
         <Setter Property="SelectedTabColor" Value="{DynamicResource PrimaryTextColor}"/>
         <Setter Property="UnselectedTabColor" Value="{DynamicResource PrimaryTextColor}"/>
+        <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryColor}" />
     </Style>
 
     <Style TargetType="{x:Type NavigationPage}" ApplyToDerivedTypes="True">

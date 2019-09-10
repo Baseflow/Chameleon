@@ -83,7 +83,19 @@
         <Setter Property="BarTextColor" Value="{DynamicResource PrimaryTextColor}"/>
     </Style>
 
-    <Style TargetType="{x:Type ContentPage}" ApplyToDerivedTypes="True">
+    <Style TargetType="{x:Type ContentPage}"  ApplyToDerivedTypes="True">
+        <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryColor}" />
+    </Style>
+
+      <Style TargetType="{x:Type ContentView}" ApplyToDerivedTypes="True">
+        <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryColor}" />
+    </Style>
+
+       <Style TargetType="{x:Type ListView}" ApplyToDerivedTypes="True">
+        <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryColor}" />
+    </Style>
+
+       <Style TargetType="{x:Type TableView}" ApplyToDerivedTypes="True">
         <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryColor}" />
     </Style>
 

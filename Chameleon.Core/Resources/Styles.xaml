@@ -82,9 +82,10 @@
     <Style TargetType="{x:Type NavigationPage}" ApplyToDerivedTypes="True">
         <Setter Property="BarBackgroundColor" Value="{DynamicResource PrimaryColor}" />
         <Setter Property="BarTextColor" Value="{DynamicResource PrimaryTextColor}"/>
+        <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryColor}" />
     </Style>
 
-    <Style TargetType="{x:Type ContentPage}"  ApplyToDerivedTypes="True">
+    <Style TargetType="{x:Type ContentPage}" ApplyToDerivedTypes="True">
         <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryColor}" />
     </Style>
 
@@ -97,6 +98,10 @@
     </Style>
 
        <Style TargetType="{x:Type TableView}" ApplyToDerivedTypes="True">
+        <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryColor}" />
+    </Style>
+
+     <Style TargetType="{x:Type TemplatedPage}" ApplyToDerivedTypes="True">
         <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryColor}" />
     </Style>
 

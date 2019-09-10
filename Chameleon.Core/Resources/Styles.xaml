@@ -6,7 +6,7 @@
     xmlns:effects="clr-namespace:Chameleon.Core.Effects;assembly=Chameleon.Core"
     x:Class="Chameleon.Core.Resources.Styles" >
     <ResourceDictionary.MergedDictionaries>
-        
+        <styles:Sizes />
     </ResourceDictionary.MergedDictionaries>
 
     <Style TargetType="{x:Type Button}" ApplyToDerivedTypes="True">
@@ -25,7 +25,7 @@
         <Setter Property="BorderWidth" Value="1"/>
         <Setter Property="CornerRadius" Value="20"/>
         <Setter Property="FontFamily" Value="FiraSans#600"/>
-        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontSize" Value="{StaticResource SmallTextSize}"/>
         <Setter Property="HeightRequest" Value="50"/>
     </Style>
 

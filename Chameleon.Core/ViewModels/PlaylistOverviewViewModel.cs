@@ -55,11 +55,12 @@ namespace Chameleon.Core.ViewModels
 
             try
             {
-                Playlists.ReplaceWith(await _mediaManager.Library.GetAll<IPlaylist>());
+                var playlists = await _mediaManager.Library.GetAll<IPlaylist>();
+                if(playlists != null)
+                    Playlists.ReplaceWith(playlists);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
             }
 
             IsLoading = false;

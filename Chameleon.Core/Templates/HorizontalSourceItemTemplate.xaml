@@ -30,13 +30,13 @@
                     Aspect="AspectFill"
                     Source="cover_art_placeholder"/>
             </pan:PancakeView>
-            <Label
+            <!--<Label
                 mvx:Bi.nd="Text Title"
                 Grid.Row="0" Grid.Column="0"
                 VerticalOptions="EndAndExpand"
                 MaxLines="1"
                 Margin="10"
-                Style="{StaticResource MediaItemTitle}" />
+                Style="{StaticResource MediaItemTitle}" />-->
         </Grid>
     </ContentView.Content>
 </ContentView>

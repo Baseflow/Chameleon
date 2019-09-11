@@ -20,7 +20,8 @@
                    IsClippedToBounds="True"
                    Padding="0"
                    Grid.Column="0"
-                   Grid.RowSpan="2">
+                   Grid.RowSpan="2"
+                   Margin="20,0,0,0">
                 <Image Source="cover_art_placeholder"
                        HorizontalOptions="Center"
                        VerticalOptions="Center"
@@ -32,12 +33,16 @@
                    Style="{StaticResource TitleText}"
                    VerticalOptions="Center"
                    Grid.Column="1"
-                   Grid.Row="0"/>
+                   Grid.Row="0"
+                   MaxLines="1"
+                   VerticalTextAlignment="Start"
+                   Margin="0,3,0,0"/>
             <Label Text=""
                    Style="{StaticResource MediaItemSubTitle}"
                    VerticalOptions="Center"
                    Grid.Column="1"
-                   Grid.Row="1"/>
+                   Grid.Row="1"
+                   MaxLines="1"/>
         </Grid>
     </ContentView.Content>
 </ContentView>

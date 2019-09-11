@@ -15,6 +15,7 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
             <Frame CornerRadius="8"
                    IsClippedToBounds="True"
@@ -37,10 +38,14 @@
                    MaxLines="1"
                    VerticalTextAlignment="Start"
                    Margin="0,3,0,0"/>
-            <Label Text=""
+            <Label FormattedText="{Binding TrackAmount}"
                    Style="{StaticResource MediaItemSubTitle}"
-                   VerticalOptions="Center"
                    Grid.Column="1"
+                   Grid.Row="1"
+                   MaxLines="1"/>
+            <Label FormattedText="{Binding PlaylistTime}"
+                   Style="{StaticResource MediaItemSubTitle}"
+                   Grid.Column="3"
                    Grid.Row="1"
                    MaxLines="1"/>
         </Grid>

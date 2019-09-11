@@ -7,6 +7,7 @@ using MvvmCross.Commands;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
+using Xamarin.Forms;
 
 namespace Chameleon.Core.ViewModels
 {
@@ -41,6 +42,21 @@ namespace Chameleon.Core.ViewModels
             }
         }
 
+        private FormattedString _trackAmount;
+        public FormattedString TrackAmount
+        {
+            get => _trackAmount;
+            set => SetProperty(ref _trackAmount, value);
+        }
+
+        private FormattedString _playlistTime;
+        public FormattedString PlaylistTime
+        {
+            get => _playlistTime;
+            set => SetProperty(ref _playlistTime, value);
+        }
+
+
         public override void Prepare(IMediaItem parameter)
         {
             _mediaItem = parameter;
@@ -49,6 +65,7 @@ namespace Chameleon.Core.ViewModels
         public override async Task Initialize()
         {
             Playlists.ReplaceWith(await _mediaManager.Library.GetAll<IPlaylist>());
+
         }
 
         private async Task AddToPlaylist(IPlaylist arg)
@@ -56,6 +73,8 @@ namespace Chameleon.Core.ViewModels
             arg.MediaItems.Add(_mediaItem);
             await _mediaManager.Library.AddOrUpdate<IPlaylist>(arg);
             _userDialogs.Toast(GetText("AddedToPlaylist"));
+
+           
 
             await NavigationService.Close(this);
         }

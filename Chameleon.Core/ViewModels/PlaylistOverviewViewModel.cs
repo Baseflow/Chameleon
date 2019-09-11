@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Acr.UserDialogs;
-using Chameleon.Services.Services;
 using MediaManager;
 using MediaManager.Library;
 using MvvmCross.Commands;
@@ -56,11 +55,12 @@ namespace Chameleon.Core.ViewModels
 
             try
             {
-                Playlists.ReplaceWith(await _mediaManager.Library.GetAll<IPlaylist>());
+                var playlists = await _mediaManager.Library.GetAll<IPlaylist>();
+                if(playlists != null)
+                    Playlists.ReplaceWith(playlists);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
             }
 
             IsLoading = false;

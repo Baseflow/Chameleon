@@ -6,7 +6,8 @@
     xmlns:pan="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     x:Class="Chameleon.Core.Templates.HorizontalMediaItemsTemplate">
     <ContentView.Content>
-        <Grid Margin="12" Padding="12">
+        <Grid Margin="12" Padding="12"
+              BackgroundColor="{DynamicResource PrimaryColor}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="154"/>
                 <RowDefinition Height="auto"/>

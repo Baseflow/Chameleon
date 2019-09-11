@@ -143,10 +143,14 @@ namespace Chameleon.Core.ViewModels
             //var recentMedia = await _browseService.GetRecentMedia().ConfigureAwait(false);
             //if (recentMedia != null)
             //    RecentlyPlayedItems.ReplaceWith(recentMedia);
-
-            var playlists = await MediaManager.Library.GetAll<IPlaylist>().ConfigureAwait(false);
-            if (playlists != null)
-                Playlists.ReplaceWith(playlists);
+            try
+            {
+                var playlists = await MediaManager.Library.GetAll<IPlaylist>().ConfigureAwait(false);
+                if (playlists != null)
+                    Playlists.ReplaceWith(playlists);
+            }
+            catch(Exception)
+            { }
 
             RaisePropertyChanged(nameof(HasRecent));
             RaisePropertyChanged(nameof(HasNoPlaylists));

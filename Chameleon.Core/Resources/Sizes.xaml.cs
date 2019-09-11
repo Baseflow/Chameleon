@@ -3,9 +3,9 @@ using Xamarin.Forms;
 
 namespace Chameleon.Core.Resources
 {
-    public partial class Colors : ResourceDictionary
+    public partial class Sizes : ResourceDictionary
     {
-        public Colors()
+        public Sizes()
         {
             InitializeComponent();
         }

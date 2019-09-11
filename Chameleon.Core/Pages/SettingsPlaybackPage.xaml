@@ -27,12 +27,12 @@
     <ContentPage.Content>
         <coloredTableView:ColoredTableView
             Intent="Settings"
-            BackgroundColor="{StaticResource BackgroundColor}"
             HasUnevenRows="True"
-            SeparatorColor="{StaticResource SeparatorColor}">
+            SeparatorColor="{DynamicResource PrimaryColor}">
             <TableRoot>
                 <TableSection>
-                    <ViewCell BindingContext="{Binding .}" IsEnabled="False">
+                    <ViewCell BindingContext="{Binding .}"
+                              IsEnabled="False">
                         <Label mvx:La.ng=" Text Playback"
                                Style="{StaticResource PlaybackSettings}"
                                Margin="20" />
@@ -48,7 +48,7 @@
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
                             <Label mvx:La.ng=" Text Skip"
-                                   Style="{StaticResource PlaybackSettingsTitle}"
+                                   Style="{DynamicResource PlaybackSettingsTitle}"
                                    Grid.Row="0" />
                             <Label Text="{Binding Source={x:Reference slider}, Path=Value, StringFormat='{0:F0}s'}"
                                    Grid.Row="1"
@@ -118,7 +118,7 @@
                                     Maximum="10"
                                     Minimum="-10"
                                     MinimumTrackColor="#252525"
-                                    MaximumTrackColor="#252525"/>
+                                    MaximumTrackColor="#252525" />
                             <Label Text="L"
                                    VerticalTextAlignment="Center"
                                    Grid.Row="2"

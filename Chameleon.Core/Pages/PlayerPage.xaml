@@ -16,7 +16,7 @@
     x:TypeArguments="viewModels:PlayerViewModel"
     x:Class="Chameleon.Core.Views.PlayerPage"
     NavigationPage.HasNavigationBar="True"
-    BackgroundColor="{StaticResource BackgroundColor}">
+    BackgroundColor="{DynamicResource PrimaryColor}">
     <NavigationPage.TitleView>
         <Grid>
             <Grid.RowDefinitions>
@@ -143,7 +143,7 @@
                     VerticalOptions="End"
                     mvx:Bi.nd="Value Position; Maximum Duration; DragStartedCommand DragStartedCommand; DragCompletedCommand DragCompletedCommand"
                     MaximumTrackColor="White"
-                    MinimumTrackColor="{StaticResource MinimumTrackColor}"/>
+                    MinimumTrackColor="{DynamicResource MinimumTrackColor}"/>
                 <Grid Padding="18,0,18,0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="20"/>

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <core:MvxContentPage
-    xmlns:core="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms" 
+    xmlns:core="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
     xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -10,19 +10,97 @@
     xmlns:mm="clr-namespace:MediaManager.Forms;assembly=MediaManager.Forms"
     xmlns:templates="clr-namespace:Chameleon.Core.Templates;assembly=Chameleon.Core"
     mc:Ignorable="d"
+    xmlns:coloredTableView="clr-namespace:Chameleon.Core;assembly=Chameleon.Core"
     x:TypeArguments="viewModels:ThemingViewModel"
-    x:Class="Chameleon.Core.Views.ThemingPage">
+    x:Class="Chameleon.Core.Views.ThemingPage"
+    xmlns:pan="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView">
 
     <NavigationPage.TitleView>
-        <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center" Spacing="10" HeightRequest="30">
-            <Image Source="chameleon_logo"/>
+        <StackLayout Orientation="Horizontal"
+                     VerticalOptions="Center"
+                     HorizontalOptions="Center"
+                     Spacing="10"
+                     HeightRequest="30">
+            <Image Source="chameleon_logo" />
         </StackLayout>
     </NavigationPage.TitleView>
 
     <ContentPage.Content>
-        <StackLayout>
-            
-        </StackLayout>
+        <coloredTableView:ColoredTableView
+            BackgroundColor="Transparent"
+            Intent="Settings"
+            HasUnevenRows="True"
+            SeparatorColor="{DynamicResource PrimaryColor}">
+            <TableRoot>
+                <TableSection>
+                    <ViewCell>
+                        <Label mvx:La.ng=" Text Theming"
+                               Style="{DynamicResource PlaybackSettings}"
+                               Margin="20" />
+                    </ViewCell>
+                    <ViewCell BindingContext="{Binding .}">
+                        <Grid Margin="5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <pan:PancakeView
+                                CornerRadius="8"
+                                IsClippedToBounds="True"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="FillAndExpand"
+                                Elevation="2"
+                                HasShadow="True"
+                                Margin="5">
+                                <ImageButton
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="FillAndExpand"
+                                    Aspect="AspectFill"
+                                    Source="{Binding ThemeDarkImage}"
+                                    mvx:Bi.nd="Command ThemeDarkCommand" />
+                            </pan:PancakeView>
+                            <Label
+                                Text="Title"
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                VerticalOptions="EndAndExpand"
+                                MaxLines="1"
+                                Margin="10"
+                                Style="{StaticResource MediaItemTitle}" />
+                            <pan:PancakeView
+                                CornerRadius="8"
+                                IsClippedToBounds="True"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="FillAndExpand"
+                                Elevation="2"
+                                Grid.Column="1"
+                                HasShadow="True"
+                                Margin="5">
+                                <ImageButton
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="FillAndExpand"
+                                    Aspect="AspectFill"
+                                    Source="{Binding ThemeLightImage}"
+                                    mvx:Bi.nd="Command ThemeLigthCommand"
+                                    Grid.Row="0"
+                                    Grid.Column="1" />
+                            </pan:PancakeView>
+                            <Label
+                                Text="Title"
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                VerticalOptions="EndAndExpand"
+                                MaxLines="1"
+                                Margin="10"
+                                Style="{StaticResource MediaItemTitle}" />
+                        </Grid>
+                    </ViewCell>
+                </TableSection>
+            </TableRoot>
+        </coloredTableView:ColoredTableView>
     </ContentPage.Content>
- 
+
 </core:MvxContentPage>

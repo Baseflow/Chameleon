@@ -6,12 +6,4 @@
              xmlns:styles="clr-namespace:Chameleon.Core.Resources;assembly=Chameleon.Core"
              mc:Ignorable="d"
              x:Class="Chameleon.Core.FormsApp">
-    <Application.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <styles:Styles />
-                <styles:Colors />
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </Application.Resources>
 </Application>

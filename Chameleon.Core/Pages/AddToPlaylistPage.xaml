@@ -18,7 +18,7 @@
 
     <ContentPage.Content>
         <Grid Margin="20"
-              BackgroundColor="{StaticResource BackgroundColor}">
+              BackgroundColor="{DynamicResource PrimaryColor}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="55" />
                 <RowDefinition Height="Auto" />
@@ -27,7 +27,7 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Frame BackgroundColor="#FF252525"
+            <Frame BackgroundColor="{DynamicResource SecondaryColor}"
                    CornerRadius="8"
                    Grid.Row="0"
                    Padding="5,5,5,5">
@@ -49,7 +49,7 @@
             </Frame>
             <core:MvxListView
                 Grid.Row="1"
-                BackgroundColor="{StaticResource BackgroundColor}"
+                BackgroundColor="{DynamicResource PrimaryColor}"
                 ItemsSource="{mvx:MvxBind Playlists}"
                 ItemClick="{mvx:MvxBind AddToPlaylistCommand}"
                 VerticalOptions="FillAndExpand"

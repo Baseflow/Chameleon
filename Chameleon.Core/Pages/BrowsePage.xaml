@@ -11,14 +11,15 @@
     mc:Ignorable="d"
     x:Class="Chameleon.Core.Views.BrowsePage"
     x:TypeArguments="viewModels:BrowseViewModel"
-    mvx:La.ng="Title Title" >
+    mvx:La.ng="Title Title">
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="icon_plus" Order="Primary" mvx:Bi.nd="Command AddCommand"/>
+        <ToolbarItem IconImageSource="icon_plus"
+                     Order="Primary"
+                     mvx:Bi.nd="Command AddCommand" />
     </ContentPage.ToolbarItems>
-    
+
     <ContentPage.Content>
         <core:MvxListView
-            BackgroundColor="{StaticResource BackgroundColor}"
             ItemsSource="{mvx:MvxBind RecentlyPlayedItems}"
             SelectionMode="Single"
             RowHeight="60"

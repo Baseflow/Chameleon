@@ -39,8 +39,6 @@ namespace Chameleon.Core.Helpers
         private static Task OpenOptions(IContentItem contentItem)
         {
             var config = new ActionSheetConfig();
-
-            //TODO: Bug in Acr.Userdialogs where style is not applied
             config.UseBottomSheet = true;
 
             config.Cancel = new ActionSheetOption(GetText("Cancel"));
@@ -69,7 +67,7 @@ namespace Chameleon.Core.Helpers
                 {
                     config.Add(GetText("RemoveFromPlaylist"), () =>
                     {
-                        //TODO: Remove
+                        //TODO: Remove the item from playlist
                         _userDialogs.Toast(GetText("ItemRemovedFromPlaylist"));
                     }, "remove_from_queue");
                 }

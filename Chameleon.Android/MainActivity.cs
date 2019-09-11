@@ -1,8 +1,4 @@
-﻿
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Android.App;
+﻿using Android.App;
 using Android.Content.PM;
 using Android.OS;
 using Android.Runtime;
@@ -50,67 +46,10 @@ namespace Chameleon.Android
 
         private async void HandleIntent()
         {
-            //TODO: Use next mediamanager update
-            //if (await CrossMediaManager.Android.PlayFromIntent(Intent))
-            if (await HandleIntent(Intent))
+            if (await CrossMediaManager.Android.PlayFromIntent(Intent))
             {
                 await Mvx.IoCProvider.Resolve<IMvxNavigationService>().Navigate<PlayerViewModel>();
             }
-        }
-
-        public async Task<bool> HandleIntent(Intent intent)
-        {
-            if (intent == null)
-                return false;
-
-            var action = intent.Action;
-            var type = intent.Type;
-
-            if (action == Intent.ActionView)
-            {
-                string path = "";
-
-                if (type.StartsWith("video/") || type.StartsWith("audio/"))
-                {
-                    path = intent.DataString;
-                }
-                if (!string.IsNullOrEmpty(path))
-                {
-                    await CrossMediaManager.Current.Play(path);
-                    return true;
-                }
-            }
-            else if (action == Intent.ActionSend)
-            {
-                string path = "";
-
-                if (type.StartsWith("video/") || type.StartsWith("audio/"))
-                {
-                    var receivedUri = intent.GetParcelableExtra(Intent.ExtraStream) as global::Android.Net.Uri;
-                    path = receivedUri?.ToString();
-                }
-                if (!string.IsNullOrEmpty(path))
-                {
-                    await CrossMediaManager.Current.Play(path);
-                    return true;
-                }
-            }
-            else if (action == Intent.ActionSendMultiple)
-            {
-                IEnumerable<string> mediaUrls = null;
-
-                if (type.StartsWith("video/") || type.StartsWith("audio/"))
-                {
-                    var receivedUris = intent.GetParcelableArrayListExtra(Intent.ExtraStream);
-                    mediaUrls = receivedUris.Cast<global::Android.Net.Uri>().Select(x => x?.ToString());
-                }
-                if (mediaUrls != null)
-                {
-                    await CrossMediaManager.Current.Play(mediaUrls);
-                    return true;
-                }
-            }
-            return false;
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] global::Android.Content.PM.Permission[] grantResults)

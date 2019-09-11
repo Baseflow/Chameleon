@@ -1,12 +1,9 @@
-﻿using MvvmCross.Logging;
-using MvvmCross.Navigation;
-using MediaManager.Queue;
-using MvvmCross.Commands;
-using Xamarin.Forms;
-using System;
-using System.Collections.Generic;
+﻿using System.Linq;
 using Chameleon.Core.Resources;
-using System.Linq;
+using MvvmCross.Commands;
+using MvvmCross.Logging;
+using MvvmCross.Navigation;
+using Xamarin.Forms;
 
 namespace Chameleon.Core.ViewModels
 {
@@ -73,6 +70,6 @@ namespace Chameleon.Core.ViewModels
             {
                 ThemeLightImage = ImageSource.FromFile("theme_light_on");
             }
-        }           
+        }
     }
 }

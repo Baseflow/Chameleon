@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Acr.UserDialogs;
-using Chameleon.Services.Services;
 using MediaManager;
 using MediaManager.Library;
 using MvvmCross.Commands;

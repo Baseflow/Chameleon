@@ -180,8 +180,8 @@ namespace Chameleon.Core.ViewModels
         private IMvxCommand _shuffleCommand;
         public IMvxCommand ShuffleCommand => _shuffleCommand ?? (_shuffleCommand = new MvxCommand(Shuffle));
 
-        private IMvxAsyncCommand<IPlaylist> _addToPlaylistCommand;
-        public IMvxAsyncCommand<IPlaylist> AddToPlaylistCommand => _addToPlaylistCommand ?? (_addToPlaylistCommand = new MvxAsyncCommand<IPlaylist>(AddToPlaylist));
+        private IMvxAsyncCommand _addToPlaylistCommand;
+        public IMvxAsyncCommand AddToPlaylistCommand => _addToPlaylistCommand ?? (_addToPlaylistCommand = new MvxAsyncCommand(AddToPlaylist));
 
         private IMvxCommand _favoriteCommand;
         public IMvxCommand FavoriteCommand => _favoriteCommand ?? (_favoriteCommand = new MvxCommand(Favorite));
@@ -202,7 +202,7 @@ namespace Chameleon.Core.ViewModels
         {
             base.ViewAppearing();
 
-            var favorites = Playlists.First(x => x.Title == "Favorites");
+            var favorites = Playlists?.FirstOrDefault(x => x.Title == "Favorites");
             if (favorites.MediaItems.Contains(_source))
             {
                 FavoriteImage = ImageSource.FromFile("playback_controls_favorite_on");
@@ -288,7 +288,7 @@ namespace Chameleon.Core.ViewModels
 
         private void Favorite()
         {
-            var favorites = Playlists.FirstOrDefault(x => x.Title == "Favorites");
+            var favorites = Playlists?.FirstOrDefault(x => x.Title == "Favorites");
             if (favorites.MediaItems.Contains(_source))
             {
                 favorites.MediaItems.Remove(_source);
@@ -302,19 +302,10 @@ namespace Chameleon.Core.ViewModels
             }
         }
 
-        private async Task AddToPlaylist(IPlaylist arg)
+        private async Task AddToPlaylist()
         {
-            if (arg != null)
-            {
-                arg.MediaItems.Add(_source);
-            }
-            await MediaManager.Library.AddOrUpdate<IPlaylist>(arg);
-
-            _userDialogs.Toast(GetText("AddedToPlaylist"));
-
-            await NavigationService.Close(this);
+            await NavigationService.Navigate<AddToPlaylistViewModel, IMediaItem>(Source);
         }
-
     }
 
     public class Metadata

@@ -24,8 +24,8 @@
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-        <StackLayout>
-            <Label mvx:Bi.nd="Text QueueTitle" Style="{StaticResource Titels}" Margin="24,10,0,24"/>
+        <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Label mvx:Bi.nd="Text QueueTitle" Style="{DynamicResource QueueTitle}" Margin="24,10,0,24"/>
             <CollectionView
                 x:Name="MyCollectionView"
                 mvx:Bi.nd=

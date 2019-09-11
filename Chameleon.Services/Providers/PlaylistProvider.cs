@@ -40,13 +40,13 @@ namespace Chameleon.Services.Providers
         public async Task<bool> Exists(string id)
         {
             var items = await GetAll();
-            return items.Any(x => x.Id == id);
+            return items != null && items.Any(x => x.Id == id);
         }
 
         public async Task<IPlaylist> Get(string id)
         {
             var items = await GetAll();
-            return items.FirstOrDefault(x => x.Id == id);
+            return items?.FirstOrDefault(x => x.Id == id);
         }
 
         public Task<IEnumerable<IPlaylist>> GetAll()

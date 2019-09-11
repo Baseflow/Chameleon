@@ -10,6 +10,7 @@ using MvvmCross.Logging;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using Plugin.Media;
+using Plugin.Media.Abstractions;
 
 namespace Chameleon.Core.ViewModels
 {
@@ -149,7 +150,7 @@ namespace Chameleon.Core.ViewModels
                 if (playlists != null)
                     Playlists.ReplaceWith(playlists);
             }
-            catch(Exception)
+            catch (Exception)
             { }
 
             RaisePropertyChanged(nameof(HasRecent));
@@ -171,16 +172,29 @@ namespace Chameleon.Core.ViewModels
 
         private async Task OpenFile()
         {
-            if (await CrossMedia.Current.Initialize())
+            if (await CrossMedia.Current.Initialize() && CrossMedia.Current.IsPickVideoSupported)
             {
-                var videoMediaFile = await CrossMedia.Current.PickVideoAsync();
-
-                if (videoMediaFile != null)
+                string path = null;
+                try
                 {
-                    var mediaItem = await CrossMediaManager.Current.Play(videoMediaFile.Path);
+                    var videoMediaFile = await CrossMedia.Current.PickVideoAsync();
+                    if (videoMediaFile != null)
+                    {
+                        path = videoMediaFile.Path;
+                    }
+                }
+                catch (MediaPermissionException ex)
+                {
+                    await _userDialogs.AlertAsync(GetText("EnablePermissions"));
+                }
+                if (!string.IsNullOrEmpty(path))
+                {
+                    var mediaItem = await CrossMediaManager.Current.Play(path);
                     await NavigationService.Navigate<PlayerViewModel, IMediaItem>(mediaItem);
                 }
             }
+            else
+                await _userDialogs.AlertAsync(GetText("EnablePermissions"));
         }
 
         private async Task Play(IMediaItem mediaItem)

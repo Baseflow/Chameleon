@@ -16,6 +16,7 @@
 
     <ContentPage.Content>
         <coloredTableView:ColoredTableView
+            BackgroundColor="Transparent"
             Intent="Settings"
             HasUnevenRows="True"
             SeparatorColor="{DynamicResource PrimaryColor}">

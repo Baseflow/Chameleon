@@ -36,6 +36,12 @@ namespace Chameleon.Services.Providers
             return true;
         }
 
+        public async Task<bool> Exists(string id)
+        {
+            var items = await GetAll();
+            return items.Any(x => x.Id == id);
+        }
+
         public async Task<IPlaylist> Get(string id)
         {
             var items = await GetAll();

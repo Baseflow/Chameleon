@@ -36,34 +36,10 @@ namespace Chameleon.Core.ViewModels
                 if (SetProperty(ref _source, value))
                 {
                     var metaData = new List<Metadata>();
-                    metaData.Add(new ViewModels.Metadata() { Key = "Author", Value = _source.Advertisement });
-                    metaData.Add(new ViewModels.Metadata() { Key = "Album", Value = _source.Album });
-                    metaData.Add(new ViewModels.Metadata() { Key = "Album Artist", Value = _source.AlbumArtist });
-                    metaData.Add(new ViewModels.Metadata() { Key = "Album Art Uri", Value = _source.AlbumArtUri });
-                    metaData.Add(new ViewModels.Metadata() { Key = "Artist", Value = _source.Artist });
-                    metaData.Add(new ViewModels.Metadata() { Key = "Art Uri", Value = _source.ArtUri });
-                    metaData.Add(new ViewModels.Metadata() { Key = "Author", Value = _source.Author });
-                    metaData.Add(new ViewModels.Metadata() { Key = "Compilation", Value = _source.Compilation });
-                    metaData.Add(new ViewModels.Metadata() { Key = "Composer", Value = _source.Composer });
-                    metaData.Add(new ViewModels.Metadata() { Key = "Date", Value = _source.Date });
-                    metaData.Add(new ViewModels.Metadata() { Key = "Disc Number", Value = _source.DiscNumber.ToString() });
-                    metaData.Add(new ViewModels.Metadata() { Key = "Description", Value = _source.DisplayDescription });
-                    metaData.Add(new ViewModels.Metadata() { Key = "Display Icon Uri", Value = _source.DisplayIconUri });
-                    metaData.Add(new ViewModels.Metadata() { Key = "Display Subtitle", Value = _source.DisplaySubtitle });
-                    metaData.Add(new ViewModels.Metadata() { Key = "Display Tilte", Value = _source.DisplayTitle });
-                    metaData.Add(new ViewModels.Metadata() { Key = "Download Status", Value = _source.DownloadStatus.ToString() });
-                    metaData.Add(new ViewModels.Metadata() { Key = "Duration", Value = _source.Duration.ToString(@"mm\:ss") });
-                    metaData.Add(new ViewModels.Metadata() { Key = "File Extension", Value = _source.FileExtension });
-                    metaData.Add(new ViewModels.Metadata() { Key = "Genre", Value = _source.Genre });
-                    metaData.Add(new ViewModels.Metadata() { Key = "Id", Value = _source.Id.ToString() });
-                    metaData.Add(new ViewModels.Metadata() { Key = "MediaLocation", Value = _source.MediaLocation.ToString() });
-                    metaData.Add(new ViewModels.Metadata() { Key = "Media Type", Value = _source.MediaType.ToString() });
-                    metaData.Add(new ViewModels.Metadata() { Key = "Media Uri", Value = _source.MediaUri });
-                    metaData.Add(new ViewModels.Metadata() { Key = "Num Tracks", Value = _source.NumTracks.ToString() });
-                    metaData.Add(new ViewModels.Metadata() { Key = "Title", Value = _source.Title });
-                    metaData.Add(new ViewModels.Metadata() { Key = "Track Number", Value = _source.TrackNumber.ToString() });
-                    metaData.Add(new ViewModels.Metadata() { Key = "Writer", Value = _source.Writer });
-                    metaData.Add(new ViewModels.Metadata() { Key = "Year", Value = _source.Year.ToString() });
+                    foreach (var item in value.ToDictionary())
+                    {
+                        metaData.Add(new ViewModels.Metadata() { Key = item.Key, Value = item.Value?.ToString() });
+                    }
                     Metadata = metaData;
                     RaisePropertyChanged(nameof(Metadata));
                 }

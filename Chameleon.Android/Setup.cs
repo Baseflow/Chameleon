@@ -10,10 +10,9 @@ namespace Chameleon.Android
 {
     public class Setup : MvxFormsAndroidSetup<Core.App, FormsApp>
     {
-        protected override void InitializeIoC()
+        protected override void InitializeFirstChance()
         {
-            base.InitializeIoC();
-
+            base.InitializeFirstChance();
             UserDialogs.Init(() => Mvx.IoCProvider.Resolve<IMvxAndroidCurrentTopActivity>().Activity);
             ActionSheetConfig.DefaultAndroidStyleId = Android.Resource.Style.MainTheme_BottomSheet;
             //Mvx.IoCProvider.RegisterSingleton<HttpMessageHandler>(new AndroidClientHandler());

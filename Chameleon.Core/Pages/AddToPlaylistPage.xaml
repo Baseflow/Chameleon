@@ -17,7 +17,7 @@
     ios:Page.UseSafeArea="True">
 
     <ContentPage.Content>
-        <Grid Margin="20"
+        <Grid 
               BackgroundColor="{DynamicResource PrimaryColor}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="55" />
@@ -30,7 +30,8 @@
             <Frame BackgroundColor="{DynamicResource SecondaryColor}"
                    CornerRadius="8"
                    Grid.Row="0"
-                   Padding="5,5,5,5">
+                   Padding="5,5,5,5"
+                   Margin="25,0,20,0">
                 <StackLayout
                     Orientation="Horizontal">
                      <Image

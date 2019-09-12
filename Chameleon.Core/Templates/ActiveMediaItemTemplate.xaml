@@ -76,14 +76,13 @@
                 HeightRequest="2"
                 Grid.Row="2"
                 ProgressColor="#FFF14431"
-                Progress="0.5"
                 HorizontalOptions="Fill"
                 VerticalOptions="Center"
-                mvx:Bi.nd="" />
+                mvx:Bi.nd="Progress Progress" />
             <Label
                 Grid.Column="2"
                 Grid.Row="2"
-                Text="-1:14"
+                mvx:Bi.nd="Text TimeSpanToString(TimeSpanPosition)"
                 FontSize="12"
                 HorizontalOptions="EndAndExpand"
                 VerticalOptions="CenterAndExpand"

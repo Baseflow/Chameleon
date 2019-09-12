@@ -56,7 +56,6 @@ namespace Chameleon.Core.ViewModels
             set => SetProperty(ref _playlistTime, value);
         }
 
-
         public override void Prepare(IMediaItem parameter)
         {
             _mediaItem = parameter;
@@ -66,15 +65,31 @@ namespace Chameleon.Core.ViewModels
         {
             Playlists.ReplaceWith(await _mediaManager.Library.GetAll<IPlaylist>());
 
+            IPlaylist playlist = null;
+            await GetSubtitle(playlist);
         }
+
+        private async Task GetSubtitle(IPlaylist playlist)
+        {
+            var trackAmount = new FormattedString();
+            trackAmount.Spans.Add(new Span { Text = playlist.MediaItems.Count.ToString() });
+            trackAmount.Spans.Add(new Span { Text = " tracks" });
+            TrackAmount = trackAmount;
+
+            var playlistTime = new FormattedString();
+            playlistTime.Spans.Add(new Span { Text = playlist.TotalTime.Hours.ToString() });
+            playlistTime.Spans.Add(new Span { Text = " hours, " });
+            playlistTime.Spans.Add(new Span { Text = playlist.TotalTime.Minutes.ToString() });
+            playlistTime.Spans.Add(new Span { Text = " minutes" });
+            PlaylistTime = playlistTime;
+        }
+
 
         private async Task AddToPlaylist(IPlaylist arg)
         {
             arg.MediaItems.Add(_mediaItem);
             await _mediaManager.Library.AddOrUpdate<IPlaylist>(arg);
             _userDialogs.Toast(GetText("AddedToPlaylist"));
-
-           
 
             await NavigationService.Close(this);
         }

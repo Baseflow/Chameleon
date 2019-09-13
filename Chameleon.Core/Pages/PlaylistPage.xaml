@@ -21,8 +21,8 @@
         <ResourceDictionary>
             <DataTemplate x:Key="activeTemplate">
                 <Grid 
-                    Margin="24,0"
-                    Padding="0,4"
+                    Padding="24,0"
+                    Margin="0,0,0,30"
                     RowSpacing="0"
                     ColumnSpacing="12"
                     VerticalOptions="Center">

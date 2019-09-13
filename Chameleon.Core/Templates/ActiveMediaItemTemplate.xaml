@@ -8,7 +8,7 @@
     xmlns:controls="clr-namespace:Chameleon.Core.Controls"
     xmlns:viewmodels="clr-namespace:Chameleon.Core.ViewModels"
     x:Class="Chameleon.Core.Templates.ActiveMediaItemTemplate">
-    <ContentView.Content>
+    <!--<ContentView.Content>
         <Grid 
             Margin="24,0"
             Padding="0,4"
@@ -88,5 +88,5 @@
                 VerticalOptions="CenterAndExpand"
                 TextColor="White" />
         </Grid>
-    </ContentView.Content>
+    </ContentView.Content>-->
 </ContentView>

@@ -93,7 +93,7 @@
                     <Label
                         Grid.Column="2"
                         Grid.Row="2"
-                        Text="Test"
+                        Text="{Binding Source={x:Reference Name=playlistPage}, Path=BindingContext.DataContext.TimeSpanPosition}"
                         FontSize="12"
                         HorizontalOptions="EndAndExpand"
                         VerticalOptions="CenterAndExpand"

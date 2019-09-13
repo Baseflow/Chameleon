@@ -188,8 +188,10 @@ namespace Chameleon.Core.ViewModels
         private void MediaManager_PositionChanged(object sender, PositionChangedEventArgs e)
         {
             Progress = e.Position.TotalSeconds / MediaManager.Duration.TotalSeconds;
+            TimeSpanPosition = e.Position;
+
         }
-     
+
         private async Task Play(IMediaItem mediaItem)
         {
             await NavigationService.Navigate<PlayerViewModel, IMediaItem>(mediaItem);

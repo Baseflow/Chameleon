@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 using Acr.UserDialogs;
+using Chameleon.Core.Helpers;
 using MediaManager;
 using MediaManager.Library;
 using MediaManager.Media;
@@ -113,14 +114,11 @@ namespace Chameleon.Core.ViewModels
             set => SetProperty(ref _progress, value);
         }
 
-        private TimeSpan _timeSpanPosition = TimeSpan.Zero;
-        public TimeSpan TimeSpanPosition
+        private string _timeLeft = "0";
+        public string TimeLeft
         {
-            get => _timeSpanPosition;
-            set
-            {
-                SetProperty(ref _timeSpanPosition, value);
-            }
+            get => _timeLeft;
+            set => SetProperty(ref _timeLeft, value);
         }
 
         private IMvxAsyncCommand<IMediaItem> _playerCommand;
@@ -162,7 +160,7 @@ namespace Chameleon.Core.ViewModels
 
             Progress = MediaManager.Position.TotalSeconds / MediaManager.Duration.TotalSeconds;
             MediaManager.PositionChanged += MediaManager_PositionChanged;
-            TimeSpanPosition = MediaManager.Position;
+            TimeLeft = $"-{(MediaManager.Position - MediaManager.Duration).ToString(@"mm\:ss")}";
         }
 
         public override void ViewDisappeared()
@@ -182,14 +180,17 @@ namespace Chameleon.Core.ViewModels
             ActiveMediaItem = _mediaManager.Queue.Current;
             CurrentPlaylistSource = null;
             CurrentPlaylistSource = CurrentPlaylist;
+
+            TimeLeft = $"-{(MediaManager.Position - MediaManager.Duration).ToString(@"mm\:ss")}";
+
             ReloadData();
         }
 
         private void MediaManager_PositionChanged(object sender, PositionChangedEventArgs e)
         {
             Progress = e.Position.TotalSeconds / MediaManager.Duration.TotalSeconds;
-            TimeSpanPosition = e.Position;
 
+            TimeLeft = $"-{(e.Position - MediaManager.Duration).ToString(@"mm\:ss")}";
         }
 
         private async Task Play(IMediaItem mediaItem)
@@ -201,6 +202,9 @@ namespace Chameleon.Core.ViewModels
         private async Task StartPlaylist()
         {
             await _mediaManager.Play(CurrentPlaylist.MediaItems);
+            ActiveMediaItem = _mediaManager.Queue.Current;
+            CurrentPlaylistSource = null;
+            CurrentPlaylistSource = CurrentPlaylist;
         }
     }
 }

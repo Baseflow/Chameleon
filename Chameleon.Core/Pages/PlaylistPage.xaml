@@ -34,7 +34,7 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="56" />
                         <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="28" />
+                        <ColumnDefinition Width="34" />
                     </Grid.ColumnDefinitions>
                     <pan:PancakeView
                         CornerRadius="3"
@@ -93,9 +93,9 @@
                     <Label
                         Grid.Column="2"
                         Grid.Row="2"
-                        Text="{Binding Source={x:Reference Name=playlistPage},  Path=BindingContext.DataContext.TimeSpanPosition, StringFormat='{0:F0}'}"
-                        FontSize="12"
-                        HorizontalOptions="EndAndExpand"
+                        Text="{Binding Source={x:Reference Name=playlistPage}, Path=BindingContext.DataContext.TimeLeft}"
+                        FontSize="10"
+                        HorizontalOptions="CenterAndExpand"
                         VerticalOptions="CenterAndExpand"
                         TextColor="White" />
                 </Grid>

@@ -59,7 +59,7 @@
                                 CornerRadius="3"
                                 IsClippedToBounds="True"
                                 Elevation="2"
-                                BackgroundColor="#FF252525"
+                                BackgroundColor="{DynamicResource PrimaryTextColor}"
                                 Grid.Column="0">
                                 <pan:PancakeView.HasShadow>
                                     <OnPlatform x:TypeArguments="x:Boolean"

@@ -142,7 +142,7 @@
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="End"
                     mvx:Bi.nd="Value Position; Maximum Duration; DragStartedCommand DragStartedCommand; DragCompletedCommand DragCompletedCommand"
-                    MaximumTrackColor="White"
+                    MaximumTrackColor="{DynamicResource MaximumTrackColor}"
                     MinimumTrackColor="{DynamicResource MinimumTrackColor}"/>
                 <Grid Padding="18,0,18,0">
                     <Grid.RowDefinitions>
@@ -157,13 +157,13 @@
                         mvx:Bi.nd="Text TimeSpanToString(TimeSpanPosition)"
                         HorizontalOptions="Start"
                         VerticalOptions="Center"
-                        TextColor="White"/>
+                        TextColor="{DynamicResource PrimaryTextColor}"/>
                     <Label
                         Grid.Column="1"
                         mvx:Bi.nd="Text TimeSpanToString(TimeSpanDuration)"
                         HorizontalOptions="End"
                         VerticalOptions="Center"
-                        TextColor="White"/>
+                        TextColor="{DynamicResource PrimaryTextColor}"/>
                 </Grid>
                 <Grid Padding="18,0,18,18">
                     <Grid.RowDefinitions>
@@ -197,7 +197,6 @@
                         HorizontalOptions="Center"
                         VerticalOptions="CenterAndExpand"
                         BackgroundColor="Transparent" />
-
                     <controls:SelectableButton
                         Grid.Column="3"
                         Source="playback_controls_skip_forward"

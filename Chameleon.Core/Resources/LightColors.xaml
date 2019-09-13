@@ -10,6 +10,7 @@
 
     <Color x:Key="TabBarColor">#393A47</Color>
     <Color x:Key="MinimumTrackColor">#FFF14431</Color>
+    <Color x:Key="MaximumTrackColor">#000000</Color>
 
     <Color x:Key="PrimaryTextColor">#000000</Color>
     <Color x:Key="SecondaryTextColor">#FF6C6E81</Color>

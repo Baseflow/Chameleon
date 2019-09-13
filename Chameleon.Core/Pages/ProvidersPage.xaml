@@ -31,13 +31,13 @@
             ItemsSource="{mvx:MvxBind Providers}"
             SelectionMode="Single"
             ItemClick="{mvx:MvxBind SourceCommand}"
-            SeparatorColor="Black"
+            SeparatorColor="{DynamicResource SecondaryColor}"
             RowHeight="60">
             <core:MvxListView.Header>
                 <StackLayout Spacing="0">
                     <Label
                         mvx:La.ng="Text Recommended"
-                        Style="{StaticResource Titels}"
+                        Style="{StaticResource Header1}"
                         Margin="15,10,0,0" />
                      <CollectionView
                         x:Name="MyCollectionView"
@@ -58,7 +58,7 @@
                     </CollectionView>
                      <Label
                         mvx:La.ng="Text Sources"
-                        Style="{StaticResource Titels}"
+                        Style="{StaticResource Header1}"
                         Margin="15,10,0,15" /> 
                 </StackLayout>
             </core:MvxListView.Header>
@@ -78,7 +78,7 @@
                                    Style="{StaticResource MediaItemTitle}"
                                    Grid.Column="0"
                                    HorizontalOptions="StartAndExpand"
-                                VerticalOptions="CenterAndExpand"/>
+                                   VerticalOptions="CenterAndExpand"/>
                             <pan:PancakeView Grid.Column="1"
                                 Margin="8,0,0,0"
                                 IsVisible="{Binding Soon}"
@@ -86,7 +86,7 @@
                                 IsClippedToBounds="True"
                                 HorizontalOptions="StartAndExpand"
                                 VerticalOptions="CenterAndExpand"
-                                BackgroundColor="#FF1B1C22" 
+                                BackgroundColor="{DynamicResource SecondaryColor}" 
                                 Elevation="2"
                                 Padding="5">
                                 <pan:PancakeView.HasShadow>

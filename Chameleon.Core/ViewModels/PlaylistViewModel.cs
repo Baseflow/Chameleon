@@ -106,7 +106,7 @@ namespace Chameleon.Core.ViewModels
             }
         }
 
-        private double _progress;
+        private double _progress = 0;
         public double Progress
         {
             get => _progress;
@@ -159,6 +159,7 @@ namespace Chameleon.Core.ViewModels
         public override void ViewAppeared()
         {
             base.ViewAppeared();
+
             Progress = MediaManager.Position.TotalSeconds / MediaManager.Duration.TotalSeconds;
             MediaManager.PositionChanged += MediaManager_PositionChanged;
             TimeSpanPosition = MediaManager.Position;
@@ -188,7 +189,7 @@ namespace Chameleon.Core.ViewModels
         {
             Progress = e.Position.TotalSeconds / MediaManager.Duration.TotalSeconds;
         }
-
+     
         private async Task Play(IMediaItem mediaItem)
         {
             await NavigationService.Navigate<PlayerViewModel, IMediaItem>(mediaItem);

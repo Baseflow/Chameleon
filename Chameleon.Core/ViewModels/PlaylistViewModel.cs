@@ -2,9 +2,11 @@
 using System.Linq;
 using System.Threading.Tasks;
 using Acr.UserDialogs;
+using Chameleon.Core.Helpers;
 using MediaManager;
 using MediaManager.Library;
 using MediaManager.Media;
+using MediaManager.Playback;
 using MvvmCross.Commands;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
@@ -16,12 +18,16 @@ namespace Chameleon.Core.ViewModels
     {
         private readonly IUserDialogs _userDialogs;
         private IMediaManager _mediaManager;
+        public IMediaManager MediaManager { get; }
+
 
         public PlaylistViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IUserDialogs userDialogs, IMediaManager mediaManager)
             : base(logProvider, navigationService)
         {
             _userDialogs = userDialogs ?? throw new ArgumentNullException(nameof(userDialogs));
             _mediaManager = mediaManager ?? throw new ArgumentNullException(nameof(mediaManager));
+            MediaManager = mediaManager ?? throw new ArgumentNullException(nameof(mediaManager));
+
         }
 
         private IMediaItem _selectedMediaItem;
@@ -31,18 +37,18 @@ namespace Chameleon.Core.ViewModels
             set => SetProperty(ref _selectedMediaItem, value);
         }
 
-        private IPlaylist _currentPlaylist;
-        public IPlaylist CurrentPlaylist
+        private IPlaylist _currentPlaylistSource;
+        public IPlaylist CurrentPlaylistSource
         {
             get
             {
                 if (string.IsNullOrWhiteSpace(SearchText))
                 {
-                    return _currentPlaylist;
+                    return _currentPlaylistSource;
                 }
                 else
                 {
-                    var searchedItems = _currentPlaylist?.MediaItems?.Where(x => x.Title.ToLower().Contains(SearchText.ToLower()) || x.Album.ToLower().Contains(SearchText.ToLower()));
+                    var searchedItems = _currentPlaylistSource?.MediaItems?.Where(x => x.Title.ToLower().Contains(SearchText.ToLower()) || x.Album.ToLower().Contains(SearchText.ToLower()));
                     var playlist = new Playlist();
                     foreach (var item in searchedItems)
                         playlist.MediaItems.Add(item);
@@ -50,6 +56,13 @@ namespace Chameleon.Core.ViewModels
                     return playlist;
                 }
             }
+            set => SetProperty(ref _currentPlaylistSource, value);
+        }
+
+        private IPlaylist _currentPlaylist;
+        public IPlaylist CurrentPlaylist
+        {
+            get => _currentPlaylist;
             set => SetProperty(ref _currentPlaylist, value);
         }
 
@@ -94,6 +107,20 @@ namespace Chameleon.Core.ViewModels
             }
         }
 
+        private double _progress = 0;
+        public double Progress
+        {
+            get => _progress;
+            set => SetProperty(ref _progress, value);
+        }
+
+        private string _timeLeft = "0";
+        public string TimeLeft
+        {
+            get => _timeLeft;
+            set => SetProperty(ref _timeLeft, value);
+        }
+
         private IMvxAsyncCommand<IMediaItem> _playerCommand;
         public IMvxAsyncCommand<IMediaItem> PlayerCommand => _playerCommand ?? (_playerCommand = new MvxAsyncCommand<IMediaItem>(Play));
 
@@ -103,6 +130,7 @@ namespace Chameleon.Core.ViewModels
         public override void Prepare(IPlaylist playlist)
         {
             CurrentPlaylist = playlist;
+            CurrentPlaylistSource = playlist;
 
             var trackAmount = new FormattedString();
             trackAmount.Spans.Add(new Span { Text = CurrentPlaylist.MediaItems.Count.ToString(), FontAttributes = FontAttributes.Bold, FontSize = 12 });
@@ -121,7 +149,24 @@ namespace Chameleon.Core.ViewModels
         {
             _mediaManager.MediaItemChanged += MediaManager_MediaItemChanged;
             ActiveMediaItem = _mediaManager.Queue.Current;
+            CurrentPlaylistSource = null;
+            CurrentPlaylistSource = CurrentPlaylist;
             base.ViewAppearing();
+        }
+
+        public override void ViewAppeared()
+        {
+            base.ViewAppeared();
+
+            Progress = MediaManager.Position.TotalSeconds / MediaManager.Duration.TotalSeconds;
+            MediaManager.PositionChanged += MediaManager_PositionChanged;
+            TimeLeft = $"-{(MediaManager.Position - MediaManager.Duration).ToString(@"mm\:ss")}";
+        }
+
+        public override void ViewDisappeared()
+        {
+            base.ViewDisappeared();
+            MediaManager.PositionChanged -= MediaManager_PositionChanged;
         }
 
         public override void ViewDisappearing()
@@ -133,6 +178,19 @@ namespace Chameleon.Core.ViewModels
         private void MediaManager_MediaItemChanged(object sender, MediaItemEventArgs e)
         {
             ActiveMediaItem = _mediaManager.Queue.Current;
+            CurrentPlaylistSource = null;
+            CurrentPlaylistSource = CurrentPlaylist;
+
+            TimeLeft = $"-{(MediaManager.Position - MediaManager.Duration).ToString(@"mm\:ss")}";
+
+            ReloadData();
+        }
+
+        private void MediaManager_PositionChanged(object sender, PositionChangedEventArgs e)
+        {
+            Progress = e.Position.TotalSeconds / MediaManager.Duration.TotalSeconds;
+
+            TimeLeft = $"-{(e.Position - MediaManager.Duration).ToString(@"mm\:ss")}";
         }
 
         private async Task Play(IMediaItem mediaItem)
@@ -144,6 +202,9 @@ namespace Chameleon.Core.ViewModels
         private async Task StartPlaylist()
         {
             await _mediaManager.Play(CurrentPlaylist.MediaItems);
+            ActiveMediaItem = _mediaManager.Queue.Current;
+            CurrentPlaylistSource = null;
+            CurrentPlaylistSource = CurrentPlaylist;
         }
     }
 }

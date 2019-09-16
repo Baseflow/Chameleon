@@ -212,4 +212,19 @@
         <Setter Property="TextColor" Value="{DynamicResource TertiaryTextColor}"/>
     </Style>
 
+      <Style TargetType="Label" x:Key="TitlePlaylist">
+        <Setter Property="FontFamily" Value="FiraSans#600"/>
+        <Setter Property="FontSize" Value="24"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}"/>
+    </Style>
+
+    <Style TargetType="Label" x:Key="DetailsPlaylist">
+        <Setter Property="FontFamily" Value="FiraSans#700"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}"/>
+    </Style>
+
+
+
 </ResourceDictionary>

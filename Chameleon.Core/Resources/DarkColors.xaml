@@ -9,6 +9,9 @@
     <Color x:Key="TertiaryColor">#FFFFFF</Color>
 
     <Color x:Key="MinimumTrackColor">#FFF14431</Color>
+    <Color x:Key="MaximumTrackColor">#FFFFFF</Color>
+    <Color x:Key="SliderSettingsPlaybackColor">#FF252525</Color>
+    <Color x:Key="SwitchsColor">#f14431</Color>
 
     <Color x:Key="PrimaryTextColor">#FFFFFF</Color>
     <Color x:Key="SecondaryTextColor">#FF6C6E81"</Color>

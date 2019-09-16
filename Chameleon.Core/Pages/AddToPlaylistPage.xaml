@@ -17,7 +17,7 @@
     ios:Page.UseSafeArea="True">
 
     <ContentPage.Content>
-        <Grid 
+        <Grid Margin="0,15,0,0"
               BackgroundColor="{DynamicResource PrimaryColor}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="55" />
@@ -60,7 +60,7 @@
                 <core:MvxListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <templates:AddToPlaylistItemTemplate />
+                         <templates:AddToPlaylistItemTemplate/>
                         </ViewCell>
                     </DataTemplate>
                 </core:MvxListView.ItemTemplate>

@@ -7,6 +7,7 @@ using MvvmCross.Commands;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
+using Xamarin.Forms;
 
 namespace Chameleon.Core.ViewModels
 {
@@ -41,6 +42,27 @@ namespace Chameleon.Core.ViewModels
             }
         }
 
+        private IPlaylist _onePlaylist;
+        public IPlaylist OnePlaylist
+        {
+            get => _onePlaylist;
+            set => SetProperty(ref _onePlaylist, value);
+        }
+
+        private FormattedString _trackAmount;
+        public FormattedString TrackAmount
+        {
+            get => _trackAmount;
+            set => SetProperty(ref _trackAmount, value);
+        }
+
+        private FormattedString _playlistTime;
+        public FormattedString PlaylistTime
+        {
+            get => _playlistTime;
+            set => SetProperty(ref _playlistTime, value);
+        }
+
         public override void Prepare(IMediaItem parameter)
         {
             _mediaItem = parameter;
@@ -49,6 +71,22 @@ namespace Chameleon.Core.ViewModels
         public override async Task Initialize()
         {
             Playlists.ReplaceWith(await _mediaManager.Library.GetAll<IPlaylist>());
+
+            //var a = _mediaManager.Library.GetAll<IPlaylist>();
+            //foreach (OnePlaylist in a )
+            //{
+                //var trackAmount = new FormattedString();
+                //trackAmount.Spans.Add(new Span { Text = OnePlaylist.MediaItems.Count.ToString() });
+                //trackAmount.Spans.Add(new Span { Text = " tracks" });
+                //TrackAmount = trackAmount;
+
+                //var playlistTime = new FormattedString();
+                //playlistTime.Spans.Add(new Span { Text = OnePlaylist.TotalTime.Hours.ToString() });
+                //playlistTime.Spans.Add(new Span { Text = " hours, " });
+                //playlistTime.Spans.Add(new Span { Text = OnePlaylist.TotalTime.Minutes.ToString() });
+                //playlistTime.Spans.Add(new Span { Text = " minutes" });
+                //PlaylistTime = playlistTime;
+            //}
         }
 
         private async Task AddToPlaylist(IPlaylist arg)

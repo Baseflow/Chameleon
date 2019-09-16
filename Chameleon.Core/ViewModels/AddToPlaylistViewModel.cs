@@ -42,6 +42,13 @@ namespace Chameleon.Core.ViewModels
             }
         }
 
+        private IPlaylist _onePlaylist;
+        public IPlaylist OnePlaylist
+        {
+            get => _onePlaylist;
+            set => SetProperty(ref _onePlaylist, value);
+        }
+
         private FormattedString _trackAmount;
         public FormattedString TrackAmount
         {
@@ -65,25 +72,22 @@ namespace Chameleon.Core.ViewModels
         {
             Playlists.ReplaceWith(await _mediaManager.Library.GetAll<IPlaylist>());
 
-            IPlaylist playlist = null;
-            await GetSubtitle(playlist);
+            //var a = _mediaManager.Library.GetAll<IPlaylist>();
+            //foreach (OnePlaylist in a )
+            //{
+                //var trackAmount = new FormattedString();
+                //trackAmount.Spans.Add(new Span { Text = OnePlaylist.MediaItems.Count.ToString() });
+                //trackAmount.Spans.Add(new Span { Text = " tracks" });
+                //TrackAmount = trackAmount;
+
+                //var playlistTime = new FormattedString();
+                //playlistTime.Spans.Add(new Span { Text = OnePlaylist.TotalTime.Hours.ToString() });
+                //playlistTime.Spans.Add(new Span { Text = " hours, " });
+                //playlistTime.Spans.Add(new Span { Text = OnePlaylist.TotalTime.Minutes.ToString() });
+                //playlistTime.Spans.Add(new Span { Text = " minutes" });
+                //PlaylistTime = playlistTime;
+            //}
         }
-
-        private async Task GetSubtitle(IPlaylist playlist)
-        {
-            var trackAmount = new FormattedString();
-            trackAmount.Spans.Add(new Span { Text = playlist.MediaItems.Count.ToString() });
-            trackAmount.Spans.Add(new Span { Text = " tracks" });
-            TrackAmount = trackAmount;
-
-            var playlistTime = new FormattedString();
-            playlistTime.Spans.Add(new Span { Text = playlist.TotalTime.Hours.ToString() });
-            playlistTime.Spans.Add(new Span { Text = " hours, " });
-            playlistTime.Spans.Add(new Span { Text = playlist.TotalTime.Minutes.ToString() });
-            playlistTime.Spans.Add(new Span { Text = " minutes" });
-            PlaylistTime = playlistTime;
-        }
-
 
         private async Task AddToPlaylist(IPlaylist arg)
         {

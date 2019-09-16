@@ -4,10 +4,12 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
     xmlns:local="clr-namespace:Chameleon.Core.Helpers"
-    x:Class="Chameleon.Core.Templates.AddToPlaylistItemTemplate">
+    x:Class="Chameleon.Core.Templates.AddToPlaylistItemTemplate"
+    xmlns:viewModels="clr-namespace:Chameleon.Core.ViewModels;assembly=Chameleon.Core">
     <ContentView.Content>
         <Grid Margin="5"
-              BackgroundColor="{DynamicResource PrimaryColor}">
+              BackgroundColor="{DynamicResource PrimaryColor}"
+              BindingContext="{Binding .}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
@@ -38,12 +40,12 @@
                    MaxLines="1"
                    VerticalTextAlignment="Start"
                    Margin="0,3,0,0"/>
-            <Label FormattedText="{Binding TrackAmount}"
+            <Label mvx:Bi.nd="Text TrackAmount(Binding .)"
                    Style="{StaticResource MediaItemSubTitle}"
                    Grid.Column="1"
                    Grid.Row="1"
                    MaxLines="1"/>
-            <Label FormattedText="{Binding PlaylistTime}"
+            <Label 
                    Style="{StaticResource MediaItemSubTitle}"
                    Grid.Column="3"
                    Grid.Row="1"

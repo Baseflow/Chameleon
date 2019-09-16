@@ -45,4 +45,4 @@ Chameleon is developed by [Baseflow](https://baseflow.com/). You can contact us 
 
 # License
 
-This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/BaseflowIT/Chameleon/blob/develop/LICENSE) file for details
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/BaseflowIT/Chameleon/blob/develop/LICENSE) file for details

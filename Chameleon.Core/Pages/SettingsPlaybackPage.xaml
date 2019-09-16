@@ -60,7 +60,8 @@
                                     Margin="10,0,10,0"
                                     Maximum="30"
                                     Minimum="0"
-                                    MinimumTrackColor="{DynamicResource SliderSettingsPlaybackColor}"/>
+                                    MinimumTrackColor="{DynamicResource SliderSettingsPlaybackColor}"
+                                    MaximumTrackColor="{DynamicResource SliderSettingsPlaybackColor}"/>
                         </Grid>
                     </ViewCell>
                     <ViewCell BindingContext="{Binding .}">
@@ -86,7 +87,8 @@
                                     mvx:Bi.nd="Value MediaManager.VolumeManager.MaxVolume"
                                     Grid.Row="2"
                                     Margin="10,0,10,0"
-                                    MinimumTrackColor="{DynamicResource SliderSettingsPlaybackColor}" />
+                                    MinimumTrackColor="{DynamicResource SliderSettingsPlaybackColor}"
+                                    MaximumTrackColor="{DynamicResource SliderSettingsPlaybackColor}"/>
                         </Grid>
                     </ViewCell>
                     <ViewCell BindingContext="{Binding .}">

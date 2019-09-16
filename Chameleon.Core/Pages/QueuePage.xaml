@@ -25,7 +25,7 @@
 
     <ContentPage.Content>
         <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-            <Label mvx:Bi.nd="Text QueueTitle" Style="{DynamicResource QueueTitle}" Margin="24,10,0,24"/>
+            <Label mvx:Bi.nd="Text QueueTitle" Style="{StaticResource Header1}" Margin="24,10,0,24"/>
             <CollectionView
                 x:Name="MyCollectionView"
                 mvx:Bi.nd=

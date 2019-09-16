@@ -60,7 +60,7 @@
                                     Margin="10,0,10,0"
                                     Maximum="30"
                                     Minimum="0"
-                                    MinimumTrackColor="#252525" />
+                                    MinimumTrackColor="{DynamicResource SliderSettingsPlaybackColor}"/>
                         </Grid>
                     </ViewCell>
                     <ViewCell BindingContext="{Binding .}">
@@ -86,7 +86,7 @@
                                     mvx:Bi.nd="Value MediaManager.VolumeManager.MaxVolume"
                                     Grid.Row="2"
                                     Margin="10,0,10,0"
-                                    MinimumTrackColor="#252525" />
+                                    MinimumTrackColor="{DynamicResource SliderSettingsPlaybackColor}" />
                         </Grid>
                     </ViewCell>
                     <ViewCell BindingContext="{Binding .}">
@@ -117,8 +117,8 @@
                                     HorizontalOptions="FillAndExpand"
                                     Maximum="10"
                                     Minimum="-10"
-                                    MinimumTrackColor="#252525"
-                                    MaximumTrackColor="#252525" />
+                                    MinimumTrackColor="{DynamicResource SliderSettingsPlaybackColor}"
+                                    MaximumTrackColor="{DynamicResource SliderSettingsPlaybackColor}"/>
                             <Label Text="L"
                                    VerticalTextAlignment="Center"
                                    Grid.Row="2"
@@ -146,7 +146,7 @@
                                     Grid.Column="1"
                                     VerticalOptions="Center"
                                     HorizontalOptions="End"
-                                    OnColor="Tomato" />
+                                    OnColor="{DynamicResource SwitchsColor}" />
                         </Grid>
                     </ViewCell>
                     <ViewCell BindingContext="{Binding .}">
@@ -166,7 +166,7 @@
                                     Grid.Column="1"
                                     VerticalOptions="Center"
                                     HorizontalOptions="End"
-                                    OnColor="Tomato" />
+                                    OnColor="{DynamicResource SwitchsColor}" />
                         </Grid>
                     </ViewCell>
                 </TableSection>

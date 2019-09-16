@@ -155,21 +155,14 @@
                         Text="{Binding CurrentPlaylist.Title}"
                         MaxLines="2"
                         LineBreakMode="TailTruncation"
-                        FontFamily="FiraSans#600"
-                        FontAttributes="Bold"
-                        TextColor="#FFFFFFFF"
-                        FontSize="24"/>
+                        Style="{StaticResource TitlePlaylist}"/>
                     <Label
                         FormattedText="{Binding TrackAmount}"
                         VerticalOptions="EndAndExpand"
-                        FontFamily="FiraSans#700"
-                        FontSize="12"
-                        TextColor="#FFFFFFFF"/>
+                        Style="{StaticResource DetailsPlaylist}"/>
                     <Label
                         FormattedText="{Binding PlaylistTime}"
-                        FontFamily="FiraSans#700"
-                        FontSize="12"
-                        TextColor="#FFFFFFFF"/>
+                        Style="{StaticResource DetailsPlaylist}"/>
                 </StackLayout>
             </Grid>
             

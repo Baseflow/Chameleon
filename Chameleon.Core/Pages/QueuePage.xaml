@@ -9,6 +9,7 @@
     xmlns:viewModels="clr-namespace:Chameleon.Core.ViewModels;assembly=Chameleon.Core"
     xmlns:mm="clr-namespace:MediaManager.Forms;assembly=MediaManager.Forms"
     xmlns:templates="clr-namespace:Chameleon.Core.Templates;assembly=Chameleon.Core"
+    xmlns:pan="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     mc:Ignorable="d"
     x:TypeArguments="viewModels:QueueViewModel"
     x:Class="Chameleon.Core.Views.QueuePage">
@@ -38,7 +39,44 @@
 
                 <CollectionView.EmptyView>
                     <StackLayout>
-                        <ActivityIndicator Color="DimGray" IsRunning="True" HeightRequest="50" />
+                        <ActivityIndicator Color="DimGray"
+                                           mvx:Bi.nd="IsRunning IsLoading"
+                                           HeightRequest="50" />
+                        <Grid Padding="24,0"
+                              RowSpacing="0"
+                              ColumnSpacing="12"
+                              VerticalOptions="Center">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="56" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="56" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <pan:PancakeView
+                                CornerRadius="3"
+                                IsClippedToBounds="True"
+                                Elevation="2"
+                                BackgroundColor="{DynamicResource PrimaryTextColor}"
+                                Grid.Column="0">
+                                <pan:PancakeView.HasShadow>
+                                    <OnPlatform x:TypeArguments="x:Boolean"
+                                                iOS="False"
+                                                Android="True" />
+                                </pan:PancakeView.HasShadow>
+                                <Image
+                                    HorizontalOptions="Center"
+                                    BackgroundColor="Transparent"
+                                    VerticalOptions="Center"
+                                    Aspect="AspectFill"
+                                    Source="icon_plus" />
+                            </pan:PancakeView>
+                            <Label
+                                Text="Add new Playlist"
+                                Grid.Column="1"
+                                VerticalOptions="Center"
+                                Style="{StaticResource MediaItemTitle}" />
+                        </Grid>
                     </StackLayout>
                 </CollectionView.EmptyView>
 

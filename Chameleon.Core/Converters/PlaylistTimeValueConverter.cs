@@ -9,9 +9,13 @@ namespace Chameleon.Core.Converters
     {
         protected override string Convert(IPlaylist value, Type targetType, object parameter, CultureInfo culture)
         {
-            if(value.TotalTime.Hours > 1)
+            if(value.TotalTime.Hours > 2)
             {
                 return $"{value.TotalTime.Hours} hours " + $" { value.TotalTime.Minutes} minutes";
+            }
+            else if (value.TotalTime.Hours > 1)
+            {
+                return $"{value.TotalTime.Hours} hour " + $" { value.TotalTime.Minutes} minutes";
             }
             else
             {

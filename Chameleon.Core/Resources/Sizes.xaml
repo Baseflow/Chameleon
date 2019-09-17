@@ -4,8 +4,19 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="Chameleon.Core.Resources.Sizes">
 
-    <!--<Setter x:Key="SmallTextSize" x:TypeArguments="x:Double">10</Setter>
-    <Setter x:Key="BigTextSize" x:TypeArguments="x:Double">15</Setter>-->
+    <Setter x:Key="XXSmallTextSize">12</Setter>
+    <Setter x:Key="XSmallTextSize">13</Setter>
+    <Setter x:Key="SmallTextSize">14</Setter>
+    <Setter x:Key="MediumTextSize">15</Setter>
+    <Setter x:Key="BigTextSize">16</Setter>
+    <Setter x:Key="XBigTextSize">18</Setter>
+    <Setter x:Key="XXBigTextSize">24</Setter>
+
+        <!--<Color x:Key="MinimumTrackColor">#FFF14431</Color>
+
+        <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}"/>
+
+            <Setter Property="FontSize" Value="{DynamicResource XXSmallTextSize}"/>-->
 
 </ResourceDictionary>
  

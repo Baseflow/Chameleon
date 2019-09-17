@@ -26,7 +26,7 @@
 
     <ContentPage.Content>
         <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-            <Label mvx:Bi.nd="Text QueueTitle" Style="{StaticResource Header1}" Margin="24,10,0,24"/>
+            <Label mvx:Bi.nd="Text QueueTitle" Style="{StaticResource Header1}" Margin="24,20,0,0"/>
             <CollectionView
                 x:Name="MyCollectionView"
                 mvx:Bi.nd=
@@ -47,7 +47,7 @@
                               ColumnSpacing="12"
                               VerticalOptions="Center">
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="56" />
+                                <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="56" />
@@ -69,10 +69,10 @@
                                     BackgroundColor="Transparent"
                                     VerticalOptions="Center"
                                     Aspect="AspectFill"
-                                    Source="icon_plus" />
+                                    Source="cover_art_placeholder" />
                             </pan:PancakeView>
                             <Label
-                                Text="Add new Playlist"
+                                Text="Add new Media Item"
                                 Grid.Column="1"
                                 VerticalOptions="Center"
                                 Style="{StaticResource MediaItemTitle}" />

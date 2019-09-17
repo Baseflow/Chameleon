@@ -54,8 +54,6 @@ namespace Chameleon.Core.ViewModels
                     await RaisePropertyChanged(nameof(QueueTitle));
                 }
            
-
-
             }
             catch (Exception)
             {
@@ -68,12 +66,5 @@ namespace Chameleon.Core.ViewModels
         {
             await _mediaManager.PlayQueueItem(mediaItem);
         }
-
-        //public override void ViewAppearing()
-        //{
-        //    base.ViewAppearing();
-        //    MediaItems.ReplaceWith(_mediaManager.Queue);
-        //    RaisePropertyChanged(nameof(QueueTitle));
-        //}
     }
 }

@@ -2,6 +2,7 @@
 using Foundation;
 using MediaManager;
 using MvvmCross.Forms.Platforms.Mac.Core;
+using Xamarin.Forms;
 
 namespace Chameleon.Mac
 {
@@ -14,6 +15,7 @@ namespace Chameleon.Mac
 
         public override void DidFinishLaunching(NSNotification notification)
         {
+            Forms.SetFlags("CollectionView_Experimental");
             CrossMediaManager.Current.Init();
             base.DidFinishLaunching(notification);
         }

@@ -15,6 +15,7 @@ namespace Chameleon.Core.Views
         public BrowsePage()
         {
             InitializeComponent();
+            //BindingContext = new BrowsePage();
         }
 
         protected override void OnAppearing()

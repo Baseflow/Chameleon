@@ -9,6 +9,9 @@
     xmlns:viewModels="clr-namespace:Chameleon.Core.ViewModels;assembly=Chameleon.Core"
     xmlns:templates="clr-namespace:Chameleon.Core.Templates;assembly=Chameleon.Core"
     xmlns:coloredTableView="clr-namespace:Chameleon.Core;assembly=Chameleon.Core"
+        xmlns:custom="clr-namespace:Chameleon.Core.Helpers;assembly=Chameleon.Core"
+
+
     mc:Ignorable="d"
     x:TypeArguments="viewModels:SettingsViewModel"
     x:Class="Chameleon.Core.Views.SettingsPage"
@@ -58,6 +61,7 @@
                                    Grid.Column="1" />
                         </Grid>
                     </ViewCell>
+
                     <!--<ViewCell >
                         <Grid Margin="15,15">
                         <Grid.RowDefinitions>
@@ -70,7 +74,8 @@
                             <Label Text="Equalizer" Style="{StaticResource MediaItemTitle}" Grid.Column="0"/>
                             <Image Source="disclosure_button" HorizontalOptions="End" Grid.Column="1"/>
                        </Grid>
-                  </ViewCell>-->
+                    </ViewCell>-->
+
                     <ViewCell Tapped="ViewCell_TappedOpenSource">
                         <Grid Margin="15,15">
                             <Grid.RowDefinitions>
@@ -89,6 +94,7 @@
                                    Grid.Column="1" />
                         </Grid>
                     </ViewCell>
+
                     <ViewCell IsEnabled="True"
                               BindingContext="{Binding .}">
                         <Grid Margin="15,15">
@@ -118,7 +124,7 @@
                                     Grid.Row="3" />
                         </Grid>
                     </ViewCell>
-                </TableSection>
+                 </TableSection>
             </TableRoot>
         </coloredTableView:ColoredTableView>
     </ContentPage.Content>

@@ -41,16 +41,30 @@ namespace Chameleon.Core.ViewModels
         private IMvxAsyncCommand _closeCommand;
         public IMvxAsyncCommand CloseCommand => _closeCommand ?? (_closeCommand = new MvxAsyncCommand(() => Application.Current.MainPage.Navigation.PopModalAsync()));
 
+        public override async Task Initialize()
+        {
+            IsLoading = true;
+
+            try
+            {
+                var mediaItems = _mediaManager.Queue;
+                if (mediaItems != null)
+                {
+                    MediaItems.ReplaceWith(mediaItems);
+                    await RaisePropertyChanged(nameof(QueueTitle));
+                }
+           
+            }
+            catch (Exception)
+            {
+            }
+
+            IsLoading = false;
+        }
+
         private async Task Play(IMediaItem mediaItem)
         {
             await _mediaManager.PlayQueueItem(mediaItem);
-        }
-
-        public override void ViewAppearing()
-        {
-            base.ViewAppearing();
-            MediaItems.ReplaceWith(_mediaManager.Queue);
-            RaisePropertyChanged(nameof(QueueTitle));
         }
     }
 }

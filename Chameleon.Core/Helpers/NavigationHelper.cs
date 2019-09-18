@@ -9,8 +9,11 @@ using MediaManager.Library;
 using MvvmCross;
 using MvvmCross.Commands;
 using MvvmCross.Forms.Presenters;
+using MvvmCross.Forms.Views;
 using MvvmCross.Localization;
 using MvvmCross.Navigation;
+using MvvmCross.ViewModels;
+using MvvmCross.Views;
 
 namespace Chameleon.Core.Helpers
 {
@@ -21,7 +24,9 @@ namespace Chameleon.Core.Helpers
         private static IMvxNavigationService _navigationService => Mvx.IoCProvider.Resolve<IMvxNavigationService>();
         private static IMvxTextProvider _textProvider => Mvx.IoCProvider.Resolve<IMvxTextProvider>();
         private static IMvxFormsPagePresenter _formsPagePresenter => Mvx.IoCProvider.Resolve<IMvxFormsPagePresenter>();
-        private static Type _topViewModel => _formsPagePresenter.CurrentPageTree.LastOrDefault()?.BindingContext?.GetType();
+
+        private static IMvxViewModel _topViewModel => (_formsPagePresenter.CurrentPageTree.LastOrDefault() as IMvxView)?.ViewModel;
+        private static Type _topViewModelType => _topViewModel?.GetType();
 
         private static IMvxAsyncCommand<IContentItem> _optionsCommand;
         public static IMvxAsyncCommand<IContentItem> OptionsCommand => _optionsCommand ?? (_optionsCommand = new MvxAsyncCommand<IContentItem>(OpenOptions));
@@ -47,7 +52,7 @@ namespace Chameleon.Core.Helpers
 
             if (contentItem is IMediaItem mediaItem)
             {
-                if (_topViewModel == typeof(QueueViewModel))
+                if (_topViewModel is QueueViewModel queueViewModel)
                 {
                     config.Add(GetText("RemoveFromQueue"), () =>
                     {
@@ -63,11 +68,12 @@ namespace Chameleon.Core.Helpers
                         _userDialogs.Toast(GetText("ItemAddedToQueue"));
                     }, "add_to_queue");
                 }
-                if (_topViewModel == typeof(PlaylistViewModel))
+                if (_topViewModel is PlaylistViewModel playlistViewModel)
                 {
-                    config.Add(GetText("RemoveFromPlaylist"), () =>
+                    config.Add(GetText("RemoveFromPlaylist"), async () =>
                     {
-                        //TODO: Remove the item from playlist
+                        playlistViewModel.CurrentPlaylist?.MediaItems?.Remove(mediaItem);
+                        await _mediaManager.Library.AddOrUpdate<IPlaylist>(playlistViewModel.CurrentPlaylist);
                         _userDialogs.Toast(GetText("ItemRemovedFromPlaylist"));
                     }, "remove_from_queue");
                 }

@@ -10,6 +10,7 @@
     xmlns:mm="clr-namespace:MediaManager.Forms;assembly=MediaManager.Forms"
     xmlns:templates="clr-namespace:Chameleon.Core.Templates;assembly=Chameleon.Core"
     xmlns:pan="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    xmlns:custom="clr-namespace:Chameleon.Core.Helpers;assembly=Chameleon.Core"
     mc:Ignorable="d"
     x:TypeArguments="viewModels:ProvidersViewModel"
     x:Class="Chameleon.Core.Views.ProvidersPage"
@@ -52,6 +53,7 @@
                         </CollectionView.ItemsLayout>
                      <CollectionView.ItemTemplate>
                             <DataTemplate>
+
                                 <templates:HorizontalSourceItemTemplate/>
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
@@ -64,41 +66,43 @@
             </core:MvxListView.Header>
             <core:MvxListView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell>
-                        <Grid  Margin="20,0,20,0">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*" />
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition Width="60"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-                            <Label Text="{Binding Title}"
-                                   Style="{StaticResource MediaItemTitle}"
-                                   Grid.Column="0"
-                                   HorizontalOptions="StartAndExpand"
-                                   VerticalOptions="CenterAndExpand"/>
-                            <pan:PancakeView Grid.Column="1"
-                                Margin="8,0,0,0"
-                                IsVisible="{Binding Soon}"
-                                CornerRadius="4"
-                                IsClippedToBounds="True"
-                                HorizontalOptions="StartAndExpand"
-                                VerticalOptions="CenterAndExpand"
-                                BackgroundColor="{DynamicResource SecondaryColor}" 
-                                Elevation="2"
-                                Padding="5">
-                                <pan:PancakeView.HasShadow>
-                                    <OnPlatform x:TypeArguments="x:Boolean"
-                                iOS="False"
-                                Android="True" />
-                                </pan:PancakeView.HasShadow>
-                                <Label Text="{Binding Source={x:Reference Name=providerPage}, Path=BindingContext.DataContext.SoonText}" Style="{StaticResource Data1}" />
-                            </pan:PancakeView>
-                            <Image Source="disclosure_button" HorizontalOptions="End" BackgroundColor="Transparent" Grid.Column="2"/>
-                        </Grid>
-                    </ViewCell>
+                    <custom:CustomViewCell SelectedItemBackgroundColor="{DynamicResource SecondaryColor}">  
+                        <ViewCell.View>
+                            <Grid  Margin="20,0,20,0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="60"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding Title}"
+                                       Style="{StaticResource MediaItemTitle}"
+                                       Grid.Column="0"
+                                       HorizontalOptions="StartAndExpand"
+                                       VerticalOptions="CenterAndExpand"/>
+                                <pan:PancakeView Grid.Column="1"
+                                    Margin="8,0,0,0"
+                                    IsVisible="{Binding Soon}"
+                                    CornerRadius="4"
+                                    IsClippedToBounds="True"
+                                    HorizontalOptions="StartAndExpand"
+                                    VerticalOptions="CenterAndExpand"
+                                    BackgroundColor="{DynamicResource SecondaryColor}" 
+                                    Elevation="2"
+                                    Padding="5">
+                                    <pan:PancakeView.HasShadow>
+                                        <OnPlatform x:TypeArguments="x:Boolean"
+                                    iOS="False"
+                                    Android="True" />
+                                    </pan:PancakeView.HasShadow>
+                                    <Label Text="{Binding Source={x:Reference Name=providerPage}, Path=BindingContext.DataContext.SoonText}" Style="{StaticResource Data1}" />
+                                </pan:PancakeView>
+                                <Image Source="disclosure_button" HorizontalOptions="End" BackgroundColor="Transparent" Grid.Column="2"/>
+                            </Grid>
+                        </ViewCell.View>
+                  </custom:CustomViewCell>
                 </DataTemplate>
             </core:MvxListView.ItemTemplate>
         </core:MvxListView>

@@ -9,6 +9,7 @@
     xmlns:viewModels="clr-namespace:Chameleon.Core.ViewModels;assembly=Chameleon.Core"
     xmlns:mm="clr-namespace:MediaManager.Forms;assembly=MediaManager.Forms"
     xmlns:templates="clr-namespace:Chameleon.Core.Templates;assembly=Chameleon.Core"
+    xmlns:custom="clr-namespace:Chameleon.Core.Helpers;assembly=Chameleon.Core"
     mc:Ignorable="d"
     x:TypeArguments="viewModels:AddToPlaylistViewModel"
     x:Class="Chameleon.Core.Views.AddToPlaylistPage"
@@ -59,9 +60,11 @@
                 HasUnevenRows="True">
                 <core:MvxListView.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell>
-                         <templates:AddToPlaylistItemTemplate/>
-                        </ViewCell>
+                        <custom:CustomViewCell SelectedItemBackgroundColor="{DynamicResource SecondaryColor}">  
+                            <ViewCell.View>
+                                <templates:AddToPlaylistItemTemplate/>
+                            </ViewCell.View>
+                        </custom:CustomViewCell>
                     </DataTemplate>
                 </core:MvxListView.ItemTemplate>
             </core:MvxListView>

@@ -64,10 +64,16 @@ namespace Chameleon.Services.Providers
             return Task.FromResult<IEnumerable<IPlaylist>>(null);
         }
 
-        public Task<bool> Remove(IPlaylist item)
+        public async Task<bool> Remove(IPlaylist item)
         {
-            _barrel.Empty(item.Id);
-            return Task.FromResult(true);
+            var items = (await GetAll())?.ToList();
+            var playlist = items.FirstOrDefault(x => x.Id == item.Id);
+            if (items != null && items.Remove(playlist))
+            {
+                _barrel.Add("playlists", items, TimeSpan.MaxValue);
+                return true;
+            }
+            return false;
         }
 
         public Task<bool> RemoveAll()

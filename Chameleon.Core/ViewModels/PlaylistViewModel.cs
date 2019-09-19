@@ -31,6 +31,8 @@ namespace Chameleon.Core.ViewModels
 
         }
 
+        public MvxObservableCollection<IMediaItem> MediaItems { get; set; } = new MvxObservableCollection<IMediaItem>();
+        
         private IMediaItem _selectedMediaItem;
         public IMediaItem SelectedMediaItem
         {

@@ -11,6 +11,8 @@
     xmlns:templates="clr-namespace:Chameleon.Core.Templates;assembly=Chameleon.Core"
     mc:Ignorable="d"
     xmlns:coloredTableView="clr-namespace:Chameleon.Core;assembly=Chameleon.Core"
+        xmlns:custom="clr-namespace:Chameleon.Core.Helpers;assembly=Chameleon.Core"
+
     x:TypeArguments="viewModels:ThemingViewModel"
     x:Class="Chameleon.Core.Views.ThemingPage"
     xmlns:pan="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView">
@@ -33,12 +35,17 @@
             SeparatorColor="{DynamicResource PrimaryColor}">
             <TableRoot>
                 <TableSection>
-                    <ViewCell>
+                                        <custom:CustomViewCell SelectedItemBackgroundColor="{DynamicResource PrimaryColor}">  
+
+                    <ViewCell.View>
                         <Label mvx:La.ng=" Text Theming"
                                Style="{DynamicResource PlaybackSettings}"
                                Margin="20" />
-                    </ViewCell>
-                    <ViewCell BindingContext="{Binding .}">
+                    </ViewCell.View>
+                                                                </custom:CustomViewCell>  
+                                                            <custom:CustomViewCell SelectedItemBackgroundColor="{DynamicResource PrimaryColor}">  
+
+                    <ViewCell.View BindingContext="{Binding .}">
                         <Grid Margin="5">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
@@ -97,7 +104,9 @@
                                 Margin="10"
                                 Style="{StaticResource MediaItemTitle}" />
                         </Grid>
-                    </ViewCell>
+                    </ViewCell.View>
+                                                                                                                                </custom:CustomViewCell>  
+
                 </TableSection>
             </TableRoot>
         </coloredTableView:ColoredTableView>

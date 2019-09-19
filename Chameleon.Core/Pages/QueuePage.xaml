@@ -40,43 +40,12 @@
                 <CollectionView.EmptyView>
                     <StackLayout>
                         <ActivityIndicator Color="DimGray"
-                                           mvx:Bi.nd="IsRunning IsLoading"
-                                           HeightRequest="50" />
-                        <Grid Padding="24,0"
-                              RowSpacing="0"
-                              ColumnSpacing="12"
-                              VerticalOptions="Center">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*" />
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="56" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <pan:PancakeView
-                                CornerRadius="3"
-                                IsClippedToBounds="True"
-                                Elevation="2"
-                                BackgroundColor="{DynamicResource PrimaryTextColor}"
-                                Grid.Column="0">
-                                <pan:PancakeView.HasShadow>
-                                    <OnPlatform x:TypeArguments="x:Boolean"
-                                                iOS="False"
-                                                Android="True" />
-                                </pan:PancakeView.HasShadow>
-                                <Image
-                                    HorizontalOptions="Center"
-                                    BackgroundColor="Transparent"
-                                    VerticalOptions="Center"
-                                    Aspect="AspectFill"
-                                    Source="cover_art_placeholder" />
-                            </pan:PancakeView>
-                            <Label
-                                Text="Add new Media Item"
-                                Grid.Column="1"
-                                VerticalOptions="Center"
-                                Style="{StaticResource MediaItemTitle}" />
-                        </Grid>
+                                           mvx:Bi.nd="IsRunning IsLoading"/>
+                        <Label
+                            Text="Start filling up the queue"
+                            VerticalOptions="Center"
+                            Margin="24,0,0,0"
+                            Style="{StaticResource MediaItemTitle}" />
                     </StackLayout>
                 </CollectionView.EmptyView>
 

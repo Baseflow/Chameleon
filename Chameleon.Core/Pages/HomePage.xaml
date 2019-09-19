@@ -101,9 +101,8 @@
                                 WidthRequest="154"
                                 HeightRequest="154"
                                 IsClippedToBounds="True"
-                                HorizontalOptions="FillAndExpand"
                                 BackgroundColor="{DynamicResource SecondaryColor}"
-                                VerticalOptions="FillAndExpand"
+                               
                                 Elevation="2">
                                 <pan:PancakeView.HasShadow>
                                     <OnPlatform
@@ -126,9 +125,8 @@
                                     <ImageButton
                                         x:Name="AddPlaylistImageButton"
                                         AbsoluteLayout.LayoutFlags="All"
-                                        AbsoluteLayout.LayoutBounds=".5,.5,1,1"
-                                        Padding="30"
-                                        Opacity="0.2"
+                                        AbsoluteLayout.LayoutBounds=".5,.5,.5,.5"
+                                        Opacity="0.3"
                                         BackgroundColor="{DynamicResource SecondaryColor}"
                                         Command="{Binding Source={x:Reference Name=homePage}, Path=BindingContext.DataContext.AddPlaylistCommand}"
                                         Source="icon_plus_big" />

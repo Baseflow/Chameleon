@@ -60,7 +60,7 @@
                 HasUnevenRows="True">
                 <core:MvxListView.ItemTemplate>
                     <DataTemplate>
-                        <custom:CustomViewCell SelectedItemBackgroundColor="{DynamicResource SecondaryColor}">  
+                        <custom:CustomViewCell SelectedItemBackgroundColor="{DynamicResource QuaternaryColor}">  
                             <ViewCell.View>
                                 <templates:AddToPlaylistItemTemplate/>
                             </ViewCell.View>

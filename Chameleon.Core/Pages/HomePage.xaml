@@ -102,7 +102,6 @@
                                 HeightRequest="154"
                                 IsClippedToBounds="True"
                                 BackgroundColor="{DynamicResource SecondaryColor}"
-                               
                                 Elevation="2">
                                 <pan:PancakeView.HasShadow>
                                     <OnPlatform

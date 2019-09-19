@@ -94,7 +94,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Acr.UserDialogs">
-      <Version>7.0.27</Version>
+      <Version>7.0.30</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.AppCenter">
       <Version>2.1.1</Version>

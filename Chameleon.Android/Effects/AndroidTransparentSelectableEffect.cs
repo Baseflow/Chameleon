@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using Android.Support.V4.Content;
 using Android.Util;
 using Chameleon.Android.Effects;
 using Chameleon.Core.Effects;
@@ -15,9 +17,19 @@ namespace Chameleon.Android.Effects
         {
             try
             {
+                var effect = (TransparentSelectableEffect)Element.Effects.FirstOrDefault(e => e is TransparentSelectableEffect);
+                int resid = 0;
+                if (effect != null && effect.Borderless)
+                    resid = global::Android.Resource.Attribute.SelectableItemBackgroundBorderless;
+                else
+                    resid = global::Android.Resource.Attribute.SelectableItemBackground;
+
                 var value = new TypedValue();
-                global::Android.App.Application.Context.Theme.ResolveAttribute(global::Android.Resource.Attribute.SelectableItemBackgroundBorderless, value, true);
-                Control.SetBackgroundResource(value.ResourceId);
+                global::Android.App.Application.Context.Theme.ResolveAttribute(resid, value, true);
+                if (Control != null)
+                    Control.SetBackgroundResource(value.ResourceId);
+                //else if (Container != null)
+                //    Container.Foreground = ContextCompat.GetDrawable(Container.Context, value.ResourceId); // SetBackgroundResource(value.ResourceId);
             }
             catch (Exception ex)
             {

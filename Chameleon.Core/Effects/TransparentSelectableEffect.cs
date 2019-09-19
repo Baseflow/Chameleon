@@ -7,5 +7,7 @@ namespace Chameleon.Core.Effects
         public TransparentSelectableEffect() : base("Chameleon.TransparentSelectableEffect")
         {
         }
+
+        public bool Borderless { get; set; } = true;
     }
 }

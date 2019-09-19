@@ -300,6 +300,10 @@
     <ImageAsset Include="Assets.xcassets\cover_art_placeholder.imageset\cover_art_placeholder.png" />
     <ImageAsset Include="Assets.xcassets\cover_art_placeholder.imageset\cover_art_placeholder%402x.png" />
     <ImageAsset Include="Assets.xcassets\cover_art_placeholder.imageset\cover_art_placeholder%403x.png" />
+    <ImageAsset Include="Assets.xcassets\icon_plus_big.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\icon_plus_big.imageset\icon_plus_big.png" />
+    <ImageAsset Include="Assets.xcassets\icon_plus_big.imageset\icon_plus_big%402x.png" />
+    <ImageAsset Include="Assets.xcassets\icon_plus_big.imageset\icon_plus_big%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -429,6 +433,7 @@
     <Folder Include="Assets.xcassets\theme_dark.imageset\" />
     <Folder Include="Assets.xcassets\theme_dark_on.imageset\" />
     <Folder Include="Assets.xcassets\cover_art_placeholder.imageset\" />
+    <Folder Include="Assets.xcassets\icon_plus_big.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />

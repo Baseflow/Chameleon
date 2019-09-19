@@ -42,11 +42,8 @@
                 <CollectionView.EmptyView>
                     <StackLayout>
                         <ActivityIndicator Color="DimGray"
-                                           mvx:Bi.nd="IsRunning IsLoading"
-                                           HeightRequest="50" />
-                        <Grid Padding="24,0"
-                              RowSpacing="0"
-                              ColumnSpacing="12"
+                                           mvx:Bi.nd="IsRunning IsLoading"/>
+                        <Grid Padding="24,0,10,10"
                               VerticalOptions="Center">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="56" />
@@ -59,19 +56,16 @@
                                 CornerRadius="3"
                                 IsClippedToBounds="True"
                                 Elevation="2"
-                                BackgroundColor="{DynamicResource PrimaryTextColor}"
-                                Grid.Column="0">
+                                BackgroundColor="{DynamicResource SecondaryColor}">
                                 <pan:PancakeView.HasShadow>
                                     <OnPlatform x:TypeArguments="x:Boolean"
                                                 iOS="False"
                                                 Android="True" />
                                 </pan:PancakeView.HasShadow>
                                 <Image
-                                    HorizontalOptions="Center"
-                                    BackgroundColor="Transparent"
-                                    VerticalOptions="Center"
-                                    Aspect="AspectFill"
-                                    Source="icon_plus" />
+                                    BackgroundColor="{DynamicResource SecondaryColor}"
+                                    Source="icon_plus_big"
+                                    Margin="15"/>
                             </pan:PancakeView>
                             <Label
                                 Text="Add new Playlist"

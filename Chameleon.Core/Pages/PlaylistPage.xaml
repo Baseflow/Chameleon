@@ -175,9 +175,17 @@
                             SelectionMode="Single"
                             VerticalOptions="FillAndExpand"
                             ItemTemplate="{StaticResource mediaItemTemplateSelector}">
-                <CollectionView.EmptyView>
+
+            <CollectionView.EmptyView>
                     <StackLayout>
-                        <ActivityIndicator Color="DimGray" IsRunning="True" HeightRequest="50" />
+                        <ActivityIndicator Color="DimGray"
+                                           mvx:Bi.nd="IsRunning IsLoading"
+                                           HeightRequest="50" />
+                        <Label
+                            Text="Add tracks to begin"
+                            VerticalOptions="Center"
+                            Margin="24,0,0,0"
+                            Style="{StaticResource MediaItemTitle}" />
                     </StackLayout>
                 </CollectionView.EmptyView>
             </CollectionView>

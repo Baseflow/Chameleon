@@ -10,6 +10,7 @@ using MediaManager.Playback;
 using MvvmCross.Commands;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
+using MvvmCross.ViewModels;
 using Xamarin.Forms;
 
 namespace Chameleon.Core.ViewModels
@@ -30,6 +31,8 @@ namespace Chameleon.Core.ViewModels
 
         }
 
+        public MvxObservableCollection<IMediaItem> MediaItems { get; set; } = new MvxObservableCollection<IMediaItem>();
+        
         private IMediaItem _selectedMediaItem;
         public IMediaItem SelectedMediaItem
         {
@@ -143,6 +146,23 @@ namespace Chameleon.Core.ViewModels
             playlistTime.Spans.Add(new Span { Text = CurrentPlaylist.TotalTime.Minutes.ToString(), FontAttributes = FontAttributes.Bold, FontSize = 12 });
             playlistTime.Spans.Add(new Span { Text = " minutes" });
             PlaylistTime = playlistTime;
+        }
+
+        public override async Task Initialize()
+        {
+            IsLoading = true;
+
+            try
+            {
+                var mediaItem = await _mediaManager.Library.GetAll<MediaItem>();
+                if (mediaItem != null)
+                    MediaItems.ReplaceWith(mediaItem);
+            }
+            catch (Exception)
+            {
+            }
+
+            IsLoading = false;
         }
 
         public override void ViewAppearing()

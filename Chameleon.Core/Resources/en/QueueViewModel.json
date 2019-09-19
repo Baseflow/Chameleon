@@ -1,4 +1,5 @@
 ﻿{
   "Title": "Queue",
-  "Queue": "Queue"
+  "Queue": "Queue",
+  "FillingQueue" : "Start filling up the queue"
 }

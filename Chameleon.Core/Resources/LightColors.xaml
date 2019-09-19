@@ -7,7 +7,7 @@
     <Color x:Key="PrimaryColor">#FFFFFF</Color>
     <Color x:Key="SecondaryColor">#B3000000</Color>
     <Color x:Key="TertiaryColor">#000000</Color>
-    <Color x:Key="QuaternaryColor">#4DFFFFFF</Color>
+    <Color x:Key="QuaternaryColor">#4D000000</Color>
 
     <Color x:Key="MinimumTrackColor">#FFF14431</Color>
     <Color x:Key="MaximumTrackColor">#000000</Color>

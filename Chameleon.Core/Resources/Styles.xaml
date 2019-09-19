@@ -115,7 +115,7 @@
         <Setter Property="Margin">
             <OnPlatform x:TypeArguments="Thickness"
                         iOS="16,20"
-                        Android="0,20,24,20"/>
+                        Android="0,10,24,20"/>
         </Setter>
     </Style>
 

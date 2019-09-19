@@ -127,11 +127,11 @@
                                         x:Name="AddPlaylistImageButton"
                                         AbsoluteLayout.LayoutFlags="All"
                                         AbsoluteLayout.LayoutBounds=".5,.5,1,1"
-                                        Padding="50"
-                                        Opacity="0.3"
+                                        Padding="30"
+                                        Opacity="0.2"
                                         BackgroundColor="{DynamicResource SecondaryColor}"
                                         Command="{Binding Source={x:Reference Name=homePage}, Path=BindingContext.DataContext.AddPlaylistCommand}"
-                                        Source="icon_plus" />
+                                        Source="icon_plus_big" />
                                 </AbsoluteLayout>
                             </pan:PancakeView>
                         </Grid>

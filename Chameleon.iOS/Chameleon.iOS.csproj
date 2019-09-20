@@ -78,6 +78,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CustomRenderers\MaterialSearchBarRenderer.cs" />
     <Compile Include="CustomRenderers\ColoredTableViewRenderer.cs" />
+    <Compile Include="CustomRenderers\CustomViewCellRenderer.cs" />
+    <Compile Include="Effects\iOSPressedStateEffect.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
@@ -434,6 +436,7 @@
     <Folder Include="Assets.xcassets\theme_dark_on.imageset\" />
     <Folder Include="Assets.xcassets\cover_art_placeholder.imageset\" />
     <Folder Include="Assets.xcassets\icon_plus_big.imageset\" />
+    <Folder Include="Effects\" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />

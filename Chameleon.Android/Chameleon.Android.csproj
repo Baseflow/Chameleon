@@ -125,6 +125,8 @@
     <Compile Include="Setup.cs" />
     <Compile Include="CustomRenderers\MySearchBarRenderer.cs" />
     <Compile Include="CustomRenderers\ColoredTableViewRenderer.cs" />
+    <Compile Include="CustomRenderers\CustomViewCellRenderer.cs" />
+    <Compile Include="Effects\AndroidPressedStateEffect.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

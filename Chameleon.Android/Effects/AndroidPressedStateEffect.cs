@@ -5,7 +5,6 @@ using Chameleon.Core.Effects;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
-[assembly: ResolutionGroupName("Chameleon")]
 [assembly: ExportEffect(typeof(AndroidPressedStateEffect), nameof(PressedStateEffect))]
 namespace Chameleon.Android.Effects
 {

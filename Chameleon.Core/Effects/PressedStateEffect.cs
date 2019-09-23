@@ -9,7 +9,7 @@ namespace Chameleon.Core.Effects
         {
         }
 
-        public bool Borderless { get; set; } = true;
+        public bool Borderless { get; set; } = false;
 
     }
 }

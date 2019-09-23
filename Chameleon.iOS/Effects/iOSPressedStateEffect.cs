@@ -19,7 +19,7 @@ namespace Chameleon.iOS.Effects
         {
             try
             {
-                Control.BackgroundColor = backgroundColor = UIColor.Black;
+                Control.BackgroundColor = UIColor.Black;
             }
             catch (Exception ex)
             {
@@ -57,11 +57,5 @@ namespace Chameleon.iOS.Effects
     }
 }
 
-//var cell = base.GetCell(item, reusableCell, tv);
-//        var view = item as CustomViewCell;
-//        cell.SelectedBackgroundView = new UIView
-//            {
-//                BackgroundColor = view.SelectedItemBackgroundColor.ToUIColor(),
-//            };
-//            return cell;
+
 

@@ -106,9 +106,57 @@
             </core:MvxListView.Header>
             <core:MvxListView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell>
-                        <templates:MediaItemTemplate />
-                    </ViewCell>
+                       <CollectionView>
+
+                        <CollectionView.EmptyView>
+                             <StackLayout>
+                                <ActivityIndicator Color="DimGray"
+                                                   mvx:Bi.nd="IsRunning IsLoading"
+                                                   HeightRequest="50" />
+                                <Grid Padding="24,0,10,10"
+                                      VerticalOptions="Center">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="56" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="56" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <pan:PancakeView
+                                        CornerRadius="3"
+                                        IsClippedToBounds="True"
+                                        Elevation="2"
+                                        BackgroundColor="{DynamicResource SecondaryColor}">
+                                        <pan:PancakeView.HasShadow>
+                                            <OnPlatform x:TypeArguments="x:Boolean"
+                                                        iOS="False"
+                                                        Android="True" />
+                                        </pan:PancakeView.HasShadow>
+                                        <Image
+                                            BackgroundColor="{DynamicResource SecondaryColor}"
+                                            Source="icon_plus_big"
+                                            Margin="15"/>
+                                    </pan:PancakeView>
+                                    <Label
+                                        Text="Add Provider"
+                                        Grid.Column="1"
+                                        VerticalOptions="Center"
+                                        Style="{StaticResource MediaItemTitle}" />
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding Source={x:Reference Name=thisPage}, Path=BindingContext.DataContext.ProvidersPage}"/>
+                                    </Grid.GestureRecognizers>
+                                </Grid>
+                            </StackLayout>
+                            </CollectionView.EmptyView>
+                           <CollectionView.ItemTemplate>
+                                        <DataTemplate>
+                                     <templates:MediaItemTemplate />
+                                       </DataTemplate>
+                             </CollectionView.ItemTemplate>
+
+
+                           </CollectionView>
+
                 </DataTemplate>
             </core:MvxListView.ItemTemplate>
         </core:MvxListView>

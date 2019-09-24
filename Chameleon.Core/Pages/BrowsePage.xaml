@@ -56,14 +56,14 @@
                                 VerticalItemSpacing="1"
                                 HorizontalItemSpacing="0" />
                         </CollectionView.ItemsLayout>
-                       
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
                                 <templates:HorizontalMediaItemsTemplate />
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>
-                    <CollectionView>
+                    <CollectionView
+                       IsVisible="{Binding ShowEmptyView}">
                         <CollectionView.EmptyView>
                              <StackLayout>
                                 <ActivityIndicator Color="DimGray"
@@ -94,7 +94,7 @@
                                             Margin="15"/>
                                     </pan:PancakeView>
                                     <Label
-                                        Text="Add Provider"
+                                        Text="Add an Item"
                                         Grid.Column="1"
                                         VerticalOptions="Center"
                                         Style="{StaticResource MediaItemTitle}" />

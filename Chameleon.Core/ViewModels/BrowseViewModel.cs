@@ -38,6 +38,8 @@ namespace Chameleon.Core.ViewModels
 
         public bool IsArtistsVisible => string.IsNullOrEmpty(SearchText) && FavoriteArtists.Count > 0;
 
+        public bool ShowEmptyView => RecentlyPlayedItems.Count == 0;
+
         private MvxObservableCollection<IMediaItem> _recentlyPlayedItems = new MvxObservableCollection<IMediaItem>();
         public MvxObservableCollection<IMediaItem> RecentlyPlayedItems
         {
@@ -80,6 +82,7 @@ namespace Chameleon.Core.ViewModels
                 RaisePropertyChanged(nameof(IsArtistsVisible));
             }
         }
+
         public override async Task Initialize()
         {
 
@@ -87,10 +90,9 @@ namespace Chameleon.Core.ViewModels
 
             try
             {
-                RecentlyPlayedItems.ReplaceWith(await _browseService.GetMedia());
-                //var browseService = await _browseService.GetMedia();
-                //if (browseService != null)
-                //    RecentlyPlayedItems.ReplaceWith(browseService);
+                var browseService = await _browseService.GetMedia();
+                if (browseService != null)
+                    RecentlyPlayedItems.ReplaceWith(browseService);
 
             }
             catch (Exception)

@@ -25,9 +25,6 @@ namespace Chameleon.Core.ViewModels
             _browseService = browseService ?? throw new ArgumentNullException(nameof(browseService));
         }
 
-        public MvxObservableCollection<IMediaItem> MediaItems { get; set; } = new MvxObservableCollection<IMediaItem>();
-
-
         private IMvxAsyncCommand _addCommand;
         public IMvxAsyncCommand AddCommand => _addCommand ?? (_addCommand = new MvxAsyncCommand(() => NavigationService.Navigate<ProvidersViewModel>()));
 
@@ -90,9 +87,10 @@ namespace Chameleon.Core.ViewModels
 
             try
             {
-                var browseService = await _browseService.GetMedia();
-                if (browseService != null)
-                    RecentlyPlayedItems.ReplaceWith(browseService);
+                RecentlyPlayedItems.ReplaceWith(await _browseService.GetMedia());
+                //var browseService = await _browseService.GetMedia();
+                //if (browseService != null)
+                //    RecentlyPlayedItems.ReplaceWith(browseService);
 
             }
             catch (Exception)

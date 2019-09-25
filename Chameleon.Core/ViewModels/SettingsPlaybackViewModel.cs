@@ -87,6 +87,19 @@ namespace Chameleon.Core.ViewModels
             set => SetProperty(ref _stepSize, value);
         }
 
+        private bool _clearQueueOnPlay;
+        public bool ClearQueueOnPlay
+        {
+            get => _clearQueueOnPlay;
+            set => SetProperty(ref _clearQueueOnPlay, value);
+        }
+        private bool _keepScreenOn;
+        public bool KeepScreenOn
+        {
+            get => _keepScreenOn;
+            set => SetProperty(ref _keepScreenOn, value);
+        }
+
         private void UpdateBalanceLabel()
         {
             var balance = MediaManager.Volume.Balance;
@@ -120,6 +133,8 @@ namespace Chameleon.Core.ViewModels
             GetVolume();
             GetBalance();
             GetStepSize();
+            GetClearQueueOnPlay();
+            GetKeepScreenOn();
 
             return base.Initialize();
         }
@@ -129,6 +144,8 @@ namespace Chameleon.Core.ViewModels
             _barrel.Add("volume", Volume, TimeSpan.MaxValue);
             _barrel.Add("balance", Balance, TimeSpan.MaxValue);
             _barrel.Add("stepSize", StepSize, TimeSpan.MaxValue);
+            _barrel.Add("clearQueueOnPlay", ClearQueueOnPlay, TimeSpan.MaxValue);
+            _barrel.Add("keepScreenOn", KeepScreenOn, TimeSpan.MaxValue);
 
             base.ViewDisappearing();
         }
@@ -157,6 +174,21 @@ namespace Chameleon.Core.ViewModels
                 StepSize = MediaManager.StepSize;
         }
 
+        private void GetClearQueueOnPlay()
+        {
+            if (_barrel.Exists("clearQueueOnPlay"))
+                ClearQueueOnPlay = _barrel.Get<bool>("clearQueueOnPlay");
+            else
+                ClearQueueOnPlay = MediaManager.ClearQueueOnPlay;
+        }
+
+        private void GetKeepScreenOn()
+        {
+            if (_barrel.Exists("keepScreenOn"))
+                KeepScreenOn = _barrel.Get<bool>("keepScreenOn");
+            else
+                KeepScreenOn = MediaManager.KeepScreenOn;
+        }
     }
 
 }

@@ -144,7 +144,7 @@
                                    Style="{StaticResource PlaybackSettingsTitle}"
                                    VerticalOptions="Center"
                                    Grid.Column="0" />
-                            <Switch mvx:Bi.nd="IsToggled MediaManager.ClearQueueOnPlay"
+                            <Switch mvx:Bi.nd="IsToggled ClearQueueOnPlay"
                                     Grid.Column="1"
                                     VerticalOptions="Center"
                                     HorizontalOptions="End"
@@ -164,7 +164,7 @@
                                    Style="{StaticResource PlaybackSettingsTitle}"
                                    VerticalOptions="Center"
                                    Grid.Column="0" />
-                            <Switch mvx:Bi.nd="IsToggled MediaManager.KeepScreenOn"
+                            <Switch mvx:Bi.nd="IsToggled KeepScreenOn"
                                     Grid.Column="1"
                                     VerticalOptions="Center"
                                     HorizontalOptions="End"

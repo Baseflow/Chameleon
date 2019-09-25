@@ -20,7 +20,7 @@
                      HorizontalOptions="Center"
                      Spacing="10"
                      HeightRequest="30">
-            <Image Source="chameleon_logo" />
+            <Image Source="chameleon_logo"/>
         </StackLayout>
     </NavigationPage.TitleView>
 
@@ -56,7 +56,7 @@
                                    Style="{StaticResource PlaybackSettingsValue}" />
                             <Slider x:Name="slider"
                                     Grid.Row="2"
-                                    mvx:Bi.nd="Value TimeSpanToDouble(MediaManager.StepSize)"
+                                    mvx:Bi.nd="Value TimeSpanToDouble(StepSize)"
                                     Margin="10,0,10,0"
                                     Maximum="30"
                                     Minimum="0"
@@ -84,7 +84,7 @@
                             <Slider x:Name="slider2"
                                     Maximum="100"
                                     Minimum="0"
-                                    mvx:Bi.nd="Value MediaManager.VolumeManager.MaxVolume"
+                                    mvx:Bi.nd="Value Volume"
                                     Grid.Row="2"
                                     Margin="10,0,10,0"
                                     MinimumTrackColor="{DynamicResource SliderSettingsPlaybackColor}"

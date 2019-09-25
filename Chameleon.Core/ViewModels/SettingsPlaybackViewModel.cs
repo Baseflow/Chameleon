@@ -1,6 +1,11 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using Acr.UserDialogs;
 using MediaManager;
+using MonkeyCache;
+using MonkeyCache.LiteDB;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
 
@@ -10,11 +15,15 @@ namespace Chameleon.Core.ViewModels
     {
         private readonly IUserDialogs _userDialogs;
         public IMediaManager MediaManager { get; }
+        private readonly IBarrel _barrel;
 
-        public SettingsPlaybackViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IUserDialogs userDialogs, IMediaManager mediaManager) : base(logProvider, navigationService)
+
+        public SettingsPlaybackViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IUserDialogs userDialogs, IMediaManager mediaManager, IBarrel barrel) : base(logProvider, navigationService)
         {
             _userDialogs = userDialogs ?? throw new ArgumentNullException(nameof(userDialogs));
             MediaManager = mediaManager ?? throw new ArgumentNullException(nameof(mediaManager));
+            _barrel = barrel ?? throw new ArgumentNullException(nameof(barrel));
+
         }
 
         private string _balanceLabel;
@@ -37,6 +46,45 @@ namespace Chameleon.Core.ViewModels
                     UpdateBalanceLabel();
                 }
             }
+        }
+
+        private int _volume;
+        public int Volume
+        {
+            get => _volume;
+            set => SetProperty(ref _volume, value);
+        }
+
+        //private int _maxVolume;
+        //public int MaxVolume
+        //{
+        //    get
+        //    {
+        //        if (!_barrel.Exists("volume"))
+        //        {
+        //            var volume = MediaManager.Volume.MaxVolume;
+        //            return volume;
+        //        }
+        //        else
+        //        {
+        //            var savedVolume = _barrel.Get<int>("volume");
+        //            return savedVolume;
+        //        }
+        //    }
+        //    set
+        //    {
+        //        if (SetProperty(ref _maxVolume, value))
+        //        {
+        //            _barrel.Add("volume", MediaManager.Volume.MaxVolume, TimeSpan.MaxValue);
+        //        }
+        //    }
+        //}
+
+        private TimeSpan _stepSize;
+        public TimeSpan StepSize
+        {
+            get => _stepSize;
+            set => SetProperty(ref _stepSize, value);
         }
 
         private void UpdateBalanceLabel()
@@ -65,6 +113,50 @@ namespace Chameleon.Core.ViewModels
 
             UpdateBalanceLabel();
         }
+
+
+        public override Task Initialize()
+        {
+            GetVolume();
+            GetBalance();
+            GetStepSize();
+
+            return base.Initialize();
+        }
+
+        public override void ViewDisappearing()
+        {
+            _barrel.Add("volume", Volume, TimeSpan.MaxValue);
+            _barrel.Add("balance", Balance, TimeSpan.MaxValue);
+            _barrel.Add("stepSize", StepSize, TimeSpan.MaxValue);
+
+            base.ViewDisappearing();
+        }
+
+        private void GetVolume()
+        {
+            if (_barrel.Exists("volume"))
+                Volume = _barrel.Get<int>("volume");
+            else
+                Volume = MediaManager.Volume.MaxVolume;
+        }
+
+        private void GetBalance()
+        {
+            if (_barrel.Exists("balance"))
+                Balance = _barrel.Get<double>("balance");
+            else
+                Balance = MediaManager.Volume.Balance;
+        }
+
+        private void GetStepSize()
+        {
+            if (_barrel.Exists("stepSize"))
+                StepSize = _barrel.Get<TimeSpan>("stepSize");
+            else
+                StepSize = MediaManager.StepSize;
+        }
+
     }
 
 }

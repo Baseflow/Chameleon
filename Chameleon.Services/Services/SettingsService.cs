@@ -25,31 +25,31 @@ namespace Chameleon.Services.Services
         public TimeSpan StepSizes
         {
             get => _barrel.Get(STEP_SIZE_KEY, _mediaManager.StepSize);
-            set => _barrel.Add(STEP_SIZE_KEY, StepSizes, TimeSpan.MaxValue);
+            set => _barrel.Add(STEP_SIZE_KEY, value, TimeSpan.MaxValue);
         }
 
         public int Volume
         {
             get =>  _barrel.Get(VOLUME_KEY, _mediaManager.Volume.MaxVolume);
-            set => _barrel.Add(VOLUME_KEY, Volume, TimeSpan.MaxValue);
+            set => _barrel.Add(VOLUME_KEY, value, TimeSpan.MaxValue);
         }
 
         public double Balance
         {
             get => _barrel.Get(BALANCE_KEY, _mediaManager.Volume.Balance);
-            set => _barrel.Add(BALANCE_KEY, Balance, TimeSpan.MaxValue);
+            set => _barrel.Add(BALANCE_KEY, value, TimeSpan.MaxValue);
         }
 
         public bool ClearQueueOnPlay
         {
             get => _barrel.Get(CLEAR_QUEUE_ON_PLAY_KEY, _mediaManager.ClearQueueOnPlay);
-            set => _barrel.Add(CLEAR_QUEUE_ON_PLAY_KEY, ClearQueueOnPlay, TimeSpan.MaxValue);
+            set => _barrel.Add(CLEAR_QUEUE_ON_PLAY_KEY, value, TimeSpan.MaxValue);
         }
 
         public bool KeepScreenOn
         {
             get => _barrel.Get(KEEP_SCREEN_ON_KEY, _mediaManager.KeepScreenOn);
-            set => _barrel.Add(KEEP_SCREEN_ON_KEY, KeepScreenOn, TimeSpan.MaxValue);
+            set => _barrel.Add(KEEP_SCREEN_ON_KEY, value, TimeSpan.MaxValue);
         }
     }
 }

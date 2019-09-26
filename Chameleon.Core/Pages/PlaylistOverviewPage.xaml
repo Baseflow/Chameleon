@@ -34,9 +34,9 @@
             </SearchBar>
             <CollectionView x:Name="MyCollectionView"
                             mvx:Bi.nd="ItemsSource Playlists;
-                    SelectionChangedCommand OpenPlaylistCommand;
-                    SelectionChangedCommandParameter SelectedItem;
-                    SelectedItem SelectedItem"
+                            SelectionChangedCommand OpenPlaylistCommand;
+                            SelectionChangedCommandParameter SelectedItem;
+                            SelectedItem SelectedItem"
                             SelectionMode="Single"
                             VerticalOptions="FillAndExpand">
                 <CollectionView.EmptyView>

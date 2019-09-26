@@ -7,10 +7,13 @@
   <ItemGroup>
     <PackageReference Include="LiteDB" Version="4.1.4" />
     <PackageReference Include="MonkeyCache.LiteDB" Version="1.3.0" />
-    <PackageReference Include="Plugin.MediaManager.Forms" Version="0.8.9" />
+    <PackageReference Include="Plugin.MediaManager.Forms" Version="0.8.11" />
   </ItemGroup>
   
   <ItemGroup>
     <EmbeddedResource Include="Resources\media.exolist.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Extensions\" />
   </ItemGroup>
 </Project>

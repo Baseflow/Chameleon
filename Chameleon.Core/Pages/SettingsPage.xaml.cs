@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using Chameleon.Core.Effects;
 using Chameleon.Core.ViewModels;
 using MvvmCross.Forms.Presenters.Attributes;
 using MvvmCross.Forms.Views;
@@ -16,6 +17,8 @@ namespace Chameleon.Core.Views
         public SettingsPage()
         {
             InitializeComponent();
+            Effects.Add(new PressedStateEffect());
+
         }
 
         private async void ViewCell_TappedOpenSource(object sender, EventArgs e)

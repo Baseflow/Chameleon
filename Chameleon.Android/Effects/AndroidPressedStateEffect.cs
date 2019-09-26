@@ -15,7 +15,7 @@ namespace Chameleon.Android.Effects
             try
             {
                 var value = new TypedValue();
-                global::Android.App.Application.Context.Theme.ResolveAttribute(global::Android.Resource.Attribute.SelectableItemBackground, value, false);
+                global::Android.App.Application.Context.Theme.ResolveAttribute(global::Android.Resource.Attribute.SelectableItemBackground, value, true);
                 Container.SetBackgroundResource(value.ResourceId);
             }
             catch (Exception ex)

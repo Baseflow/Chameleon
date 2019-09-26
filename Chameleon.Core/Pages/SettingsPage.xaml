@@ -9,6 +9,7 @@
     xmlns:viewModels="clr-namespace:Chameleon.Core.ViewModels;assembly=Chameleon.Core"
     xmlns:templates="clr-namespace:Chameleon.Core.Templates;assembly=Chameleon.Core"
     xmlns:coloredTableView="clr-namespace:Chameleon.Core;assembly=Chameleon.Core"
+    xmlns:effects="clr-namespace:Chameleon.Core.Effects;assembly=Chameleon.Core"
     mc:Ignorable="d"
     x:TypeArguments="viewModels:SettingsViewModel"
     x:Class="Chameleon.Core.Views.SettingsPage"
@@ -39,6 +40,9 @@
                                    BackgroundColor="Transparent"
                                    Grid.Column="1" />
                         </Grid>
+                           <ViewCell.Effects>
+                            <effects:PressedStateEffect />
+                          </ViewCell.Effects>
                     </ViewCell>
                     <ViewCell Tapped="ViewCell_TappedTheming">
                         <Grid Margin="15,15">
@@ -57,6 +61,9 @@
                                    BackgroundColor="Transparent"
                                    Grid.Column="1" />
                         </Grid>
+                            <ViewCell.Effects>
+                            <effects:PressedStateEffect />
+                          </ViewCell.Effects>
                     </ViewCell>
                     <!--<ViewCell >
                         <Grid Margin="15,15">
@@ -88,6 +95,9 @@
                                    BackgroundColor="Transparent"
                                    Grid.Column="1" />
                         </Grid>
+                           <ViewCell.Effects>
+                            <effects:PressedStateEffect />
+                          </ViewCell.Effects>
                     </ViewCell>
                     <ViewCell IsEnabled="True"
                               BindingContext="{Binding .}">

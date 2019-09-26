@@ -8,8 +8,5 @@ namespace Chameleon.Core.Effects
         public PressedStateEffect() : base("Chameleon.PressedStateEffect")
         {
         }
-
-        public bool Borderless { get; set; } = false;
-
     }
 }

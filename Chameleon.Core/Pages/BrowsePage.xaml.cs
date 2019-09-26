@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using Chameleon.Core.Effects;
 using Chameleon.Core.ViewModels;
 using MvvmCross.Forms.Presenters.Attributes;
 using MvvmCross.Forms.Views;
@@ -15,6 +16,9 @@ namespace Chameleon.Core.Views
         public BrowsePage()
         {
             InitializeComponent();
+            Effects.Add(Effect.Resolve($"Chameleon.{nameof(PressedStateEffect)}"));
+
+            //Effects.Add(new PressedStateEffect());
         }
 
         protected override void OnAppearing()

@@ -19,10 +19,11 @@ namespace Chameleon.iOS.Effects
         {
             try
             {
+
                 Container.BackgroundColor = UIColor.FromRGB(204, 153, 255);
 
-                //Control.BackgroundColor = UIColor.Black;
-            }
+                    //Control.BackgroundColor = UIColor.Black;
+                }
             catch (Exception ex)
             {
                 Console.WriteLine("Cannot set property on attached control. Error: ", ex.Message);

@@ -19,7 +19,9 @@ namespace Chameleon.iOS.Effects
         {
             try
             {
-                Control.BackgroundColor = UIColor.Black;
+                Container.BackgroundColor = UIColor.FromRGB(204, 153, 255);
+
+                //Control.BackgroundColor = UIColor.Black;
             }
             catch (Exception ex)
             {

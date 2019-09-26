@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Acr.UserDialogs;
+using Chameleon.Services.Services;
 using MediaManager;
 using MonkeyCache;
 using MonkeyCache.LiteDB;
@@ -15,15 +16,29 @@ namespace Chameleon.Core.ViewModels
     {
         private readonly IUserDialogs _userDialogs;
         public IMediaManager MediaManager { get; }
-        private readonly IBarrel _barrel;
+        private readonly ISettingsService _settingsService;
 
 
-        public SettingsPlaybackViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IUserDialogs userDialogs, IMediaManager mediaManager, IBarrel barrel) : base(logProvider, navigationService)
+        public SettingsPlaybackViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IUserDialogs userDialogs, IMediaManager mediaManager, ISettingsService settingsService) : base(logProvider, navigationService)
         {
             _userDialogs = userDialogs ?? throw new ArgumentNullException(nameof(userDialogs));
             MediaManager = mediaManager ?? throw new ArgumentNullException(nameof(mediaManager));
-            _barrel = barrel ?? throw new ArgumentNullException(nameof(barrel));
+            _settingsService = settingsService ?? throw new ArgumentNullException(nameof(settingsService));
 
+        }
+
+        private TimeSpan _stepSize;
+        public TimeSpan StepSize
+        {
+            get => _stepSize;
+            set => SetProperty(ref _stepSize, value);
+        }
+
+        private int _volume;
+        public int Volume
+        {
+            get => _volume;
+            set => SetProperty(ref _volume, value);
         }
 
         private string _balanceLabel;
@@ -48,51 +63,13 @@ namespace Chameleon.Core.ViewModels
             }
         }
 
-        private int _volume;
-        public int Volume
-        {
-            get => _volume;
-            set => SetProperty(ref _volume, value);
-        }
-
-        //private int _maxVolume;
-        //public int MaxVolume
-        //{
-        //    get
-        //    {
-        //        if (!_barrel.Exists("volume"))
-        //        {
-        //            var volume = MediaManager.Volume.MaxVolume;
-        //            return volume;
-        //        }
-        //        else
-        //        {
-        //            var savedVolume = _barrel.Get<int>("volume");
-        //            return savedVolume;
-        //        }
-        //    }
-        //    set
-        //    {
-        //        if (SetProperty(ref _maxVolume, value))
-        //        {
-        //            _barrel.Add("volume", MediaManager.Volume.MaxVolume, TimeSpan.MaxValue);
-        //        }
-        //    }
-        //}
-
-        private TimeSpan _stepSize;
-        public TimeSpan StepSize
-        {
-            get => _stepSize;
-            set => SetProperty(ref _stepSize, value);
-        }
-
         private bool _clearQueueOnPlay;
         public bool ClearQueueOnPlay
         {
             get => _clearQueueOnPlay;
             set => SetProperty(ref _clearQueueOnPlay, value);
         }
+
         private bool _keepScreenOn;
         public bool KeepScreenOn
         {
@@ -127,68 +104,26 @@ namespace Chameleon.Core.ViewModels
             UpdateBalanceLabel();
         }
 
-
         public override Task Initialize()
         {
-            GetVolume();
-            GetBalance();
-            GetStepSize();
-            GetClearQueueOnPlay();
-            GetKeepScreenOn();
+            StepSize = _settingsService.StepSizes;
+            Volume = _settingsService.Volume;
+            Balance = _settingsService.Balance;
+            ClearQueueOnPlay = _settingsService.ClearQueueOnPlay;
+            KeepScreenOn = _settingsService.KeepScreenOn;
 
             return base.Initialize();
         }
 
         public override void ViewDisappearing()
         {
-            _barrel.Add("volume", Volume, TimeSpan.MaxValue);
-            _barrel.Add("balance", Balance, TimeSpan.MaxValue);
-            _barrel.Add("stepSize", StepSize, TimeSpan.MaxValue);
-            _barrel.Add("clearQueueOnPlay", ClearQueueOnPlay, TimeSpan.MaxValue);
-            _barrel.Add("keepScreenOn", KeepScreenOn, TimeSpan.MaxValue);
+            _settingsService.StepSizes = StepSize;
+            _settingsService.Volume = Volume;
+            _settingsService.Balance = Balance;
+            _settingsService.ClearQueueOnPlay = ClearQueueOnPlay;
+            _settingsService.KeepScreenOn = KeepScreenOn;
 
             base.ViewDisappearing();
         }
-
-        private void GetVolume()
-        {
-            if (_barrel.Exists("volume"))
-                Volume = _barrel.Get<int>("volume");
-            else
-                Volume = MediaManager.Volume.MaxVolume;
-        }
-
-        private void GetBalance()
-        {
-            if (_barrel.Exists("balance"))
-                Balance = _barrel.Get<double>("balance");
-            else
-                Balance = MediaManager.Volume.Balance;
-        }
-
-        private void GetStepSize()
-        {
-            if (_barrel.Exists("stepSize"))
-                StepSize = _barrel.Get<TimeSpan>("stepSize");
-            else
-                StepSize = MediaManager.StepSize;
-        }
-
-        private void GetClearQueueOnPlay()
-        {
-            if (_barrel.Exists("clearQueueOnPlay"))
-                ClearQueueOnPlay = _barrel.Get<bool>("clearQueueOnPlay");
-            else
-                ClearQueueOnPlay = MediaManager.ClearQueueOnPlay;
-        }
-
-        private void GetKeepScreenOn()
-        {
-            if (_barrel.Exists("keepScreenOn"))
-                KeepScreenOn = _barrel.Get<bool>("keepScreenOn");
-            else
-                KeepScreenOn = MediaManager.KeepScreenOn;
-        }
     }
-
 }

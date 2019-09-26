@@ -13,4 +13,7 @@
   <ItemGroup>
     <EmbeddedResource Include="Resources\media.exolist.json" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Extensions\" />
+  </ItemGroup>
 </Project>

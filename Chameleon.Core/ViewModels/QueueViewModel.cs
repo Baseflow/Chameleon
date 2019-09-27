@@ -32,6 +32,7 @@ namespace Chameleon.Core.ViewModels
             get => _selectedMediaItem;
             set => SetProperty(ref _selectedMediaItem, value);
         }
+
         public string FillingQueueText
         {
             get

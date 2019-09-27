@@ -49,6 +49,15 @@ namespace Chameleon.Core.ViewModels
             set => SetProperty(ref _selectedItem, value);
         }
 
+        public string AddNewPlaylistText
+        {
+            get
+            {
+                var text = GetText ("AddNewPlaylist");
+                return text;
+            }
+        }
+
         public override async Task Initialize()
         {
             IsLoading = true;

@@ -1,5 +1,6 @@
 ﻿{
   "Title": "Playlists",
   "SearchBar": "Search...",
-  "EnterNewName": "Enter the name of your new playlist"
+  "EnterNewName": "Enter the name of your new playlist",
+  "AddNewPlaylist": "Add new Playlist"
 }

@@ -1,0 +1,93 @@
+﻿[
+  {
+    "name": "NL Radio Stations List",
+    "stations": [
+      {
+        "name": "Radio 1",
+        "uri": "http://icecast.omroep.nl/radio1-bb-mp3"
+      },
+      {
+        "name": "Radio 2",
+        "uri": "http://icecast.omroep.nl/radio2-bb-mp3"
+      },
+      {
+        "name": "3FM",
+        "uri": "http://icecast.omroep.nl/3fm-bb-mp3"
+      },
+      {
+        "name": "Radio 4",
+        "uri": "http://icecast.omroep.nl/radio4-bb-mp3"
+      },
+      {
+        "name": "Radio 538",
+        "uri": "http://18973.live.streamtheworld.com/RADIO538.mp3"
+      },
+      {
+        "name": "Qmusic",
+        "uri": "https://icecast-qmusicnl-cdp.triple-it.nl/Qmusic_nl_live_96.mp3"
+      },
+      {
+        "name": "Radio Veronica",
+        "uri": "http://playerservices.streamtheworld.com/api/livestream-redirect/VERONICA.mp3"
+      },
+      {
+        "name": "Sky Radio",
+        "uri": "http://playerservices.streamtheworld.com/api/livestream-redirect/SKYRADIO.mp3"
+      },
+      {
+        "name": "BNR",
+        "uri": "http://icecast-bnr.cdp.triple-it.nl/bnr_mp3_128_03"
+      },
+      {
+        "name": "Radio 10",
+        "uri": "http://17873.live.streamtheworld.com/RADIO10.mp3"
+      }
+    ]
+  },
+  {
+    "name": "International Radio Stations List",
+    "stations": [
+      {
+        "name": "BBC Radio 1 (UK)",
+        "uri": "http://bbcmedia.ic.llnwd.net/stream/bbcmedia_radio1_mf_q"
+      },
+      {
+        "name": "BBC Radio 2 (UK)",
+        "uri": "http://bbcmedia.ic.llnwd.net/stream/bbcmedia_radio2_mf_q"
+      },
+      {
+        "name": "5FM (South Africa)",
+        "uri": "http://proradiocloud.antfarm.co.za/ant-lre-sabc/9f38102608b345dcb53c1db0bd57f2d3/playlist.m3u8"
+      },
+      {
+        "name": "Christmas Hits (Austria)",
+        "uri": "http://live.antenne.at/chr"
+      },
+      {
+        "name": "Classique Easy (France)",
+        "uri": "http://direct.francemusique.fr/live/francemusiqueeasyclassique-hifi.mp3"
+      },
+      {
+        "name": "La Jazz (France)",
+        "uri": "http://direct.francemusique.fr/live/francemusiqueconcertsradiofrancehifi.mp3"
+      },
+      {
+        "name": "Easy Hits Florida (USA)",
+        "uri": "https://www.internet-radio.com/servers/tools/playlistgenerator/?u=http://airspectrum.cdnstream1.com:8114/1648_128.m3u&t=.m3u"
+      },
+      {
+        "name": "Ambient Radio .org (USA)",
+        "uri": "http://www.internet-radio.com/servers/tools/playlistgenerator/?u=http://uk2.internet-radio.com:31491/listen.pls&t=.m3u"
+      },
+      {
+        "name": "Venice Classic Radio (Italy)",
+        "uri": "http://www.internet-radio.com/servers/tools/playlistgenerator/?u=http://174.36.206.197:8000/listen.pls?sid=1&t=.m3u"
+      },
+      {
+        "name": "Audiophile Baroque",
+        "uri": "http://94.23.201.38:2199/tunein/baroque.pls"
+      }
+    ]
+  }
+ 
+]

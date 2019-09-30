@@ -102,10 +102,11 @@ namespace Chameleon.Core.ViewModels
             try
             {
                 var browseService = await _browseService.GetMedia();
-                if (browseService != null)
+                var radioSations = await _radioStationsService.GetRadioStations();
+                if (browseService != null && radioSations != null)
                 {
                     RecentlyPlayedItems.ReplaceWith(browseService);
-                    RecentlyPlayedItems.ReplaceWith(await _radioStationsService.GetRadioStations());
+                    RecentlyPlayedItems.ReplaceWith(radioSations);
 
                 }
             }

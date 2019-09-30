@@ -38,7 +38,7 @@ namespace Chameleon.Services.Resources
 
             if (!resourcePaths.Any())
             {
-                throw new Exception(string.Format("Resource ending with {0} not found.", resourceFileName));
+                throw new Exception($"Resource ending with {resourceFileName} not found.");
             }
 
             if (resourcePaths.Count() > 1)

@@ -12,6 +12,7 @@
   
   <ItemGroup>
     <EmbeddedResource Include="Resources\media.exolist.json" />
+    <EmbeddedResource Include="Resources\RadioStationsList.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Extensions\" />

@@ -22,9 +22,8 @@ namespace Chameleon.Services.Services
                     {
                         var mediaItem = new MediaItem(radioStation.Uri)
                         {
-                            Title = radioStation.Name,
-                            FileExtension = radioStation.Extension ?? ""
-                        };
+                            Title = radioStation.Name
+                         };
                         if (mediaItem.FileExtension == "mpd" || mediaItem.MediaUri.EndsWith(".mpd"))
                             mediaItem.MediaType = MediaType.Dash;
                         else if (mediaItem.FileExtension == "ism" || mediaItem.MediaUri.EndsWith(".ism"))

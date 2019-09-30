@@ -64,7 +64,7 @@ namespace Chameleon.Services.Resources
             return GetEmbeddedResourceString(Assembly.GetCallingAssembly(), resourceFileName);
         }
 
-        public static List<RadioStation> FromJson(string json) => JsonConvert.DeserializeObject<List<RadioStation>>(json);
+        public static List<RadioStations> FromJson(string json) => JsonConvert.DeserializeObject<List<RadioStations>>(json);
     }
 
 }

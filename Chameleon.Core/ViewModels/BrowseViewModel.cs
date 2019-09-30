@@ -17,12 +17,14 @@ namespace Chameleon.Core.ViewModels
         private readonly IUserDialogs _userDialogs;
         private readonly IMediaManager _mediaManager;
         private readonly IBrowseService _browseService;
+        private readonly IRadioStationsService _radioStationsService;
 
-        public BrowseViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IUserDialogs userDialogs, IMediaManager mediaManager, IBrowseService browseService) : base(logProvider, navigationService)
+        public BrowseViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IUserDialogs userDialogs, IMediaManager mediaManager, IBrowseService browseService, IRadioStationsService radioStationsService) : base(logProvider, navigationService)
         {
             _userDialogs = userDialogs ?? throw new ArgumentNullException(nameof(userDialogs));
             _mediaManager = mediaManager ?? throw new ArgumentNullException(nameof(mediaManager));
             _browseService = browseService ?? throw new ArgumentNullException(nameof(browseService));
+            _radioStationsService = radioStationsService ?? throw new ArgumentNullException(nameof(radioStationsService));
         }
 
         private IMvxAsyncCommand _addCommand;
@@ -92,8 +94,11 @@ namespace Chameleon.Core.ViewModels
             {
                 var browseService = await _browseService.GetMedia();
                 if (browseService != null)
+                {
                     RecentlyPlayedItems.ReplaceWith(browseService);
+                    RecentlyPlayedItems.ReplaceWith(await _radioStationsService.GetRadioStations());
 
+                }
             }
             catch (Exception)
             {

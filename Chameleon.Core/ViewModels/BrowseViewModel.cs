@@ -107,7 +107,6 @@ namespace Chameleon.Core.ViewModels
                 {
                     RecentlyPlayedItems.ReplaceWith(browseService);
                     RecentlyPlayedItems.ReplaceWith(radioSations);
-
                 }
             }
             catch (Exception)

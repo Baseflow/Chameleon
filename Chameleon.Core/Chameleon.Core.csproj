@@ -14,19 +14,19 @@
     <PackageReference Include="Microsoft.AppCenter" Version="2.1.1" />
     <PackageReference Include="Microsoft.AppCenter.Analytics" Version="2.1.1" />
     <PackageReference Include="Microsoft.AppCenter.Crashes" Version="2.1.1" />
-    <PackageReference Include="MvvmCross" Version="6.4.0" />
-    <PackageReference Include="MvvmCross.Forms" Version="6.4.0" />
-    <PackageReference Include="MvvmCross.Plugin.Json" Version="6.4.0" />
-    <PackageReference Include="MvvmCross.Plugin.JsonLocalization" Version="6.4.0" />
-    <PackageReference Include="MvvmCross.Plugin.Messenger" Version="6.4.0" />
+    <PackageReference Include="MvvmCross" Version="6.4.1" />
+    <PackageReference Include="MvvmCross.Forms" Version="6.4.1" />
+    <PackageReference Include="MvvmCross.Plugin.Json" Version="6.4.1" />
+    <PackageReference Include="MvvmCross.Plugin.JsonLocalization" Version="6.4.1" />
+    <PackageReference Include="MvvmCross.Plugin.Messenger" Version="6.4.1" />
     <PackageReference Include="Plugin.MediaManager.Forms" Version="0.8.11" />
     <PackageReference Include="Xam.Plugin.Media" Version="4.3.1-beta" />
     <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
-    <PackageReference Include="Xamarin.Forms" Version="4.1.0.709244" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.3.0" />
+    <PackageReference Include="Xamarin.Forms" Version="4.3.0.819712-pre2" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
     <PackageReference Include="Acr.UserDialogs" Version="7.0.30" />
     <PackageReference Include="MonkeyCache.LiteDB" Version="1.3.0" />
-    <PackageReference Include="Xamarin.Forms.PancakeView" Version="1.2.1" />
+    <PackageReference Include="Xamarin.Forms.PancakeView" Version="1.3.2-beta" />
     <PackageReference Include="Xamarin.Forms.DebugRainbows" Version="1.0.16" />
   </ItemGroup>
 

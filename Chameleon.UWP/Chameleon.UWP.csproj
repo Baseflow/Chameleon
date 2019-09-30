@@ -11,7 +11,7 @@
     <AssemblyName>Chameleon.UWP</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetPlatformVersion>10.0.16299.0</TargetPlatformVersion>
+    <TargetPlatformVersion>10.0.17763.0</TargetPlatformVersion>
     <TargetPlatformMinVersion>10.0.16299.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <EnableDotNetNativeCompatibleProfile>true</EnableDotNetNativeCompatibleProfile>
@@ -159,19 +159,19 @@
       <Version>1.3.0</Version>
     </PackageReference>
     <PackageReference Include="MvvmCross">
-      <Version>6.4.0</Version>
+      <Version>6.4.1</Version>
     </PackageReference>
     <PackageReference Include="MvvmCross.Forms">
-      <Version>6.4.0</Version>
+      <Version>6.4.1</Version>
     </PackageReference>
     <PackageReference Include="MvvmCross.Plugin.Json">
-      <Version>6.4.0</Version>
+      <Version>6.4.1</Version>
     </PackageReference>
     <PackageReference Include="MvvmCross.Plugin.JsonLocalization">
-      <Version>6.4.0</Version>
+      <Version>6.4.1</Version>
     </PackageReference>
     <PackageReference Include="MvvmCross.Plugin.Messenger">
-      <Version>6.4.0</Version>
+      <Version>6.4.1</Version>
     </PackageReference>
     <PackageReference Include="Plugin.MediaManager.Forms">
       <Version>0.8.11</Version>
@@ -182,11 +182,11 @@
     <PackageReference Include="Xamarin.FFImageLoading.Forms">
       <Version>2.4.11.982</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.Forms" Version="4.1.0.709244" />
+    <PackageReference Include="Xamarin.Forms" Version="4.3.0.819712-pre2" />
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.2.9" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.3.0" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
     <PackageReference Include="Xamarin.Forms.PancakeView">
-      <Version>1.2.1</Version>
+      <Version>1.3.2-beta</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

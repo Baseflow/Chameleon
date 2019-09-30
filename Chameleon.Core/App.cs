@@ -35,8 +35,9 @@ namespace Chameleon.Core
             CrossMediaManager.Current.Library.Providers.Add(Mvx.IoCProvider.IoCConstruct<PlaylistProvider>());
 
             Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IBrowseService, BrowseService>();
-
             Mvx.IoCProvider.LazyConstructAndRegisterSingleton<ISettingsService, SettingsService>();
+            Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IRadioStationsService, RadioStationsService>();
+
 
 
             /*var language = Mvx.IoCProvider.Resolve<ILanguageService>()?.GetLanguage()?.TwoLetterISOLanguageName;

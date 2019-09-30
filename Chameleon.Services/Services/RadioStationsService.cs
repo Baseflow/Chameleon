@@ -10,13 +10,13 @@ namespace Chameleon.Services.Services
     {
         public Task<IList<IMediaItem>> GetRadioStations()
         {
-            var json = RadioStations.GetEmbeddedResourceString("RadioStationList.json");
+            var json = RadioStations.GetEmbeddedResourceString("RadioStationsList.json");
             var jsonList = RadioStations.FromJson(json);
             IList<IMediaItem> items = new List<IMediaItem>();
-
+            
             foreach (var item in jsonList)
             {
-                foreach (var radioStation in item.RadioStationList)
+                foreach (var radioStation in item.RadioStationsList)
                 {
                     if (!string.IsNullOrEmpty(radioStation.Uri))
                     {

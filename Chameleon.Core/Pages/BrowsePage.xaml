@@ -105,6 +105,10 @@
                             </StackLayout>
                         </CollectionView.EmptyView>
                     </CollectionView>
+                    <Label
+                        Text="All Media"
+                        Style="{StaticResource Header1}"
+                        Margin="24,0" />
                 </StackLayout>
             </core:MvxListView.Header>
             <core:MvxListView.ItemTemplate>

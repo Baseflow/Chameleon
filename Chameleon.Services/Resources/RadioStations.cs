@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 
 namespace Chameleon.Services.Resources
 {
@@ -16,7 +14,7 @@ namespace Chameleon.Services.Resources
         public string Name { get; set; }
 
         [JsonProperty("stations")]
-        public List<RadioStation> RadioStationList { get; set; }
+        public List<RadioStation> RadioStationsList { get; set; }
     }
 
     public partial class RadioStation
@@ -68,5 +66,6 @@ namespace Chameleon.Services.Resources
 
         public static List<RadioStation> FromJson(string json) => JsonConvert.DeserializeObject<List<RadioStation>>(json);
     }
+
 }
 

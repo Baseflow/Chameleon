@@ -16,7 +16,7 @@ namespace Chameleon.Services.Resources
         public string Name { get; set; }
 
         [JsonProperty("stations")]
-        public List<RadioStation> Samples { get; set; }
+        public List<RadioStation> RadioStationList { get; set; }
     }
 
     public partial class RadioStation

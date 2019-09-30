@@ -40,6 +40,15 @@ namespace Chameleon.Core.ViewModels
             set => SetProperty(ref _selectedMediaItem, value);
         }
 
+        public string AddTracksText
+        {
+            get
+            {
+                var text = GetText("AddTracks");
+                return text;
+            }
+        }
+
         private IPlaylist _currentPlaylistSource;
         public IPlaylist CurrentPlaylistSource
         {

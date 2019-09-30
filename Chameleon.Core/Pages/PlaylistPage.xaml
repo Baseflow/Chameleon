@@ -179,10 +179,9 @@
             <CollectionView.EmptyView>
                     <StackLayout>
                         <ActivityIndicator Color="DimGray"
-                                           mvx:Bi.nd="IsRunning IsLoading"
-                                           HeightRequest="50" />
+                                           mvx:Bi.nd="IsRunning IsLoading"/>
                         <Label
-                            Text="Add tracks to begin"
+                            Text="{Binding Source={x:Reference Name=playlistPage}, Path=BindingContext.DataContext.AddTracksText}"
                             VerticalOptions="Center"
                             Margin="24,0,0,0"
                             Style="{StaticResource MediaItemTitle}" />

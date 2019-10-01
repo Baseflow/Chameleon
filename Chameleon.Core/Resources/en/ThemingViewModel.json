@@ -1,4 +1,6 @@
 ﻿{
-    "Title": "Custom Theme",
-    "Theming": "Theming"
+  "Title": "Custom Theme",
+  "Theming": "Theming",
+  "LightTheme": "Light theme",
+  "DarkTheme": "Dark theme"
 }

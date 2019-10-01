@@ -15,11 +15,7 @@
     mvx:La.ng="Title Title">
 
     <NavigationPage.TitleView>
-        <StackLayout Orientation="Horizontal"
-                     VerticalOptions="Center"
-                     HorizontalOptions="Center"
-                     Spacing="10"
-                     HeightRequest="30">
+        <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center" Spacing="10" HeightRequest="30">
             <Image Source="chameleon_logo"/>
         </StackLayout>
     </NavigationPage.TitleView>
@@ -35,10 +31,10 @@
                               IsEnabled="False">
                         <Label mvx:La.ng=" Text Playback"
                                Style="{StaticResource PlaybackSettings}"
-                               Margin="20" />
+                               Margin="24" />
                     </ViewCell>
                     <ViewCell BindingContext="{Binding .}">
-                        <Grid Margin="20">
+                        <Grid Margin="24">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition Height="Auto" />
@@ -47,7 +43,7 @@
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-                            <Label mvx:La.ng=" Text Skip"
+                            <Label mvx:La.ng="Text Skip"
                                    Style="{DynamicResource PlaybackSettingsTitle}"
                                    Grid.Row="0" />
                             <Label Text="{Binding Source={x:Reference slider}, Path=Value, StringFormat='{0:F0}s'}"
@@ -65,7 +61,7 @@
                         </Grid>
                     </ViewCell>
                     <ViewCell BindingContext="{Binding .}">
-                        <Grid Margin="20">
+                        <Grid Margin="24">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*" />
                                 <RowDefinition Height="*" />
@@ -92,7 +88,7 @@
                         </Grid>
                     </ViewCell>
                     <ViewCell BindingContext="{Binding .}">
-                        <Grid Margin="20">
+                        <Grid Margin="24">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="auto" />
                                 <RowDefinition Height="auto" />
@@ -132,7 +128,7 @@
                         </Grid>
                     </ViewCell>
                     <ViewCell BindingContext="{Binding .}">
-                        <Grid Margin="20">
+                        <Grid Margin="24,16">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
@@ -152,7 +148,7 @@
                         </Grid>
                     </ViewCell>
                     <ViewCell BindingContext="{Binding .}">
-                        <Grid Margin="20">
+                        <Grid Margin="24,16">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*" />
                             </Grid.RowDefinitions>

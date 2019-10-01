@@ -194,7 +194,7 @@
                                 Source="icon_plus_big" />
                             <Label
                                 BindingContext="{Binding .}"
-                                Text="{mvx:MvxLang AddTracks}"
+                                Text="{mvx:MvxLang AddMediaToStart}"
                                 Margin="0,8"
                                 HorizontalOptions="Center"
                                 VerticalOptions="Start"

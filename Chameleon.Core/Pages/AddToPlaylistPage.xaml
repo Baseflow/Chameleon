@@ -17,21 +17,20 @@
     ios:Page.UseSafeArea="True">
 
     <ContentPage.Content>
-        <Grid Margin="0,15,0,0"
-              BackgroundColor="{DynamicResource PrimaryColor}">
+        <Grid Margin="0,16,0,0">
             <Grid.RowDefinitions>
-                <RowDefinition Height="55" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="50" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="auto" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Frame BackgroundColor="{DynamicResource SecondaryColor}"
+            <Frame BackgroundColor="{DynamicResource PrimaryColor}"
                    CornerRadius="8"
                    Grid.Row="0"
-                   Padding="5,5,5,5"
-                   Margin="25,0,20,0">
+                   Padding="8"
+                   Margin="24,8,24,8">
                 <StackLayout
                     Orientation="Horizontal">
                      <Image
@@ -39,23 +38,23 @@
                     <Entry
                         mvx:La.ng="Placeholder NewPlaylist"
                         mvx:Bi.nd="Text PlaylistName"
+                        Margin="4,0"
                         Style="{StaticResource TextColorEntry}"
                         HorizontalOptions="FillAndExpand"/>
                     <Button
                         mvx:La.ng="Text Add"
                         HorizontalOptions="End"
+                        Padding="16,0"
                         Style="{StaticResource AddToPlaylistButton}"
                         mvx:Bi.nd="Command AddPlaylistCommand" />
                  </StackLayout>
             </Frame>
             <core:MvxListView
                 Grid.Row="1"
-                BackgroundColor="{DynamicResource PrimaryColor}"
                 ItemsSource="{mvx:MvxBind Playlists}"
                 ItemClick="{mvx:MvxBind AddToPlaylistCommand}"
                 VerticalOptions="FillAndExpand"
                 SeparatorVisibility="None"
-                Margin="0,10,0,10"
                 HasUnevenRows="True">
                 <core:MvxListView.ItemTemplate>
                     <DataTemplate>
@@ -65,11 +64,14 @@
                     </DataTemplate>
                 </core:MvxListView.ItemTemplate>
             </core:MvxListView>
-            <Button HorizontalOptions="FillAndExpand"
-                    mvx:La.ng="Text Cancel"
-                    Grid.Row="2"
-                    Style="{StaticResource CancelButton}"
-                    mvx:Bi.nd="Command BackCommand" />
+            <StackLayout Grid.Row="2" Orientation="Vertical">
+                <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="{DynamicResource PrimaryColor}"/>
+                <Button HorizontalOptions="FillAndExpand"
+                        mvx:La.ng="Text Cancel"
+                        Padding="0,16"
+                        Style="{StaticResource CancelButton}"
+                        mvx:Bi.nd="Command BackCommand" />
+            </StackLayout>
         </Grid>
     </ContentPage.Content>
 </core:MvxContentPage>

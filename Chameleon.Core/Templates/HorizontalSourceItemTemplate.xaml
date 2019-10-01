@@ -6,7 +6,7 @@
     xmlns:pan="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     x:Class="Chameleon.Core.Templates.HorizontalSourceItemTemplate">
     <ContentView.Content>
-        <Grid Margin="15">
+        <Grid Margin="16">
             <Grid.RowDefinitions>
                 <RowDefinition Height="107" />
             </Grid.RowDefinitions>

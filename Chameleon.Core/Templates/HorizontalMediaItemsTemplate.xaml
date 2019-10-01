@@ -6,14 +6,14 @@
     xmlns:pan="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     x:Class="Chameleon.Core.Templates.HorizontalMediaItemsTemplate">
     <ContentView.Content>
-        <Grid Padding="24,24,0,24">
+        <Grid Padding="24,16,0,16">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="154"/>
+                <ColumnDefinition Width="164"/>
             </Grid.ColumnDefinitions>
             <pan:PancakeView
                 CornerRadius="8"

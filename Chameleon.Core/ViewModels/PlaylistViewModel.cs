@@ -18,17 +18,13 @@ namespace Chameleon.Core.ViewModels
     public class PlaylistViewModel : BaseViewModel<IPlaylist>
     {
         private readonly IUserDialogs _userDialogs;
-        private IMediaManager _mediaManager;
         public IMediaManager MediaManager { get; }
-
 
         public PlaylistViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IUserDialogs userDialogs, IMediaManager mediaManager)
             : base(logProvider, navigationService)
         {
             _userDialogs = userDialogs ?? throw new ArgumentNullException(nameof(userDialogs));
-            _mediaManager = mediaManager ?? throw new ArgumentNullException(nameof(mediaManager));
             MediaManager = mediaManager ?? throw new ArgumentNullException(nameof(mediaManager));
-
         }
 
         public MvxObservableCollection<IMediaItem> MediaItems { get; set; } = new MvxObservableCollection<IMediaItem>();
@@ -71,13 +67,7 @@ namespace Chameleon.Core.ViewModels
 
         public bool IsNotEmpty => CurrentPlaylist?.MediaItems?.Count > 0;
 
-        public bool IsVisible
-        {
-            get
-            {
-                return string.IsNullOrEmpty(SearchText);
-            }
-        }
+        public bool IsVisible => string.IsNullOrEmpty(SearchText);
 
         private IMediaItem _activeMediaItem;
         public IMediaItem ActiveMediaItem
@@ -137,6 +127,11 @@ namespace Chameleon.Core.ViewModels
             CurrentPlaylist = playlist;
             CurrentPlaylistSource = playlist;
 
+            UpdateTracksTime();
+        }
+
+        private void UpdateTracksTime()
+        {
             var trackAmount = new FormattedString();
             trackAmount.Spans.Add(new Span { Text = CurrentPlaylist.MediaItems.Count.ToString(), FontAttributes = FontAttributes.Bold, FontSize = 12 });
             trackAmount.Spans.Add(new Span { Text = " tracks" });
@@ -156,11 +151,11 @@ namespace Chameleon.Core.ViewModels
 
             try
             {
-                var mediaItem = await _mediaManager.Library.GetAll<MediaItem>();
+                var mediaItem = await MediaManager.Library.GetAll<MediaItem>();
                 if (mediaItem != null)
                     MediaItems.ReplaceWith(mediaItem);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
             }
 
@@ -169,37 +164,28 @@ namespace Chameleon.Core.ViewModels
 
         public override void ViewAppearing()
         {
-            _mediaManager.MediaItemChanged += MediaManager_MediaItemChanged;
-            ActiveMediaItem = _mediaManager.Queue.Current;
+            base.ViewAppearing();
+
+            MediaManager.MediaItemChanged += MediaManager_MediaItemChanged;
+            ActiveMediaItem = MediaManager.Queue.Current;
             CurrentPlaylistSource = null;
             CurrentPlaylistSource = CurrentPlaylist;
-            base.ViewAppearing();
-        }
-
-        public override void ViewAppeared()
-        {
-            base.ViewAppeared();
-
+            
             Progress = MediaManager.Position.TotalSeconds / MediaManager.Duration.TotalSeconds;
             MediaManager.PositionChanged += MediaManager_PositionChanged;
             TimeLeft = $"-{(MediaManager.Position - MediaManager.Duration).ToString(@"mm\:ss")}";
         }
 
-        public override void ViewDisappeared()
-        {
-            base.ViewDisappeared();
-            MediaManager.PositionChanged -= MediaManager_PositionChanged;
-        }
-
         public override void ViewDisappearing()
         {
-            _mediaManager.MediaItemChanged -= MediaManager_MediaItemChanged;
+            MediaManager.PositionChanged -= MediaManager_PositionChanged;
+            MediaManager.MediaItemChanged -= MediaManager_MediaItemChanged;
             base.ViewDisappearing();
         }
 
         private void MediaManager_MediaItemChanged(object sender, MediaItemEventArgs e)
         {
-            ActiveMediaItem = _mediaManager.Queue.Current;
+            ActiveMediaItem = MediaManager.Queue.Current;
             CurrentPlaylistSource = null;
             CurrentPlaylistSource = CurrentPlaylist;
 
@@ -223,8 +209,8 @@ namespace Chameleon.Core.ViewModels
 
         private async Task StartPlaylist()
         {
-            await _mediaManager.Play(CurrentPlaylist.MediaItems);
-            ActiveMediaItem = _mediaManager.Queue.Current;
+            await MediaManager.Play(CurrentPlaylist.MediaItems);
+            ActiveMediaItem = MediaManager.Queue.Current;
             CurrentPlaylistSource = null;
             CurrentPlaylistSource = CurrentPlaylist;
         }

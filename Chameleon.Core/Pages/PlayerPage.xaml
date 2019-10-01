@@ -98,6 +98,7 @@
                 </StackLayout>
             </ScrollView>
             <StackLayout VerticalOptions="End">
+                <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="{DynamicResource PrimaryColor}"/>
                 <Grid Padding="18,0,18,0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="50"/>
@@ -112,12 +113,14 @@
                     <controls:SelectableButton
                         Grid.Column="0"
                         Source="{Binding ShuffleImage}"
+                        Padding="8"
                         mvx:Bi.nd="Command ShuffleCommand"
                         HorizontalOptions="Center"
                         VerticalOptions="CenterAndExpand"
                         BackgroundColor="Transparent"/>
                     <controls:SelectableButton
                         Grid.Column="1"
+                        Padding="8"
                         mvx:Bi.nd="Command RepeatCommand"
                         HorizontalOptions="Center"
                         VerticalOptions="CenterAndExpand"
@@ -125,6 +128,7 @@
                         Source="{Binding RepeatImage}"/>
                     <controls:SelectableButton
                         Grid.Column="2"
+                        Padding="8"
                         Source="playback_controls_queue"
                         mvx:Bi.nd="Command QueueCommand"
                         HorizontalOptions="Center"
@@ -133,6 +137,7 @@
                     </controls:SelectableButton>
                     <controls:SelectableButton
                         Grid.Column="3"
+                        Padding="8"
                         Source="playback_controls_add_to_playlist"
                         mvx:Bi.nd="Command AddToPlaylistCommand"
                         HorizontalOptions="Center"
@@ -140,22 +145,24 @@
                         BackgroundColor="Transparent"/>
                     <controls:SelectableButton
                         Grid.Column="4"
+                        Padding="8"
                         mvx:Bi.nd="Command FavoriteCommand; Source FavoriteImage"
                         HorizontalOptions="Center"
                         VerticalOptions="CenterAndExpand"
                         BackgroundColor="Transparent"/>
                 </Grid>
+                <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="{DynamicResource PrimaryColor}"/>
                 <Slider
                     x:Name="Slider"
-                    Margin="18,0,18,0"
+                    Margin="24,0"
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="End"
                     mvx:Bi.nd="Value Position; Maximum Duration; DragStartedCommand DragStartedCommand; DragCompletedCommand DragCompletedCommand"
                     MaximumTrackColor="{DynamicResource TertiaryColor}"
                     MinimumTrackColor="{DynamicResource SecondaryColor}"/>
-                <Grid Padding="18,0,18,0">
+                <Grid Padding="24,0">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="auto"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
@@ -174,9 +181,9 @@
                         VerticalOptions="Center"
                         TextColor="{DynamicResource PrimaryTextColor}"/>
                 </Grid>
-                <Grid Padding="18,0,18,18">
+                <Grid Padding="0,0">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="auto"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
@@ -187,6 +194,7 @@
                     </Grid.ColumnDefinitions>
                     <controls:SelectableButton
                         Grid.Column="0"
+                        Padding="16"
                         Source="playback_controls_previous"
                         mvx:Bi.nd="Command PreviousCommand"
                         HorizontalOptions="Center"
@@ -194,6 +202,7 @@
                         BackgroundColor="Transparent"/>
                     <controls:SelectableButton
                         Grid.Column="1"
+                        Padding="16"
                         Source="playback_controls_skip_backwards"
                         mvx:Bi.nd="Command SkipBackwardsCommand"
                         HorizontalOptions="Center"
@@ -201,6 +210,7 @@
                         BackgroundColor="Transparent"/>
                     <ImageButton
                         Grid.Column="2"
+                        Padding="8,0"
                         Source="{Binding PlayPauseImage}"
                         mvx:Bi.nd="Command PlayPauseCommand"
                         HorizontalOptions="Center"
@@ -208,6 +218,7 @@
                         BackgroundColor="Transparent" />
                     <controls:SelectableButton
                         Grid.Column="3"
+                        Padding="16"
                         Source="playback_controls_skip_forward"
                         mvx:Bi.nd="Command SkipForwardCommand"
                         HorizontalOptions="Center"
@@ -215,6 +226,7 @@
                         BackgroundColor="Transparent"/>
                     <controls:SelectableButton
                         Grid.Column="4"
+                        Padding="16"
                         Source="playback_controls_next"
                         mvx:Bi.nd="Command NextCommand"
                         HorizontalOptions="Center"

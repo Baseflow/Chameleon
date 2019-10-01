@@ -27,18 +27,17 @@
 
     <ContentPage.Content>
         <core:MvxListView
-            BackgroundColor="{DynamicResource PrimaryColor}"
             ItemsSource="{mvx:MvxBind Providers}"
             SelectionMode="Single"
             ItemClick="{mvx:MvxBind SourceCommand}"
-            SeparatorColor="{DynamicResource SecondaryColor}"
+            SeparatorColor="{DynamicResource PrimaryColor}"
             RowHeight="60">
             <core:MvxListView.Header>
                 <StackLayout Spacing="0">
                     <Label
                         mvx:La.ng="Text Recommended"
                         Style="{StaticResource PrimaryHeader}"
-                        Margin="15,10,0,0" />
+                        Margin="16,10,0,0" />
                      <CollectionView
                         x:Name="MyCollectionView"
                         mvx:Bi.nd="ItemsSource RecommendedProviders; SelectionChangedCommand SourceCommand; SelectionChangedCommandParameter SelectedItem; SelectedItem SelectedItem"
@@ -59,13 +58,13 @@
                      <Label
                         mvx:La.ng="Text Sources"
                         Style="{StaticResource PrimaryHeader}"
-                        Margin="15,10,0,15" /> 
+                        Margin="16,8,0,16" /> 
                 </StackLayout>
             </core:MvxListView.Header>
             <core:MvxListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Grid  Margin="20,0,20,0">
+                        <Grid  Margin="24,0,24,0">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
@@ -86,15 +85,20 @@
                                 IsClippedToBounds="True"
                                 HorizontalOptions="StartAndExpand"
                                 VerticalOptions="CenterAndExpand"
-                                BackgroundColor="{DynamicResource SecondaryColor}" 
-                                Elevation="2"
-                                Padding="5">
+                                Padding="8,4"
+                                BackgroundColor="{DynamicResource PrimaryColor}" 
+                                Elevation="0">
                                 <pan:PancakeView.HasShadow>
                                     <OnPlatform x:TypeArguments="x:Boolean"
                                 iOS="False"
                                 Android="True" />
                                 </pan:PancakeView.HasShadow>
-                                <Label Text="{Binding Source={x:Reference Name=providerPage}, Path=BindingContext.DataContext.SoonText}" Style="{StaticResource Data1}" />
+                                <Label Text="{Binding Source={x:Reference Name=providerPage}, Path=BindingContext.DataContext.SoonText}"
+                                       MaxLines="1"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center"
+                                       VerticalTextAlignment="Center"
+                                       Style="{StaticResource Data1}" />
                             </pan:PancakeView>
                             <Image Source="disclosure_button" HorizontalOptions="End" BackgroundColor="Transparent" Grid.Column="2"/>
                         </Grid>

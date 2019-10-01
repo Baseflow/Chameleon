@@ -13,8 +13,7 @@
     mc:Ignorable="d"
     x:TypeArguments="viewModels:HomeViewModel"
     x:Class="Chameleon.Core.Views.HomePage"
-    x:Name="homePage"
-    mvx:La.ng="Title Title">
+    x:Name="homePage">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -26,7 +25,7 @@
                 <Label
                     mvx:La.ng="Text Recent"
                     IsVisible="{Binding HasRecent}"
-                    Style="{StaticResource Header1}"
+                    Style="{StaticResource PrimaryHeader}"
                     Margin="24,0" />
                 <CollectionView
                     x:Name="RecentCollectionView"
@@ -65,7 +64,7 @@
                     Margin="0,24,0,0">
                     <Label
                         mvx:La.ng="Text Playlists"
-                        Style="{StaticResource Header1}"
+                        Style="{StaticResource PrimaryHeader}"
                         HorizontalOptions="Start"
                         VerticalTextAlignment="Center"
                         />

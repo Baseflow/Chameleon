@@ -37,7 +37,7 @@
                 <StackLayout Spacing="0">
                     <Label
                         mvx:La.ng="Text Recommended"
-                        Style="{StaticResource Header1}"
+                        Style="{StaticResource PrimaryHeader}"
                         Margin="15,10,0,0" />
                      <CollectionView
                         x:Name="MyCollectionView"
@@ -58,7 +58,7 @@
                     </CollectionView>
                      <Label
                         mvx:La.ng="Text Sources"
-                        Style="{StaticResource Header1}"
+                        Style="{StaticResource PrimaryHeader}"
                         Margin="15,10,0,15" /> 
                 </StackLayout>
             </core:MvxListView.Header>

@@ -4,23 +4,17 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:styles="clr-namespace:Chameleon.Core.Resources;assembly=Chameleon.Core"
     xmlns:effects="clr-namespace:Chameleon.Core.Effects;assembly=Chameleon.Core"
+    xmlns:rainbows="clr-namespace:Xamarin.Forms.DebugRainbows;assembly=Xamarin.Forms.DebugRainbows"
     x:Class="Chameleon.Core.Resources.Styles" >
     <ResourceDictionary.MergedDictionaries>
         <styles:Sizes />
+        <styles:GlobalStyles />
     </ResourceDictionary.MergedDictionaries>
-
-    <Style TargetType="{x:Type Button}" ApplyToDerivedTypes="True">
-        <Setter Property="FontAttributes" Value="Bold"/>
-    </Style>
-
-    <Style TargetType="{x:Type ImageButton}" ApplyToDerivedTypes="True">
-        <Setter Property="BackgroundColor" Value="Transparent"/>
-    </Style>
 
     <Style TargetType="Button" x:Key="PrimaryButton">
         <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}"/>
-        <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryColor}"/>
-        <Setter Property="BorderColor" Value="{DynamicResource SecondaryColor}"/>
+        <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryBackgroundColor}"/>
+        <Setter Property="BorderColor" Value="{DynamicResource PrimaryColor}"/>
         <Setter Property="BorderRadius" Value="25"/>
         <Setter Property="BorderWidth" Value="1"/>
         <Setter Property="CornerRadius" Value="20"/>
@@ -30,23 +24,19 @@
     </Style>
 
     <Style TargetType="Button" x:Key="SecondaryButton">
-        <Setter Property="TextColor" Value="#FF898CB2"/>
-        <Setter Property="BackgroundColor" Value="{DynamicResource SecondaryColor}"/>
+        <Setter Property="TextColor" Value="{DynamicResource SecondaryTextColor}"/>
+        <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryColor}"/>
         <Setter Property="CornerRadius" Value="20"/>
         <Setter Property="HeightRequest" Value="40"/>
         <Setter Property="FontFamily" Value="FiraSans#500"/>
         <Setter Property="FontSize" Value="{DynamicResource XSmallTextSize}"/>
     </Style>
 
-    <Style TargetType="{x:Type Label}" ApplyToDerivedTypes="True">
-        <Setter Property="TextColor" Value="{DynamicResource SecondaryTextColor}"/>
-    </Style>
-
-    <Style TargetType="Label" x:Key="Header1">
+    <Style TargetType="Label" x:Key="PrimaryHeader">
         <Setter Property="FontFamily" Value="FiraSans#600"/>
         <Setter Property="FontSize" Value="{DynamicResource BigTextSize}"/>
         <Setter Property="FontAttributes" Value="Bold"/>
-        <Setter Property="TextColor" Value="{DynamicResource QuaternaryTextColor}"/>
+        <Setter Property="TextColor" Value="{DynamicResource SecondaryTextColor}"/>
     </Style>
 
     <Style TargetType="Label" x:Key="Header2">
@@ -67,56 +57,8 @@
     <Style TargetType="Label" x:Key="MediaItemSubTitle">
         <Setter Property="FontFamily" Value="FiraSans#400"/>
         <Setter Property="FontSize" Value="{DynamicResource XXSmallTextSize}"/>
-        <Setter Property="TextColor" Value="{DynamicResource QuinaryTextColor}"/>
+        <Setter Property="TextColor" Value="{DynamicResource TertiaryTextColor}"/>
         <Setter Property="HorizontalTextAlignment" Value="Start"/>
-    </Style>
-
-    <Style TargetType="{x:Type TabbedPage}" ApplyToDerivedTypes="True">
-        <Setter Property="BarBackgroundColor" Value="{DynamicResource PrimaryColor}" />
-        <Setter Property="BarTextColor" Value="{DynamicResource PrimaryTextColor}"/>
-        <Setter Property="SelectedTabColor" Value="{DynamicResource PrimaryTextColor}"/>
-        <Setter Property="UnselectedTabColor" Value="{DynamicResource PrimaryTextColor}"/>
-        <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryColor}" />
-    </Style>
-
-    <Style TargetType="{x:Type NavigationPage}" ApplyToDerivedTypes="True">
-        <Setter Property="BarBackgroundColor" Value="{DynamicResource PrimaryColor}" />
-        <Setter Property="BarTextColor" Value="{DynamicResource PrimaryTextColor}"/>
-        <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryColor}" />
-    </Style>
-
-    <Style TargetType="{x:Type ContentPage}" ApplyToDerivedTypes="True">
-        <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryColor}" />
-    </Style>
-
-      <Style TargetType="{x:Type ContentView}" ApplyToDerivedTypes="True">
-        <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryColor}" />
-    </Style>
-
-       <Style TargetType="{x:Type ListView}" ApplyToDerivedTypes="True">
-        <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryColor}" />
-    </Style>
-
-       <Style TargetType="{x:Type TableView}" ApplyToDerivedTypes="True">
-        <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryColor}" />
-    </Style>
-
-     <Style TargetType="{x:Type TemplatedPage}" ApplyToDerivedTypes="True">
-        <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryColor}" />
-    </Style>
-
-    <Style TargetType="{x:Type SearchBar}" ApplyToDerivedTypes="True">
-        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
-        <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}"/>
-        <Setter Property="CancelButtonColor" Value="{DynamicResource PrimaryTextColor}"/>
-        <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryColor}"/>
-        <Setter Property="PlaceholderColor" Value="{DynamicResource PrimaryTextColor}"/>
-        <Setter Property="FontSize" Value="{DynamicResource SmallTextSize}"/>
-        <Setter Property="Margin">
-            <OnPlatform x:TypeArguments="Thickness"
-                        iOS="16,20"
-                        Android="0,10,24,20"/>
-        </Setter>
     </Style>
 
     <Style TargetType="Button" x:Key="AddToPlaylistButton">
@@ -137,7 +79,7 @@
     <Style TargetType="Entry" x:Key="TextColorEntry">
      <Setter Property="FontFamily" Value="FiraSans#400"/>
         <Setter Property="FontSize" Value="{DynamicResource BigTextSize}"/>
-        <Setter Property="TextColor" Value="{DynamicResource QuaternaryTextColor}"/>
+        <Setter Property="TextColor" Value="{DynamicResource SecondaryTextColor}"/>
     </Style>
 
     <Style TargetType="Label" x:Key="OpenSourceSubtitle">
@@ -177,7 +119,7 @@
     <Style TargetType="Label" x:Key="AlbumText">
         <Setter Property="FontFamily" Value="FiraSans#400"/>
         <Setter Property="FontSize" Value="{DynamicResource XXSmallTextSize}"/>
-        <Setter Property="TextColor" Value="{DynamicResource QuinaryTextColor}"/>
+        <Setter Property="TextColor" Value="{DynamicResource TertiaryTextColor}"/>
     </Style>
 
      <Style TargetType="Label" x:Key="Data1">
@@ -189,7 +131,7 @@
      <Style TargetType="Label" x:Key="Data2">
         <Setter Property="FontFamily" Value="FiraSans-Regular#400"/>
         <Setter Property="FontSize" Value="{DynamicResource XSmallTextSize}"/>
-        <Setter Property="TextColor" Value="{DynamicResource QuinaryTextColor}"/>
+        <Setter Property="TextColor" Value="{DynamicResource TertiaryTextColor}"/>
     </Style>
 
      <Style TargetType="Label" x:Key="PlaybackSettingsTitle">
@@ -224,7 +166,5 @@
         <Setter Property="FontSize" Value="{DynamicResource XXSmallTextSize}"/>
         <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}"/>
     </Style>
-
-
-
+    
 </ResourceDictionary>

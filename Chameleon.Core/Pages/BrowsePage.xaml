@@ -38,7 +38,7 @@
                     <Label
                         mvx:La.ng="Text Artists"
                         IsVisible="{Binding IsArtistsVisible, Mode=OneWay}"
-                        Style="{StaticResource Header1}"
+                        Style="{StaticResource PrimaryHeader}"
                         Margin="24,0" />
                     <CollectionView
                         x:Name="MyCollectionView"
@@ -107,7 +107,7 @@
                     </CollectionView>
                     <Label
                         Text="All Media"
-                        Style="{StaticResource Header1}"
+                        Style="{StaticResource PrimaryHeader}"
                         Margin="24,0" />
                 </StackLayout>
             </core:MvxListView.Header>

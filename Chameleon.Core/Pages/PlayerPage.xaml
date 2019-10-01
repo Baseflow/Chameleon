@@ -142,8 +142,8 @@
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="End"
                     mvx:Bi.nd="Value Position; Maximum Duration; DragStartedCommand DragStartedCommand; DragCompletedCommand DragCompletedCommand"
-                    MaximumTrackColor="{DynamicResource MaximumTrackColor}"
-                    MinimumTrackColor="{DynamicResource MinimumTrackColor}"/>
+                    MaximumTrackColor="{DynamicResource TertiaryColor}"
+                    MinimumTrackColor="{DynamicResource SecondaryColor}"/>
                 <Grid Padding="18,0,18,0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="20"/>

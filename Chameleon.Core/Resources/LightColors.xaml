@@ -4,20 +4,16 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="Chameleon.Core.Resources.LightColors">
 
-    <Color x:Key="PrimaryColor">#FFFFFF</Color>
-    <Color x:Key="SecondaryColor">#B3000000</Color>
-    <Color x:Key="TertiaryColor">#000000</Color>
+    <Color x:Key="PrimaryBackgroundColor">#FFFFFFFF</Color>
+    <Color x:Key="SecondaryBackgroundColor">#FFE3E5F6</Color>
 
-    <Color x:Key="MinimumTrackColor">#FFF14431</Color>
-    <Color x:Key="MaximumTrackColor">#000000</Color>
-    <Color x:Key="SliderSettingsPlaybackColor">#FF252525</Color>
-    <Color x:Key="SwitchsColor">#f14431</Color>
+    <Color x:Key="PrimaryColor">#FFE3E5F6</Color>
+    <Color x:Key="SecondaryColor">#FFDA3434</Color>
+    <Color x:Key="TertiaryColor">#FF252525</Color>
 
-    <Color x:Key="PrimaryTextColor">#000000</Color>
-    <Color x:Key="SecondaryTextColor">#FF6C6E81</Color>
-    <Color x:Key="TertiaryTextColor">#F505050"</Color>
-    <Color x:Key="QuaternaryTextColor">#4D000000</Color>
-    <Color x:Key="QuinaryTextColor">#B3000000</Color>
+    <Color x:Key="PrimaryTextColor">#FF252525</Color>
+    <Color x:Key="SecondaryTextColor">#FF30313C</Color>
+    <Color x:Key="TertiaryTextColor">#FF393A47</Color>
 
 </ResourceDictionary>
  

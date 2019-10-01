@@ -9,9 +9,47 @@
     x:Class="Chameleon.Core.Resources.Styles" >
     <ResourceDictionary.MergedDictionaries>
         <styles:Sizes />
-        <styles:GlobalStyles />
     </ResourceDictionary.MergedDictionaries>
 
+    <Style TargetType="{x:Type ContentPage}" ApplyToDerivedTypes="True">
+        <Setter Property="rainbows:DebugRainbow.IsDebug" Value="False" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryBackgroundColor}" />
+    </Style>
+
+    <Style TargetType="{x:Type Button}" ApplyToDerivedTypes="True">
+        <Setter Property="FontAttributes" Value="Bold"/>
+    </Style>
+
+    <Style TargetType="{x:Type ImageButton}" ApplyToDerivedTypes="True">
+        <Setter Property="BackgroundColor" Value="Transparent"/>
+    </Style>
+
+    <Style TargetType="{x:Type TabbedPage}" ApplyToDerivedTypes="True">
+        <Setter Property="BarBackgroundColor" Value="{DynamicResource SecondaryBackgroundColor}" />
+        <Setter Property="BarTextColor" Value="{DynamicResource PrimaryTextColor}"/>
+        <Setter Property="SelectedTabColor" Value="{DynamicResource PrimaryTextColor}"/>
+        <Setter Property="UnselectedTabColor" Value="{DynamicResource PrimaryTextColor}"/>
+    </Style>
+
+    <Style TargetType="{x:Type NavigationPage}" ApplyToDerivedTypes="True">
+        <Setter Property="BarTextColor" Value="{DynamicResource PrimaryTextColor}"/>
+        <Setter Property="BarBackgroundColor" Value="{DynamicResource PrimaryBackgroundColor}" />
+    </Style>
+
+    <Style TargetType="{x:Type SearchBar}" ApplyToDerivedTypes="True">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}"/>
+        <Setter Property="CancelButtonColor" Value="{DynamicResource PrimaryTextColor}"/>
+        <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryColor}"/>
+        <Setter Property="PlaceholderColor" Value="{DynamicResource PrimaryTextColor}"/>
+        <Setter Property="FontSize" Value="{DynamicResource SmallTextSize}"/>
+        <Setter Property="Margin">
+            <OnPlatform x:TypeArguments="Thickness"
+                        iOS="16,20"
+                        Android="24,8"/>
+        </Setter>
+    </Style>
+    
     <Style TargetType="Button" x:Key="PrimaryButton">
         <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}"/>
         <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryBackgroundColor}"/>

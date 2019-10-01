@@ -40,10 +40,4 @@
     <EmbeddedResource Include="Resources\**\*.json" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Compile Update="Resources\GlobalStyles.xaml.cs">
-      <DependentUpon>GlobalStyles.xaml</DependentUpon>
-    </Compile>
-  </ItemGroup>
-
 </Project>

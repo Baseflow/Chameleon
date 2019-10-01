@@ -40,6 +40,15 @@ namespace Chameleon.Core.ViewModels
             set => SetProperty(ref _selectedMediaItem, value);
         }
 
+        public string AddTracksText
+        {
+            get
+            {
+                var text = GetText("AddTracks");
+                return text;
+            }
+        }
+
         private IPlaylist _currentPlaylistSource;
         public IPlaylist CurrentPlaylistSource
         {
@@ -206,7 +215,7 @@ namespace Chameleon.Core.ViewModels
             ReloadData();
         }
 
-        private void MediaManager_PositionChanged(object sender, PositionChangedEventArgs e)
+        private void MediaManager_PositionChanged(object sender, MediaManager.Playback.PositionChangedEventArgs e)
         {
             Progress = e.Position.TotalSeconds / MediaManager.Duration.TotalSeconds;
 

@@ -95,7 +95,7 @@
                                             Margin="15"/>
                                     </pan:PancakeView>
                                     <Label
-                                        Text="Add an Item"
+                                        Text="{Binding Source={x:Reference Name=thisPage}, Path=BindingContext.DataContext.AddAnItemText}"
                                         Grid.Column="1"
                                         VerticalOptions="Center"
                                         Style="{StaticResource MediaItemTitle}" />
@@ -106,6 +106,10 @@
                             </StackLayout>
                         </CollectionView.EmptyView>
                     </CollectionView>
+                    <Label
+                        Text="All Media"
+                        Style="{StaticResource Header1}"
+                        Margin="24,0" />
                 </StackLayout>
             </core:MvxListView.Header>
             <core:MvxListView.ItemTemplate>

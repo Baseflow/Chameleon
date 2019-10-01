@@ -12,7 +12,8 @@
     xmlns:pan="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     mc:Ignorable="d"
     x:TypeArguments="viewModels:QueueViewModel"
-    x:Class="Chameleon.Core.Views.QueuePage">
+    x:Class="Chameleon.Core.Views.QueuePage"
+    x:Name="thisPage">
     
     <NavigationPage.TitleView>
         <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center" Spacing="10" HeightRequest="30">
@@ -42,7 +43,7 @@
                         <ActivityIndicator Color="DimGray"
                                            mvx:Bi.nd="IsRunning IsLoading"/>
                         <Label
-                            Text="Start filling up the queue"
+                            Text="{Binding Source={x:Reference Name=thisPage}, Path=BindingContext.DataContext.FillingQueueText}"
                             VerticalOptions="Center"
                             Margin="24,0,0,0"
                             Style="{StaticResource MediaItemTitle}" />

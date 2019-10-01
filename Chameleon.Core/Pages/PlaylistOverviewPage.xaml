@@ -41,8 +41,6 @@
                             VerticalOptions="FillAndExpand">
                 <CollectionView.EmptyView>
                     <StackLayout>
-                        <ActivityIndicator Color="DimGray"
-                                           mvx:Bi.nd="IsRunning IsLoading"/>
                         <Grid Padding="24,0,10,10"
                               VerticalOptions="Center">
                             <Grid.RowDefinitions>
@@ -68,7 +66,7 @@
                                     Margin="15"/>
                             </pan:PancakeView>
                             <Label
-                                Text="Add new Playlist"
+                                Text="{Binding Source={x:Reference Name=thisPage}, Path=BindingContext.DataContext.AddNewPlaylistText}"
                                 Grid.Column="1"
                                 VerticalOptions="Center"
                                 Style="{StaticResource MediaItemTitle}" />
@@ -78,7 +76,6 @@
                         </Grid>
                     </StackLayout>
                 </CollectionView.EmptyView>
-
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <templates:MediaItemTemplate Padding="0,4" />

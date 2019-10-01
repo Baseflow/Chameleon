@@ -121,7 +121,7 @@ namespace Chameleon.Core.ViewModels
             MediaManager.PositionChanged -= MediaManager_PositionChanged;
         }
 
-        private void MediaManager_PositionChanged(object sender, PositionChangedEventArgs e)
+        private void MediaManager_PositionChanged(object sender, MediaManager.Playback.PositionChangedEventArgs e)
         {
             Progress = e.Position.TotalSeconds / MediaManager.Duration.TotalSeconds;
         }

@@ -13,7 +13,8 @@
     mc:Ignorable="d"
     x:TypeArguments="viewModels:HomeViewModel"
     x:Class="Chameleon.Core.Views.HomePage"
-    x:Name="homePage">
+    x:Name="homePage"
+    mvx:La.ng="Title Title">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -58,28 +59,28 @@
                     </CollectionView.ItemTemplate>
                 </CollectionView>
                 <StackLayout
-                    Spacing="0"
-                    Orientation="Horizontal"
-                    Padding="24,0"
-                    Margin="0,24,0,0">
+                    Padding="24,8"
+                    Orientation="Horizontal">
                     <Label
                         mvx:La.ng="Text Playlists"
                         Style="{StaticResource PrimaryHeader}"
                         HorizontalOptions="Start"
-                        VerticalTextAlignment="Center"
-                        />
+                        VerticalTextAlignment="Center" />
                     <Button
                         mvx:La.ng="Text AllPlaylists"
                         mvx:Bi.nd="Command OpenPlaylistOverviewCommand"
                         Style="{StaticResource SecondaryButton}"
                         HorizontalOptions="EndAndExpand"
-                        Padding="19,0" />
+                        Padding="16,0" />
                 </StackLayout>
                 <CollectionView
                     x:Name="PlaylistsCollectionView"
+                    HeightRequest="250"
                     SelectionMode="Single"
-                    mvx:Bi.nd="ItemsSource Playlists; SelectionChangedCommand OpenPlaylistCommand; SelectionChangedCommandParameter SelectedPlaylist; SelectedItem SelectedPlaylist"
-                    HeightRequest="250">
+                    mvx:Bi.nd="ItemsSource Playlists; 
+                    SelectionChangedCommand OpenPlaylistCommand; 
+                    SelectionChangedCommandParameter SelectedPlaylist; 
+                    SelectedItem SelectedPlaylist">
 
                     <CollectionView.ItemsLayout>
                         <GridItemsLayout

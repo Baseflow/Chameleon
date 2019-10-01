@@ -8,29 +8,31 @@
     xmlns:controls="clr-namespace:Chameleon.Core.Controls"
     x:Class="Chameleon.Core.Templates.MediaItemTemplate">
     <ContentView.Content>
-        <Grid Margin="24,5"
-              RowSpacing="0"
-              ColumnSpacing="12"
+        <Grid Margin="24,0"
+              RowSpacing="2"
+              ColumnSpacing="16"
+              HeightRequest="56"
               VerticalOptions="Center">
             <Grid.RowDefinitions>
-                <RowDefinition Height="28" />
-                <RowDefinition Height="28" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="56" />
+                <ColumnDefinition Width="auto" />
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="28" />
             </Grid.ColumnDefinitions>
             <pan:PancakeView
-                CornerRadius="3"
+                CornerRadius="4"
                 IsClippedToBounds="True"
+                Margin="0,2"
                 Elevation="2"
                 Grid.Column="0"
                 Grid.RowSpan="2">
                 <pan:PancakeView.HasShadow>
                     <OnPlatform x:TypeArguments="x:Boolean"
                                 iOS="False"
-                                Android="True" />
+                                Android="False" />
                 </pan:PancakeView.HasShadow>
                 <Image
                     HorizontalOptions="Center"
@@ -61,6 +63,7 @@
                 Grid.Column="2"
                 Grid.RowSpan="2"
                 HorizontalOptions="End"
+                VerticalOptions="Center"
                 BackgroundColor="Transparent" />
         </Grid>
     </ContentView.Content>

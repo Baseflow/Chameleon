@@ -5,6 +5,7 @@
     xmlns:styles="clr-namespace:Chameleon.Core.Resources;assembly=Chameleon.Core"
     xmlns:effects="clr-namespace:Chameleon.Core.Effects;assembly=Chameleon.Core"
     xmlns:rainbows="clr-namespace:Xamarin.Forms.DebugRainbows;assembly=Xamarin.Forms.DebugRainbows"
+    xmlns:pan="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     x:Class="Chameleon.Core.Resources.Styles" >
     <ResourceDictionary.MergedDictionaries>
         <styles:Sizes />
@@ -166,5 +167,12 @@
         <Setter Property="FontSize" Value="{DynamicResource XXSmallTextSize}"/>
         <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}"/>
     </Style>
-    
+
+    <Style TargetType="pan:PancakeView" x:Key="PancakeStyle">
+        <Setter Property="CornerRadius" Value="24" />
+        <Setter Property="HasShadow" Value="True" />
+        <Setter Property="HorizontalOptions" Value="Fill" />
+        <Setter Property="Margin" Value="24, 24" />
+    </Style>
+
 </ResourceDictionary>

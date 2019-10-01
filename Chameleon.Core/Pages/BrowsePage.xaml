@@ -108,7 +108,7 @@
                     <Label
                         Text="All Media"
                         Style="{StaticResource PrimaryHeader}"
-                        Margin="24,0" />
+                        Margin="24,8" />
                 </StackLayout>
             </core:MvxListView.Header>
             <core:MvxListView.ItemTemplate>

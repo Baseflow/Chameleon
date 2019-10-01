@@ -12,7 +12,7 @@
     <Color x:Key="TertiaryColor">#FFE3E5F6</Color>
 
     <Color x:Key="PrimaryTextColor">#FFFFFFFF</Color>
-    <Color x:Key="SecondaryTextColor">#FF6C6E81"</Color>
+    <Color x:Key="SecondaryTextColor">#FF6C6E81</Color>
     <Color x:Key="TertiaryTextColor">#FFE3E5F6</Color>
 
 </ResourceDictionary>

@@ -42,7 +42,7 @@
         <Setter Property="Margin">
             <OnPlatform x:TypeArguments="Thickness"
                         iOS="16,20"
-                        Android="0,8,24,8"/>
+                        Android="24,8"/>
         </Setter>
     </Style>
 

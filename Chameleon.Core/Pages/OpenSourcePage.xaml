@@ -10,13 +10,15 @@
     xmlns:templates="clr-namespace:Chameleon.Core.Templates;assembly=Chameleon.Core"
     mc:Ignorable="d"
     x:TypeArguments="viewModels:OpenSourceViewModel"
-    x:Class="Chameleon.Core.Views.OpenSourcePage"
-    Padding="24"
-    mvx:La.ng="Title Title" >
-
+    x:Class="Chameleon.Core.Views.OpenSourcePage">
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center" Spacing="10" HeightRequest="30">
+            <Image Source="chameleon_logo"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout>
+            <StackLayout Padding="24">
                 <Label mvx:La.ng="Text OpenSourcesoftware" Style="{StaticResource OpenSourceTitle}" />
                 <Label mvx:La.ng="Text Components" Style="{StaticResource OpenSourceSubtitle}" Margin="0,0,0,20"/>
 

@@ -15,8 +15,7 @@
     mc:Ignorable="d"
     x:TypeArguments="viewModels:PlayerViewModel"
     x:Class="Chameleon.Core.Views.PlayerPage"
-    NavigationPage.HasNavigationBar="True"
-    BackgroundColor="{DynamicResource PrimaryColor}">
+    NavigationPage.HasNavigationBar="True">
     <NavigationPage.TitleView>
         <Grid>
             <Grid.RowDefinitions>
@@ -53,11 +52,13 @@
     <ContentPage.Content>
         <StackLayout VerticalOptions="FillAndExpand">
             <ScrollView VerticalOptions="FillAndExpand">
-                <StackLayout VerticalOptions="FillAndExpand" Padding="0,18,0,18">
+                <StackLayout VerticalOptions="FillAndExpand" Padding="0">
                     <mm:VideoView
                         HorizontalOptions="FillAndExpand"
                         VerticalOptions="Start"
-                        HeightRequest="200"
+                        WidthRequest="{Binding VideoWidth}"
+                        HeightRequest="{Binding VideoHeight}"
+                        Margin="24"
                         ShowControls="False"
                         mvx:Bi.nd="Source Source" />
                     <StackLayout VerticalOptions="FillAndExpand" BindableLayout.ItemsSource="{Binding Metadata}"

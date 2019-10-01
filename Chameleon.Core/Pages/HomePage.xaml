@@ -59,7 +59,7 @@
                     </CollectionView.ItemTemplate>
                 </CollectionView>
                 <StackLayout
-                    Padding="24,8"
+                    Padding="24,16"
                     Orientation="Horizontal">
                     <Label
                         mvx:La.ng="Text Playlists"
@@ -101,7 +101,7 @@
                                 WidthRequest="154"
                                 HeightRequest="154"
                                 IsClippedToBounds="True"
-                                BackgroundColor="{DynamicResource SecondaryColor}"
+                                BackgroundColor="{DynamicResource PrimaryColor}"
                                 Elevation="2">
                                 <pan:PancakeView.HasShadow>
                                     <OnPlatform
@@ -123,7 +123,6 @@
                                         Grid.Row="0"
                                         Grid.RowSpan="2"
                                         VerticalOptions="Center"
-                                        BackgroundColor="{DynamicResource SecondaryColor}"
                                         Source="icon_plus_big" />
                                     <Label
                                         Text="{Binding Source={x:Reference Name=homePage}, Path=BindingContext.DataContext.AddPlaylistLabel}"

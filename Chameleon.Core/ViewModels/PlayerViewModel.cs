@@ -24,6 +24,15 @@ namespace Chameleon.Core.ViewModels
         {
             MediaManager = mediaManager ?? throw new ArgumentNullException(nameof(mediaManager));
             _userDialogs = userDialogs ?? throw new ArgumentNullException(nameof(userDialogs));
+            MediaManager.MediaPlayer.PropertyChanged += MediaPlayer_PropertyChanged;
+        }
+
+        private void MediaPlayer_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            if(e.PropertyName == nameof(MediaManager.MediaPlayer.VideoHeight))
+            {
+                ;
+            }
         }
 
         private IMediaItem _source;
@@ -140,6 +149,20 @@ namespace Chameleon.Core.ViewModels
             {
                 SetProperty(ref _playlistName, value);
             }
+        }
+
+        private double _videoHeight = 200;
+        public double VideoHeight
+        {
+            get => _videoHeight;
+            set => SetProperty(ref _videoHeight, value);
+        }
+
+        private double _videoWidth = 0;
+        public double VideoWidth
+        {
+            get => _videoWidth;
+            set => SetProperty(ref _videoHeight, value);
         }
 
         private IMvxAsyncCommand _dragCompletedCommand;

@@ -24,6 +24,14 @@
         <Setter Property="BackgroundColor" Value="Transparent"/>
     </Style>
 
+    <Style TargetType="{x:Type ListView}" ApplyToDerivedTypes="True">
+        <Setter Property="BackgroundColor" Value="Transparent"/>
+    </Style>
+
+    <Style TargetType="{x:Type TableView}" ApplyToDerivedTypes="True">
+        <Setter Property="BackgroundColor" Value="Transparent"/>
+    </Style>
+
     <Style TargetType="{x:Type TabbedPage}" ApplyToDerivedTypes="True">
         <Setter Property="BarBackgroundColor" Value="{DynamicResource SecondaryBackgroundColor}" />
         <Setter Property="BarTextColor" Value="{DynamicResource PrimaryTextColor}"/>

@@ -20,7 +20,13 @@ namespace Chameleon.Core.Views
         public PlayerPage()
         {
             InitializeComponent();
+            VideoPlayerView.SizeChanged += VideoPlayerView_SizeChanged;
             //UpdateContent(DeviceDisplay.MainDisplayInfo.Orientation);
+        }
+
+        private void VideoPlayerView_SizeChanged(object sender, System.EventArgs e)
+        {
+            ViewModel.VideoWidth = VideoPlayerView.Width;
         }
 
         public MvxBasePresentationAttribute PresentationAttribute(MvxViewModelRequest request)

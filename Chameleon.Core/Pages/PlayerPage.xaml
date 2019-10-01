@@ -10,8 +10,7 @@
     xmlns:mm="clr-namespace:MediaManager.Forms;assembly=MediaManager.Forms"
     xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
     xmlns:effects="clr-namespace:Chameleon.Core.Effects"
-    xmlns:controls="clr-namespace:Chameleon.Core.Controls"
-    ios:Page.UseSafeArea="True"
+    xmlns:controls="clr-namespace:Chameleon.Core.Controls" xmlns:pan="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" ios:Page.UseSafeArea="True"
     mc:Ignorable="d"
     x:TypeArguments="viewModels:PlayerViewModel"
     x:Class="Chameleon.Core.Views.PlayerPage"
@@ -19,8 +18,8 @@
     <NavigationPage.TitleView>
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="23"/>
-                <RowDefinition Height="23"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -53,21 +52,28 @@
         <StackLayout VerticalOptions="FillAndExpand">
             <ScrollView VerticalOptions="FillAndExpand">
                 <StackLayout VerticalOptions="FillAndExpand" Padding="0">
-                    <mm:VideoView
+                    <pan:PancakeView
                         HorizontalOptions="FillAndExpand"
-                        VerticalOptions="Start"
-                        WidthRequest="{Binding VideoWidth}"
-                        HeightRequest="{Binding VideoHeight}"
-                        Margin="24"
-                        ShowControls="False"
-                        mvx:Bi.nd="Source Source" />
+                            VerticalOptions="Start"
+                            Margin="24"
+                            CornerRadius="8"
+                            IsClippedToBounds="True"
+                            Elevation="0">
+                        <mm:VideoView
+                            x:Name="VideoPlayerView"
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="Start"
+                            HeightRequest="{Binding VideoHeight}"
+                            ShowControls="False"
+                            mvx:Bi.nd="Source Source" />
+                    </pan:PancakeView>
                     <StackLayout VerticalOptions="FillAndExpand" BindableLayout.ItemsSource="{Binding Metadata}"
                         Orientation="Vertical">
                         <BindableLayout.ItemTemplate>
                             <DataTemplate>
-                                <Grid Padding="18,0,18,0">
+                                <Grid Padding="24,0,24,2">
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="*"/>
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="40*"/>
@@ -81,6 +87,8 @@
                                     <Label
                                         Text="{Binding Value}"
                                         VerticalOptions="Center"
+                                        MaxLines="3"
+                                        LineBreakMode="MiddleTruncation"
                                         Grid.Column="1"
                                         Style="{StaticResource Data2}"/>
                                 </Grid>

@@ -29,9 +29,9 @@ namespace Chameleon.Core.ViewModels
 
         private void MediaPlayer_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-            if(e.PropertyName == nameof(MediaManager.MediaPlayer.VideoHeight))
+            if(e.PropertyName == nameof(MediaManager.MediaPlayer.VideoHeight) && VideoWidth > 0)
             {
-                ;
+                VideoHeight = VideoWidth / MediaManager.MediaPlayer.VideoAspectRatio;
             }
         }
 
@@ -162,7 +162,7 @@ namespace Chameleon.Core.ViewModels
         public double VideoWidth
         {
             get => _videoWidth;
-            set => SetProperty(ref _videoHeight, value);
+            set => SetProperty(ref _videoWidth, value);
         }
 
         private IMvxAsyncCommand _dragCompletedCommand;

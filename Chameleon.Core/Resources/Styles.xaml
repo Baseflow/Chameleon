@@ -42,6 +42,7 @@
     <Style TargetType="{x:Type NavigationPage}" ApplyToDerivedTypes="True">
         <Setter Property="BarTextColor" Value="{DynamicResource PrimaryTextColor}"/>
         <Setter Property="BarBackgroundColor" Value="{DynamicResource PrimaryBackgroundColor}" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryBackgroundColor}" />
     </Style>
 
     <Style TargetType="{x:Type SearchBar}" ApplyToDerivedTypes="True">

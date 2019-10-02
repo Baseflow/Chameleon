@@ -126,7 +126,7 @@
     <Style TargetType="Entry" x:Key="TextColorEntry">
         <Setter Property="FontFamily" Value="FiraSans#400"/>
         <Setter Property="FontSize" Value="{DynamicResource TextSizeMedium}"/>
-        <Setter Property="TextColor" Value="{DynamicResource TertiaryTextColor}"/>
+        <Setter Property="TextColor" Value="{DynamicResource PrimaryColor}"/>
     </Style>
 
     <Style TargetType="Label" x:Key="OpenSourceSubtitle">

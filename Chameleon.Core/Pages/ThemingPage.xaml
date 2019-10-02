@@ -16,12 +16,8 @@
     xmlns:pan="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView">
 
     <NavigationPage.TitleView>
-        <StackLayout Orientation="Horizontal"
-                     VerticalOptions="Center"
-                     HorizontalOptions="Center"
-                     Spacing="10"
-                     HeightRequest="30">
-            <Image Source="chameleon_logo" />
+        <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center" Spacing="10" HeightRequest="30">
+            <Image Source="chameleon_logo"/>
         </StackLayout>
     </NavigationPage.TitleView>
 
@@ -34,12 +30,12 @@
             <TableRoot>
                 <TableSection>
                     <ViewCell>
-                        <Label mvx:La.ng=" Text Theming"
+                        <Label mvx:La.ng="Text Theming"
                                Style="{DynamicResource PlaybackSettings}"
-                               Margin="20" />
+                               Margin="24" />
                     </ViewCell>
                     <ViewCell BindingContext="{Binding .}">
-                        <Grid Margin="5">
+                        <Grid Margin="4">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
@@ -54,7 +50,7 @@
                                 VerticalOptions="FillAndExpand"
                                 Elevation="2"
                                 HasShadow="True"
-                                Margin="5">
+                                Margin="4">
                                 <ImageButton
                                     HorizontalOptions="FillAndExpand"
                                     VerticalOptions="FillAndExpand"
@@ -63,12 +59,12 @@
                                     mvx:Bi.nd="Command ThemeDarkCommand" />
                             </pan:PancakeView>
                             <Label
-                                Text="Title"
+                                mvx:La.ng="Text DarkTheme"
                                 Grid.Row="0"
                                 Grid.Column="0"
                                 VerticalOptions="EndAndExpand"
                                 MaxLines="1"
-                                Margin="10"
+                                Margin="16"
                                 Style="{StaticResource MediaItemTitle}" />
                             <pan:PancakeView
                                 CornerRadius="8"
@@ -89,12 +85,12 @@
                                     Grid.Column="1" />
                             </pan:PancakeView>
                             <Label
-                                Text="Title"
+                                mvx:La.ng="Text LightTheme"
                                 Grid.Row="0"
                                 Grid.Column="1"
                                 VerticalOptions="EndAndExpand"
                                 MaxLines="1"
-                                Margin="10"
+                                Margin="16"
                                 Style="{StaticResource MediaItemTitle}" />
                         </Grid>
                     </ViewCell>

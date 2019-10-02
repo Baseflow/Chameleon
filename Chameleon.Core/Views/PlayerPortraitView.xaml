@@ -73,8 +73,8 @@
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="EndAndExpand"
                     BackgroundColor="#30313c"
-                    Padding="5"
-                    Spacing="15">
+                    Padding="4"
+                    Spacing="16">
 
                     <Slider
                         HorizontalOptions="FillAndExpand"

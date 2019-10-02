@@ -50,7 +50,7 @@ namespace Chameleon.Core.ViewModels
             Application.Current.Resources.Clear();
             var style = new Styles();
             style.MergedDictionaries.Add(new LightColors());
-
+            
             Application.Current.Resources = style;
 
             ThemeLightImage = ImageSource.FromFile("theme_light_on");

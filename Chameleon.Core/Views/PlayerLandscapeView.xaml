@@ -38,8 +38,8 @@
          <StackLayout
              Grid.Column = "0" Grid.Row = "2"
              Orientation="Horizontal"
-             Padding="5"
-             Spacing="15">
+             Padding="4"
+             Spacing="16">
 
             <Slider
                 mvx:Bi.nd="Value Position; Maximum Duration; DragCompletedCommand DragCompletedCommand"/>

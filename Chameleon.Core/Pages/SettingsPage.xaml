@@ -23,7 +23,7 @@
             <TableRoot>
                 <TableSection>
                     <ViewCell Tapped="ViewCell_TappedPlaybackSettings">
-                        <Grid Margin="15,15">
+                        <Grid Padding="16">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
@@ -41,7 +41,7 @@
                         </Grid>
                     </ViewCell>
                     <ViewCell Tapped="ViewCell_TappedTheming">
-                        <Grid Margin="15,15">
+                        <Grid Padding="16">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
@@ -72,7 +72,7 @@
                        </Grid>
                   </ViewCell>-->
                     <ViewCell Tapped="ViewCell_TappedOpenSource">
-                        <Grid Margin="15,15">
+                        <Grid Padding="16">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
@@ -91,7 +91,7 @@
                     </ViewCell>
                     <ViewCell IsEnabled="True"
                               BindingContext="{Binding .}">
-                        <Grid Margin="15,15">
+                        <Grid Padding="16" HorizontalOptions="FillAndExpand">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition Height="Auto" />

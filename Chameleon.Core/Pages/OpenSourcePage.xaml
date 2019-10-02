@@ -18,7 +18,7 @@
     </NavigationPage.TitleView>
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout Padding="24">
+            <StackLayout Padding="{StaticResource MarginPaddingXlarge}">
                 <Label mvx:La.ng="Text OpenSourcesoftware" Style="{StaticResource OpenSourceTitle}" />
                 <Label mvx:La.ng="Text Components" Style="{StaticResource OpenSourceSubtitle}" Margin="0,0,0,20"/>
 

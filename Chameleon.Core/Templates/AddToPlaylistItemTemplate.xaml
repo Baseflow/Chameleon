@@ -8,7 +8,6 @@
     xmlns:viewModels="clr-namespace:Chameleon.Core.ViewModels;assembly=Chameleon.Core">
     <ContentView.Content>
         <Grid Margin="4"
-            BackgroundColor="{DynamicResource PrimaryColor}"
             BindingContext="{Binding .}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />

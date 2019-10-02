@@ -91,7 +91,7 @@
                         Margin="0,0,10,0"
                         HeightRequest="2"
                         Grid.Row="2"
-                        ProgressColor="#FFF14431"
+                        ProgressColor="{DynamicResource SecondaryColor}"
                         HorizontalOptions="Fill"
                         VerticalOptions="Center"
                         Progress="{Binding Source={x:Reference Name=playlistPage}, Path=BindingContext.DataContext.Progress}"/>
@@ -99,10 +99,9 @@
                         Grid.Column="2"
                         Grid.Row="2"
                         Text="{Binding Source={x:Reference Name=playlistPage}, Path=BindingContext.DataContext.TimeLeft}"
-                        FontSize="10"
+                        Style="{DynamicResource TimeLeftFontStyle}"
                         HorizontalOptions="CenterAndExpand"
-                        VerticalOptions="CenterAndExpand"
-                        TextColor="White" />
+                        VerticalOptions="CenterAndExpand"/>
                 </Grid>
             </DataTemplate>
             <DataTemplate x:Key="inActiveTemplate">
@@ -195,6 +194,7 @@
                             <Label
                                 BindingContext="{Binding .}"
                                 Text="{mvx:MvxLang AddMediaToStart}"
+                                HorizontalTextAlignment="Center"
                                 Margin="0,8"
                                 HorizontalOptions="Center"
                                 VerticalOptions="Start"

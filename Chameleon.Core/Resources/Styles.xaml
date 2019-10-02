@@ -138,6 +138,10 @@
         <Setter Property="FontSize" Value="{DynamicResource MediumTextSize}"/>
 =======
         <Setter Property="FontSize" Value="{DynamicResource TextSizeMedium}"/>
+<<<<<<< HEAD
+>>>>>>> develop
+=======
+        <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryBackgroundColor}"/>
 >>>>>>> develop
         <Setter Property="FontAttributes" Value="Bold"/>
     </Style>
@@ -148,8 +152,12 @@
         <Setter Property="FontSize" Value="{DynamicResource BigTextSize}"/>
 =======
         <Setter Property="FontSize" Value="{DynamicResource TextSizeMedium}"/>
+<<<<<<< HEAD
 >>>>>>> develop
         <Setter Property="TextColor" Value="{DynamicResource TertiaryTextColor}"/>
+=======
+        <Setter Property="TextColor" Value="{DynamicResource PrimaryColor}"/>
+>>>>>>> develop
     </Style>
 
     <Style TargetType="Label" x:Key="OpenSourceSubtitle">

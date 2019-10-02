@@ -33,15 +33,6 @@ namespace Chameleon.Core.ViewModels
             set => SetProperty(ref _selectedMediaItem, value);
         }
 
-        public string FillingQueueText
-        {
-            get
-            {
-                var text = GetText("FillingQueue");
-                return text;
-            }
-        }
-
         public string QueueTitle => $"{GetText("Queue")} ({MediaItems?.Count ?? 0})";
 
         private IMvxAsyncCommand<IMediaItem> _playerCommand;

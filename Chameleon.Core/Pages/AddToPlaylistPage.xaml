@@ -9,6 +9,7 @@
     xmlns:viewModels="clr-namespace:Chameleon.Core.ViewModels;assembly=Chameleon.Core"
     xmlns:mm="clr-namespace:MediaManager.Forms;assembly=MediaManager.Forms"
     xmlns:templates="clr-namespace:Chameleon.Core.Templates;assembly=Chameleon.Core"
+    xmlns:effects="clr-namespace:Chameleon.Core.Effects;assembly=Chameleon.Core"
     mc:Ignorable="d"
     x:TypeArguments="viewModels:AddToPlaylistViewModel"
     x:Class="Chameleon.Core.Views.AddToPlaylistPage"
@@ -71,7 +72,11 @@
                         Padding="0,16"
                         Style="{StaticResource CancelButton}"
                         BackgroundColor="Transparent"
-                        mvx:Bi.nd="Command BackCommand" />
+                        mvx:Bi.nd="Command BackCommand">
+                    <Button.Effects>
+                        <effects:TransparentSelectableEffect Borderless="False" />
+                    </Button.Effects>
+                </Button>
             </StackLayout>
         </Grid>
     </ContentPage.Content>

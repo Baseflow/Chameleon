@@ -35,12 +35,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="**\*.xaml.cs" DependentUpon="AddToPlaylistItemTemplate.xaml" />
+    <Compile Update="**\*.xaml.cs" DependentUpon="%(Filename)" />
     <None Remove="Resources\**\*.json" />
     <EmbeddedResource Include="Resources\**\*.json" />
-    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Templates\AddToPlaylistItemTemplate.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
 
 </Project>

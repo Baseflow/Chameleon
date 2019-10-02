@@ -125,7 +125,8 @@
                                         VerticalOptions="Center"
                                         Source="icon_plus_big" />
                                     <Label
-                                        Text="{Binding Source={x:Reference Name=homePage}, Path=BindingContext.DataContext.AddPlaylistLabel}"
+                                        BindingContext="{Binding .}"
+                                        Text="{mvx:MvxLang AddPlaylist}"
                                         Style="{StaticResource Header2}"
                                         Grid.Column="0"
                                         Grid.Row="1"

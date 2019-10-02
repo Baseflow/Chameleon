@@ -31,15 +31,6 @@ namespace Chameleon.Core.ViewModels
 
         private bool _isInitialized;
 
-        public string AddPlaylistLabel
-        {
-            get
-            {
-                var text = GetText("AddPlaylist");
-                return text;
-            }
-        }
-
         private bool _isPlaying;
         public bool IsPlaying
         {

@@ -7,9 +7,6 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModels="clr-namespace:Chameleon.Core.ViewModels;assembly=Chameleon.Core"
-    xmlns:mm="clr-namespace:MediaManager.Forms;assembly=MediaManager.Forms"
-    xmlns:templates="clr-namespace:Chameleon.Core.Templates;assembly=Chameleon.Core"
-    xmlns:pan="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     mc:Ignorable="d"
     x:TypeArguments="viewModels:QueueViewModel"
     x:Class="Chameleon.Core.Views.QueuePage"
@@ -30,6 +27,7 @@
             <Label mvx:Bi.nd="Text QueueTitle" Style="{StaticResource PrimaryHeader}" Margin="24,20,0,0"/>
             <CollectionView
                 x:Name="MyCollectionView"
+                ItemTemplate="{StaticResource contentItemTemplateSelector}"
                 mvx:Bi.nd=
                     "ItemsSource MediaItems;
                     SelectionChangedCommand PlayerCommand;
@@ -50,12 +48,6 @@
                             Style="{StaticResource MediaItemTitle}" />
                     </StackLayout>
                 </CollectionView.EmptyView>
-
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <templates:MediaItemTemplate/>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
             </CollectionView>
         </StackLayout>
     </ContentPage.Content>

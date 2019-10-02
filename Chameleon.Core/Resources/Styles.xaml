@@ -6,11 +6,15 @@
     xmlns:effects="clr-namespace:Chameleon.Core.Effects;assembly=Chameleon.Core"
     xmlns:rainbows="clr-namespace:Xamarin.Forms.DebugRainbows;assembly=Xamarin.Forms.DebugRainbows"
     xmlns:pan="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    xmlns:templates="clr-namespace:Chameleon.Core.Templates"
     x:Class="Chameleon.Core.Resources.Styles" >
     <ResourceDictionary.MergedDictionaries>
         <styles:Sizes />
     </ResourceDictionary.MergedDictionaries>
 
+    <templates:ContentItemTemplateSelector x:Key="contentItemTemplateSelector"/>
+    <templates:ContentItemHorizontalTemplateSelector x:Key="contentItemHorizontalTemplateSelector"/>
+    
     <Style TargetType="{x:Type ContentPage}" ApplyToDerivedTypes="True">
         <Setter Property="rainbows:DebugRainbow.IsDebug" Value="False" />
         <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryBackgroundColor}" />

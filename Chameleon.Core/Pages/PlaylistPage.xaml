@@ -194,6 +194,7 @@
                             <Label
                                 BindingContext="{Binding .}"
                                 Text="{mvx:MvxLang AddMediaToStart}"
+                                HorizontalTextAlignment="Center"
                                 Margin="0,8"
                                 HorizontalOptions="Center"
                                 VerticalOptions="Start"

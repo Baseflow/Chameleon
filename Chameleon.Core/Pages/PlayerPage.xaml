@@ -154,7 +154,7 @@
                 <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="{DynamicResource PrimaryColor}"/>
                 <Slider
                     x:Name="Slider"
-                    Margin="24,0"
+                    Margin="16,8"
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="End"
                     mvx:Bi.nd="Value Position; Maximum Duration; DragStartedCommand DragStartedCommand; DragCompletedCommand DragCompletedCommand"
@@ -181,7 +181,7 @@
                         VerticalOptions="Center"
                         TextColor="{DynamicResource PrimaryTextColor}"/>
                 </Grid>
-                <Grid Padding="{StaticResource MarginPaddingExtrasmall}">
+                <Grid Padding="{StaticResource MarginPaddingExtrasmall}" Margin="0,0,0,8">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto"/>
                     </Grid.RowDefinitions>

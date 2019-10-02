@@ -43,7 +43,6 @@
             <Label
                 mvx:Bi.nd="Text Title"
                 Grid.Column="1"
-                Grid.Row="0"
                 VerticalOptions="End"
                 LineBreakMode="TailTruncation"
                 MaxLines="1"

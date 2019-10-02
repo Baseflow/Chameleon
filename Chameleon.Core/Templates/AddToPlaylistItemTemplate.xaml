@@ -7,21 +7,23 @@
     x:Class="Chameleon.Core.Templates.AddToPlaylistItemTemplate"
     xmlns:viewModels="clr-namespace:Chameleon.Core.ViewModels;assembly=Chameleon.Core">
     <ContentView.Content>
-        <Grid Margin="4"
-            BindingContext="{Binding .}">
+        <Grid Margin="{StaticResource MarginPaddingSmall}"
+            BindingContext="{Binding .}"
+              RowSpacing="2"
+              ColumnSpacing="16"
+              HeightRequest="56"
+              VerticalOptions="Center">
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="48"/>
-                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Frame CornerRadius="8"
                     IsClippedToBounds="True"
-                    Padding="0"
-                    Grid.Column="0"
+                    Padding="{StaticResource MarginPaddingExtrasmall}"
                     Grid.RowSpan="2"
                     Margin="24,0,0,0">
                 <Image Source="cover_art_placeholder"
@@ -32,23 +34,21 @@
                         WidthRequest="55"/>
             </Frame>
             <Label Text="{mvx:MvxBind Title}"
-                    Style="{StaticResource TitleText}"
-                    VerticalOptions="Center"
-                    Grid.Column="1"
-                    Grid.Row="0"
-                    MaxLines="1"
-                    VerticalTextAlignment="Start"
-                    Margin="0,3,0,0"/>
+                   Style="{StaticResource TitleText}"
+                   VerticalOptions="End"
+                   LineBreakMode="TailTruncation"
+                   Grid.Column="1"
+                   MaxLines="1"/>
+            <StackLayout Orientation="Horizontal"
+                         Grid.Column="1"
+                         Grid.Row="1"
+                         VerticalOptions="Start">
             <Label mvx:Bi.nd="Text TrackAmount(.)"
                     Style="{StaticResource MediaItemSubTitle}"
-                    Grid.Column="1"
-                    Grid.Row="1"
                     MaxLines="1"/>
             <Label mvx:Bi.nd="Text PlaylistTime(.)"
-                    Style="{StaticResource MediaItemSubTitle}"
-                    Grid.Column="2"
-                    Grid.Row="1"
-                    MaxLines="1"/>
+                    Style="{StaticResource MediaItemSubTitle}"/>
+            </StackLayout>
         </Grid>
     </ContentView.Content>
 </ContentView>

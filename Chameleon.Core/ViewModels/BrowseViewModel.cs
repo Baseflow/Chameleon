@@ -36,15 +36,6 @@ namespace Chameleon.Core.ViewModels
             set => SetProperty(ref _selectedMediaItem, value);
         }
 
-        public string AddAnItemText
-        {
-            get
-            {
-                var text = GetText("AddAnItem");
-                return text;
-            }
-        }
-
         public bool IsArtistsVisible => string.IsNullOrEmpty(SearchText) && FavoriteArtists.Count > 0;
 
         public bool ShowEmptyView => RecentlyPlayedItems.Count == 0;

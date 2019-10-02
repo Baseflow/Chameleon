@@ -70,6 +70,7 @@
                         mvx:La.ng="Text Cancel"
                         Padding="0,16"
                         Style="{StaticResource CancelButton}"
+                        BackgroundColor="Transparent"
                         mvx:Bi.nd="Command BackCommand" />
             </StackLayout>
         </Grid>

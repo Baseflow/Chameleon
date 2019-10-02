@@ -15,11 +15,7 @@
     mvx:La.ng="Title Title">
 
     <NavigationPage.TitleView>
-        <StackLayout Orientation="Horizontal"
-                     VerticalOptions="Center"
-                     HorizontalOptions="Center"
-                     Spacing="10"
-                     HeightRequest="30">
+        <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center" Spacing="10" HeightRequest="30">
             <Image Source="chameleon_logo"/>
         </StackLayout>
     </NavigationPage.TitleView>
@@ -35,10 +31,10 @@
                               IsEnabled="False">
                         <Label mvx:La.ng=" Text Playback"
                                Style="{StaticResource PlaybackSettings}"
-                               Margin="20" />
+                               Margin="24" />
                     </ViewCell>
                     <ViewCell BindingContext="{Binding .}">
-                        <Grid Margin="20">
+                        <Grid Margin="24">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition Height="Auto" />
@@ -47,7 +43,7 @@
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-                            <Label mvx:La.ng=" Text Skip"
+                            <Label mvx:La.ng="Text Skip"
                                    Style="{DynamicResource PlaybackSettingsTitle}"
                                    Grid.Row="0" />
                             <Label Text="{Binding Source={x:Reference slider}, Path=Value, StringFormat='{0:F0}s'}"
@@ -60,12 +56,12 @@
                                     Margin="10,0,10,0"
                                     Maximum="30"
                                     Minimum="0"
-                                    MinimumTrackColor="{DynamicResource SliderSettingsPlaybackColor}"
-                                    MaximumTrackColor="{DynamicResource SliderSettingsPlaybackColor}"/>
+                                    MinimumTrackColor="{DynamicResource PrimaryColor}"
+                                    MaximumTrackColor="{DynamicResource PrimaryColor}"/>
                         </Grid>
                     </ViewCell>
                     <ViewCell BindingContext="{Binding .}">
-                        <Grid Margin="20">
+                        <Grid Margin="24">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*" />
                                 <RowDefinition Height="*" />
@@ -87,12 +83,12 @@
                                     mvx:Bi.nd="Value Volume"
                                     Grid.Row="2"
                                     Margin="10,0,10,0"
-                                    MinimumTrackColor="{DynamicResource SliderSettingsPlaybackColor}"
-                                    MaximumTrackColor="{DynamicResource SliderSettingsPlaybackColor}"/>
+                                    MinimumTrackColor="{DynamicResource PrimaryColor}"
+                                    MaximumTrackColor="{DynamicResource PrimaryColor}"/>
                         </Grid>
                     </ViewCell>
                     <ViewCell BindingContext="{Binding .}">
-                        <Grid Margin="20">
+                        <Grid Margin="24">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="auto" />
                                 <RowDefinition Height="auto" />
@@ -119,8 +115,8 @@
                                     HorizontalOptions="FillAndExpand"
                                     Maximum="10"
                                     Minimum="-10"
-                                    MinimumTrackColor="{DynamicResource SliderSettingsPlaybackColor}"
-                                    MaximumTrackColor="{DynamicResource SliderSettingsPlaybackColor}"/>
+                                    MinimumTrackColor="{DynamicResource PrimaryColor}"
+                                    MaximumTrackColor="{DynamicResource PrimaryColor}"/>
                             <Label Text="L"
                                    VerticalTextAlignment="Center"
                                    Grid.Row="2"
@@ -132,7 +128,7 @@
                         </Grid>
                     </ViewCell>
                     <ViewCell BindingContext="{Binding .}">
-                        <Grid Margin="20">
+                        <Grid Margin="24,16">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
@@ -148,11 +144,11 @@
                                     Grid.Column="1"
                                     VerticalOptions="Center"
                                     HorizontalOptions="End"
-                                    OnColor="{DynamicResource SwitchsColor}" />
+                                    OnColor="{DynamicResource SecondaryColor}" />
                         </Grid>
                     </ViewCell>
                     <ViewCell BindingContext="{Binding .}">
-                        <Grid Margin="20">
+                        <Grid Margin="24,16">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
@@ -168,7 +164,7 @@
                                     Grid.Column="1"
                                     VerticalOptions="Center"
                                     HorizontalOptions="End"
-                                    OnColor="{DynamicResource SwitchsColor}" />
+                                    OnColor="{DynamicResource SecondaryColor}" />
                         </Grid>
                     </ViewCell>
                 </TableSection>

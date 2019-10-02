@@ -26,7 +26,7 @@
                 <Label
                     mvx:La.ng="Text Recent"
                     IsVisible="{Binding HasRecent}"
-                    Style="{StaticResource Header1}"
+                    Style="{StaticResource PrimaryHeader}"
                     Margin="24,0" />
                 <CollectionView
                     x:Name="RecentCollectionView"
@@ -59,28 +59,28 @@
                     </CollectionView.ItemTemplate>
                 </CollectionView>
                 <StackLayout
-                    Spacing="0"
-                    Orientation="Horizontal"
-                    Padding="24,0"
-                    Margin="0,24,0,0">
+                    Padding="24,16"
+                    Orientation="Horizontal">
                     <Label
                         mvx:La.ng="Text Playlists"
-                        Style="{StaticResource Header1}"
+                        Style="{StaticResource PrimaryHeader}"
                         HorizontalOptions="Start"
-                        VerticalTextAlignment="Center"
-                        />
+                        VerticalTextAlignment="Center" />
                     <Button
                         mvx:La.ng="Text AllPlaylists"
                         mvx:Bi.nd="Command OpenPlaylistOverviewCommand"
                         Style="{StaticResource SecondaryButton}"
                         HorizontalOptions="EndAndExpand"
-                        Padding="19,0" />
+                        Padding="16,0" />
                 </StackLayout>
                 <CollectionView
                     x:Name="PlaylistsCollectionView"
+                    HeightRequest="250"
                     SelectionMode="Single"
-                    mvx:Bi.nd="ItemsSource Playlists; SelectionChangedCommand OpenPlaylistCommand; SelectionChangedCommandParameter SelectedPlaylist; SelectedItem SelectedPlaylist"
-                    HeightRequest="250">
+                    mvx:Bi.nd="ItemsSource Playlists; 
+                    SelectionChangedCommand OpenPlaylistCommand; 
+                    SelectionChangedCommandParameter SelectedPlaylist; 
+                    SelectedItem SelectedPlaylist">
 
                     <CollectionView.ItemsLayout>
                         <GridItemsLayout
@@ -101,7 +101,7 @@
                                 WidthRequest="154"
                                 HeightRequest="154"
                                 IsClippedToBounds="True"
-                                BackgroundColor="{DynamicResource SecondaryColor}"
+                                BackgroundColor="{DynamicResource PrimaryColor}"
                                 Elevation="2">
                                 <pan:PancakeView.HasShadow>
                                     <OnPlatform
@@ -123,7 +123,6 @@
                                         Grid.Row="0"
                                         Grid.RowSpan="2"
                                         VerticalOptions="Center"
-                                        BackgroundColor="{DynamicResource SecondaryColor}"
                                         Source="icon_plus_big" />
                                     <Label
                                         Text="{Binding Source={x:Reference Name=homePage}, Path=BindingContext.DataContext.AddPlaylistLabel}"

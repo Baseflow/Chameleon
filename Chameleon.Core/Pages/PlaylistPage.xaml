@@ -16,6 +16,11 @@
     x:TypeArguments="viewModels:PlaylistViewModel"
     x:Class="Chameleon.Core.Views.PlaylistPage"
     x:Name="playlistPage">
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center" Spacing="10" HeightRequest="30">
+            <Image Source="chameleon_logo"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
 
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -72,7 +77,7 @@
                         LineBreakMode="TailTruncation"
                         MaxLines="1"
                         Style="{StaticResource MediaItemSubTitle}" />
-                  <controls:SelectableButton
+                    <controls:SelectableButton
                         Source="icon_more"
                         Command="{Binding Source={x:Static helpers:NavigationHelper.OptionsCommand}}"
                         CommandParameter="{Binding .}"
@@ -114,11 +119,10 @@
         <StackLayout>
             <SearchBar
                 mvx:La.ng="Placeholder SearchBar"
-                Text="{mvx:MvxBind SearchText}"/>
-            <Label mvx:La.ng="Text Title" Style="{StaticResource Header1}" Margin="24,0,24,14"/>
+                Text="{mvx:MvxBind SearchText}" />
+            <Label mvx:La.ng="Text Title" Style="{StaticResource PrimaryHeader}" Margin="24,0,24,14"/>
             <Grid x:Name="PlaylistHeader"
-                  Padding="24,0"
-                  Margin="0,0,0,30">
+                  Padding="24,4">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="114"/>
                     <ColumnDefinition Width="*"/>
@@ -132,7 +136,7 @@
                     HeightRequest="114"
                     WidthRequest="114">
                     <pan:PancakeView.HasShadow>
-                      <OnPlatform x:TypeArguments="x:Boolean"
+                        <OnPlatform x:TypeArguments="x:Boolean"
                                   iOS="False"
                                   Android="True" />
                     </pan:PancakeView.HasShadow>
@@ -145,12 +149,13 @@
                         <ImageButton
                             Source="playback_controls_play_button"
                             Command="{mvx:MvxBind StartPlaylistCommand}"
+                            IsVisible="{Binding IsNotEmpty}"
                             BackgroundColor="Transparent"
                             AbsoluteLayout.LayoutFlags="All"
                             AbsoluteLayout.LayoutBounds=".5,.5,.5,.5"/>
                     </AbsoluteLayout>
                 </pan:PancakeView>
-                <StackLayout Margin="18,4,0,4" Grid.Column="1">
+                <StackLayout Margin="18,0,0,4" Grid.Column="1">
                     <Label
                         Text="{Binding CurrentPlaylist.Title}"
                         MaxLines="2"
@@ -165,7 +170,7 @@
                         Style="{StaticResource DetailsPlaylist}"/>
                 </StackLayout>
             </Grid>
-            
+
             <CollectionView x:Name="PlaylistItems"
                             mvx:Bi.nd="
                                 ItemsSource CurrentPlaylistSource.MediaItems;
@@ -176,16 +181,26 @@
                             VerticalOptions="FillAndExpand"
                             ItemTemplate="{StaticResource mediaItemTemplateSelector}">
 
-            <CollectionView.EmptyView>
-                    <StackLayout>
-                        <ActivityIndicator Color="DimGray"
+                <CollectionView.EmptyView>
+                    <AbsoluteLayout>
+                        <ActivityIndicator AbsoluteLayout.LayoutFlags="All" 
+                                           AbsoluteLayout.LayoutBounds=".5,.0,.5,.5" 
+                                           Color="DimGray"
                                            mvx:Bi.nd="IsRunning IsLoading"/>
-                        <Label
-                            Text="{Binding Source={x:Reference Name=playlistPage}, Path=BindingContext.DataContext.AddTracksText}"
-                            VerticalOptions="Center"
-                            Margin="24,0,0,0"
-                            Style="{StaticResource MediaItemTitle}" />
-                    </StackLayout>
+                        <StackLayout VerticalOptions="Center" 
+                                     AbsoluteLayout.LayoutFlags="All" 
+                                     AbsoluteLayout.LayoutBounds=".5,.5,.5,.5">
+                            <Image
+                                Source="icon_plus_big" />
+                            <Label
+                                BindingContext="{Binding .}"
+                                Text="{mvx:MvxLang AddMediaToStart}"
+                                Margin="0,8"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Start"
+                                Style="{StaticResource MediaItemTitle}" />
+                        </StackLayout>
+                    </AbsoluteLayout>
                 </CollectionView.EmptyView>
             </CollectionView>
         </StackLayout>

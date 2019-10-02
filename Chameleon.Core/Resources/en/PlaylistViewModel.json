@@ -4,5 +4,5 @@
   "Tracks": "tracks",
   "Hours": "hours",
   "Minutes": "minutes",
-  "AddTracks": "Add tracks to begin"
+  "AddMediaToStart": "Playlist is empty, add media to start"
 }

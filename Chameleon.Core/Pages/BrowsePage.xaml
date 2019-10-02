@@ -39,7 +39,7 @@
                     <Label
                         mvx:La.ng="Text Artists"
                         IsVisible="{Binding IsArtistsVisible, Mode=OneWay}"
-                        Style="{StaticResource Header1}"
+                        Style="{StaticResource PrimaryHeader}"
                         Margin="24,0" />
                     <CollectionView
                         x:Name="MyCollectionView"
@@ -92,7 +92,7 @@
                                         <Image
                                             BackgroundColor="{DynamicResource SecondaryColor}"
                                             Source="icon_plus_big"
-                                            Margin="15"/>
+                                            Margin="16"/>
                                     </pan:PancakeView>
                                     <Label
                                         Text="{Binding Source={x:Reference Name=thisPage}, Path=BindingContext.DataContext.AddAnItemText}"
@@ -108,8 +108,8 @@
                     </CollectionView>
                     <Label
                         Text="All Media"
-                        Style="{StaticResource Header1}"
-                        Margin="24,0" />
+                        Style="{StaticResource PrimaryHeader}"
+                        Margin="24,8" />
                 </StackLayout>
             </core:MvxListView.Header>
             <core:MvxListView.ItemTemplate>

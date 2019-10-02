@@ -26,10 +26,5 @@ namespace Chameleon.Core.Views
                 _firstTime = false;
             }
         }
-
-        protected override void OnViewModelSet()
-        {
-            base.OnViewModelSet();
-        }
     }
 }

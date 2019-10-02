@@ -51,7 +51,11 @@
         <Setter Property="CancelButtonColor" Value="{DynamicResource PrimaryTextColor}"/>
         <Setter Property="BackgroundColor" Value="Transparent"/>
         <Setter Property="PlaceholderColor" Value="{DynamicResource PrimaryTextColor}"/>
+<<<<<<< HEAD
         <Setter Property="FontSize" Value="{DynamicResource SmallTextSize}"/>
+=======
+        <Setter Property="FontSize" Value="{DynamicResource TextSizeSmall}"/>
+>>>>>>> develop
         <Setter Property="Margin">
             <OnPlatform x:TypeArguments="Thickness"
                         iOS="16,8"
@@ -67,7 +71,7 @@
         <Setter Property="BorderWidth" Value="1"/>
         <Setter Property="CornerRadius" Value="20"/>
         <Setter Property="FontFamily" Value="FiraSans#600"/>
-        <Setter Property="FontSize" Value="{DynamicResource SmallTextSize}"/>
+        <Setter Property="FontSize" Value="{DynamicResource TextSizeSmall}"/>
         <Setter Property="HeightRequest" Value="50"/>
     </Style>
 
@@ -77,19 +81,23 @@
         <Setter Property="CornerRadius" Value="20"/>
         <Setter Property="HeightRequest" Value="40"/>
         <Setter Property="FontFamily" Value="FiraSans#500"/>
+<<<<<<< HEAD
         <Setter Property="FontSize" Value="{DynamicResource XSmallTextSize}"/>
+=======
+        <Setter Property="FontSize" Value="{DynamicResource TextSizeXsmall}"/>
+>>>>>>> develop
     </Style>
 
     <Style TargetType="Label" x:Key="PrimaryHeader">
         <Setter Property="FontFamily" Value="FiraSans#600"/>
-        <Setter Property="FontSize" Value="{DynamicResource BigTextSize}"/>
+        <Setter Property="FontSize" Value="{DynamicResource TextSizeMedium}"/>
         <Setter Property="FontAttributes" Value="Bold"/>
         <Setter Property="TextColor" Value="{DynamicResource SecondaryTextColor}"/>
     </Style>
 
     <Style TargetType="Label" x:Key="Header2">
         <Setter Property="FontFamily" Value="FiraSans#400"/>
-        <Setter Property="FontSize" Value="{DynamicResource SmallTextSize}"/>
+        <Setter Property="FontSize" Value="{DynamicResource TextSizeSmall}"/>
         <Setter Property="FontAttributes" Value="Bold"/>
         <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}"/>
     </Style>
@@ -98,13 +106,17 @@
         <Setter Property="FontFamily" Value="FiraSans#600"/>
         <Setter Property="HorizontalTextAlignment" Value="Start"/>
         <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}"/>
-        <Setter Property="FontSize" Value="{DynamicResource SmallTextSize}"/>
+        <Setter Property="FontSize" Value="{DynamicResource TextSizeSmall}"/>
         <Setter Property="FontAttributes" Value="Bold"/>
     </Style>
 
     <Style TargetType="Label" x:Key="MediaItemSubTitle">
         <Setter Property="FontFamily" Value="FiraSans#400"/>
+<<<<<<< HEAD
         <Setter Property="FontSize" Value="{DynamicResource XXSmallTextSize}"/>
+=======
+        <Setter Property="FontSize" Value="{DynamicResource TextSizeMicro}"/>
+>>>>>>> develop
         <Setter Property="TextColor" Value="{DynamicResource TertiaryTextColor}"/>
         <Setter Property="HorizontalTextAlignment" Value="Start"/>
     </Style>
@@ -113,106 +125,135 @@
         <Setter Property="FontFamily" Value="FiraSans#400"/>
         <Setter Property="TextColor" Value="{DynamicResource SecondaryTextColor}"/>
         <Setter Property="BackgroundColor" Value="{DynamicResource TertiaryColor}"/>
+<<<<<<< HEAD
         <Setter Property="FontSize" Value="{DynamicResource SmallTextSize}"/>
+=======
+        <Setter Property="FontSize" Value="{DynamicResource TextSizeSmall}"/>
+>>>>>>> develop
     </Style>
 
     <Style TargetType="Button" x:Key="CancelButton">
         <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}"/>
+<<<<<<< HEAD
         <Setter Property="FontSize" Value="{DynamicResource MediumTextSize}"/>
+=======
+        <Setter Property="FontSize" Value="{DynamicResource TextSizeMedium}"/>
+>>>>>>> develop
         <Setter Property="FontAttributes" Value="Bold"/>
     </Style>
 
     <Style TargetType="Entry" x:Key="TextColorEntry">
         <Setter Property="FontFamily" Value="FiraSans#400"/>
+<<<<<<< HEAD
         <Setter Property="FontSize" Value="{DynamicResource BigTextSize}"/>
+=======
+        <Setter Property="FontSize" Value="{DynamicResource TextSizeMedium}"/>
+>>>>>>> develop
         <Setter Property="TextColor" Value="{DynamicResource TertiaryTextColor}"/>
     </Style>
 
     <Style TargetType="Label" x:Key="OpenSourceSubtitle">
         <Setter Property="FontFamily" Value="FiraSans#400"/>
-        <Setter Property="FontSize" Value="{DynamicResource SmallTextSize}"/>
+        <Setter Property="FontSize" Value="{DynamicResource TextSizeSmall}"/>
         <Setter Property="FontAttributes" Value="Bold"/>
         <Setter Property="TextColor" Value="{DynamicResource TertiaryTextColor}"/>
     </Style>
 
      <Style TargetType="Label" x:Key="OpenSourceTitle">
         <Setter Property="FontFamily" Value="FiraSans#700"/>
-        <Setter Property="FontSize" Value="{DynamicResource XBigTextSize}"/>
+        <Setter Property="FontSize" Value="{DynamicResource TextSizeLarge}"/>
         <Setter Property="FontAttributes" Value="Bold"/>
         <Setter Property="TextColor" Value="{DynamicResource TertiaryTextColor}"/>
     </Style>
 
      <Style TargetType="Label" x:Key="PowerdByText">
         <Setter Property="FontFamily" Value="FiraSans#400"/>
-        <Setter Property="FontSize" Value="{DynamicResource XXSmallTextSize}"/>
+        <Setter Property="FontSize" Value="{DynamicResource TextSizeMicro}"/>
         <Setter Property="TextColor" Value="{DynamicResource TertiaryTextColor}"/>
         <Setter Property="LineHeight" Value="1.3"/>
     </Style>
 
      <Style TargetType="Label" x:Key="QueueTitle">
         <Setter Property="FontFamily" Value="FiraSans#600"/>
-        <Setter Property="FontSize" Value="{DynamicResource BigTextSize}"/>
+        <Setter Property="FontSize" Value="{DynamicResource TextSizeMedium}"/>
         <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}"/>
         <Setter Property="FontAttributes" Value="Bold"/>
     </Style>
 
      <Style TargetType="Label" x:Key="TitleText">
         <Setter Property="FontFamily" Value="FiraSans#600"/>
-        <Setter Property="FontSize" Value="{DynamicResource BigTextSize}"/>
+        <Setter Property="FontSize" Value="{DynamicResource TextSizeMedium}"/>
         <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}"/>
     </Style>
 
     <Style TargetType="Label" x:Key="AlbumText">
         <Setter Property="FontFamily" Value="FiraSans#400"/>
+<<<<<<< HEAD
         <Setter Property="FontSize" Value="{DynamicResource XXSmallTextSize}"/>
+=======
+        <Setter Property="FontSize" Value="{DynamicResource TextSizeMicro}"/>
+>>>>>>> develop
         <Setter Property="TextColor" Value="{DynamicResource TertiaryTextColor}"/>
     </Style>
 
      <Style TargetType="Label" x:Key="Data1">
         <Setter Property="FontFamily" Value="FiraSans-Bold#600"/>
-        <Setter Property="FontSize" Value="{DynamicResource XSmallTextSize}"/>
+        <Setter Property="FontSize" Value="{DynamicResource TextSizeXsmall}"/>
         <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}"/>
     </Style>
 
      <Style TargetType="Label" x:Key="Data2">
         <Setter Property="FontFamily" Value="FiraSans-Regular#400"/>
+<<<<<<< HEAD
         <Setter Property="FontSize" Value="{DynamicResource XSmallTextSize}"/>
+=======
+        <Setter Property="FontSize" Value="{DynamicResource TextSizeXsmall}"/>
+>>>>>>> develop
         <Setter Property="TextColor" Value="{DynamicResource TertiaryTextColor}"/>
     </Style>
 
      <Style TargetType="Label" x:Key="PlaybackSettingsTitle">
         <Setter Property="FontFamily" Value="FiraSans#600"/>
-        <Setter Property="FontSize" Value="{DynamicResource SmallTextSize}"/>
+        <Setter Property="FontSize" Value="{DynamicResource TextSizeSmall}"/>
         <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}"/>
         <Setter Property="FontAttributes" Value="Bold"/>
     </Style>
 
      <Style TargetType="Label" x:Key="PlaybackSettingsValue">
         <Setter Property="FontFamily" Value="FiraSans#500"/>
-        <Setter Property="FontSize" Value="{DynamicResource SmallTextSize}"/>
+        <Setter Property="FontSize" Value="{DynamicResource TextSizeSmall}"/>
         <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}"/>
     </Style>
 
        <Style TargetType="Label" x:Key="PlaybackSettings">
         <Setter Property="FontFamily" Value="FiraSans#700"/>
-        <Setter Property="FontSize" Value="{DynamicResource XBigTextSize}"/>
+        <Setter Property="FontSize" Value="{DynamicResource TextSizeLarge}"/>
         <Setter Property="FontAttributes" Value="Bold"/>
         <Setter Property="TextColor" Value="{DynamicResource TertiaryTextColor}"/>
     </Style>
 
       <Style TargetType="Label" x:Key="TitlePlaylist">
         <Setter Property="FontFamily" Value="FiraSans#600"/>
-        <Setter Property="FontSize" Value="{DynamicResource XXBigTextSize}"/>
+        <Setter Property="FontSize" Value="{DynamicResource TextSizeXlarge}"/>
         <Setter Property="FontAttributes" Value="Bold"/>
         <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}"/>
     </Style>
 
     <Style TargetType="Label" x:Key="DetailsPlaylist">
         <Setter Property="FontFamily" Value="FiraSans#700"/>
-        <Setter Property="FontSize" Value="{DynamicResource XXSmallTextSize}"/>
+        <Setter Property="FontSize" Value="{DynamicResource TextSizeMicro}"/>
         <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}"/>
     </Style>
 
+<<<<<<< HEAD
+=======
+     <Style TargetType="Label" x:Key="TimeLeftFontStyle">
+        <Setter Property="FontFamily" Value="FiraSans-Regular"/>
+        <Setter Property="FontSize" Value="{DynamicResource TextSizeXmicro}"/>
+        <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}"/>
+    </Style>
+
+>>>>>>> develop
     <Style TargetType="pan:PancakeView" x:Key="PancakeStyle">
         <Setter Property="CornerRadius" Value="24" />
         <Setter Property="HasShadow" Value="True" />

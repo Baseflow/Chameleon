@@ -32,10 +32,17 @@
                     <ViewCell>
                         <Label mvx:La.ng="Text Theming"
                                Style="{DynamicResource PlaybackSettings}"
+<<<<<<< HEAD
                                Margin="24" />
                     </ViewCell>
                     <ViewCell BindingContext="{Binding .}">
                         <Grid Margin="4">
+=======
+                               Margin="{StaticResource MarginPaddingXlarge}"/>
+                    </ViewCell>
+                    <ViewCell BindingContext="{Binding .}">
+                        <Grid Margin="{StaticResource MarginPaddingSmall}">
+>>>>>>> develop
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
@@ -50,7 +57,11 @@
                                 VerticalOptions="FillAndExpand"
                                 Elevation="2"
                                 HasShadow="True"
+<<<<<<< HEAD
                                 Margin="4">
+=======
+                                Margin="{StaticResource MarginPaddingSmall}">
+>>>>>>> develop
                                 <ImageButton
                                     HorizontalOptions="FillAndExpand"
                                     VerticalOptions="FillAndExpand"
@@ -64,7 +75,11 @@
                                 Grid.Column="0"
                                 VerticalOptions="EndAndExpand"
                                 MaxLines="1"
+<<<<<<< HEAD
                                 Margin="16"
+=======
+                                Margin="{StaticResource MarginPaddingLarge}"
+>>>>>>> develop
                                 Style="{StaticResource MediaItemTitle}" />
                             <pan:PancakeView
                                 CornerRadius="8"
@@ -74,7 +89,7 @@
                                 Elevation="2"
                                 Grid.Column="1"
                                 HasShadow="True"
-                                Margin="5">
+                                Margin="{StaticResource MarginPaddingSmall}">
                                 <ImageButton
                                     HorizontalOptions="FillAndExpand"
                                     VerticalOptions="FillAndExpand"
@@ -90,7 +105,11 @@
                                 Grid.Column="1"
                                 VerticalOptions="EndAndExpand"
                                 MaxLines="1"
+<<<<<<< HEAD
                                 Margin="16"
+=======
+                                Margin="{StaticResource MarginPaddingLarge}"
+>>>>>>> develop
                                 Style="{StaticResource MediaItemTitle}" />
                         </Grid>
                     </ViewCell>
@@ -98,5 +117,4 @@
             </TableRoot>
         </coloredTableView:ColoredTableView>
     </ContentPage.Content>
-
 </core:MvxContentPage>

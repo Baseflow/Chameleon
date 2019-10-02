@@ -31,10 +31,17 @@
                               IsEnabled="False">
                         <Label mvx:La.ng=" Text Playback"
                                Style="{StaticResource PlaybackSettings}"
+<<<<<<< HEAD
                                Margin="24" />
                     </ViewCell>
                     <ViewCell BindingContext="{Binding .}">
                         <Grid Margin="24">
+=======
+                               Margin="{StaticResource MarginPaddingXlarge}" />
+                    </ViewCell>
+                    <ViewCell BindingContext="{Binding .}">
+                        <Grid Margin="{StaticResource MarginPaddingXlarge}" >
+>>>>>>> develop
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition Height="Auto" />
@@ -61,7 +68,11 @@
                         </Grid>
                     </ViewCell>
                     <ViewCell BindingContext="{Binding .}">
+<<<<<<< HEAD
                         <Grid Margin="24">
+=======
+                        <Grid Margin="{StaticResource MarginPaddingXlarge}" >
+>>>>>>> develop
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*" />
                                 <RowDefinition Height="*" />
@@ -88,7 +99,11 @@
                         </Grid>
                     </ViewCell>
                     <ViewCell BindingContext="{Binding .}">
+<<<<<<< HEAD
                         <Grid Margin="24">
+=======
+                        <Grid Margin="{StaticResource MarginPaddingXlarge}" >
+>>>>>>> develop
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="auto" />
                                 <RowDefinition Height="auto" />

@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="Chameleon.Core.Resources.Sizes">
 
+<<<<<<< HEAD
     <OnPlatform x:Key="XXSmallTextSize" x:TypeArguments="x:Double" iOS="12" Android="12" WinPhone="12" />
     <OnPlatform x:Key="XSmallTextSize" x:TypeArguments="x:Double" iOS="13" Android="13" WinPhone="13" />
     <OnPlatform x:Key="SmallTextSize" x:TypeArguments="x:Double" iOS="14" Android="14" WinPhone="14" />
@@ -32,6 +33,28 @@
     <x:Int32 x:Key="MarginPaddingXxxlarge">64</x:Int32>
     <x:Int32 x:Key="MarginPaddingXxxxlarge">72</x:Int32>
     <x:Int32 x:Key="MarginPaddingXxxxxlarge">96</x:Int32>
+=======
+    <x:Int32 x:Key="TextSizeXmicro">10</x:Int32>
+    <x:Int32 x:Key="TextSizeMicro">12</x:Int32>
+    <x:Int32 x:Key="TextSizeXsmall">13</x:Int32>
+    <x:Int32 x:Key="TextSizeSmall">14</x:Int32>
+    <x:Int32 x:Key="TextSizeMedium">16</x:Int32>
+    <x:Int32 x:Key="TextSizeLarge">18</x:Int32>
+    <x:Int32 x:Key="TextSizeElarge">20</x:Int32>
+    <x:Int32 x:Key="TextSizeXlarge">24</x:Int32>
+    <x:Int32 x:Key="TextSizeXxlarge">28</x:Int32>
+    <x:Int32 x:Key="TextSizeXxxlarge">34</x:Int32>
+
+    <x:Int32 x:Key="MarginPaddingExtrasmall">0</x:Int32>
+    <x:Int32 x:Key="MarginPaddingSmall">4</x:Int32>
+    <x:Int32 x:Key="MarginPaddingMedium">8</x:Int32>
+    <x:Int32 x:Key="MarginPaddingLarge">16</x:Int32>
+    <x:Int32 x:Key="MarginPaddingXlarge">24</x:Int32>
+    <x:Int32 x:Key="MarginPaddingXxlarge">32</x:Int32>
+    <x:Int32 x:Key="MarginPaddingXxxlarge">48</x:Int32>
+    <x:Int32 x:Key="MarginPaddingXxxxlarge">64</x:Int32>
+    <x:Int32 x:Key="MarginPaddingXxxxxlarge">72</x:Int32>
+>>>>>>> develop
 
 </ResourceDictionary>
  

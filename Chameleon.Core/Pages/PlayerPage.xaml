@@ -51,11 +51,19 @@
     <ContentPage.Content>
         <StackLayout VerticalOptions="FillAndExpand">
             <ScrollView VerticalOptions="FillAndExpand">
+<<<<<<< HEAD
                 <StackLayout VerticalOptions="FillAndExpand" Padding="0">
                     <pan:PancakeView
                         HorizontalOptions="FillAndExpand"
                             VerticalOptions="Start"
                             Margin="24"
+=======
+                <StackLayout VerticalOptions="FillAndExpand" Padding="{StaticResource MarginPaddingExtrasmall}">
+                    <pan:PancakeView
+                        HorizontalOptions="FillAndExpand"
+                            VerticalOptions="Start"
+                            Margin="{StaticResource MarginPaddingXlarge}"
+>>>>>>> develop
                             CornerRadius="8"
                             IsClippedToBounds="True"
                             Elevation="0">
@@ -113,14 +121,22 @@
                     <controls:SelectableButton
                         Grid.Column="0"
                         Source="{Binding ShuffleImage}"
+<<<<<<< HEAD
                         Padding="8"
+=======
+                        Padding="{StaticResource MarginPaddingMedium}"
+>>>>>>> develop
                         mvx:Bi.nd="Command ShuffleCommand"
                         HorizontalOptions="Center"
                         VerticalOptions="CenterAndExpand"
                         BackgroundColor="Transparent"/>
                     <controls:SelectableButton
                         Grid.Column="1"
+<<<<<<< HEAD
                         Padding="8"
+=======
+                        Padding="{StaticResource MarginPaddingMedium}"
+>>>>>>> develop
                         mvx:Bi.nd="Command RepeatCommand"
                         HorizontalOptions="Center"
                         VerticalOptions="CenterAndExpand"
@@ -128,7 +144,11 @@
                         Source="{Binding RepeatImage}"/>
                     <controls:SelectableButton
                         Grid.Column="2"
+<<<<<<< HEAD
                         Padding="8"
+=======
+                        Padding="{StaticResource MarginPaddingMedium}"
+>>>>>>> develop
                         Source="playback_controls_queue"
                         mvx:Bi.nd="Command QueueCommand"
                         HorizontalOptions="Center"
@@ -137,7 +157,11 @@
                     </controls:SelectableButton>
                     <controls:SelectableButton
                         Grid.Column="3"
+<<<<<<< HEAD
                         Padding="8"
+=======
+                        Padding="{StaticResource MarginPaddingMedium}"
+>>>>>>> develop
                         Source="playback_controls_add_to_playlist"
                         mvx:Bi.nd="Command AddToPlaylistCommand"
                         HorizontalOptions="Center"
@@ -145,7 +169,11 @@
                         BackgroundColor="Transparent"/>
                     <controls:SelectableButton
                         Grid.Column="4"
+<<<<<<< HEAD
                         Padding="8"
+=======
+                        Padding="{StaticResource MarginPaddingMedium}"
+>>>>>>> develop
                         mvx:Bi.nd="Command FavoriteCommand; Source FavoriteImage"
                         HorizontalOptions="Center"
                         VerticalOptions="CenterAndExpand"
@@ -181,7 +209,11 @@
                         VerticalOptions="Center"
                         TextColor="{DynamicResource PrimaryTextColor}"/>
                 </Grid>
+<<<<<<< HEAD
                 <Grid Padding="0,0">
+=======
+                <Grid Padding="{StaticResource MarginPaddingExtrasmall}">
+>>>>>>> develop
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto"/>
                     </Grid.RowDefinitions>
@@ -194,7 +226,11 @@
                     </Grid.ColumnDefinitions>
                     <controls:SelectableButton
                         Grid.Column="0"
+<<<<<<< HEAD
                         Padding="16"
+=======
+                        Padding="{StaticResource MarginPaddingLarge}"
+>>>>>>> develop
                         Source="playback_controls_previous"
                         mvx:Bi.nd="Command PreviousCommand"
                         HorizontalOptions="Center"
@@ -202,7 +238,11 @@
                         BackgroundColor="Transparent"/>
                     <controls:SelectableButton
                         Grid.Column="1"
+<<<<<<< HEAD
                         Padding="16"
+=======
+                        Padding="{StaticResource MarginPaddingLarge}"
+>>>>>>> develop
                         Source="playback_controls_skip_backwards"
                         mvx:Bi.nd="Command SkipBackwardsCommand"
                         HorizontalOptions="Center"
@@ -218,7 +258,11 @@
                         BackgroundColor="Transparent" />
                     <controls:SelectableButton
                         Grid.Column="3"
+<<<<<<< HEAD
                         Padding="16"
+=======
+                        Padding="{StaticResource MarginPaddingLarge}"
+>>>>>>> develop
                         Source="playback_controls_skip_forward"
                         mvx:Bi.nd="Command SkipForwardCommand"
                         HorizontalOptions="Center"
@@ -226,7 +270,11 @@
                         BackgroundColor="Transparent"/>
                     <controls:SelectableButton
                         Grid.Column="4"
+<<<<<<< HEAD
                         Padding="16"
+=======
+                        Padding="{StaticResource MarginPaddingLarge}"
+>>>>>>> develop
                         Source="playback_controls_next"
                         mvx:Bi.nd="Command NextCommand"
                         HorizontalOptions="Center"

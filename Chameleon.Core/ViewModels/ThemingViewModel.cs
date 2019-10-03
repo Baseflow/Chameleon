@@ -1,5 +1,7 @@
 ﻿using System.Linq;
+using Chameleon.Core.Helpers;
 using Chameleon.Core.Resources;
+using MvvmCross;
 using MvvmCross.Commands;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
@@ -35,11 +37,7 @@ namespace Chameleon.Core.ViewModels
 
         private void ThemeDark()
         {
-            Application.Current.Resources.Clear();
-            var style = new Styles();
-            style.MergedDictionaries.Add(new DarkColors());
-
-            Application.Current.Resources = style;
+            Mvx.IoCProvider.Resolve<IThemeService>().ThemeDark();
 
             ThemeDarkImage = ImageSource.FromFile("theme_dark_on");
             ThemeLightImage = ImageSource.FromFile("theme_light");
@@ -47,11 +45,7 @@ namespace Chameleon.Core.ViewModels
 
         private void ThemeLight()
         {
-            Application.Current.Resources.Clear();
-            var style = new Styles();
-            style.MergedDictionaries.Add(new LightColors());
-            
-            Application.Current.Resources = style;
+            Mvx.IoCProvider.Resolve<IThemeService>().ThemeLight();
 
             ThemeLightImage = ImageSource.FromFile("theme_light_on");
             ThemeDarkImage = ImageSource.FromFile("theme_dark");

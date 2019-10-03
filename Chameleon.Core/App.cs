@@ -1,4 +1,5 @@
 ﻿using Acr.UserDialogs;
+using Chameleon.Core.Helpers;
 using Chameleon.Services.Providers;
 using Chameleon.Services.Services;
 using MediaManager;
@@ -35,9 +36,8 @@ namespace Chameleon.Core
             CrossMediaManager.Current.Library.Providers.Add(Mvx.IoCProvider.IoCConstruct<PlaylistProvider>());
 
             Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IBrowseService, BrowseService>();
-
             Mvx.IoCProvider.LazyConstructAndRegisterSingleton<ISettingsService, SettingsService>();
-
+            Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IThemeService, ThemeService>();
 
             /*var language = Mvx.IoCProvider.Resolve<ILanguageService>()?.GetLanguage()?.TwoLetterISOLanguageName;
             var textProviderBuilder = ((TextProviderBuilder)Mvx.IoCProvider.GetSingleton<IMvxTextProviderBuilder>());

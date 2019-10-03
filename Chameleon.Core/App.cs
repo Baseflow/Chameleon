@@ -45,6 +45,7 @@ namespace Chameleon.Core
                 textProviderBuilder.LoadResources(language);*/
 
             FFImageLoading.ImageService.Instance.Initialize();
+            Mvx.IoCProvider.Resolve<IThemeService>().UpdateTheme();
 
             RegisterCustomAppStart<AppStart>();
         }

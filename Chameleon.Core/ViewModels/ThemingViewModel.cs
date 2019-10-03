@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using Chameleon.Core.Helpers;
 using Chameleon.Core.Resources;
 using MvvmCross;
@@ -11,8 +12,11 @@ namespace Chameleon.Core.ViewModels
 {
     public class ThemingViewModel : BaseViewModel
     {
-        public ThemingViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService) : base(logProvider, navigationService)
+        private readonly IThemeService _themeService;
+
+        public ThemingViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IThemeService themeService) : base(logProvider, navigationService)
         {
+            _themeService = themeService;
         }
 
         private ImageSource _themeDarkImage = ImageSource.FromFile("theme_dark");
@@ -29,41 +33,77 @@ namespace Chameleon.Core.ViewModels
             set => SetProperty(ref _themeLightImage, value);
         }
 
+        private IMvxCommand _themeAutoCommand;
+        public IMvxCommand ThemeAutoCommand => _themeAutoCommand ?? (_themeAutoCommand = new MvxCommand(ThemeAuto));
+
         private IMvxCommand _themeDarkCommand;
         public IMvxCommand ThemeDarkCommand => _themeDarkCommand ?? (_themeDarkCommand = new MvxCommand(ThemeDark));
 
         private IMvxCommand _themeLightCommand;
         public IMvxCommand ThemeLigthCommand => _themeLightCommand ?? (_themeLightCommand = new MvxCommand(ThemeLight));
 
+        private IMvxCommand _themeCustomCommand;
+        public IMvxCommand ThemeCustomCommand => _themeCustomCommand ?? (_themeCustomCommand = new MvxCommand(ThemeCustom));
+
+        private void ThemeAuto()
+        {
+            _themeService.AppTheme = Models.ThemeMode.Auto;
+            _themeService.UpdateTheme();
+            UpdateThemeImages();
+        }
+
         private void ThemeDark()
         {
-            Mvx.IoCProvider.Resolve<IThemeService>().ThemeDark();
-
-            ThemeDarkImage = ImageSource.FromFile("theme_dark_on");
-            ThemeLightImage = ImageSource.FromFile("theme_light");
+            _themeService.AppTheme = Models.ThemeMode.Dark;
+            _themeService.UpdateTheme();
+            UpdateThemeImages();
         }
 
         private void ThemeLight()
         {
-            Mvx.IoCProvider.Resolve<IThemeService>().ThemeLight();
+            _themeService.AppTheme = Models.ThemeMode.Light;
+            _themeService.UpdateTheme();
+            UpdateThemeImages();
+        }
 
-            ThemeLightImage = ImageSource.FromFile("theme_light_on");
-            ThemeDarkImage = ImageSource.FromFile("theme_dark");
+        private void ThemeCustom()
+        {
+            _themeService.AppTheme = Models.ThemeMode.Custom;
+
+            var colors = _themeService.CustomColors ?? new DarkColors();
+            colors["PrimaryBackgroundColor"] = Color.FromHex("#FF30313C");
+
+            _themeService.CustomColors = colors;
+            _themeService.UpdateTheme();
+            UpdateThemeImages();
+        }
+
+        private void UpdateThemeImages()
+        {
+            switch (_themeService.AppTheme)
+            {
+                case Models.ThemeMode.Auto:
+                    break;
+                case Models.ThemeMode.Dark:
+                    ThemeLightImage = ImageSource.FromFile("theme_light");
+                    ThemeDarkImage = ImageSource.FromFile("theme_dark_on");
+                    break;
+                case Models.ThemeMode.Light:
+                    ThemeLightImage = ImageSource.FromFile("theme_light_on");
+                    ThemeDarkImage = ImageSource.FromFile("theme_dark");
+                    break;
+                case Models.ThemeMode.Custom:
+                    break;
+                default:
+                    break;
+            }
         }
 
         public override void ViewAppearing()
         {
             base.ViewAppearing();
 
-            var theme = Application.Current.Resources as Styles;
-            if (theme.MergedDictionaries.Any(md => md.GetType() == typeof(DarkColors)))
-            {
-                ThemeDarkImage = ImageSource.FromFile("theme_dark_on");
-            }
-            else
-            {
-                ThemeLightImage = ImageSource.FromFile("theme_light_on");
-            }
+            UpdateThemeImages();
         }
     }
 }

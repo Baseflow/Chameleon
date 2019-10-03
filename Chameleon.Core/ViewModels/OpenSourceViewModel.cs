@@ -19,17 +19,17 @@ namespace Chameleon.Core.ViewModels
 
         }
 
-        private IList<OpenSourceButton> _openSourceList;
-        public IList<OpenSourceButton> OpenSourceList
+        private IList<OpenSource> _openSourceList;
+        public IList<OpenSource> OpenSourceList
         {
             get => _openSourceList;
             set => SetProperty(ref _openSourceList, value);
         }
 
-        private IMvxAsyncCommand<OpenSourceButton> _itemClickedCommand;
-        public IMvxAsyncCommand<OpenSourceButton> ItemClickedCommand => _itemClickedCommand ?? (_itemClickedCommand = new MvxAsyncCommand<OpenSourceButton>(ItemClicked));
+        private IMvxAsyncCommand<OpenSource> _itemClickedCommand;
+        public IMvxAsyncCommand<OpenSource> ItemClickedCommand => _itemClickedCommand ?? (_itemClickedCommand = new MvxAsyncCommand<OpenSource>(ItemClicked));
 
-        private async Task ItemClicked(OpenSourceButton arg)
+        private async Task ItemClicked(OpenSource arg)
         {
             await Xamarin.Essentials.Browser.OpenAsync(arg.Url);
         }
@@ -37,17 +37,17 @@ namespace Chameleon.Core.ViewModels
         public override void Prepare()
         {
             base.Prepare();
-            OpenSourceList = new List<OpenSourceButton>()
+            OpenSourceList = new List<OpenSource>()
             {
-                new OpenSourceButton(){Title = "MediaManager", Command = ItemClickedCommand, Url = "https://github.com/martijn00/XamarinMediaManager"},
-                new OpenSourceButton(){Title = "Xamarin Forms", Command = ItemClickedCommand, Url = "https://docs.microsoft.com/en-us/xamarin/xamarin-forms/"},
-                new OpenSourceButton(){Title = "MvvmCross", Command = ItemClickedCommand, Url = "https://github.com/MvvmCross/MvvmCross"},
-                new OpenSourceButton(){Title = "Lottie", Command = ItemClickedCommand, Url = "https://github.com/martijn00/LottieXamarin"},
-                new OpenSourceButton(){Title = "Xamarin Essentials", Command = ItemClickedCommand, Url = "https://github.com/xamarin/Essentials"},
-                new OpenSourceButton(){Title = "FFImageLoading", Command = ItemClickedCommand, Url = "https://github.com/luberda-molinet/FFImageLoading"},
-                new OpenSourceButton(){Title = "UserDialogs", Command = ItemClickedCommand, Url = "https://github.com/aritchie/userdialogs"},
-                new OpenSourceButton(){Title = "MonkeyCache", Command = ItemClickedCommand, Url = "https://github.com/jamesmontemagno/monkey-cache"},
-                new OpenSourceButton(){Title = "Xam Plugin Media", Command = ItemClickedCommand, Url = "https://github.com/jamesmontemagno/MediaPlugin"}
+                new OpenSource(){Title = "MediaManager", Command = ItemClickedCommand, Url = "https://github.com/martijn00/XamarinMediaManager"},
+                new OpenSource(){Title = "Xamarin Forms", Command = ItemClickedCommand, Url = "https://docs.microsoft.com/en-us/xamarin/xamarin-forms/"},
+                new OpenSource(){Title = "MvvmCross", Command = ItemClickedCommand, Url = "https://github.com/MvvmCross/MvvmCross"},
+                new OpenSource(){Title = "Lottie", Command = ItemClickedCommand, Url = "https://github.com/martijn00/LottieXamarin"},
+                new OpenSource(){Title = "Xamarin Essentials", Command = ItemClickedCommand, Url = "https://github.com/xamarin/Essentials"},
+                new OpenSource(){Title = "FFImageLoading", Command = ItemClickedCommand, Url = "https://github.com/luberda-molinet/FFImageLoading"},
+                new OpenSource(){Title = "UserDialogs", Command = ItemClickedCommand, Url = "https://github.com/aritchie/userdialogs"},
+                new OpenSource(){Title = "MonkeyCache", Command = ItemClickedCommand, Url = "https://github.com/jamesmontemagno/monkey-cache"},
+                new OpenSource(){Title = "Xam Plugin Media", Command = ItemClickedCommand, Url = "https://github.com/jamesmontemagno/MediaPlugin"}
             };
         }
     }

@@ -25,5 +25,7 @@ namespace Chameleon.Services
         public static readonly string TextProviderNamespace = "Chameleon.Core";
         public static readonly string TextProviderSharedTypeKey = "Shared";
 
+        public static readonly string ThemeKey = "Theme";
+        public static readonly string CustomColorsKey = "CustomColors";
     }
 }

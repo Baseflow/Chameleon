@@ -45,11 +45,11 @@ namespace Chameleon.iOS.CustomRenderers
         {
             if (this.TraitCollection.UserInterfaceStyle == UIUserInterfaceStyle.Dark)
             {
-                Mvx.IoCProvider.Resolve<IThemeService>().ThemeDark();
+                Mvx.IoCProvider.Resolve<IThemeService>().UpdateTheme(Core.Models.ThemeMode.Dark);
             }
             else
             {
-                Mvx.IoCProvider.Resolve<IThemeService>().ThemeLight();
+                Mvx.IoCProvider.Resolve<IThemeService>().UpdateTheme(Core.Models.ThemeMode.Light);
             }
         }
     }

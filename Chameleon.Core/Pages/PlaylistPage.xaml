@@ -163,10 +163,10 @@
                     <Label
                         FormattedText="{Binding TrackAmount}"
                         VerticalOptions="EndAndExpand"
-                        Style="{StaticResource DetailsPlaylist}"/>
+                        Style="{StaticResource PrimaryDetailText}"/>
                     <Label
                         FormattedText="{Binding PlaylistTime}"
-                        Style="{StaticResource DetailsPlaylist}"/>
+                        Style="{StaticResource PrimaryDetailText}"/>
                 </StackLayout>
             </Grid>
 

@@ -34,7 +34,7 @@
                         WidthRequest="55"/>
             </Frame>
             <Label Text="{mvx:MvxBind Title}"
-                   Style="{StaticResource TitleText}"
+                   Style="{StaticResource TitleItem}"
                    VerticalOptions="End"
                    LineBreakMode="TailTruncation"
                    Grid.Column="1"

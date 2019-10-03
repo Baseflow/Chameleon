@@ -98,7 +98,7 @@
                                        HorizontalOptions="Center"
                                        VerticalOptions="Center"
                                        VerticalTextAlignment="Center"
-                                       Style="{StaticResource Data1}" />
+                                       Style="{StaticResource PrimaryDetailText}" />
                             </pan:PancakeView>
                             <Image Source="disclosure_button" HorizontalOptions="End" BackgroundColor="Transparent" Grid.Column="2"/>
                         </Grid>

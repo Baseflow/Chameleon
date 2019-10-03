@@ -25,7 +25,6 @@
         <core:MvxListView
             ItemsSource="{mvx:MvxBind RecentlyPlayedItems}"
             ItemClick="{mvx:MvxBind PlayerCommand}"
-            ItemTemplate="{StaticResource contentItemTemplateSelector}"
             VerticalOptions="FillAndExpand"
             SeparatorVisibility="None"
             HasUnevenRows="True"

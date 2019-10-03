@@ -66,7 +66,7 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
-                            <Label Text="Equalizer" Style="{StaticResource MediaItemTitle}" Grid.Column="0"/>
+                            <Label Text="Equalizer" Style="{StaticResource Title}" Grid.Column="0"/>
                             <Image Source="disclosure_button" HorizontalOptions="End" Grid.Column="1"/>
                        </Grid>
                   </ViewCell>-->
@@ -102,7 +102,7 @@
                                    HorizontalOptions="Start"
                                    Grid.Row="0" />
                             <Label mvx:La.ng="Text PowerdByText"
-                                   Style="{StaticResource PowerdByText}"
+                                   Style="{StaticResource SecondaryDetailText}"
                                    Margin="10,0,10,25"
                                    Grid.Row="1" />
                             <Button mvx:La.ng="Text FindUsOnGithub"

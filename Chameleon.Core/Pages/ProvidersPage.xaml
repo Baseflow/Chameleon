@@ -68,7 +68,7 @@
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
                             <Label Text="{Binding Title}"
-                                   Style="{StaticResource MediaItemTitle}"
+                                   Style="{StaticResource Title}"
                                    Grid.Column="0"
                                    HorizontalOptions="StartAndExpand"
                                    VerticalOptions="CenterAndExpand"/>

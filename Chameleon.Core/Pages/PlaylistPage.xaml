@@ -101,7 +101,7 @@
                                 Margin="0,8"
                                 HorizontalOptions="Center"
                                 VerticalOptions="Start"
-                                Style="{StaticResource MediaItemTitle}" />
+                                Style="{StaticResource TitleItem}" />
                         </StackLayout>
                     </AbsoluteLayout>
                 </CollectionView.EmptyView>

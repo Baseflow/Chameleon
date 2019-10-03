@@ -37,7 +37,7 @@
                 VerticalOptions="EndAndExpand"
                 MaxLines="1"
                 Margin="{StaticResource MarginPaddingMedium}"
-                Style="{StaticResource MediaItemTitle}" />
+                Style="{StaticResource TitleItem}" />
         </Grid>
     </ContentView.Content>
 </ContentView>

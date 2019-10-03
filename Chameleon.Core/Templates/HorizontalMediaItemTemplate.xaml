@@ -37,14 +37,14 @@
                 Grid.Row="1"
                 LineBreakMode="TailTruncation"
                 MaxLines="2"
-                Style="{StaticResource MediaItemTitle}" />
+                Style="{StaticResource TitleItem}" />
             <Label
                 mvx:Bi.nd="Text Album"
                 Grid.Row="2"
                 HorizontalTextAlignment="Start"
                 LineBreakMode="TailTruncation"
                 MaxLines="1"
-                Style="{StaticResource MediaItemSubTitle}" />
+                Style="{StaticResource SubtitleItem}" />
         </Grid>
     </ContentView.Content>
 </ContentView>

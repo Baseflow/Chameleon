@@ -127,7 +127,7 @@
                                     <Label
                                         BindingContext="{Binding .}"
                                         Text="{mvx:MvxLang AddPlaylist}"
-                                        Style="{StaticResource Header2}"
+                                        Style="{StaticResource SubtitleItem}"
                                         Grid.Column="0"
                                         Grid.Row="1"
                                         Margin="0,10"

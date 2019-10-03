@@ -44,10 +44,10 @@
                          Grid.Row="1"
                          VerticalOptions="Start">
             <Label mvx:Bi.nd="Text TrackAmount(.)"
-                    Style="{StaticResource MediaItemSubTitle}"
+                    Style="{StaticResource SubtitleItem}"
                     MaxLines="1"/>
             <Label mvx:Bi.nd="Text PlaylistTime(.)"
-                    Style="{StaticResource MediaItemSubTitle}"/>
+                    Style="{StaticResource SubtitleItem}"/>
             </StackLayout>
         </Grid>
     </ContentView.Content>

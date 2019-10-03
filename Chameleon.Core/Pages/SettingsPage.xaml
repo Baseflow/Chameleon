@@ -32,7 +32,7 @@
                                 <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
                             <Label mvx:La.ng="Text PlaybackSettings"
-                                   Style="{StaticResource MediaItemTitle}"
+                                   Style="{DynamicResource Title}"
                                    Grid.Column="0" />
                             <Image Source="disclosure_button"
                                    HorizontalOptions="End"
@@ -50,7 +50,7 @@
                                 <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
                             <Label mvx:La.ng="Text Theming"
-                                   Style="{StaticResource MediaItemTitle}"
+                                   Style="{DynamicResource Title}"
                                    Grid.Column="0" />
                             <Image Source="disclosure_button"
                                    HorizontalOptions="End"
@@ -81,7 +81,7 @@
                                 <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
                             <Label mvx:La.ng="Text OpenSourceSoftware"
-                                   Style="{StaticResource MediaItemTitle}"
+                                   Style="{DynamicResource Title}"
                                    Grid.Column="0" />
                             <Image Source="disclosure_button"
                                    HorizontalOptions="End"

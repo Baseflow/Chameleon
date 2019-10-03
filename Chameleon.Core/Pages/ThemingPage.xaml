@@ -31,7 +31,7 @@
                 <TableSection>
                     <ViewCell>
                         <Label mvx:La.ng="Text Theming"
-                               Style="{DynamicResource PlaybackSettings}"
+                               Style="{DynamicResource SecondaryHeader}"
                                Margin="{StaticResource MarginPaddingXlarge}"/>
                     </ViewCell>
                     <ViewCell BindingContext="{Binding .}">
@@ -65,7 +65,7 @@
                                 VerticalOptions="EndAndExpand"
                                 MaxLines="1"
                                 Margin="{StaticResource MarginPaddingLarge}"
-                                Style="{StaticResource MediaItemTitle}" />
+                                Style="{StaticResource TitleItem}" />
                             <pan:PancakeView
                                 CornerRadius="8"
                                 IsClippedToBounds="True"
@@ -91,7 +91,7 @@
                                 VerticalOptions="EndAndExpand"
                                 MaxLines="1"
                                 Margin="{StaticResource MarginPaddingLarge}"
-                                Style="{StaticResource MediaItemTitle}" />
+                                Style="{StaticResource TitleItem}" />
                         </Grid>
                     </ViewCell>
                 </TableSection>

@@ -111,6 +111,9 @@
         <Setter Property="TextColor" Value="{DynamicResource PrimaryColor}"/>
     </Style>
 
+    <Style TargetType="Label" x:Key="LabelBase">
+        <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}"/>
+    </Style>
     
     <Style TargetType="Label" x:Key="PrimaryHeader">
         <Setter Property="FontFamily" Value="FiraSans#600"/>
@@ -125,60 +128,48 @@
         <Setter Property="TextColor" Value="{DynamicResource TertiaryTextColor}" />
     </Style>
 
-    <Style TargetType="Label" x:Key="Title">
+    <Style TargetType="Label" x:Key="Title" BasedOn="{StaticResource LabelBase}">
         <Setter Property="FontFamily" Value="FiraSans#600" />
         <Setter Property="FontAttributes" Value="Bold"/>
         <Setter Property="FontSize" Value="{StaticResource TextSizeSmall}" />
-        <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}" />
     </Style>
     
-    <Style TargetType="Label" x:Key="TitleItem">
+    <Style TargetType="Label" x:Key="TitleItem" BasedOn="{StaticResource LabelBase}">
         <Setter Property="FontFamily" Value="FiraSans#600" />
         <Setter Property="FontSize"  Value="{StaticResource TextSizeMedium}" />
-        <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}" />
         <Setter Property="FontAttributes" Value="Bold"/>
     </Style>
 
-    <Style TargetType="Label" x:Key="SubtitleItem">
+    <Style TargetType="Label" x:Key="SubtitleItem" BasedOn="{StaticResource LabelBase}">
         <Setter Property="FontFamily" Value="FiraSans#400" />
         <Setter Property="FontSize" Value="{DynamicResource TextSizeMicro}" />
-        <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}" />
         <Setter Property="HorizontalTextAlignment" Value="Start"/>
     </Style>
 
-    <Style TargetType="Label" x:Key="TitlePlaylist">
+    <Style TargetType="Label" x:Key="TitlePlaylist" BasedOn="{StaticResource LabelBase}">
         <Setter Property="FontFamily" Value="FiraSans#600"/>
         <Setter Property="FontSize" Value="{DynamicResource TextSizeXlarge}"/>
         <Setter Property="FontAttributes" Value="Bold"/>
-        <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}"/>
     </Style>
 
-    <Style TargetType="Label" x:Key="PrimaryDetailText">
+    <Style TargetType="Label" x:Key="PrimaryDetailText" BasedOn="{StaticResource LabelBase}">
         <Setter Property="FontFamily" Value="FiraSans#700" />
         <Setter Property="FontSize" Value="{DynamicResource TextSizeXsmall}" />
-        <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}" />
     </Style>
 
-    <Style  TargetType="Label" x:Key="SecondaryDetailText">
+    <Style TargetType="Label" x:Key="SecondaryDetailText" BasedOn="{StaticResource LabelBase}">
         <Setter Property="FontFamily" Value="FiraSans#400" />
         <Setter Property="FontSize" Value="{DynamicResource TextSizeXsmall}" />
-        <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}" />
     </Style>
 
-    <Style TargetType="Label" x:Key="PlaybackSettingsValue">
+    <Style TargetType="Label" x:Key="PlaybackSettingsValue" BasedOn="{StaticResource LabelBase}">
         <Setter Property="FontFamily" Value="FiraSans#500"/>
         <Setter Property="FontSize" Value="{DynamicResource TextSizeSmall}"/>
-        <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}"/>
     </Style>
 
-      
-
-     <Style TargetType="Label" x:Key="TimeLeftFontStyle">
+     <Style TargetType="Label" x:Key="TimeLeftFontStyle" BasedOn="{StaticResource LabelBase}">
         <Setter Property="FontFamily" Value="FiraSans"/>
         <Setter Property="FontSize" Value="{DynamicResource TextSizeXmicro}"/>
-        <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}"/>
     </Style>
-
-
 
 </ResourceDictionary>

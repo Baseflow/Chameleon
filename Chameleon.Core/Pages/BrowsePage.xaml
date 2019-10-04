@@ -86,11 +86,7 @@
                                         <Image
                                             BackgroundColor="{DynamicResource SecondaryBackgroundColor}"
                                             Source="icon_plus_big"
-<<<<<<< HEAD
-                                            Margin="16"/>
-=======
                                             Margin="{StaticResource MarginPaddingLarge}"/>
->>>>>>> develop
                                     </pan:PancakeView>
                                     <Label
                                         BindingContext="{Binding .}"

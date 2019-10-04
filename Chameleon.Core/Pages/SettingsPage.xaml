@@ -22,11 +22,7 @@
             <TableRoot>
                 <TableSection>
                     <ViewCell Tapped="ViewCell_TappedPlaybackSettings">
-<<<<<<< HEAD
-                        <Grid Padding="16">
-=======
                         <Grid Padding="{StaticResource MarginPaddingLarge}">
->>>>>>> develop
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
@@ -44,11 +40,7 @@
                         </Grid>
                     </ViewCell>
                     <ViewCell Tapped="ViewCell_TappedTheming">
-<<<<<<< HEAD
-                        <Grid Padding="16">
-=======
                         <Grid Padding="{StaticResource MarginPaddingLarge}">
->>>>>>> develop
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
@@ -79,11 +71,7 @@
                        </Grid>
                   </ViewCell>-->
                     <ViewCell Tapped="ViewCell_TappedOpenSource">
-<<<<<<< HEAD
-                        <Grid Padding="16">
-=======
                         <Grid Padding="{StaticResource MarginPaddingLarge}">
->>>>>>> develop
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
@@ -102,11 +90,7 @@
                     </ViewCell>
                     <ViewCell IsEnabled="True"
                               BindingContext="{Binding .}">
-<<<<<<< HEAD
-                        <Grid Padding="16" HorizontalOptions="FillAndExpand">
-=======
                         <Grid Padding="{StaticResource MarginPaddingLarge}" HorizontalOptions="FillAndExpand">
->>>>>>> develop
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition Height="Auto" />

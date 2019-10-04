@@ -62,21 +62,13 @@
                                 </pan:PancakeView.HasShadow>
                                 <Image
                                     Source="icon_plus_big"
-<<<<<<< HEAD
-                                    Margin="16"/>
-=======
                                     Margin="{StaticResource MarginPaddingLarge}"/>
->>>>>>> develop
                             </pan:PancakeView>
                             <Label
                                 BindingContext="{Binding .}"
                                 Text="{mvx:MvxLang AddNewPlaylist}"
                                 Grid.Column="1"
-<<<<<<< HEAD
-                                Margin="8"
-=======
                                 Margin="{StaticResource MarginPaddingMedium}"
->>>>>>> develop
                                 VerticalOptions="Center"
                                 Style="{StaticResource TitleItem}" />
                             <Grid.GestureRecognizers>

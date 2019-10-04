@@ -152,5 +152,4 @@
                               ViewModel="{Binding MiniPlayerViewModel}"
                               IsVisible="{Binding Source={x:Reference homePage}, Path=BindingContext.DataContext.IsPlaying}"/>
     </Grid>
-
 </core:MvxContentPage>

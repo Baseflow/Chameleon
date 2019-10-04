@@ -72,7 +72,6 @@
                         Style="{StaticResource PrimaryDetailText}"/>
                 </StackLayout>
             </Grid>
-
             <CollectionView x:Name="PlaylistItems"
                             mvx:Bi.nd="
                                 ItemsSource CurrentPlaylistSource.MediaItems;

@@ -745,6 +745,15 @@
     <ImageAsset Include="Assets.xcassets\icon_plus_big.imageset\icon_plus_big%403x.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\theme_auto_on.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\theme_auto_on.imageset\theme_auto_on%402x.png" />
+    <ImageAsset Include="Assets.xcassets\theme_auto_on.imageset\theme_auto_on.png" />
+    <ImageAsset Include="Assets.xcassets\theme_auto_on.imageset\theme_auto_on%402x-1.png" />
+    <ImageAsset Include="Assets.xcassets\theme_auto_on.imageset\theme_auto_on%403x.png" />
+    <ImageAsset Include="Assets.xcassets\theme_auto.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\theme_auto.imageset\theme_auto.png" />
+    <ImageAsset Include="Assets.xcassets\theme_auto.imageset\theme_auto%402x.png" />
+    <ImageAsset Include="Assets.xcassets\theme_auto.imageset\theme_auto%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -809,6 +818,8 @@
   <ItemGroup>
     <Folder Include="Assets.xcassets\playback_controls_repeat_once_off.imageset\" />
     <Folder Include="Assets.xcassets\playback_controls_time_knob.imageset\" />
+    <Folder Include="Assets.xcassets\theme_auto_on.imageset\" />
+    <Folder Include="Assets.xcassets\theme_auto.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />

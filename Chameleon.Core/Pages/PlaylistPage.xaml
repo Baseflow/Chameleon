@@ -89,7 +89,7 @@
                                            AbsoluteLayout.LayoutBounds=".5,.0,.5,.5" 
                                            Color="DimGray"
                                            mvx:Bi.nd="IsRunning IsLoading"/>
-                        <StackLayout VerticalOptions="Center" 
+                        <StackLayout VerticalOptions="Start" 
                                      AbsoluteLayout.LayoutFlags="All" 
                                      AbsoluteLayout.LayoutBounds=".5,.5,.5,.5">
                             <Image

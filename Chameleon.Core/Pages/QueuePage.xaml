@@ -45,7 +45,7 @@
                             Text="{mvx:MvxLang FillingQueue}" 
                             VerticalOptions="Center"
                             Margin="24,0,0,0"
-                            Style="{StaticResource TitleItem}" />
+                            Style="{StaticResource Title}" />
                     </StackLayout>
                 </CollectionView.EmptyView>
             </CollectionView>

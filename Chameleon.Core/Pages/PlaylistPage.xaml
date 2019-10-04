@@ -101,7 +101,7 @@
                                 Margin="0,8"
                                 HorizontalOptions="Center"
                                 VerticalOptions="Start"
-                                Style="{StaticResource TitleItem}" />
+                                Style="{StaticResource Title}" />
                         </StackLayout>
                     </AbsoluteLayout>
                 </CollectionView.EmptyView>

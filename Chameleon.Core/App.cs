@@ -38,8 +38,6 @@ namespace Chameleon.Core
             Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IBrowseService, BrowseService>();
             Mvx.IoCProvider.LazyConstructAndRegisterSingleton<ISettingsService, SettingsService>();
             Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IRadioStationsService, RadioStationsService>();
-
-
             Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IThemeService, ThemeService>();
 
             /*var language = Mvx.IoCProvider.Resolve<ILanguageService>()?.GetLanguage()?.TwoLetterISOLanguageName;

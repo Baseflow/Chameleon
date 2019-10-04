@@ -52,7 +52,7 @@
                         VerticalOptions="End"
                         LineBreakMode="TailTruncation"
                         MaxLines="1"
-                        Style="{StaticResource MediaItemTitle}" />
+                        Style="{StaticResource TitleItem}" />
             <Label
                         mvx:Bi.nd="Text Album"
                         Grid.Column="1"
@@ -60,7 +60,7 @@
                         VerticalOptions="Start"
                         LineBreakMode="TailTruncation"
                         MaxLines="1"
-                        Style="{StaticResource MediaItemSubTitle}" />
+                        Style="{StaticResource SubtitleItem}" />
             <controls:SelectableButton
                         Source="icon_more"
                         Command="{Binding Source={x:Static helpers:NavigationHelper.OptionsCommand}}"

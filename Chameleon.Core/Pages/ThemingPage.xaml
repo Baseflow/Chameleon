@@ -29,22 +29,11 @@
                 <TableSection>
                     <ViewCell>
                         <Label mvx:La.ng="Text Theming"
-<<<<<<< HEAD
-                               Style="{DynamicResource PlaybackSettings}"
-<<<<<<< HEAD
-                               Margin="24" />
-                    </ViewCell>
-                    <ViewCell BindingContext="{Binding .}">
-                        <Grid Margin="4">
-=======
-=======
                                Style="{DynamicResource SecondaryHeader}"
->>>>>>> develop
                                Margin="{StaticResource MarginPaddingXlarge}"/>
                     </ViewCell>
                     <ViewCell BindingContext="{Binding .}">
                         <Grid Margin="{StaticResource MarginPaddingSmall}">
->>>>>>> develop
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
@@ -59,11 +48,7 @@
                                 VerticalOptions="FillAndExpand"
                                 Elevation="2"
                                 HasShadow="True"
-<<<<<<< HEAD
-                                Margin="4">
-=======
                                 Margin="{StaticResource MarginPaddingSmall}">
->>>>>>> develop
                                 <ImageButton
                                     HorizontalOptions="FillAndExpand"
                                     VerticalOptions="FillAndExpand"
@@ -77,16 +62,8 @@
                                 Grid.Column="0"
                                 VerticalOptions="EndAndExpand"
                                 MaxLines="1"
-<<<<<<< HEAD
-                                Margin="16"
-=======
                                 Margin="{StaticResource MarginPaddingLarge}"
-<<<<<<< HEAD
->>>>>>> develop
-                                Style="{StaticResource MediaItemTitle}" />
-=======
                                 Style="{StaticResource TitleItem}" />
->>>>>>> develop
                             <pan:PancakeView
                                 CornerRadius="8"
                                 IsClippedToBounds="True"
@@ -111,16 +88,8 @@
                                 Grid.Column="1"
                                 VerticalOptions="EndAndExpand"
                                 MaxLines="1"
-<<<<<<< HEAD
-                                Margin="16"
-=======
                                 Margin="{StaticResource MarginPaddingLarge}"
-<<<<<<< HEAD
->>>>>>> develop
-                                Style="{StaticResource MediaItemTitle}" />
-=======
                                 Style="{StaticResource TitleItem}" />
->>>>>>> develop
                         </Grid>
                     </ViewCell>
                 </TableSection>

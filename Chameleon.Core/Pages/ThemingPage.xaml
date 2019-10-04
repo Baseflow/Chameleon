@@ -36,6 +36,7 @@
                         <Grid Margin="{StaticResource MarginPaddingSmall}">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
@@ -90,6 +91,23 @@
                                 MaxLines="1"
                                 Margin="{StaticResource MarginPaddingLarge}"
                                 Style="{StaticResource TitleItem}" />
+                            <pan:PancakeView
+                                CornerRadius="8"
+                                IsClippedToBounds="True"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="FillAndExpand"
+                                Elevation="2"
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                HasShadow="True"
+                                Margin="{StaticResource MarginPaddingSmall}">
+                                <ImageButton
+                                     HorizontalOptions="FillAndExpand"
+                                     VerticalOptions="FillAndExpand"
+                                     Aspect="AspectFill"
+                                     Source="{Binding ThemeAutoImage}"
+                                     mvx:Bi.nd="Command ThemeAutoCommand"/>
+                            </pan:PancakeView>
                         </Grid>
                     </ViewCell>
                 </TableSection>

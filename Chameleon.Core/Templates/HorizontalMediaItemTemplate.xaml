@@ -4,7 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
     xmlns:pan="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
-    x:Class="Chameleon.Core.Templates.HorizontalMediaItemsTemplate">
+    x:Class="Chameleon.Core.Templates.HorizontalMediaItemTemplate">
     <ContentView.Content>
         <Grid Padding="24,16,0,16">
             <Grid.RowDefinitions>
@@ -37,14 +37,14 @@
                 Grid.Row="1"
                 LineBreakMode="TailTruncation"
                 MaxLines="2"
-                Style="{StaticResource MediaItemTitle}" />
+                Style="{StaticResource TitleItem}" />
             <Label
                 mvx:Bi.nd="Text Album"
                 Grid.Row="2"
                 HorizontalTextAlignment="Start"
                 LineBreakMode="TailTruncation"
                 MaxLines="1"
-                Style="{StaticResource MediaItemSubTitle}" />
+                Style="{StaticResource SubtitleItem}" />
         </Grid>
     </ContentView.Content>
 </ContentView>

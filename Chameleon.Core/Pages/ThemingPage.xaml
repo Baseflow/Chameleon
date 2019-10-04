@@ -7,8 +7,6 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModels="clr-namespace:Chameleon.Core.ViewModels;assembly=Chameleon.Core"
-    xmlns:mm="clr-namespace:MediaManager.Forms;assembly=MediaManager.Forms"
-    xmlns:templates="clr-namespace:Chameleon.Core.Templates;assembly=Chameleon.Core"
     mc:Ignorable="d"
     xmlns:coloredTableView="clr-namespace:Chameleon.Core;assembly=Chameleon.Core"
     x:TypeArguments="viewModels:ThemingViewModel"
@@ -31,7 +29,7 @@
                 <TableSection>
                     <ViewCell>
                         <Label mvx:La.ng="Text Theming"
-                               Style="{DynamicResource PlaybackSettings}"
+                               Style="{DynamicResource SecondaryHeader}"
                                Margin="{StaticResource MarginPaddingXlarge}"/>
                     </ViewCell>
                     <ViewCell BindingContext="{Binding .}">
@@ -65,7 +63,7 @@
                                 VerticalOptions="EndAndExpand"
                                 MaxLines="1"
                                 Margin="{StaticResource MarginPaddingLarge}"
-                                Style="{StaticResource MediaItemTitle}" />
+                                Style="{StaticResource TitleItem}" />
                             <pan:PancakeView
                                 CornerRadius="8"
                                 IsClippedToBounds="True"
@@ -91,7 +89,7 @@
                                 VerticalOptions="EndAndExpand"
                                 MaxLines="1"
                                 Margin="{StaticResource MarginPaddingLarge}"
-                                Style="{StaticResource MediaItemTitle}" />
+                                Style="{StaticResource TitleItem}" />
                         </Grid>
                     </ViewCell>
                 </TableSection>

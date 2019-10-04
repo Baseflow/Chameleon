@@ -7,7 +7,6 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModels="clr-namespace:Chameleon.Core.ViewModels;assembly=Chameleon.Core"
-    xmlns:templates="clr-namespace:Chameleon.Core.Templates;assembly=Chameleon.Core"
     xmlns:coloredTableView="clr-namespace:Chameleon.Core;assembly=Chameleon.Core"
     mc:Ignorable="d"
     x:TypeArguments="viewModels:SettingsPlaybackViewModel"
@@ -30,7 +29,7 @@
                     <ViewCell BindingContext="{Binding .}"
                               IsEnabled="False">
                         <Label mvx:La.ng=" Text Playback"
-                               Style="{StaticResource PlaybackSettings}"
+                               Style="{StaticResource SecondaryHeader}"
                                Margin="{StaticResource MarginPaddingXlarge}" />
                     </ViewCell>
                     <ViewCell BindingContext="{Binding .}">
@@ -44,7 +43,7 @@
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
                             <Label mvx:La.ng="Text Skip"
-                                   Style="{DynamicResource PlaybackSettingsTitle}"
+                                   Style="{DynamicResource Title}"
                                    Grid.Row="0" />
                             <Label Text="{Binding Source={x:Reference slider}, Path=Value, StringFormat='{0:F0}s'}"
                                    Grid.Row="1"
@@ -71,7 +70,7 @@
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
                             <Label mvx:La.ng=" Text Volume"
-                                   Style="{StaticResource PlaybackSettingsTitle}"
+                                   Style="{DynamicResource Title}"
                                    Grid.Row="0" />
                             <Label Text="{Binding Source={x:Reference slider2}, Path=Value, StringFormat='{00:F00}%'}"
                                    Grid.Row="1"
@@ -100,7 +99,7 @@
                                 <ColumnDefinition Width="10" />
                             </Grid.ColumnDefinitions>
                             <Label Text="Balance"
-                                   Style="{StaticResource PlaybackSettingsTitle}"
+                                   Style="{DynamicResource Title}"
                                    Grid.ColumnSpan="3" />
                             <Label Text="{Binding BalanceLabel}"
                                    HorizontalOptions="FillAndExpand"
@@ -137,7 +136,7 @@
                                 <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
                             <Label mvx:La.ng="Text Clear"
-                                   Style="{StaticResource PlaybackSettingsTitle}"
+                                   Style="{DynamicResource Title}"
                                    VerticalOptions="Center"
                                    Grid.Column="0" />
                             <Switch mvx:Bi.nd="IsToggled ClearQueueOnPlay"
@@ -157,7 +156,7 @@
                                 <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
                             <Label mvx:La.ng="Text ScreenOn"
-                                   Style="{StaticResource PlaybackSettingsTitle}"
+                                   Style="{DynamicResource Title}"
                                    VerticalOptions="Center"
                                    Grid.Column="0" />
                             <Switch mvx:Bi.nd="IsToggled KeepScreenOn"

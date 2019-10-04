@@ -2,10 +2,10 @@
 
 namespace Chameleon.Core.Helpers
 {
-    public class OpenSourceButton
+    public class OpenSource
     {
         public string Title { get; set; }
-        public IMvxAsyncCommand<OpenSourceButton> Command { get; set; }
+        public IMvxAsyncCommand<OpenSource> Command { get; set; }
         public string Url { get; set; }
     }
 }

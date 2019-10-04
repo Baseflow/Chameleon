@@ -80,6 +80,7 @@
     <Compile Include="CustomRenderers\ColoredTableViewRenderer.cs" />
     <Compile Include="CustomRenderers\CustomViewCellRenderer.cs" />
     <Compile Include="Effects\iOSPressedStateEffect.cs" />
+    <Compile Include="CustomRenderers\PageRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />

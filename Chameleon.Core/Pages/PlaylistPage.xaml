@@ -7,11 +7,7 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModels="clr-namespace:Chameleon.Core.ViewModels;assembly=Chameleon.Core"
-    xmlns:mm="clr-namespace:MediaManager.Forms;assembly=MediaManager.Forms"
-    xmlns:controls="clr-namespace:Chameleon.Core.Controls"
-    xmlns:helpers="clr-namespace:Chameleon.Core.Helpers"
     xmlns:pan="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
-    xmlns:templates="clr-namespace:Chameleon.Core.Templates;assembly=Chameleon.Core"
     mc:Ignorable="d"
     x:TypeArguments="viewModels:PlaylistViewModel"
     x:Class="Chameleon.Core.Views.PlaylistPage"
@@ -21,99 +17,6 @@
             <Image Source="chameleon_logo"/>
         </StackLayout>
     </NavigationPage.TitleView>
-
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <DataTemplate x:Key="activeTemplate">
-                <Grid 
-                    Padding="24,0"
-                    Margin="0,0,0,30"
-                    RowSpacing="0"
-                    ColumnSpacing="12"
-                    VerticalOptions="Center">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="28" />
-                        <RowDefinition Height="28" />
-                        <RowDefinition Height="28" />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="56" />
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="34" />
-                    </Grid.ColumnDefinitions>
-                    <pan:PancakeView
-                        CornerRadius="3"
-                        IsClippedToBounds="True"
-                        HorizontalOptions="FillAndExpand"
-                        VerticalOptions="FillAndExpand"
-                        Elevation="2"
-                        Grid.Column="0"
-                        Grid.RowSpan="2">
-                        <pan:PancakeView.HasShadow>
-                            <OnPlatform
-                                x:TypeArguments="x:Boolean"
-                                iOS="False"
-                                Android="True" />
-                        </pan:PancakeView.HasShadow>
-                        <Image
-                            HorizontalOptions="Center"
-                            VerticalOptions="Center"
-                            Aspect="AspectFill"
-                            Source="cover_art_placeholder" />
-                    </pan:PancakeView>
-                    <Label
-                        mvx:Bi.nd="Text Title"
-                        Grid.Column="1"
-                        Grid.Row="0"
-                        VerticalOptions="End"
-                        LineBreakMode="TailTruncation"
-                        MaxLines="1"
-                        Style="{StaticResource MediaItemTitle}" />
-                    <Label
-                        mvx:Bi.nd="Text Album"
-                        Grid.Column="1"
-                        Grid.Row="1"
-                        VerticalOptions="Start"
-                        LineBreakMode="TailTruncation"
-                        MaxLines="1"
-                        Style="{StaticResource MediaItemSubTitle}" />
-                    <controls:SelectableButton
-                        Source="icon_more"
-                        Command="{Binding Source={x:Static helpers:NavigationHelper.OptionsCommand}}"
-                        CommandParameter="{Binding .}"
-                        Grid.Column="2"
-                        Grid.RowSpan="2"
-                        HorizontalOptions="End"
-                        BackgroundColor="Transparent" />
-                    <ProgressBar
-                        x:Name="Progressbar"
-                        Grid.ColumnSpan="2"
-                        Margin="0,0,10,0"
-                        HeightRequest="2"
-                        Grid.Row="2"
-                        ProgressColor="{DynamicResource SecondaryColor}"
-                        HorizontalOptions="Fill"
-                        VerticalOptions="Center"
-                        Progress="{Binding Source={x:Reference Name=playlistPage}, Path=BindingContext.DataContext.Progress}"/>
-                    <Label
-                        Grid.Column="2"
-                        Grid.Row="2"
-                        Text="{Binding Source={x:Reference Name=playlistPage}, Path=BindingContext.DataContext.TimeLeft}"
-                        Style="{DynamicResource TimeLeftFontStyle}"
-                        HorizontalOptions="CenterAndExpand"
-                        VerticalOptions="CenterAndExpand"/>
-                </Grid>
-            </DataTemplate>
-            <DataTemplate x:Key="inActiveTemplate">
-                <templates:MediaItemTemplate/>
-            </DataTemplate>
-            <templates:MediaItemTemplateSelector
-                x:Key="mediaItemTemplateSelector"
-                ActiveTemplate="{StaticResource activeTemplate}"
-                InActiveTemplate="{StaticResource inActiveTemplate}"/>
-        </ResourceDictionary>
-    </ContentPage.Resources>
-
     <ContentPage.Content>
         <StackLayout>
             <SearchBar
@@ -163,10 +66,10 @@
                     <Label
                         FormattedText="{Binding TrackAmount}"
                         VerticalOptions="EndAndExpand"
-                        Style="{StaticResource DetailsPlaylist}"/>
+                        Style="{StaticResource PrimaryDetailText}"/>
                     <Label
                         FormattedText="{Binding PlaylistTime}"
-                        Style="{StaticResource DetailsPlaylist}"/>
+                        Style="{StaticResource PrimaryDetailText}"/>
                 </StackLayout>
             </Grid>
 
@@ -178,7 +81,7 @@
                                 SelectedItem SelectedMediaItem"
                             SelectionMode="Single"
                             VerticalOptions="FillAndExpand"
-                            ItemTemplate="{StaticResource mediaItemTemplateSelector}">
+                            ItemTemplate="{StaticResource contentItemTemplateSelector}">
 
                 <CollectionView.EmptyView>
                     <AbsoluteLayout>
@@ -198,7 +101,7 @@
                                 Margin="0,8"
                                 HorizontalOptions="Center"
                                 VerticalOptions="Start"
-                                Style="{StaticResource MediaItemTitle}" />
+                                Style="{StaticResource TitleItem}" />
                         </StackLayout>
                     </AbsoluteLayout>
                 </CollectionView.EmptyView>

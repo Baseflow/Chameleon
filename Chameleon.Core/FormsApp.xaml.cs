@@ -4,7 +4,9 @@ using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
 #endif
+using Chameleon.Core.Helpers;
 using Chameleon.Core.Resources;
+using MvvmCross;
 using Xamarin.Forms;
 
 namespace Chameleon.Core
@@ -14,10 +16,6 @@ namespace Chameleon.Core
         public FormsApp()
         {
             InitializeComponent();
-
-            var style = new Styles();
-            style.MergedDictionaries.Add(new DarkColors());
-            Resources = style;
         }
 
         protected override void OnStart()

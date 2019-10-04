@@ -8,5 +8,8 @@
   "ScreenOn": "Keep screen on",
   "Right": "Right",
   "Center": "Center",
-  "Left": "Left"
+  "Left": "Left",
+  "R": "R",
+  "L" : "L"
+
 }

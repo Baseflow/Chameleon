@@ -57,14 +57,6 @@
                                     Source="{Binding ThemeDarkImage}"
                                     mvx:Bi.nd="Command ThemeDarkCommand" />
                             </pan:PancakeView>
-                            <Label
-                                mvx:La.ng="Text DarkTheme"
-                                Grid.Row="0"
-                                Grid.Column="0"
-                                VerticalOptions="EndAndExpand"
-                                MaxLines="1"
-                                Margin="{StaticResource MarginPaddingLarge}"
-                                Style="{StaticResource TitleItem}" />
                             <pan:PancakeView
                                 CornerRadius="8"
                                 IsClippedToBounds="True"
@@ -83,14 +75,6 @@
                                     Grid.Row="0"
                                     Grid.Column="1" />
                             </pan:PancakeView>
-                            <Label
-                                mvx:La.ng="Text LightTheme"
-                                Grid.Row="0"
-                                Grid.Column="1"
-                                VerticalOptions="EndAndExpand"
-                                MaxLines="1"
-                                Margin="{StaticResource MarginPaddingLarge}"
-                                Style="{StaticResource TitleItem}" />
                             <pan:PancakeView
                                 CornerRadius="8"
                                 IsClippedToBounds="True"

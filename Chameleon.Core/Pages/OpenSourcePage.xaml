@@ -7,7 +7,6 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModels="clr-namespace:Chameleon.Core.ViewModels;assembly=Chameleon.Core"
-    xmlns:templates="clr-namespace:Chameleon.Core.Templates;assembly=Chameleon.Core"
     mc:Ignorable="d"
     x:TypeArguments="viewModels:OpenSourceViewModel"
     x:Class="Chameleon.Core.Views.OpenSourcePage">
@@ -19,8 +18,8 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="{StaticResource MarginPaddingXlarge}">
-                <Label mvx:La.ng="Text OpenSourcesoftware" Style="{StaticResource OpenSourceTitle}" />
-                <Label mvx:La.ng="Text Components" Style="{StaticResource OpenSourceSubtitle}" Margin="0,0,0,20"/>
+                <Label mvx:La.ng="Text OpenSourcesoftware" Style="{StaticResource SecondaryHeader}" />
+                <Label mvx:La.ng="Text Components" Style="{StaticResource SecondaryDetailText}" Margin="0,0,0,20"/>
 
                 <StackLayout BindableLayout.ItemsSource="{Binding OpenSourceList}">
                     <BindableLayout.ItemTemplate>

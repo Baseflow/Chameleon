@@ -7,8 +7,6 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModels="clr-namespace:Chameleon.Core.ViewModels;assembly=Chameleon.Core"
-    xmlns:templates="clr-namespace:Chameleon.Core.Templates;assembly=Chameleon.Core"
-    xmlns:coloredTableView="clr-namespace:Chameleon.Core;assembly=Chameleon.Core"
     mc:Ignorable="d"
     x:TypeArguments="viewModels:AlbumViewModel"
     x:Class="Chameleon.Core.Views.AlbumPage"

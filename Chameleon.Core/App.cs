@@ -1,4 +1,5 @@
 ﻿using Acr.UserDialogs;
+using Chameleon.Core.Helpers;
 using Chameleon.Services.Providers;
 using Chameleon.Services.Services;
 using MediaManager;
@@ -36,9 +37,13 @@ namespace Chameleon.Core
 
             Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IBrowseService, BrowseService>();
             Mvx.IoCProvider.LazyConstructAndRegisterSingleton<ISettingsService, SettingsService>();
+<<<<<<< HEAD
             Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IRadioStationsService, RadioStationsService>();
 
 
+=======
+            Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IThemeService, ThemeService>();
+>>>>>>> develop
 
             /*var language = Mvx.IoCProvider.Resolve<ILanguageService>()?.GetLanguage()?.TwoLetterISOLanguageName;
             var textProviderBuilder = ((TextProviderBuilder)Mvx.IoCProvider.GetSingleton<IMvxTextProviderBuilder>());
@@ -46,6 +51,7 @@ namespace Chameleon.Core
                 textProviderBuilder.LoadResources(language);*/
 
             FFImageLoading.ImageService.Instance.Initialize();
+            Mvx.IoCProvider.Resolve<IThemeService>().UpdateTheme();
 
             RegisterCustomAppStart<AppStart>();
         }

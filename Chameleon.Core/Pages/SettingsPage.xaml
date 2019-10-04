@@ -7,7 +7,6 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModels="clr-namespace:Chameleon.Core.ViewModels;assembly=Chameleon.Core"
-    xmlns:templates="clr-namespace:Chameleon.Core.Templates;assembly=Chameleon.Core"
     xmlns:coloredTableView="clr-namespace:Chameleon.Core;assembly=Chameleon.Core"
     mc:Ignorable="d"
     x:TypeArguments="viewModels:SettingsViewModel"
@@ -36,7 +35,7 @@
                                 <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
                             <Label mvx:La.ng="Text PlaybackSettings"
-                                   Style="{StaticResource MediaItemTitle}"
+                                   Style="{DynamicResource Title}"
                                    Grid.Column="0" />
                             <Image Source="disclosure_button"
                                    HorizontalOptions="End"
@@ -58,7 +57,7 @@
                                 <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
                             <Label mvx:La.ng="Text Theming"
-                                   Style="{StaticResource MediaItemTitle}"
+                                   Style="{DynamicResource Title}"
                                    Grid.Column="0" />
                             <Image Source="disclosure_button"
                                    HorizontalOptions="End"
@@ -75,7 +74,7 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
-                            <Label Text="Equalizer" Style="{StaticResource MediaItemTitle}" Grid.Column="0"/>
+                            <Label Text="Equalizer" Style="{StaticResource Title}" Grid.Column="0"/>
                             <Image Source="disclosure_button" HorizontalOptions="End" Grid.Column="1"/>
                        </Grid>
                   </ViewCell>-->
@@ -93,7 +92,7 @@
                                 <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
                             <Label mvx:La.ng="Text OpenSourceSoftware"
-                                   Style="{StaticResource MediaItemTitle}"
+                                   Style="{DynamicResource Title}"
                                    Grid.Column="0" />
                             <Image Source="disclosure_button"
                                    HorizontalOptions="End"
@@ -119,7 +118,7 @@
                                    HorizontalOptions="Start"
                                    Grid.Row="0" />
                             <Label mvx:La.ng="Text PowerdByText"
-                                   Style="{StaticResource PowerdByText}"
+                                   Style="{StaticResource SecondaryDetailText}"
                                    Margin="10,0,10,25"
                                    Grid.Row="1" />
                             <Button mvx:La.ng="Text FindUsOnGithub"

@@ -39,5 +39,4 @@
     <None Remove="Resources\**\*.json" />
     <EmbeddedResource Include="Resources\**\*.json" />
   </ItemGroup>
-
 </Project>

@@ -7,8 +7,6 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModels="clr-namespace:Chameleon.Core.ViewModels;assembly=Chameleon.Core"
-    xmlns:mm="clr-namespace:MediaManager.Forms;assembly=MediaManager.Forms"
-    xmlns:templates="clr-namespace:Chameleon.Core.Templates;assembly=Chameleon.Core"
     mc:Ignorable="d"
     xmlns:coloredTableView="clr-namespace:Chameleon.Core;assembly=Chameleon.Core"
     x:TypeArguments="viewModels:ThemingViewModel"
@@ -31,6 +29,7 @@
                 <TableSection>
                     <ViewCell>
                         <Label mvx:La.ng="Text Theming"
+<<<<<<< HEAD
                                Style="{DynamicResource PlaybackSettings}"
 <<<<<<< HEAD
                                Margin="24" />
@@ -38,6 +37,9 @@
                     <ViewCell BindingContext="{Binding .}">
                         <Grid Margin="4">
 =======
+=======
+                               Style="{DynamicResource SecondaryHeader}"
+>>>>>>> develop
                                Margin="{StaticResource MarginPaddingXlarge}"/>
                     </ViewCell>
                     <ViewCell BindingContext="{Binding .}">
@@ -79,8 +81,12 @@
                                 Margin="16"
 =======
                                 Margin="{StaticResource MarginPaddingLarge}"
+<<<<<<< HEAD
 >>>>>>> develop
                                 Style="{StaticResource MediaItemTitle}" />
+=======
+                                Style="{StaticResource TitleItem}" />
+>>>>>>> develop
                             <pan:PancakeView
                                 CornerRadius="8"
                                 IsClippedToBounds="True"
@@ -109,8 +115,12 @@
                                 Margin="16"
 =======
                                 Margin="{StaticResource MarginPaddingLarge}"
+<<<<<<< HEAD
 >>>>>>> develop
                                 Style="{StaticResource MediaItemTitle}" />
+=======
+                                Style="{StaticResource TitleItem}" />
+>>>>>>> develop
                         </Grid>
                     </ViewCell>
                 </TableSection>

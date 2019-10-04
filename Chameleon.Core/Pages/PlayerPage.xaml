@@ -30,13 +30,13 @@
                 Grid.Column="0"
                 Grid.Row="0"
                 VerticalOptions="End"
-                Style="{StaticResource TitleText}"/>
+                Style="{StaticResource TitleItem}"/>
             <Label
                 mvx:Bi.nd="Text Source.Album"
                 Grid.Column="0"
                 Grid.Row="1"
                 VerticalOptions="Start"
-                Style="{StaticResource AlbumText}"/>
+                Style="{StaticResource SecondaryDetailText}"/>
             <controls:SelectableButton
                 Grid.Column="1"
                 Grid.Row="0"
@@ -91,14 +91,14 @@
                                         Text="{Binding Key}"
                                         VerticalOptions="Center"
                                         Grid.Column="0"
-                                        Style="{StaticResource Data1}"/>
+                                        Style="{StaticResource PrimaryDetailText}"/>
                                     <Label
                                         Text="{Binding Value}"
                                         VerticalOptions="Center"
                                         MaxLines="3"
                                         LineBreakMode="MiddleTruncation"
                                         Grid.Column="1"
-                                        Style="{StaticResource Data2}"/>
+                                        Style="{StaticResource SecondaryDetailText}"/>
                                 </Grid>
                             </DataTemplate>
                         </BindableLayout.ItemTemplate>

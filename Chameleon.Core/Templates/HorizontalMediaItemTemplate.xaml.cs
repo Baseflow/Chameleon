@@ -3,9 +3,9 @@ using Xamarin.Forms;
 
 namespace Chameleon.Core.Templates
 {
-    public partial class AddToPlaylistItemTemplate : ContentView
+    public partial class HorizontalMediaItemTemplate : ContentView
     {
-        public AddToPlaylistItemTemplate()
+        public HorizontalMediaItemTemplate()
         {
             InitializeComponent();
         }

@@ -24,11 +24,11 @@
     <ContentPage.Content>
         <core:MvxListView
             ItemsSource="{mvx:MvxBind RecentlyPlayedItems}"
-            SelectionMode="Single"
-            RowHeight="60"
-            SelectedItem="{Binding SelectedMediaItem, Mode=TwoWay}"
             ItemClick="{mvx:MvxBind PlayerCommand}"
-            SeparatorVisibility="None">
+            VerticalOptions="FillAndExpand"
+            SeparatorVisibility="None"
+            HasUnevenRows="True"
+            SelectedItem="{Binding SelectedMediaItem, Mode=TwoWay}">
             <core:MvxListView.Header>
                 <StackLayout Spacing="0">
                     <SearchBar
@@ -43,11 +43,11 @@
                     <CollectionView
                         x:Name="MyCollectionView"
                         IsVisible="{Binding IsArtistsVisible, Mode=OneWay}"
-                        mvx:Bi.nd="
-                                    ItemsSource FavoriteArtists;
+                        mvx:Bi.nd="ItemsSource FavoriteArtists;
                                     SelectionChangedCommand OpenArtistCommand;
                                     SelectionChangedCommandParameter SelectedArtist;
-                                    SelectedItem SelectedArtist "
+                                    SelectedItem SelectedArtist"
+                        ItemTemplate="{StaticResource contentItemHorizontalTemplateSelector}"
                         SelectionMode="Single"
                         HeightRequest="250">
                         <CollectionView.ItemsLayout>
@@ -56,16 +56,11 @@
                                 VerticalItemSpacing="1"
                                 HorizontalItemSpacing="0" />
                         </CollectionView.ItemsLayout>
-                        <CollectionView.ItemTemplate>
-                            <DataTemplate>
-                                <templates:HorizontalMediaItemsTemplate />
-                            </DataTemplate>
-                        </CollectionView.ItemTemplate>
                     </CollectionView>
                     <CollectionView
                        IsVisible="{Binding ShowEmptyView}">
                         <CollectionView.EmptyView>
-                             <StackLayout>
+                            <StackLayout>
                                 <ActivityIndicator Color="DimGray"
                                                    mvx:Bi.nd="IsRunning IsLoading"
                                                    HeightRequest="50" />
@@ -102,7 +97,7 @@
                                         Text="{mvx:MvxLang AddAnItem}"
                                         Grid.Column="1"
                                         VerticalOptions="Center"
-                                        Style="{StaticResource MediaItemTitle}" />
+                                        Style="{StaticResource TitleItem}" />
                                     <Grid.GestureRecognizers>
                                         <TapGestureRecognizer Command="{Binding Source={x:Reference Name=thisPage}, Path=BindingContext.DataContext.AddCommand}"/>
                                     </Grid.GestureRecognizers>

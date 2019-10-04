@@ -10,9 +10,7 @@
     xmlns:mm="clr-namespace:MediaManager.Forms;assembly=MediaManager.Forms"
     xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
     xmlns:effects="clr-namespace:Chameleon.Core.Effects"
-    xmlns:controls="clr-namespace:Chameleon.Core.Controls"
-    xmlns:pan="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
-    ios:Page.UseSafeArea="True"
+    xmlns:controls="clr-namespace:Chameleon.Core.Controls" xmlns:pan="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" ios:Page.UseSafeArea="True"
     mc:Ignorable="d"
     x:TypeArguments="viewModels:PlayerViewModel"
     x:Class="Chameleon.Core.Views.PlayerPage"
@@ -53,11 +51,6 @@
     <ContentPage.Content>
         <StackLayout VerticalOptions="FillAndExpand">
             <ScrollView VerticalOptions="FillAndExpand">
-                <StackLayout VerticalOptions="FillAndExpand" Padding="0">
-                    <pan:PancakeView
-                        HorizontalOptions="FillAndExpand"
-                            VerticalOptions="Start"
-                            Margin="24">
                 <StackLayout VerticalOptions="FillAndExpand" Padding="{StaticResource MarginPaddingExtrasmall}">
                     <pan:PancakeView
                         HorizontalOptions="FillAndExpand"

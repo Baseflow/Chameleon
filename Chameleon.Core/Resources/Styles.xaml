@@ -55,11 +55,7 @@
         <Setter Property="CancelButtonColor" Value="{DynamicResource PrimaryTextColor}"/>
         <Setter Property="BackgroundColor" Value="Transparent"/>
         <Setter Property="PlaceholderColor" Value="{DynamicResource PrimaryTextColor}"/>
-<<<<<<< HEAD
-        <Setter Property="FontSize" Value="{DynamicResource SmallTextSize}"/>
-=======
         <Setter Property="FontSize" Value="{DynamicResource TextSizeSmall}"/>
->>>>>>> develop
         <Setter Property="Margin">
             <OnPlatform x:TypeArguments="Thickness"
                         iOS="16,8"
@@ -93,12 +89,7 @@
         <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryColor}"/>
         <Setter Property="CornerRadius" Value="20"/>
         <Setter Property="HeightRequest" Value="40"/>
-        <Setter Property="FontFamily" Value="FiraSans#500"/>
-<<<<<<< HEAD
-        <Setter Property="FontSize" Value="{DynamicResource XSmallTextSize}"/>
-=======
         <Setter Property="FontSize" Value="{DynamicResource TextSizeXsmall}"/>
->>>>>>> develop
     </Style>
 
     <Style TargetType="Button" x:Key="CancelButton" BasedOn="{StaticResource BaseButton}">
@@ -110,25 +101,12 @@
         <Setter Property="FontFamily" Value="FiraSans#400"/>
         <Setter Property="TextColor" Value="{DynamicResource SecondaryTextColor}"/>
         <Setter Property="BackgroundColor" Value="{DynamicResource TertiaryColor}"/>
-<<<<<<< HEAD
-        <Setter Property="FontSize" Value="{DynamicResource SmallTextSize}"/>
-=======
-        <Setter Property="FontSize" Value="{DynamicResource TextSizeSmall}"/>
->>>>>>> develop
     </Style>
 
     <Style TargetType="Entry" x:Key="TextColorEntry">
         <Setter Property="FontFamily" Value="FiraSans#400"/>
-<<<<<<< HEAD
-        <Setter Property="FontSize" Value="{DynamicResource BigTextSize}"/>
-=======
         <Setter Property="FontSize" Value="{DynamicResource TextSizeMedium}"/>
-<<<<<<< HEAD
->>>>>>> develop
-        <Setter Property="TextColor" Value="{DynamicResource TertiaryTextColor}"/>
-=======
         <Setter Property="TextColor" Value="{DynamicResource PrimaryColor}"/>
->>>>>>> develop
     </Style>
 
     <Style TargetType="Label" x:Key="LabelBase">
@@ -190,3 +168,4 @@
     </Style>
 
 </ResourceDictionary>
+

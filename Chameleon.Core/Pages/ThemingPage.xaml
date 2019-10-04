@@ -94,6 +94,48 @@
                             </pan:PancakeView>
                         </Grid>
                     </ViewCell>
+                    <ViewCell BindingContext="{Binding .}">
+                        <Grid Margin="{StaticResource MarginPaddingSmall}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="45" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Label
+                                Text="{mvx:MvxLang CustomTheme}"
+                                Style="{DynamicResource SecondaryHeader}"
+                                Margin="{StaticResource MarginPaddingMedium}"
+                                Grid.ColumnSpan="2"/>
+                             <pan:PancakeView
+                                CornerRadius="8"
+                                IsClippedToBounds="True"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="FillAndExpand"
+                                Elevation="2"
+                                Grid.Row="1"
+                                Grid.ColumnSpan="2"
+                                HasShadow="True"
+                                Margin="{StaticResource MarginPaddingSmall}">
+                                <ImageButton
+                                     HorizontalOptions="FillAndExpand"
+                                     VerticalOptions="FillAndExpand"
+                                     Aspect="AspectFill"
+                                     Source="{Binding }"
+                                     mvx:Bi.nd="Command "/>
+                             </pan:PancakeView>
+
+                                
+
+
+                            </Grid>
+                    </ViewCell>
                 </TableSection>
             </TableRoot>
         </coloredTableView:ColoredTableView>

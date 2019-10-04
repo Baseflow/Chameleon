@@ -673,54 +673,6 @@
     <ImageAsset Include="Assets.xcassets\icon_contextual_rename.imageset\icon_contextual_rename%403x.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\theme_light.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\theme_light.imageset\theme_light.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\theme_light.imageset\theme_light%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\theme_light.imageset\theme_light%403x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\theme_light_on.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\theme_light_on.imageset\theme_light_on.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\theme_light_on.imageset\theme_light_on%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\theme_light_on.imageset\theme_light_on%403x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\theme_dark.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\theme_dark.imageset\theme_dark.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\theme_dark.imageset\theme_dark%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\theme_dark.imageset\theme_dark%403x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\theme_dark_on.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\theme_dark_on.imageset\theme_dark_on.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\theme_dark_on.imageset\theme_dark_on%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\theme_dark_on.imageset\theme_dark_on%403x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\cover_art_placeholder.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
@@ -754,6 +706,22 @@
     <ImageAsset Include="Assets.xcassets\theme_auto.imageset\theme_auto.png" />
     <ImageAsset Include="Assets.xcassets\theme_auto.imageset\theme_auto%402x.png" />
     <ImageAsset Include="Assets.xcassets\theme_auto.imageset\theme_auto%403x.png" />
+    <ImageAsset Include="Assets.xcassets\theme_dark_on.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\theme_dark_on.imageset\theme_dark_on.png" />
+    <ImageAsset Include="Assets.xcassets\theme_dark_on.imageset\theme_dark_on%402x.png" />
+    <ImageAsset Include="Assets.xcassets\theme_dark_on.imageset\theme_dark_on%403x.png" />
+    <ImageAsset Include="Assets.xcassets\theme_dark.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\theme_dark.imageset\theme_dark.png" />
+    <ImageAsset Include="Assets.xcassets\theme_dark.imageset\theme_dark%402x.png" />
+    <ImageAsset Include="Assets.xcassets\theme_dark.imageset\theme_dark%403x.png" />
+    <ImageAsset Include="Assets.xcassets\theme_light.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\theme_light.imageset\theme_light.png" />
+    <ImageAsset Include="Assets.xcassets\theme_light.imageset\theme_light%402x.png" />
+    <ImageAsset Include="Assets.xcassets\theme_light.imageset\theme_light%403x.png" />
+    <ImageAsset Include="Assets.xcassets\theme_light_on.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\theme_light_on.imageset\theme_light_on.png" />
+    <ImageAsset Include="Assets.xcassets\theme_light_on.imageset\theme_light_on%402x.png" />
+    <ImageAsset Include="Assets.xcassets\theme_light_on.imageset\theme_light_on%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -820,6 +788,10 @@
     <Folder Include="Assets.xcassets\playback_controls_time_knob.imageset\" />
     <Folder Include="Assets.xcassets\theme_auto_on.imageset\" />
     <Folder Include="Assets.xcassets\theme_auto.imageset\" />
+    <Folder Include="Assets.xcassets\theme_dark_on.imageset\" />
+    <Folder Include="Assets.xcassets\theme_dark.imageset\" />
+    <Folder Include="Assets.xcassets\theme_light.imageset\" />
+    <Folder Include="Assets.xcassets\theme_light_on.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />

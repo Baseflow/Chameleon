@@ -66,7 +66,7 @@
                                     Margin="10,0,10,0"
                                     Maximum="30"
                                     Minimum="0"
-                                    MinimumTrackColor="{DynamicResource PrimaryColor}"
+                                    MinimumTrackColor="{DynamicResource SecondaryColor}"
                                     MaximumTrackColor="{DynamicResource PrimaryColor}"/>
                         </Grid>
                     </ViewCell>
@@ -97,7 +97,7 @@
                                     mvx:Bi.nd="Value Volume"
                                     Grid.Row="2"
                                     Margin="10,0,10,0"
-                                    MinimumTrackColor="{DynamicResource PrimaryColor}"
+                                    MinimumTrackColor="{DynamicResource SecondaryColor}"
                                     MaximumTrackColor="{DynamicResource PrimaryColor}"/>
                         </Grid>
                     </ViewCell>
@@ -135,14 +135,16 @@
                                     Minimum="-10"
                                     MinimumTrackColor="{DynamicResource PrimaryColor}"
                                     MaximumTrackColor="{DynamicResource PrimaryColor}"/>
-                            <Label Text="L"
+                            <Label Text="{mvx:MvxLang L}"
                                    VerticalTextAlignment="Center"
                                    Grid.Row="2"
-                                   Grid.Column="0" />
-                            <Label Text="R"
+                                   Grid.Column="0"
+                                   Style="{StaticResource PlaybackSettingsValue}"/>
+                            <Label Text="{mvx:MvxLang R}"
                                    VerticalTextAlignment="Center"
                                    Grid.Row="2"
-                                   Grid.Column="2" />
+                                   Grid.Column="2"
+                                   Style="{StaticResource PlaybackSettingsValue}"/>
                         </Grid>
                     </ViewCell>
                     <ViewCell BindingContext="{Binding .}">

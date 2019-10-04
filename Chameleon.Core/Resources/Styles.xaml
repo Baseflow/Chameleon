@@ -111,6 +111,7 @@
 
     <Style TargetType="Label" x:Key="LabelBase">
         <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}"/>
+        <Setter Property="FontFamily" Value="FiraSans#600" />
     </Style>
 
     <Style TargetType="Label" x:Key="PrimaryHeader" BasedOn="{StaticResource LabelBase}">

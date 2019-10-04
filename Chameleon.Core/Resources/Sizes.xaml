@@ -4,7 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="Chameleon.Core.Resources.Sizes">
 
-  <x:Int32 x:Key="TextSizeXmicro">10</x:Int32>
+    <x:Int32 x:Key="TextSizeXmicro">10</x:Int32>
     <x:Int32 x:Key="TextSizeMicro">12</x:Int32>
     <x:Int32 x:Key="TextSizeXsmall">13</x:Int32>
     <x:Int32 x:Key="TextSizeSmall">14</x:Int32>
@@ -24,5 +24,6 @@
     <x:Int32 x:Key="MarginPaddingXxxlarge">48</x:Int32>
     <x:Int32 x:Key="MarginPaddingXxxxlarge">64</x:Int32>
     <x:Int32 x:Key="MarginPaddingXxxxxlarge">72</x:Int32>
+
 </ResourceDictionary>
  

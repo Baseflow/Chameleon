@@ -3,5 +3,9 @@
   "Theming": "Theming",
   "LightTheme": "Light theme",
   "DarkTheme": "Dark theme",
-  "CustomTheme": "Custom theme"
+  "CustomTheme": "Custom theme",
+  "UseCustomTheme": "Use custom theme",
+  "BackgroundColor": "Background color",
+  "PrimaryColor": "Primary color",
+  "ButtonTextColor": "Button text color"
 }

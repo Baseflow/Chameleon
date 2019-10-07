@@ -722,6 +722,14 @@
     <ImageAsset Include="Assets.xcassets\theme_light_on.imageset\theme_light_on.png" />
     <ImageAsset Include="Assets.xcassets\theme_light_on.imageset\theme_light_on%402x.png" />
     <ImageAsset Include="Assets.xcassets\theme_light_on.imageset\theme_light_on%403x.png" />
+    <ImageAsset Include="Assets.xcassets\radio_button_off.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\radio_button_off.imageset\radio_button_off.png" />
+    <ImageAsset Include="Assets.xcassets\radio_button_off.imageset\radio_button_off%402x.png" />
+    <ImageAsset Include="Assets.xcassets\radio_button_off.imageset\radio_button_off%403x.png" />
+    <ImageAsset Include="Assets.xcassets\radio_button_on.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\radio_button_on.imageset\radio_button_on.png" />
+    <ImageAsset Include="Assets.xcassets\radio_button_on.imageset\radio_button_on%402x.png" />
+    <ImageAsset Include="Assets.xcassets\radio_button_on.imageset\radio_button_on%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -792,6 +800,8 @@
     <Folder Include="Assets.xcassets\theme_dark.imageset\" />
     <Folder Include="Assets.xcassets\theme_light.imageset\" />
     <Folder Include="Assets.xcassets\theme_light_on.imageset\" />
+    <Folder Include="Assets.xcassets\radio_button_off.imageset\" />
+    <Folder Include="Assets.xcassets\radio_button_on.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />

@@ -40,6 +40,13 @@ namespace Chameleon.Core.ViewModels
             set => SetProperty(ref _themeAutoImage, value);
         }
 
+        private ImageSource _themeCustomImage = ImageSource.FromFile("radio_button_off");
+        public ImageSource ThemeCustomImage
+        {
+            get => _themeCustomImage;
+            set => SetProperty(ref _themeCustomImage, value);
+        }
+
         private IMvxCommand _themeAutoCommand;
         public IMvxCommand ThemeAutoCommand => _themeAutoCommand ?? (_themeAutoCommand = new MvxCommand(ThemeAuto));
 
@@ -93,18 +100,25 @@ namespace Chameleon.Core.ViewModels
                     ThemeAutoImage = ImageSource.FromFile("theme_auto_on");
                     ThemeLightImage = ImageSource.FromFile("theme_light");
                     ThemeDarkImage = ImageSource.FromFile("theme_dark");
+                    ThemeCustomImage = ImageSource.FromFile("radio_button_off");
                     break;
                 case Models.ThemeMode.Dark:
                     ThemeLightImage = ImageSource.FromFile("theme_light");
                     ThemeDarkImage = ImageSource.FromFile("theme_dark_on");
                     ThemeAutoImage = ImageSource.FromFile("theme_auto");
+                    ThemeCustomImage = ImageSource.FromFile("radio_button_off");
                     break;
                 case Models.ThemeMode.Light:
                     ThemeLightImage = ImageSource.FromFile("theme_light_on");
                     ThemeDarkImage = ImageSource.FromFile("theme_dark");
                     ThemeAutoImage = ImageSource.FromFile("theme_auto");
+                    ThemeCustomImage = ImageSource.FromFile("radio_button_off");
                     break;
                 case Models.ThemeMode.Custom:
+                    ThemeLightImage = ImageSource.FromFile("theme_light");
+                    ThemeDarkImage = ImageSource.FromFile("theme_dark");
+                    ThemeAutoImage = ImageSource.FromFile("theme_auto");
+                    ThemeCustomImage = ImageSource.FromFile("radio_button_on");
                     break;
                 default:
                     break;

@@ -59,6 +59,10 @@ namespace Chameleon.Core.ViewModels
         private IMvxCommand _themeCustomCommand;
         public IMvxCommand ThemeCustomCommand => _themeCustomCommand ?? (_themeCustomCommand = new MvxCommand(ThemeCustom));
 
+        private IMvxAsyncCommand _customPickerCommand;
+        public IMvxAsyncCommand CustomPickerCommand => _customPickerCommand ?? (_customPickerCommand = new MvxAsyncCommand(() => Application.Current.MainPage.Navigation.PopModalAsync()));
+
+
         private void ThemeAuto()
         {
             _themeService.AppTheme = Models.ThemeMode.Auto;

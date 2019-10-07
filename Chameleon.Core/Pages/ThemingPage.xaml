@@ -189,7 +189,7 @@
                                         HeightRequest="45"/>
                                 </Frame>
                             </StackLayout>
-                            </Grid>
+                        </Grid>
                     </ViewCell>
                 </TableSection>
             </TableRoot>

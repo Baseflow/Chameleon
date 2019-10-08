@@ -34,11 +34,11 @@
             <Label
                 mvx:La.ng="Text CustomTheme"
                 Style="{StaticResource PrimaryHeader}"
-                Margin="{StaticResource MarginPaddingXlarge}"
+                Margin="{StaticResource MarginPaddingLarge}"
                 Grid.ColumnSpan="3"/>
             <Label
                 mvx:La.ng="Text Colors"
-                Style="{StaticResource PrimaryHeader}"
+                Style="{StaticResource Title}"
                 Margin="16,0"
                 Grid.ColumnSpan="3"
                 Grid.Row="1"/>

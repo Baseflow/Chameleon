@@ -127,7 +127,7 @@
                                          Padding="16,0,0,0"/>
                                       <ImageButton
                                          Aspect="Fill"
-                                         Source="add_to_playlist"
+                                         Source="icon_list_item_edit_light"
                                          mvx:Bi.nd="Command CustomPickerCommand"
                                          HorizontalOptions="EndAndExpand"
                                          VerticalOptions="Center"/>

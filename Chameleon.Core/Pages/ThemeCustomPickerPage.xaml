@@ -1,16 +1,15 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <core:MvxContentPage
     xmlns:core="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+    xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:forms="http://xamarin.com/schemas/2014/forms"
-    xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModels="clr-namespace:Chameleon.Core.ViewModels;assembly=Chameleon.Core"
-    mc:Ignorable="d"
     x:TypeArguments="viewModels:ThemeCustomPickerViewModel"
-    x:Class="Chameleon.Core.Views.ThemeCustomPickerViewModel">
+    x:Class="Chameleon.Core.Views.ThemeCustomPickerPage">
 
     <ContentPage.Content>
         <StackLayout Orientation="Vertical"

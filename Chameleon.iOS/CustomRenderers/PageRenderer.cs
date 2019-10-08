@@ -1,5 +1,4 @@
 ﻿using System;
-using Chameleon.Core;
 using Chameleon.Core.Helpers;
 using MvvmCross;
 using UIKit;
@@ -41,7 +40,7 @@ namespace Chameleon.iOS.CustomRenderers
             }
         }
 
-        void SetAppTheme()
+        private void SetAppTheme()
         {
             if (this.TraitCollection.UserInterfaceStyle == UIUserInterfaceStyle.Dark)
             {

@@ -9,7 +9,6 @@ using MediaManager.Library;
 using MvvmCross;
 using MvvmCross.Commands;
 using MvvmCross.Forms.Presenters;
-using MvvmCross.Forms.Views;
 using MvvmCross.Localization;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;

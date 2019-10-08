@@ -29,7 +29,7 @@ namespace Chameleon.Core.ViewModels
 
         private void MediaPlayer_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-            if(e.PropertyName == nameof(MediaManager.MediaPlayer.VideoHeight) && VideoWidth > 0)
+            if (e.PropertyName == nameof(MediaManager.MediaPlayer.VideoHeight) && VideoWidth > 0)
             {
                 VideoHeight = VideoWidth / MediaManager.MediaPlayer.VideoAspectRatio;
             }

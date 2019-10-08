@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using Android.Support.V4.Content;
 using Android.Util;
 using Chameleon.Android.Effects;
 using Chameleon.Core.Effects;

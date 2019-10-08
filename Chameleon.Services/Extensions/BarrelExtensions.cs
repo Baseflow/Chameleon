@@ -1,5 +1,4 @@
-﻿using System;
-using MonkeyCache;
+﻿using MonkeyCache;
 
 namespace Chameleon.Services.Extensions
 {
@@ -10,7 +9,7 @@ namespace Chameleon.Services.Extensions
             if (string.IsNullOrWhiteSpace(key) || !source.Exists(key))
                 return defaultValue;
 
-              return source.Get<T>(key);
+            return source.Get<T>(key);
         }
     }
 }

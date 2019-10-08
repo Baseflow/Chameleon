@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Linq;
 using Chameleon.Core.Helpers;
 using Chameleon.Core.Resources;
-using MvvmCross;
 using MvvmCross.Commands;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
@@ -16,7 +14,7 @@ namespace Chameleon.Core.ViewModels
 
         public ThemingViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IThemeService themeService) : base(logProvider, navigationService)
         {
-            _themeService = themeService;
+            _themeService = themeService ?? throw new ArgumentNullException(nameof(themeService));
         }
 
         private ImageSource _themeDarkImage = ImageSource.FromFile("theme_dark");
@@ -33,6 +31,20 @@ namespace Chameleon.Core.ViewModels
             set => SetProperty(ref _themeLightImage, value);
         }
 
+        private ImageSource _themeAutoImage = ImageSource.FromFile("theme_auto");
+        public ImageSource ThemeAutoImage
+        {
+            get => _themeAutoImage;
+            set => SetProperty(ref _themeAutoImage, value);
+        }
+
+        private ImageSource _themeCustomImage = ImageSource.FromFile("radio_button_off");
+        public ImageSource ThemeCustomImage
+        {
+            get => _themeCustomImage;
+            set => SetProperty(ref _themeCustomImage, value);
+        }
+
         private IMvxCommand _themeAutoCommand;
         public IMvxCommand ThemeAutoCommand => _themeAutoCommand ?? (_themeAutoCommand = new MvxCommand(ThemeAuto));
 
@@ -44,6 +56,9 @@ namespace Chameleon.Core.ViewModels
 
         private IMvxCommand _themeCustomCommand;
         public IMvxCommand ThemeCustomCommand => _themeCustomCommand ?? (_themeCustomCommand = new MvxCommand(ThemeCustom));
+
+        private IMvxAsyncCommand _customPickerCommand;
+        public IMvxAsyncCommand CustomPickerCommand => _customPickerCommand ?? (_customPickerCommand = new MvxAsyncCommand(() => NavigationService.Navigate<ThemeCustomPickerViewModel>()));
 
         private void ThemeAuto()
         {
@@ -72,6 +87,13 @@ namespace Chameleon.Core.ViewModels
 
             var colors = _themeService.CustomColors ?? new DarkColors();
             colors["PrimaryBackgroundColor"] = Color.FromHex("#FF30313C");
+            colors["SecondaryBackgroundColor"] = Color.FromHex("#FF393A47");
+            colors["PrimaryColor"] = Color.FromHex("#FF252525");
+            colors["SecondaryColor"] = Color.FromHex("#FFDA3434");
+            colors["TertiaryColor"] = Color.FromHex("#FFE3E5F6");
+            colors["PrimaryTextColor"] = Color.FromHex("#FFFFFFFF");
+            colors["SecondaryTextColor"] = Color.FromHex("#FF6C6E81");
+            colors["TertiaryTextColor"] = Color.FromHex("#FFE3E5F6");
 
             _themeService.CustomColors = colors;
             _themeService.UpdateTheme();
@@ -83,16 +105,28 @@ namespace Chameleon.Core.ViewModels
             switch (_themeService.AppTheme)
             {
                 case Models.ThemeMode.Auto:
+                    ThemeAutoImage = ImageSource.FromFile("theme_auto_on");
+                    ThemeLightImage = ImageSource.FromFile("theme_light");
+                    ThemeDarkImage = ImageSource.FromFile("theme_dark");
+                    ThemeCustomImage = ImageSource.FromFile("radio_button_off");
                     break;
                 case Models.ThemeMode.Dark:
                     ThemeLightImage = ImageSource.FromFile("theme_light");
                     ThemeDarkImage = ImageSource.FromFile("theme_dark_on");
+                    ThemeAutoImage = ImageSource.FromFile("theme_auto");
+                    ThemeCustomImage = ImageSource.FromFile("radio_button_off");
                     break;
                 case Models.ThemeMode.Light:
                     ThemeLightImage = ImageSource.FromFile("theme_light_on");
                     ThemeDarkImage = ImageSource.FromFile("theme_dark");
+                    ThemeAutoImage = ImageSource.FromFile("theme_auto");
+                    ThemeCustomImage = ImageSource.FromFile("radio_button_off");
                     break;
                 case Models.ThemeMode.Custom:
+                    ThemeLightImage = ImageSource.FromFile("theme_light");
+                    ThemeDarkImage = ImageSource.FromFile("theme_dark");
+                    ThemeAutoImage = ImageSource.FromFile("theme_auto");
+                    ThemeCustomImage = ImageSource.FromFile("radio_button_on");
                     break;
                 default:
                     break;
@@ -102,7 +136,6 @@ namespace Chameleon.Core.ViewModels
         public override void ViewAppearing()
         {
             base.ViewAppearing();
-
             UpdateThemeImages();
         }
     }

@@ -35,7 +35,7 @@ namespace Chameleon.Core.Helpers
             switch (AppTheme)
             {
                 case ThemeMode.Auto:
-                    if(themeMode == ThemeMode.Dark)
+                    if (themeMode == ThemeMode.Dark)
                         ThemeDark();
                     else
                         ThemeLight();

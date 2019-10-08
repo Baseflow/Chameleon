@@ -1,8 +1,11 @@
-﻿using Android.App;
+﻿using System;
+using Android.App;
 using Android.Content.PM;
+using Android.Content.Res;
 using Android.OS;
 using Android.Runtime;
 using Chameleon.Core;
+using Chameleon.Core.Helpers;
 using Chameleon.Core.ViewModels;
 using MediaManager;
 using MvvmCross;
@@ -19,7 +22,7 @@ namespace Chameleon.Android
         Icon = "@mipmap/icon",
         Theme = "@style/MainTheme.Launcher",
         MainLauncher = true,
-        ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+        ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode)]
     [IntentFilter(new[] { Intent.ActionSend, Intent.ActionSendMultiple, Intent.ActionView }, Categories = new[] { Intent.CategoryDefault, Intent.CategoryBrowsable, Intent.CategoryAppMusic }, DataMimeTypes = new[] { "video/*", "audio/*" }, Label = "@string/app_name")]
     public class MainActivity : MvxFormsAppCompatActivity<Setup, Core.App, FormsApp>
     {
@@ -38,10 +41,17 @@ namespace Chameleon.Android
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
         }
 
+        protected override void OnStart()
+        {
+            base.OnStart();
+            UpdateTheme(Resources.Configuration);
+        }
+
         protected override void OnResume()
         {
             base.OnResume();
             HandleIntent();
+            UpdateTheme(Resources.Configuration);
         }
 
         private async void HandleIntent()
@@ -49,6 +59,31 @@ namespace Chameleon.Android
             if (await CrossMediaManager.Android.PlayFromIntent(Intent))
             {
                 await Mvx.IoCProvider.Resolve<IMvxNavigationService>().Navigate<PlayerViewModel>();
+            }
+        }
+
+        public override void OnConfigurationChanged(Configuration newConfig)
+        {
+            base.OnConfigurationChanged(newConfig);
+            UpdateTheme(newConfig);
+        }
+
+        private void UpdateTheme(Configuration newConfig)
+        {
+            if (Build.VERSION.SdkInt >= BuildVersionCodes.Froyo)
+            {
+                var uiModeFlags = newConfig.UiMode & UiMode.NightMask;
+                switch (uiModeFlags)
+                {
+                    case UiMode.NightYes:
+                        Mvx.IoCProvider.Resolve<IThemeService>().UpdateTheme(Core.Models.ThemeMode.Dark);
+                        break;
+                    case UiMode.NightNo:
+                        Mvx.IoCProvider.Resolve<IThemeService>().UpdateTheme(Core.Models.ThemeMode.Light);
+                        break;
+                    default:
+                        throw new NotSupportedException($"UiMode {uiModeFlags} not supported");
+                }
             }
         }
 

@@ -53,7 +53,7 @@ namespace Chameleon.Core.ViewModels
                     MediaItems.ReplaceWith(mediaItems);
                     await RaisePropertyChanged(nameof(QueueTitle));
                 }
-           
+
             }
             catch (Exception)
             {

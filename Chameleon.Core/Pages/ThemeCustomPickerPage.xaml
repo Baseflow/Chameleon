@@ -19,7 +19,7 @@
 
     <ContentPage.Content>
     
-         <Grid>
+        <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
@@ -32,16 +32,16 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Label
-               mvx:La.ng="Text CustomTheme"
-               Style="{StaticResource PrimaryHeader}"
-               Margin="{StaticResource MarginPaddingXlarge}"
-               Grid.ColumnSpan="3"/>
+                mvx:La.ng="Text CustomTheme"
+                Style="{StaticResource PrimaryHeader}"
+                Margin="{StaticResource MarginPaddingXlarge}"
+                Grid.ColumnSpan="3"/>
             <Label
-               mvx:La.ng="Text Colors"
-               Style="{StaticResource PrimaryHeader}"
-               Margin="16,0"
-               Grid.ColumnSpan="3"
-               Grid.Row="1"/>
+                mvx:La.ng="Text Colors"
+                Style="{StaticResource PrimaryHeader}"
+                Margin="16,0"
+                Grid.ColumnSpan="3"
+                Grid.Row="1"/>
             <StackLayout
                 Orientation="Vertical"
                 Grid.Row="2"
@@ -89,6 +89,6 @@
                         BackgroundColor="PowderBlue"/>
                 </Frame>
             </StackLayout>
-      </Grid>
+        </Grid>
     </ContentPage.Content>
 </core:MvxContentPage>

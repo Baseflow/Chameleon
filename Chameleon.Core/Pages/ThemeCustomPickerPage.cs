@@ -9,7 +9,7 @@ namespace Chameleon.Core.Views
     // by visiting https://aka.ms/xamarinforms-previewer
     [DesignTimeVisible(false)]
     [MvxContentPagePresentation(WrapInNavigationPage = true)]
-    public partial class ThemeCustomPickerPage : MvxContentPage<ThemeCustomPickerPage>
+    public partial class ThemeCustomPickerPage : MvxContentPage<ThemeCustomPickerViewModel>
     {
         public ThemeCustomPickerPage()
         {

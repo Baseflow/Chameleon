@@ -10,7 +10,7 @@
     xmlns:viewModels="clr-namespace:Chameleon.Core.ViewModels;assembly=Chameleon.Core"
     mc:Ignorable="d"
     x:TypeArguments="viewModels:ThemeCustomPickerViewModel"
-    x:Class="Chameleon.Core.Views.ThemeCustomPickerPage">
+    x:Class="Chameleon.Core.Views.ThemeCustomPickerViewModel">
 
     <ContentPage.Content>
         <StackLayout Orientation="Vertical"

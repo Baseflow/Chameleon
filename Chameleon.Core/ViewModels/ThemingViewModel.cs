@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Threading.Tasks;
 using Chameleon.Core.Helpers;
 using Chameleon.Core.Resources;
 using MvvmCross;
@@ -60,8 +61,7 @@ namespace Chameleon.Core.ViewModels
         public IMvxCommand ThemeCustomCommand => _themeCustomCommand ?? (_themeCustomCommand = new MvxCommand(ThemeCustom));
 
         private IMvxAsyncCommand _customPickerCommand;
-        public IMvxAsyncCommand CustomPickerCommand => _customPickerCommand ?? (_customPickerCommand = new MvxAsyncCommand(() => Application.Current.MainPage.Navigation.PopModalAsync()));
-
+        public IMvxAsyncCommand CustomPickerCommand => _customPickerCommand ?? (_customPickerCommand = new MvxAsyncCommand(() => NavigationService.Navigate<ThemeCustomPickerViewModel>()));
 
         private void ThemeAuto()
         {

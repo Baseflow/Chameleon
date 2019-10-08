@@ -96,27 +96,22 @@
                         </Grid>
                     </ViewCell>
                     <ViewCell BindingContext="{Binding .}">
-                        <Label
-                            Text="{mvx:MvxLang CustomTheme}"
-                            Style="{DynamicResource PrimaryHeader}"
-                            Margin="{StaticResource MarginPaddingXlarge}"/>
-                    </ViewCell>
-                    <ViewCell BindingContext="{Binding .}">
                         <Grid >
                             <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
                                 <RowDefinition Height="45" />
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
+                            <Label
+                                Text="{mvx:MvxLang CustomTheme}"
+                                Style="{DynamicResource PrimaryHeader}"
+                                Margin="{StaticResource MarginPaddingXlarge}"/>
                             <Frame
                                 BackgroundColor="{DynamicResource PrimaryColor}"
                                 CornerRadius="8"
-                                Grid.Row="0"
-                                Grid.ColumnSpan="2"
+                                Grid.Row="1"
                                 Padding="{StaticResource MarginPaddingMedium}"
                                 Margin="16,0,16,0">
                                   <StackLayout Orientation="Horizontal">
@@ -135,60 +130,6 @@
                                         <TapGestureRecognizer Command="{Binding Source={x:Reference Name=thisPage}, Path=BindingContext.DataContext.ThemeCustomCommand}"/>
                                  </Frame.GestureRecognizers>
                             </Frame>
-                            <StackLayout
-                                Orientation="Vertical"
-                                Grid.Row="1"
-                                Grid.Column="0"
-                                Margin="16,16,16,0">
-                                <Label
-                                    Text="{mvx:MvxLang BackgroundColor}"
-                                    Style="{StaticResource Title}"/>
-                                <Frame
-                                    CornerRadius="8"
-                                    Padding="{StaticResource MarginPaddingExtrasmall}">
-                                    <Button
-                                        HorizontalOptions="FillAndExpand"
-                                        VerticalOptions="FillAndExpand"
-                                        BackgroundColor="Yellow"
-                                        HeightRequest="45"/>
-                                </Frame>
-                            </StackLayout>
-                            <StackLayout
-                                Orientation="Vertical"
-                                Grid.Row="1"
-                                Grid.Column="1"
-                                Margin="16,16,16,0">
-                                <Label
-                                    Text="{mvx:MvxLang PrimaryColor}"
-                                    Style="{StaticResource Title}"/>
-                                <Frame
-                                    CornerRadius="8"
-                                    Padding="{StaticResource MarginPaddingExtrasmall}">
-                                    <Button
-                                        HorizontalOptions="FillAndExpand"
-                                        VerticalOptions="FillAndExpand"
-                                        BackgroundColor="Purple"
-                                        HeightRequest="45"/>
-                                </Frame>
-                            </StackLayout>
-                            <StackLayout
-                                Orientation="Vertical"
-                                Grid.Row="2"
-                                Grid.Column="0"
-                                Margin="16,8,16,0">
-                                <Label
-                                    Text="{mvx:MvxLang ButtonTextColor}"
-                                    Style="{StaticResource Title}"/>
-                                <Frame
-                                    CornerRadius="8"
-                                    Padding="{StaticResource MarginPaddingExtrasmall}">
-                                    <Button
-                                        HorizontalOptions="FillAndExpand"
-                                        VerticalOptions="FillAndExpand"
-                                        BackgroundColor="PowderBlue"
-                                        HeightRequest="45"/>
-                                </Frame>
-                            </StackLayout>
                         </Grid>
                     </ViewCell>
                 </TableSection>

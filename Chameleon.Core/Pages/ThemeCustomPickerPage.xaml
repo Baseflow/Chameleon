@@ -11,17 +11,29 @@
     x:TypeArguments="viewModels:ThemeCustomPickerViewModel"
     x:Class="Chameleon.Core.Views.ThemeCustomPickerPage">
 
+     <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center" Spacing="10" HeightRequest="30">
+            <Image Source="chameleon_logo"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+
     <ContentPage.Content>
-        <StackLayout Orientation="Vertical"
-                     Margin="{StaticResource MarginPaddinglarge}">
+    
+         <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
             <Label
                mvx:La.ng="Text CustomTheme"
                Style="{StaticResource PrimaryHeader}"
                Margin="{StaticResource MarginPaddingXlarge}"/>
-            <Label
-                Text="{Binding }"/>
-            <Image
-                BackgroundColor="AliceBlue"/>
-        </StackLayout>
+
+      </Grid>
     </ContentPage.Content>
 </core:MvxContentPage>

@@ -1,7 +1,8 @@
 ﻿{
   "Title": "Theme Custom Picker",
   "CustomTheme": "Custom theme",
-  "BackgroundColor": "Background color",
-  "PrimaryColor": "Primary color",
-  "ButtonTextColor": "Button text color"
+  "BackgroundColor": "Background",
+  "PrimaryColor": "Primary",
+  "ButtonTextColor": "Button text",
+  "Colors" : "Colors"
 }

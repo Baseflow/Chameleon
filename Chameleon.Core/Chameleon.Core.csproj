@@ -35,7 +35,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="**\*.xaml.cs" DependentUpon="ThemeCustomPickerPage.xaml" />
     <None Remove="Resources\**\*.json" />
     <EmbeddedResource Include="Resources\**\*.json" />
   </ItemGroup>

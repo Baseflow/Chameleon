@@ -101,7 +101,7 @@ namespace Chameleon.Core.ViewModels
 
             IsLoading = false;
         }
-     
+
 
         private async Task Play(IMediaItem mediaItem)
         {

@@ -7,7 +7,6 @@ using MvvmCross.Commands;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
-using Xamarin.Forms;
 
 namespace Chameleon.Core.ViewModels
 {

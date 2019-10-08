@@ -2,11 +2,9 @@
 using System.Linq;
 using System.Threading.Tasks;
 using Acr.UserDialogs;
-using Chameleon.Core.Helpers;
 using MediaManager;
 using MediaManager.Library;
 using MediaManager.Media;
-using MediaManager.Playback;
 using MvvmCross.Commands;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
@@ -28,7 +26,7 @@ namespace Chameleon.Core.ViewModels
         }
 
         public MvxObservableCollection<IMediaItem> MediaItems { get; set; } = new MvxObservableCollection<IMediaItem>();
-        
+
         private IMediaItem _selectedMediaItem;
         public IMediaItem SelectedMediaItem
         {
@@ -170,7 +168,7 @@ namespace Chameleon.Core.ViewModels
             ActiveMediaItem = MediaManager.Queue.Current;
             CurrentPlaylistSource = null;
             CurrentPlaylistSource = CurrentPlaylist;
-            
+
             Progress = MediaManager.Position.TotalSeconds / MediaManager.Duration.TotalSeconds;
             MediaManager.PositionChanged += MediaManager_PositionChanged;
             TimeLeft = $"-{(MediaManager.Position - MediaManager.Duration).ToString(@"mm\:ss")}";

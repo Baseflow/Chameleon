@@ -1,7 +1,7 @@
 ﻿using System;
+using Chameleon.Services.Extensions;
 using MediaManager;
 using MonkeyCache;
-using Chameleon.Services.Extensions;
 
 namespace Chameleon.Services.Services
 {
@@ -16,7 +16,7 @@ namespace Chameleon.Services.Services
         private const string CLEAR_QUEUE_ON_PLAY_KEY = "clearQueueOnPlay";
         private const string KEEP_SCREEN_ON_KEY = "keepScreenOn";
 
-        public SettingsService (IBarrel barrel, IMediaManager mediaManager)
+        public SettingsService(IBarrel barrel, IMediaManager mediaManager)
         {
             _mediaManager = mediaManager ?? throw new ArgumentNullException(nameof(mediaManager));
             _barrel = barrel ?? throw new ArgumentNullException(nameof(barrel));
@@ -30,7 +30,7 @@ namespace Chameleon.Services.Services
 
         public int Volume
         {
-            get =>  _barrel.Get(VOLUME_KEY, _mediaManager.Volume.MaxVolume);
+            get => _barrel.Get(VOLUME_KEY, _mediaManager.Volume.MaxVolume);
             set => _barrel.Add(VOLUME_KEY, value, TimeSpan.MaxValue);
         }
 

@@ -21,7 +21,7 @@ namespace Chameleon.Core.Templates
             switch (item)
             {
                 case IMediaItem mediaItem:
-                    if(Horizontal)
+                    if (Horizontal)
                         return HorizontalMediaItemTemplate;
                     else if (ReferenceEquals(mediaItem, MediaManager.Queue.Current))
                         return CurrentMediaItemTemplate;

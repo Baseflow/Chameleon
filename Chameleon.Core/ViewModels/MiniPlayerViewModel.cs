@@ -2,7 +2,6 @@
 using System.Threading.Tasks;
 using MediaManager;
 using MediaManager.Library;
-using MediaManager.Playback;
 using MediaManager.Queue;
 using MvvmCross.Commands;
 using MvvmCross.Logging;

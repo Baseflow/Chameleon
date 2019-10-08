@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Linq;
-using System.Threading.Tasks;
 using Chameleon.Core.Helpers;
 using Chameleon.Core.Resources;
-using MvvmCross;
 using MvvmCross.Commands;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
@@ -17,7 +14,7 @@ namespace Chameleon.Core.ViewModels
 
         public ThemingViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IThemeService themeService) : base(logProvider, navigationService)
         {
-            _themeService = themeService;
+            _themeService = themeService ?? throw new ArgumentNullException(nameof(themeService));
         }
 
         private ImageSource _themeDarkImage = ImageSource.FromFile("theme_dark");
@@ -139,7 +136,6 @@ namespace Chameleon.Core.ViewModels
         public override void ViewAppearing()
         {
             base.ViewAppearing();
-
             UpdateThemeImages();
         }
     }

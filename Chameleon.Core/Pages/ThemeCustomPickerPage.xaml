@@ -28,12 +28,67 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Label
                mvx:La.ng="Text CustomTheme"
                Style="{StaticResource PrimaryHeader}"
-               Margin="{StaticResource MarginPaddingXlarge}"/>
-
+               Margin="{StaticResource MarginPaddingXlarge}"
+               Grid.ColumnSpan="3"/>
+            <StackLayout
+                Orientation="Vertical"
+                Grid.Row="1"
+                Grid.Column="0"
+                Margin="16,16,16,0">
+                <Label
+                    Text="{mvx:MvxLang BackgroundColor}"
+                    Style="{StaticResource Title}"/>
+                <Frame
+                    CornerRadius="8"
+                    Padding="{StaticResource MarginPaddingExtrasmall}">
+                    <Button
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand"
+                        BackgroundColor="Yellow"
+                        HeightRequest="45"/>
+                </Frame>
+            </StackLayout>
+            <StackLayout
+                Orientation="Vertical"
+                Grid.Row="1"
+                Grid.Column="1"
+                Margin="16,16,16,0">
+                <Label
+                    Text="{mvx:MvxLang PrimaryColor}"
+                    Style="{StaticResource Title}"/>
+                <Frame
+                    CornerRadius="8"
+                    Padding="{StaticResource MarginPaddingExtrasmall}">
+                    <Button
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand"
+                        BackgroundColor="Purple"
+                        HeightRequest="45"/>
+                </Frame>
+            </StackLayout>
+            <StackLayout
+                Orientation="Vertical"
+                Grid.Row="1"
+                Grid.Column="2"
+                Margin="16,8,16,0">
+                <Label
+                    Text="{mvx:MvxLang ButtonTextColor}"
+                    Style="{StaticResource Title}"/>
+                <Frame
+                    CornerRadius="8"
+                    Padding="{StaticResource MarginPaddingExtrasmall}">
+                    <Button
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand"
+                        BackgroundColor="PowderBlue"
+                        HeightRequest="45"/>
+                </Frame>
+            </StackLayout>
       </Grid>
     </ContentPage.Content>
 </core:MvxContentPage>

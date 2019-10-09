@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+
+  <style name="MainTheme" parent="MainTheme.Base">
+  </style>
+  
+  <!-- Base theme applied no matter what API -->
+  <style name="MainTheme.Base" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <item name="android:windowBackground">@color/colorPrimary</item>
+    <item name="android:windowNoTitle">true</item>
+    <item name="windowActionBar">false</item>
+    <item name="windowActionModeOverlay">true</item>
+    
+    <item name="colorPrimary">@color/colorPrimary</item>
+    <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    <item name="colorAccent">@color/colorAccent</item>
+
+    <item name="android:navigationBarColor">@color/colorPrimary</item>
+
+    <item name="android:datePickerDialogTheme">@style/MainTheme.Dialog</item>
+
+    <item name="android:textAllCaps">false</item>
+
+    <item name="android:colorActivatedHighlight">@android:color/transparent</item>
+  </style>
+
+  <style name="MainTheme.Dialog" parent="Theme.MaterialComponents.Dialog">
+    <item name="colorAccent">@color/colorAccent</item>
+    <item name="android:windowBackground">@color/colorPrimary</item>
+  </style>
+
+  <style name="MainTheme.Launcher" parent="MainTheme.Base">
+    <item name="android:windowBackground">@drawable/launch_screen</item>
+    <item name="android:statusBarColor">@android:color/transparent</item>
+    <item name="android:navigationBarColor">@android:color/transparent</item>
+    <item name="android:windowTranslucentStatus">false</item>
+    <item name="android:windowTranslucentNavigation">false</item>
+  </style>
+
+  <style name="MainTheme.Alert"
+		parent="Theme.MaterialComponents.Dialog.Alert">
+
+    <item name="colorPrimary">@color/colorPrimary</item>
+    <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    <item name="colorAccent">@color/colorAccent</item>
+
+    <item name="android:windowNoTitle">true</item>
+    <item name="android:windowBackground">@color/colorPrimary</item>
+
+    <item name="materialButtonStyle">@style/Widget.MaterialComponents.Button.TextButton</item>
+  </style>
+
+  <style name="MainTheme.BottomSheet"
+		parent="Theme.MaterialComponents.BottomSheetDialog">
+
+    <item name="colorPrimary">@color/colorPrimary</item>
+    <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    <item name="colorAccent">@color/colorAccent</item>
+    
+  </style>
+
+
+</resources>

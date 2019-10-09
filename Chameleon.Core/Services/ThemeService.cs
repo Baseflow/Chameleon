@@ -24,7 +24,14 @@ namespace Chameleon.Core.Helpers
 
         public ResourceDictionary CustomColors
         {
-            get => _barrel.Get<ResourceDictionary>(AppSettings.CustomColorsKey);
+            get
+            {
+                var customColors = _barrel.Get<ResourceDictionary>(AppSettings.CustomColorsKey);
+                if (customColors == null)
+                    customColors = new LightColors();
+                return customColors;
+            }
+
             set => _barrel.Add(AppSettings.CustomColorsKey, value, TimeSpan.MaxValue);
         }
 

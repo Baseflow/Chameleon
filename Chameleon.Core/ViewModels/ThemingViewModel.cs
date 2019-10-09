@@ -84,18 +84,6 @@ namespace Chameleon.Core.ViewModels
         private void ThemeCustom()
         {
             _themeService.AppTheme = Models.ThemeMode.Custom;
-
-            var colors = _themeService.CustomColors ?? new DarkColors();
-            colors["PrimaryBackgroundColor"] = Color.FromHex("#FF30313C");
-            colors["SecondaryBackgroundColor"] = Color.FromHex("#FF393A47");
-            colors["PrimaryColor"] = Color.FromHex("#FF252525");
-            colors["SecondaryColor"] = Color.FromHex("#FFDA3434");
-            colors["TertiaryColor"] = Color.FromHex("#FFE3E5F6");
-            colors["PrimaryTextColor"] = Color.FromHex("#FFFFFFFF");
-            colors["SecondaryTextColor"] = Color.FromHex("#FF6C6E81");
-            colors["TertiaryTextColor"] = Color.FromHex("#FFE3E5F6");
-
-            _themeService.CustomColors = colors;
             _themeService.UpdateTheme();
             UpdateThemeImages();
         }

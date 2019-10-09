@@ -33,9 +33,9 @@ namespace Chameleon.Android
             switch (AppTheme)
             {
                 case ThemeMode.Auto:
-                    if (AppCompatDelegate.DefaultNightMode != AppCompatDelegate.ModeNightAuto)
+                    if (AppCompatDelegate.DefaultNightMode != AppCompatDelegate.ModeNightFollowSystem)
                     {
-                        AppCompatDelegate.DefaultNightMode = AppCompatDelegate.ModeNightAuto;
+                        AppCompatDelegate.DefaultNightMode = AppCompatDelegate.ModeNightFollowSystem;
                         changed = true;
                     }
                     break;
@@ -54,9 +54,9 @@ namespace Chameleon.Android
                     }
                     break;
                 case ThemeMode.Custom:
-                    if (AppCompatDelegate.DefaultNightMode != AppCompatDelegate.ModeNightAuto)
+                    if (AppCompatDelegate.DefaultNightMode != AppCompatDelegate.ModeNightFollowSystem)
                     {
-                        AppCompatDelegate.DefaultNightMode = AppCompatDelegate.ModeNightAuto;
+                        AppCompatDelegate.DefaultNightMode = AppCompatDelegate.ModeNightFollowSystem;
                         changed = true;
                     }
                     break;

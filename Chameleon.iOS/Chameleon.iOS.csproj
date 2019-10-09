@@ -136,97 +136,25 @@
     <ImageAsset Include="Assets.xcassets\playback_controls_pause_button.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_pause_button.imageset\playback_controls_pause_button.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_pause_button.imageset\playback_controls_pause_button%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_pause_button.imageset\playback_controls_pause_button%403x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\icon_close.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\icon_close.imageset\icon_close.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\icon_close.imageset\icon_close%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\icon_close.imageset\icon_close%403x.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\tab_bar_icon_home.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\tab_bar_icon_home.imageset\tab_bar_icon_home.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\tab_bar_icon_home.imageset\tab_bar_icon_home%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\tab_bar_icon_home.imageset\tab_bar_icon_home%403x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\tab_bar_browse.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\tab_bar_browse.imageset\tab_bar_browse.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\tab_bar_browse.imageset\tab_bar_browse%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\tab_bar_browse.imageset\tab_bar_browse%403x.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\tab_bar_browse_active.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\tab_bar_browse_active.imageset\tab_bar_browse_active.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\tab_bar_browse_active.imageset\tab_bar_browse_active%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\tab_bar_browse_active.imageset\tab_bar_browse_active%403x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\tab_bar_settings.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\tab_bar_settings.imageset\tab_bar_settings.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\tab_bar_settings.imageset\tab_bar_settings%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\tab_bar_settings.imageset\tab_bar_settings%403x.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\tab_bar_icon_home_active.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\tab_bar_icon_home_active.imageset\tab_bar_icon_home_active.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\tab_bar_icon_home_active.imageset\tab_bar_icon_home_active%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\tab_bar_icon_home_active.imageset\tab_bar_icon_home_active%403x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\tab_bar_settings_active.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\tab_bar_settings_active.imageset\tab_bar_settings_active.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\tab_bar_settings_active.imageset\tab_bar_settings_active%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\tab_bar_settings_active.imageset\tab_bar_settings_active%403x.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\iTunesArtwork%402x.png">
@@ -292,241 +220,40 @@
     <ImageAsset Include="Assets.xcassets\playback_controls_add_to_playlist.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_add_to_playlist.imageset\playback_controls_add_to_playlist.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_add_to_playlist.imageset\playback_controls_add_to_playlist%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_add_to_playlist.imageset\playback_controls_add_to_playlist%403x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\icon_chromecast.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\icon_chromecast.imageset\icon_chromecast.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\icon_chromecast.imageset\icon_chromecast%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\icon_chromecast.imageset\icon_chromecast%403x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_more.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_more.imageset\playback_controls_more.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_more.imageset\playback_controls_more%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_more.imageset\playback_controls_more%403x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\icon_hamburger.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\icon_hamburger.imageset\icon_hamburger.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\icon_hamburger.imageset\icon_hamburger%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\icon_hamburger.imageset\icon_hamburger%403x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\icon_airplay.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\icon_airplay.imageset\icon_airplay.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\icon_airplay.imageset\icon_airplay%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\icon_airplay.imageset\icon_airplay%403x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\playback_controls_queue.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_queue.imageset\playback_controls_queue.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_queue.imageset\playback_controls_queue%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_queue.imageset\playback_controls_queue%403x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_repeat.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_repeat.imageset\playback_controls_repeat.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_repeat.imageset\playback_controls_repeat%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_repeat.imageset\playback_controls_repeat%403x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_shuffle.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_shuffle.imageset\playback_controls_shuffle.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_shuffle.imageset\playback_controls_shuffle%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_shuffle.imageset\playback_controls_shuffle%403x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_favorite.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_favorite.imageset\playback_controls_favorite.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_favorite.imageset\playback_controls_favorite%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_favorite.imageset\playback_controls_favorite%403x.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\playback_controls_skip_backwards.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_skip_backwards.imageset\playback_controls_skip_backwards.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_skip_backwards.imageset\playback_controls_skip_backwards%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_skip_backwards.imageset\playback_controls_skip_backwards%403x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\playback_controls_skip_forward.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_skip_forward.imageset\playback_controls_skip_forward.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_skip_forward.imageset\playback_controls_skip_forward%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_skip_forward.imageset\playback_controls_skip_forward%403x.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\playback_controls_previous.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_previous.imageset\playback_controls_previous.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_previous.imageset\playback_controls_previous%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_previous.imageset\playback_controls_previous%403x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\playback_controls_next.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_next.imageset\playback_controls_next.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_next.imageset\playback_controls_next%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_next.imageset\playback_controls_next%403x.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\playback_controls_play_button.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_play_button.imageset\playback_controls_play_button.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_play_button.imageset\playback_controls_play_button%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_play_button.imageset\playback_controls_play_button%403x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\playback_controls_repeat_off.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_repeat_off.imageset\playback_controls_repeat_off.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_repeat_off.imageset\playback_controls_repeat_off%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_repeat_off.imageset\playback_controls_repeat_off%403x.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\playback_controls_shuffle_off.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_shuffle_off.imageset\playback_controls_shuffle_off.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_shuffle_off.imageset\playback_controls_shuffle_off%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_shuffle_off.imageset\playback_controls_shuffle_off%403x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\playback_controls_favorite_off.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_favorite_off.imageset\playback_controls_favorite_off.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_favorite_off.imageset\playback_controls_favorite_off%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_favorite_off.imageset\playback_controls_favorite_off%403x.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\playback_controls_favorite_on.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_favorite_on.imageset\playback_controls_favorite_on.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_favorite_on.imageset\playback_controls_favorite_on%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_favorite_on.imageset\playback_controls_favorite_on%403x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\disclosure_button.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\disclosure_button.imageset\disclosure_button.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\disclosure_button.imageset\disclosure_button%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\disclosure_button.imageset\disclosure_button%403x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\icon_more.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\icon_more.imageset\icon_more.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\icon_more.imageset\icon_more%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\icon_more.imageset\icon_more%403x.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\icon_plus.imageset\Contents.json">
@@ -541,136 +268,22 @@
     <ImageAsset Include="Assets.xcassets\icon_plus.imageset\icon_plus%403x.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\add_to_playlist.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\add_to_playlist.imageset\add_to_playlist.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\add_to_playlist.imageset\add_to_playlist%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\add_to_playlist.imageset\add_to_playlist%403x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\add_to_queue.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\add_to_queue.imageset\add_to_queue.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\add_to_queue.imageset\add_to_queue%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\add_to_queue.imageset\add_to_queue%403x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\share.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\share.imageset\share.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\share.imageset\share%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\share.imageset\share%403x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_speed.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_speed.imageset\playback_speed.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_speed.imageset\playback_speed%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_speed.imageset\playback_speed%403x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\remove_from_queue.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\remove_from_queue.imageset\remove_from_queue.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\remove_from_queue.imageset\remove_from_queue%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\remove_from_queue.imageset\remove_from_queue%403x.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\delete.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\delete.imageset\delete.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\delete.imageset\delete%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\delete.imageset\delete%403x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\download_item.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\download_item.imageset\download_item.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\download_item.imageset\download_item%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\download_item.imageset\download_item%403x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\playback_controls_repeat_on.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_repeat_on.imageset\playback_controls_repeat_on.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_repeat_on.imageset\playback_controls_repeat_on%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_repeat_on.imageset\playback_controls_repeat_on%403x.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\playback_controls_repeat_once_on.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_repeat_once_on.imageset\playback_controls_repeat_once_on.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_repeat_once_on.imageset\playback_controls_repeat_once_on%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_repeat_once_on.imageset\playback_controls_repeat_once_on%403x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\playback_controls_shuffle_on.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_shuffle_on.imageset\playback_controls_shuffle_on.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_shuffle_on.imageset\playback_controls_shuffle_on%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\playback_controls_shuffle_on.imageset\playback_controls_shuffle_on%403x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\icon_contextual_rename.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\icon_contextual_rename.imageset\icon_contextual_rename.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\icon_contextual_rename.imageset\icon_contextual_rename%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\icon_contextual_rename.imageset\icon_contextual_rename%403x.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\cover_art_placeholder.imageset\Contents.json">
@@ -730,14 +343,166 @@
     <ImageAsset Include="Assets.xcassets\radio_button_on.imageset\radio_button_on.png" />
     <ImageAsset Include="Assets.xcassets\radio_button_on.imageset\radio_button_on%402x.png" />
     <ImageAsset Include="Assets.xcassets\radio_button_on.imageset\radio_button_on%403x.png" />
-    <ImageAsset Include="Assets.xcassets\icon_list_item_edit_dark.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\icon_list_item_edit_dark.imageset\icon_list_item_edit_dark.png" />
-    <ImageAsset Include="Assets.xcassets\icon_list_item_edit_dark.imageset\icon_list_item_edit_dark%402x.png" />
-    <ImageAsset Include="Assets.xcassets\icon_list_item_edit_dark.imageset\icon_list_item_edit_dark%403x.png" />
-    <ImageAsset Include="Assets.xcassets\icon_list_item_edit_light.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\icon_list_item_edit_light.imageset\icon_list_item_edit_light.png" />
-    <ImageAsset Include="Assets.xcassets\icon_list_item_edit_light.imageset\icon_list_item_edit_light%402x.png" />
-    <ImageAsset Include="Assets.xcassets\icon_list_item_edit_light.imageset\icon_list_item_edit_light%403x.png" />
+    <ImageAsset Include="Assets.xcassets\delete.imageset\delete.png" />
+    <ImageAsset Include="Assets.xcassets\delete.imageset\delete%402x.png" />
+    <ImageAsset Include="Assets.xcassets\delete.imageset\delete%403x.png" />
+    <ImageAsset Include="Assets.xcassets\delete.imageset\delete-1.png" />
+    <ImageAsset Include="Assets.xcassets\delete.imageset\delete%402x-1.png" />
+    <ImageAsset Include="Assets.xcassets\delete.imageset\delete%403x-1.png" />
+    <ImageAsset Include="Assets.xcassets\disclosure_button.imageset\disclosure_button.png" />
+    <ImageAsset Include="Assets.xcassets\disclosure_button.imageset\disclosure_button%402x.png" />
+    <ImageAsset Include="Assets.xcassets\disclosure_button.imageset\disclosure_button%403x.png" />
+    <ImageAsset Include="Assets.xcassets\disclosure_button.imageset\disclosure_button-1.png" />
+    <ImageAsset Include="Assets.xcassets\disclosure_button.imageset\disclosure_button%402x-1.png" />
+    <ImageAsset Include="Assets.xcassets\disclosure_button.imageset\disclosure_button%403x-1.png" />
+    <ImageAsset Include="Assets.xcassets\icon_close.imageset\icon_close.png" />
+    <ImageAsset Include="Assets.xcassets\icon_close.imageset\icon_close%402x.png" />
+    <ImageAsset Include="Assets.xcassets\icon_close.imageset\icon_close%403x.png" />
+    <ImageAsset Include="Assets.xcassets\icon_close.imageset\icon_close-1.png" />
+    <ImageAsset Include="Assets.xcassets\icon_close.imageset\icon_close%402x-1.png" />
+    <ImageAsset Include="Assets.xcassets\icon_close.imageset\icon_close%403x-1.png" />
+    <ImageAsset Include="Assets.xcassets\icon_contextual_rename.imageset\icon_contextual_rename.png" />
+    <ImageAsset Include="Assets.xcassets\icon_contextual_rename.imageset\icon_contextual_rename%402x.png" />
+    <ImageAsset Include="Assets.xcassets\icon_contextual_rename.imageset\icon_contextual_rename%403x.png" />
+    <ImageAsset Include="Assets.xcassets\icon_contextual_rename.imageset\icon_contextual_rename-1.png" />
+    <ImageAsset Include="Assets.xcassets\icon_contextual_rename.imageset\icon_contextual_rename%402x-1.png" />
+    <ImageAsset Include="Assets.xcassets\icon_contextual_rename.imageset\icon_contextual_rename%403x-1.png" />
+    <ImageAsset Include="Assets.xcassets\icon_list_item_edit.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\icon_list_item_edit.imageset\icon_list_item_edit.png" />
+    <ImageAsset Include="Assets.xcassets\icon_list_item_edit.imageset\icon_list_item_edit%402x.png" />
+    <ImageAsset Include="Assets.xcassets\icon_list_item_edit.imageset\icon_list_item_edit%403x.png" />
+    <ImageAsset Include="Assets.xcassets\icon_more.imageset\icon_more.png" />
+    <ImageAsset Include="Assets.xcassets\icon_more.imageset\icon_more%402x.png" />
+    <ImageAsset Include="Assets.xcassets\icon_more.imageset\icon_more%403x.png" />
+    <ImageAsset Include="Assets.xcassets\icon_more.imageset\icon_more-1.png" />
+    <ImageAsset Include="Assets.xcassets\icon_more.imageset\icon_more%402x-1.png" />
+    <ImageAsset Include="Assets.xcassets\icon_more.imageset\icon_more%403x-1.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_add_to_playlist.imageset\playback_controls_add_to_playlist.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_add_to_playlist.imageset\playback_controls_add_to_playlist%402x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_add_to_playlist.imageset\playback_controls_add_to_playlist%403x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_add_to_playlist.imageset\playback_controls_add_to_playlist-1.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_add_to_playlist.imageset\playback_controls_add_to_playlist%402x-1.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_add_to_playlist.imageset\playback_controls_add_to_playlist%403x-1.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_favorite_off.imageset\playback_controls_favorite_off.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_favorite_off.imageset\playback_controls_favorite_off%402x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_favorite_off.imageset\playback_controls_favorite_off%403x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_favorite_off.imageset\playback_controls_favorite_off-1.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_favorite_off.imageset\playback_controls_favorite_off%402x-1.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_favorite_off.imageset\playback_controls_favorite_off%403x-1.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_favorite_on.imageset\playback_controls_favorite_on.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_favorite_on.imageset\playback_controls_favorite_on%402x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_favorite_on.imageset\playback_controls_favorite_on%403x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_favorite_on.imageset\playback_controls_favorite_on-1.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_favorite_on.imageset\playback_controls_favorite_on%402x-1.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_favorite_on.imageset\playback_controls_favorite_on%403x-1.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_next.imageset\playback_controls_next.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_next.imageset\playback_controls_next%402x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_next.imageset\playback_controls_next%403x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_next.imageset\playback_controls_next-1.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_next.imageset\playback_controls_next%403x-1.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_next.imageset\playback_controls_next%403x-2.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_pause_button.imageset\playback_controls_pause_button.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_pause_button.imageset\playback_controls_pause_button%402x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_pause_button.imageset\playback_controls_pause_button%403x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_pause_button.imageset\playback_controls_pause_button-1.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_pause_button.imageset\playback_controls_pause_button%402x-1.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_pause_button.imageset\playback_controls_pause_button%403x-1.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_play_button.imageset\playback_controls_play_button.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_play_button.imageset\playback_controls_play_button%402x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_play_button.imageset\playback_controls_play_button%403x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_play_button.imageset\playback_controls_play_button-1.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_play_button.imageset\playback_controls_play_button%402x-1.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_play_button.imageset\playback_controls_play_button%403x-1.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_previous.imageset\playback_controls_previous.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_previous.imageset\playback_controls_previous%402x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_previous.imageset\playback_controls_previous%403x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_previous.imageset\playback_controls_previous-1.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_previous.imageset\playback_controls_previous%402x-1.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_previous.imageset\playback_controls_previous%403x-1.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_queue.imageset\playback_controls_queue.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_queue.imageset\playback_controls_queue%402x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_queue.imageset\playback_controls_queue%403x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_queue.imageset\playback_controls_queue-1.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_queue.imageset\playback_controls_queue%402x-1.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_queue.imageset\playback_controls_queue%403x-1.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_repeat_off.imageset\playback_controls_repeat_off.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_repeat_off.imageset\playback_controls_repeat_off%402x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_repeat_off.imageset\playback_controls_repeat_off%403x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_repeat_off.imageset\playback_controls_repeat_off-1.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_repeat_off.imageset\playback_controls_repeat_off%402x-1.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_repeat_off.imageset\playback_controls_repeat_off%403x-1.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_repeat_on.imageset\playback_controls_repeat_on.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_repeat_on.imageset\playback_controls_repeat_on%402x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_repeat_on.imageset\playback_controls_repeat_on%403x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_repeat_on.imageset\playback_controls_repeat_on-1.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_repeat_on.imageset\playback_controls_repeat_on%402x-1.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_repeat_on.imageset\playback_controls_repeat_on%403x-1.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_repeat_once_on.imageset\playback_controls_repeat_once_on.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_repeat_once_on.imageset\playback_controls_repeat_once_on%402x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_repeat_once_on.imageset\playback_controls_repeat_once_on%403x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_repeat_once_on.imageset\playback_controls_repeat_once_on-1.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_repeat_once_on.imageset\playback_controls_repeat_once_on%402x-1.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_repeat_once_on.imageset\playback_controls_repeat_once_on%403x-1.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_shuffle_off.imageset\playback_controls_shuffle_off.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_shuffle_off.imageset\playback_controls_shuffle_off%402x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_shuffle_off.imageset\playback_controls_shuffle_off%403x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_shuffle_off.imageset\playback_controls_shuffle_off-1.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_shuffle_off.imageset\playback_controls_shuffle_off%402x-1.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_shuffle_off.imageset\playback_controls_shuffle_off%403x-1.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_shuffle_on.imageset\playback_controls_shuffle_on.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_shuffle_on.imageset\playback_controls_shuffle_on%402x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_shuffle_on.imageset\playback_controls_shuffle_on%403x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_shuffle_on.imageset\playback_controls_shuffle_on-1.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_shuffle_on.imageset\playback_controls_shuffle_on%402x-1.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_shuffle_on.imageset\playback_controls_shuffle_on%403x-1.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_skip_backwards.imageset\playback_controls_skip_backwards.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_skip_backwards.imageset\playback_controls_skip_backwards%402x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_skip_backwards.imageset\playback_controls_skip_backwards%403x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_skip_backwards.imageset\playback_controls_skip_backwards-1.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_skip_backwards.imageset\playback_controls_skip_backwards%402x-1.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_skip_backwards.imageset\playback_controls_skip_backwards%403x-1.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_skip_forward.imageset\playback_controls_skip_forward.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_skip_forward.imageset\playback_controls_skip_forward%402x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_skip_forward.imageset\playback_controls_skip_forward%403x.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_skip_forward.imageset\playback_controls_skip_forward-1.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_skip_forward.imageset\playback_controls_skip_forward%402x-1.png" />
+    <ImageAsset Include="Assets.xcassets\playback_controls_skip_forward.imageset\playback_controls_skip_forward%403x-1.png" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_browse.imageset\tab_bar_browse.png" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_browse.imageset\tab_bar_browse%402x.png" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_browse.imageset\tab_bar_browse%403x.png" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_browse.imageset\tab_bar_browse-1.png" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_browse.imageset\tab_bar_browse%402x-1.png" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_browse.imageset\tab_bar_browse%403x-1.png" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_browse_active.imageset\tab_bar_browse_active.png" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_browse_active.imageset\tab_bar_browse_active%402x.png" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_browse_active.imageset\tab_bar_browse_active%403x.png" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_browse_active.imageset\tab_bar_browse_active-1.png" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_browse_active.imageset\tab_bar_browse_active%402x-1.png" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_browse_active.imageset\tab_bar_browse_active%403x-1.png" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_icon_home.imageset\tab_bar_icon_home.png" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_icon_home.imageset\tab_bar_icon_home%402x.png" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_icon_home.imageset\tab_bar_icon_home%403x.png" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_icon_home.imageset\tab_bar_icon_home-1.png" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_icon_home.imageset\tab_bar_icon_home%402x-1.png" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_icon_home.imageset\tab_bar_icon_home%403x-1.png" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_icon_home_active.imageset\tab_bar_icon_home_active.png" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_icon_home_active.imageset\tab_bar_icon_home_active%402x.png" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_icon_home_active.imageset\tab_bar_icon_home_active%403x.png" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_icon_home_active.imageset\tab_bar_icon_home_active-1.png" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_icon_home_active.imageset\tab_bar_icon_home_active%402x-1.png" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_icon_home_active.imageset\tab_bar_icon_home_active%403x-1.png" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_settings.imageset\tab_bar_settings.png" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_settings.imageset\tab_bar_settings%402x.png" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_settings.imageset\tab_bar_settings%403x.png" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_settings.imageset\tab_bar_settings-1.png" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_settings.imageset\tab_bar_settings%402x-1.png" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_settings.imageset\tab_bar_settings%403x-1.png" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_settings_active.imageset\tab_bar_settings_active.png" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_settings_active.imageset\tab_bar_settings_active%402x.png" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_settings_active.imageset\tab_bar_settings_active%403x.png" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_settings_active.imageset\tab_bar_settings_active-1.png" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_settings_active.imageset\tab_bar_settings_active%402x-1.png" />
+    <ImageAsset Include="Assets.xcassets\tab_bar_settings_active.imageset\tab_bar_settings_active%403x-1.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -812,6 +577,7 @@
     <Folder Include="Assets.xcassets\radio_button_on.imageset\" />
     <Folder Include="Assets.xcassets\icon_list_item_edit_dark.imageset\" />
     <Folder Include="Assets.xcassets\icon_list_item_edit_light.imageset\" />
+    <Folder Include="Assets.xcassets\icon_list_item_edit.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />

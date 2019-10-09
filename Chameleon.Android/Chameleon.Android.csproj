@@ -132,6 +132,7 @@
     <Compile Include="Setup.cs" />
     <Compile Include="CustomRenderers\MySearchBarRenderer.cs" />
     <Compile Include="CustomRenderers\ColoredTableViewRenderer.cs" />
+    <Compile Include="ThemeService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -1651,12 +1652,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values-night\colors.xml">
-      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
-      <SubType>Designer</SubType>
-    </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\values-night\styles.xml">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
     </AndroidResource>

@@ -7,11 +7,11 @@ using Xamarin.Forms;
 
 namespace Chameleon.Core.Helpers
 {
-    public class ThemeService : IThemeService
+    public class ThemeServiceBase : IThemeService
     {
         private readonly IBarrel _barrel;
 
-        public ThemeService(IBarrel barrel)
+        public ThemeServiceBase(IBarrel barrel)
         {
             _barrel = barrel ?? throw new ArgumentNullException(nameof(barrel));
         }
@@ -37,7 +37,7 @@ namespace Chameleon.Core.Helpers
 
         public ThemeMode CurrentRuntimeTheme { get; private set; }
 
-        public void UpdateTheme(ThemeMode themeMode = ThemeMode.Auto)
+        public virtual void UpdateTheme(ThemeMode themeMode = ThemeMode.Auto)
         {
             switch (AppTheme)
             {

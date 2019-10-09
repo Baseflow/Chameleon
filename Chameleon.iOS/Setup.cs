@@ -8,10 +8,5 @@ namespace Chameleon.iOS
 {
     public class Setup : MvxFormsIosSetup<Core.App, FormsApp>
     {
-        protected override void InitializeFirstChance()
-        {
-            base.InitializeFirstChance();
-            Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IThemeService, ThemeServiceBase>();
-        }
     }
 }

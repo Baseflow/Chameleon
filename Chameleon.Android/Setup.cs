@@ -17,9 +17,12 @@ namespace Chameleon.Android
             base.InitializeFirstChance();
             UserDialogs.Init(() => Mvx.IoCProvider.Resolve<IMvxAndroidCurrentTopActivity>().Activity);
             ActionSheetConfig.DefaultAndroidStyleId = Android.Resource.Style.MainTheme_BottomSheet;
+        }
 
+        protected override void InitializeLastChance()
+        {
+            base.InitializeLastChance();
             Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IThemeService, ThemeService>();
-            //Mvx.IoCProvider.RegisterSingleton<HttpMessageHandler>(new AndroidClientHandler());
         }
 
         protected override IEnumerable<Assembly> AndroidViewAssemblies =>

@@ -127,7 +127,7 @@
                                          Padding="16,0,0,0"/>
                                       <ImageButton
                                          Aspect="Fill"
-                                         Source="icon_list_item_edit_light"
+                                         Source="icon_list_item_edit"
                                          mvx:Bi.nd="Command CustomPickerCommand"
                                          HorizontalOptions="EndAndExpand"
                                          VerticalOptions="Center"/>

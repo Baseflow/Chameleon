@@ -32,7 +32,7 @@
                 <StackLayout
                     Orientation="Horizontal">
                      <Image
-                        Source="add_to_playlist"/>
+                        Source="playback_controls_add_to_playlist"/>
                     <Entry
                         mvx:La.ng="Placeholder NewPlaylist"
                         mvx:Bi.nd="Text PlaylistName"

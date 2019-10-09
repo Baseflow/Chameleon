@@ -65,7 +65,7 @@ namespace Chameleon.Core.Helpers
                     {
                         _mediaManager.Queue.Add(mediaItem);
                         _userDialogs.Toast(GetText("ItemAddedToQueue"));
-                    }, "add_to_queue");
+                    }, "playback_controls_queue");
                 }
                 if (_topViewModel is PlaylistViewModel playlistViewModel)
                 {
@@ -79,7 +79,7 @@ namespace Chameleon.Core.Helpers
                 config.Add(GetText("AddToPlaylist"), async () =>
                 {
                     await _navigationService.Navigate<AddToPlaylistViewModel, IMediaItem>(mediaItem);
-                }, "add_to_playlist");
+                }, "playback_controls_add_to_playlist");
 
                 //config.Add(GetText("ShowArtist"), () => _navigationService.Navigate<ArtistViewModel>());
                 //config.Add(GetText("ShowAlbum"), () => _navigationService.Navigate<AlbumViewModel>());

@@ -4,6 +4,7 @@ using Android.Content.PM;
 using Android.Content.Res;
 using Android.OS;
 using Android.Runtime;
+using Android.Support.V7.App;
 using Chameleon.Core;
 using Chameleon.Core.Helpers;
 using Chameleon.Core.ViewModels;
@@ -77,6 +78,7 @@ namespace Chameleon.Android
                 {
                     case UiMode.NightYes:
                         Mvx.IoCProvider.Resolve<IThemeService>().UpdateTheme(Core.Models.ThemeMode.Dark);
+                        //AppCompatDelegate.DefaultNightMode = AppCompatDelegate.ModeNightYes;
                         break;
                     case UiMode.NightNo:
                         Mvx.IoCProvider.Resolve<IThemeService>().UpdateTheme(Core.Models.ThemeMode.Light);

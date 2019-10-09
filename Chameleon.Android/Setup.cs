@@ -2,8 +2,10 @@
 using System.Reflection;
 using Acr.UserDialogs;
 using Chameleon.Core;
+using Chameleon.Core.Helpers;
 using MvvmCross;
 using MvvmCross.Forms.Platforms.Android.Core;
+using MvvmCross.IoC;
 using MvvmCross.Platforms.Android;
 
 namespace Chameleon.Android
@@ -15,6 +17,8 @@ namespace Chameleon.Android
             base.InitializeFirstChance();
             UserDialogs.Init(() => Mvx.IoCProvider.Resolve<IMvxAndroidCurrentTopActivity>().Activity);
             ActionSheetConfig.DefaultAndroidStyleId = Android.Resource.Style.MainTheme_BottomSheet;
+
+            Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IThemeService, ThemeService>();
             //Mvx.IoCProvider.RegisterSingleton<HttpMessageHandler>(new AndroidClientHandler());
         }
 

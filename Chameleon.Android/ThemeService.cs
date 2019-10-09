@@ -12,6 +12,8 @@ using Android.Views;
 using Android.Widget;
 using Chameleon.Core.Helpers;
 using Chameleon.Core.Models;
+using MvvmCross;
+using MvvmCross.Platforms.Android;
 
 namespace Chameleon.Android
 {
@@ -21,26 +23,50 @@ namespace Chameleon.Android
         {
         }
 
+        Activity Activity => Mvx.IoCProvider.Resolve<IMvxAndroidCurrentTopActivity>().Activity;
+
         public override void UpdateTheme(ThemeMode themeMode = ThemeMode.Auto)
         {
             base.UpdateTheme(themeMode);
 
+            bool changed = false;
             switch (AppTheme)
             {
                 case ThemeMode.Auto:
-                    AppCompatDelegate.DefaultNightMode = AppCompatDelegate.ModeNightAuto;
+                    if (AppCompatDelegate.DefaultNightMode != AppCompatDelegate.ModeNightAuto)
+                    {
+                        AppCompatDelegate.DefaultNightMode = AppCompatDelegate.ModeNightAuto;
+                        changed = true;
+                    }
                     break;
                 case ThemeMode.Dark:
-                    AppCompatDelegate.DefaultNightMode = AppCompatDelegate.ModeNightYes;
+                    if (AppCompatDelegate.DefaultNightMode != AppCompatDelegate.ModeNightYes)
+                    {
+                        AppCompatDelegate.DefaultNightMode = AppCompatDelegate.ModeNightYes;
+                        changed = true;
+                    }
                     break;
                 case ThemeMode.Light:
-                    AppCompatDelegate.DefaultNightMode = AppCompatDelegate.ModeNightNo;
+                    if (AppCompatDelegate.DefaultNightMode != AppCompatDelegate.ModeNightNo)
+                    {
+                        AppCompatDelegate.DefaultNightMode = AppCompatDelegate.ModeNightNo;
+                        changed = true;
+                    }
                     break;
                 case ThemeMode.Custom:
-                    AppCompatDelegate.DefaultNightMode = AppCompatDelegate.ModeNightYes;
+                    if (AppCompatDelegate.DefaultNightMode != AppCompatDelegate.ModeNightAuto)
+                    {
+                        AppCompatDelegate.DefaultNightMode = AppCompatDelegate.ModeNightAuto;
+                        changed = true;
+                    }
                     break;
                 default:
                     break;
+            }
+            if (Activity?.Theme != null && changed)
+            {
+                (Activity as MainActivity)?.Delegate.ApplyDayNight();
+                Activity.Recreate();
             }
         }
     }

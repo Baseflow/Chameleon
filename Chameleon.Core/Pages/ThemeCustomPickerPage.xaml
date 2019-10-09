@@ -9,7 +9,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModels="clr-namespace:Chameleon.Core.ViewModels;assembly=Chameleon.Core"
     x:TypeArguments="viewModels:ThemeCustomPickerViewModel"
-    x:Class="Chameleon.Core.Views.ThemeCustomPickerPage">
+    x:Class="Chameleon.Core.Views.ThemeCustomPickerPage"
+    x:Name="thisPage">
 
      <NavigationPage.TitleView>
         <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center" Spacing="10" HeightRequest="30">
@@ -54,7 +55,8 @@
                     CornerRadius="8"
                     Padding="{StaticResource MarginPaddingExtrasmall}">
                     <Button
-                        BackgroundColor="Yellow"/>
+                        BackgroundColor="{Binding ThemeCustom }"
+                        mvx:Bi.nd="Command ThemeCustomCommand"/>
                 </Frame>
             </StackLayout>
             <StackLayout
@@ -69,7 +71,7 @@
                     CornerRadius="8"
                     Padding="{StaticResource MarginPaddingExtrasmall}">
                     <Button
-                        BackgroundColor="Purple"/>
+                        mvx:Bi.nd="Command ThemeCustomCommand"/>
                 </Frame>
             </StackLayout>
             <StackLayout
@@ -86,7 +88,8 @@
                     <Button
                         HorizontalOptions="FillAndExpand"
                         VerticalOptions="FillAndExpand"
-                        BackgroundColor="PowderBlue"/>
+                        BackgroundColor="{Binding Source={x:Reference Name=thisPage}, Path=BindingContext.DataContext.ThemeCustomCommand}"
+                        mvx:Bi.nd="Command ThemeCustomCommand"/>
                 </Frame>
             </StackLayout>
         </Grid>

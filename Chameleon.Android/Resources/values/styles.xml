@@ -5,7 +5,7 @@
   </style>
   
   <!-- Base theme applied no matter what API -->
-  <style name="MainTheme.Base" parent="Theme.MaterialComponents.NoActionBar">
+  <style name="MainTheme.Base" parent="Theme.MaterialComponents.Light.NoActionBar">
     <item name="android:windowBackground">@color/colorPrimary</item>
     <item name="android:windowNoTitle">true</item>
     <item name="windowActionBar">false</item>

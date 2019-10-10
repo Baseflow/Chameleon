@@ -118,7 +118,7 @@
     <PackageReference Include="Xamarin.Android.Support.CustomTabs" Version="28.0.0.3" />
     <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
     <PackageReference Include="Acr.UserDialogs">
-      <Version>7.0.30</Version>
+      <Version>7.0.32</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms.PancakeView">
       <Version>1.3.3</Version>
@@ -1220,13 +1220,7 @@
       <Generator>
       </Generator>
     </AndroidResource>
-    <AndroidResource Include="Resources\drawable-hdpi\splash_bg.png">
-      <SubType>
-      </SubType>
-      <Generator>
-      </Generator>
-    </AndroidResource>
-    <AndroidResource Include="Resources\drawable-hdpi\chameleon_mediaplaye.png">
+    <AndroidResource Include="Resources\drawable-night-hdpi\chameleon_mediaplaye.png">
       <SubType>
       </SubType>
       <Generator>
@@ -1292,12 +1286,6 @@
       <Generator>
       </Generator>
     </AndroidResource>
-    <AndroidResource Include="Resources\drawable-xhdpi\splash_bg.png">
-      <SubType>
-      </SubType>
-      <Generator>
-      </Generator>
-    </AndroidResource>
     <AndroidResource Include="Resources\drawable-xhdpi\radio_button_on.png">
       <SubType>
       </SubType>
@@ -1322,7 +1310,7 @@
       <Generator>
       </Generator>
     </AndroidResource>
-    <AndroidResource Include="Resources\drawable-xhdpi\chameleon_mediaplaye.png">
+    <AndroidResource Include="Resources\drawable-night-xhdpi\chameleon_mediaplaye.png">
       <SubType>
       </SubType>
       <Generator>
@@ -1394,7 +1382,7 @@
       <Generator>
       </Generator>
     </AndroidResource>
-    <AndroidResource Include="Resources\drawable-xxhdpi\chameleon_mediaplaye.png">
+    <AndroidResource Include="Resources\drawable-night-xxhdpi\chameleon_mediaplaye.png">
       <SubType>
       </SubType>
       <Generator>
@@ -1425,12 +1413,6 @@
       </Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable-xxhdpi\radio_button_on.png">
-      <SubType>
-      </SubType>
-      <Generator>
-      </Generator>
-    </AndroidResource>
-    <AndroidResource Include="Resources\drawable-xxhdpi\splash_bg.png">
       <SubType>
       </SubType>
       <Generator>
@@ -1709,6 +1691,33 @@
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
     </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\splash_bg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-night-hdpi\splash_bg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-night-xhdpi\splash_bg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-night-xxhdpi\splash_bg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\splash_bg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\splash_bg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-night-hdpi\powered_by_baseflow_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-night-xhdpi\powered_by_baseflow_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-night-xxhdpi\powered_by_baseflow_logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

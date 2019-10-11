@@ -38,7 +38,7 @@
                     HorizontalOptions="Center"
                     VerticalOptions="Center"
                     Aspect="AspectFill"
-                    Source="cover_art_placeholder" />
+                    Source="cover_art_placeholder.png" />
             </pan:PancakeView>
             <Label
                 mvx:Bi.nd="Text Title"
@@ -56,7 +56,7 @@
                 MaxLines="1"
                 Style="{StaticResource SubtitleItem}" />
             <controls:SelectableButton
-                Source="icon_more"
+                Source="icon_more.png"
                 Command="{Binding Source={x:Static local:NavigationHelper.OptionsCommand}}"
                 CommandParameter="{Binding .}"
                 Grid.Column="2"

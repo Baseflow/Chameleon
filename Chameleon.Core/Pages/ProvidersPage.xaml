@@ -15,12 +15,12 @@
 
     <NavigationPage.TitleView>
         <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center" Spacing="10" HeightRequest="30">
-            <Image Source="chameleon_logo"/>
+            <Image Source="chameleon_logo.png"/>
         </StackLayout>
     </NavigationPage.TitleView>
     
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="icon_close" mvx:Bi.nd="Command BackCommand"/>
+        <ToolbarItem IconImageSource="icon_close.png" mvx:Bi.nd="Command BackCommand"/>
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
@@ -94,7 +94,7 @@
                                        VerticalTextAlignment="Center"
                                        Style="{StaticResource PrimaryDetailText}" />
                             </pan:PancakeView>
-                            <Image Source="disclosure_button" HorizontalOptions="End" BackgroundColor="Transparent" Grid.Column="2"/>
+                            <Image Source="disclosure_button.png" HorizontalOptions="End" BackgroundColor="Transparent" Grid.Column="2"/>
                         </Grid>
                     </ViewCell>
                 </DataTemplate>

@@ -106,28 +106,28 @@ namespace Chameleon.Core.ViewModels
             set => SetProperty(ref _timeSpanDuration, value);
         }
 
-        private ImageSource _playPauseImage = ImageSource.FromFile("playback_controls_pause_button");
+        private ImageSource _playPauseImage = ImageSource.FromFile("playback_controls_pause_button.png");
         public ImageSource PlayPauseImage
         {
             get => _playPauseImage;
             set => SetProperty(ref _playPauseImage, value);
         }
 
-        private ImageSource _repeatImage = ImageSource.FromFile("playback_controls_repeat_off");
+        private ImageSource _repeatImage = ImageSource.FromFile("playback_controls_repeat_off.png");
         public ImageSource RepeatImage
         {
             get => _repeatImage;
             set => SetProperty(ref _repeatImage, value);
         }
 
-        private ImageSource _shuffleImage = ImageSource.FromFile("playback_controls_shuffle_off");
+        private ImageSource _shuffleImage = ImageSource.FromFile("playback_controls_shuffle_off.png");
         public ImageSource ShuffleImage
         {
             get => _shuffleImage;
             set => SetProperty(ref _shuffleImage, value);
         }
 
-        private ImageSource _favoriteImage = ImageSource.FromFile("playback_controls_favorite_off");
+        private ImageSource _favoriteImage = ImageSource.FromFile("playback_controls_favorite_off.png");
         public ImageSource FavoriteImage
         {
             get => _favoriteImage;
@@ -228,11 +228,11 @@ namespace Chameleon.Core.ViewModels
             var favorites = Playlists?.FirstOrDefault(x => x.Title == "Favorites");
             if (favorites.MediaItems.Contains(_source))
             {
-                FavoriteImage = ImageSource.FromFile("playback_controls_favorite_on");
+                FavoriteImage = ImageSource.FromFile("playback_controls_favorite_on.png");
             }
             else
             {
-                FavoriteImage = ImageSource.FromFile("playback_controls_favorite_off");
+                FavoriteImage = ImageSource.FromFile("playback_controls_favorite_off.png");
             }
         }
 
@@ -271,9 +271,9 @@ namespace Chameleon.Core.ViewModels
         private async Task PlayPause()
         {
             if (MediaManager.IsPlaying())
-                PlayPauseImage = ImageSource.FromFile("playback_controls_play_button");
+                PlayPauseImage = ImageSource.FromFile("playback_controls_play_button.png");
             else
-                PlayPauseImage = ImageSource.FromFile("playback_controls_pause_button");
+                PlayPauseImage = ImageSource.FromFile("playback_controls_pause_button.png");
 
             await MediaManager.PlayPause();
         }
@@ -284,13 +284,13 @@ namespace Chameleon.Core.ViewModels
             switch (MediaManager.RepeatMode)
             {
                 case RepeatMode.Off:
-                    RepeatImage = ImageSource.FromFile("playback_controls_repeat_off");
+                    RepeatImage = ImageSource.FromFile("playback_controls_repeat_off.png");
                     break;
                 case RepeatMode.One:
-                    RepeatImage = ImageSource.FromFile("playback_controls_repeat_once_on");
+                    RepeatImage = ImageSource.FromFile("playback_controls_repeat_once_on.png");
                     break;
                 case RepeatMode.All:
-                    RepeatImage = ImageSource.FromFile("playback_controls_repeat_on");
+                    RepeatImage = ImageSource.FromFile("playback_controls_repeat_on.png");
                     break;
             }
         }
@@ -301,10 +301,10 @@ namespace Chameleon.Core.ViewModels
             switch (MediaManager.ShuffleMode)
             {
                 case ShuffleMode.Off:
-                    ShuffleImage = ImageSource.FromFile("playback_controls_shuffle_off");
+                    ShuffleImage = ImageSource.FromFile("playback_controls_shuffle_off.png");
                     break;
                 case ShuffleMode.All:
-                    ShuffleImage = ImageSource.FromFile("playback_controls_shuffle_on");
+                    ShuffleImage = ImageSource.FromFile("playback_controls_shuffle_on.png");
                     break;
             }
         }
@@ -315,12 +315,12 @@ namespace Chameleon.Core.ViewModels
             if (favorites.MediaItems.Contains(_source))
             {
                 favorites.MediaItems.Remove(_source);
-                FavoriteImage = ImageSource.FromFile("playback_controls_favorite_off");
+                FavoriteImage = ImageSource.FromFile("playback_controls_favorite_off.png");
             }
             else
             {
                 favorites.MediaItems.Add(_source);
-                FavoriteImage = ImageSource.FromFile("playback_controls_favorite_on");
+                FavoriteImage = ImageSource.FromFile("playback_controls_favorite_on.png");
                 _userDialogs.Toast(GetText("Favorite"));
             }
         }

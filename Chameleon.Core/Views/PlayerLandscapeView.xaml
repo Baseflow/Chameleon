@@ -56,11 +56,11 @@
                       Spacing="20">
                      
             <ImageButton
-                Source="playback_controls_previous"
+                Source="playback_controls_previous.png"
                 mvx:Bi.nd="Command PreviousCommand"/>
                 
             <ImageButton
-                Source="playback_controls_skip_backwards"
+                Source="playback_controls_skip_backwards.png"
                 mvx:Bi.nd="Command SkipBackwardsCommand"/>
 
             <ImageButton
@@ -68,11 +68,11 @@
                 mvx:Bi.nd="Command PlayPauseCommand" />
 
             <ImageButton
-                Source="playback_controls_skip_forward"
+                Source="playback_controls_skip_forward.png"
                 mvx:Bi.nd="Command SkipForwardCommand"/>
                 
             <ImageButton
-                Source="playback_controls_next"
+                Source="playback_controls_next.png"
                 mvx:Bi.nd="Command NextCommand"/>   
             </StackLayout>
 

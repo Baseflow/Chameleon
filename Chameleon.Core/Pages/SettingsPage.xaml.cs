@@ -30,12 +30,12 @@ namespace Chameleon.Core.Views
 
         protected override void OnAppearing()
         {
-            IconImageSource = ImageSource.FromFile("tab_bar_settings_active");
+            IconImageSource = ImageSource.FromFile("tab_bar_settings_active.png");
             base.OnAppearing();
         }
         protected override void OnDisappearing()
         {
-            IconImageSource = ImageSource.FromFile("tab_bar_settings");
+            IconImageSource = ImageSource.FromFile("tab_bar_settings.png");
             base.OnDisappearing();
         }
 

@@ -16,7 +16,7 @@
 
     <NavigationPage.TitleView>
         <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center" Spacing="10" HeightRequest="30">
-            <Image Source="chameleon_logo"/>
+            <Image Source="chameleon_logo.png"/>
         </StackLayout>
     </NavigationPage.TitleView>
 
@@ -127,7 +127,7 @@
                                          Padding="16,0,0,0"/>
                                       <ImageButton
                                          Aspect="Fill"
-                                         Source="icon_list_item_edit"
+                                         Source="icon_list_item_edit.png"
                                          mvx:Bi.nd="Command CustomPickerCommand"
                                          HorizontalOptions="EndAndExpand"
                                          VerticalOptions="Center"/>

@@ -28,7 +28,7 @@
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="FillAndExpand"
                     Aspect="AspectFill"
-                    Source="cover_art_placeholder" />
+                    Source="cover_art_placeholder.png" />
             </pan:PancakeView>
             <Label
                 mvx:Bi.nd="Text Title"

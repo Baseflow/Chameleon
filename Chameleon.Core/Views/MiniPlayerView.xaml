@@ -71,7 +71,7 @@
                 HeightRequest="32"
                 WidthRequest="32"
                 mvx:Bi.nd="Command PreviousCommand"
-                Source="playback_controls_previous" />
+                Source="playback_controls_previous.png" />
             <ImageButton
                 Grid.Row="2"
                 Grid.Column="3"
@@ -91,7 +91,7 @@
                 VerticalOptions="Center"
                 BackgroundColor="Transparent"
                 mvx:Bi.nd="Command NextCommand"
-                Source="playback_controls_next" />
+                Source="playback_controls_next.png" />
             <controls:SelectableButton
                 Grid.Row="2"
                 Grid.Column="5"
@@ -102,7 +102,7 @@
                 BackgroundColor="Transparent"
                 Command="{Binding Source={x:Static local:NavigationHelper.OptionsCommand}}"
                 CommandParameter="{Binding CurrentlyPlaying}"
-                Source="icon_more" />
+                Source="icon_more.png" />
             <BoxView Grid.Row="3"
                      Grid.ColumnSpan="7"
                      Margin="0,12,0,.5"

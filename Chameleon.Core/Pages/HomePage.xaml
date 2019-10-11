@@ -116,7 +116,7 @@
                                         Grid.Row="0"
                                         Grid.RowSpan="2"
                                         VerticalOptions="Center"
-                                        Source="icon_plus_big" />
+                                        Source="icon_plus_big.png" />
                                     <Label
                                         BindingContext="{Binding .}"
                                         Text="{mvx:MvxLang AddPlaylist}"

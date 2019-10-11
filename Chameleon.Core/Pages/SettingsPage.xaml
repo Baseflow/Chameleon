@@ -33,7 +33,7 @@
                             <Label mvx:La.ng="Text PlaybackSettings"
                                    Style="{DynamicResource Title}"
                                    Grid.Column="0" />
-                            <Image Source="disclosure_button"
+                            <Image Source="disclosure_button.png"
                                    HorizontalOptions="End"
                                    BackgroundColor="Transparent"
                                    Grid.Column="1" />
@@ -51,7 +51,7 @@
                             <Label mvx:La.ng="Text Theming"
                                    Style="{DynamicResource Title}"
                                    Grid.Column="0" />
-                            <Image Source="disclosure_button"
+                            <Image Source="disclosure_button.png"
                                    HorizontalOptions="End"
                                    BackgroundColor="Transparent"
                                    Grid.Column="1" />
@@ -67,7 +67,7 @@
                             <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
                             <Label Text="Equalizer" Style="{StaticResource Title}" Grid.Column="0"/>
-                            <Image Source="disclosure_button" HorizontalOptions="End" Grid.Column="1"/>
+                            <Image Source="disclosure_button.png" HorizontalOptions="End" Grid.Column="1"/>
                        </Grid>
                   </ViewCell>-->
                     <ViewCell Tapped="ViewCell_TappedOpenSource">
@@ -82,7 +82,7 @@
                             <Label mvx:La.ng="Text OpenSourceSoftware"
                                    Style="{DynamicResource Title}"
                                    Grid.Column="0" />
-                            <Image Source="disclosure_button"
+                            <Image Source="disclosure_button.png"
                                    HorizontalOptions="End"
                                    BackgroundColor="Transparent"
                                    Grid.Column="1" />
@@ -97,7 +97,7 @@
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
-                            <Image Source="powered_by_baseflow_logo"
+                            <Image Source="powered_by_baseflow_logo.png"
                                    Margin="10,0,0,10"
                                    HorizontalOptions="Start"
                                    Grid.Row="0" />

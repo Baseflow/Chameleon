@@ -20,14 +20,14 @@ namespace Chameleon.Core.ViewModels
             MediaManager = mediaManager ?? throw new ArgumentNullException(nameof(mediaManager));
         }
 
-        private ImageSource _playPauseImage = "playback_controls_pause_button";
+        private ImageSource _playPauseImage = "playback_controls_pause_button.png";
         public ImageSource PlayPauseImage
         {
             get => _playPauseImage;
             set => SetProperty(ref _playPauseImage, value);
         }
 
-        private ImageSource _shuffleImage = ImageSource.FromFile("playback_controls_shuffle_off");
+        private ImageSource _shuffleImage = ImageSource.FromFile("playback_controls_shuffle_off.png");
         public ImageSource ShuffleImage
         {
             get => _shuffleImage;
@@ -99,9 +99,9 @@ namespace Chameleon.Core.ViewModels
             base.ViewAppearing();
 
             if (MediaManager.IsPlaying())
-                PlayPauseImage = ImageSource.FromFile("playback_controls_pause_button");
+                PlayPauseImage = ImageSource.FromFile("playback_controls_pause_button.png");
             else
-                PlayPauseImage = ImageSource.FromFile("playback_controls_play_button");
+                PlayPauseImage = ImageSource.FromFile("playback_controls_play_button.png");
 
             RaisePropertyChanged(nameof(CurrentMediaItemText));
         }
@@ -128,9 +128,9 @@ namespace Chameleon.Core.ViewModels
         private async Task PlayPause()
         {
             if (MediaManager.IsPlaying())
-                PlayPauseImage = ImageSource.FromFile("playback_controls_play_button");
+                PlayPauseImage = ImageSource.FromFile("playback_controls_play_button.png");
             else
-                PlayPauseImage = ImageSource.FromFile("playback_controls_pause_button");
+                PlayPauseImage = ImageSource.FromFile("playback_controls_pause_button.png");
 
             await MediaManager.PlayPause();
         }
@@ -141,10 +141,10 @@ namespace Chameleon.Core.ViewModels
             switch (MediaManager.ShuffleMode)
             {
                 case ShuffleMode.Off:
-                    ShuffleImage = ImageSource.FromFile("playback_controls_shuffle_off");
+                    ShuffleImage = ImageSource.FromFile("playback_controls_shuffle_off.png");
                     break;
                 case ShuffleMode.All:
-                    ShuffleImage = ImageSource.FromFile("playback_controls_shuffle_on");
+                    ShuffleImage = ImageSource.FromFile("playback_controls_shuffle_on.png");
                     break;
             }
         }
@@ -153,14 +153,14 @@ namespace Chameleon.Core.ViewModels
         {
             await MediaManager.PlayPrevious();
             await RaisePropertyChanged(nameof(CurrentMediaItemText));
-            PlayPauseImage = ImageSource.FromFile("playback_controls_pause_button");
+            PlayPauseImage = ImageSource.FromFile("playback_controls_pause_button.png");
         }
 
         private async Task PlayNext()
         {
             await MediaManager.PlayNext();
             await RaisePropertyChanged(nameof(CurrentMediaItemText));
-            PlayPauseImage = ImageSource.FromFile("playback_controls_pause_button");
+            PlayPauseImage = ImageSource.FromFile("playback_controls_pause_button.png");
         }
 
         private async Task OpenPlayer()

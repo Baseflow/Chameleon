@@ -14,7 +14,7 @@
     x:Name="playlistPage">
     <NavigationPage.TitleView>
         <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center" Spacing="10" HeightRequest="30">
-            <Image Source="chameleon_logo"/>
+            <Image Source="chameleon_logo.png"/>
         </StackLayout>
     </NavigationPage.TitleView>
     <ContentPage.Content>
@@ -47,9 +47,9 @@
                         HorizontalOptions="Center"
                         VerticalOptions="Center"
                         Aspect="AspectFill"
-                        Source="cover_art_placeholder"/>
+                        Source="cover_art_placeholder.png"/>
                         <ImageButton
-                            Source="playback_controls_play_button"
+                            Source="playback_controls_play_button.png"
                             Command="{mvx:MvxBind StartPlaylistCommand}"
                             IsVisible="{Binding IsNotEmpty}"
                             BackgroundColor="Transparent"
@@ -93,7 +93,7 @@
                                      AbsoluteLayout.LayoutFlags="All" 
                                      AbsoluteLayout.LayoutBounds=".5,.5,.5,.5">
                             <Image
-                                Source="icon_plus_big" />
+                                Source="icon_plus_big.png" />
                             <Label
                                 BindingContext="{Binding .}"
                                 Text="{mvx:MvxLang AddMediaToStart}"

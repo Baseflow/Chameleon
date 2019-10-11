@@ -16,7 +16,7 @@
     x:Name="thisPage">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="icon_plus"
+        <ToolbarItem IconImageSource="icon_plus.png"
                      Order="Primary"
                      mvx:Bi.nd="Command AddCommand" />
     </ContentPage.ToolbarItems>
@@ -85,7 +85,7 @@
                                         </pan:PancakeView.HasShadow>
                                         <Image
                                             BackgroundColor="{DynamicResource SecondaryBackgroundColor}"
-                                            Source="icon_plus_big"
+                                            Source="icon_plus_big.png"
                                             Margin="{StaticResource MarginPaddingLarge}"/>
                                     </pan:PancakeView>
                                     <Label

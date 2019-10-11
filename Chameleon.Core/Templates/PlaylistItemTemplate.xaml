@@ -26,7 +26,7 @@
                     Padding="{StaticResource MarginPaddingExtrasmall}"
                     Grid.RowSpan="2"
                     Margin="24,0,0,0">
-                <Image Source="cover_art_placeholder"
+                <Image Source="cover_art_placeholder.png"
                         HorizontalOptions="Center"
                         VerticalOptions="Center"
                         Aspect="AspectFill"

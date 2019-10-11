@@ -61,7 +61,7 @@
                                                 Android="True" />
                                 </pan:PancakeView.HasShadow>
                                 <Image
-                                    Source="icon_plus_big"
+                                    Source="icon_plus_big.png"
                                     Margin="{StaticResource MarginPaddingLarge}"/>
                             </pan:PancakeView>
                             <Label

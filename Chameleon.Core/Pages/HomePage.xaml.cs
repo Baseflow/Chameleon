@@ -19,12 +19,12 @@ namespace Chameleon.Core.Views
 
         protected override void OnAppearing()
         {
-            IconImageSource = ImageSource.FromFile("tab_bar_icon_home_active");
+            IconImageSource = ImageSource.FromFile("tab_bar_icon_home_active.png");
             base.OnAppearing();
         }
         protected override void OnDisappearing()
         {
-            IconImageSource = ImageSource.FromFile("tab_bar_icon_home");
+            IconImageSource = ImageSource.FromFile("tab_bar_icon_home.png");
             base.OnDisappearing();
         }
     }

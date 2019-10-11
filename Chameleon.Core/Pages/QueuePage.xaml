@@ -14,12 +14,12 @@
     
     <NavigationPage.TitleView>
         <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center" Spacing="10" HeightRequest="30">
-            <Image Source="chameleon_logo"/>
+            <Image Source="chameleon_logo.png"/>
         </StackLayout>
     </NavigationPage.TitleView>
     
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="icon_close" mvx:Bi.nd="Command CloseCommand"/>
+        <ToolbarItem IconImageSource="icon_close.png" mvx:Bi.nd="Command CloseCommand"/>
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>

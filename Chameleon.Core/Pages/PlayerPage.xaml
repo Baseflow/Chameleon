@@ -129,7 +129,7 @@
                     <controls:SelectableButton
                         Grid.Column="2"
                         Padding="{StaticResource MarginPaddingMedium}"
-                        Source="playback_controls_queue"
+                        Source="playback_controls_queue.png"
                         mvx:Bi.nd="Command QueueCommand"
                         HorizontalOptions="Center"
                         VerticalOptions="CenterAndExpand"
@@ -138,7 +138,7 @@
                     <controls:SelectableButton
                         Grid.Column="3"
                         Padding="{StaticResource MarginPaddingMedium}"
-                        Source="playback_controls_add_to_playlist"
+                        Source="playback_controls_add_to_playlist.png"
                         mvx:Bi.nd="Command AddToPlaylistCommand"
                         HorizontalOptions="Center"
                         VerticalOptions="CenterAndExpand"
@@ -195,7 +195,7 @@
                     <controls:SelectableButton
                         Grid.Column="0"
                         Padding="{StaticResource MarginPaddingLarge}"
-                        Source="playback_controls_previous"
+                        Source="playback_controls_previous.png"
                         mvx:Bi.nd="Command PreviousCommand"
                         HorizontalOptions="Center"
                         VerticalOptions="CenterAndExpand"
@@ -203,7 +203,7 @@
                     <controls:SelectableButton
                         Grid.Column="1"
                         Padding="{StaticResource MarginPaddingLarge}"
-                        Source="playback_controls_skip_backwards"
+                        Source="playback_controls_skip_backwards.png"
                         mvx:Bi.nd="Command SkipBackwardsCommand"
                         HorizontalOptions="Center"
                         VerticalOptions="CenterAndExpand"
@@ -219,7 +219,7 @@
                     <controls:SelectableButton
                         Grid.Column="3"
                         Padding="{StaticResource MarginPaddingLarge}"
-                        Source="playback_controls_skip_forward"
+                        Source="playback_controls_skip_forward.png"
                         mvx:Bi.nd="Command SkipForwardCommand"
                         HorizontalOptions="Center"
                         VerticalOptions="CenterAndExpand"
@@ -227,7 +227,7 @@
                     <controls:SelectableButton
                         Grid.Column="4"
                         Padding="{StaticResource MarginPaddingLarge}"
-                        Source="playback_controls_next"
+                        Source="playback_controls_next.png"
                         mvx:Bi.nd="Command NextCommand"
                         HorizontalOptions="Center"
                         VerticalOptions="CenterAndExpand"

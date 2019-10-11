@@ -17,28 +17,28 @@ namespace Chameleon.Core.ViewModels
             _themeService = themeService ?? throw new ArgumentNullException(nameof(themeService));
         }
 
-        private ImageSource _themeDarkImage = ImageSource.FromFile("theme_dark");
+        private ImageSource _themeDarkImage = ImageSource.FromFile("theme_dark.png");
         public ImageSource ThemeDarkImage
         {
             get => _themeDarkImage;
             set => SetProperty(ref _themeDarkImage, value);
         }
 
-        private ImageSource _themeLightImage = ImageSource.FromFile("theme_light");
+        private ImageSource _themeLightImage = ImageSource.FromFile("theme_light.png");
         public ImageSource ThemeLightImage
         {
             get => _themeLightImage;
             set => SetProperty(ref _themeLightImage, value);
         }
 
-        private ImageSource _themeAutoImage = ImageSource.FromFile("theme_auto");
+        private ImageSource _themeAutoImage = ImageSource.FromFile("theme_auto.png");
         public ImageSource ThemeAutoImage
         {
             get => _themeAutoImage;
             set => SetProperty(ref _themeAutoImage, value);
         }
 
-        private ImageSource _themeCustomImage = ImageSource.FromFile("radio_button_off");
+        private ImageSource _themeCustomImage = ImageSource.FromFile("radio_button_off.png");
         public ImageSource ThemeCustomImage
         {
             get => _themeCustomImage;
@@ -93,28 +93,28 @@ namespace Chameleon.Core.ViewModels
             switch (_themeService.AppTheme)
             {
                 case Models.ThemeMode.Auto:
-                    ThemeAutoImage = ImageSource.FromFile("theme_auto_on");
-                    ThemeLightImage = ImageSource.FromFile("theme_light");
-                    ThemeDarkImage = ImageSource.FromFile("theme_dark");
-                    ThemeCustomImage = ImageSource.FromFile("radio_button_off");
+                    ThemeAutoImage = ImageSource.FromFile("theme_auto_on.png");
+                    ThemeLightImage = ImageSource.FromFile("theme_light.png");
+                    ThemeDarkImage = ImageSource.FromFile("theme_dark.png");
+                    ThemeCustomImage = ImageSource.FromFile("radio_button_off.png");
                     break;
                 case Models.ThemeMode.Dark:
-                    ThemeLightImage = ImageSource.FromFile("theme_light");
-                    ThemeDarkImage = ImageSource.FromFile("theme_dark_on");
-                    ThemeAutoImage = ImageSource.FromFile("theme_auto");
-                    ThemeCustomImage = ImageSource.FromFile("radio_button_off");
+                    ThemeLightImage = ImageSource.FromFile("theme_light.png");
+                    ThemeDarkImage = ImageSource.FromFile("theme_dark_on.png");
+                    ThemeAutoImage = ImageSource.FromFile("theme_auto.png");
+                    ThemeCustomImage = ImageSource.FromFile("radio_button_off.png");
                     break;
                 case Models.ThemeMode.Light:
-                    ThemeLightImage = ImageSource.FromFile("theme_light_on");
-                    ThemeDarkImage = ImageSource.FromFile("theme_dark");
-                    ThemeAutoImage = ImageSource.FromFile("theme_auto");
-                    ThemeCustomImage = ImageSource.FromFile("radio_button_off");
+                    ThemeLightImage = ImageSource.FromFile("theme_light_on.png");
+                    ThemeDarkImage = ImageSource.FromFile("theme_dark.png");
+                    ThemeAutoImage = ImageSource.FromFile("theme_auto.png");
+                    ThemeCustomImage = ImageSource.FromFile("radio_button_off.png");
                     break;
                 case Models.ThemeMode.Custom:
-                    ThemeLightImage = ImageSource.FromFile("theme_light");
-                    ThemeDarkImage = ImageSource.FromFile("theme_dark");
-                    ThemeAutoImage = ImageSource.FromFile("theme_auto");
-                    ThemeCustomImage = ImageSource.FromFile("radio_button_on");
+                    ThemeLightImage = ImageSource.FromFile("theme_light.png");
+                    ThemeDarkImage = ImageSource.FromFile("theme_dark.png");
+                    ThemeAutoImage = ImageSource.FromFile("theme_auto.png");
+                    ThemeCustomImage = ImageSource.FromFile("radio_button_on.png");
                     break;
                 default:
                     break;

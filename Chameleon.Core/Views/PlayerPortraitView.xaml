@@ -34,7 +34,7 @@
                 BackgroundColor="#30313c">
 
                 <ImageButton
-                    Source="icon_close"
+                    Source="icon_close.png"
                     mvx:Bi.nd="Command BackCommand"
                     HorizontalOptions="End"
                     VerticalOptions="Start" />
@@ -97,13 +97,13 @@
                     BackgroundColor="#30313c">
 
                     <ImageButton
-                        Source="playback_controls_previous"
+                        Source="playback_controls_previous.png"
                         mvx:Bi.nd="Command PreviousCommand"
                         HorizontalOptions="Center"
                         VerticalOptions="CenterAndExpand" />
 
                     <ImageButton
-                        Source="playback_controls_skip_backwards"
+                        Source="playback_controls_skip_backwards.png"
                         mvx:Bi.nd="Command SkipBackwardsCommand"
                         HorizontalOptions="Center"
                         VerticalOptions="CenterAndExpand"
@@ -117,14 +117,14 @@
                         BackgroundColor="Transparent" />
 
                     <ImageButton
-                        Source="playback_controls_skip_forward"
+                        Source="playback_controls_skip_forward.png"
                         mvx:Bi.nd="Command SkipForwardCommand"
                         HorizontalOptions="Center"
                         VerticalOptions="CenterAndExpand"
                         BackgroundColor="Transparent" />
 
                     <ImageButton
-                        Source="playback_controls_next"
+                        Source="playback_controls_next.png"
                         mvx:Bi.nd="Command NextCommand"
                         HorizontalOptions="Center"
                         VerticalOptions="CenterAndExpand"

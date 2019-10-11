@@ -100,37 +100,10 @@
     <ImageAsset Include="Assets.xcassets\chameleon_mediaplaye.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\chameleon_mediaplaye.imageset\chameleon_mediaplaye.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\chameleon_mediaplaye.imageset\chameleon_mediaplaye%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\chameleon_mediaplaye.imageset\chameleon_mediaplaye%403x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\powered_by_baseflow_logo.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\powered_by_baseflow_logo.imageset\powered_by_baseflow_logo.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\powered_by_baseflow_logo.imageset\powered_by_baseflow_logo%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\powered_by_baseflow_logo.imageset\powered_by_baseflow_logo%403x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\splash_bg.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\splash_bg.imageset\splash_bg.jpg">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\splash_bg.imageset\splash_bg%402x.jpg">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\splash_bg.imageset\splash_bg%403x.jpg">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\playback_controls_pause_button.imageset\Contents.json">
@@ -503,6 +476,24 @@
     <ImageAsset Include="Assets.xcassets\tab_bar_settings_active.imageset\tab_bar_settings_active-1.png" />
     <ImageAsset Include="Assets.xcassets\tab_bar_settings_active.imageset\tab_bar_settings_active%402x-1.png" />
     <ImageAsset Include="Assets.xcassets\tab_bar_settings_active.imageset\tab_bar_settings_active%403x-1.png" />
+    <ImageAsset Include="Assets.xcassets\splash_bg.imageset\splash_bg.jpg" />
+    <ImageAsset Include="Assets.xcassets\splash_bg.imageset\splash_bg%402x.jpg" />
+    <ImageAsset Include="Assets.xcassets\splash_bg.imageset\splash_bg%403x.jpg" />
+    <ImageAsset Include="Assets.xcassets\splash_bg.imageset\splash_bg-1.jpg" />
+    <ImageAsset Include="Assets.xcassets\splash_bg.imageset\splash_bg%402x-1.jpg" />
+    <ImageAsset Include="Assets.xcassets\splash_bg.imageset\splash_bg%403x-1.jpg" />
+    <ImageAsset Include="Assets.xcassets\chameleon_mediaplaye.imageset\chameleon_mediaplaye.png" />
+    <ImageAsset Include="Assets.xcassets\chameleon_mediaplaye.imageset\chameleon_mediaplaye%402x.png" />
+    <ImageAsset Include="Assets.xcassets\chameleon_mediaplaye.imageset\chameleon_mediaplaye%403x.png" />
+    <ImageAsset Include="Assets.xcassets\powered_by_baseflow_logo.imageset\powered_by_baseflow_logo.png" />
+    <ImageAsset Include="Assets.xcassets\powered_by_baseflow_logo.imageset\powered_by_baseflow_logo%402x.png" />
+    <ImageAsset Include="Assets.xcassets\powered_by_baseflow_logo.imageset\powered_by_baseflow_logo%403x.png" />
+    <ImageAsset Include="Assets.xcassets\powered_by_baseflow_logo.imageset\powered_by_baseflow_logo-1.png" />
+    <ImageAsset Include="Assets.xcassets\powered_by_baseflow_logo.imageset\powered_by_baseflow_logo%402x-1.png" />
+    <ImageAsset Include="Assets.xcassets\powered_by_baseflow_logo.imageset\powered_by_baseflow_logo%403x-1.png" />
+    <ImageAsset Include="Assets.xcassets\chameleon_mediaplaye.imageset\chameleon_mediaplaye-1.png" />
+    <ImageAsset Include="Assets.xcassets\chameleon_mediaplaye.imageset\chameleon_mediaplaye%402x-1.png" />
+    <ImageAsset Include="Assets.xcassets\chameleon_mediaplaye.imageset\chameleon_mediaplaye%403x-1.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

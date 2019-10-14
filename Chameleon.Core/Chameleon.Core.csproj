@@ -19,7 +19,7 @@
     <PackageReference Include="MvvmCross.Plugin.Json" Version="6.4.1" />
     <PackageReference Include="MvvmCross.Plugin.JsonLocalization" Version="6.4.1" />
     <PackageReference Include="MvvmCross.Plugin.Messenger" Version="6.4.1" />
-    <PackageReference Include="Plugin.MediaManager.Forms" Version="0.8.14" />
+    <PackageReference Include="Plugin.MediaManager.Forms" Version="0.8.15" />
     <PackageReference Include="Xam.Plugin.Media" Version="4.4.3-beta" />
     <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
     <PackageReference Include="Xamarin.Forms" Version="4.3.0.851321-pre3" />

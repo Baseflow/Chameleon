@@ -100,7 +100,7 @@
       <Version>6.4.1</Version>
     </PackageReference>
     <PackageReference Include="Plugin.MediaManager.Forms">
-      <Version>0.8.14</Version>
+      <Version>0.8.15</Version>
     </PackageReference>
     <PackageReference Include="Xam.Plugin.Media">
       <Version>4.4.3-beta</Version>

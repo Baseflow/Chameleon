@@ -82,7 +82,7 @@ namespace Chameleon.Core.ViewModels
             }
         }
 
-        private double _duration = 0;
+        private double _duration = 100;
         public double Duration
         {
             get => _duration;
@@ -163,6 +163,13 @@ namespace Chameleon.Core.ViewModels
         {
             get => _videoWidth;
             set => SetProperty(ref _videoWidth, value);
+        }
+
+        private ImageSource _videoPlaceholder = ImageSource.FromFile("chameleon_logo.png");
+        public ImageSource VideoPlaceholder
+        {
+            get => _videoPlaceholder;
+            set => SetProperty(ref _videoPlaceholder, value);
         }
 
         private IMvxAsyncCommand _dragCompletedCommand;

@@ -132,8 +132,13 @@
                     </CollectionView.EmptyView>
                 </CollectionView>
                 <Button
-                    mvx:La.ng="Text PlayDevice"
-                    mvx:Bi.nd="Command OpenFileCommand"
+                    mvx:La.ng="Text PlayFilePicker"
+                    mvx:Bi.nd="Command OpenFilePickerCommand"
+                    Style="{StaticResource PrimaryButton}"
+                    Margin="24,0" />
+                <Button
+                    mvx:La.ng="Text PlayVideoPicker"
+                    mvx:Bi.nd="Command OpenVideoPickerCommand"
                     Style="{StaticResource PrimaryButton}"
                     Margin="24,0" />
                 <Button

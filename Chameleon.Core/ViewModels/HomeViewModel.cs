@@ -9,6 +9,8 @@ using MvvmCross.Commands;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
+using Plugin.FilePicker;
+using Plugin.FilePicker.Abstractions;
 using Plugin.Media;
 using Plugin.Media.Abstractions;
 
@@ -88,8 +90,11 @@ namespace Chameleon.Core.ViewModels
         private IMvxAsyncCommand _openUrlCommand;
         public IMvxAsyncCommand OpenUrlCommand => _openUrlCommand ?? (_openUrlCommand = new MvxAsyncCommand(OpenUrl));
 
-        private IMvxAsyncCommand _openFileCommand;
-        public IMvxAsyncCommand OpenFileCommand => _openFileCommand ?? (_openFileCommand = new MvxAsyncCommand(OpenFile));
+        private IMvxAsyncCommand _openVideoPickerCommand;
+        public IMvxAsyncCommand OpenVideoPickerCommand => _openVideoPickerCommand ?? (_openVideoPickerCommand = new MvxAsyncCommand(OpenVideoPicker));
+
+        private IMvxAsyncCommand _openFilePickerCommand;
+        public IMvxAsyncCommand OpenFilePickerCommand => _openFilePickerCommand ?? (_openFilePickerCommand = new MvxAsyncCommand(OpenFilePicker));
 
         private IMvxAsyncCommand<IPlaylist> _openPlaylistCommand;
         public IMvxAsyncCommand<IPlaylist> OpenPlaylistCommand => _openPlaylistCommand ?? (_openPlaylistCommand = new MvxAsyncCommand<IPlaylist>(OpenPlaylist));
@@ -161,7 +166,7 @@ namespace Chameleon.Core.ViewModels
             }
         }
 
-        private async Task OpenFile()
+        private async Task OpenVideoPicker()
         {
             if (await CrossMedia.Current.Initialize() && CrossMedia.Current.IsPickVideoSupported)
             {
@@ -186,6 +191,23 @@ namespace Chameleon.Core.ViewModels
             }
             else
                 await _userDialogs.AlertAsync(GetText("EnablePermissions"));
+        }
+
+        private async Task OpenFilePicker()
+        {
+            try
+            {
+                var fileData = await CrossFilePicker.Current.PickFile();
+                if (fileData == null)
+                    return; // user canceled file picking
+
+                var mediaItem = await CrossMediaManager.Current.Play(fileData.FilePath);
+                await NavigationService.Navigate<PlayerViewModel, IMediaItem>(mediaItem);
+            }
+            catch (Exception ex)
+            {
+                System.Console.WriteLine("Exception choosing file: " + ex.ToString());
+            }
         }
 
         private async Task Play(IMediaItem mediaItem)

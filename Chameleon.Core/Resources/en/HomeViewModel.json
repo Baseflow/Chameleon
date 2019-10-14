@@ -1,7 +1,8 @@
 ﻿{
   "Title": "Home",
   "Player": "Go to player",
-  "PlayDevice": "Play from device",
+  "PlayVideoPicker": "Play video from video gallery",
+  "PlayFilePicker": "Play media from file picker",
   "OpenUrl": "Play from URL",
   "Queue": "(temporary button to open queue)",
   "Recent": "RECENTLY PLAYED",

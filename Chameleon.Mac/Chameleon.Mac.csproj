@@ -141,6 +141,9 @@
     <PackageReference Include="Xam.Plugin.Media">
       <Version>4.4.3-beta</Version>
     </PackageReference>
+    <PackageReference Include="Xamarin.Plugin.FilePicker">
+      <Version>2.1.34</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Chameleon.Core\Chameleon.Core.csproj">

@@ -17,6 +17,59 @@ namespace Chameleon.Core.ViewModels
             _themeService = themeService ?? throw new ArgumentNullException(nameof(themeService));
         }
 
+        public Color BackgroundColorButton
+        {
+            get
+            {
+                var backgroundColor = _themeService.CustomColors["PrimaryBackgroundColor"];
+                if (backgroundColor == null)
+                    return Color.Default;
+
+                return (Color)backgroundColor;
+            }
+            set
+            {
+                _themeService.CustomColors["PrimaryBackgroundColor"] = value;
+                RaisePropertyChanged(nameof(BackgroundColorButton));
+            }
+        }
+
+        public Color PrimaryColorButton
+        {
+            get
+            {
+                var primaryColor = _themeService.CustomColors["PrimaryColor"];
+                if (primaryColor == null)
+                {
+                    return Color.Default;
+                }
+                return (Color)primaryColor;
+            }
+            set
+            {
+                _themeService.CustomColors["PrimaryColor"] = value;
+                RaisePropertyChanged(nameof(PrimaryColorButton));
+            }
+        }
+
+        public Color TextColorButton
+        {
+            get
+            { 
+                var textColor = _themeService.CustomColors["PrimaryTextColor"];
+                if (textColor == null)
+                {
+                    return Color.Default;
+                }
+                return (Color)textColor;
+            }
+            set
+            {
+                _themeService.CustomColors["PrimaryTextColor"] = value; 
+                RaisePropertyChanged(nameof(TextColorButton));
+            }
+        }
+
         private IMvxCommand _themeCustomCommand;
         public IMvxCommand ThemeCustomCommand => _themeCustomCommand ?? (_themeCustomCommand = new MvxCommand(ThemeCustom));
 

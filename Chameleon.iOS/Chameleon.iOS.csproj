@@ -531,6 +531,9 @@
     <PackageReference Include="Plugin.MediaManager.Forms">
       <Version>0.8.16</Version>
     </PackageReference>
+    <PackageReference Include="Plugin.Permissions">
+      <Version>5.0.0-beta</Version>
+    </PackageReference>
     <PackageReference Include="Xam.Plugin.Media">
       <Version>4.4.4-beta</Version>
     </PackageReference>

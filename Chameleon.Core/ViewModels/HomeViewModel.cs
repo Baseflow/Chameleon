@@ -13,6 +13,8 @@ using Plugin.FilePicker;
 using Plugin.FilePicker.Abstractions;
 using Plugin.Media;
 using Plugin.Media.Abstractions;
+using Plugin.Permissions;
+using Plugin.Permissions.Abstractions;
 
 namespace Chameleon.Core.ViewModels
 {
@@ -197,6 +199,13 @@ namespace Chameleon.Core.ViewModels
         {
             try
             {
+                var status = await CrossPermissions.Current.RequestPermissionAsync<StoragePermission>();
+                if(status != PermissionStatus.Granted)
+                {
+                    await _userDialogs.AlertAsync(GetText("EnablePermissions"));
+                    return;
+                }
+
                 var fileData = await CrossFilePicker.Current.PickFile();
                 if (fileData == null)
                     return; // user canceled file picking

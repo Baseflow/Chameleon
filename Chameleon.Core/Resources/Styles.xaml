@@ -132,14 +132,14 @@
     </Style>
     
     <Style TargetType="Label" x:Key="TitleItem" BasedOn="{StaticResource LabelBase}">
-        <Setter Property="FontSize"  Value="{StaticResource TextSizeMedium}" />
+        <Setter Property="FontSize"  Value="{StaticResource TextSizeSmall}" />
         <Setter Property="FontAttributes" Value="Bold"/>
     </Style>
 
     <Style TargetType="Label" x:Key="SubtitleItem" BasedOn="{StaticResource LabelBase}">
         <Setter Property="FontFamily" Value="FiraSans#400" />
         <Setter Property="FontSize" Value="{DynamicResource TextSizeMicro}" />
-        <Setter Property="HorizontalTextAlignment" Value="Start"/>
+        <Setter Property="TextColor" Value="{DynamicResource TertiaryTextColor}" />
     </Style>
 
     <Style TargetType="Label" x:Key="TitlePlaylist" BasedOn="{StaticResource LabelBase}">

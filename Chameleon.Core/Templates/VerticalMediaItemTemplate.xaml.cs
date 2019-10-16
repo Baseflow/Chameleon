@@ -2,9 +2,9 @@
 
 namespace Chameleon.Core.Templates
 {
-    public partial class MediaItemTemplate : ContentView
+    public partial class VerticalMediaItemTemplate : ContentView
     {
-        public MediaItemTemplate()
+        public VerticalMediaItemTemplate()
         {
             InitializeComponent();
         }

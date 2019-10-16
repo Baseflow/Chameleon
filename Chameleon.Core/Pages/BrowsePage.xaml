@@ -111,7 +111,7 @@
             <core:MvxListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <templates:MediaItemTemplate />
+                        <templates:VerticalMediaItemTemplate />
                     </ViewCell>
                 </DataTemplate>
             </core:MvxListView.ItemTemplate>

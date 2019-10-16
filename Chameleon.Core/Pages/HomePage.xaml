@@ -25,7 +25,7 @@
                     mvx:La.ng="Text Recent"
                     IsVisible="{Binding HasRecent}"
                     Style="{StaticResource PrimaryHeader}"
-                    Margin="24,0" />
+                    Margin="16,0" />
                 <CollectionView
                     SelectionMode="Single"
                     IsVisible="{Binding HasRecent}"
@@ -34,7 +34,7 @@
                     SelectionChangedCommandParameter SelectedMediaItem;
                     SelectedItem SelectedMediaItem"
                     ItemTemplate="{StaticResource contentItemHorizontalTemplateSelector}"
-                    HeightRequest="250">
+                    HeightRequest="230">
                     <CollectionView.ItemsLayout>
                         <GridItemsLayout Orientation="Horizontal" />
                     </CollectionView.ItemsLayout>
@@ -48,7 +48,7 @@
                     </CollectionView.EmptyView>
                 </CollectionView>
                 <StackLayout
-                    Padding="24,0,24,0"
+                    Padding="16,0,16,0"
                     Orientation="Horizontal">
                     <Label
                         mvx:La.ng="Text Playlists"
@@ -63,7 +63,7 @@
                         Padding="16,0" />
                 </StackLayout>
                 <CollectionView
-                    HeightRequest="250"
+                    HeightRequest="230"
                     SelectionMode="Single"
                     ItemTemplate="{StaticResource contentItemHorizontalTemplateSelector}"
                     mvx:Bi.nd="ItemsSource Playlists; 

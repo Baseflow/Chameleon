@@ -4,7 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
     xmlns:pan="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
-    x:Class="Chameleon.Core.Templates.HorizontalMediaItemTemplate"
+    x:Class="Chameleon.Core.Templates.HorizontalPlaylistItemTemplate"
     WidthRequest="164">
     <Grid Padding="16,16,0,16" HorizontalOptions="Start">
         <Grid.RowDefinitions>
@@ -36,7 +36,7 @@
              MaxLines="1"
              Style="{StaticResource TitleItem}" />
         <Label
-            mvx:Bi.nd="Text Album"
+            mvx:Bi.nd="Text PlaylistToSubtitle(.)"
             Grid.Row="2"
             LineBreakMode="TailTruncation"
             MaxLines="1"

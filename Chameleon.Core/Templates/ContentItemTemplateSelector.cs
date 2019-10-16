@@ -9,10 +9,10 @@ namespace Chameleon.Core.Templates
         IMediaManager MediaManager => CrossMediaManager.Current;
 
         public DataTemplate CurrentMediaItemTemplate { get; set; } = new DataTemplate(() => new CurrentMediaItemTemplate());
-        public DataTemplate MediaItemTemplate { get; set; } = new DataTemplate(() => new MediaItemTemplate());
+        public DataTemplate VerticalMediaItemTemplate { get; set; } = new DataTemplate(() => new VerticalMediaItemTemplate());
         public DataTemplate HorizontalMediaItemTemplate { get; set; } = new DataTemplate(() => new HorizontalMediaItemTemplate());
-        public DataTemplate PlaylistTemplate { get; set; } = new DataTemplate(() => new PlaylistItemTemplate());
-        public DataTemplate HorizontalPlaylistTemplate { get; set; } = new DataTemplate(() => new HorizontalMediaItemTemplate());
+        public DataTemplate VerticalPlaylistTemplate { get; set; } = new DataTemplate(() => new VerticalPlaylistTemplate());
+        public DataTemplate HorizontalPlaylistTemplate { get; set; } = new DataTemplate(() => new HorizontalPlaylistItemTemplate());
 
         public virtual bool Horizontal => false;
 
@@ -26,12 +26,12 @@ namespace Chameleon.Core.Templates
                     else if (ReferenceEquals(mediaItem, MediaManager.Queue.Current))
                         return CurrentMediaItemTemplate;
                     else
-                        return MediaItemTemplate;
+                        return VerticalMediaItemTemplate;
                 case IPlaylist playlist:
                     if (Horizontal)
                         return HorizontalPlaylistTemplate;
                     else
-                        return PlaylistTemplate;
+                        return VerticalPlaylistTemplate;
                 default:
                     break;
             }

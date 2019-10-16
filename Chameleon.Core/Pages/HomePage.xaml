@@ -20,7 +20,7 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <ScrollView>
-            <StackLayout Padding="0,0,0,16">
+            <StackLayout Padding="0,16,0,16">
                 <Label
                     mvx:La.ng="Text Recent"
                     IsVisible="{Binding HasRecent}"
@@ -48,7 +48,7 @@
                     </CollectionView.EmptyView>
                 </CollectionView>
                 <StackLayout
-                    Padding="16,0,16,0"
+                    Padding="16,16,16,0"
                     Orientation="Horizontal">
                     <Label
                         mvx:La.ng="Text Playlists"

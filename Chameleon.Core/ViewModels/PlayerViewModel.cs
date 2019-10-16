@@ -15,7 +15,7 @@ using Xamarin.Forms;
 
 namespace Chameleon.Core.ViewModels
 {
-    public class PlayerViewModel : BaseViewModel<IMediaItem>
+    public class PlayerViewModel : BaseViewModel
     {
         public IMediaManager MediaManager { get; }
         private readonly IUserDialogs _userDialogs;
@@ -25,6 +25,12 @@ namespace Chameleon.Core.ViewModels
             MediaManager = mediaManager ?? throw new ArgumentNullException(nameof(mediaManager));
             _userDialogs = userDialogs ?? throw new ArgumentNullException(nameof(userDialogs));
             MediaManager.MediaPlayer.PropertyChanged += MediaPlayer_PropertyChanged;
+            mediaManager.MediaItemChanged += MediaManager_MediaItemChanged;
+        }
+
+        private void MediaManager_MediaItemChanged(object sender, MediaManager.Media.MediaItemEventArgs e)
+        {
+            Source = e.MediaItem;
         }
 
         private void MediaPlayer_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
@@ -216,11 +222,6 @@ namespace Chameleon.Core.ViewModels
         private IMvxCommand _favoriteCommand;
         public IMvxCommand FavoriteCommand => _favoriteCommand ?? (_favoriteCommand = new MvxCommand(Favorite));
 
-        public override void Prepare(IMediaItem parameter)
-        {
-            Source = parameter;
-        }
-
         public override Task Initialize()
         {
             Playlists.Add(new Playlist { Title = "Favorites" });
@@ -246,6 +247,7 @@ namespace Chameleon.Core.ViewModels
         public override void ViewAppeared()
         {
             base.ViewAppeared();
+            Source = MediaManager.Queue.Current;
             TimeSpanPosition = MediaManager.Position;
             Position = MediaManager.Position.TotalSeconds;
             TimeSpanDuration = MediaManager.Duration;

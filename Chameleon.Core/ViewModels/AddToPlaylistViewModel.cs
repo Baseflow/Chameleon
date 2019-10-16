@@ -38,6 +38,13 @@ namespace Chameleon.Core.ViewModels
             set => SetProperty(ref _playlistName, value);
         }
 
+        private IPlaylist _selectedPlaylist;
+        public IPlaylist SelectedPlaylist
+        {
+            get => _selectedPlaylist;
+            set => SetProperty(ref _selectedPlaylist, value);
+        }
+
         public override void Prepare(IMediaItem parameter)
         {
             _mediaItem = parameter;

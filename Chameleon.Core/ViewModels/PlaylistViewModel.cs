@@ -27,13 +27,6 @@ namespace Chameleon.Core.ViewModels
 
         public MvxObservableCollection<IMediaItem> MediaItems { get; set; } = new MvxObservableCollection<IMediaItem>();
 
-        private IMediaItem _selectedMediaItem;
-        public IMediaItem SelectedMediaItem
-        {
-            get => _selectedMediaItem;
-            set => SetProperty(ref _selectedMediaItem, value);
-        }
-
         private IPlaylist _currentPlaylistSource;
         public IPlaylist CurrentPlaylistSource
         {
@@ -113,9 +106,6 @@ namespace Chameleon.Core.ViewModels
             get => _timeLeft;
             set => SetProperty(ref _timeLeft, value);
         }
-
-        private IMvxAsyncCommand<IMediaItem> _playerCommand;
-        public IMvxAsyncCommand<IMediaItem> PlayerCommand => _playerCommand ?? (_playerCommand = new MvxAsyncCommand<IMediaItem>(Play));
 
         private IMvxAsyncCommand _startPlaylistCommand;
         public IMvxAsyncCommand StartPlaylistCommand => _startPlaylistCommand ?? (_startPlaylistCommand = new MvxAsyncCommand(StartPlaylist));
@@ -197,12 +187,6 @@ namespace Chameleon.Core.ViewModels
             Progress = e.Position.TotalSeconds / MediaManager.Duration.TotalSeconds;
 
             TimeLeft = $"-{(e.Position - MediaManager.Duration).ToString(@"mm\:ss")}";
-        }
-
-        private async Task Play(IMediaItem mediaItem)
-        {
-            await NavigationService.Navigate<PlayerViewModel, IMediaItem>(mediaItem);
-            SelectedMediaItem = null;
         }
 
         private async Task StartPlaylist()

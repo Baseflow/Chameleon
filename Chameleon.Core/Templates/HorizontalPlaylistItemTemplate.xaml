@@ -32,12 +32,14 @@
         </pan:PancakeView>
         <Label mvx:Bi.nd="Text Title"
              Grid.Row="1"
+               VerticalTextAlignment="End"
              LineBreakMode="TailTruncation"
              MaxLines="1"
              Style="{StaticResource TitleItem}" />
         <Label
             mvx:Bi.nd="Text PlaylistToSubtitle(.)"
             Grid.Row="2"
+            VerticalTextAlignment="Start"
             LineBreakMode="TailTruncation"
             MaxLines="1"
             Style="{StaticResource SubtitleItem}" />

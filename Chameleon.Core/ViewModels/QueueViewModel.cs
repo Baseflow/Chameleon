@@ -26,17 +26,7 @@ namespace Chameleon.Core.ViewModels
 
         public MvxObservableCollection<IMediaItem> MediaItems { get; set; } = new MvxObservableCollection<IMediaItem>();
 
-        private IMediaItem _selectedMediaItem;
-        public IMediaItem SelectedMediaItem
-        {
-            get => _selectedMediaItem;
-            set => SetProperty(ref _selectedMediaItem, value);
-        }
-
         public string QueueTitle => $"{GetText("Queue")} ({MediaItems?.Count ?? 0})";
-
-        private IMvxAsyncCommand<IMediaItem> _playerCommand;
-        public IMvxAsyncCommand<IMediaItem> PlayerCommand => _playerCommand ?? (_playerCommand = new MvxAsyncCommand<IMediaItem>(Play));
 
         private IMvxAsyncCommand _closeCommand;
         public IMvxAsyncCommand CloseCommand => _closeCommand ?? (_closeCommand = new MvxAsyncCommand(() => Application.Current.MainPage.Navigation.PopModalAsync()));
@@ -62,7 +52,7 @@ namespace Chameleon.Core.ViewModels
             IsLoading = false;
         }
 
-        private async Task Play(IMediaItem mediaItem)
+        protected override async Task Play(IMediaItem mediaItem)
         {
             await _mediaManager.PlayQueueItem(mediaItem);
         }

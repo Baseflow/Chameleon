@@ -117,7 +117,7 @@
     <Style TargetType="Label" x:Key="PrimaryHeader" BasedOn="{StaticResource LabelBase}">
         <Setter Property="FontSize" Value="{DynamicResource TextSizeMedium}"/>
         <Setter Property="FontAttributes" Value="Bold"/>
-        <Setter Property="TextColor" Value="{DynamicResource SecondaryTextColor}"/>
+        <Setter Property="TextColor" Value="{DynamicResource TertiaryTextColor}"/>
     </Style>
 
     <Style TargetType="Label" x:Key="SecondaryHeader">

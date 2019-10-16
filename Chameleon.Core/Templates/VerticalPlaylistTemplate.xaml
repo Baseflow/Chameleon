@@ -48,7 +48,7 @@
                 MaxLines="1"
                 Style="{StaticResource TitleItem}" />
             <Label
-                mvx:Bi.nd="Text Album"
+                mvx:Bi.nd="Text PlaylistToSubtitle(.)"
                 Grid.Column="1"
                 Grid.Row="1"
                 VerticalOptions="Start"

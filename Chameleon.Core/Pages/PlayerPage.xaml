@@ -64,9 +64,7 @@
                             HorizontalOptions="FillAndExpand"
                             VerticalOptions="Start"
                             HeightRequest="{Binding VideoHeight}"
-                            VideoPlaceholder="{Binding VideoPlaceholder}"
-                            ShowControls="False"
-                            mvx:Bi.nd="Source Source" />
+                            ShowControls="False" />
                     </pan:PancakeView>
                     <StackLayout VerticalOptions="FillAndExpand" BindableLayout.ItemsSource="{Binding Metadata}"
                         Orientation="Vertical">

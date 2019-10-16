@@ -12,109 +12,25 @@
     mc:Ignorable="d"
     x:Class="Chameleon.Core.Views.BrowsePage"
     x:TypeArguments="viewModels:BrowseViewModel"
-    mvx:La.ng="Title Title"
-    x:Name="thisPage">
-
+    mvx:La.ng="Title Title">
     <ContentPage.ToolbarItems>
         <ToolbarItem IconImageSource="icon_plus.png"
                      Order="Primary"
                      mvx:Bi.nd="Command AddCommand" />
     </ContentPage.ToolbarItems>
-
-    <ContentPage.Content>
-        <core:MvxListView
-            ItemsSource="{mvx:MvxBind RecentlyPlayedItems}"
-            ItemClick="{mvx:MvxBind PlayCommand}"
-            VerticalOptions="FillAndExpand"
-            SeparatorVisibility="None"
-            HasUnevenRows="True"
-            SelectedItem="{Binding SelectedMediaItem, Mode=TwoWay}">
-            <core:MvxListView.Header>
-                <StackLayout Spacing="0">
-                    <SearchBar
-                        mvx:La.ng="Placeholder SearchBar"
-                        Text="{mvx:MvxBind SearchText}">
-                    </SearchBar>
-                    <Label
-                        mvx:La.ng="Text Artists"
-                        IsVisible="{Binding IsArtistsVisible, Mode=OneWay}"
-                        Style="{StaticResource PrimaryHeader}"
-                        Margin="24,0" />
-                    <CollectionView
-                        x:Name="MyCollectionView"
-                        IsVisible="{Binding IsArtistsVisible, Mode=OneWay}"
-                        mvx:Bi.nd="ItemsSource FavoriteArtists;
-                                    SelectionChangedCommand OpenArtistCommand;
-                                    SelectionChangedCommandParameter SelectedArtist;
-                                    SelectedItem SelectedArtist"
-                        ItemTemplate="{StaticResource contentItemHorizontalTemplateSelector}"
-                        SelectionMode="Single"
-                        HeightRequest="250">
-                        <CollectionView.ItemsLayout>
-                            <GridItemsLayout
-                                Orientation="Horizontal"
-                                VerticalItemSpacing="1"
-                                HorizontalItemSpacing="0" />
-                        </CollectionView.ItemsLayout>
-                    </CollectionView>
-                    <CollectionView
-                       IsVisible="{Binding ShowEmptyView}">
-                        <CollectionView.EmptyView>
-                            <StackLayout>
-                                <ActivityIndicator Color="DimGray"
-                                                   mvx:Bi.nd="IsRunning IsLoading"
-                                                   HeightRequest="50" />
-                                <Grid Padding="24,0,10,10"
-                                      VerticalOptions="Center">
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="56" />
-                                    </Grid.RowDefinitions>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="56" />
-                                        <ColumnDefinition Width="*" />
-                                    </Grid.ColumnDefinitions>
-                                    <pan:PancakeView
-                                        CornerRadius="3"
-                                        IsClippedToBounds="True"
-                                        Elevation="2"
-                                        BackgroundColor="{DynamicResource SecondaryBackgroundColor}">
-                                        <pan:PancakeView.HasShadow>
-                                            <OnPlatform x:TypeArguments="x:Boolean"
-                                                        iOS="False"
-                                                        Android="True" />
-                                        </pan:PancakeView.HasShadow>
-                                        <Image
-                                            BackgroundColor="{DynamicResource SecondaryBackgroundColor}"
-                                            Source="icon_plus_big.png"
-                                            Margin="{StaticResource MarginPaddingLarge}"/>
-                                    </pan:PancakeView>
-                                    <Label
-                                        BindingContext="{Binding .}"
-                                        Text="{mvx:MvxLang AddAnItem}"
-                                        Grid.Column="1"
-                                        VerticalOptions="Center"
-                                        Style="{StaticResource TitleItem}" />
-                                    <Grid.GestureRecognizers>
-                                        <TapGestureRecognizer Command="{Binding Source={x:Reference Name=thisPage}, Path=BindingContext.DataContext.AddCommand}"/>
-                                    </Grid.GestureRecognizers>
-                                </Grid>
-                            </StackLayout>
-                        </CollectionView.EmptyView>
-                    </CollectionView>
-                    <Label
-                        BindingContext="{Binding .}"
-                        Text="{mvx:MvxLang AllMedia}"
-                        Style="{StaticResource PrimaryHeader}"
-                        Margin="24,8" />
-                </StackLayout>
-            </core:MvxListView.Header>
-            <core:MvxListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <templates:VerticalMediaItemTemplate />
-                    </ViewCell>
-                </DataTemplate>
-            </core:MvxListView.ItemTemplate>
-        </core:MvxListView>
-    </ContentPage.Content>
+    <CollectionView SelectionMode="Single"
+                    mvx:Bi.nd="ItemsSource RecentlyPlayedItems;
+                    SelectionChangedCommand PlayCommand;
+                    SelectionChangedCommandParameter SelectedMediaItem;
+                    SelectedItem SelectedMediaItem"
+                    ItemTemplate="{StaticResource contentItemTemplateSelector}">
+        <CollectionView.Header>
+            <StackLayout Spacing="0">
+                <SearchBar
+                    mvx:La.ng="Placeholder SearchBar"
+                    Text="{mvx:MvxBind SearchText}">
+                </SearchBar>
+            </StackLayout>
+        </CollectionView.Header>
+    </CollectionView>
 </core:MvxContentPage>

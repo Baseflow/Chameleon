@@ -124,8 +124,8 @@ namespace Chameleon.Core.ViewModels
             //TODO: Check if the url is valid
             if (!string.IsNullOrWhiteSpace(result.Value))
             {
-                var mediaItem = await CrossMediaManager.Current.Play(result.Value);
-                await NavigationService.Navigate<PlayerViewModel, IMediaItem>(mediaItem);
+                await NavigationService.Navigate<PlayerViewModel>();
+                await CrossMediaManager.Current.Play(result.Value);
             }
         }
 
@@ -148,8 +148,8 @@ namespace Chameleon.Core.ViewModels
                 }
                 if (!string.IsNullOrEmpty(path))
                 {
-                    var mediaItem = await CrossMediaManager.Current.Play(path);
-                    await NavigationService.Navigate<PlayerViewModel, IMediaItem>(mediaItem);
+                    await NavigationService.Navigate<PlayerViewModel>();
+                    await CrossMediaManager.Current.Play(path);
                 }
             }
             else
@@ -171,20 +171,14 @@ namespace Chameleon.Core.ViewModels
                 if (fileData == null)
                     return; // user canceled file picking
 
-                var mediaItem = await CrossMediaManager.Current.Play(fileData.FilePath);
-                await NavigationService.Navigate<PlayerViewModel, IMediaItem>(mediaItem);
+                await NavigationService.Navigate<PlayerViewModel>();
+                await CrossMediaManager.Current.Play(fileData.FilePath);
             }
             catch (Exception ex)
             {
                 System.Console.WriteLine("Exception choosing file: " + ex.ToString());
             }
         }
-        /*
-        private async Task Play(IMediaItem mediaItem)
-        {
-            await NavigationService.Navigate<PlayerViewModel, IMediaItem>(mediaItem);
-            SelectedMediaItem = null;
-        }*/
 
         private async Task OpenPlaylist(IPlaylist playlist)
         {

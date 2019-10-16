@@ -1,27 +1,24 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <core:MvxContentView xmlns:core="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
-                     xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
-                     xmlns="http://xamarin.com/schemas/2014/forms"
-                     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-                     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-                     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-                     xmlns:viewModels="clr-namespace:Chameleon.Core.ViewModels;assembly=Chameleon.Core"
-                     xmlns:local="clr-namespace:Chameleon.Core.Helpers"
-                     xmlns:controls="clr-namespace:Chameleon.Core.Controls"
-                     x:TypeArguments="viewModels:MiniPlayerViewModel"
-                     mc:Ignorable="d"
-                     IsVisible="{Binding IsVisible}"
-                     x:Class="Chameleon.Core.Views.MiniPlayerView">
+    xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModels="clr-namespace:Chameleon.Core.ViewModels;assembly=Chameleon.Core"
+    xmlns:local="clr-namespace:Chameleon.Core.Helpers"
+    xmlns:controls="clr-namespace:Chameleon.Core.Controls"
+    x:TypeArguments="viewModels:MiniPlayerViewModel"
+    mc:Ignorable="d"
+    IsVisible="{Binding IsVisible}"
+    BackgroundColor="{DynamicResource SecondaryBackgroundColor}"
+    x:Class="Chameleon.Core.Views.MiniPlayerView">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1"
-                               x:Name="progressBar" />
-            <RowDefinition Height="auto"
-                               x:Name="mediaInfo" />
-            <RowDefinition Height="35"
-                               x:Name="miniPlayerButtons" />
-            <RowDefinition Height="Auto"
-                               x:Name="divider" />
+            <RowDefinition Height="1" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="35" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="24" />
@@ -32,80 +29,78 @@
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="24" />
         </Grid.ColumnDefinitions>
-
         <Grid.GestureRecognizers>
             <TapGestureRecognizer mvx:Bi.nd="Command OpenPlayerCommand" />
         </Grid.GestureRecognizers>
-
         <ProgressBar Grid.ColumnSpan="7"
-                         HorizontalOptions="FillAndExpand"
-                         ProgressColor="#FFF14431"
-                         mvx:Bi.nd="Progress Progress" />
+            HorizontalOptions="FillAndExpand"
+            ProgressColor="#FFF14431"
+            mvx:Bi.nd="Progress Progress" />
         <Label Grid.Row="1"
-                   Grid.Column="1"
-                   LineBreakMode="TailTruncation"
-                   Grid.ColumnSpan="5"
-                   Margin="0,9"
-                   FontSize="12"
-                   FontAttributes="Bold"
-                   TextColor="White"
-                   HorizontalTextAlignment="Center"
-                   FormattedText="{Binding CurrentMediaItemText}" />
+            Grid.Column="1"
+            LineBreakMode="TailTruncation"
+            Grid.ColumnSpan="5"
+            Margin="0,9"
+            FontSize="12"
+            FontAttributes="Bold"
+            TextColor="White"
+            HorizontalTextAlignment="Center"
+            FormattedText="{Binding CurrentMediaItemText}" />
         <controls:SelectableButton
-                Grid.Row="2"
-                Grid.Column="1"
-                HeightRequest="32"
-                WidthRequest="32"
-                VerticalOptions="Center"
-                HorizontalOptions="Center"
-                BackgroundColor="Transparent"
-                mvx:Bi.nd="Command ShuffleCommand; Source ShuffleImage" />
+            Grid.Row="2"
+            Grid.Column="1"
+            HeightRequest="32"
+            WidthRequest="32"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            BackgroundColor="Transparent"
+            mvx:Bi.nd="Command ShuffleCommand; Source ShuffleImage" />
         <controls:SelectableButton
-                Grid.Row="2"
-                Grid.Column="2"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
-                Aspect="AspectFit"
-                BackgroundColor="Transparent"
-                HeightRequest="32"
-                WidthRequest="32"
-                mvx:Bi.nd="Command PreviousCommand"
-                Source="playback_controls_previous.png" />
+            Grid.Row="2"
+            Grid.Column="2"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            Aspect="AspectFit"
+            BackgroundColor="Transparent"
+            HeightRequest="32"
+            WidthRequest="32"
+            mvx:Bi.nd="Command PreviousCommand"
+            Source="playback_controls_previous.png" />
         <ImageButton
-                Grid.Row="2"
-                Grid.Column="3"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
-                Aspect="AspectFit"
-                BackgroundColor="Transparent"
-                HeightRequest="32"
-                WidthRequest="32"
-                mvx:Bi.nd="Command PlayPauseCommand; Source PlayPauseImage" />
+            Grid.Row="2"
+            Grid.Column="3"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            Aspect="AspectFit"
+            BackgroundColor="Transparent"
+            HeightRequest="32"
+            WidthRequest="32"
+            mvx:Bi.nd="Command PlayPauseCommand; Source PlayPauseImage" />
         <controls:SelectableButton
-                Grid.Row="2"
-                Grid.Column="4"
-                HeightRequest="32"
-                WidthRequest="32"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
-                BackgroundColor="Transparent"
-                mvx:Bi.nd="Command NextCommand"
-                Source="playback_controls_next.png" />
+            Grid.Row="2"
+            Grid.Column="4"
+            HeightRequest="32"
+            WidthRequest="32"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            BackgroundColor="Transparent"
+            mvx:Bi.nd="Command NextCommand"
+            Source="playback_controls_next.png" />
         <controls:SelectableButton
-                Grid.Row="2"
-                Grid.Column="5"
-                HeightRequest="32"
-                WidthRequest="32"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
-                BackgroundColor="Transparent"
-                Command="{Binding Source={x:Static local:NavigationHelper.OptionsCommand}}"
-                CommandParameter="{Binding CurrentMediaItem}"
-                Source="icon_more.png" />
+            Grid.Row="2"
+            Grid.Column="5"
+            HeightRequest="32"
+            WidthRequest="32"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            BackgroundColor="Transparent"
+            Command="{Binding Source={x:Static local:NavigationHelper.OptionsCommand}}"
+            CommandParameter="{Binding CurrentMediaItem}"
+            Source="icon_more.png" />
         <BoxView Grid.Row="3"
-                     Grid.ColumnSpan="7"
-                     Margin="0,12,0,.5"
-                     HeightRequest=".5">
+                Grid.ColumnSpan="7"
+                Margin="0,12,0,.5"
+                HeightRequest=".5">
             <BoxView.Color>
                 <OnPlatform x:TypeArguments="Color"
                                 iOS="Transparent"

@@ -30,7 +30,7 @@
                 ItemTemplate="{StaticResource contentItemTemplateSelector}"
                 mvx:Bi.nd=
                     "ItemsSource MediaItems;
-                    SelectionChangedCommand PlayerCommand;
+                    SelectionChangedCommand PlayCommand;
                     SelectionChangedCommandParameter SelectedMediaItem;
                     SelectedItem SelectedMediaItem"
                 SelectionMode="Single"

@@ -1,24 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<core:MvxContentPage
-    xmlns:core="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
-    xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
-    xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:viewModels="clr-namespace:Chameleon.Core.ViewModels;assembly=Chameleon.Core"
-    xmlns:coloredTableView="clr-namespace:Chameleon.Core;assembly=Chameleon.Core"
-    mc:Ignorable="d"
-    x:TypeArguments="viewModels:SettingsViewModel"
-    x:Class="Chameleon.Core.Views.SettingsPage"
-    mvx:La.ng="Title Title">
-
-    <ContentPage.Content>
-        <coloredTableView:ColoredTableView
-            BackgroundColor="Transparent"
-            Intent="Settings"
-            HasUnevenRows="True"
-            SeparatorColor="{DynamicResource PrimaryColor}">
+<core:MvxContentPage xmlns:core="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms" xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:viewModels="clr-namespace:Chameleon.Core.ViewModels;assembly=Chameleon.Core" xmlns:coloredTableView="clr-namespace:Chameleon.Core;assembly=Chameleon.Core" mc:Ignorable="d" x:TypeArguments="viewModels:SettingsViewModel" x:Class="Chameleon.Core.Views.SettingsPage" mvx:La.ng="Title Title">
+    <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
+        <coloredTableView:ColoredTableView HeightRequest="0" BackgroundColor="Transparent" Intent="Settings" HasUnevenRows="True" SeparatorColor="{DynamicResource PrimaryColor}">
             <TableRoot>
                 <TableSection>
                     <ViewCell Tapped="ViewCell_TappedPlaybackSettings">
@@ -30,13 +13,8 @@
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
-                            <Label mvx:La.ng="Text PlaybackSettings"
-                                   Style="{DynamicResource Title}"
-                                   Grid.Column="0" />
-                            <Image Source="disclosure_button.png"
-                                   HorizontalOptions="End"
-                                   BackgroundColor="Transparent"
-                                   Grid.Column="1" />
+                            <Label mvx:La.ng="Text PlaybackSettings" Style="{DynamicResource Title}" Grid.Column="0" />
+                            <Image Source="disclosure_button.png" HorizontalOptions="End" BackgroundColor="Transparent" Grid.Column="1" />
                         </Grid>
                     </ViewCell>
                     <ViewCell Tapped="ViewCell_TappedTheming">
@@ -48,28 +26,23 @@
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
-                            <Label mvx:La.ng="Text Theming"
-                                   Style="{DynamicResource Title}"
-                                   Grid.Column="0" />
-                            <Image Source="disclosure_button.png"
-                                   HorizontalOptions="End"
-                                   BackgroundColor="Transparent"
-                                   Grid.Column="1" />
+                            <Label mvx:La.ng="Text Theming" Style="{DynamicResource Title}" Grid.Column="0" />
+                            <Image Source="disclosure_button.png" HorizontalOptions="End" BackgroundColor="Transparent" Grid.Column="1" />
                         </Grid>
                     </ViewCell>
                     <!--<ViewCell >
-                        <Grid Margin="15,15">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="Auto"/>
-                        </Grid.ColumnDefinitions>
-                            <Label Text="Equalizer" Style="{StaticResource Title}" Grid.Column="0"/>
-                            <Image Source="disclosure_button.png" HorizontalOptions="End" Grid.Column="1"/>
-                       </Grid>
-                  </ViewCell>-->
+                    <Grid Margin="15,15">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                        <Label Text="Equalizer" Style="{StaticResource Title}" Grid.Column="0"/>
+                        <Image Source="disclosure_button.png" HorizontalOptions="End" Grid.Column="1"/>
+                    </Grid>
+                </ViewCell>-->
                     <ViewCell Tapped="ViewCell_TappedOpenSource">
                         <Grid Padding="{StaticResource MarginPaddingLarge}">
                             <Grid.RowDefinitions>
@@ -79,46 +52,24 @@
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
-                            <Label mvx:La.ng="Text OpenSourceSoftware"
-                                   Style="{DynamicResource Title}"
-                                   Grid.Column="0" />
-                            <Image Source="disclosure_button.png"
-                                   HorizontalOptions="End"
-                                   BackgroundColor="Transparent"
-                                   Grid.Column="1" />
-                        </Grid>
-                    </ViewCell>
-                    <ViewCell IsEnabled="True"
-                              BindingContext="{Binding .}">
-                        <Grid Padding="{StaticResource MarginPaddingLarge}" HorizontalOptions="FillAndExpand">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
-                            </Grid.RowDefinitions>
-                            <Image Source="powered_by_baseflow_logo.png"
-                                   Margin="10,0,0,10"
-                                   HorizontalOptions="Start"
-                                   Grid.Row="0" />
-                            <Label mvx:La.ng="Text PowerdByText"
-                                   Style="{StaticResource SecondaryDetailText}"
-                                   Margin="10,0,10,25"
-                                   Grid.Row="1" />
-                            <Button mvx:La.ng="Text FindUsOnGithub"
-                                    mvx:Bi.nd="Command GithubCommand"
-                                    Style="{DynamicResource PrimaryButton}"
-                                    Margin="0,0,0,10"
-                                    Grid.Row="2" />
-                            <Button mvx:La.ng="Text VisitBaseflow"
-                                    mvx:Bi.nd="Command BaseflowCommand"
-                                    Style="{DynamicResource PrimaryButton}"
-                                    Margin="0,0,0,10"
-                                    Grid.Row="3" />
+                            <Label mvx:La.ng="Text OpenSourceSoftware" Style="{DynamicResource Title}" Grid.Column="0" />
+                            <Image Source="disclosure_button.png" HorizontalOptions="End" BackgroundColor="Transparent" Grid.Column="1" />
                         </Grid>
                     </ViewCell>
                 </TableSection>
             </TableRoot>
         </coloredTableView:ColoredTableView>
-    </ContentPage.Content>
+        <Grid VerticalOptions="FillAndExpand" Padding="{StaticResource MarginPaddingLarge}" HorizontalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+            <Image Source="powered_by_baseflow_logo.png" Margin="10,0,0,10" HorizontalOptions="Start" Grid.Row="0" />
+            <Label mvx:La.ng="Text PowerdByText" Style="{StaticResource SecondaryDetailText}" Margin="10,0,10,25" Grid.Row="1" />
+            <Button mvx:La.ng="Text FindUsOnGithub" mvx:Bi.nd="Command GithubCommand" Style="{DynamicResource PrimaryButton}" Margin="0,0,0,10" Grid.Row="2" />
+            <Button mvx:La.ng="Text VisitBaseflow" mvx:Bi.nd="Command BaseflowCommand" Style="{DynamicResource PrimaryButton}" Margin="0,0,0,10" Grid.Row="3" />
+        </Grid>
+    </StackLayout>
 </core:MvxContentPage>

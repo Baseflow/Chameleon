@@ -42,11 +42,11 @@ namespace Chameleon.Core.ViewModels
             }
         }
 
-        private IPlaylist _selectedItem;
-        public IPlaylist SelectedItem
+        private IPlaylist _selectedPlaylist;
+        public IPlaylist SelectedPlaylist
         {
-            get => _selectedItem;
-            set => SetProperty(ref _selectedItem, value);
+            get => _selectedPlaylist;
+            set => SetProperty(ref _selectedPlaylist, value);
         }
 
         public override async Task Initialize()
@@ -69,7 +69,7 @@ namespace Chameleon.Core.ViewModels
         private async Task OpenPlaylist(IPlaylist arg)
         {
             await NavigationService.Navigate<PlaylistViewModel, IPlaylist>(arg);
-            SelectedItem = null;
+            SelectedPlaylist = null;
         }
     }
 }

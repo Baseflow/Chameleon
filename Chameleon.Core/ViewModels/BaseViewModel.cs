@@ -53,10 +53,18 @@ namespace Chameleon.Core.ViewModels
             if (mediaItem == null)
                 return;
 
+            bool hasOpenedPlayer = false;
+
+            if (mediaItem.MediaType != MediaType.Audio && mediaItem.MediaType != MediaType.Default)
+            {
+                await NavigationService.Navigate<PlayerViewModel>();
+                hasOpenedPlayer = true;
+            }
+
             var extractedItem = await CrossMediaManager.Current.Play(mediaItem);
             Mvx.IoCProvider.Resolve<IBrowseService>().AddToRecentMedia(mediaItem);
 
-            if(extractedItem.MediaType != MediaType.Audio)
+            if(extractedItem.MediaType != MediaType.Audio && !hasOpenedPlayer)
                 await NavigationService.Navigate<PlayerViewModel>();
             SelectedMediaItem = null;
         }

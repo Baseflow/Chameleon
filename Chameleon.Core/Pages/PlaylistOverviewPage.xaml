@@ -13,7 +13,6 @@
     x:TypeArguments="viewModels:PlaylistOverviewViewModel"
     x:Class="Chameleon.Core.Views.PlaylistOverviewPage"
     x:Name="thisPage">
-
     <ContentPage.ToolbarItems>
         <ToolbarItem Icon="icon_plus"
                      Command="{Binding AddPlaylistCommand}" />
@@ -24,60 +23,57 @@
             <converters:InverseBoolConverter x:Key="invertBool" />
         </ResourceDictionary>
     </ContentPage.Resources>
-
-    <ContentPage.Content>
-        <StackLayout>
-            <SearchBar mvx:La.ng="Placeholder SearchBar"
-                       Text="{mvx:MvxBind SearchText}">
-            </SearchBar>
-            <CollectionView x:Name="MyCollectionView"
-                            ItemTemplate="{StaticResource contentItemTemplateSelector}"
-                            mvx:Bi.nd="ItemsSource Playlists;
-                            SelectionChangedCommand OpenPlaylistCommand;
-                            SelectionChangedCommandParameter SelectedItem;
-                            SelectedItem SelectedItem"
-                            SelectionMode="Single"
-                            VerticalOptions="FillAndExpand">
-                <CollectionView.EmptyView>
-                    <StackLayout>
-                        <Grid Padding="24,0,24,0"
-                              VerticalOptions="Center">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="auto" />
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="48" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <pan:PancakeView
-                                CornerRadius="3"
-                                IsClippedToBounds="True"
-                                VerticalOptions="Center"
-                                Elevation="2"
-                                BackgroundColor="{DynamicResource PrimaryColor}">
-                                <pan:PancakeView.HasShadow>
-                                    <OnPlatform x:TypeArguments="x:Boolean"
-                                                iOS="False"
-                                                Android="True" />
-                                </pan:PancakeView.HasShadow>
-                                <Image
-                                    Source="icon_plus_big.png"
-                                    Margin="{StaticResource MarginPaddingLarge}"/>
-                            </pan:PancakeView>
-                            <Label
-                                BindingContext="{Binding .}"
-                                Text="{mvx:MvxLang AddNewPlaylist}"
-                                Grid.Column="1"
-                                Margin="{StaticResource MarginPaddingMedium}"
-                                VerticalOptions="Center"
-                                Style="{StaticResource TitleItem}" />
-                            <Grid.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding Source={x:Reference Name=thisPage}, Path=BindingContext.DataContext.AddPlaylistCommand}"/>
-                            </Grid.GestureRecognizers>
-                        </Grid>
-                    </StackLayout>
-                </CollectionView.EmptyView>
-            </CollectionView>
-        </StackLayout>
-    </ContentPage.Content>
+    <StackLayout>
+        <SearchBar mvx:La.ng="Placeholder SearchBar"
+                    Text="{mvx:MvxBind SearchText}">
+        </SearchBar>
+        <CollectionView
+            ItemTemplate="{StaticResource contentItemTemplateSelector}"
+            mvx:Bi.nd="ItemsSource Playlists;
+            SelectionChangedCommand OpenPlaylistCommand;
+            SelectionChangedCommandParameter SelectedPlaylist;
+            SelectedItem SelectedPlaylist"
+            SelectionMode="Single"
+            VerticalOptions="FillAndExpand">
+            <CollectionView.EmptyView>
+                <StackLayout>
+                    <Grid Padding="24,0,24,0"
+                            VerticalOptions="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="48" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <pan:PancakeView
+                            CornerRadius="3"
+                            IsClippedToBounds="True"
+                            VerticalOptions="Center"
+                            Elevation="2"
+                            BackgroundColor="{DynamicResource PrimaryColor}">
+                            <pan:PancakeView.HasShadow>
+                                <OnPlatform x:TypeArguments="x:Boolean"
+                                            iOS="False"
+                                            Android="True" />
+                            </pan:PancakeView.HasShadow>
+                            <Image
+                                Source="icon_plus_big.png"
+                                Margin="{StaticResource MarginPaddingLarge}"/>
+                        </pan:PancakeView>
+                        <Label
+                            BindingContext="{Binding .}"
+                            Text="{mvx:MvxLang AddNewPlaylist}"
+                            Grid.Column="1"
+                            Margin="{StaticResource MarginPaddingMedium}"
+                            VerticalOptions="Center"
+                            Style="{StaticResource TitleItem}" />
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding Source={x:Reference Name=thisPage}, Path=BindingContext.DataContext.AddPlaylistCommand}"/>
+                        </Grid.GestureRecognizers>
+                    </Grid>
+                </StackLayout>
+            </CollectionView.EmptyView>
+        </CollectionView>
+    </StackLayout>
 </core:MvxContentPage>

@@ -104,16 +104,9 @@ namespace Chameleon.Core.ViewModels
         private IMvxAsyncCommand _openPlaylistOverviewCommand;
         public IMvxAsyncCommand OpenPlaylistOverviewCommand => _openPlaylistOverviewCommand ?? (_openPlaylistOverviewCommand = new MvxAsyncCommand(() => NavigationService.Navigate<PlaylistOverviewViewModel>()));
 
-        public override void Prepare()
-        {
-            var vm = Mvx.IoCProvider.Resolve<IMvxViewModelLoader>().LoadViewModel(MvxViewModelRequest<MiniPlayerViewModel>.GetDefaultRequest(), null) as MiniPlayerViewModel;
-            MiniPlayerViewModel = vm;
-        }
-
         public override async void ViewAppearing()
         {
             base.ViewAppearing();
-            MiniPlayerViewModel.ViewAppearing();
 
             if (_isInitialized)
                 await ReloadData().ConfigureAwait(false);
@@ -121,18 +114,6 @@ namespace Chameleon.Core.ViewModels
             IsPlaying = MediaManager.Queue.Count > 0;
 
             _isInitialized = true;
-        }
-
-        public override void ViewAppeared()
-        {
-            base.ViewAppeared();
-            MiniPlayerViewModel.ViewAppeared();
-        }
-
-        public override void ViewDisappeared()
-        {
-            base.ViewDisappeared();
-            MiniPlayerViewModel.ViewDisappeared();
         }
 
         public override async Task ReloadData(bool forceReload = false)

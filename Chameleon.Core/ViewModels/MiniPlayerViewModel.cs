@@ -18,6 +18,20 @@ namespace Chameleon.Core.ViewModels
             : base(logProvider, navigationService)
         {
             MediaManager = mediaManager ?? throw new ArgumentNullException(nameof(mediaManager));
+            MediaManager.StateChanged += MediaManager_StateChanged;
+            MediaManager.PositionChanged += MediaManager_PositionChanged;
+        }
+
+        private void MediaManager_StateChanged(object sender, MediaManager.Playback.StateChangedEventArgs e)
+        {
+            if (MediaManager.IsPlaying())
+                PlayPauseImage = ImageSource.FromFile("playback_controls_pause_button.png");
+            else
+                PlayPauseImage = ImageSource.FromFile("playback_controls_play_button.png");
+
+            RaisePropertyChanged(nameof(CurrentMediaItemText));
+
+            Progress = MediaManager.Position.TotalSeconds / MediaManager.Duration.TotalSeconds;
         }
 
         private ImageSource _playPauseImage = "playback_controls_pause_button.png";
@@ -88,37 +102,6 @@ namespace Chameleon.Core.ViewModels
 
         private IMvxAsyncCommand _openPlayerCommand;
         public IMvxAsyncCommand OpenPlayerCommand => _openPlayerCommand ?? (_openPlayerCommand = new MvxAsyncCommand(OpenPlayer));
-
-        public override Task Initialize()
-        {
-            return base.Initialize();
-        }
-
-        public override void ViewAppearing()
-        {
-            base.ViewAppearing();
-
-            if (MediaManager.IsPlaying())
-                PlayPauseImage = ImageSource.FromFile("playback_controls_pause_button.png");
-            else
-                PlayPauseImage = ImageSource.FromFile("playback_controls_play_button.png");
-
-            RaisePropertyChanged(nameof(CurrentMediaItemText));
-        }
-
-        public override void ViewAppeared()
-        {
-            base.ViewAppeared();
-
-            Progress = MediaManager.Position.TotalSeconds / MediaManager.Duration.TotalSeconds;
-            MediaManager.PositionChanged += MediaManager_PositionChanged;
-        }
-
-        public override void ViewDisappeared()
-        {
-            base.ViewDisappeared();
-            MediaManager.PositionChanged -= MediaManager_PositionChanged;
-        }
 
         private void MediaManager_PositionChanged(object sender, MediaManager.Playback.PositionChangedEventArgs e)
         {

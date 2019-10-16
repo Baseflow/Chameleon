@@ -1,15 +1,21 @@
-﻿using MonkeyCache;
+﻿using System;
+using MonkeyCache;
 
 namespace Chameleon.Services.Extensions
 {
     public static class BarrelExtensions
     {
-        public static T Get<T>(this IBarrel source, string key, T defaultValue)
+        public static T GetOrCreate<T>(this IBarrel barrel, string key, T defaultValue, TimeSpan timeSpan = default)
         {
-            if (string.IsNullOrWhiteSpace(key) || !source.Exists(key))
+            if (string.IsNullOrWhiteSpace(key) || !barrel.Exists(key))
+            {
+                if (timeSpan == default)
+                    timeSpan = TimeSpan.MaxValue;
+                barrel.Add(key, defaultValue, timeSpan);
                 return defaultValue;
+            }
 
-            return source.Get<T>(key);
+            return barrel.Get<T>(key);
         }
     }
 }

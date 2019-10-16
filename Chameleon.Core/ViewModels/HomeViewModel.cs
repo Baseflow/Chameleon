@@ -35,13 +35,6 @@ namespace Chameleon.Core.ViewModels
 
         private bool _isInitialized;
 
-        private bool _isPlaying;
-        public bool IsPlaying
-        {
-            get => _isPlaying;
-            set => SetProperty(ref _isPlaying, value);
-        }
-
         private MvxObservableCollection<IPlaylist> _playlists = new MvxObservableCollection<IPlaylist>();
         public MvxObservableCollection<IPlaylist> Playlists
         {
@@ -55,13 +48,13 @@ namespace Chameleon.Core.ViewModels
             get => _recentlyPlayedItems;
             set => SetProperty(ref _recentlyPlayedItems, value);
         }
-
+        /*
         private IMediaItem _selectedMediaItem;
         public IMediaItem SelectedMediaItem
         {
             get => _selectedMediaItem;
             set => SetProperty(ref _selectedMediaItem, value);
-        }
+        }*/
 
         private IPlaylist _selectedPlaylist;
         public IPlaylist SelectedPlaylist
@@ -73,8 +66,8 @@ namespace Chameleon.Core.ViewModels
         public bool HasRecent => !IsLoading && RecentlyPlayedItems.Count > 0;
         public bool HasNoPlaylists => !IsLoading && Playlists.Count == 0;
 
-        private IMvxAsyncCommand<IMediaItem> _playerCommand;
-        public IMvxAsyncCommand<IMediaItem> PlayerCommand => _playerCommand ?? (_playerCommand = new MvxAsyncCommand<IMediaItem>(Play));
+        private IMvxAsyncCommand _openPlayerCommand;
+        public IMvxAsyncCommand OpenPlayerCommand => _openPlayerCommand ?? (_openPlayerCommand = new MvxAsyncCommand(() => NavigationService.Navigate<PlayerViewModel>()));
 
         private IMvxAsyncCommand _addPlaylistCommand;
         public IMvxAsyncCommand AddPlaylistCommand => _addPlaylistCommand ?? (_addPlaylistCommand = new MvxAsyncCommand(AddPlaylist));
@@ -101,30 +94,27 @@ namespace Chameleon.Core.ViewModels
             if (_isInitialized)
                 await ReloadData().ConfigureAwait(false);
 
-            IsPlaying = MediaManager.Queue.Count > 0;
-
             _isInitialized = true;
         }
 
         public override async Task ReloadData(bool forceReload = false)
         {
             IsLoading = true;
-
-            //var recentMedia = await _browseService.GetRecentMedia().ConfigureAwait(false);
-            //if (recentMedia != null)
-            //    RecentlyPlayedItems.ReplaceWith(recentMedia);
+            
             try
             {
+                RecentlyPlayedItems.ReplaceWith(_browseService.RecentMedia);
+
                 var playlists = await MediaManager.Library.GetAll<IPlaylist>().ConfigureAwait(false);
                 if (playlists != null)
                     Playlists.ReplaceWith(playlists);
             }
-            catch (Exception)
+            catch (Exception ex)
             { }
 
-            RaisePropertyChanged(nameof(HasRecent));
-            RaisePropertyChanged(nameof(HasNoPlaylists));
             IsLoading = false;
+            await RaisePropertyChanged(nameof(HasRecent));
+            await RaisePropertyChanged(nameof(HasNoPlaylists));
         }
 
         private async Task OpenUrl()
@@ -189,12 +179,12 @@ namespace Chameleon.Core.ViewModels
                 System.Console.WriteLine("Exception choosing file: " + ex.ToString());
             }
         }
-
+        /*
         private async Task Play(IMediaItem mediaItem)
         {
             await NavigationService.Navigate<PlayerViewModel, IMediaItem>(mediaItem);
             SelectedMediaItem = null;
-        }
+        }*/
 
         private async Task OpenPlaylist(IPlaylist playlist)
         {

@@ -10,11 +10,11 @@ namespace Chameleon.Services.Services
         private readonly IMediaManager _mediaManager;
         private readonly IBarrel _barrel;
 
-        private const string VOLUME_KEY = "volume";
-        private const string STEP_SIZE_KEY = "stepSize";
-        private const string BALANCE_KEY = "balance";
-        private const string CLEAR_QUEUE_ON_PLAY_KEY = "clearQueueOnPlay";
-        private const string KEEP_SCREEN_ON_KEY = "keepScreenOn";
+        private const string VolumeKey = "volume";
+        private const string StepSizeKey = "stepSize";
+        private const string BalanceKey = "balance";
+        private const string ClearQueueOnPlayKey = "clearQueueOnPlay";
+        private const string KeepScreenOnKey = "keepScreenOn";
 
         public SettingsService(IBarrel barrel, IMediaManager mediaManager)
         {
@@ -24,32 +24,32 @@ namespace Chameleon.Services.Services
 
         public TimeSpan StepSizes
         {
-            get => _barrel.Get(STEP_SIZE_KEY, _mediaManager.StepSize);
-            set => _barrel.Add(STEP_SIZE_KEY, value, TimeSpan.MaxValue);
+            get => _barrel.GetOrCreate(StepSizeKey, _mediaManager.StepSize);
+            set => _barrel.Add(StepSizeKey, value, TimeSpan.MaxValue);
         }
 
         public int Volume
         {
-            get => _barrel.Get(VOLUME_KEY, _mediaManager.Volume.MaxVolume);
-            set => _barrel.Add(VOLUME_KEY, value, TimeSpan.MaxValue);
+            get => _barrel.GetOrCreate(VolumeKey, _mediaManager.Volume.MaxVolume);
+            set => _barrel.Add(VolumeKey, value, TimeSpan.MaxValue);
         }
 
         public double Balance
         {
-            get => _barrel.Get(BALANCE_KEY, _mediaManager.Volume.Balance);
-            set => _barrel.Add(BALANCE_KEY, value, TimeSpan.MaxValue);
+            get => _barrel.GetOrCreate(BalanceKey, _mediaManager.Volume.Balance);
+            set => _barrel.Add(BalanceKey, value, TimeSpan.MaxValue);
         }
 
         public bool ClearQueueOnPlay
         {
-            get => _barrel.Get(CLEAR_QUEUE_ON_PLAY_KEY, _mediaManager.ClearQueueOnPlay);
-            set => _barrel.Add(CLEAR_QUEUE_ON_PLAY_KEY, value, TimeSpan.MaxValue);
+            get => _barrel.GetOrCreate(ClearQueueOnPlayKey, _mediaManager.ClearQueueOnPlay);
+            set => _barrel.Add(ClearQueueOnPlayKey, value, TimeSpan.MaxValue);
         }
 
         public bool KeepScreenOn
         {
-            get => _barrel.Get(KEEP_SCREEN_ON_KEY, _mediaManager.KeepScreenOn);
-            set => _barrel.Add(KEEP_SCREEN_ON_KEY, value, TimeSpan.MaxValue);
+            get => _barrel.GetOrCreate(KeepScreenOnKey, _mediaManager.KeepScreenOn);
+            set => _barrel.Add(KeepScreenOnKey, value, TimeSpan.MaxValue);
         }
     }
 }

@@ -24,7 +24,7 @@
     <ContentPage.Content>
         <core:MvxListView
             ItemsSource="{mvx:MvxBind RecentlyPlayedItems}"
-            ItemClick="{mvx:MvxBind PlayerCommand}"
+            ItemClick="{mvx:MvxBind PlayCommand}"
             VerticalOptions="FillAndExpand"
             SeparatorVisibility="None"
             HasUnevenRows="True"

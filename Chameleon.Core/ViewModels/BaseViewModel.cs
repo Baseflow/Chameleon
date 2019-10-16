@@ -1,6 +1,9 @@
 ﻿using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using Chameleon.Services;
+using Chameleon.Services.Services;
+using MediaManager;
+using MediaManager.Library;
 using MvvmCross;
 using MvvmCross.Commands;
 using MvvmCross.Localization;
@@ -17,6 +20,7 @@ namespace Chameleon.Core.ViewModels
         }
 
         protected static IMvxTextProvider _textProvider { get; } = Mvx.IoCProvider.Resolve<IMvxTextProvider>();
+        public IMvxLanguageBinder TextSource => new MvxLanguageBinder(AppSettings.TextProviderNamespace, GetType().Name);
 
         public virtual IMvxAsyncCommand BackCommand => new MvxAsyncCommand(async () => await NavigationService.Close(this));
 
@@ -34,9 +38,27 @@ namespace Chameleon.Core.ViewModels
             set => SetProperty(ref _isLoading, value);
         }
 
-        public override Task Initialize()
+        private IMediaItem _selectedMediaItem;
+        public IMediaItem SelectedMediaItem
         {
-            return ReloadData();
+            get => _selectedMediaItem;
+            set => SetProperty(ref _selectedMediaItem, value);
+        }
+
+        private IMvxAsyncCommand<IMediaItem> _playCommand;
+        public IMvxAsyncCommand<IMediaItem> PlayCommand => _playCommand ?? (_playCommand = new MvxAsyncCommand<IMediaItem>(Play));
+
+        protected virtual async Task Play(IMediaItem mediaItem)
+        {
+            if (mediaItem == null)
+                return;
+
+            var extractedItem = await CrossMediaManager.Current.Play(mediaItem);
+            Mvx.IoCProvider.Resolve<IBrowseService>().AddToRecentMedia(mediaItem);
+
+            if(extractedItem.MediaType != MediaType.Audio)
+                await NavigationService.Navigate<PlayerViewModel>();
+            SelectedMediaItem = null;
         }
 
         /// <summary>
@@ -60,7 +82,10 @@ namespace Chameleon.Core.ViewModels
             return GetText(key);
         }
 
-        public IMvxLanguageBinder TextSource => new MvxLanguageBinder(AppSettings.TextProviderNamespace, GetType().Name);
+        public override Task Initialize()
+        {
+            return ReloadData();
+        }
 
         private IMvxAsyncCommand<bool> _reloadCommand;
         public IMvxAsyncCommand<bool> ReloadCommand
@@ -70,9 +95,7 @@ namespace Chameleon.Core.ViewModels
                 return _reloadCommand = _reloadCommand ?? new MvxAsyncCommand<bool>(async (forceReload) =>
                 {
                     IsLoading = true;
-
                     await ReloadData(forceReload).ConfigureAwait(false);
-
                     IsLoading = false;
                 });
             }

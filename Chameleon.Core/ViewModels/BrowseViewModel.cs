@@ -28,14 +28,6 @@ namespace Chameleon.Core.ViewModels
         private IMvxAsyncCommand _addCommand;
         public IMvxAsyncCommand AddCommand => _addCommand ?? (_addCommand = new MvxAsyncCommand(() => NavigationService.Navigate<ProvidersViewModel>()));
 
-
-        private IMediaItem _selectedMediaItem;
-        public IMediaItem SelectedMediaItem
-        {
-            get => _selectedMediaItem;
-            set => SetProperty(ref _selectedMediaItem, value);
-        }
-
         public bool IsArtistsVisible => string.IsNullOrEmpty(SearchText) && FavoriteArtists.Count > 0;
 
         public bool ShowEmptyView => RecentlyPlayedItems.Count == 0;
@@ -68,9 +60,6 @@ namespace Chameleon.Core.ViewModels
             //TODO:
         }
 
-        private IMvxAsyncCommand<IMediaItem> _playerCommand;
-        public IMvxAsyncCommand<IMediaItem> PlayerCommand => _playerCommand ?? (_playerCommand = new MvxAsyncCommand<IMediaItem>(Play));
-
         private string _searchText;
         public string SearchText
         {
@@ -100,13 +89,6 @@ namespace Chameleon.Core.ViewModels
             }
 
             IsLoading = false;
-        }
-
-
-        private async Task Play(IMediaItem mediaItem)
-        {
-            await NavigationService.Navigate<PlayerViewModel, IMediaItem>(mediaItem);
-            SelectedMediaItem = null;
         }
     }
 }

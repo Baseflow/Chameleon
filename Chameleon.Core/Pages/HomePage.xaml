@@ -14,25 +14,23 @@
     x:Class="Chameleon.Core.Views.HomePage"
     x:Name="homePage"
     mvx:La.ng="Title Title">
-
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <ScrollView>
-            <StackLayout>
+            <StackLayout Padding="0,0,0,16">
                 <Label
                     mvx:La.ng="Text Recent"
                     IsVisible="{Binding HasRecent}"
                     Style="{StaticResource PrimaryHeader}"
                     Margin="24,0" />
                 <CollectionView
-                    x:Name="RecentCollectionView"
                     SelectionMode="Single"
                     IsVisible="{Binding HasRecent}"
                     mvx:Bi.nd="ItemsSource RecentlyPlayedItems;
-                    SelectionChangedCommand PlayerCommand;
+                    SelectionChangedCommand PlayCommand;
                     SelectionChangedCommandParameter SelectedMediaItem;
                     SelectedItem SelectedMediaItem"
                     ItemTemplate="{StaticResource contentItemHorizontalTemplateSelector}"
@@ -50,7 +48,7 @@
                     </CollectionView.EmptyView>
                 </CollectionView>
                 <StackLayout
-                    Padding="24,16"
+                    Padding="24,0,24,0"
                     Orientation="Horizontal">
                     <Label
                         mvx:La.ng="Text Playlists"
@@ -65,7 +63,6 @@
                         Padding="16,0" />
                 </StackLayout>
                 <CollectionView
-                    x:Name="PlaylistsCollectionView"
                     HeightRequest="250"
                     SelectionMode="Single"
                     ItemTemplate="{StaticResource contentItemHorizontalTemplateSelector}"
@@ -107,7 +104,6 @@
                                         <RowDefinition Height="Auto" />
                                     </Grid.RowDefinitions>
                                     <Image
-                                        x:Name="AddPlaylistImageButton"
                                         Grid.Column="0"
                                         Grid.Row="0"
                                         Grid.RowSpan="2"
@@ -144,7 +140,7 @@
                     Margin="24,0" />
                 <Button
                     mvx:La.ng="Text Player"
-                    mvx:Bi.nd="Command PlayerCommand"
+                    mvx:Bi.nd="Command OpenPlayerCommand"
                     Style="{StaticResource PrimaryButton}"
                     Margin="24,0" />
             </StackLayout>

@@ -6,10 +6,9 @@ namespace Chameleon.Services.Services
 {
     public interface IBrowseService
     {
+        IList<IMediaItem> RecentMedia { get; set; }
+
+        void AddToRecentMedia(IMediaItem mediaItem);
         Task<IList<IMediaItem>> GetMedia();
-
-        Task<IList<IMediaItem>> GetRecentMedia();
-
-        Task<IList<IArtist>> GetFavoriteArtists();
     }
 }

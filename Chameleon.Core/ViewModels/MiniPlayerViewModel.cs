@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using MediaManager;
 using MediaManager.Library;
+using MediaManager.Player;
 using MediaManager.Queue;
 using MvvmCross.Commands;
 using MvvmCross.Logging;
@@ -20,7 +21,16 @@ namespace Chameleon.Core.ViewModels
             MediaManager = mediaManager ?? throw new ArgumentNullException(nameof(mediaManager));
             MediaManager.StateChanged += MediaManager_StateChanged;
             MediaManager.PositionChanged += MediaManager_PositionChanged;
+            mediaManager.MediaItemChanged += MediaManager_MediaItemChanged;
         }
+
+        private void MediaManager_MediaItemChanged(object sender, MediaManager.Media.MediaItemEventArgs e)
+        {
+            //TODO: this is not triggered
+            RaisePropertyChanged(nameof(CurrentMediaItem));
+        }
+
+        public bool IsVisible => MediaManager.State != MediaPlayerState.Stopped;
 
         private void MediaManager_StateChanged(object sender, MediaManager.Playback.StateChangedEventArgs e)
         {
@@ -32,6 +42,9 @@ namespace Chameleon.Core.ViewModels
             RaisePropertyChanged(nameof(CurrentMediaItemText));
 
             Progress = MediaManager.Position.TotalSeconds / MediaManager.Duration.TotalSeconds;
+
+            RaisePropertyChanged(nameof(IsVisible));
+            RaisePropertyChanged(nameof(CurrentMediaItem));
         }
 
         private ImageSource _playPauseImage = "playback_controls_pause_button.png";
@@ -76,17 +89,7 @@ namespace Chameleon.Core.ViewModels
             set => SetProperty(ref _progress, value);
         }
 
-        public IMediaItem CurrentlyPlaying
-        {
-            get
-            {
-                var currentlyPlaying = MediaManager.Queue.Current;
-                if (currentlyPlaying != null)
-                    return currentlyPlaying;
-                else
-                    return new MediaItem();
-            }
-        }
+        public IMediaItem CurrentMediaItem => MediaManager.Queue.Current;
 
         private IMvxAsyncCommand _playpauseCommand;
         public IMvxAsyncCommand PlayPauseCommand => _playpauseCommand ?? (_playpauseCommand = new MvxAsyncCommand(PlayPause));

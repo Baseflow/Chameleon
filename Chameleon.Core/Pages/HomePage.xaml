@@ -38,8 +38,7 @@
                     ItemTemplate="{StaticResource contentItemHorizontalTemplateSelector}"
                     HeightRequest="250">
                     <CollectionView.ItemsLayout>
-                        <GridItemsLayout
-                            Orientation="Horizontal" />
+                        <GridItemsLayout Orientation="Horizontal" />
                     </CollectionView.ItemsLayout>
                     <CollectionView.EmptyView>
                         <StackLayout>
@@ -74,12 +73,9 @@
                     SelectionChangedCommand OpenPlaylistCommand; 
                     SelectionChangedCommandParameter SelectedPlaylist; 
                     SelectedItem SelectedPlaylist">
-
                     <CollectionView.ItemsLayout>
-                        <GridItemsLayout
-                            Orientation="Horizontal" />
+                        <GridItemsLayout Orientation="Horizontal" />
                     </CollectionView.ItemsLayout>
-
                     <CollectionView.EmptyView>
                         <Grid Padding="24,0">
                             <Grid.ColumnDefinitions>
@@ -153,8 +149,7 @@
                     Margin="24,0" />
             </StackLayout>
         </ScrollView>
-        <views:MiniPlayerView Grid.Row="1"
-            IsVisible="{Binding Source={x:Reference homePage}, Path=BindingContext.DataContext.IsPlaying}"/>
+        <views:MiniPlayerView Grid.Row="1" />
     </Grid>
 
 </core:MvxContentPage>

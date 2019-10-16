@@ -10,6 +10,7 @@
                      xmlns:controls="clr-namespace:Chameleon.Core.Controls"
                      x:TypeArguments="viewModels:MiniPlayerViewModel"
                      mc:Ignorable="d"
+                     IsVisible="{Binding IsVisible}"
                      x:Class="Chameleon.Core.Views.MiniPlayerView">
     <Grid>
         <Grid.RowDefinitions>
@@ -99,7 +100,7 @@
                 VerticalOptions="Center"
                 BackgroundColor="Transparent"
                 Command="{Binding Source={x:Static local:NavigationHelper.OptionsCommand}}"
-                CommandParameter="{Binding CurrentlyPlaying}"
+                CommandParameter="{Binding CurrentMediaItem}"
                 Source="icon_more.png" />
         <BoxView Grid.Row="3"
                      Grid.ColumnSpan="7"

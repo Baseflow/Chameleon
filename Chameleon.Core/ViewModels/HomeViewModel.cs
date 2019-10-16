@@ -42,16 +42,6 @@ namespace Chameleon.Core.ViewModels
             set => SetProperty(ref _isPlaying, value);
         }
 
-        private MiniPlayerViewModel _miniPlayerViewModel;
-        public MiniPlayerViewModel MiniPlayerViewModel
-        {
-            get => _miniPlayerViewModel;
-            set
-            {
-                SetProperty(ref _miniPlayerViewModel, value);
-            }
-        }
-
         private MvxObservableCollection<IPlaylist> _playlists = new MvxObservableCollection<IPlaylist>();
         public MvxObservableCollection<IPlaylist> Playlists
         {

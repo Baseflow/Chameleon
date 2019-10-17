@@ -241,12 +241,6 @@
     <ImageAsset Include="Assets.xcassets\icon_plus.imageset\icon_plus%403x.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\remove_from_queue.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\delete.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\playback_controls_repeat_on.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
@@ -316,12 +310,6 @@
     <ImageAsset Include="Assets.xcassets\radio_button_on.imageset\radio_button_on.png" />
     <ImageAsset Include="Assets.xcassets\radio_button_on.imageset\radio_button_on%402x.png" />
     <ImageAsset Include="Assets.xcassets\radio_button_on.imageset\radio_button_on%403x.png" />
-    <ImageAsset Include="Assets.xcassets\delete.imageset\delete.png" />
-    <ImageAsset Include="Assets.xcassets\delete.imageset\delete%402x.png" />
-    <ImageAsset Include="Assets.xcassets\delete.imageset\delete%403x.png" />
-    <ImageAsset Include="Assets.xcassets\delete.imageset\delete-1.png" />
-    <ImageAsset Include="Assets.xcassets\delete.imageset\delete%402x-1.png" />
-    <ImageAsset Include="Assets.xcassets\delete.imageset\delete%403x-1.png" />
     <ImageAsset Include="Assets.xcassets\disclosure_button.imageset\disclosure_button.png" />
     <ImageAsset Include="Assets.xcassets\disclosure_button.imageset\disclosure_button%402x.png" />
     <ImageAsset Include="Assets.xcassets\disclosure_button.imageset\disclosure_button%403x.png" />
@@ -494,6 +482,31 @@
     <ImageAsset Include="Assets.xcassets\chameleon_mediaplaye.imageset\chameleon_mediaplaye-1.png" />
     <ImageAsset Include="Assets.xcassets\chameleon_mediaplaye.imageset\chameleon_mediaplaye%402x-1.png" />
     <ImageAsset Include="Assets.xcassets\chameleon_mediaplaye.imageset\chameleon_mediaplaye%403x-1.png" />
+    <ImageAsset Include="Assets.xcassets\icon_contextual_delete.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\icon_contextual_delete.imageset\delete.png" />
+    <ImageAsset Include="Assets.xcassets\icon_contextual_delete.imageset\delete%402x.png" />
+    <ImageAsset Include="Assets.xcassets\icon_contextual_delete.imageset\delete%402x-1.png" />
+    <ImageAsset Include="Assets.xcassets\icon_contextual_delete.imageset\delete%403x.png" />
+    <ImageAsset Include="Assets.xcassets\icon_contextual_delete.imageset\delete%403x-1.png" />
+    <ImageAsset Include="Assets.xcassets\icon_contextual_delete.imageset\delete-1.png" />
+    <ImageAsset Include="Assets.xcassets\icon_contextual_removefromqueue.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\icon_contextual_removefromqueue.imageset\icon_contextual_remove_from_queue.png" />
+    <ImageAsset Include="Assets.xcassets\icon_contextual_removefromqueue.imageset\icon_contextual_remove_from_queue%402x.png" />
+    <ImageAsset Include="Assets.xcassets\icon_contextual_removefromqueue.imageset\icon_contextual_remove_from_queue%403x.png" />
+    <ImageAsset Include="Assets.xcassets\icon_contextual_removefromqueue.imageset\icon_contextual_removefromqueue.png" />
+    <ImageAsset Include="Assets.xcassets\icon_contextual_removefromqueue.imageset\icon_contextual_removefromqueue%402x.png" />
+    <ImageAsset Include="Assets.xcassets\icon_contextual_removefromqueue.imageset\icon_contextual_removefromqueue%403x.png" />
+    <ImageAsset Include="Assets.xcassets\icon_share.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\icon_share.imageset\icon_share.png" />
+    <ImageAsset Include="Assets.xcassets\icon_share.imageset\icon_share%402x.png" />
+    <ImageAsset Include="Assets.xcassets\icon_share.imageset\icon_share%403x.png" />
+    <ImageAsset Include="Assets.xcassets\icon_share.imageset\icon_share-1.png" />
+    <ImageAsset Include="Assets.xcassets\icon_share.imageset\icon_share%402x-1.png" />
+    <ImageAsset Include="Assets.xcassets\icon_share.imageset\icon_share%403x-1.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -575,6 +588,9 @@
     <Folder Include="Assets.xcassets\icon_list_item_edit_dark.imageset\" />
     <Folder Include="Assets.xcassets\icon_list_item_edit_light.imageset\" />
     <Folder Include="Assets.xcassets\icon_list_item_edit.imageset\" />
+    <Folder Include="Assets.xcassets\icon_contextual_delete.imageset\" />
+    <Folder Include="Assets.xcassets\icon_contextual_removefromqueue.imageset\" />
+    <Folder Include="Assets.xcassets\icon_share.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />

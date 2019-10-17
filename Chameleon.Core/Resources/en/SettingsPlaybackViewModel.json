@@ -1,6 +1,6 @@
 ﻿{
-  "Title": "Settings Playback",
-  "Playback": "Playback settings",
+  "Title": "Playback settings",
+  "PlaybackSettings": "Playback settings",
   "Skip": "Skip forward/backwards in seconds",
   "Volume": "Maximum volume",
   "Balance": "Balance",

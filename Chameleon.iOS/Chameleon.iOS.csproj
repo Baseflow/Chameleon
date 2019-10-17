@@ -542,7 +542,7 @@
       <Version>6.4.1</Version>
     </PackageReference>
     <PackageReference Include="Plugin.MediaManager.Forms">
-      <Version>0.8.16</Version>
+      <Version>0.8.17</Version>
     </PackageReference>
     <PackageReference Include="Plugin.Permissions">
       <Version>5.0.0-beta</Version>

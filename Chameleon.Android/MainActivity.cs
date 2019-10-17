@@ -30,7 +30,6 @@ namespace Chameleon.Android
         protected override void OnCreate(Bundle savedInstanceState)
         {
             Forms.SetFlags("CollectionView_Experimental");
-            CrossCurrentActivity.Current.Init(this, savedInstanceState);
 
             TabLayoutResource = Android.Resource.Layout.Tabbar;
             ToolbarResource = Android.Resource.Layout.Toolbar;

@@ -5,32 +5,31 @@
     xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
     xmlns:pan="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     x:Class="Chameleon.Core.Templates.HorizontalSourceItemTemplate">
-    <ContentView.Content>
-        <Grid Margin="{StaticResource MarginPaddingLarge}">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="107" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="156" />
-            </Grid.ColumnDefinitions>
-            <pan:PancakeView
+    <Grid Margin="{StaticResource MarginPaddingLarge}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="107" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="156" />
+        </Grid.ColumnDefinitions>
+        <pan:PancakeView
                 CornerRadius="8"
                 IsClippedToBounds="True"
                 HorizontalOptions="FillAndExpand"
                 VerticalOptions="FillAndExpand"
                 Elevation="2">
-                <pan:PancakeView.HasShadow>
-                    <OnPlatform x:TypeArguments="x:Boolean"
+            <pan:PancakeView.HasShadow>
+                <OnPlatform x:TypeArguments="x:Boolean"
                                 iOS="False"
                                 Android="True" />
-                </pan:PancakeView.HasShadow>
-                <Image
+            </pan:PancakeView.HasShadow>
+            <Image
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="FillAndExpand"
                     Aspect="AspectFill"
                     Source="cover_art_placeholder.png" />
-            </pan:PancakeView>
-            <Label
+        </pan:PancakeView>
+        <Label
                 mvx:Bi.nd="Text Title"
                 Grid.Row="0"
                 Grid.Column="0"
@@ -38,6 +37,5 @@
                 MaxLines="1"
                 Margin="{StaticResource MarginPaddingMedium}"
                 Style="{StaticResource TitleItem}" />
-        </Grid>
-    </ContentView.Content>
+    </Grid>
 </ContentView>

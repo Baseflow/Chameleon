@@ -57,7 +57,7 @@ namespace Chameleon.Core.Helpers
                     {
                         _mediaManager.Queue.Remove(mediaItem);
                         _userDialogs.Toast(GetText("ItemRemovedFromQueue"));
-                    }, "remove_from_queue");
+                    }, "icon_contextual_removefromqueue");
                 }
                 else
                 {
@@ -67,6 +67,10 @@ namespace Chameleon.Core.Helpers
                         _userDialogs.Toast(GetText("ItemAddedToQueue"));
                     }, "playback_controls_queue");
                 }
+                config.Add(GetText("AddToPlaylist"), async () =>
+                {
+                    await _navigationService.Navigate<AddToPlaylistViewModel, IMediaItem>(mediaItem);
+                }, "playback_controls_add_to_playlist");
                 if (_topViewModel is PlaylistViewModel playlistViewModel)
                 {
                     config.Add(GetText("RemoveFromPlaylist"), async () =>
@@ -74,13 +78,8 @@ namespace Chameleon.Core.Helpers
                         playlistViewModel.CurrentPlaylist?.MediaItems?.Remove(mediaItem);
                         await _mediaManager.Library.AddOrUpdate<IPlaylist>(playlistViewModel.CurrentPlaylist);
                         _userDialogs.Toast(GetText("ItemRemovedFromPlaylist"));
-                    }, "remove_from_queue");
+                    }, "icon_contextual_removefromqueue");
                 }
-                config.Add(GetText("AddToPlaylist"), async () =>
-                {
-                    await _navigationService.Navigate<AddToPlaylistViewModel, IMediaItem>(mediaItem);
-                }, "playback_controls_add_to_playlist");
-
                 //config.Add(GetText("ShowArtist"), () => _navigationService.Navigate<ArtistViewModel>());
                 //config.Add(GetText("ShowAlbum"), () => _navigationService.Navigate<AlbumViewModel>());
                 //config.Add(GetText("Share"), () => { });
@@ -94,21 +93,21 @@ namespace Chameleon.Core.Helpers
                 config.Add(GetText("DeletePlaylist"), async () =>
                 {
                     await DeletePlaylist(playlist);
-                }, "delete");
+                }, "icon_contextual_delete");
             }
             else if (contentItem is IArtist artist)
             {
                 config.Add(GetText("Share"), () =>
                 {
 
-                }, "share");
+                }, "icon_share");
             }
             else if (contentItem is IAlbum album)
             {
                 config.Add(GetText("Share"), () =>
                 {
 
-                }, "share");
+                }, "icon_share");
             }
             _userDialogs.ActionSheet(config);
             return Task.CompletedTask;

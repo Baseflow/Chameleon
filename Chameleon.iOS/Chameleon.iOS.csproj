@@ -548,7 +548,7 @@
       <Version>5.0.0-beta</Version>
     </PackageReference>
     <PackageReference Include="Xam.Plugin.Media">
-      <Version>4.4.4-beta</Version>
+      <Version>4.4.5-beta</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.FFImageLoading.Forms">
       <Version>2.4.11.982</Version>

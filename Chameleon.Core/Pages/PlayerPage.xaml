@@ -48,68 +48,67 @@
                 VerticalOptions="Center" />
         </Grid>
     </NavigationPage.TitleView>
-    <ContentPage.Content>
-        <StackLayout VerticalOptions="FillAndExpand">
-            <ScrollView VerticalOptions="FillAndExpand">
-                <StackLayout VerticalOptions="FillAndExpand" Padding="{StaticResource MarginPaddingExtrasmall}">
-                    <pan:PancakeView
+    <StackLayout VerticalOptions="FillAndExpand">
+        <ScrollView VerticalOptions="FillAndExpand">
+            <StackLayout VerticalOptions="FillAndExpand" Padding="{StaticResource MarginPaddingExtrasmall}">
+                <pan:PancakeView
                         HorizontalOptions="FillAndExpand"
                             VerticalOptions="Start"
                             Margin="{StaticResource MarginPaddingXlarge}"
                             CornerRadius="8"
                             IsClippedToBounds="True"
                             Elevation="0">
-                        <mm:VideoView
+                    <mm:VideoView
                             x:Name="VideoPlayerView"
                             HorizontalOptions="FillAndExpand"
                             VerticalOptions="Start"
                             HeightRequest="{Binding VideoHeight}"
                             ShowControls="False" />
-                    </pan:PancakeView>
-                    <StackLayout VerticalOptions="FillAndExpand" BindableLayout.ItemsSource="{Binding Metadata}"
+                </pan:PancakeView>
+                <StackLayout VerticalOptions="FillAndExpand" BindableLayout.ItemsSource="{Binding Metadata}"
                         Orientation="Vertical">
-                        <BindableLayout.ItemTemplate>
-                            <DataTemplate>
-                                <Grid Padding="24,0,24,2">
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="*"/>
-                                    </Grid.RowDefinitions>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="40*"/>
-                                        <ColumnDefinition Width="60*"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Label
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Padding="24,0,24,2">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="40*"/>
+                                    <ColumnDefinition Width="60*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label
                                         Text="{Binding Key}"
                                         VerticalOptions="Center"
                                         Grid.Column="0"
                                         Style="{StaticResource PrimaryDetailText}"/>
-                                    <Label
+                                <Label
                                         Text="{Binding Value}"
                                         VerticalOptions="Center"
                                         MaxLines="3"
                                         LineBreakMode="MiddleTruncation"
                                         Grid.Column="1"
                                         Style="{StaticResource SecondaryDetailText}"/>
-                                </Grid>
-                            </DataTemplate>
-                        </BindableLayout.ItemTemplate>
-                    </StackLayout>
+                            </Grid>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
                 </StackLayout>
-            </ScrollView>
-            <StackLayout VerticalOptions="End">
-                <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="{DynamicResource PrimaryColor}"/>
-                <Grid Padding="18,0,18,0">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="50"/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-                    <controls:SelectableButton
+            </StackLayout>
+        </ScrollView>
+        <StackLayout VerticalOptions="End">
+            <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="{DynamicResource PrimaryColor}"/>
+            <Grid Padding="18,0,18,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <controls:SelectableButton
                         Grid.Column="0"
                         Source="{Binding ShuffleImage}"
                         Padding="{StaticResource MarginPaddingMedium}"
@@ -117,7 +116,7 @@
                         HorizontalOptions="Center"
                         VerticalOptions="CenterAndExpand"
                         BackgroundColor="Transparent"/>
-                    <controls:SelectableButton
+                <controls:SelectableButton
                         Grid.Column="1"
                         Padding="{StaticResource MarginPaddingMedium}"
                         mvx:Bi.nd="Command RepeatCommand"
@@ -125,7 +124,7 @@
                         VerticalOptions="CenterAndExpand"
                         BackgroundColor="Transparent"
                         Source="{Binding RepeatImage}"/>
-                    <controls:SelectableButton
+                <controls:SelectableButton
                         Grid.Column="2"
                         Padding="{StaticResource MarginPaddingMedium}"
                         Source="playback_controls_queue.png"
@@ -133,8 +132,8 @@
                         HorizontalOptions="Center"
                         VerticalOptions="CenterAndExpand"
                         BackgroundColor="Transparent">
-                    </controls:SelectableButton>
-                    <controls:SelectableButton
+                </controls:SelectableButton>
+                <controls:SelectableButton
                         Grid.Column="3"
                         Padding="{StaticResource MarginPaddingMedium}"
                         Source="playback_controls_add_to_playlist.png"
@@ -142,16 +141,16 @@
                         HorizontalOptions="Center"
                         VerticalOptions="CenterAndExpand"
                         BackgroundColor="Transparent"/>
-                    <controls:SelectableButton
+                <controls:SelectableButton
                         Grid.Column="4"
                         Padding="{StaticResource MarginPaddingMedium}"
                         mvx:Bi.nd="Command FavoriteCommand; Source FavoriteImage"
                         HorizontalOptions="Center"
                         VerticalOptions="CenterAndExpand"
                         BackgroundColor="Transparent"/>
-                </Grid>
-                <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="{DynamicResource PrimaryColor}"/>
-                <Slider
+            </Grid>
+            <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="{DynamicResource PrimaryColor}"/>
+            <Slider
                     x:Name="Slider"
                     Margin="16,8"
                     HorizontalOptions="FillAndExpand"
@@ -159,39 +158,39 @@
                     mvx:Bi.nd="Value Position; Maximum Duration; DragStartedCommand DragStartedCommand; DragCompletedCommand DragCompletedCommand"
                     MaximumTrackColor="{DynamicResource TertiaryColor}"
                     MinimumTrackColor="{DynamicResource SecondaryColor}"/>
-                <Grid Padding="24,0">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="auto"/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <Label
+            <Grid Padding="24,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label
                         Grid.Column="0"
                         mvx:Bi.nd="Text TimeSpanToString(TimeSpanPosition)"
                         HorizontalOptions="Start"
                         VerticalOptions="Center"
                         TextColor="{DynamicResource PrimaryTextColor}"/>
-                    <Label
+                <Label
                         Grid.Column="1"
                         mvx:Bi.nd="Text TimeSpanToString(TimeSpanDuration)"
                         HorizontalOptions="End"
                         VerticalOptions="Center"
                         TextColor="{DynamicResource PrimaryTextColor}"/>
-                </Grid>
-                <Grid Padding="{StaticResource MarginPaddingExtrasmall}" Margin="0,0,0,8">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="auto"/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <controls:SelectableButton
+            </Grid>
+            <Grid Padding="{StaticResource MarginPaddingExtrasmall}" Margin="0,0,0,8">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <controls:SelectableButton
                         Grid.Column="0"
                         Padding="{StaticResource MarginPaddingLarge}"
                         Source="playback_controls_previous.png"
@@ -199,7 +198,7 @@
                         HorizontalOptions="Center"
                         VerticalOptions="CenterAndExpand"
                         BackgroundColor="Transparent"/>
-                    <controls:SelectableButton
+                <controls:SelectableButton
                         Grid.Column="1"
                         Padding="{StaticResource MarginPaddingLarge}"
                         Source="playback_controls_skip_backwards.png"
@@ -207,7 +206,7 @@
                         HorizontalOptions="Center"
                         VerticalOptions="CenterAndExpand"
                         BackgroundColor="Transparent"/>
-                    <ImageButton
+                <ImageButton
                         Grid.Column="2"
                         Padding="8,0"
                         Source="{Binding PlayPauseImage}"
@@ -215,7 +214,7 @@
                         HorizontalOptions="Center"
                         VerticalOptions="CenterAndExpand"
                         BackgroundColor="Transparent" />
-                    <controls:SelectableButton
+                <controls:SelectableButton
                         Grid.Column="3"
                         Padding="{StaticResource MarginPaddingLarge}"
                         Source="playback_controls_skip_forward.png"
@@ -223,7 +222,7 @@
                         HorizontalOptions="Center"
                         VerticalOptions="CenterAndExpand"
                         BackgroundColor="Transparent"/>
-                    <controls:SelectableButton
+                <controls:SelectableButton
                         Grid.Column="4"
                         Padding="{StaticResource MarginPaddingLarge}"
                         Source="playback_controls_next.png"
@@ -231,8 +230,7 @@
                         HorizontalOptions="Center"
                         VerticalOptions="CenterAndExpand"
                         BackgroundColor="Transparent"/>
-                </Grid>
-            </StackLayout>
+            </Grid>
         </StackLayout>
-    </ContentPage.Content>
+    </StackLayout>
 </core:MvxContentPage>

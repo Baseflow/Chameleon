@@ -14,7 +14,7 @@
 
     <templates:ContentItemTemplateSelector x:Key="contentItemTemplateSelector"/>
     <templates:ContentItemHorizontalTemplateSelector x:Key="contentItemHorizontalTemplateSelector"/>
-    
+
     <Style TargetType="{x:Type ContentPage}" ApplyToDerivedTypes="True">
         <Setter Property="rainbows:DebugRainbow.IsDebug" Value="False" />
         <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryBackgroundColor}" />

@@ -8,6 +8,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModels="clr-namespace:Chameleon.Core.ViewModels;assembly=Chameleon.Core"
     xmlns:pan="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    xmlns:templates="clr-namespace:Chameleon.Core.Templates"
     mc:Ignorable="d"
     x:TypeArguments="viewModels:ProvidersViewModel"
     x:Class="Chameleon.Core.Views.ProvidersPage"
@@ -23,56 +24,56 @@
         <ToolbarItem IconImageSource="icon_close.png" mvx:Bi.nd="Command BackCommand"/>
     </ContentPage.ToolbarItems>
 
-    <ContentPage.Content>
-        <core:MvxListView
-            ItemsSource="{mvx:MvxBind Providers}"
-            SelectionMode="Single"
-            ItemClick="{mvx:MvxBind SourceCommand}"
-            SeparatorColor="{DynamicResource PrimaryColor}"
-            RowHeight="60">
-            <core:MvxListView.Header>
-                <StackLayout Spacing="0">
-                    <Label
+    <CollectionView
+            mvx:Bi.nd="ItemsSource Providers; 
+        SelectionChangedCommand SourceCommand; 
+        SelectionChangedCommandParameter SelectedItem; 
+        SelectedItem SelectedItem">
+        <CollectionView.Header>
+            <StackLayout Spacing="0">
+                <Label
                         mvx:La.ng="Text Recommended"
                         Style="{StaticResource PrimaryHeader}"
                         Margin="16,10,0,0" />
-                     <CollectionView
-                        x:Name="MyCollectionView"
+                <CollectionView
                         mvx:Bi.nd="ItemsSource RecommendedProviders; SelectionChangedCommand SourceCommand; SelectionChangedCommandParameter SelectedItem; SelectedItem SelectedItem"
-                        ItemTemplate="{StaticResource contentItemHorizontalTemplateSelector}"
                         SelectionMode="Single"
                         HeightRequest="140" >
-                        <CollectionView.ItemsLayout>
-                            <GridItemsLayout
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout
                                 Orientation="Horizontal"
                                 VerticalItemSpacing="1"
                                 HorizontalItemSpacing="0" />
-                        </CollectionView.ItemsLayout>
-                    </CollectionView>
-                     <Label
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <templates:HorizontalSourceItemTemplate />
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                <Label
                         mvx:La.ng="Text Sources"
                         Style="{StaticResource PrimaryHeader}"
-                        Margin="16,8,0,16" /> 
-                </StackLayout>
-            </core:MvxListView.Header>
-            <core:MvxListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <Grid  Margin="24,0,24,0">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*" />
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition Width="60"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-                            <Label Text="{Binding Title}"
+                        Margin="16,8,0,16" />
+            </StackLayout>
+        </CollectionView.Header>
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <Grid  Margin="24,0,24,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="60"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="{Binding Title}"
                                    Style="{StaticResource Title}"
                                    Grid.Column="0"
                                    HorizontalOptions="StartAndExpand"
                                    VerticalOptions="CenterAndExpand"/>
-                            <pan:PancakeView Grid.Column="1"
+                    <pan:PancakeView Grid.Column="1"
                                 Margin="8,0,0,0"
                                 IsVisible="{Binding Soon}"
                                 CornerRadius="4"
@@ -82,24 +83,22 @@
                                 Padding="8,4"
                                 BackgroundColor="{DynamicResource PrimaryColor}" 
                                 Elevation="0">
-                                <pan:PancakeView.HasShadow>
-                                    <OnPlatform x:TypeArguments="x:Boolean"
+                        <pan:PancakeView.HasShadow>
+                            <OnPlatform x:TypeArguments="x:Boolean"
                                 iOS="False"
                                 Android="True" />
-                                </pan:PancakeView.HasShadow>
-                                <Label Text="{Binding Source={x:Reference Name=providerPage}, Path=BindingContext.DataContext.SoonText}"
+                        </pan:PancakeView.HasShadow>
+                        <Label Text="{Binding Source={x:Reference Name=providerPage}, Path=BindingContext.DataContext.SoonText}"
                                        MaxLines="1"
                                        HorizontalOptions="Center"
                                        VerticalOptions="Center"
                                        VerticalTextAlignment="Center"
                                        Style="{StaticResource PrimaryDetailText}" />
-                            </pan:PancakeView>
-                            <Image Source="disclosure_button.png" HorizontalOptions="End" BackgroundColor="Transparent" Grid.Column="2"/>
-                        </Grid>
-                    </ViewCell>
-                </DataTemplate>
-            </core:MvxListView.ItemTemplate>
-        </core:MvxListView>
-    </ContentPage.Content>
+                    </pan:PancakeView>
+                    <Image Source="disclosure_button.png" HorizontalOptions="End" BackgroundColor="Transparent" Grid.Column="2"/>
+                </Grid>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
 </core:MvxContentPage>
 

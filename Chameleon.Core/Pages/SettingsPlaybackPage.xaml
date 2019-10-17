@@ -68,6 +68,7 @@
         </StackLayout>
 
         <coloredTableView:ColoredTableView
+            Margin="0,16"
             Intent="Settings"
             HasUnevenRows="True"
             SeparatorColor="{DynamicResource PrimaryColor}">

@@ -23,8 +23,11 @@ namespace Chameleon.Android.CustomRenderers
 
             var listView = Control as global::Android.Widget.ListView;
             var coloredTableView = (ColoredTableView)Element;
+
+            listView.Divider.SetTint(Color.Transparent.GetHashCode());
+            listView.SetHeaderDividersEnabled(false);
             listView.Divider = new ColorDrawable(coloredTableView.SeparatorColor.ToAndroid());
-            listView.DividerHeight = 3;
+            listView.DividerHeight = 2;
         }
 
         protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
@@ -34,7 +37,11 @@ namespace Chameleon.Android.CustomRenderers
             {
                 var listView = Control as global::Android.Widget.ListView;
                 var coloredTableView = (ColoredTableView)Element;
+
+                listView.Divider.SetTint(Color.Transparent.GetHashCode());
+                listView.SetHeaderDividersEnabled(false);
                 listView.Divider = new ColorDrawable(coloredTableView.SeparatorColor.ToAndroid());
+                listView.DividerHeight = 2;
             }
         }
     }

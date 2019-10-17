@@ -1,7 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <core:MvxContentPage xmlns:core="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms" xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:viewModels="clr-namespace:Chameleon.Core.ViewModels;assembly=Chameleon.Core" xmlns:coloredTableView="clr-namespace:Chameleon.Core;assembly=Chameleon.Core" mc:Ignorable="d" x:TypeArguments="viewModels:SettingsViewModel" x:Class="Chameleon.Core.Views.SettingsPage" mvx:La.ng="Title Title">
     <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
-        <coloredTableView:ColoredTableView BackgroundColor="Transparent" Intent="Settings" HasUnevenRows="True" SeparatorColor="{DynamicResource PrimaryColor}">
+        <coloredTableView:ColoredTableView BackgroundColor="Transparent"
+            Intent="Settings"
+            HasUnevenRows="True"
+            SeparatorColor="{DynamicResource PrimaryColor}">
             <TableRoot>
                 <TableSection>
                     <ViewCell Tapped="ViewCell_TappedPlaybackSettings">

@@ -7,7 +7,7 @@
     xmlns:local="clr-namespace:Chameleon.Core.Helpers"
     xmlns:controls="clr-namespace:Chameleon.Core.Controls"
     x:Class="Chameleon.Core.Templates.VerticalPlaylistTemplate">
-    <Grid Margin="24,0"
+        <Grid Margin="24,0,0,0"
               RowSpacing="2"
               ColumnSpacing="16"
               HeightRequest="56"
@@ -19,24 +19,20 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto" />
             <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="28" />
+            <ColumnDefinition Width="auto" />
         </Grid.ColumnDefinitions>
         <pan:PancakeView
                 CornerRadius="4"
                 IsClippedToBounds="True"
-                Margin="0,2"
+            VerticalOptions="Center"
+                Margin="0,4"
                 Elevation="2"
                 Grid.Column="0"
                 Grid.RowSpan="2">
-            <pan:PancakeView.HasShadow>
-                <OnPlatform x:TypeArguments="x:Boolean"
-                                iOS="False"
-                                Android="False" />
-            </pan:PancakeView.HasShadow>
             <Image
                     HorizontalOptions="Center"
                     VerticalOptions="Center"
-                    Aspect="AspectFill"
+                    Aspect="AspectFit"
                     Source="cover_art_placeholder.png" />
         </pan:PancakeView>
         <Label
@@ -56,10 +52,12 @@
                 Style="{StaticResource SubtitleItem}" />
         <controls:SelectableButton
                 Source="icon_more.png"
+            Aspect="AspectFit"
                 Command="{Binding Source={x:Static local:NavigationHelper.OptionsCommand}}"
                 CommandParameter="{Binding .}"
                 Grid.Column="2"
                 Grid.RowSpan="2"
+            Padding="8,8,24,8"
                 HorizontalOptions="End"
                 VerticalOptions="Center"
                 BackgroundColor="Transparent" />

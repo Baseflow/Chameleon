@@ -12,8 +12,7 @@
     x:TypeArguments="viewModels:ThemingViewModel"
     x:Class="Chameleon.Core.Views.ThemingPage"
     xmlns:pan="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
-    xmlns:controls="clr-namespace:Chameleon.Core.Controls"
-    x:Name="thisPage">
+    xmlns:controls="clr-namespace:Chameleon.Core.Controls">
 
     <NavigationPage.TitleView>
         <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center" Spacing="10" HeightRequest="30">

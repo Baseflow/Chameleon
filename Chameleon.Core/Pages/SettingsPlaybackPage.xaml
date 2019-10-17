@@ -28,18 +28,19 @@
         <Label Text="{Binding Source={x:Reference slider}, Path=Value, StringFormat='{0:F0}s'}"
                                    HorizontalOptions="Center"
                                    Style="{StaticResource PlaybackSettingsValue}" />
-        <Slider x:Name="slider"
+        <Slider x:Name="slider" Margin="{OnPlatform Default='0', iOS='16,0'}"
                                     mvx:Bi.nd="Value TimeSpanToDouble(StepSize)"
                                     Maximum="30"
                                     Minimum="0"
                                     MinimumTrackColor="{DynamicResource SecondaryColor}"
-                                    MaximumTrackColor="{DynamicResource PrimaryColor}"/>
+                                    MaximumTrackColor="{DynamicResource PrimaryColor}">
+            </Slider>
         <Label mvx:La.ng=" Text Volume" Margin="16,24,16,0"
                                    Style="{DynamicResource Title}" />
         <Label Text="{Binding Source={x:Reference slider2}, Path=Value, StringFormat='{00:F00}%'}"
                                    HorizontalOptions="Center"
                                    Style="{StaticResource  PlaybackSettingsValue}" />
-        <Slider x:Name="slider2"
+        <Slider x:Name="slider2" Margin="{OnPlatform Default='0', iOS='16,0'}"
                                     Maximum="100"
                                     Minimum="0"
                                     mvx:Bi.nd="Value Volume"

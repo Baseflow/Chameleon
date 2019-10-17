@@ -8,83 +8,75 @@
     xmlns:helpers="clr-namespace:Chameleon.Core.Helpers"
     xmlns:controls="clr-namespace:Chameleon.Core.Controls"
     x:Class="Chameleon.Core.Templates.CurrentMediaItemTemplate">
-    <ContentView.Content>
-        <Grid 
-                    Padding="24,0"
-                    Margin="0,0,0,30"
-                    RowSpacing="0"
-                    ColumnSpacing="12"
-                    VerticalOptions="Center">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="28" />
-                <RowDefinition Height="28" />
-                <RowDefinition Height="28" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="56" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="34" />
-            </Grid.ColumnDefinitions>
-            <pan:PancakeView
-                        CornerRadius="3"
-                        IsClippedToBounds="True"
-                        HorizontalOptions="FillAndExpand"
-                        VerticalOptions="FillAndExpand"
-                        Elevation="2"
-                        Grid.Column="0"
-                        Grid.RowSpan="2">
-                <pan:PancakeView.HasShadow>
-                    <OnPlatform
-                                x:TypeArguments="x:Boolean"
-                                iOS="False"
-                                Android="True" />
-                </pan:PancakeView.HasShadow>
-                <Image
-                            HorizontalOptions="Center"
-                            VerticalOptions="Center"
-                            Aspect="AspectFill"
-                            Source="cover_art_placeholder.png" />
-            </pan:PancakeView>
-            <Label
-                        mvx:Bi.nd="Text Title"
-                        Grid.Column="1"
-                        Grid.Row="0"
-                        VerticalOptions="End"
-                        LineBreakMode="TailTruncation"
-                        MaxLines="1"
-                        Style="{StaticResource TitleItem}" />
-            <Label
-                        mvx:Bi.nd="Text Album"
-                        Grid.Column="1"
-                        Grid.Row="1"
-                        VerticalOptions="Start"
-                        LineBreakMode="TailTruncation"
-                        MaxLines="1"
-                        Style="{StaticResource SubtitleItem}" />
-            <controls:SelectableButton
-                        Source="icon_more.png"
-                        Command="{Binding Source={x:Static local:NavigationHelper.OptionsCommand}}"
-                        CommandParameter="{Binding .}"
-                        Grid.Column="2"
-                        Grid.RowSpan="2"
-                        HorizontalOptions="End"
-                        BackgroundColor="Transparent" />
-            <ProgressBar
-                        Grid.ColumnSpan="2"
-                        Margin="0,0,10,0"
-                        HeightRequest="2"
-                        Grid.Row="2"
-                        ProgressColor="{DynamicResource SecondaryColor}"
-                        HorizontalOptions="Fill"
-                        VerticalOptions="Center"
-                        Progress="0"/>
-            <Label mvx:Bi.nd="Text TimeSpanToString(Duration)"
-                        Grid.Column="2"
-                        Grid.Row="2"
-                        Text="0.1.2.3"
-                        Style="{DynamicResource TimeLeftFontStyle}"
-                        HorizontalOptions="CenterAndExpand"
-                        VerticalOptions="CenterAndExpand"/>
-        </Grid>
-    </ContentView.Content>
+    <Grid Margin="24,4,0,4"
+              RowSpacing="2"
+              ColumnSpacing="16"
+              VerticalOptions="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="auto" />
+        </Grid.ColumnDefinitions>
+        <pan:PancakeView
+                CornerRadius="4"
+                IsClippedToBounds="True"
+            VerticalOptions="Center"
+                Elevation="2"
+                Grid.Column="0"
+                Grid.RowSpan="2">
+            <Image
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Aspect="AspectFill"
+                    Source="cover_art_placeholder.png" />
+        </pan:PancakeView>
+        <Label
+                mvx:Bi.nd="Text Title"
+                Grid.Column="1"
+            Margin="0,4,0,0"
+                VerticalOptions="End"
+                LineBreakMode="TailTruncation"
+                MaxLines="1"
+                Style="{StaticResource TitleItem}" />
+        <Label
+                mvx:Bi.nd="Text Album"
+                Grid.Column="1"
+                Grid.Row="1"
+            Margin="0,0,0,4"
+                VerticalOptions="Start"
+                LineBreakMode="TailTruncation"
+                MaxLines="1"
+                Style="{StaticResource SubtitleItem}" />
+        <controls:SelectableButton
+                Source="icon_more.png"
+            Aspect="AspectFill"
+                Command="{Binding Source={x:Static local:NavigationHelper.OptionsCommand}}"
+                CommandParameter="{Binding .}"
+                Grid.Column="2"
+                Grid.RowSpan="2"
+            Padding="8,8,24,8"
+                HorizontalOptions="End"
+                VerticalOptions="Center"
+                BackgroundColor="Transparent" />
+        <ProgressBar
+            Grid.ColumnSpan="2"
+            HeightRequest="2"
+            Grid.Row="2"
+            ProgressColor="{DynamicResource SecondaryColor}"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="Center"
+            Progress="0"/>
+        <Label mvx:Bi.nd="Text TimeSpanToString(Duration)"
+            Grid.Column="2"
+            Grid.Row="2"
+               Margin="4,0,0,0"
+            Style="{DynamicResource TimeLeftFontStyle}"
+            HorizontalOptions="Start"
+            VerticalOptions="Center"/>
+    </Grid>
 </ContentView>

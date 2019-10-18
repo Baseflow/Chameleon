@@ -21,6 +21,11 @@ namespace Chameleon.Android.CustomRenderers
 
             int textViewId = searchView.Context.Resources.GetIdentifier("android:id/search_src_text", null, null);
             EditText textView = (searchView.FindViewById(textViewId) as EditText);
+
+            int frameId = searchView.Context.Resources.GetIdentifier("android:id/search_plate", null, null);
+            global::Android.Views.View frameView = (searchView.FindViewById(frameId) as global::Android.Views.View);
+            frameView.SetBackgroundResource(Resource.Color.colorPrimary);
+   
             if (textView != null)
             {
                 int searchMagIcon = searchView.Context.Resources.GetIdentifier("android:id/search_mag_icon", null, null);

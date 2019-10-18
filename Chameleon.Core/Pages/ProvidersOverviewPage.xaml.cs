@@ -9,9 +9,9 @@ namespace Chameleon.Core.Views
     // by visiting https://aka.ms/xamarinforms-previewer
     [DesignTimeVisible(false)]
     [MvxModalPresentation(WrapInNavigationPage = true)]
-    public partial class ProvidersPage : MvxContentPage<ProvidersViewModel>
+    public partial class ProvidersOverviewPage : MvxContentPage<ProvidersOverviewViewModel>
     {
-        public ProvidersPage()
+        public ProvidersOverviewPage()
         {
             InitializeComponent();
         }

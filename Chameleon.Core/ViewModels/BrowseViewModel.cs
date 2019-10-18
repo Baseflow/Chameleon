@@ -26,7 +26,7 @@ namespace Chameleon.Core.ViewModels
         }
 
         private IMvxAsyncCommand _addCommand;
-        public IMvxAsyncCommand AddCommand => _addCommand ?? (_addCommand = new MvxAsyncCommand(() => NavigationService.Navigate<ProvidersViewModel>()));
+        public IMvxAsyncCommand AddCommand => _addCommand ?? (_addCommand = new MvxAsyncCommand(() => NavigationService.Navigate<ProvidersOverviewViewModel>()));
 
         public bool IsArtistsVisible => string.IsNullOrEmpty(SearchText) && FavoriteArtists.Count > 0;
 

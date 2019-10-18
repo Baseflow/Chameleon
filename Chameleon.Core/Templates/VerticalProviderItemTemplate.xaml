@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
+    xmlns:pan="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    x:Class="Chameleon.Core.Templates.VerticalProviderItemTemplate">
+    <Grid Margin="24,16,24,16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="60"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Label Text="{Binding Title}"
+                                   Style="{StaticResource Title}"
+                                   Grid.Column="0"
+                                   HorizontalOptions="StartAndExpand"
+                                   VerticalOptions="CenterAndExpand"/>
+        <pan:PancakeView Grid.Column="1"
+                                Margin="8,0,0,0"
+                                IsVisible="{Binding Soon}"
+                                CornerRadius="4"
+                                IsClippedToBounds="True"
+                                HorizontalOptions="StartAndExpand"
+                                VerticalOptions="CenterAndExpand"
+                                Padding="8,4"
+                                BackgroundColor="{DynamicResource PrimaryColor}" 
+                                Elevation="0">
+            <Label Text="Soon"
+                                       MaxLines="1"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center"
+                                       VerticalTextAlignment="Center"
+                                       Style="{StaticResource PrimaryDetailText}" />
+        </pan:PancakeView>
+        <Image Source="disclosure_button.png" HorizontalOptions="End" BackgroundColor="Transparent" Grid.Column="2"/>
+    </Grid>
+</ContentView>

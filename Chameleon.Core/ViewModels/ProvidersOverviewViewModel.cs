@@ -8,9 +8,9 @@ using MvvmCross.Navigation;
 
 namespace Chameleon.Core.ViewModels
 {
-    public class ProvidersViewModel : BaseViewModel
+    public class ProvidersOverviewViewModel : BaseViewModel
     {
-        public ProvidersViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService) : base(logProvider, navigationService)
+        public ProvidersOverviewViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService) : base(logProvider, navigationService)
         {
         }
 
@@ -19,15 +19,6 @@ namespace Chameleon.Core.ViewModels
         {
             get => _selectedItem;
             set => SetProperty(ref _selectedItem, value);
-        }
-
-        public string SoonText
-        {
-            get
-            {
-                var text = GetText("Soon");
-                return text;
-            }
         }
 
         private IList<Provider> _recommendedProviders;
@@ -66,7 +57,7 @@ namespace Chameleon.Core.ViewModels
 
         private async Task OpenProvider(Provider provider)
         {
-            //await NavigationService.Navigate<SourceViewModel, Provider>(SelectedItem);
+            await NavigationService.Navigate<ProviderViewModel, Provider>(SelectedItem);
             SelectedItem = null;
         }
     }

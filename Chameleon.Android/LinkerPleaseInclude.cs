@@ -8,6 +8,8 @@ using Android.Support.Design.Widget;
 using Android.Views;
 using Android.Widget;
 using MvvmCross.Binding.BindingContext;
+using MvvmCross.Commands;
+using MvvmCross.Core;
 using MvvmCross.IoC;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
@@ -146,6 +148,23 @@ namespace Chameleon.Android
         public void Include(global::Android.Support.Design.Internal.BaselineLayout baselineLayout)
         {
             _ = new global::Android.Support.Design.Internal.BaselineLayout(Application.Context);
+        }
+
+        public void IncludeMvvmcross64()
+        {
+            _ = new MvxSettings();
+            _ = new MvxStringToTypeParser(); //??
+            //_ = new MvxPluginManager(null); //should not be required
+            _ = new MvxViewModelLoader(null);
+            _ = new MvxNavigationService(null, null);
+            _ = new MvxViewModelByNameLookup();
+
+            _ = new MvxViewModelViewTypeFinder(null, null);
+            _ = new MvxViewModelViewLookupBuilder();
+            _ = new MvxCommandCollectionBuilder();
+            _ = new MvxStringDictionaryNavigationSerializer();
+            _ = new MvxChildViewModelCache();
+            _ = new MvxWeakCommandHelper();
         }
     }
 }

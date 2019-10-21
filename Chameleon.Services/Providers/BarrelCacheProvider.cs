@@ -21,6 +21,13 @@ namespace Chameleon.Services.Providers
 
         public abstract string CacheName { get; }
 
+        public string EnabledCacheName => CacheName + "_enabled";
+        public override bool Enabled 
+        {
+            get => _barrel.GetOrCreate(EnabledCacheName, true);
+            set => _barrel.Add(EnabledCacheName, value, TimeSpan.MaxValue);
+        }
+
         public async Task<bool> AddOrUpdate(TContentItem item)
         {
             var items = (await GetAll().ConfigureAwait(false))?.ToList();

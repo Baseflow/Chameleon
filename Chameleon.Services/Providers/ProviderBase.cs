@@ -8,7 +8,7 @@ namespace Chameleon.Services.Providers
 {
     public class ProviderBase : ILibraryProvider, ISourceProvider
     {
-        public bool Enabled { get; set; } = true;
+        public virtual bool Enabled { get; set; } = true;
 
         public string Title { get; set; }
         public string Description { get; set; }

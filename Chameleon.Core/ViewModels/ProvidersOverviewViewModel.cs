@@ -41,12 +41,12 @@ namespace Chameleon.Core.ViewModels
             Providers = new List<Provider>() {
                 new Provider(){ Title = "URL Source" },
                 new Provider(){ Title = "ExoPlayer samples" },
-                new Provider(){ Title = "Internet Radio", Soon = true  },
-                new Provider(){ Title = "Podcasts", Soon = true  },
+                new Provider(){ Title = "Internet Radio", Soon = true },
+                new Provider(){ Title = "Podcasts", Soon = true },
                 new Provider(){ Title = "Youtube", Soon = true },
-                new Provider(){ Title = "Spotify", Soon = true  },
-                new Provider(){ Title = "Tidal", Soon = true  },
-                new Provider(){ Title = "Soundcloud", Soon = true  }
+                new Provider(){ Title = "Spotify", Soon = true },
+                new Provider(){ Title = "Tidal", Soon = true },
+                new Provider(){ Title = "Soundcloud", Soon = true }
             };
 
             RecommendedProviders = Providers.Where(x => !x.Soon).ToList();
@@ -57,7 +57,10 @@ namespace Chameleon.Core.ViewModels
 
         private async Task OpenProvider(Provider provider)
         {
-            await NavigationService.Navigate<ProviderViewModel, Provider>(SelectedItem);
+            if (provider.Soon)
+                return;
+
+            await NavigationService.Navigate<ProviderViewModel, Provider>(provider);
             SelectedItem = null;
         }
     }

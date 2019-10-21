@@ -18,6 +18,7 @@
         <Label Text="{Binding Title}" Margin="24,0,0,0"
                                    Style="{StaticResource Title}"
                                    Grid.Column="0"
+               VerticalTextAlignment="Center"
                                    HorizontalOptions="StartAndExpand"
                                    VerticalOptions="CenterAndExpand"/>
         <pan:PancakeView Grid.Column="1"

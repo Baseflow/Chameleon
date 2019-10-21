@@ -52,6 +52,7 @@ namespace Chameleon.Services.Providers
                             Title = sample.Name,
                             Album = item.Name,
                             FileExtension = sample.Extension ?? "",
+                            ImageUri = "cover_art_placeholder.png",
                             IsMetadataExtracted = true
                         };
                         mediaItem = await _mediaManager.Extractor.UpdateMediaItem(mediaItem).ConfigureAwait(false);

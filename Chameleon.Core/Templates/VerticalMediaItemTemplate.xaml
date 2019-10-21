@@ -29,12 +29,14 @@
                 Grid.Column="0"
                 Grid.RowSpan="2">
             <ffimageloading:CachedImage
+                WidthRequest="48"
+                HeightRequest="48"
                     HorizontalOptions="Center"
                     VerticalOptions="Center"
                     Aspect="AspectFill"
-                DownsampleToViewSize="true"
                 ErrorPlaceholder="cover_art_placeholder.png"
-                    Source="{Binding ImageUri}" />
+                LoadingPlaceholder="cover_art_placeholder.png"
+                mvx:Bi.nd="Source DisplayImageUri" />
         </pan:PancakeView>
         <Label
                 mvx:Bi.nd="Text DisplayTitle"

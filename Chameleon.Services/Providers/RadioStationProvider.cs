@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using Chameleon.Services.Extensions;
 using Chameleon.Services.Services;
 using MediaManager;
 using MediaManager.Library;
@@ -46,7 +47,7 @@ namespace Chameleon.Services.Providers
             {
                 IMediaItem mediaItem = new MediaItem(source.Url)
                 {
-                    ImageUri = source.Favicon,
+                    ImageUri = source.Favicon.IsValidUrl() ? source.Favicon : "cover_art_placeholder.png",
                     Title = source.Name,
                     Album = "Radio",
                     IsMetadataExtracted = true

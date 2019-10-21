@@ -63,6 +63,7 @@ namespace Chameleon.Core
                 textProviderBuilder.LoadResources(language);*/
 
             FFImageLoading.ImageService.Instance.Initialize();
+            FFImageLoading.ImageService.Instance.Config.DelayInMs = 200;
             Mvx.IoCProvider.Resolve<IThemeService>().UpdateTheme();
 
             RegisterCustomAppStart<AppStart>();

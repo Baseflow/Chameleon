@@ -7,6 +7,7 @@
     xmlns:local="clr-namespace:Chameleon.Core.Helpers"
     xmlns:helpers="clr-namespace:Chameleon.Core.Helpers"
     xmlns:controls="clr-namespace:Chameleon.Core.Controls"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     x:Class="Chameleon.Core.Templates.CurrentMediaItemTemplate">
     <Grid Margin="24,4,0,4"
               RowSpacing="2"
@@ -29,11 +30,15 @@
                 Elevation="2"
                 Grid.Column="0"
                 Grid.RowSpan="2">
-            <Image
+            <ffimageloading:CachedImage
+                WidthRequest="48"
+                HeightRequest="48"
                     HorizontalOptions="Center"
                     VerticalOptions="Center"
                     Aspect="AspectFill"
-                    Source="cover_art_placeholder.png" />
+                ErrorPlaceholder="cover_art_placeholder.png"
+                LoadingPlaceholder="cover_art_placeholder.png"
+                mvx:Bi.nd="Source DisplayImageUri" />
         </pan:PancakeView>
         <Label
                 mvx:Bi.nd="Text DisplayTitle"

@@ -6,6 +6,7 @@
     xmlns:pan="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     xmlns:local="clr-namespace:Chameleon.Core.Helpers"
     xmlns:controls="clr-namespace:Chameleon.Core.Controls"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     x:Class="Chameleon.Core.Templates.VerticalPlaylistTemplate">
     <Grid Margin="24,4,0,4"
               RowSpacing="2"
@@ -27,11 +28,15 @@
                 Elevation="2"
                 Grid.Column="0"
                 Grid.RowSpan="2">
-            <Image
+            <ffimageloading:CachedImage
+                WidthRequest="48"
+                HeightRequest="48"
                     HorizontalOptions="Center"
                     VerticalOptions="Center"
                     Aspect="AspectFill"
-                    Source="cover_art_placeholder.png" />
+                ErrorPlaceholder="cover_art_placeholder.png"
+                LoadingPlaceholder="cover_art_placeholder.png"
+                mvx:Bi.nd="Source ImageUri" />
         </pan:PancakeView>
         <Label
                 mvx:Bi.nd="Text Title"

@@ -43,7 +43,7 @@ namespace Chameleon.Core.ViewModels
                 }
                 else
                 {
-                    var searchedItems = _recentlyPlayedItems.Where(x => x.Title.ToLower().Contains(SearchText.ToLower()) || x.Album.ToLower().Contains(SearchText.ToLower()));
+                    var searchedItems = _recentlyPlayedItems.Where(x => x.DisplayTitle.ToLower().Contains(SearchText.ToLower()) || x.DisplaySubtitle.ToLower().Contains(SearchText.ToLower()));
                     return new MvxObservableCollection<IMediaItem>(searchedItems);
                 }
             }
@@ -79,10 +79,8 @@ namespace Chameleon.Core.ViewModels
 
             try
             {
-                var browseService = await _browseService.GetMedia();
-                if (browseService != null)
-                    RecentlyPlayedItems.ReplaceWith(browseService);
-
+                var mediaItems = await _mediaManager.Library.GetAll<IMediaItem>().ConfigureAwait(false);
+                RecentlyPlayedItems.ReplaceWith(mediaItems.OrderBy(x => x.DisplayTitle).ToList());
             }
             catch (Exception)
             {

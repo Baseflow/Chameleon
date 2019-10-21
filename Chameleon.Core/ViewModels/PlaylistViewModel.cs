@@ -38,7 +38,7 @@ namespace Chameleon.Core.ViewModels
                 }
                 else
                 {
-                    var searchedItems = _currentPlaylistSource?.MediaItems?.Where(x => x.Title.ToLower().Contains(SearchText.ToLower()) || x.Album.ToLower().Contains(SearchText.ToLower()));
+                    var searchedItems = _currentPlaylistSource?.MediaItems?.Where(x => x.DisplayTitle.ToLower().Contains(SearchText.ToLower()) || x.DisplaySubtitle.ToLower().Contains(SearchText.ToLower()));
                     var playlist = new Playlist();
                     foreach (var item in searchedItems)
                         playlist.MediaItems.Add(item);

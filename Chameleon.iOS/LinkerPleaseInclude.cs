@@ -3,6 +3,8 @@ using System.Collections.Specialized;
 using System.Windows.Input;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
+using MvvmCross.Commands;
+using MvvmCross.Core;
 using MvvmCross.Navigation;
 using MvvmCross.Platforms.Ios.Views;
 using MvvmCross.ViewModels;
@@ -166,5 +168,22 @@ namespace Chameleon.iOS
         {
             Firebase.Core.App.Configure();
         }*/
+
+        public void IncludeMvvmcross64()
+        {
+            _ = new MvxSettings();
+            _ = new MvxStringToTypeParser(); //??
+            //_ = new MvxPluginManager(null); //should not be required
+            _ = new MvxViewModelLoader(null);
+            _ = new MvxNavigationService(null, null);
+            _ = new MvxViewModelByNameLookup();
+
+            _ = new MvxViewModelViewTypeFinder(null, null);
+            _ = new MvxViewModelViewLookupBuilder();
+            _ = new MvxCommandCollectionBuilder();
+            _ = new MvxStringDictionaryNavigationSerializer();
+            _ = new MvxChildViewModelCache();
+            _ = new MvxWeakCommandHelper();
+        }
     }
 }

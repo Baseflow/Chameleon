@@ -33,9 +33,8 @@ namespace Chameleon.Core.Templates
                     else
                         return VerticalPlaylistTemplate;
                 default:
-                    break;
+                    return VerticalMediaItemTemplate;
             }
-            return new DataTemplate();
         }
     }
 }

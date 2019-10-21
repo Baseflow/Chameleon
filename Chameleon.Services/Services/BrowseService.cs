@@ -47,33 +47,5 @@ namespace Chameleon.Services.Services
         {
             return null;
         }
-
-        public async Task<IList<IMediaItem>> GetMedia()
-        {
-            var json = ExoPlayerSamples.GetEmbeddedResourceString("media.exolist.json");
-            var jsonList = ExoPlayerSamples.FromJson(json);
-            IList<IMediaItem> items = new List<IMediaItem>();
-
-            foreach (var item in jsonList)
-            {
-                foreach (var sample in item.Samples)
-                {
-                    if (!string.IsNullOrEmpty(sample.Uri))
-                    {
-                        IMediaItem mediaItem = new MediaItem(sample.Uri)
-                        {
-                            Title = sample.Name,
-                            Album = item.Name,
-                            FileExtension = sample.Extension ?? "",
-                            IsMetadataExtracted = true
-                        };
-                        mediaItem = await CrossMediaManager.Current.Extractor.UpdateMediaItem(mediaItem).ConfigureAwait(false);
-                        items.Add(mediaItem);
-                    }
-                }
-            }
-
-            return items;
-        }
     }
 }

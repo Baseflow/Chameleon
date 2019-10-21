@@ -34,7 +34,7 @@
                     Source="cover_art_placeholder.png" />
         </pan:PancakeView>
         <Label
-                mvx:Bi.nd="Text Title"
+                mvx:Bi.nd="Text DisplayTitle"
                 Grid.Column="1"
             Margin="0,4,0,0"
                 VerticalOptions="End"
@@ -42,7 +42,7 @@
                 MaxLines="1"
                 Style="{StaticResource TitleItem}" />
         <Label
-                mvx:Bi.nd="Text Album"
+                mvx:Bi.nd="Text DisplaySubtitle"
                 Grid.Column="1"
                 Grid.Row="1"
             Margin="0,0,0,4"

@@ -1,5 +1,6 @@
 ﻿using Acr.UserDialogs;
 using Chameleon.Core.Helpers;
+using Chameleon.Services;
 using Chameleon.Services.Providers;
 using Chameleon.Services.Services;
 using MediaManager;
@@ -21,19 +22,36 @@ namespace Chameleon.Core
 
             Mvx.IoCProvider.RegisterSingleton<IBarrel>(Barrel.Current);
             Mvx.IoCProvider.RegisterSingleton<IUserDialogs>(UserDialogs.Instance);
-            Mvx.IoCProvider.RegisterSingleton<IMediaManager>(CrossMediaManager.Current);
 
             // Register Text provider
             var textProviderBuilder = new TextProviderBuilder();
             Mvx.IoCProvider.RegisterSingleton<IMvxTextProviderBuilder>(textProviderBuilder);
-            Mvx.IoCProvider.RegisterSingleton<IMvxTextProvider>(textProviderBuilder.TextProvider);
+            var textProvider = textProviderBuilder.TextProvider;
+            Mvx.IoCProvider.RegisterSingleton<IMvxTextProvider>(textProvider);
 
             CreatableTypes()
                 .EndingWith("Service")
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
 
-            CrossMediaManager.Current.Library.Providers.Add(Mvx.IoCProvider.IoCConstruct<PlaylistProvider>());
+            var mediaManager = CrossMediaManager.Current;
+            Mvx.IoCProvider.RegisterSingleton<IMediaManager>(mediaManager);
+
+            var playlists = Mvx.IoCProvider.IoCConstruct<PlaylistProvider>();
+            
+            var exoplayer = Mvx.IoCProvider.IoCConstruct<ExoplayerProvider>();
+            exoplayer.Title = textProvider.GetText(AppSettings.TextProviderNamespace, "ProvidersOverviewViewModel", "Exoplayer");
+
+            var urlSources = Mvx.IoCProvider.IoCConstruct<UrlSourcesProvider>();
+            urlSources.Title = textProvider.GetText(AppSettings.TextProviderNamespace, "ProvidersOverviewViewModel", "UrlSource");
+
+            var radioStations = Mvx.IoCProvider.IoCConstruct<RadioStationProvider>();
+            radioStations.Title = textProvider.GetText(AppSettings.TextProviderNamespace, "ProvidersOverviewViewModel", "RadioStations");
+
+            mediaManager.Library.Providers.Add(playlists);
+            mediaManager.Library.Providers.Add(exoplayer);
+            mediaManager.Library.Providers.Add(urlSources);
+            mediaManager.Library.Providers.Add(radioStations);
 
             Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IBrowseService, BrowseService>();
             Mvx.IoCProvider.LazyConstructAndRegisterSingleton<ISettingsService, SettingsService>();

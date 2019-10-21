@@ -9,6 +9,5 @@ namespace Chameleon.Services.Services
         IList<IMediaItem> RecentMedia { get; set; }
 
         void AddToRecentMedia(IMediaItem mediaItem);
-        Task<IList<IMediaItem>> GetMedia();
     }
 }

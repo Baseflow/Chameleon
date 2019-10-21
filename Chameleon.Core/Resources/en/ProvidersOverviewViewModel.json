@@ -1,6 +1,9 @@
 ﻿{
-    "Title": "Providers",
-    "Recommended": "Recommended",
-    "Sources": "All sources",
-    "Soon": "SOON"
+  "Title": "Providers",
+  "Recommended": "Recommended",
+  "Sources": "All sources",
+  "Soon": "SOON",
+  "Exoplayer": "Exoplayer",
+  "UrlSource": "Url source",
+  "RadioStations": "Radio stations"
 }

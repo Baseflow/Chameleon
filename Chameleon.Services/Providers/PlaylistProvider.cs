@@ -8,78 +8,12 @@ using MonkeyCache;
 
 namespace Chameleon.Services.Providers
 {
-    public class PlaylistProvider : IPlaylistProvider
+    public class PlaylistProvider : BarrelCacheProvider<IPlaylist>, IPlaylistProvider
     {
-        private readonly IBarrel _barrel;
-
-        public PlaylistProvider(IBarrel barrel)
+        public PlaylistProvider(IBarrel barrel) : base(barrel)
         {
-            _barrel = barrel ?? throw new ArgumentNullException(nameof(barrel));
         }
 
-        public async Task<bool> AddOrUpdate(IPlaylist item)
-        {
-            var items = (await GetAll())?.ToList();
-            if (items == null)
-                return false;
-
-            var playlist = items?.FirstOrDefault(x => x.Id == item.Id);
-            if (playlist == null)
-                items.Add(item);
-            else
-            {
-                var index = items.IndexOf(playlist);
-                items.RemoveAt(index);
-                items.Insert(index, item);
-            }
-
-            _barrel.Add("playlists", items, TimeSpan.MaxValue);
-            return true;
-        }
-
-        public async Task<bool> Exists(string id)
-        {
-            var items = await GetAll();
-            return items != null && items.Any(x => x.Id == id);
-        }
-
-        public async Task<IPlaylist> Get(string id)
-        {
-            var items = await GetAll();
-            return items?.FirstOrDefault(x => x.Id == id);
-        }
-
-        public Task<IEnumerable<IPlaylist>> GetAll()
-        {
-            try
-            {
-                if (!_barrel.Exists("playlists"))
-                    _barrel.Add<IEnumerable<IPlaylist>>("playlists", new List<IPlaylist>(), TimeSpan.MaxValue);
-
-                var items = _barrel.Get<IEnumerable<IPlaylist>>("playlists");
-                return Task.FromResult(items);
-            }
-            catch
-            { }
-            return Task.FromResult<IEnumerable<IPlaylist>>(null);
-        }
-
-        public async Task<bool> Remove(IPlaylist item)
-        {
-            var items = (await GetAll())?.ToList();
-            var playlist = items.FirstOrDefault(x => x.Id == item.Id);
-            if (items != null && items.Remove(playlist))
-            {
-                _barrel.Add("playlists", items, TimeSpan.MaxValue);
-                return true;
-            }
-            return false;
-        }
-
-        public Task<bool> RemoveAll()
-        {
-            _barrel.EmptyAll();
-            return Task.FromResult(true);
-        }
+        public override string CacheName => "playlists";
     }
 }

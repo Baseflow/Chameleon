@@ -30,14 +30,14 @@
                 Aspect="AspectFill"
                 Source="cover_art_placeholder.png"/>
         </pan:PancakeView>
-        <Label mvx:Bi.nd="Text Title"
+        <Label mvx:Bi.nd="Text DisplayTitle"
              Grid.Row="1"
                VerticalTextAlignment="End"
              LineBreakMode="TailTruncation"
              MaxLines="1"
              Style="{StaticResource TitleItem}" />
         <Label
-            mvx:Bi.nd="Text Album"
+            mvx:Bi.nd="Text DisplaySubtitle"
             Grid.Row="2"
             VerticalTextAlignment="Start"
             LineBreakMode="TailTruncation"

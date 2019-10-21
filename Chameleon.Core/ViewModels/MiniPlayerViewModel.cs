@@ -69,9 +69,9 @@ namespace Chameleon.Core.ViewModels
                 var currentMediaItemText = new FormattedString();
                 if (MediaManager.Queue.Current != null)
                 {
-                    currentMediaItemText.Spans.Add(new Span { Text = MediaManager.Queue.Current.Title, FontAttributes = FontAttributes.Bold, FontSize = 12 });
+                    currentMediaItemText.Spans.Add(new Span { Text = MediaManager.Queue.Current.DisplayTitle, FontAttributes = FontAttributes.Bold, FontSize = 12 });
                     currentMediaItemText.Spans.Add(new Span { Text = " • " });
-                    currentMediaItemText.Spans.Add(new Span { Text = MediaManager.Queue.Current.Album, FontSize = 12 });
+                    currentMediaItemText.Spans.Add(new Span { Text = MediaManager.Queue.Current.DisplaySubtitle, FontSize = 12 });
                 }
                 else
                     currentMediaItemText.Spans.Add(new Span { Text = "CHAMELEON" });

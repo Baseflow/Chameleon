@@ -17,6 +17,41 @@
             <Image Source="chameleon_logo.png"/>
         </StackLayout>
     </NavigationPage.TitleView>
-    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="icon_plus.png"
+                     IsEnabled="{Binding Provider.CanEdit}"
+                     Order="Primary"
+                     mvx:Bi.nd="Command AddCommand" />
+    </ContentPage.ToolbarItems>
+    <StackLayout>
+        <Label mvx:Bi.nd="Text Provider.Title" Style="{StaticResource PrimaryHeader}" Margin="24,0,24,14"/>
+        <Grid Margin="24,16">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Label mvx:La.ng="Text Enabled"
+                                   Style="{DynamicResource Title}"
+                                   VerticalOptions="Center"
+                                   Grid.Column="0" />
+            <Switch mvx:Bi.nd="IsToggled Provider.Enabled"
+                                    Grid.Column="1"
+                                    VerticalOptions="Center"
+                                    HorizontalOptions="End"
+                                    OnColor="{DynamicResource SecondaryColor}" />
+        </Grid>
+        <CollectionView
+                        mvx:Bi.nd="ItemsSource MediaItems;
+                            SelectionChangedCommand PlayCommand;
+                            SelectionChangedCommandParameter SelectedMediaItem;
+                            SelectedItem SelectedMediaItem"
+                        SelectionMode="Single"
+                        VerticalOptions="FillAndExpand"
+                        ItemTemplate="{StaticResource contentItemTemplateSelector}">
+        </CollectionView>
+    </StackLayout>
 </core:MvxContentPage>
 

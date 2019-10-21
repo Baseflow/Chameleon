@@ -26,13 +26,13 @@
                 <ColumnDefinition Width="56"/>
             </Grid.ColumnDefinitions>
             <Label
-                mvx:Bi.nd="Text Source.Title"
+                mvx:Bi.nd="Text Source.DisplayTitle"
                 Grid.Column="0"
                 Grid.Row="0"
                 VerticalOptions="End"
                 Style="{StaticResource TitleItem}"/>
             <Label
-                mvx:Bi.nd="Text Source.Album"
+                mvx:Bi.nd="Text Source.DisplaySubtitle"
                 Grid.Column="0"
                 Grid.Row="1"
                 VerticalOptions="Start"

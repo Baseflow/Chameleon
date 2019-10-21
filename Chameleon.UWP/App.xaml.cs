@@ -11,6 +11,7 @@ namespace Chameleon.UWP
         public App()
         {
             Forms.SetFlags("CollectionView_Experimental");
+            FFImageLoading.Forms.Platform.CachedImageRenderer.Init();
             CrossMediaManager.Current.Init();
             InitializeComponent();
         }

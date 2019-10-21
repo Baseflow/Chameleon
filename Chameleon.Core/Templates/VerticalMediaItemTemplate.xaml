@@ -6,6 +6,7 @@
     xmlns:pan="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     xmlns:local="clr-namespace:Chameleon.Core.Helpers"
     xmlns:controls="clr-namespace:Chameleon.Core.Controls"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     x:Class="Chameleon.Core.Templates.VerticalMediaItemTemplate">
     <Grid Margin="24,4,0,4"
               RowSpacing="2"
@@ -27,11 +28,13 @@
                 Elevation="2"
                 Grid.Column="0"
                 Grid.RowSpan="2">
-            <Image
+            <ffimageloading:CachedImage
                     HorizontalOptions="Center"
                     VerticalOptions="Center"
                     Aspect="AspectFill"
-                    Source="cover_art_placeholder.png" />
+                DownsampleToViewSize="true"
+                ErrorPlaceholder="cover_art_placeholder.png"
+                    Source="{Binding ImageUri}" />
         </pan:PancakeView>
         <Label
                 mvx:Bi.nd="Text DisplayTitle"

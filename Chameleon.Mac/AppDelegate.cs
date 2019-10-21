@@ -16,6 +16,7 @@ namespace Chameleon.Mac
         public override void DidFinishLaunching(NSNotification notification)
         {
             Forms.SetFlags("CollectionView_Experimental");
+            FFImageLoading.Forms.Platform.CachedImageRenderer.Init();
             CrossMediaManager.Current.Init();
             base.DidFinishLaunching(notification);
         }

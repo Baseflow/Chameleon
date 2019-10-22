@@ -48,6 +48,7 @@
                             SelectionChangedCommand PlayCommand;
                             SelectionChangedCommandParameter SelectedMediaItem;
                             SelectedItem SelectedMediaItem"
+            IsVisible="{Binding Provider.Enabled}"
                         SelectionMode="Single"
                         VerticalOptions="FillAndExpand"
                         ItemTemplate="{StaticResource contentItemTemplateSelector}">

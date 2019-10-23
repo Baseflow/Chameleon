@@ -27,19 +27,15 @@
             </Grid.ColumnDefinitions>
             <Label
                 mvx:Bi.nd="Text Source.DisplayTitle"
-                Grid.Column="0"
-                Grid.Row="0"
                 VerticalOptions="End"
                 Style="{StaticResource TitleItem}"/>
             <Label
                 mvx:Bi.nd="Text Source.DisplaySubtitle"
-                Grid.Column="0"
                 Grid.Row="1"
                 VerticalOptions="Start"
                 Style="{StaticResource SecondaryDetailText}"/>
             <controls:SelectableButton
                 Grid.Column="1"
-                Grid.Row="0"
                 Grid.RowSpan="2"
                 Source="icon_close"
                 BackgroundColor="Transparent"
@@ -80,7 +76,6 @@
                                 <Label
                                         Text="{Binding Key}"
                                         VerticalOptions="Center"
-                                        Grid.Column="0"
                                         Style="{StaticResource PrimaryDetailText}"/>
                                 <Label
                                         Text="{Binding Value}"
@@ -109,7 +104,6 @@
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
                 <controls:SelectableButton
-                        Grid.Column="0"
                         Source="{Binding ShuffleImage}"
                         Padding="{StaticResource MarginPaddingMedium}"
                         mvx:Bi.nd="Command ShuffleCommand"
@@ -167,7 +161,6 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Label
-                        Grid.Column="0"
                         mvx:Bi.nd="Text TimeSpanToString(TimeSpanPosition)"
                         HorizontalOptions="Start"
                         VerticalOptions="Center"
@@ -191,7 +184,6 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <controls:SelectableButton
-                        Grid.Column="0"
                         Padding="{StaticResource MarginPaddingLarge}"
                         Source="playback_controls_previous.png"
                         mvx:Bi.nd="Command PreviousCommand"

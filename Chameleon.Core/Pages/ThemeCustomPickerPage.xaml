@@ -46,7 +46,6 @@
             <StackLayout
                 Orientation="Vertical"
                 Grid.Row="2"
-                Grid.Column="0"
                 Margin="16,8,16,0">
                 <Label
                     Text="{mvx:MvxLang BackgroundColor}"

@@ -24,9 +24,7 @@
     <x:Int32 x:Key="MarginPaddingXxxlarge">48</x:Int32>
     <x:Int32 x:Key="MarginPaddingXxxxlarge">64</x:Int32>
     <x:Int32 x:Key="MarginPaddingXxxxxlarge">72</x:Int32>
-
-
-
+    
     <Thickness x:Key="MarginPaddingTopBottomMedium">0,8</Thickness>
     <Thickness x:Key="MarginPaddingTopBottomLarge">0,16</Thickness>
     <Thickness x:Key="MarginPaddingLeftRightSmall">4,0</Thickness>

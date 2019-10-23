@@ -40,7 +40,7 @@
             <Label
                 mvx:La.ng="Text Colors"
                 Style="{StaticResource Title}"
-                Margin="16,0"
+                Margin="{StaticResource MarginPaddingLeftRightLarge}"
                 Grid.ColumnSpan="3"
                 Grid.Row="1"/>
             <StackLayout

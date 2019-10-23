@@ -25,7 +25,7 @@
     </ContentPage.ToolbarItems>
     <StackLayout>
         <Label mvx:Bi.nd="Text Provider.Title" Style="{StaticResource PrimaryHeader}" Margin="24,0,24,14"/>
-        <Grid Margin="24,16">
+        <Grid Margin="{StaticResource MarginPaddingLeftRightXlargeTopBottomLarge}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>

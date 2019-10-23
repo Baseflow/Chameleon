@@ -22,7 +22,7 @@
             Text="{mvx:MvxBind SearchText}" />
         <Label mvx:La.ng="Text Title" Style="{StaticResource PrimaryHeader}" Margin="24,0,24,14"/>
         <Grid
-                Padding="24,4">
+                Padding="{StaticResource MarginPaddingLeftRightXlargeTopBottomSmall}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="114"/>
                 <ColumnDefinition Width="*"/>
@@ -94,7 +94,7 @@
                             BindingContext="{Binding .}"
                             Text="{mvx:MvxLang AddMediaToStart}"
                             HorizontalTextAlignment="Center"
-                            Margin="0,8"
+                            Margin="{StaticResource MarginPaddingTopBottomMedium}"
                             HorizontalOptions="Center"
                             VerticalOptions="Start"
                             Style="{StaticResource Title}" />

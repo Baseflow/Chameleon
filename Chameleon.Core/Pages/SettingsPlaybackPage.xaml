@@ -69,14 +69,14 @@
         </StackLayout>
 
         <coloredTableView:ColoredTableView
-            Margin="0,16"
+            Margin="{StaticResource MarginPaddingTopBottomLarge}"
             Intent="Settings"
             HasUnevenRows="True"
             SeparatorColor="{DynamicResource PrimaryColor}">
         <TableRoot>
                 <TableSection>
                     <ViewCell BindingContext="{Binding .}">
-                    <Grid Margin="24,16">
+                    <Grid Margin="{StaticResource MarginPaddingLeftRightXlargeTopBottomLarge}">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
@@ -96,7 +96,7 @@
                     </Grid>
                 </ViewCell>
                 <ViewCell BindingContext="{Binding .}">
-                    <Grid Margin="24,16">
+                    <Grid Margin="{StaticResource MarginPaddingLeftRightXlargeTopBottomLarge}">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>

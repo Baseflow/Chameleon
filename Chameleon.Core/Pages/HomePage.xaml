@@ -25,7 +25,7 @@
                     mvx:La.ng="Text Recent"
                     IsVisible="{Binding HasRecent}"
                     Style="{StaticResource PrimaryHeader}"
-                    Margin="16,0" />
+                    Margin="{StaticResource MarginPaddingLeftRightLarge}" />
                 <CollectionView
                     SelectionMode="Single"
                     IsVisible="{Binding HasRecent}"
@@ -60,7 +60,7 @@
                         mvx:Bi.nd="Command OpenPlaylistOverviewCommand"
                         Style="{StaticResource SecondaryButton}"
                         HorizontalOptions="EndAndExpand"
-                        Padding="16,0" />
+                        Padding="{StaticResource MarginPaddingLeftRightLarge}" />
                 </StackLayout>
                 <CollectionView
                     HeightRequest="230"
@@ -74,7 +74,7 @@
                         <GridItemsLayout Orientation="Horizontal" />
                     </CollectionView.ItemsLayout>
                     <CollectionView.EmptyView>
-                        <Grid Padding="24,0">
+                        <Grid Padding="{StaticResource MarginPaddingLeftRightXlarge}">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="154" />
                             </Grid.ColumnDefinitions>
@@ -127,22 +127,22 @@
                     mvx:La.ng="Text PlayFilePicker"
                     mvx:Bi.nd="Command OpenFilePickerCommand"
                     Style="{StaticResource PrimaryButton}"
-                    Margin="24,0" />
+                    Margin="{StaticResource MarginPaddingLeftRightXlarge}" />
                 <Button
                     mvx:La.ng="Text PlayVideoPicker"
                     mvx:Bi.nd="Command OpenVideoPickerCommand"
                     Style="{StaticResource PrimaryButton}"
-                    Margin="24,0" />
+                    Margin="{StaticResource MarginPaddingLeftRightXlarge}" />
                 <Button
                     mvx:La.ng="Text OpenUrl"
                     mvx:Bi.nd="Command OpenUrlCommand"
                     Style="{StaticResource PrimaryButton}"
-                    Margin="24,0" />
+                    Margin="{StaticResource MarginPaddingLeftRightXlarge}" />
                 <Button
                     mvx:La.ng="Text Player"
                     mvx:Bi.nd="Command OpenPlayerCommand"
                     Style="{StaticResource PrimaryButton}"
-                    Margin="24,0" />
+                    Margin="{StaticResource MarginPaddingLeftRightXlarge}" />
             </StackLayout>
         </ScrollView>
         <views:MiniPlayerView Grid.Row="1" />

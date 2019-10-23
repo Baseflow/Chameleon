@@ -146,13 +146,13 @@
             <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="{DynamicResource PrimaryColor}"/>
             <Slider
                     x:Name="Slider"
-                    Margin="16,8"
+                    Margin="{StaticResource MarginPaddingLeftRightLargeTopBottomMedium}"
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="End"
                     mvx:Bi.nd="Value Position; Maximum Duration; DragStartedCommand DragStartedCommand; DragCompletedCommand DragCompletedCommand"
                     MaximumTrackColor="{DynamicResource TertiaryColor}"
                     MinimumTrackColor="{DynamicResource SecondaryColor}"/>
-            <Grid Padding="24,0">
+            <Grid Padding="{StaticResource MarginPaddingLeftRightXlarge}">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
@@ -200,7 +200,7 @@
                         BackgroundColor="Transparent"/>
                 <ImageButton
                         Grid.Column="2"
-                        Padding="8,0"
+                        Padding="{StaticResource MarginPaddingLeftRightMedium}"
                         Source="{Binding PlayPauseImage}"
                         mvx:Bi.nd="Command PlayPauseCommand"
                         HorizontalOptions="Center"

@@ -99,7 +99,7 @@
                      VerticalOptions="Center"
                                          HorizontalOptions="Start"
                                          Padding="16,0,0,0"/>
-                <controls:SelectableButton Padding="8,4"
+                <controls:SelectableButton Padding="{StaticResource MarginPaddingLeftRightMediumTopBottomSmall}"
                                          Aspect="AspectFit"
                                          Source="icon_list_item_edit.png"
                                          mvx:Bi.nd="Command CustomPickerCommand"

@@ -34,13 +34,13 @@
                 <Entry
                     mvx:La.ng="Placeholder NewPlaylist"
                     mvx:Bi.nd="Text PlaylistName"
-                    Margin="4,0"
+                    Margin="{StaticResource MarginPaddingLeftRightSmall}"
                     Style="{StaticResource TextColorEntry}"
                     HorizontalOptions="FillAndExpand"/>
                 <Button
                     mvx:La.ng="Text Add"
                     HorizontalOptions="End"
-                    Padding="16,0"
+                    Padding="{StaticResource MarginPaddingLeftRightLarge}"
                     Style="{StaticResource AddToPlaylistButton}"
                     mvx:Bi.nd="Command AddPlaylistCommand" />
                 </StackLayout>
@@ -58,7 +58,7 @@
             <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="{DynamicResource PrimaryColor}"/>
             <Button HorizontalOptions="FillAndExpand"
                     mvx:La.ng="Text Cancel"
-                    Padding="0,16"
+                    Padding="{StaticResource MarginPaddingTopBottomLarge}"
                     Style="{StaticResource CancelButton}"
                     BackgroundColor="Transparent"
                     mvx:Bi.nd="Command BackCommand">

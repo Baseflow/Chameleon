@@ -27,7 +27,7 @@
                                 IsClippedToBounds="True"
                                 HorizontalOptions="StartAndExpand"
                                 VerticalOptions="CenterAndExpand"
-                                Padding="8,4"
+                                Padding="{StaticResource MarginPaddingLeftRightMediumTopBottomSmall}"
                                 BackgroundColor="{DynamicResource PrimaryColor}" 
                                 Elevation="0">
             <Label Text="Soon"

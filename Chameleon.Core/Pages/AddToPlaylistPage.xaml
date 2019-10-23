@@ -25,7 +25,6 @@
         </Grid.ColumnDefinitions>
         <Frame BackgroundColor="{DynamicResource PrimaryColor}"
                 CornerRadius="8"
-                Grid.Row="0"
                 Padding="{StaticResource MarginPaddingMedium}"
                 Margin="24,8,24,8">
             <StackLayout

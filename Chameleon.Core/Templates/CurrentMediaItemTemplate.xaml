@@ -28,7 +28,6 @@
                 IsClippedToBounds="True"
             VerticalOptions="Center"
                 Elevation="2"
-                Grid.Column="0"
                 Grid.RowSpan="2">
             <ffimageloading:CachedImage
                 WidthRequest="48"

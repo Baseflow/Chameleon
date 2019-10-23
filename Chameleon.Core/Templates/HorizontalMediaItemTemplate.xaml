@@ -13,7 +13,6 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <pan:PancakeView
-            Grid.Row="0"
             CornerRadius="8"
             IsClippedToBounds="True"
             HorizontalOptions="FillAndExpand"

@@ -62,7 +62,6 @@
                                     Aspect="AspectFill"
                                     Source="{Binding ThemeLightImage}"
                                     mvx:Bi.nd="Command ThemeLigthCommand"
-                                    Grid.Row="0"
                                     Grid.Column="1" />
             </pan:PancakeView>
             <pan:PancakeView
@@ -72,7 +71,6 @@
                                 VerticalOptions="FillAndExpand"
                                 Elevation="2"
                                 Grid.Row="1"
-                                Grid.Column="0"
                                 HasShadow="True">
                 <ImageButton
                                      HorizontalOptions="FillAndExpand"

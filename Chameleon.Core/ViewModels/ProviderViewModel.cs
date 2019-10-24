@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Acr.UserDialogs;
+using Chameleon.Services.Extensions;
 using Chameleon.Services.Models;
 using MediaManager;
 using MediaManager.Library;
@@ -49,8 +50,14 @@ namespace Chameleon.Core.ViewModels
             {
                 if(Provider is ILibraryProvider<IMediaItem> mediaItemProvider)
                 {
-                    var item = await _mediaManager.Extractor.CreateMediaItem(result.Value);
-                    await mediaItemProvider.AddOrUpdate(item);
+                    if (result.Value.IsValidUrl())
+                    {
+                        var item = await _mediaManager.Extractor.CreateMediaItem(result.Value);
+                        await mediaItemProvider.AddOrUpdate(item);
+                        await ReloadData();
+                    }
+                    else
+                        await _userDialogs.AlertAsync(GetText("NotValidUrl"));
                 }
             }
         }
@@ -62,7 +69,7 @@ namespace Chameleon.Core.ViewModels
             set => SetProperty(ref _provider, value);
         }
 
-        public override async Task Initialize()
+        public override async Task ReloadData(bool forceReload = false)
         {
             if (Provider is ILibraryProvider<IMediaItem> mediaItemProvider)
             {

@@ -6,6 +6,7 @@ using Chameleon.Core.ViewModels;
 using Chameleon.Services;
 using MediaManager;
 using MediaManager.Library;
+using MediaManager.Media;
 using MvvmCross;
 using MvvmCross.Commands;
 using MvvmCross.Forms.Presenters;
@@ -77,6 +78,17 @@ namespace Chameleon.Core.Helpers
                     {
                         playlistViewModel.CurrentPlaylist?.MediaItems?.Remove(mediaItem);
                         await _mediaManager.Library.AddOrUpdate<IPlaylist>(playlistViewModel.CurrentPlaylist);
+                        _userDialogs.Toast(GetText("ItemRemovedFromPlaylist"));
+                    }, "icon_contextual_removefromqueue");
+                }
+                if (_topViewModel is ProviderViewModel providerViewModel)
+                {
+                    config.Add(GetText("RemoveFromPlaylist"), async () =>
+                    {
+                        if (providerViewModel.Provider is ILibraryProvider<IMediaItem> mediaItemProvider)
+                        {
+                            await mediaItemProvider.Remove(mediaItem);
+                        }
                         _userDialogs.Toast(GetText("ItemRemovedFromPlaylist"));
                     }, "icon_contextual_removefromqueue");
                 }

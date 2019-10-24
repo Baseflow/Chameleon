@@ -1,5 +1,6 @@
 ﻿{
   "Title": "Provider",
   "Enabled": "Enabled",
-  "EnterUrl": "Enter url"
+  "EnterUrl": "Enter url",
+  "NotValidUrl": "This is not a valid url"
 }

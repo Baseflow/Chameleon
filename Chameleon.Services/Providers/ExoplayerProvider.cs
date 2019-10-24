@@ -9,33 +9,20 @@ using MediaManager.Media;
 
 namespace Chameleon.Services.Providers
 {
-    public class ExoplayerProvider : ProviderBase, IMediaItemProvider
+    public class ExoplayerProvider : BarrelCacheProvider<IMediaItem>, IMediaItemProvider
     {
         private readonly IMediaManager _mediaManager;
 
-        public ExoplayerProvider(IMediaManager mediaManager)
+        public ExoplayerProvider(MonkeyCache.IBarrel barrel, IMediaManager mediaManager) : base(barrel)
         {
             _mediaManager = mediaManager ?? throw new ArgumentNullException(nameof(mediaManager));
         }
 
         public override bool CanEdit => false;
 
-        public Task<bool> AddOrUpdate(IMediaItem item)
-        {
-            throw new NotImplementedException();
-        }
+        public override string CacheName => "exoplayer";
 
-        public Task<bool> Exists(string id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<IMediaItem> Get(string id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public async Task<IEnumerable<IMediaItem>> GetAll()
+        public override async Task<IEnumerable<IMediaItem>> GetAll()
         {
             var json = ExoPlayerSamples.GetEmbeddedResourceString("media.exolist.json");
             var jsonList = ExoPlayerSamples.FromJson(json);
@@ -62,16 +49,6 @@ namespace Chameleon.Services.Providers
             }
 
             return items;
-        }
-
-        public Task<bool> Remove(IMediaItem item)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<bool> RemoveAll()
-        {
-            throw new NotImplementedException();
         }
     }
 }

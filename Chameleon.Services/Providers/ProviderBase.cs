@@ -2,13 +2,18 @@
 using System.Collections.Generic;
 using System.Text;
 using Chameleon.Services.Models;
+using MediaManager;
 using MediaManager.Media;
 
 namespace Chameleon.Services.Providers
 {
-    public class ProviderBase : ILibraryProvider, ISourceProvider
+    public class ProviderBase : NotifyPropertyChangedBase, ILibraryProvider, ISourceProvider
     {
-        public virtual bool Enabled { get; set; } = true;
+        protected bool _enabled = false;
+        public virtual bool Enabled { 
+            get => _enabled; 
+            set => SetProperty(ref _enabled, value);
+        }
 
         public string Title { get; set; }
         public string Description { get; set; }

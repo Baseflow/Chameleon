@@ -72,9 +72,19 @@ namespace Chameleon.Core.ViewModels
             }
         }
 
-        public override async Task Initialize()
+        private bool _isInitialized;
+        public override async void ViewAppearing()
         {
+            base.ViewAppearing();
 
+            if (_isInitialized)
+                await ReloadData().ConfigureAwait(false);
+
+            _isInitialized = true;
+        }
+
+        public override async Task ReloadData(bool forceReload = false)
+        {
             IsLoading = true;
 
             try
@@ -87,6 +97,8 @@ namespace Chameleon.Core.ViewModels
             }
 
             IsLoading = false;
+            //await RaisePropertyChanged(nameof(HasRecent));
+            //await RaisePropertyChanged(nameof(HasNoPlaylists));
         }
     }
 }

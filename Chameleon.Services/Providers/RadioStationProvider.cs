@@ -11,33 +11,20 @@ using Refit;
 
 namespace Chameleon.Services.Providers
 {
-    public class RadioStationProvider : ProviderBase, IMediaItemProvider
+    public class RadioStationProvider : BarrelCacheProvider<IMediaItem>, IMediaItemProvider
     {
         private readonly IMediaManager _mediaManager;
 
-        public RadioStationProvider(IMediaManager mediaManager)
+        public RadioStationProvider(MonkeyCache.IBarrel barrel, IMediaManager mediaManager) : base(barrel)
         {
             _mediaManager = mediaManager ?? throw new ArgumentNullException(nameof(mediaManager));
         }
 
         public override bool CanEdit => false;
 
-        public Task<bool> AddOrUpdate(IMediaItem item)
-        {
-            throw new NotImplementedException();
-        }
+        public override string CacheName => "radio_stations";
 
-        public Task<bool> Exists(string id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<IMediaItem> Get(string id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public async Task<IEnumerable<IMediaItem>> GetAll()
+        public override async Task<IEnumerable<IMediaItem>> GetAll()
         {
             var radioApi = RestService.For<IRadioSourceService>("http://www.radio-browser.info/webservice/json");
             var sources = await radioApi.GetRadioSourceByCountry("netherlands").ConfigureAwait(false);
@@ -56,16 +43,6 @@ namespace Chameleon.Services.Providers
                 items.Add(mediaItem);
             }
             return items;
-        }
-
-        public Task<bool> Remove(IMediaItem item)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<bool> RemoveAll()
-        {
-            throw new NotImplementedException();
         }
     }
 }

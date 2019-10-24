@@ -22,19 +22,26 @@ namespace Chameleon.Services.Providers
         public abstract string CacheName { get; }
 
         public string EnabledCacheName => CacheName + "_enabled";
-        public override bool Enabled 
+        public override bool Enabled
         {
-            get => _barrel.GetOrCreate(EnabledCacheName, true);
-            set => _barrel.Add(EnabledCacheName, value, TimeSpan.MaxValue);
+            get => _barrel.GetOrCreate(EnabledCacheName, false);
+            set
+            {
+                _barrel.Add(EnabledCacheName, value, TimeSpan.MaxValue);
+                base.Enabled = value;
+            }
         }
 
         public async Task<bool> AddOrUpdate(TContentItem item)
         {
+            if (item == null)
+                return false;
+
             var items = (await GetAll().ConfigureAwait(false))?.ToList();
             if (items == null)
                 return false;
 
-            var contentItem = items.Find(x => x.Id == item.Id);
+            var contentItem = items.FirstOrDefault(x => x.Id == item.Id);
             if (contentItem == null)
                 items.Add(item);
             else
@@ -60,7 +67,7 @@ namespace Chameleon.Services.Providers
             return items.FirstOrDefault(x => x.Id == id);
         }
 
-        public Task<IEnumerable<TContentItem>> GetAll()
+        public virtual Task<IEnumerable<TContentItem>> GetAll()
         {
             try
             {
@@ -75,7 +82,7 @@ namespace Chameleon.Services.Providers
         public async Task<bool> Remove(TContentItem item)
         {
             var items = (await GetAll().ConfigureAwait(false))?.ToList();
-            var contentItem = items.Find(x => x.Id == item.Id);
+            var contentItem = items.FirstOrDefault(x => x.Id == item.Id);
             if (items?.Remove(contentItem) == true)
             {
                 _barrel.Add(CacheName, items, TimeSpan.MaxValue);

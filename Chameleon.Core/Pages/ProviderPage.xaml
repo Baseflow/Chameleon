@@ -25,7 +25,7 @@
     </ContentPage.ToolbarItems>
     <StackLayout>
         <Label mvx:Bi.nd="Text Provider.Title" Style="{StaticResource PrimaryHeader}" Margin="24,0,24,14"/>
-        <Grid Margin="{StaticResource MarginPaddingLeftRightXlargeTopBottomLarge}">
+        <Grid Margin="{StaticResource MarginPaddingLeftRightXlargeTopBottomLarge}" VerticalOptions="Start">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
@@ -36,6 +36,7 @@
             <Label mvx:La.ng="Text Enabled"
                                    Style="{DynamicResource Title}"
                                    VerticalOptions="Center"
+                   VerticalTextAlignment="Center"
                                    Grid.Column="0" />
             <Switch mvx:Bi.nd="IsToggled Provider.Enabled"
                                     Grid.Column="1"

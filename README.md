@@ -10,6 +10,12 @@ Chameleon is a flexible media player build with Xamarin.Forms. It is made to sho
 |--|--|--|
 | <a href='https://play.google.com/store/apps/details?id=com.baseflow.chameleon&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img height='60px' alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/></a> | <a href="https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=1475255793" rel="Chameleon">![iOS AppStore](http://devimages.apple.com.edgekey.net/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg)</a> | Coming soon |
 
+# Support
+
+* Feel free to open an issue. Make sure to use one of the templates!
+* Commercial support is available. Integration with your app or services, samples, feature request, etc. Email: [hello@baseflow.com](mailto:hello@baseflow.com)
+* Powered by: [baseflow.com](https://baseflow.com)
+
 # Features
 
 - Playback of local files

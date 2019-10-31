@@ -32,9 +32,8 @@ namespace Chameleon.iOS.CustomRenderers
         public override void TraitCollectionDidChange(UITraitCollection previousTraitCollection)
         {
             base.TraitCollectionDidChange(previousTraitCollection);
-            Console.WriteLine($"TraitCollectionDidChange: {TraitCollection.UserInterfaceStyle} != {previousTraitCollection.UserInterfaceStyle}");
 
-            if (this.TraitCollection.UserInterfaceStyle != previousTraitCollection.UserInterfaceStyle)
+            if (TraitCollection?.UserInterfaceStyle != previousTraitCollection?.UserInterfaceStyle)
             {
                 SetAppTheme();
             }
@@ -42,13 +41,17 @@ namespace Chameleon.iOS.CustomRenderers
 
         private void SetAppTheme()
         {
-            if (this.TraitCollection.UserInterfaceStyle == UIUserInterfaceStyle.Dark)
+            Mvx.IoCProvider.TryResolve<IThemeService>(out var themeService);
+            if (themeService != null)
             {
-                Mvx.IoCProvider.Resolve<IThemeService>().UpdateTheme(Core.Models.ThemeMode.Dark);
-            }
-            else
-            {
-                Mvx.IoCProvider.Resolve<IThemeService>().UpdateTheme(Core.Models.ThemeMode.Light);
+                if (TraitCollection.UserInterfaceStyle == UIUserInterfaceStyle.Dark)
+                {
+                    themeService.UpdateTheme(Core.Models.ThemeMode.Dark);
+                }
+                else
+                {
+                    themeService.UpdateTheme(Core.Models.ThemeMode.Light);
+                }
             }
         }
     }

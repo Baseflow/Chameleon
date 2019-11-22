@@ -5,11 +5,11 @@ using Android.App;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Chameleon.Android")]
+[assembly: AssemblyTitle("Chameleon.Droid")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Baseflow B.V.")]
-[assembly: AssemblyProduct("Chameleon.Android")]
+[assembly: AssemblyProduct("Chameleon.Droid")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

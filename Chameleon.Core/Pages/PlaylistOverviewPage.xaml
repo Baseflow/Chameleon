@@ -14,7 +14,7 @@
     x:Class="Chameleon.Core.Views.PlaylistOverviewPage"
     x:Name="thisPage">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Icon="icon_plus"
+        <ToolbarItem IconImageSource="icon_plus"
                      Command="{Binding AddPlaylistCommand}" />
     </ContentPage.ToolbarItems>
 

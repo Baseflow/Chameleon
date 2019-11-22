@@ -4,7 +4,6 @@ using Android.Content.PM;
 using Android.Content.Res;
 using Android.OS;
 using Android.Runtime;
-using Android.Support.V7.App;
 using Chameleon.Core;
 using Chameleon.Core.Helpers;
 using Chameleon.Core.ViewModels;
@@ -14,9 +13,9 @@ using MvvmCross.Forms.Platforms.Android.Views;
 using MvvmCross.Navigation;
 using Plugin.CurrentActivity;
 using Xamarin.Forms;
-using Intent = global::Android.Content.Intent;
+using Intent = Android.Content.Intent;
 
-namespace Chameleon.Android
+namespace Chameleon.Droid
 {
     [Activity(
         Label = "@string/app_name",
@@ -25,15 +24,15 @@ namespace Chameleon.Android
         MainLauncher = true,
         ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode)]
     [IntentFilter(new[] { Intent.ActionSend, Intent.ActionSendMultiple, Intent.ActionView }, Categories = new[] { Intent.CategoryDefault, Intent.CategoryBrowsable, Intent.CategoryAppMusic }, DataMimeTypes = new[] { "video/*", "audio/*" }, Label = "@string/app_name")]
-    public class MainActivity : MvxFormsAppCompatActivity<Setup, Core.App, FormsApp>
+    public class MainActivity : MvxFormsAppCompatActivity<Setup, App, FormsApp>
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
             Forms.SetFlags("CollectionView_Experimental");
 
-            TabLayoutResource = Android.Resource.Layout.Tabbar;
-            ToolbarResource = Android.Resource.Layout.Toolbar;
-            SetTheme(Android.Resource.Style.MainTheme);
+            TabLayoutResource = Resource.Layout.Tabbar;
+            ToolbarResource = Resource.Layout.Toolbar;
+            SetTheme(Resource.Style.MainTheme);
 
             base.OnCreate(savedInstanceState);
 
@@ -90,7 +89,7 @@ namespace Chameleon.Android
             }
         }
 
-        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] global::Android.Content.PM.Permission[] grantResults)
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Permission[] grantResults)
         {
             Plugin.Permissions.PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);

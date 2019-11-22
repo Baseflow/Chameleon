@@ -4,7 +4,9 @@ using System.ComponentModel;
 using System.Windows.Input;
 using Android.App;
 using Android.Runtime;
+using Android.Support.Design.Internal;
 using Android.Support.Design.Widget;
+using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
 using MvvmCross.Binding.BindingContext;
@@ -14,7 +16,7 @@ using MvvmCross.IoC;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 
-namespace Chameleon.Android
+namespace Chameleon.Droid
 {
     // This class is never actually executed, but when Xamarin linking is enabled it does how to ensure types and properties
     // are preserved in the deployed app
@@ -140,14 +142,14 @@ namespace Chameleon.Android
             plugin.Load();
         }
 
-        public void Include(global::Android.Support.V7.Widget.AlertDialogLayout alertDialog)
+        public void Include(AlertDialogLayout alertDialog)
         {
-            _ = new global::Android.Support.V7.Widget.AlertDialogLayout(Application.Context);
+            _ = new AlertDialogLayout(Application.Context);
         }
 
-        public void Include(global::Android.Support.Design.Internal.BaselineLayout baselineLayout)
+        public void Include(BaselineLayout baselineLayout)
         {
-            _ = new global::Android.Support.Design.Internal.BaselineLayout(Application.Context);
+            _ = new BaselineLayout(Application.Context);
         }
 
         public void IncludeMvvmcross64()

@@ -21,7 +21,7 @@ then
     exit
 fi
 
-ANDROID_MANIFEST_FILE=$APPCENTER_SOURCE_DIRECTORY/Chameleon.Android/Properties/AndroidManifest.xml
+ANDROID_MANIFEST_FILE=$APPCENTER_SOURCE_DIRECTORY/Chameleon.Droid/Properties/AndroidManifest.xml
 VERSION=${VERSION_NAME}.${APPCENTER_BUILD_ID}
 if [ ${APPCENTER_BRANCH} != "master" ]
 then

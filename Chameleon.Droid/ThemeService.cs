@@ -15,7 +15,7 @@ using Chameleon.Core.Models;
 using MvvmCross;
 using MvvmCross.Platforms.Android;
 
-namespace Chameleon.Android
+namespace Chameleon.Droid
 {
     public class ThemeService : ThemeServiceBase
     {

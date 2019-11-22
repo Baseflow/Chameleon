@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29102.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chameleon.Core", "Chameleon.Core\Chameleon.Core.csproj", "{77A38872-12A8-4E03-AD48-827F2AAB5318}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chameleon.Droid", "Chameleon.Android\Chameleon.Droid.csproj", "{23B9D7A8-8013-483A-ABB3-839DA8A7D930}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chameleon.Droid", "Chameleon.Droid\Chameleon.Droid.csproj", "{23B9D7A8-8013-483A-ABB3-839DA8A7D930}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chameleon.iOS", "Chameleon.iOS\Chameleon.iOS.csproj", "{84BCE6E4-7B30-4A78-A73F-D188F4A57C86}"
 EndProject

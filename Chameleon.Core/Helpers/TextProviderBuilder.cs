@@ -19,13 +19,11 @@ namespace Chameleon.Core
 
         public override void LoadResources(string whichLocalizationFolder)
         {
-            if (string.IsNullOrEmpty(whichLocalizationFolder))
-                base.LoadResources(CurrentLocalization);
-            else
+            if (!string.IsNullOrEmpty(whichLocalizationFolder))
             {
                 CurrentLocalization = whichLocalizationFolder;
-                base.LoadResources(whichLocalizationFolder);
             }
+            base.LoadResources(CurrentLocalization);
         }
 
         protected override IDictionary<string, string> ResourceFiles

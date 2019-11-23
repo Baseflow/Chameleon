@@ -13,15 +13,11 @@ namespace Chameleon.Core.Converters
             {
                 return $"{value.TotalTime.Hours} hours " + $" { value.TotalTime.Minutes} minutes";
             }
-            else if (value.TotalTime.Hours > 1)
+            if (value.TotalTime.Hours > 1)
             {
                 return $"{value.TotalTime.Hours} hour " + $" { value.TotalTime.Minutes} minutes";
             }
-            else
-            {
-                return $" { value.TotalTime.Minutes} minutes";
-            }
+            return $" { value.TotalTime.Minutes} minutes";
         }
     }
 }
-

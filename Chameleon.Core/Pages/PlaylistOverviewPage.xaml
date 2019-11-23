@@ -8,21 +8,15 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModels="clr-namespace:Chameleon.Core.ViewModels;assembly=Chameleon.Core"
     xmlns:pan="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
-    xmlns:converters="clr-namespace:Chameleon.Core.Converters;assembly=Chameleon.Core"
     mc:Ignorable="d"
     x:TypeArguments="viewModels:PlaylistOverviewViewModel"
     x:Class="Chameleon.Core.Views.PlaylistOverviewPage"
     x:Name="thisPage">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Icon="icon_plus"
+        <ToolbarItem IconImageSource="icon_plus"
                      Command="{Binding AddPlaylistCommand}" />
     </ContentPage.ToolbarItems>
 
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <converters:InverseBoolConverter x:Key="invertBool" />
-        </ResourceDictionary>
-    </ContentPage.Resources>
     <StackLayout>
         <SearchBar mvx:La.ng="Placeholder SearchBar"
                     Text="{mvx:MvxBind SearchText}">

@@ -260,3 +260,6 @@ artifacts/
 
 # dotnet tools
 .store/
+
+# MFractor
+.mfractor/

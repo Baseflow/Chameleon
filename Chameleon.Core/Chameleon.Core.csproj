@@ -37,8 +37,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Extensions\ThemeModeExtensionMethods.json" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Update="**\*.xaml.cs" DependentUpon="%(Filename)" />
     <None Remove="Resources\**\*.json" />
     <EmbeddedResource Include="Resources\**\*.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Extensions\" />
   </ItemGroup>
 </Project>

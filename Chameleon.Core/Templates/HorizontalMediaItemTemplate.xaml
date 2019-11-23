@@ -1,14 +1,13 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView
+<DataTemplate
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
     xmlns:pan="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
-    x:Class="Chameleon.Core.Templates.HorizontalMediaItemTemplate"
-    WidthRequest="164">
-    <Grid Padding="16,16,0,16" HorizontalOptions="Start">
+    x:Class="Chameleon.Core.Templates.HorizontalMediaItemTemplate">
+    <Grid Padding="16,16,0,16" HorizontalOptions="Start" WidthRequest="164">
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
@@ -43,4 +42,4 @@
             MaxLines="1"
             Style="{StaticResource SubtitleItem}" />
     </Grid>
-</ContentView>
+</DataTemplate>

@@ -2,7 +2,7 @@
 
 namespace Chameleon.Core.Templates
 {
-    public partial class VerticalMediaItemTemplate : ContentView
+    public partial class VerticalMediaItemTemplate : DataTemplate
     {
         public VerticalMediaItemTemplate()
         {

@@ -40,9 +40,7 @@
                             HorizontalItemSpacing="0" />
                 </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <templates:HorizontalProviderItemTemplate />
-                    </DataTemplate>
+                    <templates:HorizontalProviderItemTemplate />
                 </CollectionView.ItemTemplate>
             </CollectionView>
         <Label
@@ -55,9 +53,7 @@
         SelectionChangedCommandParameter SelectedItem; 
         SelectedItem SelectedItem">
                 <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <templates:VerticalProviderItemTemplate />
-                    </DataTemplate>
+                    <templates:VerticalProviderItemTemplate />
                 </CollectionView.ItemTemplate>
             </CollectionView>
         </StackLayout>

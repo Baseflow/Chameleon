@@ -1,4 +1,5 @@
 ﻿using System;
+using Chameleon.Core.Extensions;
 using Chameleon.Core.Models;
 using Chameleon.Core.Resources;
 using Chameleon.Services;
@@ -24,14 +25,7 @@ namespace Chameleon.Core.Helpers
 
         public ResourceDictionary CustomColors
         {
-            get
-            {
-                var customColors = _barrel.Get<ResourceDictionary>(AppSettings.CustomColorsKey);
-                if (customColors == null)
-                    customColors = new LightColors();
-                return customColors;
-            }
-
+            get => _barrel.Get<ResourceDictionary>(AppSettings.CustomColorsKey) ?? new LightColors();
             set => _barrel.Add(AppSettings.CustomColorsKey, value, TimeSpan.MaxValue);
         }
 
@@ -43,64 +37,42 @@ namespace Chameleon.Core.Helpers
             {
                 case ThemeMode.Auto:
                     if (themeMode == ThemeMode.Dark)
-                        ThemeDark();
+                        goto case ThemeMode.Dark;
                     else
-                        ThemeLight();
-                    break;
+                        goto case ThemeMode.Light;
                 case ThemeMode.Dark:
-                    ThemeDark();
+                    SetTheme(ThemeMode.Dark);
                     break;
                 case ThemeMode.Light:
-                    ThemeLight();
+                    SetTheme(ThemeMode.Light);
                     break;
                 case ThemeMode.Custom:
-                    ThemeCustom();
+                    SetTheme(ThemeMode.Custom);
                     break;
                 default:
                     break;
             }
         }
 
-        public void ThemeDark()
+        private void SetTheme(ThemeMode themeMode)
         {
-            if (CurrentRuntimeTheme == ThemeMode.Dark)
+            if (CurrentRuntimeTheme == themeMode)
                 return;
 
-            Application.Current.Resources.Clear();
-            var style = new Styles();
-            style.MergedDictionaries.Add(new DarkColors());
+            SetColors(themeMode);
 
-            Application.Current.Resources = style;
-
-            CurrentRuntimeTheme = ThemeMode.Dark;
+            CurrentRuntimeTheme = themeMode;
         }
 
-        public void ThemeLight()
+        private void SetColors(ThemeMode themeMode)
         {
-            if (CurrentRuntimeTheme == ThemeMode.Light)
-                return;
+            var colors = themeMode.ToResourceDictionary(CustomColors);
 
             Application.Current.Resources.Clear();
             var style = new Styles();
-            style.MergedDictionaries.Add(new LightColors());
+            style.MergedDictionaries.Add(colors);
 
             Application.Current.Resources = style;
-
-            CurrentRuntimeTheme = ThemeMode.Light;
-        }
-
-        public void ThemeCustom()
-        {
-            if (CurrentRuntimeTheme == ThemeMode.Custom)
-                return;
-
-            Application.Current.Resources.Clear();
-            var style = new Styles();
-            style.MergedDictionaries.Add(CustomColors);
-
-            Application.Current.Resources = style;
-
-            CurrentRuntimeTheme = ThemeMode.Custom;
         }
     }
 }

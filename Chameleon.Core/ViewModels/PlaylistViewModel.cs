@@ -145,6 +145,7 @@ namespace Chameleon.Core.ViewModels
             }
             catch (Exception ex)
             {
+                Log.ErrorException($"The {nameof(PlaylistViewModel)} {nameof(Initialize)} method threw an {ex.GetType()}.", ex);
             }
 
             IsLoading = false;

@@ -52,7 +52,7 @@
             IsVisible="{Binding Provider.Enabled}"
                         SelectionMode="Single"
                         VerticalOptions="FillAndExpand"
-                        ItemTemplate="{StaticResource contentItemTemplateSelector}">
+                        ItemTemplate="{StaticResource ContentItemTemplateSelector}">
         </CollectionView>
     </StackLayout>
 </core:MvxContentPage>

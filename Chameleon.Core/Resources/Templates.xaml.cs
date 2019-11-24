@@ -2,9 +2,9 @@
 
 namespace Chameleon.Core.Resources
 {
-    public partial class Styles : ResourceDictionary
+    public partial class Templates : ResourceDictionary
     {
-        public Styles()
+        public Templates()
         {
             InitializeComponent();
         }

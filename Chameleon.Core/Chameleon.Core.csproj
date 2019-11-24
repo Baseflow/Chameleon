@@ -43,6 +43,10 @@
     <Compile Update="**\*.xaml.cs" DependentUpon="%(Filename)" />
     <None Remove="Resources\**\*.json" />
     <EmbeddedResource Include="Resources\**\*.json" />
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Resources\Templates.xaml.cs">
+      <DependentUpon>Templates.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Extensions\" />

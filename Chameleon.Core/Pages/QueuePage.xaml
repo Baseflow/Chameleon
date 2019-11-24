@@ -27,7 +27,7 @@
             <Label mvx:Bi.nd="Text QueueTitle" Style="{StaticResource PrimaryHeader}" Margin="24,20,0,0"/>
             <CollectionView
                 x:Name="MyCollectionView"
-                ItemTemplate="{StaticResource contentItemTemplateSelector}"
+                ItemTemplate="{StaticResource ContentItemTemplateSelector}"
                 mvx:Bi.nd=
                     "ItemsSource MediaItems;
                     SelectionChangedCommand PlayCommand;

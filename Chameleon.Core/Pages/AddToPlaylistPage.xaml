@@ -53,7 +53,7 @@
             SelectionChangedCommand AddToPlaylistCommand;
             SelectionChangedCommandParameter SelectedPlaylist;
             SelectedItem SelectedPlaylist"
-            ItemTemplate="{StaticResource contentItemTemplateSelector}" />
+            ItemTemplate="{StaticResource ContentItemTemplateSelector}" />
         <StackLayout Grid.Row="2" Orientation="Vertical">
             <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="{DynamicResource PrimaryColor}"/>
             <Button HorizontalOptions="FillAndExpand"

@@ -110,7 +110,9 @@ namespace Chameleon.Core.ViewModels
                     Playlists.ReplaceWith(playlists);
             }
             catch (Exception ex)
-            { }
+            {
+                Log.ErrorException($"The {nameof(HomeViewModel)} {nameof(ReloadData)} method threw an {ex.GetType()}.", ex);
+            }
 
             IsLoading = false;
             await RaisePropertyChanged(nameof(HasRecent));
@@ -142,7 +144,7 @@ namespace Chameleon.Core.ViewModels
                         path = videoMediaFile.Path;
                     }
                 }
-                catch (MediaPermissionException ex)
+                catch (MediaPermissionException)
                 {
                     await _userDialogs.AlertAsync(GetText("EnablePermissions"));
                 }
@@ -176,7 +178,7 @@ namespace Chameleon.Core.ViewModels
             }
             catch (Exception ex)
             {
-                System.Console.WriteLine("Exception choosing file: " + ex.ToString());
+                Console.WriteLine("Exception choosing file: " + ex.ToString());
             }
         }
 

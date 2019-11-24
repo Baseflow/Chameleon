@@ -33,7 +33,7 @@
                     SelectionChangedCommand PlayCommand;
                     SelectionChangedCommandParameter SelectedMediaItem;
                     SelectedItem SelectedMediaItem"
-                    ItemTemplate="{StaticResource contentItemHorizontalTemplateSelector}"
+                    ItemTemplate="{StaticResource ContentItemHorizontalTemplateSelector}"
                     HeightRequest="230">
                     <CollectionView.ItemsLayout>
                         <GridItemsLayout Orientation="Horizontal" />
@@ -65,7 +65,7 @@
                 <CollectionView
                     HeightRequest="230"
                     SelectionMode="Single"
-                    ItemTemplate="{StaticResource contentItemHorizontalTemplateSelector}"
+                    ItemTemplate="{StaticResource ContentItemHorizontalTemplateSelector}"
                     mvx:Bi.nd="ItemsSource Playlists; 
                     SelectionChangedCommand OpenPlaylistCommand; 
                     SelectionChangedCommandParameter SelectedPlaylist; 

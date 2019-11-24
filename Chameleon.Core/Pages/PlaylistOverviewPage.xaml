@@ -22,7 +22,7 @@
                     Text="{mvx:MvxBind SearchText}">
         </SearchBar>
         <CollectionView
-            ItemTemplate="{StaticResource contentItemTemplateSelector}"
+            ItemTemplate="{StaticResource ContentItemTemplateSelector}"
             mvx:Bi.nd="ItemsSource Playlists;
             SelectionChangedCommand OpenPlaylistCommand;
             SelectionChangedCommandParameter SelectedPlaylist;

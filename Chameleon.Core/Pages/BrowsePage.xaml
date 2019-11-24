@@ -29,7 +29,7 @@
                     SelectionChangedCommandParameter SelectedMediaItem;
                     SelectedItem SelectedMediaItem"
                     VerticalOptions="FillAndExpand"
-                    ItemTemplate="{StaticResource contentItemTemplateSelector}">
+                    ItemTemplate="{StaticResource ContentItemTemplateSelector}">
             <CollectionView.EmptyView>
                 <AbsoluteLayout>
                     <ActivityIndicator AbsoluteLayout.LayoutFlags="All" 

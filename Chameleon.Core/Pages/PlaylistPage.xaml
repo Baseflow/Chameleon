@@ -77,7 +77,7 @@
                             SelectedItem SelectedMediaItem"
                         SelectionMode="Single"
                         VerticalOptions="FillAndExpand"
-                        ItemTemplate="{StaticResource contentItemTemplateSelector}">
+                        ItemTemplate="{StaticResource ContentItemTemplateSelector}">
 
             <CollectionView.EmptyView>
                 <AbsoluteLayout>

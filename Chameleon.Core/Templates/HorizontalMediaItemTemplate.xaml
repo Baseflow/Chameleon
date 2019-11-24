@@ -18,9 +18,10 @@
             VerticalOptions="FillAndExpand"
             Elevation="2">
             <pan:PancakeView.HasShadow>
-                <OnPlatform x:TypeArguments="x:Boolean"
-                              iOS="False"
-                              Android="True" />
+                <OnPlatform
+                    x:TypeArguments="x:Boolean"
+                    iOS="False"
+                    Android="True" />
             </pan:PancakeView.HasShadow>
             <Image
                 HorizontalOptions="Center"
@@ -30,7 +31,7 @@
         </pan:PancakeView>
         <Label mvx:Bi.nd="Text DisplayTitle"
              Grid.Row="1"
-               VerticalTextAlignment="End"
+             VerticalTextAlignment="End"
              LineBreakMode="TailTruncation"
              MaxLines="1"
              Style="{StaticResource TitleItem}" />

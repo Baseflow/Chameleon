@@ -13,43 +13,52 @@
     x:Name="thisPage">
     
     <NavigationPage.TitleView>
-        <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center" Spacing="10" HeightRequest="30">
-            <Image Source="chameleon_logo.png"/>
+        <StackLayout
+            Orientation="Horizontal"
+            VerticalOptions="Center" HorizontalOptions="Center"
+            Spacing="10"
+            HeightRequest="30">
+            <Image
+                Source="chameleon_logo.png"/>
         </StackLayout>
     </NavigationPage.TitleView>
     
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="icon_close.png" mvx:Bi.nd="Command CloseCommand"/>
+        <ToolbarItem
+            IconImageSource="icon_close.png"
+            mvx:Bi.nd="Command CloseCommand"/>
     </ContentPage.ToolbarItems>
 
-    <ContentPage.Content>
-        <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-            <Label mvx:Bi.nd="Text QueueTitle" Style="{StaticResource PrimaryHeader}" Margin="24,20,0,0"/>
-            <CollectionView
-                x:Name="MyCollectionView"
-                ItemTemplate="{StaticResource ContentItemTemplateSelector}"
-                mvx:Bi.nd=
-                    "ItemsSource MediaItems;
-                    SelectionChangedCommand PlayCommand;
-                    SelectionChangedCommandParameter SelectedMediaItem;
-                    SelectedItem SelectedMediaItem"
-                SelectionMode="Single"
-                VerticalOptions="FillAndExpand">
+    <StackLayout
+        VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <Label
+            mvx:Bi.nd="Text QueueTitle"
+            Style="{StaticResource PrimaryHeader}"
+            Margin="24,20,0,0"/>
+        <CollectionView
+            x:Name="MyCollectionView"
+            ItemTemplate="{StaticResource ContentItemTemplateSelector}"
+            mvx:Bi.nd="ItemsSource MediaItems;
+                       SelectionChangedCommand PlayCommand;
+                       SelectionChangedCommandParameter SelectedMediaItem;
+                       SelectedItem SelectedMediaItem"
+            SelectionMode="Single"
+            VerticalOptions="FillAndExpand">
 
-                <CollectionView.EmptyView>
-                    <StackLayout>
-                        <ActivityIndicator Color="DimGray"
-                                           mvx:Bi.nd="IsRunning IsLoading"/>
-                        <Label
-                            BindingContext="{Binding .}"
-                            Text="{mvx:MvxLang FillingQueue}" 
-                            VerticalOptions="Center"
-                            Margin="24,0,0,0"
-                            Style="{StaticResource Title}" />
-                    </StackLayout>
-                </CollectionView.EmptyView>
-            </CollectionView>
-        </StackLayout>
-    </ContentPage.Content>
- 
+            <CollectionView.EmptyView>
+                <StackLayout>
+                    <ActivityIndicator
+                        Color="DimGray"
+                        mvx:Bi.nd="IsRunning IsLoading"/>
+                    <Label
+                        BindingContext="{Binding .}"
+                        Text="{mvx:MvxLang FillingQueue}" 
+                        VerticalOptions="Center"
+                        Margin="24,0,0,0"
+                        Style="{StaticResource Title}" />
+                </StackLayout>
+            </CollectionView.EmptyView>
+        </CollectionView>
+    </StackLayout>
+
 </core:MvxContentPage>

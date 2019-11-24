@@ -8,10 +8,11 @@
     xmlns:controls="clr-namespace:Chameleon.Core.Controls"
     xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     x:Class="Chameleon.Core.Templates.VerticalMediaItemTemplate">
-    <Grid Padding="24,4,0,4"
-              RowSpacing="2"
-              ColumnSpacing="16"
-              VerticalOptions="Center">
+    <Grid
+        Padding="24,4,0,4"
+        RowSpacing="2"
+        ColumnSpacing="16"
+        VerticalOptions="Center">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
@@ -22,48 +23,48 @@
             <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
         <pan:PancakeView
-                CornerRadius="4"
-                IsClippedToBounds="True"
+            CornerRadius="4"
+            IsClippedToBounds="True"
             VerticalOptions="Center"
-                Elevation="2"
-                Grid.RowSpan="2">
+            Elevation="2"
+            Grid.RowSpan="2">
             <ffimageloading:CachedImage
                 WidthRequest="48"
                 HeightRequest="48"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                    Aspect="AspectFill"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Aspect="AspectFill"
                 ErrorPlaceholder="cover_art_placeholder.png"
                 LoadingPlaceholder="cover_art_placeholder.png"
                 mvx:Bi.nd="Source DisplayImageUri" />
         </pan:PancakeView>
         <Label
-                mvx:Bi.nd="Text DisplayTitle"
-                Grid.Column="1"
+            mvx:Bi.nd="Text DisplayTitle"
+            Grid.Column="1"
             Margin="0,4,0,0"
-                VerticalOptions="End"
-                LineBreakMode="TailTruncation"
-                MaxLines="1"
-                Style="{StaticResource TitleItem}" />
+            VerticalOptions="End"
+            LineBreakMode="TailTruncation"
+            MaxLines="1"
+            Style="{StaticResource TitleItem}" />
         <Label
-                mvx:Bi.nd="Text DisplaySubtitle"
-                Grid.Column="1"
-                Grid.Row="1"
+            mvx:Bi.nd="Text DisplaySubtitle"
+            Grid.Column="1"
+            Grid.Row="1"
             Margin="0,0,0,4"
-                VerticalOptions="Start"
-                LineBreakMode="TailTruncation"
-                MaxLines="1"
-                Style="{StaticResource SubtitleItem}" />
+            VerticalOptions="Start"
+            LineBreakMode="TailTruncation"
+            MaxLines="1"
+            Style="{StaticResource SubtitleItem}" />
         <controls:SelectableButton
-                Source="icon_more.png"
+            Source="icon_more.png"
             Aspect="AspectFill"
-                Command="{Binding Source={x:Static helpers:NavigationHelper.OptionsCommand}}"
-                CommandParameter="{Binding .}"
-                Grid.Column="2"
-                Grid.RowSpan="2"
+            Command="{Binding Source={x:Static helpers:NavigationHelper.OptionsCommand}}"
+            CommandParameter="{Binding .}"
+            Grid.Column="2"
+            Grid.RowSpan="2"
             Padding="8,8,24,8"
-                HorizontalOptions="End"
-                VerticalOptions="Center"
-                BackgroundColor="Transparent" />
+            HorizontalOptions="End"
+            VerticalOptions="Center"
+            BackgroundColor="Transparent" />
     </Grid>
 </DataTemplate>

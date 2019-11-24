@@ -12,17 +12,25 @@
     x:TypeArguments="viewModels:PlaylistViewModel"
     x:Class="Chameleon.Core.Views.PlaylistPage">
     <NavigationPage.TitleView>
-        <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center" Spacing="10" HeightRequest="30">
-            <Image Source="chameleon_logo.png"/>
+        <StackLayout
+            Orientation="Horizontal"
+            VerticalOptions="Center" HorizontalOptions="Center"
+            Spacing="10"
+            HeightRequest="30">
+            <Image
+                Source="chameleon_logo.png"/>
         </StackLayout>
     </NavigationPage.TitleView>
     <StackLayout>
         <SearchBar
             mvx:La.ng="Placeholder SearchBar"
             Text="{mvx:MvxBind SearchText}" />
-        <Label mvx:La.ng="Text Title" Style="{StaticResource PrimaryHeader}" Margin="24,0,24,14"/>
+        <Label
+            mvx:La.ng="Text Title"
+            Style="{StaticResource PrimaryHeader}"
+            Margin="24,0,24,14"/>
         <Grid
-                Padding="{StaticResource MarginPaddingLeftRightXlargeTopBottomSmall}">
+            Padding="{StaticResource MarginPaddingLeftRightXlargeTopBottomSmall}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="114"/>
                 <ColumnDefinition Width="*"/>
@@ -36,9 +44,10 @@
                 HeightRequest="114"
                 WidthRequest="114">
                 <pan:PancakeView.HasShadow>
-                    <OnPlatform x:TypeArguments="x:Boolean"
-                                iOS="False"
-                                Android="True" />
+                    <OnPlatform
+                        x:TypeArguments="x:Boolean"
+                        iOS="False"
+                        Android="True" />
                 </pan:PancakeView.HasShadow>
                 <AbsoluteLayout>
                     <Image
@@ -55,7 +64,9 @@
                         AbsoluteLayout.LayoutBounds=".5,.5,.5,.5"/>
                 </AbsoluteLayout>
             </pan:PancakeView>
-            <StackLayout Margin="18,0,0,4" Grid.Column="1">
+            <StackLayout
+                Margin="18,0,0,4"
+                Grid.Column="1">
                 <Label
                     Text="{Binding CurrentPlaylist.Title}"
                     MaxLines="2"
@@ -71,23 +82,25 @@
             </StackLayout>
         </Grid>
         <CollectionView
-                        mvx:Bi.nd="ItemsSource CurrentPlaylistSource.MediaItems;
-                            SelectionChangedCommand PlayCommand;
-                            SelectionChangedCommandParameter SelectedMediaItem;
-                            SelectedItem SelectedMediaItem"
-                        SelectionMode="Single"
-                        VerticalOptions="FillAndExpand"
-                        ItemTemplate="{StaticResource ContentItemTemplateSelector}">
+            mvx:Bi.nd="ItemsSource CurrentPlaylistSource.MediaItems;
+                       SelectionChangedCommand PlayCommand;
+                       SelectionChangedCommandParameter SelectedMediaItem;
+                       SelectedItem SelectedMediaItem"
+            SelectionMode="Single"
+            VerticalOptions="FillAndExpand"
+            ItemTemplate="{StaticResource ContentItemTemplateSelector}">
 
             <CollectionView.EmptyView>
                 <AbsoluteLayout>
-                    <ActivityIndicator AbsoluteLayout.LayoutFlags="All" 
-                                        AbsoluteLayout.LayoutBounds=".5,.0,.5,.5" 
-                                        Color="DimGray"
-                                        mvx:Bi.nd="IsRunning IsLoading"/>
-                    <StackLayout VerticalOptions="Start" 
-                                    AbsoluteLayout.LayoutFlags="All" 
-                                    AbsoluteLayout.LayoutBounds=".5,.5,.5,.5">
+                    <ActivityIndicator
+                        AbsoluteLayout.LayoutFlags="All" 
+                        AbsoluteLayout.LayoutBounds=".5,.0,.5,.5" 
+                        Color="DimGray"
+                        mvx:Bi.nd="IsRunning IsLoading"/>
+                    <StackLayout
+                        VerticalOptions="Start" 
+                        AbsoluteLayout.LayoutFlags="All" 
+                        AbsoluteLayout.LayoutBounds=".5,.5,.5,.5">
                         <Image
                             Source="icon_plus_big.png" />
                         <Label
@@ -104,4 +117,3 @@
         </CollectionView>
     </StackLayout>
 </core:MvxContentPage>
-

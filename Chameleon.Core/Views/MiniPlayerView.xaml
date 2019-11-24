@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<core:MvxContentView xmlns:core="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+<core:MvxContentView
+    xmlns:core="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
     xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -16,7 +17,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1" />
-            <RowDefinition Height="auto" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="35" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
@@ -32,7 +33,8 @@
         <Grid.GestureRecognizers>
             <TapGestureRecognizer mvx:Bi.nd="Command OpenPlayerCommand" />
         </Grid.GestureRecognizers>
-        <ProgressBar Grid.ColumnSpan="7"
+        <ProgressBar
+            Grid.ColumnSpan="7"
             HorizontalOptions="FillAndExpand"
             ProgressColor="#FFF14431"
             mvx:Bi.nd="Progress Progress" />
@@ -97,14 +99,16 @@
             Command="{Binding Source={x:Static local:NavigationHelper.OptionsCommand}}"
             CommandParameter="{Binding CurrentMediaItem}"
             Source="icon_more.png" />
-        <BoxView Grid.Row="3"
-                Grid.ColumnSpan="7"
-                Margin="0,12,0,.5"
-                HeightRequest=".5">
+        <BoxView
+            Grid.Row="3"
+            Grid.ColumnSpan="7"
+            Margin="0,12,0,.5"
+            HeightRequest=".5">
             <BoxView.Color>
-                <OnPlatform x:TypeArguments="Color"
-                                iOS="Transparent"
-                                Android="Black" />
+                <OnPlatform
+                    x:TypeArguments="Color"
+                    iOS="Transparent"
+                    Android="Black" />
             </BoxView.Color>
         </BoxView>
     </Grid>

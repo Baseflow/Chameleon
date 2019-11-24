@@ -13,28 +13,31 @@
     x:Class="Chameleon.Core.Views.PlaylistOverviewPage"
     x:Name="thisPage">
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="icon_plus"
-                     Command="{Binding AddPlaylistCommand}" />
+        <ToolbarItem
+            IconImageSource="icon_plus"
+            Command="{Binding AddPlaylistCommand}" />
     </ContentPage.ToolbarItems>
 
     <StackLayout>
-        <SearchBar mvx:La.ng="Placeholder SearchBar"
-                    Text="{mvx:MvxBind SearchText}">
+        <SearchBar
+            mvx:La.ng="Placeholder SearchBar"
+            Text="{mvx:MvxBind SearchText}">
         </SearchBar>
         <CollectionView
             ItemTemplate="{StaticResource ContentItemTemplateSelector}"
             mvx:Bi.nd="ItemsSource Playlists;
-            SelectionChangedCommand OpenPlaylistCommand;
-            SelectionChangedCommandParameter SelectedPlaylist;
-            SelectedItem SelectedPlaylist"
+                       SelectionChangedCommand OpenPlaylistCommand;
+                       SelectionChangedCommandParameter SelectedPlaylist;
+                       SelectedItem SelectedPlaylist"
             SelectionMode="Single"
             VerticalOptions="FillAndExpand">
             <CollectionView.EmptyView>
                 <StackLayout>
-                    <Grid Padding="24,0,24,0"
-                            VerticalOptions="Center">
+                    <Grid
+                        Padding="24,0,24,0"
+                        VerticalOptions="Center">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="48" />
@@ -47,9 +50,10 @@
                             Elevation="2"
                             BackgroundColor="{DynamicResource PrimaryColor}">
                             <pan:PancakeView.HasShadow>
-                                <OnPlatform x:TypeArguments="x:Boolean"
-                                            iOS="False"
-                                            Android="True" />
+                                <OnPlatform
+                                    x:TypeArguments="x:Boolean"
+                                    iOS="False"
+                                    Android="True" />
                             </pan:PancakeView.HasShadow>
                             <Image
                                 Source="icon_plus_big.png"

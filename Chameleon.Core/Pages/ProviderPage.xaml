@@ -13,19 +13,30 @@
     x:TypeArguments="viewModels:ProviderViewModel"
     x:Class="Chameleon.Core.Views.ProviderPage">
     <NavigationPage.TitleView>
-        <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center" Spacing="10" HeightRequest="30">
-            <Image Source="chameleon_logo.png"/>
+        <StackLayout
+            Orientation="Horizontal"
+            VerticalOptions="Center" HorizontalOptions="Center"
+            Spacing="10"
+            HeightRequest="30">
+            <Image
+                Source="chameleon_logo.png"/>
         </StackLayout>
     </NavigationPage.TitleView>
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="icon_plus.png"
-                     IsEnabled="{Binding Provider.CanEdit}"
-                     Order="Primary"
-                     mvx:Bi.nd="Command AddCommand" />
+        <ToolbarItem
+            IconImageSource="icon_plus.png"
+            IsEnabled="{Binding Provider.CanEdit}"
+            Order="Primary"
+            mvx:Bi.nd="Command AddCommand" />
     </ContentPage.ToolbarItems>
     <StackLayout>
-        <Label mvx:Bi.nd="Text Provider.Title" Style="{StaticResource PrimaryHeader}" Margin="24,0,24,14"/>
-        <Grid Margin="{StaticResource MarginPaddingLeftRightXlargeTopBottomLarge}" VerticalOptions="Start">
+        <Label
+            mvx:Bi.nd="Text Provider.Title"
+            Style="{StaticResource PrimaryHeader}"
+            Margin="24,0,24,14"/>
+        <Grid
+            Margin="{StaticResource MarginPaddingLeftRightXlargeTopBottomLarge}"
+            VerticalOptions="Start">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
@@ -33,27 +44,28 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
-            <Label mvx:La.ng="Text Enabled"
-                                   Style="{DynamicResource Title}"
-                                   VerticalOptions="Center"
-                   VerticalTextAlignment="Center"
-                                   Grid.Column="0" />
-            <Switch mvx:Bi.nd="IsToggled Provider.Enabled"
-                                    Grid.Column="1"
-                                    VerticalOptions="Center"
-                                    HorizontalOptions="End"
-                                    OnColor="{DynamicResource SecondaryColor}" />
+            <Label
+                mvx:La.ng="Text Enabled"
+                Style="{DynamicResource Title}"
+                VerticalOptions="Center"
+                VerticalTextAlignment="Center"
+                Grid.Column="0" />
+            <Switch
+                mvx:Bi.nd="IsToggled Provider.Enabled"
+                Grid.Column="1"
+                VerticalOptions="Center"
+                HorizontalOptions="End"
+                OnColor="{DynamicResource SecondaryColor}" />
         </Grid>
         <CollectionView
-                        mvx:Bi.nd="ItemsSource MediaItems;
-                            SelectionChangedCommand PlayCommand;
-                            SelectionChangedCommandParameter SelectedMediaItem;
-                            SelectedItem SelectedMediaItem"
+            mvx:Bi.nd="ItemsSource MediaItems;
+                       SelectionChangedCommand PlayCommand;
+                       SelectionChangedCommandParameter SelectedMediaItem;
+                       SelectedItem SelectedMediaItem"
             IsVisible="{Binding Provider.Enabled}"
-                        SelectionMode="Single"
-                        VerticalOptions="FillAndExpand"
-                        ItemTemplate="{StaticResource ContentItemTemplateSelector}">
+            SelectionMode="Single"
+            VerticalOptions="FillAndExpand"
+            ItemTemplate="{StaticResource ContentItemTemplateSelector}">
         </CollectionView>
     </StackLayout>
 </core:MvxContentPage>
-

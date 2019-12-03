@@ -8,11 +8,11 @@ namespace Chameleon.Core.Templates
     {
         IMediaManager MediaManager => CrossMediaManager.Current;
 
-        public DataTemplate CurrentMediaItemTemplate { get; set; } = new DataTemplate(() => new CurrentMediaItemTemplate());
-        public DataTemplate VerticalMediaItemTemplate { get; set; } = new DataTemplate(() => new VerticalMediaItemTemplate());
-        public DataTemplate HorizontalMediaItemTemplate { get; set; } = new DataTemplate(() => new HorizontalMediaItemTemplate());
-        public DataTemplate VerticalPlaylistTemplate { get; set; } = new DataTemplate(() => new VerticalPlaylistTemplate());
-        public DataTemplate HorizontalPlaylistTemplate { get; set; } = new DataTemplate(() => new HorizontalPlaylistItemTemplate());
+        public DataTemplate CurrentMediaItemTemplate { get; set; } = new CurrentMediaItemTemplate();
+        public DataTemplate VerticalMediaItemTemplate { get; set; } = new VerticalMediaItemTemplate();
+        public DataTemplate HorizontalMediaItemTemplate { get; set; } = new HorizontalMediaItemTemplate();
+        public DataTemplate VerticalPlaylistTemplate { get; set; } = new VerticalPlaylistTemplate();
+        public DataTemplate HorizontalPlaylistTemplate { get; set; } = new HorizontalPlaylistItemTemplate();
 
         public virtual bool Horizontal => false;
 
@@ -27,7 +27,7 @@ namespace Chameleon.Core.Templates
                         return CurrentMediaItemTemplate;
                     else
                         return VerticalMediaItemTemplate;
-                case IPlaylist playlist:
+                case IPlaylist _:
                     if (Horizontal)
                         return HorizontalPlaylistTemplate;
                     else

@@ -30,10 +30,10 @@
                     SelectionMode="Single"
                     IsVisible="{Binding HasRecent}"
                     mvx:Bi.nd="ItemsSource RecentlyPlayedItems;
-                    SelectionChangedCommand PlayCommand;
-                    SelectionChangedCommandParameter SelectedMediaItem;
-                    SelectedItem SelectedMediaItem"
-                    ItemTemplate="{StaticResource contentItemHorizontalTemplateSelector}"
+                               SelectionChangedCommand PlayCommand;
+                               SelectionChangedCommandParameter SelectedMediaItem;
+                               SelectedItem SelectedMediaItem"
+                    ItemTemplate="{StaticResource ContentItemHorizontalTemplateSelector}"
                     HeightRequest="230">
                     <CollectionView.ItemsLayout>
                         <GridItemsLayout Orientation="Horizontal" />
@@ -65,11 +65,11 @@
                 <CollectionView
                     HeightRequest="230"
                     SelectionMode="Single"
-                    ItemTemplate="{StaticResource contentItemHorizontalTemplateSelector}"
+                    ItemTemplate="{StaticResource ContentItemHorizontalTemplateSelector}"
                     mvx:Bi.nd="ItemsSource Playlists; 
-                    SelectionChangedCommand OpenPlaylistCommand; 
-                    SelectionChangedCommandParameter SelectedPlaylist; 
-                    SelectedItem SelectedPlaylist">
+                               SelectionChangedCommand OpenPlaylistCommand; 
+                               SelectionChangedCommandParameter SelectedPlaylist; 
+                               SelectedItem SelectedPlaylist">
                     <CollectionView.ItemsLayout>
                         <GridItemsLayout Orientation="Horizontal" />
                     </CollectionView.ItemsLayout>
@@ -80,7 +80,7 @@
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="154" />
-                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
                             <pan:PancakeView
                                 CornerRadius="8"
@@ -144,5 +144,4 @@
         </ScrollView>
         <views:MiniPlayerView Grid.Row="1" />
     </Grid>
-
 </core:MvxContentPage>

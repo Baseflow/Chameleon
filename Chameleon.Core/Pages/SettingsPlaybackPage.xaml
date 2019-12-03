@@ -13,59 +13,83 @@
     x:Class="Chameleon.Core.Views.SettingsPlaybackPage">
 
     <NavigationPage.TitleView>
-        <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center" Spacing="10" HeightRequest="30">
+        <StackLayout
+            Orientation="Horizontal"
+            VerticalOptions="Center" HorizontalOptions="Center"
+            Spacing="10"
+            HeightRequest="30">
             <Image Source="chameleon_logo.png"/>
         </StackLayout>
     </NavigationPage.TitleView>
 
-    <StackLayout Orientation="Vertical">
-        <Label mvx:La.ng=" Text PlaybackSettings" HorizontalOptions="FillAndExpand"
-               FontAttributes="Bold"
+    <StackLayout>
+        <Label
+            mvx:La.ng=" Text PlaybackSettings"
+            HorizontalOptions="FillAndExpand"
+            FontAttributes="Bold"
             Style="{StaticResource SecondaryHeader}"
             Margin="{StaticResource MarginPaddingLarge}" />
-        <Label mvx:La.ng="Text Skip" Margin="16,24,16,0"
-                                   Style="{DynamicResource Title}" />
-        <Label Text="{Binding Source={x:Reference slider}, Path=Value, StringFormat='{0:F0}s'}"
-                                   HorizontalOptions="Center"
-                                   Style="{StaticResource PlaybackSettingsValue}" />
-        <Slider x:Name="slider" Margin="{OnPlatform Default='0', iOS='16,0'}"
-                                    mvx:Bi.nd="Value TimeSpanToDouble(StepSize)"
-                                    Maximum="30"
-                                    Minimum="0"
-                                    MinimumTrackColor="{DynamicResource SecondaryColor}"
-                                    MaximumTrackColor="{DynamicResource PrimaryColor}">
-            </Slider>
-        <Label mvx:La.ng=" Text Volume" Margin="16,24,16,0"
-                                   Style="{DynamicResource Title}" />
-        <Label Text="{Binding Source={x:Reference slider2}, Path=Value, StringFormat='{00:F00}%'}"
-                                   HorizontalOptions="Center"
-                                   Style="{StaticResource  PlaybackSettingsValue}" />
-        <Slider x:Name="slider2" Margin="{OnPlatform Default='0', iOS='16,0'}"
-                                    Maximum="100"
-                                    Minimum="0"
-                                    mvx:Bi.nd="Value Volume"
-                                    MinimumTrackColor="{DynamicResource SecondaryColor}"
-                                    MaximumTrackColor="{DynamicResource PrimaryColor}"/>
-        <Label Text="Balance" Margin="16,24,16,0"
-                                   Style="{DynamicResource Title}" />
-        <Label Text="{Binding BalanceLabel}"
-                                   HorizontalOptions="FillAndExpand"
-                                   HorizontalTextAlignment="Center"
-                                   Style="{StaticResource PlaybackSettingsValue}" />
+        <Label
+            mvx:La.ng="Text Skip"
+            Margin="16,24,16,0"
+            Style="{DynamicResource Title}" />
+        <Label
+            Text="{Binding Source={x:Reference slider}, Path=Value, StringFormat='{0:F0}s'}"
+            HorizontalOptions="Center"
+            Style="{StaticResource PlaybackSettingsValue}" />
+        <Slider
+            x:Name="slider"
+            Margin="{OnPlatform Default='0', iOS='16,0'}"
+            mvx:Bi.nd="Value TimeSpanToDouble(StepSize)"
+            Maximum="30"
+            Minimum="0"
+            MinimumTrackColor="{DynamicResource SecondaryColor}"
+            MaximumTrackColor="{DynamicResource PrimaryColor}">
+        </Slider>
+        <Label
+            mvx:La.ng=" Text Volume"
+            Margin="16,24,16,0"
+            Style="{DynamicResource Title}" />
+        <Label
+            Text="{Binding Source={x:Reference slider2}, Path=Value, StringFormat='{00:F00}%'}"
+            HorizontalOptions="Center"
+            Style="{StaticResource  PlaybackSettingsValue}" />
+        <Slider
+            x:Name="slider2"
+            Margin="{OnPlatform Default='0', iOS='16,0'}"
+            Maximum="100"
+            Minimum="0"
+            mvx:Bi.nd="Value Volume"
+            MinimumTrackColor="{DynamicResource SecondaryColor}"
+            MaximumTrackColor="{DynamicResource PrimaryColor}"/>
+        <Label
+            Text="Balance"
+            Margin="16,24,16,0"
+            Style="{DynamicResource Title}" />
+        <Label
+            Text="{Binding BalanceLabel}"
+            HorizontalOptions="FillAndExpand"
+            HorizontalTextAlignment="Center"
+            Style="{StaticResource PlaybackSettingsValue}" />
         <StackLayout Orientation="Horizontal">
-            <Label Text="{mvx:MvxLang L}" Margin="16,0,0,0"
-                                   VerticalTextAlignment="Center"
-                                   Style="{StaticResource PlaybackSettingsValue}"/>
-            <Slider x:Name="slider3"
-                                    mvx:Bi.nd="Value Balance"
-                                    HorizontalOptions="FillAndExpand"
-                                    Maximum="10"
-                                    Minimum="-10"
-                                    MinimumTrackColor="{DynamicResource PrimaryColor}"
-                                    MaximumTrackColor="{DynamicResource PrimaryColor}"/>
-            <Label Text="{mvx:MvxLang R}" Margin="0,0,16,0"
-                                   VerticalTextAlignment="Center"
-                                   Style="{StaticResource PlaybackSettingsValue}"/>
+            <Label
+                Text="{mvx:MvxLang L}"
+                Margin="16,0,0,0"
+                VerticalTextAlignment="Center"
+                Style="{StaticResource PlaybackSettingsValue}"/>
+            <Slider
+                x:Name="slider3"
+                mvx:Bi.nd="Value Balance"
+                HorizontalOptions="FillAndExpand"
+                Maximum="10"
+                Minimum="-10"
+                MinimumTrackColor="{DynamicResource PrimaryColor}"
+                MaximumTrackColor="{DynamicResource PrimaryColor}"/>
+            <Label
+                Text="{mvx:MvxLang R}"
+                Margin="0,0,16,0"
+                VerticalTextAlignment="Center"
+                Style="{StaticResource PlaybackSettingsValue}"/>
         </StackLayout>
 
         <coloredTableView:ColoredTableView
@@ -73,50 +97,54 @@
             Intent="Settings"
             HasUnevenRows="True"
             SeparatorColor="{DynamicResource PrimaryColor}">
-        <TableRoot>
+            <TableRoot>
                 <TableSection>
                     <ViewCell BindingContext="{Binding .}">
-                    <Grid Margin="{StaticResource MarginPaddingLeftRightXlargeTopBottomLarge}">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="Auto" />
-                        </Grid.ColumnDefinitions>
-                        <Label mvx:La.ng="Text Clear"
-                                   Style="{DynamicResource Title}"
-                                   VerticalOptions="Center"
-                                   Grid.Column="0" />
-                        <Switch mvx:Bi.nd="IsToggled ClearQueueOnPlay"
-                                    Grid.Column="1"
-                                    VerticalOptions="Center"
-                                    HorizontalOptions="End"
-                                    OnColor="{DynamicResource SecondaryColor}" />
-                    </Grid>
-                </ViewCell>
-                <ViewCell BindingContext="{Binding .}">
-                    <Grid Margin="{StaticResource MarginPaddingLeftRightXlargeTopBottomLarge}">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="Auto" />
-                        </Grid.ColumnDefinitions>
-                        <Label mvx:La.ng="Text ScreenOn"
-                                   Style="{DynamicResource Title}"
-                                   VerticalOptions="Center"
-                                   Grid.Column="0" />
-                        <Switch mvx:Bi.nd="IsToggled KeepScreenOn"
-                                    Grid.Column="1"
-                                    VerticalOptions="Center"
-                                    HorizontalOptions="End"
-                                    OnColor="{DynamicResource SecondaryColor}" />
-                    </Grid>
-                </ViewCell>
-            </TableSection>
-        </TableRoot>
-    </coloredTableView:ColoredTableView>
+                        <Grid Margin="{StaticResource MarginPaddingLeftRightXlargeTopBottomLarge}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Label
+                                mvx:La.ng="Text Clear"
+                                Style="{DynamicResource Title}"
+                                VerticalOptions="Center"
+                                Grid.Column="0" />
+                            <Switch
+                                mvx:Bi.nd="IsToggled ClearQueueOnPlay"
+                                Grid.Column="1"
+                                VerticalOptions="Center"
+                                HorizontalOptions="End"
+                                OnColor="{DynamicResource SecondaryColor}" />
+                        </Grid>
+                    </ViewCell>
+                    <ViewCell BindingContext="{Binding .}">
+                        <Grid Margin="{StaticResource MarginPaddingLeftRightXlargeTopBottomLarge}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Label
+                                mvx:La.ng="Text ScreenOn"
+                                Style="{DynamicResource Title}"
+                                VerticalOptions="Center"
+                                Grid.Column="0" />
+                            <Switch
+                                mvx:Bi.nd="IsToggled KeepScreenOn"
+                                Grid.Column="1"
+                                VerticalOptions="Center"
+                                HorizontalOptions="End"
+                                OnColor="{DynamicResource SecondaryColor}" />
+                        </Grid>
+                    </ViewCell>
+                </TableSection>
+            </TableRoot>
+        </coloredTableView:ColoredTableView>
     </StackLayout>
 </core:MvxContentPage>

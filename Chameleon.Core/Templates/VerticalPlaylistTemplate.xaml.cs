@@ -2,7 +2,7 @@
 
 namespace Chameleon.Core.Templates
 {
-    public partial class VerticalPlaylistTemplate : ContentView
+    public partial class VerticalPlaylistTemplate : DataTemplate
     {
         public VerticalPlaylistTemplate()
         {

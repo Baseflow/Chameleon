@@ -12,84 +12,86 @@
     x:Class="Chameleon.Core.Views.ThemeCustomPickerPage"
     x:Name="thisPage">
 
-     <NavigationPage.TitleView>
-        <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center" Spacing="10" HeightRequest="30">
+    <NavigationPage.TitleView>
+        <StackLayout
+            Orientation="Horizontal"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Spacing="10"
+            HeightRequest="30">
             <Image Source="chameleon_logo.png"/>
         </StackLayout>
     </NavigationPage.TitleView>
 
-    <ContentPage.Content>
-    
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Label
+            mvx:La.ng="Text CustomTheme"
+            Style="{StaticResource PrimaryHeader}"
+            Margin="{StaticResource MarginPaddingLarge}"
+            Grid.ColumnSpan="3"/>
+        <Label
+            mvx:La.ng="Text Colors"
+            Style="{StaticResource Title}"
+            Margin="{StaticResource MarginPaddingLeftRightLarge}"
+            Grid.ColumnSpan="3"
+            Grid.Row="1"/>
+        <StackLayout
+            Orientation="Vertical"
+            Grid.Row="2"
+            Margin="16,8,16,0">
             <Label
-                mvx:La.ng="Text CustomTheme"
-                Style="{StaticResource PrimaryHeader}"
-                Margin="{StaticResource MarginPaddingLarge}"
-                Grid.ColumnSpan="3"/>
+                Text="{mvx:MvxLang BackgroundColor}"
+                Style="{StaticResource Title}"/>
+            <Frame
+                CornerRadius="8"
+                Padding="{StaticResource MarginPaddingExtrasmall}">
+                <Button
+                    BackgroundColor="{Binding BackgroundColorButton}"
+                    mvx:Bi.nd="Command ThemeCustomCommand"/>
+            </Frame>
+        </StackLayout>
+        <StackLayout
+            Orientation="Vertical"
+            Grid.Row="2"
+            Grid.Column="1"
+            Margin="16,8,16,0">
             <Label
-                mvx:La.ng="Text Colors"
-                Style="{StaticResource Title}"
-                Margin="{StaticResource MarginPaddingLeftRightLarge}"
-                Grid.ColumnSpan="3"
-                Grid.Row="1"/>
-            <StackLayout
-                Orientation="Vertical"
-                Grid.Row="2"
-                Margin="16,8,16,0">
-                <Label
-                    Text="{mvx:MvxLang BackgroundColor}"
-                    Style="{StaticResource Title}"/>
-                <Frame
-                    CornerRadius="8"
-                    Padding="{StaticResource MarginPaddingExtrasmall}">
-                    <Button
-                        BackgroundColor="{Binding BackgroundColorButton}"
-                        mvx:Bi.nd="Command ThemeCustomCommand"/>
-                </Frame>
-            </StackLayout>
-            <StackLayout
-                Orientation="Vertical"
-                Grid.Row="2"
-                Grid.Column="1"
-                Margin="16,8,16,0">
-                <Label
-                    Text="{mvx:MvxLang PrimaryColor}"
-                    Style="{StaticResource Title}"/>
-                <Frame
-                    CornerRadius="8"
-                    Padding="{StaticResource MarginPaddingExtrasmall}">
-                    <Button
-                        mvx:Bi.nd="Command ThemeCustomCommand"
-                        BackgroundColor="{Binding PrimaryColorButton}"/>
-                </Frame>
-            </StackLayout>
-            <StackLayout
-                Orientation="Vertical"
-                Grid.Row="2"
-                Grid.Column="2"
-                Margin="16,8,16,0">
-                <Label
-                    Text="{mvx:MvxLang ButtonTextColor}"
-                    Style="{StaticResource Title}"/>
-                <Frame
-                    CornerRadius="8"
-                    Padding="{StaticResource MarginPaddingExtrasmall}">
-                    <Button
-                        BackgroundColor="{Binding TextColorButton}"
-                        mvx:Bi.nd="Command ThemeCustomCommand"/>
-                </Frame>
-            </StackLayout>
-        </Grid>
-    </ContentPage.Content>
+                Text="{mvx:MvxLang PrimaryColor}"
+                Style="{StaticResource Title}"/>
+            <Frame
+                CornerRadius="8"
+                Padding="{StaticResource MarginPaddingExtrasmall}">
+                <Button
+                    mvx:Bi.nd="Command ThemeCustomCommand"
+                    BackgroundColor="{Binding PrimaryColorButton}"/>
+            </Frame>
+        </StackLayout>
+        <StackLayout
+            Orientation="Vertical"
+            Grid.Row="2"
+            Grid.Column="2"
+            Margin="16,8,16,0">
+            <Label
+                Text="{mvx:MvxLang ButtonTextColor}"
+                Style="{StaticResource Title}"/>
+            <Frame
+                CornerRadius="8"
+                Padding="{StaticResource MarginPaddingExtrasmall}">
+                <Button
+                    BackgroundColor="{Binding TextColorButton}"
+                    mvx:Bi.nd="Command ThemeCustomCommand"/>
+            </Frame>
+        </StackLayout>
+    </Grid>
 </core:MvxContentPage>

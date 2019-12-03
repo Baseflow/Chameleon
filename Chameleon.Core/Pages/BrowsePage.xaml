@@ -14,31 +14,35 @@
     x:TypeArguments="viewModels:BrowseViewModel"
     mvx:La.ng="Title Title">
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="icon_plus.png"
-                     Order="Primary"
-                     mvx:Bi.nd="Command AddCommand" />
+        <ToolbarItem
+            IconImageSource="icon_plus.png"
+            Order="Primary"
+            mvx:Bi.nd="Command AddCommand" />
     </ContentPage.ToolbarItems>
     <StackLayout>
         <SearchBar
-                    mvx:La.ng="Placeholder SearchBar"
-                    Text="{mvx:MvxBind SearchText}">
-            </SearchBar>
-            <CollectionView SelectionMode="Single"
-                    mvx:Bi.nd="ItemsSource RecentlyPlayedItems;
-                    SelectionChangedCommand PlayCommand;
-                    SelectionChangedCommandParameter SelectedMediaItem;
-                    SelectedItem SelectedMediaItem"
-                    VerticalOptions="FillAndExpand"
-                    ItemTemplate="{StaticResource contentItemTemplateSelector}">
+            mvx:La.ng="Placeholder SearchBar"
+            Text="{mvx:MvxBind SearchText}">
+        </SearchBar>
+        <CollectionView
+            SelectionMode="Single"
+            mvx:Bi.nd="ItemsSource RecentlyPlayedItems;
+                       SelectionChangedCommand PlayCommand;
+                       SelectionChangedCommandParameter SelectedMediaItem;
+                       SelectedItem SelectedMediaItem"
+            VerticalOptions="FillAndExpand"
+            ItemTemplate="{StaticResource ContentItemTemplateSelector}">
             <CollectionView.EmptyView>
                 <AbsoluteLayout>
-                    <ActivityIndicator AbsoluteLayout.LayoutFlags="All" 
-                                        AbsoluteLayout.LayoutBounds=".5,.0,.5,.5" 
-                                        Color="DimGray"
-                                        mvx:Bi.nd="IsRunning IsLoading"/>
-                    <StackLayout VerticalOptions="Start" 
-                                    AbsoluteLayout.LayoutFlags="All" 
-                                    AbsoluteLayout.LayoutBounds=".5,.5,.5,.5">
+                    <ActivityIndicator
+                        AbsoluteLayout.LayoutFlags="All" 
+                        AbsoluteLayout.LayoutBounds=".5,.0,.5,.5" 
+                        Color="DimGray"
+                        mvx:Bi.nd="IsRunning IsLoading"/>
+                    <StackLayout
+                        VerticalOptions="Start" 
+                        AbsoluteLayout.LayoutFlags="All" 
+                        AbsoluteLayout.LayoutBounds=".5,.5,.5,.5">
                         <Image
                             Source="icon_plus_big.png" />
                         <Label

@@ -15,14 +15,21 @@
     xmlns:controls="clr-namespace:Chameleon.Core.Controls">
 
     <NavigationPage.TitleView>
-        <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center" Spacing="10" HeightRequest="30">
+        <StackLayout
+            Orientation="Horizontal"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Spacing="10"
+            HeightRequest="30">
             <Image Source="chameleon_logo.png"/>
         </StackLayout>
     </NavigationPage.TitleView>
 
     <StackLayout>
-        <Label mvx:La.ng="Text Theming" HorizontalOptions="FillAndExpand"
-               FontAttributes="Bold"
+        <Label
+            mvx:La.ng="Text Theming"
+            HorizontalOptions="FillAndExpand"
+            FontAttributes="Bold"
             Style="{StaticResource SecondaryHeader}"
             Margin="{StaticResource MarginPaddingLarge}" />
         <Grid Margin="16,8" RowSpacing="16" ColumnSpacing="16">
@@ -35,76 +42,71 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <pan:PancakeView
-                                CornerRadius="8"
-                                IsClippedToBounds="True"
-                                HorizontalOptions="FillAndExpand"
-                                VerticalOptions="FillAndExpand"
-                                Elevation="2"
-                                HasShadow="True">
+                CornerRadius="8"
+                IsClippedToBounds="True"
+                HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                Elevation="2"
+                HasShadow="True">
                 <ImageButton
-                                    HorizontalOptions="FillAndExpand"
-                                    VerticalOptions="FillAndExpand"
-                                    Aspect="AspectFill"
-                                    Source="{Binding ThemeDarkImage}"
-                                    mvx:Bi.nd="Command ThemeDarkCommand" />
+                    HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                    Aspect="AspectFill"
+                    Source="{Binding ThemeDarkImage}"
+                    mvx:Bi.nd="Command ThemeDarkCommand" />
             </pan:PancakeView>
             <pan:PancakeView
-                                CornerRadius="8"
-                                IsClippedToBounds="True"
-                                HorizontalOptions="FillAndExpand"
-                                VerticalOptions="FillAndExpand"
-                                Elevation="2"
-                                Grid.Column="1"
-                                HasShadow="True">
+                CornerRadius="8"
+                IsClippedToBounds="True"
+                HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                Elevation="2"
+                Grid.Column="1"
+                HasShadow="True">
                 <ImageButton
-                                    HorizontalOptions="FillAndExpand"
-                                    VerticalOptions="FillAndExpand"
-                                    Aspect="AspectFill"
-                                    Source="{Binding ThemeLightImage}"
-                                    mvx:Bi.nd="Command ThemeLigthCommand"
-                                    Grid.Column="1" />
+                    HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                    Aspect="AspectFill"
+                    Source="{Binding ThemeLightImage}"
+                    mvx:Bi.nd="Command ThemeLigthCommand" />
             </pan:PancakeView>
             <pan:PancakeView
-                                CornerRadius="8"
-                                IsClippedToBounds="True"
-                                HorizontalOptions="FillAndExpand"
-                                VerticalOptions="FillAndExpand"
-                                Elevation="2"
-                                Grid.Row="1"
-                                HasShadow="True">
+                CornerRadius="8"
+                IsClippedToBounds="True"
+                HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                Elevation="2"
+                Grid.Row="1"
+                HasShadow="True">
                 <ImageButton
-                                     HorizontalOptions="FillAndExpand"
-                                     VerticalOptions="FillAndExpand"
-                                     Aspect="AspectFill"
-                                     Source="{Binding ThemeAutoImage}"
-                                     mvx:Bi.nd="Command ThemeAutoCommand"/>
+                    HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                    Aspect="AspectFill"
+                    Source="{Binding ThemeAutoImage}"
+                    mvx:Bi.nd="Command ThemeAutoCommand"/>
             </pan:PancakeView>
         </Grid>
         <Label
             Text="{mvx:MvxLang CustomTheme}"
             Style="{DynamicResource PrimaryHeader}"
             Margin="16,0,16,8"/>
-        <Frame VerticalOptions="Start"
-                                BackgroundColor="{DynamicResource PrimaryColor}"
-                                CornerRadius="8"
-                                Margin="16,0,16,0">
+        <Frame
+            VerticalOptions="Start"
+            BackgroundColor="{DynamicResource PrimaryColor}"
+            CornerRadius="8"
+            Margin="16,0">
             <StackLayout Orientation="Horizontal">
                 <Image
-                                         Aspect="AspectFit"
+                    Aspect="AspectFit"
                     HorizontalOptions="Center"
-                                         Source="{Binding ThemeCustomImage}" />
+                    Source="{Binding ThemeCustomImage}" />
                 <Label
-                                         Text="{mvx:MvxLang UseCustomTheme}"
-                                         Style="{StaticResource Title}"
-                     VerticalOptions="Center"
-                                         HorizontalOptions="Start"
-                                         Padding="16,0,0,0"/>
-                <controls:SelectableButton Padding="{StaticResource MarginPaddingLeftRightMediumTopBottomSmall}"
-                                         Aspect="AspectFit"
-                                         Source="icon_list_item_edit.png"
-                                         mvx:Bi.nd="Command CustomPickerCommand"
-                                         HorizontalOptions="EndAndExpand"
-                                         VerticalOptions="Center"/>
+                    Text="{mvx:MvxLang UseCustomTheme}"
+                    Style="{StaticResource Title}"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Start"
+                    Padding="16,0,0,0"/>
+                <controls:SelectableButton
+                    Padding="{StaticResource MarginPaddingLeftRightMediumTopBottomSmall}"
+                    Aspect="AspectFit"
+                    Source="icon_list_item_edit.png"
+                    mvx:Bi.nd="Command CustomPickerCommand"
+                    HorizontalOptions="EndAndExpand"
+                    VerticalOptions="Center"/>
 
             </StackLayout>
             <Frame.GestureRecognizers>

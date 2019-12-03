@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
-<ContentView
+<DataTemplate
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
     xmlns:pan="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     x:Class="Chameleon.Core.Templates.HorizontalProviderItemTemplate">
-    <Grid Margin="24,8,0,8">
+    <Grid Padding="24,8,0,8">
         <Grid.RowDefinitions>
             <RowDefinition Height="107" />
         </Grid.RowDefinitions>
@@ -13,27 +13,28 @@
             <ColumnDefinition Width="156" />
         </Grid.ColumnDefinitions>
         <pan:PancakeView
-                CornerRadius="8"
-                IsClippedToBounds="True"
-                HorizontalOptions="FillAndExpand"
-                VerticalOptions="FillAndExpand"
-                Elevation="2">
+            CornerRadius="8"
+            IsClippedToBounds="True"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+            Elevation="2">
             <pan:PancakeView.HasShadow>
-                <OnPlatform x:TypeArguments="x:Boolean"
-                                iOS="False"
-                                Android="True" />
+                <OnPlatform
+                    x:TypeArguments="x:Boolean"
+                    iOS="False"
+                    Android="True" />
             </pan:PancakeView.HasShadow>
             <Image
-                    HorizontalOptions="FillAndExpand"
-                    VerticalOptions="FillAndExpand"
-                    Aspect="AspectFill"
-                    Source="cover_art_placeholder.png" />
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                Aspect="AspectFill"
+                Source="cover_art_placeholder.png" />
         </pan:PancakeView>
         <Label
-                mvx:Bi.nd="Text Title"
-                VerticalOptions="EndAndExpand"
-                MaxLines="1"
-                Margin="{StaticResource MarginPaddingMedium}"
-                Style="{StaticResource TitleItem}" />
+            mvx:Bi.nd="Text Title"
+            VerticalOptions="EndAndExpand"
+            MaxLines="1"
+            Margin="{StaticResource MarginPaddingMedium}"
+            Style="{StaticResource TitleItem}" />
     </Grid>
-</ContentView>
+</DataTemplate>

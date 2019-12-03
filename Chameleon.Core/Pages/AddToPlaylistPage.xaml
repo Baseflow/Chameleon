@@ -16,20 +16,21 @@
     ios:Page.UseSafeArea="True">
     <Grid Margin="0,16,0,0">
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
-            <RowDefinition Height="auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <Frame BackgroundColor="{DynamicResource PrimaryColor}"
-                CornerRadius="8"
-                Padding="{StaticResource MarginPaddingMedium}"
-                Margin="24,8,24,8">
+        <Frame
+            BackgroundColor="{DynamicResource PrimaryColor}"
+            CornerRadius="8"
+            Padding="{StaticResource MarginPaddingMedium}"
+            Margin="24,8,24,8">
             <StackLayout
                 Orientation="Horizontal">
-                    <Image
+                <Image
                     Source="playback_controls_add_to_playlist.png"/>
                 <Entry
                     mvx:La.ng="Placeholder NewPlaylist"
@@ -43,27 +44,34 @@
                     Padding="{StaticResource MarginPaddingLeftRightLarge}"
                     Style="{StaticResource AddToPlaylistButton}"
                     mvx:Bi.nd="Command AddPlaylistCommand" />
-                </StackLayout>
+            </StackLayout>
         </Frame>
         <CollectionView
             Grid.Row="1"
             SelectionMode="Single"
             IsVisible="{Binding HasRecent}"
             mvx:Bi.nd="ItemsSource Playlists;
-            SelectionChangedCommand AddToPlaylistCommand;
-            SelectionChangedCommandParameter SelectedPlaylist;
-            SelectedItem SelectedPlaylist"
-            ItemTemplate="{StaticResource contentItemTemplateSelector}" />
-        <StackLayout Grid.Row="2" Orientation="Vertical">
-            <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="{DynamicResource PrimaryColor}"/>
-            <Button HorizontalOptions="FillAndExpand"
-                    mvx:La.ng="Text Cancel"
-                    Padding="{StaticResource MarginPaddingTopBottomLarge}"
-                    Style="{StaticResource CancelButton}"
-                    BackgroundColor="Transparent"
-                    mvx:Bi.nd="Command BackCommand">
+                       SelectionChangedCommand AddToPlaylistCommand;
+                       SelectionChangedCommandParameter SelectedPlaylist;
+                       SelectedItem SelectedPlaylist"
+            ItemTemplate="{StaticResource ContentItemTemplateSelector}" />
+        <StackLayout
+            Grid.Row="2"
+            Orientation="Vertical">
+            <BoxView
+                HorizontalOptions="FillAndExpand"
+                HeightRequest="1"
+                Color="{DynamicResource PrimaryColor}"/>
+            <Button
+                HorizontalOptions="FillAndExpand"
+                mvx:La.ng="Text Cancel"
+                Padding="{StaticResource MarginPaddingTopBottomLarge}"
+                Style="{StaticResource CancelButton}"
+                BackgroundColor="Transparent"
+                mvx:Bi.nd="Command BackCommand">
                 <Button.Effects>
-                    <effects:TransparentSelectableEffect Borderless="False" />
+                    <effects:TransparentSelectableEffect
+                        Borderless="False" />
                 </Button.Effects>
             </Button>
         </StackLayout>

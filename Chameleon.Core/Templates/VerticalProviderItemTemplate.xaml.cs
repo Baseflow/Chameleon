@@ -2,7 +2,7 @@
 
 namespace Chameleon.Core.Templates
 {
-    public partial class VerticalProviderItemTemplate : ContentView
+    public partial class VerticalProviderItemTemplate : DataTemplate
     {
         public VerticalProviderItemTemplate()
         {

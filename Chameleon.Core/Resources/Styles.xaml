@@ -2,18 +2,14 @@
 <ResourceDictionary 
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:styles="clr-namespace:Chameleon.Core.Resources;assembly=Chameleon.Core"
-    xmlns:effects="clr-namespace:Chameleon.Core.Effects;assembly=Chameleon.Core"
+    xmlns:res="clr-namespace:Chameleon.Core.Resources;assembly=Chameleon.Core"
     xmlns:rainbows="clr-namespace:Xamarin.Forms.DebugRainbows;assembly=Xamarin.Forms.DebugRainbows"
     xmlns:pan="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
-    xmlns:templates="clr-namespace:Chameleon.Core.Templates"
     x:Class="Chameleon.Core.Resources.Styles" >
     <ResourceDictionary.MergedDictionaries>
-        <styles:Sizes />
+        <res:Sizes />
+        <res:Templates />
     </ResourceDictionary.MergedDictionaries>
-
-    <templates:ContentItemTemplateSelector x:Key="contentItemTemplateSelector"/>
-    <templates:ContentItemHorizontalTemplateSelector x:Key="contentItemHorizontalTemplateSelector"/>
 
     <Style TargetType="{x:Type ContentPage}" ApplyToDerivedTypes="True">
         <Setter Property="rainbows:DebugRainbow.IsDebug" Value="False" />

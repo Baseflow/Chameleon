@@ -5,6 +5,7 @@ using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
 #endif
 using Xamarin.Forms;
+using FormsDevice = Xamarin.Forms.Device;
 
 namespace Chameleon.Core
 {
@@ -14,7 +15,7 @@ namespace Chameleon.Core
         {
             InitializeComponent();
 
-            Device.SetFlags(new[] {
+            FormsDevice.SetFlags(new[] {
                 "CarouselView_Experimental",
                 "IndicatorView_Experimental",
                 "SwipeView_Experimental"

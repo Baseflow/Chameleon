@@ -16,8 +16,16 @@
     
     <CodeAnalysisRuleSet>$(SolutionDir)\StyleCop.Analyzers.ruleset</CodeAnalysisRuleSet>
     <!--<TreatWarningsAsErrors>true</TreatWarningsAsErrors>-->
+    
   </PropertyGroup>
   <ItemGroup>
+    
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    
     <AdditionalFiles Include="$(SolutionDir)\stylecop.json" Link="stylecop.json" />
+    
   </ItemGroup>
 </Project>

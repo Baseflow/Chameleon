@@ -9,6 +9,10 @@
     <PackageReference Include="MonkeyCache.LiteDB" Version="1.3.0" />
     <PackageReference Include="Plugin.MediaManager.Forms" Version="0.9.6" />
     <PackageReference Include="refit" Version="5.0.23" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
   </ItemGroup>
   
   <ItemGroup>

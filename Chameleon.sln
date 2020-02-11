@@ -22,6 +22,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		CONTRIBUTING.md = CONTRIBUTING.md
 		Directory.build.props = Directory.build.props
 		Directory.build.targets = Directory.build.targets
+		StyleCop.Analyzers.ruleset = StyleCop.Analyzers.ruleset
+		stylecop.json = stylecop.json
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chameleon.Tizen", "Chameleon.Tizen\Chameleon.Tizen.csproj", "{3FF3AD54-A110-4F91-B9BF-2C4CE511DD7B}"

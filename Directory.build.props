@@ -14,7 +14,7 @@
     
     <IsTestProject>$(MSBuildProjectName.Contains('Tests'))</IsTestProject>
     
-    <CodeAnalysisRuleSet>$(SolutionDir)\StyleCop.Analyzers.internal.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>$(SolutionDir)\CodeAnalysis.ruleset</CodeAnalysisRuleSet>
     <!--<TreatWarningsAsErrors>true</TreatWarningsAsErrors>-->
     
   </PropertyGroup>

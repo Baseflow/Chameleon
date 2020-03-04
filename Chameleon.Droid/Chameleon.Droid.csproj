@@ -21,7 +21,6 @@
     <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <AndroidLinkSkip>Xamarin.Android.Support.v7.AppCompat;Xamarin.Android.Support.v4;Android.Support.Design</AndroidLinkSkip>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -56,6 +55,7 @@
     <AndroidEnableProfiledAot>true</AndroidEnableProfiledAot>
     <AndroidPackageFormat>aab</AndroidPackageFormat>
     <AotAssemblies>false</AotAssemblies>
+    <AndroidLinkSkip>Xamarin.Forms.Platform.Android;Xamarin.Forms.Platform;Xamarin.Forms.Core;Xamarin.Forms.Xaml;FormsViewGroup;Shiny.Core;MediaManager;MediaManager.Forms;ExoPlayer;ExoPlayer.Core;ExoPlayer.Hls;ExoPlayer.UI;ExoPlayer.Dash;ExoPlayer.Ext.MediaSession;ExoPlayer.SmoothStreaming;</AndroidLinkSkip>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Android" />

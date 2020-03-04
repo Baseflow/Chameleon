@@ -13,5 +13,19 @@
     <NoWarn>$(NoWarn);1591;1701;1702;1705;VSX1000;NU1603</NoWarn>
     
     <IsTestProject>$(MSBuildProjectName.Contains('Tests'))</IsTestProject>
+    
+    <CodeAnalysisRuleSet>$(SolutionDir)\CodeAnalysis.ruleset</CodeAnalysisRuleSet>
+    <!--<TreatWarningsAsErrors>true</TreatWarningsAsErrors>-->
+    
   </PropertyGroup>
+  <ItemGroup>
+    
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    
+    <AdditionalFiles Include="$(SolutionDir)\stylecop.json" Link="stylecop.json" />
+    
+  </ItemGroup>
 </Project>

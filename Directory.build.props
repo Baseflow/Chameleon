@@ -25,7 +25,5 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     
-    <AdditionalFiles Include="$(SolutionDir)\stylecop.json" Link="stylecop.json" />
-    
   </ItemGroup>
 </Project>

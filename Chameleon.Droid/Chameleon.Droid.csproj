@@ -127,7 +127,10 @@
     <PackageReference Include="Xamarin.Plugin.FilePicker">
       <Version>2.1.41-beta</Version>
     </PackageReference>
-  <PackageReference Include="Xamarin.AndroidX.Migration" Version="1.0.0" /></ItemGroup>
+  <PackageReference Include="Xamarin.AndroidX.Migration" Version="1.0.0" />  <PackageReference Include="Plugin.CurrentActivity">
+    <Version>2.1.0.4</Version>
+  </PackageReference>
+</ItemGroup>
   <ItemGroup>
     <Compile Include="Effects\AndroidTransparentSelectableEffect.cs" />
     <Compile Include="LinkerPleaseInclude.cs" />

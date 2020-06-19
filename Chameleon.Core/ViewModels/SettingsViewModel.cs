@@ -16,7 +16,7 @@ namespace Chameleon.Core.ViewModels
         }
 
         private IMvxAsyncCommand _githubCommand;
-        public IMvxAsyncCommand GithubCommand => _githubCommand ?? (_githubCommand = new MvxAsyncCommand(() => Xamarin.Essentials.Browser.OpenAsync("https://github.com/BaseflowIT")));
+        public IMvxAsyncCommand GithubCommand => _githubCommand ?? (_githubCommand = new MvxAsyncCommand(() => Xamarin.Essentials.Browser.OpenAsync("https://github.com/Baseflow")));
 
         private IMvxAsyncCommand _baseflowCommand;
         public IMvxAsyncCommand BaseflowCommand => _baseflowCommand ?? (_baseflowCommand = new MvxAsyncCommand(() => Xamarin.Essentials.Browser.OpenAsync("https://baseflow.com/")));
